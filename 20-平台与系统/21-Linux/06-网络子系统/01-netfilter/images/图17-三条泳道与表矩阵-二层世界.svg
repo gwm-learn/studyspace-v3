@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="660" viewBox="0 0 1660 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="660" fill="#ffffff"/>
+<text x="36.0" y="42.0" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 17 · 拆开看（二层）：三条泳道分别怎么走，每条链能挂哪三张表</text>
+<text x="36.0" y="70.0" font-size="12.3" fill="#64748b" xml:space="preserve">上一张是二层世界的合起来形态，这张拆开。链名前面多了 NF_BR_ 前缀，能挂的表也从四张变成三张（没有 raw、没有 security）。</text>
+<text x="36.0" y="92.0" font-size="12.3" fill="#64748b" xml:space="preserve">二层世界的工具是 ebtables，它的表叫 filter / nat / broute —— 和三层世界的 filter / nat 名字相同但完全独立。</text>
+<line x1="36" y1="112.0" x2="1624.0" y2="112.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36.0" y="138.0" font-size="12.0" fill="#0f172a" xml:space="preserve" font-weight="700">① 二层世界的包之旅：三条泳道，五条 NF_BR_* 链</text>
+<rect x="36.0" y="150.0" width="108.0" height="90.0" rx="9" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46.0" y="172.0" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">A 上送本机</text>
+<text x="46.0" y="188.0" font-size="9.0" fill="#64748b" xml:space="preserve">（LOCAL_IN）</text>
+<text x="46.0" y="206.0" font-size="9.0" fill="#64748b" xml:space="preserve">目的 MAC 是</text>
+<text x="46.0" y="219.0" font-size="9.0" fill="#64748b" xml:space="preserve">本机 / 桥自己</text>
+<rect x="154.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="154.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="167.0" y="169.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_PRE_ROUTING</text>
+<text x="167.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables broute</text>
+<text x="167.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(DNAT)</text>
+<line x1="313.0" y1="191.0" x2="316.0" y2="191.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 321.0 191.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="322.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="322.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="335.0" y="169.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">桥查 FDB</text>
+<text x="335.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">是本机？</text>
+<text x="335.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve">还是别的口？</text>
+<line x1="481.0" y1="191.0" x2="484.0" y2="191.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 489.0 191.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="490.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="490.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="503.0" y="169.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_LOCAL_IN</text>
+<text x="503.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="503.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve">filter INPUT</text>
+<line x1="649.0" y1="191.0" x2="652.0" y2="191.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 657.0 191.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="658.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="658.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#0f9d58"/>
+<text x="671.0" y="169.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">本机 IP 栈</text>
+<text x="671.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">剥掉以太头</text>
+<text x="671.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve">按 v4/v6 继续</text>
+<rect x="36.0" y="262.0" width="108.0" height="90.0" rx="9" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46.0" y="284.0" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">B 桥转发</text>
+<text x="46.0" y="300.0" font-size="9.0" fill="#64748b" xml:space="preserve">（FORWARD）</text>
+<text x="46.0" y="318.0" font-size="9.0" fill="#64748b" xml:space="preserve">目的 MAC 是</text>
+<text x="46.0" y="331.0" font-size="9.0" fill="#64748b" xml:space="preserve">另一个口</text>
+<rect x="154.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="154.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="167.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_PRE_ROUTING</text>
+<text x="167.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables broute</text>
+<text x="167.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(DNAT)</text>
+<line x1="313.0" y1="303.0" x2="316.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 321.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="322.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="322.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="335.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">桥查 FDB</text>
+<text x="335.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">从哪个口</text>
+<text x="335.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve">出去</text>
+<line x1="481.0" y1="303.0" x2="484.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 489.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="490.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="490.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="503.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_FORWARD</text>
+<text x="503.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="503.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve">filter FORWARD</text>
+<line x1="649.0" y1="303.0" x2="652.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 657.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="658.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="658.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="671.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_POST_ROUTING</text>
+<text x="671.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="671.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(SNAT)</text>
+<line x1="817.0" y1="303.0" x2="820.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 825.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="826.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="826.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0f9d58"/>
+<text x="839.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">网卡发出</text>
+<text x="839.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">dev_queue_xmit</text>
+<rect x="36.0" y="374.0" width="108.0" height="90.0" rx="9" fill="#fff9ee" stroke="#d97706" stroke-width="1.2"/>
+<text x="46.0" y="396.0" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">C 本机发帧</text>
+<text x="46.0" y="412.0" font-size="9.0" fill="#64748b" xml:space="preserve">（LOCAL_OUT）</text>
+<text x="46.0" y="430.0" font-size="9.0" fill="#64748b" xml:space="preserve">本机 IP 栈</text>
+<text x="46.0" y="443.0" font-size="9.0" fill="#64748b" xml:space="preserve">造出的帧</text>
+<rect x="154.0" y="374.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="154.0" y="374.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="167.0" y="393.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_LOCAL_OUT</text>
+<text x="167.0" y="410.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="167.0" y="425.4" font-size="8.8" fill="#334155" xml:space="preserve">filter OUTPUT</text>
+<line x1="313.0" y1="415.0" x2="316.0" y2="415.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 321.0 415.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="322.0" y="374.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="322.0" y="374.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="335.0" y="393.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_POST_ROUTING</text>
+<text x="335.0" y="410.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="335.0" y="425.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(SNAT)</text>
+<line x1="481.0" y1="415.0" x2="484.0" y2="415.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 489.0 415.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="490.0" y="374.0" width="158.0" height="82.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="490.0" y="374.0" width="4.5" height="82.0" rx="2" fill="#0f9d58"/>
+<text x="503.0" y="393.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">网卡发出</text>
+<text x="503.0" y="410.0" font-size="8.8" fill="#334155" xml:space="preserve">dev_queue_xmit</text>
+<text x="1024.0" y="152.0" font-size="12.0" fill="#0f172a" xml:space="preserve" font-weight="700">② 二层世界的三张表：每条链上允许挂哪些（✓＝允许）</text>
+<rect x="1024.0" y="162.0" width="600.0" height="30.0" rx="6" fill="#f1f5f9"/>
+<text x="1032.0" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700">表 ＼ 链</text>
+<text x="1166.8" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">PRE</text>
+<text x="1268.4" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">INPUT</text>
+<text x="1370.0" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">FORWARD</text>
+<text x="1471.6" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">OUTPUT</text>
+<text x="1573.2" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">POST</text>
+<rect x="1024.0" y="192.0" width="600.0" height="30.0" rx="0" fill="#ffffff"/>
+<line x1="1024.0" y1="192.0" x2="1624.0" y2="192.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="212.0" font-size="10.2" fill="#0f172a" xml:space="preserve">broute</text>
+<text x="1166.8" y="212.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<rect x="1024.0" y="222.0" width="600.0" height="30.0" rx="0" fill="#ffffff"/>
+<line x1="1024.0" y1="222.0" x2="1624.0" y2="222.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="242.0" font-size="10.2" fill="#0f172a" xml:space="preserve">nat</text>
+<text x="1166.8" y="242.0" font-size="9.6" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="middle">✓DNAT</text>
+<text x="1471.6" y="242.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1573.2" y="242.0" font-size="9.6" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="middle">✓SNAT</text>
+<rect x="1024.0" y="252.0" width="600.0" height="30.0" rx="0" fill="#fff5f5"/>
+<line x1="1024.0" y1="252.0" x2="1624.0" y2="252.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="272.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">filter</text>
+<text x="1268.4" y="272.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1370.0" y="272.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1471.6" y="272.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<line x1="1217.6" y1="162.0" x2="1217.6" y2="282.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="1319.2" y1="162.0" x2="1319.2" y2="282.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="1420.8" y1="162.0" x2="1420.8" y2="282.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="1522.4" y1="162.0" x2="1522.4" y2="282.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="1024.0" y="162.0" width="600.0" height="120.0" rx="6" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="1024.0" y="292.0" width="600.0" height="84.2" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1024.0" y="292.0" width="4.5" height="84.2" rx="2" fill="#0891b2"/>
+<text x="1037.0" y="311.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">二层世界只有三张表，不是漏写了</text>
+<text x="1037.0" y="328.0" font-size="10.6" fill="#334155" xml:space="preserve">没有 raw：二层没有连接跟踪，也就没有「绕过跟踪」的需求</text>
+<text x="1037.0" y="343.4" font-size="10.6" fill="#334155" xml:space="preserve">没有 mangle：ebtables 不改 TTL/DSCP，改包头是三层世界 mangle 的活</text>
+<text x="1037.0" y="358.8" font-size="10.6" fill="#334155" xml:space="preserve">没有 security：SELinux 的 secmark 只挂在三层世界</text>
+<rect x="1024.0" y="388.2" width="600.0" height="84.2" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="1024.0" y="388.2" width="4.5" height="84.2" rx="2" fill="#d97706"/>
+<text x="1037.0" y="407.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">broute：最容易被忽略的一张</text>
+<text x="1037.0" y="424.2" font-size="10.6" fill="#334155" xml:space="preserve">作用：让桥把「本该转发」的帧上交三层处理（bridge routing）</text>
+<text x="1037.0" y="439.6" font-size="10.6" fill="#334155" xml:space="preserve">链名是 BROUTING，挂在 PRE_ROUTING 上、优先级最前</text>
+<text x="1037.0" y="455.0" font-size="10.6" fill="#334155" xml:space="preserve">典型用途：把某些帧从「桥转发」改判成「走路由」</text>
+<rect x="36.0" y="508.0" width="1588.0" height="99.6" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36.0" y="508.0" width="4.5" height="99.6" rx="2" fill="#0891b2"/>
+<text x="49.0" y="527.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">③ 一条 ebtables 命令走查：从敲下这条规则，到它挂在哪一格</text>
+<text x="49.0" y="544.0" font-size="10.6" fill="#334155" xml:space="preserve">命令：ebtables -t filter -A FORWARD -p IPv6 --ip6-icmp-type router-advertisement -j DROP</text>
+<text x="49.0" y="559.4" font-size="10.6" fill="#334155" xml:space="preserve">→ 协议族 pf = PF_BRIDGE（ebtables）　链 = NF_BR_FORWARD　表 = filter　优先级由 ebtables 的注册决定</text>
+<text x="49.0" y="574.8" font-size="10.6" fill="#334155" xml:space="preserve">→ 效果：只对「桥转发的 IPv6 RA 帧」生效（不看 IP 地址，只看以太类型与 ICMPv6 类型）</text>
+<text x="49.0" y="590.2" font-size="10.6" fill="#334155" xml:space="preserve">→ 对照：ip6tables -t filter -A FORWARD 写同名规则时 pf 是 PF_INET6，桥转发的帧要先被 br_netfilter 提升才看得到</text>
+<text x="36.0" y="629.6" font-size="11.0" fill="#64748b" xml:space="preserve">说明：ebtables 的链名：filter 表用 INPUT/FORWARD/OUTPUT；nat 表用 PREROUTING/OUTPUT/POSTROUTING；broute 表用 BROUTING（挂在 NF_BR_PRE_ROUTING 上）。本图是机制教学版，具体表项以本机 ebtables -t &lt;表&gt; -L 为准。</text>
+</svg>

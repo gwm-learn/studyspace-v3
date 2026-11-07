@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="572" viewBox="0 0 1660 572" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="572" fill="#ffffff"/>
+<text x="36.0" y="42.0" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 19 · 同一个检查站上，谁先动手：priority 排队与四种裁决</text>
+<text x="36.0" y="70.0" font-size="12.3" fill="#64748b" xml:space="preserve">一个检查站（钩子点）上不止一个执行者：iptables / ebtables 的各个表、br_netfilter、厂商自研模块，都往同一个钩子上注册回调。</text>
+<text x="36.0" y="92.0" font-size="12.3" fill="#64748b" xml:space="preserve">谁先跑由 priority 决定（数值小的先），谁说了算由 verdict 决定（任一回调返回 NF_DROP，包就没了，后面的不再执行）。</text>
+<line x1="36" y1="112.0" x2="1624.0" y2="112.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36.0" y="140.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">以 NF_BR_FORWARD 为例：谁先看到这一帧</text>
+<line x1="46" y1="272.0" x2="1614.0" y2="272.0" stroke="#94a3b8" stroke-width="1.6"/>
+<path d="M 1624.0 272.0 l -9 -4.5 l 0 9 z" fill="#94a3b8"/>
+<text x="46.0" y="294.0" font-size="10.8" fill="#64748b" xml:space="preserve">priority 小（先跑）</text>
+<text x="1624.0" y="294.0" font-size="10.8" fill="#64748b" xml:space="preserve" text-anchor="end">priority 大（后跑）</text>
+<rect x="36.0" y="156.0" width="298.4" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36.0" y="156.0" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="49.0" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">ebtables nat / broute</text>
+<text x="49.0" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">≈ -300</text>
+<text x="49.0" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">ebtables 的 nat / broute 表</text>
+<line x1="185.2" y1="224.8" x2="185.2" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="185.2" cy="272.0" r="4" fill="#0891b2"/>
+<rect x="358.4" y="156.0" width="298.4" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="358.4" y="156.0" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="371.4" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">ebtables filter</text>
+<text x="371.4" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">≈ -200</text>
+<text x="371.4" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">ebtables 的 filter 表（就是 -L FORWARD 看到的那些）</text>
+<line x1="507.6" y1="224.8" x2="507.6" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="507.6" cy="272.0" r="4" fill="#0891b2"/>
+<rect x="680.8" y="156.0" width="298.4" height="68.8" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="680.8" y="156.0" width="4.5" height="68.8" rx="2" fill="#d97706"/>
+<text x="693.8" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">br_netfilter</text>
+<text x="693.8" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">= 0</text>
+<text x="693.8" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">把帧借给三层的 FORWARD 钩子，ip6tables 才看得到</text>
+<line x1="830.0" y1="224.8" x2="830.0" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="830.0" cy="272.0" r="4" fill="#d97706"/>
+<rect x="1003.2" y="156.0" width="298.4" height="68.8" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="1003.2" y="156.0" width="4.5" height="68.8" rx="2" fill="#4f46e5"/>
+<text x="1016.2" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">厂商自研模块</text>
+<text x="1292.6" y="175.0" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">可插拔</text>
+<text x="1016.2" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">可自选</text>
+<text x="1016.2" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">按自己的策略插队（常取 LAST 以便看到出接口）</text>
+<line x1="1152.4" y1="224.8" x2="1152.4" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="1152.4" cy="272.0" r="4" fill="#4f46e5"/>
+<rect x="1325.6" y="156.0" width="298.4" height="68.8" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="1325.6" y="156.0" width="4.5" height="68.8" rx="2" fill="#475569"/>
+<text x="1338.6" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">链尾：帧离开钩子点</text>
+<text x="1338.6" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">同值 INT_MAX</text>
+<text x="1338.6" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">同优先级的 handler 谁先跑由注册先后决定</text>
+<line x1="1474.8" y1="224.8" x2="1474.8" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="1474.8" cy="272.0" r="4" fill="#475569"/>
+<text x="36.0" y="332.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">每个 handler 返回一个 verdict（这是 netfilter 的「返回值协议」）</text>
+<rect x="36.0" y="348.0" width="383.5" height="62.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36.0" y="348.0" width="4.5" height="62.0" rx="2" fill="#0f9d58"/>
+<text x="49.0" y="367.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_ACCEPT</text>
+<text x="49.0" y="384.0" font-size="9.8" fill="#334155" xml:space="preserve">放行，交给同一个钩子点上的下一个 handler</text>
+<rect x="437.5" y="348.0" width="383.5" height="62.0" rx="8" fill="#fff5f5" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="437.5" y="348.0" width="4.5" height="62.0" rx="2" fill="#dc2626"/>
+<text x="450.5" y="367.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_DROP</text>
+<text x="450.5" y="384.0" font-size="9.8" fill="#334155" xml:space="preserve">丢弃，后面所有 handler 都不再执行 —— 最常见的拦截手段</text>
+<rect x="839.0" y="348.0" width="383.5" height="62.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="839.0" y="348.0" width="4.5" height="62.0" rx="2" fill="#475569"/>
+<text x="852.0" y="367.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_STOLEN</text>
+<text x="852.0" y="384.0" font-size="9.8" fill="#334155" xml:space="preserve">这个 handler 把包拿走了，不再往下走（少见）</text>
+<rect x="1240.5" y="348.0" width="383.5" height="62.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="1240.5" y="348.0" width="4.5" height="62.0" rx="2" fill="#475569"/>
+<text x="1253.5" y="367.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_QUEUE</text>
+<text x="1253.5" y="384.0" font-size="9.8" fill="#334155" xml:space="preserve">交给用户态（nfnetlink_queue / NFQUEUE target）</text>
+<rect x="36.0" y="436.0" width="1588.0" height="84.2" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36.0" y="436.0" width="4.5" height="84.2" rx="2" fill="#0891b2"/>
+<text x="49.0" y="455.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">priority 怎么选：FIRST 还是 LAST</text>
+<text x="49.0" y="472.0" font-size="10.6" fill="#334155" xml:space="preserve">用 FIRST：越早越好，抢在别人前面丢或改；代价是看到的信息最少（比如桥还没算出去向）。</text>
+<text x="49.0" y="487.4" font-size="10.6" fill="#334155" xml:space="preserve">用 LAST：等别人都跑完才轮到你；代价是排在后面，但此时入/出口、状态都已确定，判据最可靠。</text>
+<text x="49.0" y="502.8" font-size="10.6" fill="#334155" xml:space="preserve">经验：判据要按「从哪个口出」来判断就选 LAST；只想无脑拦一类报文，选 FIRST 更快。</text>
+<text x="36.0" y="542.2" font-size="11.0" fill="#64748b" xml:space="preserve">注：priority 数值仅给相对量级（5.10 内核 uapi 头文件）；同优先级下谁先跑，由注册先后决定，不要依赖。</text>
+</svg>

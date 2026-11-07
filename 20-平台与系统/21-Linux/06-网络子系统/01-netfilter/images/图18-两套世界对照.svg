@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="956" viewBox="0 0 1660 956" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="956" fill="#ffffff"/>
+<text x="36.0" y="42.0" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 18 · 两套世界并排：同一个包的一生，三层世界与二层世界各走一遍</text>
+<text x="36.0" y="70.0" font-size="12.3" fill="#64748b" xml:space="preserve">左：三层世界的五个检查站；右：二层世界的五个检查站。两边同名、同构，默认互不相干、各问各的。</text>
+<text x="36.0" y="92.0" font-size="12.3" fill="#64748b" xml:space="preserve">唯一交汇点是 br_netfilter 的「借钩子」：桥执行自己的钩子时，把帧临时借给对应的三层钩子跑一遍，跑完还给桥 —— 不是让帧上三层。</text>
+<line x1="36" y1="112.0" x2="1624.0" y2="112.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="36.0" y="148.0" width="772.0" height="624.0" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="1.6"/>
+<rect x="36.0" y="148.0" width="772.0" height="34.0" rx="12" fill="#eef2ff"/>
+<text x="52.0" y="170.0" font-size="13.4" fill="#4f46e5" xml:space="preserve" font-weight="700">PF_INET / PF_INET6　三层</text>
+<text x="792.0" y="170.0" font-size="10.8" fill="#64748b" xml:space="preserve" text-anchor="end">iptables / ip6tables 挂在这里</text>
+<rect x="848.0" y="148.0" width="776.0" height="624.0" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.6"/>
+<rect x="848.0" y="148.0" width="776.0" height="34.0" rx="12" fill="#ecfeff"/>
+<text x="864.0" y="170.0" font-size="13.4" fill="#0891b2" xml:space="preserve" font-weight="700">PF_BRIDGE　二层</text>
+<text x="1608.0" y="170.0" font-size="10.8" fill="#64748b" xml:space="preserve" text-anchor="end">ebtables 挂在这里</text>
+<rect x="54.0" y="194.0" width="736.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="194.0" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="213.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">网卡收包：netif_receive_skb()</text>
+<text x="67.0" y="230.0" font-size="10.6" fill="#334155" xml:space="preserve">skb-&gt;dev = 入口网卡；此时还没进任何 netfilter 钩子</text>
+<line x1="422.0" y1="247.4" x2="422.0" y2="262.4" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 422.0 267.4 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="54.0" y="269.4" width="736.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="269.4" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="288.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_INET_PRE_ROUTING</text>
+<text x="781.0" y="288.4" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">hook ①</text>
+<text x="67.0" y="305.4" font-size="10.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">raw / mangle / nat(DNAT)；conntrack 在 -200 先跑</text>
+<line x1="422.0" y1="322.8" x2="422.0" y2="337.8" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 422.0 342.8 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="54.0" y="344.8" width="736.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="344.8" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="363.8" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">路由决策 ip_route_input()</text>
+<text x="67.0" y="380.8" font-size="10.6" fill="#334155" xml:space="preserve">目的地址是本机 → 上送；不是本机 → 走转发</text>
+<line x1="228.0" y1="398.2" x2="228.0" y2="415.2" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 228.0 420.2 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<text x="237.0" y="413.2" font-size="10.6" fill="#64748b" xml:space="preserve" font-weight="600">本机</text>
+<line x1="606.0" y1="398.2" x2="606.0" y2="415.2" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 606.0 420.2 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<text x="615.0" y="413.2" font-size="10.6" fill="#64748b" xml:space="preserve" font-weight="600">转发</text>
+<rect x="54.0" y="420.2" width="348.0" height="68.8" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="420.2" width="4.5" height="68.8" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="439.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_INET_LOCAL_IN</text>
+<text x="393.0" y="439.2" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">hook ②</text>
+<text x="67.0" y="456.2" font-size="10.6" fill="#334155" xml:space="preserve">filter / mangle</text>
+<text x="67.0" y="471.6" font-size="10.6" fill="#334155" xml:space="preserve">→ 本机 socket 收</text>
+<line x1="228.0" y1="489.0" x2="228.0" y2="504.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 228.0 509.0 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="54.0" y="511.0" width="348.0" height="50.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="511.0" width="4.5" height="50.0" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="530.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">本机 socket（应用层）</text>
+<text x="67.0" y="547.0" font-size="10.6" fill="#334155" xml:space="preserve">包交给本地进程：sshd / dnsmasq / webServer …</text>
+<rect x="422.0" y="420.2" width="368.0" height="68.8" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="422.0" y="420.2" width="4.5" height="68.8" rx="2" fill="#4f46e5"/>
+<text x="435.0" y="439.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_INET_FORWARD</text>
+<text x="781.0" y="439.2" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">hook ③</text>
+<text x="435.0" y="456.2" font-size="10.6" fill="#334155" xml:space="preserve">filter / mangle</text>
+<text x="435.0" y="471.6" font-size="10.6" fill="#334155" xml:space="preserve">→ 继续往下走</text>
+<line x1="606.0" y1="489.0" x2="606.0" y2="504.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 606.0 509.0 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="422.0" y="511.0" width="368.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="422.0" y="511.0" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="435.0" y="530.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_INET_POST_ROUTING</text>
+<text x="781.0" y="530.0" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">hook ⑤</text>
+<text x="435.0" y="547.0" font-size="10.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(SNAT) / mangle</text>
+<line x1="606.0" y1="564.4" x2="606.0" y2="577.4" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 606.0 582.4 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="422.0" y="584.4" width="368.0" height="34.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="422.0" y="584.4" width="4.5" height="34.0" rx="2" fill="#4f46e5"/>
+<text x="435.0" y="603.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">驱动 TX</text>
+<rect x="54.0" y="642.4" width="736.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="642.4" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="661.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">本机发包：NF_INET_LOCAL_OUT（④）→ 路由 → NF_INET_POST_ROUTING（⑤）→ TX</text>
+<text x="67.0" y="678.4" font-size="10.6" fill="#334155" xml:space="preserve">设备自己产生的包从 LOCAL_OUT 进 netfilter，再到出口</text>
+<rect x="866.0" y="194.0" width="740.0" height="53.4" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="194.0" width="4.5" height="53.4" rx="2" fill="#0891b2"/>
+<text x="879.0" y="213.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">网卡收帧：br_handle_frame()</text>
+<text x="879.0" y="230.0" font-size="10.6" fill="#334155" xml:space="preserve">skb-&gt;dev = 入口物理口；帧里可能是 v4 / v6 / ARP，桥先不看它是什么</text>
+<line x1="1236.0" y1="247.4" x2="1236.0" y2="262.4" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1236.0 267.4 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="866.0" y="269.4" width="740.0" height="53.4" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="269.4" width="4.5" height="53.4" rx="2" fill="#0891b2"/>
+<text x="879.0" y="288.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_PRE_ROUTING</text>
+<text x="1597.0" y="288.4" font-size="10.2" fill="#0891b2" xml:space="preserve" font-weight="700" text-anchor="end">hook ①</text>
+<text x="879.0" y="305.4" font-size="10.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">ebtables broute / nat(DNAT)</text>
+<line x1="1236.0" y1="322.8" x2="1236.0" y2="337.8" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1236.0 342.8 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="866.0" y="344.8" width="740.0" height="53.4" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="344.8" width="4.5" height="53.4" rx="2" fill="#0891b2"/>
+<text x="879.0" y="363.8" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">桥查 FDB：br_fdb_get()</text>
+<text x="879.0" y="380.8" font-size="10.6" fill="#334155" xml:space="preserve">目的 MAC 是本机/桥 → 上送；是别的口 → 转发；查不到 → 泛洪到所有成员口</text>
+<line x1="1036.0" y1="398.2" x2="1036.0" y2="415.2" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1036.0 420.2 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<text x="1045.0" y="413.2" font-size="10.6" fill="#64748b" xml:space="preserve" font-weight="600">上送</text>
+<line x1="1415.0" y1="398.2" x2="1415.0" y2="415.2" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1415.0 420.2 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<text x="1424.0" y="413.2" font-size="10.6" fill="#64748b" xml:space="preserve" font-weight="600">转发 / 泛洪</text>
+<rect x="866.0" y="420.2" width="340.0" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="420.2" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="879.0" y="439.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_LOCAL_IN</text>
+<text x="1197.0" y="439.2" font-size="10.2" fill="#0891b2" xml:space="preserve" font-weight="700" text-anchor="end">hook ②</text>
+<text x="879.0" y="456.2" font-size="10.6" fill="#334155" xml:space="preserve">ebtables filter INPUT</text>
+<text x="879.0" y="471.6" font-size="10.6" fill="#334155" xml:space="preserve">→ 本机 IP 栈</text>
+<line x1="1036.0" y1="489.0" x2="1036.0" y2="504.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1036.0 509.0 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="866.0" y="511.0" width="340.0" height="50.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="511.0" width="4.5" height="50.0" rx="2" fill="#0891b2"/>
+<text x="879.0" y="530.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">本机 IP 栈</text>
+<text x="879.0" y="547.0" font-size="10.6" fill="#334155" xml:space="preserve">帧被剥掉以太头，按 v4/v6 继续走 IP 家族那一套</text>
+<rect x="1224.0" y="420.2" width="382.0" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1224.0" y="420.2" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="1237.0" y="439.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_FORWARD</text>
+<text x="1597.0" y="439.2" font-size="10.2" fill="#0891b2" xml:space="preserve" font-weight="700" text-anchor="end">hook ③</text>
+<text x="1237.0" y="456.2" font-size="10.6" fill="#334155" xml:space="preserve">ebtables filter FORWARD</text>
+<text x="1237.0" y="471.6" font-size="10.6" fill="#334155" xml:space="preserve">★ 桥转发的必经站</text>
+<line x1="1415.0" y1="489.0" x2="1415.0" y2="504.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1415.0 509.0 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="1224.0" y="511.0" width="382.0" height="53.4" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1224.0" y="511.0" width="4.5" height="53.4" rx="2" fill="#0891b2"/>
+<text x="1237.0" y="530.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_POST_ROUTING</text>
+<text x="1597.0" y="530.0" font-size="10.2" fill="#0891b2" xml:space="preserve" font-weight="700" text-anchor="end">hook ⑤</text>
+<text x="1237.0" y="547.0" font-size="10.6" fill="#334155" xml:space="preserve">帧发到出口口之前的最后一道</text>
+<line x1="1415.0" y1="564.4" x2="1415.0" y2="577.4" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1415.0 582.4 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="1224.0" y="584.4" width="382.0" height="34.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1224.0" y="584.4" width="4.5" height="34.0" rx="2" fill="#0891b2"/>
+<text x="1237.0" y="603.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">出口口 TX → LAN 侧 PC</text>
+<rect x="866.0" y="642.4" width="740.0" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="642.4" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="879.0" y="661.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">本机发包：NF_BR_LOCAL_OUT（④）</text>
+<text x="879.0" y="678.4" font-size="10.6" fill="#334155" xml:space="preserve">ebtables filter OUTPUT</text>
+<text x="879.0" y="693.8" font-size="10.6" fill="#334155" xml:space="preserve">→ 出口口 TX</text>
+<text x="422.0" y="802.0" font-size="11.0" fill="#64748b" xml:space="preserve" text-anchor="middle">左：只有 IP 包才进得来，桥转发的帧默认根本不到这一套（除非 br_netfilter 提升）</text>
+<text x="1236.0" y="802.0" font-size="11.0" fill="('#dc2626', '#fff5f5')" xml:space="preserve" font-weight="700" text-anchor="middle">右：帧进桥就一定走这里；二层能插手的地方只有 ③ 和 ④</text>
+<rect x="36.0" y="820.0" width="1588.0" height="84.2" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36.0" y="820.0" width="4.5" height="84.2" rx="2" fill="#d97706"/>
+<text x="49.0" y="839.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">两套体系怎么交汇：br_netfilter 把帧「借」给三层的钩子看一眼</text>
+<text x="49.0" y="856.0" font-size="10.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">br_netfilter.ko 加载后，桥在 PRE_ROUTING / FORWARD / POST_ROUTING 里调用 br_nf_*，让 PF_INET/PF_INET6 的钩子也能看到桥流量</text>
+<text x="49.0" y="871.4" font-size="10.6" fill="#334155" xml:space="preserve">开关是 sysctl：net.bridge.bridge-nf-call-iptables / -ip6tables / -arptables。关掉时 ip6tables 的 FORWARD 完全看不到桥转发的 v6 帧</text>
+<text x="49.0" y="886.8" font-size="10.6" fill="#334155" xml:space="preserve">怎么确认：lsmod | grep br_netfilter　＋　sysctl net.bridge.bridge-nf-call-ip6tables（默认值随发行版/内核配置而变）</text>
+<text x="36.0" y="926.2" font-size="11.0" fill="#64748b" xml:space="preserve">本图为框架示意：两个世界各五个钩子、名称与挂载者一一对应；具体的注册项与优先级以本机 lsmod / 驱动源码为准。</text>
+</svg>
