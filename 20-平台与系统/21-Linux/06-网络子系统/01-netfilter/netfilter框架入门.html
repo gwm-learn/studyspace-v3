@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>netfilter 框架入门</title>
+<style>
+:root{--ink:#0f172a;--body:#334155;--dim:#64748b;--line:#e2e8f0;--bg:#f8fafc;--red:#dc2626;--green:#0f9d58;--amber:#d97706;--br:#0891b2;--ip:#4f46e5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:"Noto Sans CJK SC","Source Han Sans SC","WenQuanYi Micro Hei",sans-serif;line-height:1.7}
+header{background:linear-gradient(135deg,#0f172a,#164e63);color:#fff;padding:34px 40px 26px}
+header h1{margin:0 0 8px;font-size:26px;letter-spacing:.5px}
+header p{margin:4px 0;color:#cbd5e1;font-size:13.5px}
+header code{background:rgba(255,255,255,.12);color:#e2e8f0}
+nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 40px;z-index:9;overflow-x:auto;white-space:nowrap}
+nav a{color:var(--body);text-decoration:none;margin-right:20px;font-size:13.5px;font-weight:600}
+nav a:hover{color:var(--br)}
+main{max-width:1240px;margin:0 auto;padding:26px 22px 60px}
+section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:0 0 22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2{margin:0 0 6px;font-size:19px;color:var(--ink)}
+h3{margin:12px 0 4px;font-size:15px;color:var(--ink)}
+.cap{margin:0 0 14px;font-size:13.5px;color:var(--dim)}
+.fig{border:1px solid var(--line);border-radius:10px;overflow:auto;background:#fff;padding:6px}
+.subfig{margin:14px 0 4px;padding-top:4px;border-top:1px dashed var(--line)}
+.fig svg{display:block;width:100%;height:auto}
+.src{font-size:12px;color:var(--dim);margin:8px 0 0}
+code{font-family:"DejaVu Sans Mono","Noto Sans Mono CJK SC",monospace;font-size:12.4px;background:#f1f5f9;padding:1px 5px;border-radius:4px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--ink);font-size:12.6px}
+td.k{color:var(--ink);font-weight:600}
+table.detail td{font-size:12.5px}
+table.detail td:first-child{white-space:nowrap;font-weight:600;color:var(--ink)}
+table.detail td code{font-size:11.6px}
+table.matrix td{font-size:12.4px;line-height:1.5}
+table.matrix tr.hit td{background:#ecfeff}
+table.matrix tr.hit b{color:#dc2626}
+.note{background:#fff9ee;border:1px solid #f4d9a5;border-radius:10px;padding:14px 16px;font-size:13.2px;color:#7c4a03;margin:14px 0}
+.note.br{background:#ecfeff;border-color:#a5f3fc;color:#164e63}
+pre.flow{background:#0f172a;color:#e2e8f0;border-radius:10px;padding:14px 16px;font-size:12.3px;line-height:1.6;overflow:auto;margin:12px 0;font-family:"DejaVu Sans Mono","Noto Sans Mono CJK SC",monospace}
+.note.good{background:#f2fcf5;border-color:#bbf7d0;color:#14532d}
+.kv{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.kv div{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13px;flex:1 1 220px}
+.kv b{display:block;color:var(--ink);font-size:12.6px;margin-bottom:3px}
+ol.pits{padding-left:22px}
+ol.pits li{margin:7px 0;font-size:13.2px}
+footer{color:var(--dim);font-size:12.4px;padding:0 40px 40px;max-width:1240px;margin:0 auto;line-height:1.9}
+</style></head><body>
+<header>
+  <h1>netfilter 框架入门</h1>
+  <p>一个包的一生经过哪五条链、每条链上能挂哪几张表、两个世界怎么并行、同一条链上谁先动手。通用教材，不含任何具体问题单的内容。</p>
+  <p>生成时间：2026-11-06 17:11　·　源脚本：<code>工具/图/report_netfilter_guide.py</code>（图由 <code>fig_netfilter_framework.py</code> 生成）</p>
+</header>
+<nav>
+  <a href="#s1">1 地基（三层世界）</a>
+  <a href="#s2">2 二层世界</a>
+  <a href="#s3">3 两个世界</a>
+  <a href="#s4">4 检查站排队</a>
+  <a href="#s5">5 常见坑</a>
+  <a href="#s6">6 排查方法</a>
+  <a href="#s7">7 命令速查</a>
+</nav>
+<main>
+
+<section id="s1">
+  <h2>1 · 地基：一个包的一生，和它路上的表与链</h2>
+  <p class="cap">只记三句话：<b>链</b>＝在哪儿拦（位置），<b>表</b>＝拦下来干什么（用途），<b>规则</b>＝具体拦谁、怎么处理。iptables 只是一条往内核里写规则的命令，真正干活的是内核里的 netfilter。</p>
+  
+  <div class="subfig" id="f1">
+    <h3>图 14 · 包的一生（总览·三层）</h3>
+    <p class="cap">灰色＝共用段，绿＝A 给我，蓝＝B 过路，橙＝C 我发。路由决策是分水岭，只在中间分岔。</p>
+    <div class="fig"><svg xmlns="http://www.w3.org/2000/svg" width="1660" height="850" viewBox="0 0 1660 850" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="850" fill="#ffffff"/>
+<text x="36.0" y="42.0" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 14 · 包的一生（总览·三层）：三条泳道叠在同一张图上</text>
+<text x="36.0" y="70.0" font-size="12.3" fill="#64748b" xml:space="preserve">先看合起来的样子：一个包进网关后只有三种命运——给我（A）、过路（B）、我自己发（C）。它们共用前段 PREROUTING 和后段 POSTROUTING，只在中间分岔。</text>
+<text x="36.0" y="92.0" font-size="12.3" fill="#64748b" xml:space="preserve">记法：路由决策是分水岭。判定「给我的」走 INPUT，「不是给我的」走 FORWARD。本机自己造的新包，从 OUTPUT 直接汇入后段。</text>
+<line x1="36" y1="112.0" x2="1624.0" y2="112.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="36.0" y1="142.0" x2="66.0" y2="142.0" stroke="#475569" stroke-width="3"/>
+<text x="74.0" y="146.0" font-size="11.0" fill="#334155" xml:space="preserve" font-weight="600">共用段（A、B 都走）</text>
+<line x1="218.6" y1="142.0" x2="248.6" y2="142.0" stroke="#0f9d58" stroke-width="3"/>
+<text x="256.6" y="146.0" font-size="11.0" fill="#334155" xml:space="preserve" font-weight="600">A 给我</text>
+<line x1="325.8" y1="142.0" x2="355.8" y2="142.0" stroke="#4f46e5" stroke-width="3"/>
+<text x="363.8" y="146.0" font-size="11.0" fill="#334155" xml:space="preserve" font-weight="600">B 过路</text>
+<line x1="432.9" y1="142.0" x2="462.9" y2="142.0" stroke="#d97706" stroke-width="3"/>
+<text x="470.9" y="146.0" font-size="11.0" fill="#334155" xml:space="preserve" font-weight="600">C 我发</text>
+<rect x="720.0" y="168.0" width="220.0" height="58.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="720.0" y="168.0" width="4.5" height="58.0" rx="2" fill="#475569"/>
+<text x="733.0" y="187.0" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网卡收包</text>
+<text x="733.0" y="204.0" font-size="9.6" fill="#334155" xml:space="preserve">dev_queue_xmit 的反向：napi → netif_receive_skb</text>
+<rect x="720.0" y="264.0" width="220.0" height="76.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="720.0" y="264.0" width="4.5" height="76.0" rx="2" fill="#475569"/>
+<text x="733.0" y="283.0" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PREROUTING</text>
+<text x="733.0" y="300.0" font-size="9.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">raw / mangle / nat(DNAT)</text>
+<rect x="720.0" y="378.0" width="220.0" height="76.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="720.0" y="378.0" width="4.5" height="76.0" rx="2" fill="#475569"/>
+<text x="733.0" y="397.0" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">路由决策</text>
+<text x="733.0" y="414.0" font-size="9.6" fill="#334155" xml:space="preserve">目的是本机？还是转发？</text>
+<line x1="830.0" y1="454.0" x2="830.0" y2="472.0" stroke="#475569" stroke-width="2.4"/>
+<polygon points="830.0,472.0 825.5,463.0 834.5,463.0" fill="#475569"/>
+<text x="840.0" y="464.0" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">分水岭</text>
+<rect x="400.0" y="492.0" width="200.0" height="76.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="400.0" y="492.0" width="4.5" height="76.0" rx="2" fill="#0f9d58"/>
+<text x="413.0" y="511.0" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">INPUT</text>
+<text x="591.0" y="511.0" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">A</text>
+<text x="413.0" y="528.0" font-size="9.6" fill="#334155" xml:space="preserve">mangle / filter / security</text>
+<text x="413.0" y="543.4" font-size="9.6" fill="#334155" xml:space="preserve">「给我的包」进本机前</text>
+<rect x="960.0" y="492.0" width="200.0" height="76.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="960.0" y="492.0" width="4.5" height="76.0" rx="2" fill="#4f46e5"/>
+<text x="973.0" y="511.0" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">FORWARD</text>
+<text x="1151.0" y="511.0" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">B</text>
+<text x="973.0" y="528.0" font-size="9.6" fill="#334155" xml:space="preserve">mangle / filter / security</text>
+<text x="973.0" y="543.4" font-size="9.6" fill="#334155" xml:space="preserve">「过路的包」只中转</text>
+<rect x="400.0" y="606.0" width="200.0" height="76.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="400.0" y="606.0" width="4.5" height="76.0" rx="2" fill="#0f9d58"/>
+<text x="413.0" y="625.0" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">本机进程</text>
+<text x="591.0" y="625.0" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">A</text>
+<text x="413.0" y="642.0" font-size="9.6" fill="#334155" xml:space="preserve">socket / sshd / dnsmasq</text>
+<rect x="960.0" y="606.0" width="220.0" height="76.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="960.0" y="606.0" width="4.5" height="76.0" rx="2" fill="#475569"/>
+<text x="973.0" y="625.0" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">POSTROUTING</text>
+<text x="973.0" y="642.0" font-size="9.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">mangle / nat(SNAT)</text>
+<text x="973.0" y="657.4" font-size="9.6" fill="#334155" xml:space="preserve">所有出去的包都经过</text>
+<rect x="400.0" y="720.0" width="200.0" height="76.0" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="400.0" y="720.0" width="4.5" height="76.0" rx="2" fill="#d97706"/>
+<text x="413.0" y="739.0" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">OUTPUT</text>
+<text x="591.0" y="739.0" font-size="10.2" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="end">C</text>
+<text x="413.0" y="756.0" font-size="9.6" fill="#334155" xml:space="preserve">raw / mangle / nat / filter</text>
+<text x="413.0" y="771.4" font-size="9.6" fill="#334155" xml:space="preserve">「我自己造的包」出门前</text>
+<rect x="960.0" y="720.0" width="200.0" height="58.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="960.0" y="720.0" width="4.5" height="58.0" rx="2" fill="#475569"/>
+<text x="973.0" y="739.0" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网卡发出</text>
+<text x="973.0" y="756.0" font-size="9.6" fill="#334155" xml:space="preserve">dev_queue_xmit → 驱动</text>
+<path d="M 830.0 226.0 L 830.0 264.0" fill="none" stroke="#475569" stroke-width="2.4"/>
+<polygon points="830.0,264.0 825.5,255.0 834.5,255.0" fill="#475569"/>
+<path d="M 830.0 340.0 L 830.0 378.0" fill="none" stroke="#475569" stroke-width="2.4"/>
+<polygon points="830.0,378.0 825.5,369.0 834.5,369.0" fill="#475569"/>
+<path d="M 830.0 472.0 L 500.0 472.0 L 500.0 492.0" fill="none" stroke="#0f9d58" stroke-width="2.6"/>
+<polygon points="500.0,492.0 495.5,483.0 504.5,483.0" fill="#0f9d58"/>
+<path d="M 830.0 472.0 L 1060.0 472.0 L 1060.0 492.0" fill="none" stroke="#4f46e5" stroke-width="2.6"/>
+<path d="M 1060.0 466.0 L 1060.0 492.0" fill="none" stroke="#4f46e5" stroke-width="2.6"/>
+<polygon points="1060.0,492.0 1055.5,483.0 1064.5,483.0" fill="#4f46e5"/>
+<path d="M 500.0 568.0 L 500.0 606.0" fill="none" stroke="#0f9d58" stroke-width="2.6"/>
+<polygon points="500.0,606.0 495.5,597.0 504.5,597.0" fill="#0f9d58"/>
+<path d="M 500.0 682.0 L 500.0 720.0" fill="none" stroke="#d97706" stroke-width="2.6"/>
+<polygon points="500.0,720.0 495.5,711.0 504.5,711.0" fill="#d97706"/>
+<path d="M 1060.0 568.0 L 1060.0 606.0" fill="none" stroke="#4f46e5" stroke-width="2.6"/>
+<polygon points="1060.0,606.0 1055.5,597.0 1064.5,597.0" fill="#4f46e5"/>
+<path d="M 1060.0 682.0 L 1060.0 720.0" fill="none" stroke="#475569" stroke-width="2.4"/>
+<polygon points="1060.0,720.0 1055.5,711.0 1064.5,711.0" fill="#475569"/>
+<path d="M 600.0 758.0 L 880.0 758.0 L 880.0 644.0 L 960.0 644.0" fill="none" stroke="#d97706" stroke-width="2.6"/>
+<polygon points="960.0,644.0 951.0,639.5 951.0,648.5" fill="#d97706"/>
+<rect x="36.0" y="168.0" width="300.0" height="84.2" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="36.0" y="168.0" width="4.5" height="84.2" rx="2" fill="#475569"/>
+<text x="49.0" y="187.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">共用段（灰线）</text>
+<text x="49.0" y="204.0" font-size="10.6" fill="#334155" xml:space="preserve">收包 → PREROUTING：所有进来的包</text>
+<text x="49.0" y="219.4" font-size="10.6" fill="#334155" xml:space="preserve">PREROUTING → 路由决策：还不知道去哪</text>
+<text x="49.0" y="234.8" font-size="10.6" fill="#334155" xml:space="preserve">POSTROUTING → 发出：所有出去的包</text>
+<rect x="36.0" y="266.2" width="300.0" height="84.2" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36.0" y="266.2" width="4.5" height="84.2" rx="2" fill="#0f9d58"/>
+<text x="49.0" y="285.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">A · 给我（绿线）</text>
+<text x="49.0" y="302.2" font-size="10.6" fill="#334155" xml:space="preserve">路由判定：目的地址是本机</text>
+<text x="49.0" y="317.6" font-size="10.6" fill="#334155" xml:space="preserve">PREROUTING → INPUT → 本机进程</text>
+<text x="49.0" y="333.0" font-size="10.6" fill="#334155" xml:space="preserve">典型：访问这台机器的 Web / SSH</text>
+<rect x="36.0" y="364.4" width="300.0" height="84.2" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36.0" y="364.4" width="4.5" height="84.2" rx="2" fill="#d97706"/>
+<text x="49.0" y="383.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">C · 我发（橙线）</text>
+<text x="49.0" y="400.4" font-size="10.6" fill="#334155" xml:space="preserve">本机进程造出新包（不是转发别人的）</text>
+<text x="49.0" y="415.8" font-size="10.6" fill="#334155" xml:space="preserve">OUTPUT → 汇入 POSTROUTING → 发出</text>
+<text x="49.0" y="431.2" font-size="10.6" fill="#334155" xml:space="preserve">典型：设备自己发 RA、DNS 查询</text>
+<rect x="1306.0" y="168.0" width="318.0" height="84.2" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="1306.0" y="168.0" width="4.5" height="84.2" rx="2" fill="#4f46e5"/>
+<text x="1319.0" y="187.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">B · 过路（蓝线）</text>
+<text x="1319.0" y="204.0" font-size="10.6" fill="#334155" xml:space="preserve">路由判定：目的不是本机</text>
+<text x="1319.0" y="219.4" font-size="10.6" fill="#334155" xml:space="preserve">PREROUTING → FORWARD → POSTROUTING</text>
+<text x="1319.0" y="234.8" font-size="10.6" fill="#334155" xml:space="preserve">典型：网关帮 PC 转发上网</text>
+<rect x="1306.0" y="266.2" width="318.0" height="84.2" rx="8" fill="#fff5f5" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="1306.0" y="266.2" width="4.5" height="84.2" rx="2" fill="#dc2626"/>
+<text x="1319.0" y="285.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">最常见的误解</text>
+<text x="1319.0" y="302.2" font-size="10.6" fill="#334155" xml:space="preserve">「FORWARD = 转发」容易被读成「转发给别的机器」，</text>
+<text x="1319.0" y="317.6" font-size="10.6" fill="#334155" xml:space="preserve">其实它专指「过路」：包不是给我的，我只是个中转站。</text>
+<text x="1319.0" y="333.0" font-size="10.6" fill="#334155" xml:space="preserve">本机自己发的包走 OUTPUT，永远不经过 FORWARD。</text>
+<rect x="1306.0" y="364.4" width="318.0" height="84.2" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1306.0" y="364.4" width="4.5" height="84.2" rx="2" fill="#0891b2"/>
+<text x="1319.0" y="383.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">三条泳道不会同时走</text>
+<text x="1319.0" y="400.4" font-size="10.6" fill="#334155" xml:space="preserve">同一个包只可能是三种命运之一。</text>
+<text x="1319.0" y="415.8" font-size="10.6" fill="#334155" xml:space="preserve">排查第一步永远是问：它是给我的、过路的，还是我发的？</text>
+<text x="1319.0" y="431.2" font-size="10.6" fill="#334155" xml:space="preserve">答错了，后面看哪条链都是白看。</text>
+<text x="36.0" y="820.0" font-size="11.0" fill="#64748b" xml:space="preserve">这张图是三层世界（PF_INET/PF_INET6）的形态；二层世界（PF_BRIDGE）是同样的五个位置、另一套钩子，见 图 16。</text>
+</svg></div>
+    <p class="src">矢量源：<code>图14-包的一生总览-三层世界.svg</code>　位图：<code>图14-包的一生总览-三层世界.png</code></p>
+  </div>
+  <div class="note br">
+    <strong>先看合并图，再看拆开图：</strong>上图把三条路径叠在同一张拓扑上——共用 PREROUTING 与 POSTROUTING，只在中间分岔。
+    分水岭是<b>路由决策</b>：判断目的地址是不是本机，「是」走 INPUT，「不是」走 FORWARD。
+  </div>
+  
+  <div class="subfig" id="f2">
+    <h3>图 15 · 拆开看（三层）</h3>
+    <p class="cap">三条泳道分开走、四张表在五条链上的挂载矩阵、表内执行顺序，以及一条命令落在哪个格子的走查。</p>
+    <div class="fig"><svg xmlns="http://www.w3.org/2000/svg" width="1660" height="706" viewBox="0 0 1660 706" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="706" fill="#ffffff"/>
+<text x="36.0" y="42.0" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 15 · 拆开看（三层）：三条泳道分别怎么走，每条链上能挂哪四张表</text>
+<text x="36.0" y="70.0" font-size="12.3" fill="#64748b" xml:space="preserve">上图是合起来的样子，这张拆开：同一时刻一个包只走其中一条，所以每条链上「该挂哪张表」也随之不同。</text>
+<text x="36.0" y="92.0" font-size="12.3" fill="#64748b" xml:space="preserve">记法：链＝在哪拦（位置）；表＝拦下来干什么（用途）；规则＝具体拦谁、怎么处理。三条线不能混。</text>
+<line x1="36" y1="112.0" x2="1624.0" y2="112.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36.0" y="138.0" font-size="12.0" fill="#0f172a" xml:space="preserve" font-weight="700">① 包的一生：三条泳道，五条链（同一时刻一个包只走其中一条）</text>
+<rect x="36.0" y="150.0" width="108.0" height="90.0" rx="9" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46.0" y="172.0" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">进向·给我的</text>
+<text x="46.0" y="188.0" font-size="9.4" fill="#64748b" xml:space="preserve">（本机收）</text>
+<text x="46.0" y="206.0" font-size="9.0" fill="#64748b" xml:space="preserve">进来的包</text>
+<text x="46.0" y="219.0" font-size="9.0" fill="#64748b" xml:space="preserve">目的地址是本机</text>
+<rect x="154.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#4f46e5"/>
+<text x="167.0" y="169.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">PREROUTING</text>
+<text x="167.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">raw / mangle</text>
+<text x="167.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(DNAT)</text>
+<line x1="313.0" y1="191.0" x2="316.0" y2="191.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 321.0 191.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="322.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="322.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#4f46e5"/>
+<text x="335.0" y="169.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">路由决策</text>
+<text x="335.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">是本机？</text>
+<text x="335.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve">还是转发？</text>
+<line x1="481.0" y1="191.0" x2="484.0" y2="191.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 489.0 191.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="490.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="490.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#4f46e5"/>
+<text x="503.0" y="169.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">INPUT</text>
+<text x="503.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">mangle / filter</text>
+<text x="503.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve">security</text>
+<line x1="649.0" y1="191.0" x2="652.0" y2="191.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 657.0 191.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="658.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="658.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#0f9d58"/>
+<text x="671.0" y="169.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">本机进程</text>
+<text x="671.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">socket 收下</text>
+<text x="671.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve">（sshd/webServer）</text>
+<rect x="36.0" y="262.0" width="108.0" height="90.0" rx="9" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46.0" y="284.0" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">进向·过路</text>
+<text x="46.0" y="300.0" font-size="9.4" fill="#64748b" xml:space="preserve">（转发）</text>
+<text x="46.0" y="318.0" font-size="9.0" fill="#64748b" xml:space="preserve">进来的包</text>
+<text x="46.0" y="331.0" font-size="9.0" fill="#64748b" xml:space="preserve">目的地不是本机</text>
+<rect x="154.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#4f46e5"/>
+<text x="167.0" y="281.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">PREROUTING</text>
+<text x="167.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">raw / mangle</text>
+<text x="167.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(DNAT)</text>
+<line x1="313.0" y1="303.0" x2="316.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 321.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="322.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="322.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#4f46e5"/>
+<text x="335.0" y="281.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">路由决策</text>
+<text x="335.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">从哪个口</text>
+<text x="335.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve">出去</text>
+<line x1="481.0" y1="303.0" x2="484.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 489.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="490.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="490.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#4f46e5"/>
+<text x="503.0" y="281.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">FORWARD</text>
+<text x="503.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">mangle / filter</text>
+<text x="503.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve">security</text>
+<line x1="649.0" y1="303.0" x2="652.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 657.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="658.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="658.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#4f46e5"/>
+<text x="671.0" y="281.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">POSTROUTING</text>
+<text x="671.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">mangle</text>
+<text x="671.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(SNAT)</text>
+<line x1="817.0" y1="303.0" x2="820.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 825.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="826.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="826.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0f9d58"/>
+<text x="839.0" y="281.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">网卡发出</text>
+<text x="839.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">dev_queue_xmit</text>
+<rect x="36.0" y="374.0" width="108.0" height="90.0" rx="9" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46.0" y="396.0" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">出向·自己造</text>
+<text x="46.0" y="412.0" font-size="9.4" fill="#64748b" xml:space="preserve">（本机发）</text>
+<text x="46.0" y="430.0" font-size="9.0" fill="#64748b" xml:space="preserve">本机进程</text>
+<text x="46.0" y="443.0" font-size="9.0" fill="#64748b" xml:space="preserve">要发出去的包</text>
+<rect x="154.0" y="374.0" width="158.0" height="82.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154.0" y="374.0" width="4.5" height="82.0" rx="2" fill="#4f46e5"/>
+<text x="167.0" y="393.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">OUTPUT</text>
+<text x="167.0" y="410.0" font-size="8.8" fill="#334155" xml:space="preserve">raw / mangle</text>
+<text x="167.0" y="425.4" font-size="8.8" fill="#334155" xml:space="preserve">nat / filter</text>
+<line x1="313.0" y1="415.0" x2="316.0" y2="415.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 321.0 415.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="322.0" y="374.0" width="158.0" height="82.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="322.0" y="374.0" width="4.5" height="82.0" rx="2" fill="#4f46e5"/>
+<text x="335.0" y="393.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">POSTROUTING</text>
+<text x="335.0" y="410.0" font-size="8.8" fill="#334155" xml:space="preserve">mangle</text>
+<text x="335.0" y="425.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(SNAT)</text>
+<line x1="481.0" y1="415.0" x2="484.0" y2="415.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 489.0 415.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="490.0" y="374.0" width="158.0" height="82.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="490.0" y="374.0" width="4.5" height="82.0" rx="2" fill="#0f9d58"/>
+<text x="503.0" y="393.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">网卡发出</text>
+<text x="503.0" y="410.0" font-size="8.8" fill="#334155" xml:space="preserve">dev_queue_xmit</text>
+<text x="1024.0" y="152.0" font-size="12.0" fill="#0f172a" xml:space="preserve" font-weight="700">② 四张表：每条链上允许挂哪些（✓＝允许）</text>
+<rect x="1024.0" y="162.0" width="600.0" height="30.0" rx="6" fill="#f1f5f9"/>
+<text x="1032.0" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700">表 ＼ 链</text>
+<text x="1166.8" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">PRE</text>
+<text x="1268.4" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">INPUT</text>
+<text x="1370.0" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">FORWARD</text>
+<text x="1471.6" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">OUTPUT</text>
+<text x="1573.2" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">POST</text>
+<rect x="1024.0" y="192.0" width="600.0" height="30.0" rx="0" fill="#ffffff"/>
+<line x1="1024.0" y1="192.0" x2="1624.0" y2="192.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="212.0" font-size="10.2" fill="#0f172a" xml:space="preserve">raw</text>
+<text x="1166.8" y="212.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1471.6" y="212.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<rect x="1024.0" y="222.0" width="600.0" height="30.0" rx="0" fill="#ffffff"/>
+<line x1="1024.0" y1="222.0" x2="1624.0" y2="222.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="242.0" font-size="10.2" fill="#0f172a" xml:space="preserve">mangle</text>
+<text x="1166.8" y="242.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1268.4" y="242.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1370.0" y="242.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1471.6" y="242.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1573.2" y="242.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<rect x="1024.0" y="252.0" width="600.0" height="30.0" rx="0" fill="#ffffff"/>
+<line x1="1024.0" y1="252.0" x2="1624.0" y2="252.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="272.0" font-size="10.2" fill="#0f172a" xml:space="preserve">nat</text>
+<text x="1166.8" y="272.0" font-size="10.0" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="middle">✓DNAT</text>
+<text x="1471.6" y="272.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1573.2" y="272.0" font-size="10.0" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="middle">✓SNAT</text>
+<rect x="1024.0" y="282.0" width="600.0" height="30.0" rx="0" fill="#fff5f5"/>
+<line x1="1024.0" y1="282.0" x2="1624.0" y2="282.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="302.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">filter</text>
+<text x="1268.4" y="302.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1370.0" y="302.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1471.6" y="302.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<rect x="1024.0" y="312.0" width="600.0" height="30.0" rx="0" fill="#ffffff"/>
+<line x1="1024.0" y1="312.0" x2="1624.0" y2="312.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="332.0" font-size="10.2" fill="#0f172a" xml:space="preserve">security</text>
+<text x="1268.4" y="332.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1370.0" y="332.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1471.6" y="332.0" font-size="10.0" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<line x1="1217.6" y1="162.0" x2="1217.6" y2="342.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="1319.2" y1="162.0" x2="1319.2" y2="342.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="1420.8" y1="162.0" x2="1420.8" y2="342.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="1522.4" y1="162.0" x2="1522.4" y2="342.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="1024.0" y="162.0" width="600.0" height="180.0" rx="6" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="1024.0" y="352.0" width="600.0" height="84.2" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="1024.0" y="352.0" width="4.5" height="84.2" rx="2" fill="#d97706"/>
+<text x="1037.0" y="371.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">同一条链里，表按固定顺序执行</text>
+<text x="1037.0" y="388.0" font-size="10.6" fill="#334155" xml:space="preserve">raw → mangle → nat → filter → security</text>
+<text x="1037.0" y="403.4" font-size="10.6" fill="#334155" xml:space="preserve">顺序由内核 handler 的 priority 决定，不是写在命令里的</text>
+<text x="1037.0" y="418.8" font-size="10.6" fill="#334155" xml:space="preserve">所以「先 DNAT 再过滤」是框架保证的，不靠命令顺序</text>
+<rect x="1024.0" y="448.2" width="600.0" height="84.2" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="1024.0" y="448.2" width="4.5" height="84.2" rx="2" fill="#0f9d58"/>
+<text x="1037.0" y="467.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">为什么 filter 最常用</text>
+<text x="1037.0" y="484.2" font-size="10.6" fill="#334155" xml:space="preserve">其余三张是「改包」用的（改地址 / 改头 / 绕过跟踪）</text>
+<text x="1037.0" y="499.6" font-size="10.6" fill="#334155" xml:space="preserve">filter 是唯一专门用来「放行或丢弃」的表</text>
+<text x="1037.0" y="515.0" font-size="10.6" fill="#334155" xml:space="preserve">日常说「加条防火墙规则」99% 指的是 -t filter</text>
+<rect x="36.0" y="554.4" width="1588.0" height="99.6" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36.0" y="554.4" width="4.5" height="99.6" rx="2" fill="#4f46e5"/>
+<text x="49.0" y="573.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">③ 一条命令走查：从敲下这条规则，到它挂在哪一格</text>
+<text x="49.0" y="590.4" font-size="10.6" fill="#334155" xml:space="preserve">命令：ip6tables -t filter -A FORWARD -p ipv6-icmp --icmpv6-type 134 -j DROP</text>
+<text x="49.0" y="605.8" font-size="10.6" fill="#334155" xml:space="preserve">→ 协议族 pf = PF_INET6（ip6tables）　链 hooknum = NF_INET_FORWARD　表 = filter　优先级 = 0（filter 表默认）</text>
+<text x="49.0" y="621.2" font-size="10.6" fill="#334155" xml:space="preserve">→ 效果：只对「IPv6 的转发包」生效，且只对 ICMPv6 type 134（RA）起作用；桥转发的帧默认进不到这里</text>
+<text x="49.0" y="636.6" font-size="10.6" fill="#334155" xml:space="preserve">→ 换成 ebtables -t filter -A FORWARD -p IPv6 -j DROP：pf 变成 PF_BRIDGE，这时才管得到桥转发的帧</text>
+<text x="36.0" y="676.0" font-size="11.0" fill="#64748b" xml:space="preserve">说明：本图是 netfilter 通用机制的教学版；表/链的挂载点与执行顺序按 5.10 内核，具体表项以本机 iptables -t &lt;表&gt; -L 为准。</text>
+</svg></div>
+    <p class="src">矢量源：<code>图15-三条泳道与表链矩阵-三层世界.svg</code>　位图：<code>图15-三条泳道与表链矩阵-三层世界.png</code></p>
+  </div>
+
+  <h3>1.1 逐条链：五条链各自能做什么</h3>
+  <p class="cap">同一个包只走其中一条路，所以每条链「这时能看到什么信息」不同，能挂的表也就不同。看第三列就能推出第四列——不用背。</p>
+  <table class="detail">
+    <thead><tr><th>链</th><th>什么时候被问到</th><th>这时已知什么</th><th>能挂的表</th><th>典型用途</th><th>容易踩的坑</th></tr></thead>
+    <tbody><tr><td class='k'>PREROUTING</td><td>帧刚离开网卡，还没做路由决策</td><td>入接口（-i）、以太类型、目的 IP；还不知道这包是给本机还是转发</td><td><code>raw、mangle、nat(DNAT)</code></td><td>端口映射（DNAT）、打 MARK、决定不跟踪</td><td>没有「出接口」可匹配（还没算）；filter 挂不上——还不知道身份，谈不上过滤</td></tr>
+<tr><td class='k'>INPUT</td><td>路由判定「目的地址是本机」，进本机协议栈之前</td><td>入接口、完整 IP 头与传输层头</td><td><code>mangle、filter、security</code></td><td>限制谁能访问本机：SSH / Web / 管理口</td><td>桥转发的帧不经过这里（它只收「发给桥自己」的帧）</td></tr>
+<tr><td class='k'>FORWARD</td><td>路由判定「不是本机」，要转出去</td><td>入接口 + 出口接口（此时已定） + 完整头</td><td><code>mangle、filter、security</code></td><td>网关访问控制、状态防火墙的主体</td><td>只对「走 IP 路由」的包生效；桥转发的帧走 PF_BRIDGE 的 FORWARD，是另一套</td></tr>
+<tr><td class='k'>OUTPUT</td><td>本机进程产生了新包，发出之前</td><td>出接口、完整头，还有进程信息（-m owner 可用）</td><td><code>raw、mangle、nat、filter、security</code></td><td>限制本机进程出网、按 uid/进程匹配、本机发起的 DNAT</td><td>设备自己发的包只走这里，永远不走 FORWARD</td></tr>
+<tr><td class='k'>POSTROUTING</td><td>包马上交给驱动发出（所有包的最后一道）</td><td>出口接口（-o）、完整头、mark</td><td><code>mangle、nat(SNAT)</code></td><td>SNAT / MASQUERADE、改 TTL、打标给 QoS</td><td>不能过滤（filter 不挂这里）；DNAT 在这里没意义（都已经要出门了）</td></tr></tbody>
+  </table>
+
+  <h3>1.2 逐张表：五张表（外加一个 conntrack）</h3>
+  <p class="cap">注意 conntrack 常被当成第六张表，其实它是独立模块——iptables 的 <code>-m state</code> 只是去查它。</p>
+  <table class="detail">
+    <thead><tr><th>表</th><th>管什么</th><th>挂在哪</th><th>一条典型规则</th><th>什么时候用</th><th>容易踩的坑</th></tr></thead>
+    <tbody><tr><td class='k'>raw</td><td>在连接跟踪之前做决定，主用途是「不跟踪」</td><td>PREROUTING、OUTPUT（conntrack 也在这两处，所以必须抢在它前面）</td><td><code>iptables -t raw -A PREROUTING -p udp --dport 53 -j NOTRACK</code></td><td>海量短连接不想撑爆 conntrack 表时</td><td>NOTRACK 之后 -m state 的状态匹配就失效了；家用网关基本用不到</td></tr>
+<tr><td class='k'>mangle</td><td>改包头字段：TTL / HOPLIMIT、DSCP、MARK、connmark</td><td>五条链全挂（唯一一张）</td><td><code>iptables -t mangle -A PREROUTING -i wan0 -j MARK --set-mark 2</code></td><td>多 WAN 策略路由、QoS 分级、TTL 伪装</td><td>MARK 只在本机内部有效，不会带到网络上；改 TTL 会影响 traceroute</td></tr>
+<tr><td class='k'>nat</td><td>改源/目的地址与端口</td><td>PREROUTING(DNAT)、POSTROUTING(SNAT)、OUTPUT（本机发起，少见）</td><td><code>iptables -t nat -A POSTROUTING -o wan0 -j MASQUERADE</code></td><td>端口映射、共享上网、按 WAN 分流</td><td>只有新连接的第一个包会走 nat 规则，后续包由 conntrack 直接翻译——计数器只涨 1 是正常的</td></tr>
+<tr><td class='k'>filter</td><td>放行 / 丢弃，唯一专门做过滤的表</td><td>INPUT、FORWARD、OUTPUT</td><td><code>iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT</code></td><td>99% 场景说的「防火墙规则」</td><td>注意默认策略；-A（追加）与 -I（插入）顺序不同结果不同；DROP 与 REJECT 语义不同</td></tr>
+<tr><td class='k'>security</td><td>SELinux 的 secmark 标签匹配</td><td>INPUT、FORWARD、OUTPUT</td><td><code>iptables -t security -A INPUT -m secmark --secmark 1 -j ACCEPT</code></td><td>跑 SELinux 的发行版</td><td>普通网关/嵌入式设备用不到</td></tr>
+<tr><td class='k'>conntrack</td><td>连接跟踪：给 nat 和 -m state 提供状态依据（它不是表，是独立模块）</td><td>在 PREROUTING / FORWARD / OUTPUT 各挂一个（priority -200）</td><td><code>cat /proc/net/nf_conntrack　或　conntrack -L</code></td><td>状态防火墙、NAT 的地基</td><td>表满会丢新连接（dmesg 里有 nf_conntrack: table full）；只对 IP 家族有效，二层没有</td></tr></tbody>
+  </table>
+  <div class="kv">
+    <div><b>链（chain）＝位置</b>PREROUTING 刚进门、INPUT 确认给我、FORWARD 只是过路、OUTPUT 我自己发、POSTROUTING 就要出门</div>
+    <div><b>表（table）＝用途</b>filter 放行/丢弃、nat 改地址、mangle 改包头、raw 绕过连接跟踪、security SELinux</div>
+    <div><b>规则（rule）＝一条判断</b>匹配条件（协议/地址/端口/网卡）+ 目标（ACCEPT / DROP / REJECT / LOG / 跳到自定义链）</div>
+    <div><b>顺序敏感</b>同一个链里从前往后匹配，第一条命中的规则生效；表与表之间按 raw→mangle→nat→filter 固定顺序</div>
+  </div>
+</section>
+
+<section id="s2">
+  <h2>2 · 把包的一生再走一遍：这次进二层</h2>
+  <p class="cap">按网络分层，转发的对象分两种：<b>二层</b>是「按 MAC 表（FDB）转发的以太帧」，<b>三层</b>是「按路由表转发的 IP 包」。netfilter 对这两层各有一套检查站，互不干扰，除非中间有人搭桥（见 §3）。</p>
+  <div class="note br">
+    <strong>为什么内核里这个协议族叫 <code>PF_BRIDGE</code>、不叫 <code>PF_L2</code>：</strong>
+    它的钩子最初是跟着 Linux 的 bridge 模块做的，沿用了这个名字。但要分清楚——<b>桥只是二层转发的一种实现</b>。
+    所以本教材按层说话（二层 / 三层），只在提内核符号时才写 <code>PF_BRIDGE</code>。
+    另一个边界：二层转发若被交换芯片硬件 offload，帧可能根本不经过内核的 bridge 代码，那种情况下 <code>PF_BRIDGE</code> 的钩子也不会执行。
+  </div>
+  <table class="detail">
+    <thead><tr><th>维度</th><th>三层世界（PF_INET / PF_INET6）</th><th>二层世界（PF_BRIDGE）</th></tr></thead>
+    <tbody><tr><td class='k'>看的东西</td><td>IP 包（以太头已经剥掉）</td><td>以太帧（原样，里面可能是 v4 / v6 / ARP）</td></tr>
+<tr><td class='k'>配置工具</td><td>iptables / ip6tables / nftables</td><td>ebtables（以及自研的内核模块）</td></tr>
+<tr><td class='k'>五条链的名字</td><td>PREROUTING / INPUT / FORWARD / OUTPUT / POSTROUTING</td><td>一模一样的五个名字，但前缀是 NF_BR_*</td></tr>
+<tr><td class='k'>表</td><td>raw / mangle / nat / filter / security</td><td>filter / nat / broute（没有 raw、没有 security）</td></tr>
+<tr><td class='k'>「转发」靠什么</td><td>查路由表，TTL 减一</td><td>查 FDB（MAC 地址表），TTL 不变</td></tr>
+<tr><td class='k'>转发经过哪几条链</td><td>PREROUTING → FORWARD → POSTROUTING</td><td>PRE_ROUTING → FORWARD → POST_ROUTING（同名、不同族）</td></tr></tbody>
+  </table>
+  
+  <div class="subfig" id="f3">
+    <h3>图 16 · 包的一生（总览·二层）</h3>
+    <p class="cap">同样的三条泳道换成以太帧：分水岭从「路由决策」变成「查 FDB」，帧在桥里走完一圈压根不上三层。</p>
+    <div class="fig"><svg xmlns="http://www.w3.org/2000/svg" width="1660" height="850" viewBox="0 0 1660 850" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="850" fill="#ffffff"/>
+<text x="36.0" y="42.0" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 16 · 包的一生（总览·二层）：同样的三条泳道，换成以太帧</text>
+<text x="36.0" y="70.0" font-size="12.3" fill="#64748b" xml:space="preserve">把上一张图的「IP 包」换成「以太帧」，五个检查站一个不少，但分水岭从「路由决策」变成「查 FDB（MAC 地址表）」。</text>
+<text x="36.0" y="92.0" font-size="12.3" fill="#64748b" xml:space="preserve">三种命运还是那三种：上送本机（A）、桥转发（B）、本机发帧（C）。共用段也还在：前段 PRE_ROUTING、后段 POST_ROUTING。</text>
+<line x1="36" y1="112.0" x2="1624.0" y2="112.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="36.0" y1="142.0" x2="66.0" y2="142.0" stroke="#475569" stroke-width="3"/>
+<text x="74.0" y="146.0" font-size="11.0" fill="#334155" xml:space="preserve" font-weight="600">共用段（A、B 都走）</text>
+<line x1="218.6" y1="142.0" x2="248.6" y2="142.0" stroke="#0f9d58" stroke-width="3"/>
+<text x="256.6" y="146.0" font-size="11.0" fill="#334155" xml:space="preserve" font-weight="600">A 上送本机</text>
+<line x1="348.9" y1="142.0" x2="378.9" y2="142.0" stroke="#4f46e5" stroke-width="3"/>
+<text x="386.9" y="146.0" font-size="11.0" fill="#334155" xml:space="preserve" font-weight="600">B 桥转发</text>
+<line x1="467.6" y1="142.0" x2="497.6" y2="142.0" stroke="#d97706" stroke-width="3"/>
+<text x="505.6" y="146.0" font-size="11.0" fill="#334155" xml:space="preserve" font-weight="600">C 本机发帧</text>
+<rect x="720.0" y="168.0" width="220.0" height="58.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="720.0" y="168.0" width="4.5" height="58.0" rx="2" fill="#475569"/>
+<text x="733.0" y="187.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">网卡收帧</text>
+<text x="733.0" y="204.0" font-size="9.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">br_handle_frame()：帧里可能是 v4 / v6 / ARP</text>
+<rect x="720.0" y="264.0" width="220.0" height="76.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="720.0" y="264.0" width="4.5" height="76.0" rx="2" fill="#475569"/>
+<text x="733.0" y="283.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_PRE_ROUTING</text>
+<text x="733.0" y="300.0" font-size="9.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">ebtables broute / nat(DNAT)</text>
+<rect x="720.0" y="378.0" width="220.0" height="76.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="720.0" y="378.0" width="4.5" height="76.0" rx="2" fill="#475569"/>
+<text x="733.0" y="397.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">桥查 FDB</text>
+<text x="733.0" y="414.0" font-size="9.6" fill="#334155" xml:space="preserve">目的 MAC 是本机 / 桥自己，还是别的口？</text>
+<line x1="830.0" y1="454.0" x2="830.0" y2="472.0" stroke="#475569" stroke-width="2.4"/>
+<polygon points="830.0,472.0 825.5,463.0 834.5,463.0" fill="#475569"/>
+<text x="840.0" y="464.0" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">分水岭</text>
+<rect x="400.0" y="492.0" width="200.0" height="76.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="400.0" y="492.0" width="4.5" height="76.0" rx="2" fill="#0f9d58"/>
+<text x="413.0" y="511.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_LOCAL_IN</text>
+<text x="591.0" y="511.0" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">A</text>
+<text x="413.0" y="528.0" font-size="9.6" fill="#334155" xml:space="preserve">ebtables filter INPUT</text>
+<text x="413.0" y="543.4" font-size="9.6" fill="#334155" xml:space="preserve">「发给本机的帧」上交前</text>
+<rect x="960.0" y="492.0" width="200.0" height="76.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="960.0" y="492.0" width="4.5" height="76.0" rx="2" fill="#4f46e5"/>
+<text x="973.0" y="511.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_FORWARD</text>
+<text x="1151.0" y="511.0" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">B</text>
+<text x="973.0" y="528.0" font-size="9.6" fill="#334155" xml:space="preserve">ebtables filter FORWARD</text>
+<text x="973.0" y="543.4" font-size="9.6" fill="#334155" xml:space="preserve">「过路的帧」只中转</text>
+<rect x="400.0" y="606.0" width="200.0" height="76.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="400.0" y="606.0" width="4.5" height="76.0" rx="2" fill="#0f9d58"/>
+<text x="413.0" y="625.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">本机 IP 栈</text>
+<text x="591.0" y="625.0" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">A</text>
+<text x="413.0" y="642.0" font-size="9.6" fill="#334155" xml:space="preserve">剥掉以太头，按 v4 / v6 继续</text>
+<rect x="960.0" y="606.0" width="220.0" height="76.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="960.0" y="606.0" width="4.5" height="76.0" rx="2" fill="#475569"/>
+<text x="973.0" y="625.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_POST_ROUTING</text>
+<text x="973.0" y="642.0" font-size="9.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">ebtables nat(SNAT)</text>
+<text x="973.0" y="657.4" font-size="9.6" fill="#334155" xml:space="preserve">帧发到出口口之前</text>
+<rect x="400.0" y="720.0" width="200.0" height="76.0" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="400.0" y="720.0" width="4.5" height="76.0" rx="2" fill="#d97706"/>
+<text x="413.0" y="739.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_LOCAL_OUT</text>
+<text x="591.0" y="739.0" font-size="10.2" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="end">C</text>
+<text x="413.0" y="756.0" font-size="9.6" fill="#334155" xml:space="preserve">ebtables filter OUTPUT</text>
+<text x="413.0" y="771.4" font-size="9.6" fill="#334155" xml:space="preserve">「本机造的帧」出门前</text>
+<rect x="960.0" y="720.0" width="200.0" height="58.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="960.0" y="720.0" width="4.5" height="58.0" rx="2" fill="#475569"/>
+<text x="973.0" y="739.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">网卡发出</text>
+<text x="973.0" y="756.0" font-size="9.6" fill="#334155" xml:space="preserve">dev_queue_xmit → 驱动</text>
+<path d="M 830.0 226.0 L 830.0 264.0" fill="none" stroke="#475569" stroke-width="2.4"/>
+<polygon points="830.0,264.0 825.5,255.0 834.5,255.0" fill="#475569"/>
+<path d="M 830.0 340.0 L 830.0 378.0" fill="none" stroke="#475569" stroke-width="2.4"/>
+<polygon points="830.0,378.0 825.5,369.0 834.5,369.0" fill="#475569"/>
+<path d="M 830.0 472.0 L 500.0 472.0 L 500.0 492.0" fill="none" stroke="#0f9d58" stroke-width="2.6"/>
+<polygon points="500.0,492.0 495.5,483.0 504.5,483.0" fill="#0f9d58"/>
+<path d="M 830.0 472.0 L 1060.0 472.0 L 1060.0 492.0" fill="none" stroke="#4f46e5" stroke-width="2.6"/>
+<path d="M 1060.0 466.0 L 1060.0 492.0" fill="none" stroke="#4f46e5" stroke-width="2.6"/>
+<polygon points="1060.0,492.0 1055.5,483.0 1064.5,483.0" fill="#4f46e5"/>
+<path d="M 500.0 568.0 L 500.0 606.0" fill="none" stroke="#0f9d58" stroke-width="2.6"/>
+<polygon points="500.0,606.0 495.5,597.0 504.5,597.0" fill="#0f9d58"/>
+<path d="M 500.0 682.0 L 500.0 720.0" fill="none" stroke="#d97706" stroke-width="2.6"/>
+<polygon points="500.0,720.0 495.5,711.0 504.5,711.0" fill="#d97706"/>
+<path d="M 1060.0 568.0 L 1060.0 606.0" fill="none" stroke="#4f46e5" stroke-width="2.6"/>
+<polygon points="1060.0,606.0 1055.5,597.0 1064.5,597.0" fill="#4f46e5"/>
+<path d="M 1060.0 682.0 L 1060.0 720.0" fill="none" stroke="#475569" stroke-width="2.4"/>
+<polygon points="1060.0,720.0 1055.5,711.0 1064.5,711.0" fill="#475569"/>
+<path d="M 600.0 758.0 L 880.0 758.0 L 880.0 644.0 L 960.0 644.0" fill="none" stroke="#d97706" stroke-width="2.6"/>
+<polygon points="960.0,644.0 951.0,639.5 951.0,648.5" fill="#d97706"/>
+<rect x="36.0" y="168.0" width="300.0" height="84.2" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="36.0" y="168.0" width="4.5" height="84.2" rx="2" fill="#475569"/>
+<text x="49.0" y="187.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">共用段（灰线）</text>
+<text x="49.0" y="204.0" font-size="10.6" fill="#334155" xml:space="preserve">收帧 → PRE_ROUTING：所有进来的帧</text>
+<text x="49.0" y="219.4" font-size="10.6" fill="#334155" xml:space="preserve">PRE_ROUTING → 查 FDB：还不知道去哪</text>
+<text x="49.0" y="234.8" font-size="10.6" fill="#334155" xml:space="preserve">POST_ROUTING → 发出：所有出去的帧</text>
+<rect x="36.0" y="266.2" width="300.0" height="84.2" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36.0" y="266.2" width="4.5" height="84.2" rx="2" fill="#0f9d58"/>
+<text x="49.0" y="285.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">A · 上送本机（绿线）</text>
+<text x="49.0" y="302.2" font-size="10.6" fill="#334155" xml:space="preserve">查 FDB：目的 MAC 是本机 / 桥自己</text>
+<text x="49.0" y="317.6" font-size="10.6" fill="#334155" xml:space="preserve">PRE_ROUTING → LOCAL_IN → 本机 IP 栈</text>
+<text x="49.0" y="333.0" font-size="10.6" fill="#334155" xml:space="preserve">典型：发给网关自己的 DHCP / 管理报文</text>
+<rect x="36.0" y="364.4" width="300.0" height="84.2" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36.0" y="364.4" width="4.5" height="84.2" rx="2" fill="#d97706"/>
+<text x="49.0" y="383.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">C · 本机发帧（橙线）</text>
+<text x="49.0" y="400.4" font-size="10.6" fill="#334155" xml:space="preserve">本机 IP 栈造出帧（不是转发别人的）</text>
+<text x="49.0" y="415.8" font-size="10.6" fill="#334155" xml:space="preserve">LOCAL_OUT → 汇入 POST_ROUTING → 出口</text>
+<text x="49.0" y="431.2" font-size="10.6" fill="#334155" xml:space="preserve">典型：设备自己给 LAN 发 RA</text>
+<rect x="1306.0" y="168.0" width="318.0" height="84.2" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="1306.0" y="168.0" width="4.5" height="84.2" rx="2" fill="#4f46e5"/>
+<text x="1319.0" y="187.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">B · 桥转发（蓝线）</text>
+<text x="1319.0" y="204.0" font-size="10.6" fill="#334155" xml:space="preserve">查 FDB：目的 MAC 是另一个口</text>
+<text x="1319.0" y="219.4" font-size="10.6" fill="#334155" xml:space="preserve">PRE_ROUTING → FORWARD → POST_ROUTING</text>
+<text x="1319.0" y="234.8" font-size="10.6" fill="#334155" xml:space="preserve">典型：交换机行为 —— 二层转发的主要场景</text>
+<rect x="1306.0" y="266.2" width="318.0" height="84.2" rx="8" fill="#fff5f5" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="1306.0" y="266.2" width="4.5" height="84.2" rx="2" fill="#dc2626"/>
+<text x="1319.0" y="285.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">和三层世界最大的不同</text>
+<text x="1319.0" y="302.2" font-size="10.6" fill="#334155" xml:space="preserve">分水岭不是路由表，是 FDB（MAC 表）；它不看 IP 地址。</text>
+<text x="1319.0" y="317.6" font-size="10.6" fill="#334155" xml:space="preserve">帧在桥里走完这一圈，压根没上三层 ——</text>
+<text x="1319.0" y="333.0" font-size="10.6" fill="#334155" xml:space="preserve">所以 iptables / ip6tables 在这条路上一个钩子都碰不到。</text>
+<rect x="1306.0" y="364.4" width="318.0" height="84.2" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1306.0" y="364.4" width="4.5" height="84.2" rx="2" fill="#0891b2"/>
+<text x="1319.0" y="383.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">为什么会误以为「配了就该生效」</text>
+<text x="1319.0" y="400.4" font-size="10.6" fill="#334155" xml:space="preserve">配置手段都在三层世界，报文的命运却发生在二层世界。</text>
+<text x="1319.0" y="415.8" font-size="10.6" fill="#334155" xml:space="preserve">两个世界的链名一模一样（都有 FORWARD），所以看着像同一件事。</text>
+<text x="1319.0" y="431.2" font-size="10.6" fill="#334155" xml:space="preserve">这就是「配置都对、报文还是漏」的常见原因。</text>
+<text x="36.0" y="820.0" font-size="11.0" fill="#64748b" xml:space="preserve">对照关系：三层世界的 PREROUTING/INPUT/FORWARD/OUTPUT/POSTROUTING ↔ 二层世界的 NF_BR_PRE_ROUTING/LOCAL_IN/FORWARD/LOCAL_OUT/POST_ROUTING；本图只画二层世界，两套并排见 图 18。</text>
+</svg></div>
+    <p class="src">矢量源：<code>图16-包的一生总览-二层世界.svg</code>　位图：<code>图16-包的一生总览-二层世界.png</code></p>
+  </div>
+  <div class="note br">
+    <strong>只换三样：</strong>分水岭从「路由决策」变成「查 FDB（MAC 表）」；表从四张变成三张；链名前面加了 <code>NF_BR_</code> 前缀。三种命运和共用段完全一样。
+  </div>
+  
+  <div class="subfig" id="f4">
+    <h3>图 17 · 拆开看（二层）</h3>
+    <p class="cap">三条泳道分开走、ebtables 的三张表（filter / nat / broute）在五条 NF_BR_* 链上的挂载矩阵、一条命令走查。</p>
+    <div class="fig"><svg xmlns="http://www.w3.org/2000/svg" width="1660" height="660" viewBox="0 0 1660 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="660" fill="#ffffff"/>
+<text x="36.0" y="42.0" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 17 · 拆开看（二层）：三条泳道分别怎么走，每条链能挂哪三张表</text>
+<text x="36.0" y="70.0" font-size="12.3" fill="#64748b" xml:space="preserve">上一张是二层世界的合起来形态，这张拆开。链名前面多了 NF_BR_ 前缀，能挂的表也从四张变成三张（没有 raw、没有 security）。</text>
+<text x="36.0" y="92.0" font-size="12.3" fill="#64748b" xml:space="preserve">二层世界的工具是 ebtables，它的表叫 filter / nat / broute —— 和三层世界的 filter / nat 名字相同但完全独立。</text>
+<line x1="36" y1="112.0" x2="1624.0" y2="112.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36.0" y="138.0" font-size="12.0" fill="#0f172a" xml:space="preserve" font-weight="700">① 二层世界的包之旅：三条泳道，五条 NF_BR_* 链</text>
+<rect x="36.0" y="150.0" width="108.0" height="90.0" rx="9" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46.0" y="172.0" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">A 上送本机</text>
+<text x="46.0" y="188.0" font-size="9.0" fill="#64748b" xml:space="preserve">（LOCAL_IN）</text>
+<text x="46.0" y="206.0" font-size="9.0" fill="#64748b" xml:space="preserve">目的 MAC 是</text>
+<text x="46.0" y="219.0" font-size="9.0" fill="#64748b" xml:space="preserve">本机 / 桥自己</text>
+<rect x="154.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="154.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="167.0" y="169.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_PRE_ROUTING</text>
+<text x="167.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables broute</text>
+<text x="167.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(DNAT)</text>
+<line x1="313.0" y1="191.0" x2="316.0" y2="191.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 321.0 191.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="322.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="322.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="335.0" y="169.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">桥查 FDB</text>
+<text x="335.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">是本机？</text>
+<text x="335.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve">还是别的口？</text>
+<line x1="481.0" y1="191.0" x2="484.0" y2="191.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 489.0 191.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="490.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="490.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="503.0" y="169.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_LOCAL_IN</text>
+<text x="503.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="503.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve">filter INPUT</text>
+<line x1="649.0" y1="191.0" x2="652.0" y2="191.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 657.0 191.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="658.0" y="150.0" width="158.0" height="82.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="658.0" y="150.0" width="4.5" height="82.0" rx="2" fill="#0f9d58"/>
+<text x="671.0" y="169.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">本机 IP 栈</text>
+<text x="671.0" y="186.0" font-size="8.8" fill="#334155" xml:space="preserve">剥掉以太头</text>
+<text x="671.0" y="201.4" font-size="8.8" fill="#334155" xml:space="preserve">按 v4/v6 继续</text>
+<rect x="36.0" y="262.0" width="108.0" height="90.0" rx="9" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46.0" y="284.0" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">B 桥转发</text>
+<text x="46.0" y="300.0" font-size="9.0" fill="#64748b" xml:space="preserve">（FORWARD）</text>
+<text x="46.0" y="318.0" font-size="9.0" fill="#64748b" xml:space="preserve">目的 MAC 是</text>
+<text x="46.0" y="331.0" font-size="9.0" fill="#64748b" xml:space="preserve">另一个口</text>
+<rect x="154.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="154.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="167.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_PRE_ROUTING</text>
+<text x="167.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables broute</text>
+<text x="167.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(DNAT)</text>
+<line x1="313.0" y1="303.0" x2="316.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 321.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="322.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="322.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="335.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">桥查 FDB</text>
+<text x="335.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">从哪个口</text>
+<text x="335.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve">出去</text>
+<line x1="481.0" y1="303.0" x2="484.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 489.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="490.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="490.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="503.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_FORWARD</text>
+<text x="503.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="503.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve">filter FORWARD</text>
+<line x1="649.0" y1="303.0" x2="652.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 657.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="658.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="658.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="671.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_POST_ROUTING</text>
+<text x="671.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="671.0" y="313.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(SNAT)</text>
+<line x1="817.0" y1="303.0" x2="820.0" y2="303.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 825.0 303.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="826.0" y="262.0" width="158.0" height="82.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="826.0" y="262.0" width="4.5" height="82.0" rx="2" fill="#0f9d58"/>
+<text x="839.0" y="281.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">网卡发出</text>
+<text x="839.0" y="298.0" font-size="8.8" fill="#334155" xml:space="preserve">dev_queue_xmit</text>
+<rect x="36.0" y="374.0" width="108.0" height="90.0" rx="9" fill="#fff9ee" stroke="#d97706" stroke-width="1.2"/>
+<text x="46.0" y="396.0" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">C 本机发帧</text>
+<text x="46.0" y="412.0" font-size="9.0" fill="#64748b" xml:space="preserve">（LOCAL_OUT）</text>
+<text x="46.0" y="430.0" font-size="9.0" fill="#64748b" xml:space="preserve">本机 IP 栈</text>
+<text x="46.0" y="443.0" font-size="9.0" fill="#64748b" xml:space="preserve">造出的帧</text>
+<rect x="154.0" y="374.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="154.0" y="374.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="167.0" y="393.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_LOCAL_OUT</text>
+<text x="167.0" y="410.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="167.0" y="425.4" font-size="8.8" fill="#334155" xml:space="preserve">filter OUTPUT</text>
+<line x1="313.0" y1="415.0" x2="316.0" y2="415.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 321.0 415.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="322.0" y="374.0" width="158.0" height="82.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="322.0" y="374.0" width="4.5" height="82.0" rx="2" fill="#0891b2"/>
+<text x="335.0" y="393.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_POST_ROUTING</text>
+<text x="335.0" y="410.0" font-size="8.8" fill="#334155" xml:space="preserve">ebtables</text>
+<text x="335.0" y="425.4" font-size="8.8" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(SNAT)</text>
+<line x1="481.0" y1="415.0" x2="484.0" y2="415.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 489.0 415.0 l -8 -4.5 l 0 9 z" fill="#94a3b8"/>
+<rect x="490.0" y="374.0" width="158.0" height="82.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="490.0" y="374.0" width="4.5" height="82.0" rx="2" fill="#0f9d58"/>
+<text x="503.0" y="393.0" font-size="9.8" fill="#0f172a" xml:space="preserve" font-weight="700">网卡发出</text>
+<text x="503.0" y="410.0" font-size="8.8" fill="#334155" xml:space="preserve">dev_queue_xmit</text>
+<text x="1024.0" y="152.0" font-size="12.0" fill="#0f172a" xml:space="preserve" font-weight="700">② 二层世界的三张表：每条链上允许挂哪些（✓＝允许）</text>
+<rect x="1024.0" y="162.0" width="600.0" height="30.0" rx="6" fill="#f1f5f9"/>
+<text x="1032.0" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700">表 ＼ 链</text>
+<text x="1166.8" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">PRE</text>
+<text x="1268.4" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">INPUT</text>
+<text x="1370.0" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">FORWARD</text>
+<text x="1471.6" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">OUTPUT</text>
+<text x="1573.2" y="182.0" font-size="10.0" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">POST</text>
+<rect x="1024.0" y="192.0" width="600.0" height="30.0" rx="0" fill="#ffffff"/>
+<line x1="1024.0" y1="192.0" x2="1624.0" y2="192.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="212.0" font-size="10.2" fill="#0f172a" xml:space="preserve">broute</text>
+<text x="1166.8" y="212.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<rect x="1024.0" y="222.0" width="600.0" height="30.0" rx="0" fill="#ffffff"/>
+<line x1="1024.0" y1="222.0" x2="1624.0" y2="222.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="242.0" font-size="10.2" fill="#0f172a" xml:space="preserve">nat</text>
+<text x="1166.8" y="242.0" font-size="9.6" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="middle">✓DNAT</text>
+<text x="1471.6" y="242.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1573.2" y="242.0" font-size="9.6" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="middle">✓SNAT</text>
+<rect x="1024.0" y="252.0" width="600.0" height="30.0" rx="0" fill="#fff5f5"/>
+<line x1="1024.0" y1="252.0" x2="1624.0" y2="252.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032.0" y="272.0" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">filter</text>
+<text x="1268.4" y="272.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1370.0" y="272.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1471.6" y="272.0" font-size="9.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<line x1="1217.6" y1="162.0" x2="1217.6" y2="282.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="1319.2" y1="162.0" x2="1319.2" y2="282.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="1420.8" y1="162.0" x2="1420.8" y2="282.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="1522.4" y1="162.0" x2="1522.4" y2="282.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="1024.0" y="162.0" width="600.0" height="120.0" rx="6" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="1024.0" y="292.0" width="600.0" height="84.2" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1024.0" y="292.0" width="4.5" height="84.2" rx="2" fill="#0891b2"/>
+<text x="1037.0" y="311.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">二层世界只有三张表，不是漏写了</text>
+<text x="1037.0" y="328.0" font-size="10.6" fill="#334155" xml:space="preserve">没有 raw：二层没有连接跟踪，也就没有「绕过跟踪」的需求</text>
+<text x="1037.0" y="343.4" font-size="10.6" fill="#334155" xml:space="preserve">没有 mangle：ebtables 不改 TTL/DSCP，改包头是三层世界 mangle 的活</text>
+<text x="1037.0" y="358.8" font-size="10.6" fill="#334155" xml:space="preserve">没有 security：SELinux 的 secmark 只挂在三层世界</text>
+<rect x="1024.0" y="388.2" width="600.0" height="84.2" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="1024.0" y="388.2" width="4.5" height="84.2" rx="2" fill="#d97706"/>
+<text x="1037.0" y="407.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">broute：最容易被忽略的一张</text>
+<text x="1037.0" y="424.2" font-size="10.6" fill="#334155" xml:space="preserve">作用：让桥把「本该转发」的帧上交三层处理（bridge routing）</text>
+<text x="1037.0" y="439.6" font-size="10.6" fill="#334155" xml:space="preserve">链名是 BROUTING，挂在 PRE_ROUTING 上、优先级最前</text>
+<text x="1037.0" y="455.0" font-size="10.6" fill="#334155" xml:space="preserve">典型用途：把某些帧从「桥转发」改判成「走路由」</text>
+<rect x="36.0" y="508.0" width="1588.0" height="99.6" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36.0" y="508.0" width="4.5" height="99.6" rx="2" fill="#0891b2"/>
+<text x="49.0" y="527.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">③ 一条 ebtables 命令走查：从敲下这条规则，到它挂在哪一格</text>
+<text x="49.0" y="544.0" font-size="10.6" fill="#334155" xml:space="preserve">命令：ebtables -t filter -A FORWARD -p IPv6 --ip6-icmp-type router-advertisement -j DROP</text>
+<text x="49.0" y="559.4" font-size="10.6" fill="#334155" xml:space="preserve">→ 协议族 pf = PF_BRIDGE（ebtables）　链 = NF_BR_FORWARD　表 = filter　优先级由 ebtables 的注册决定</text>
+<text x="49.0" y="574.8" font-size="10.6" fill="#334155" xml:space="preserve">→ 效果：只对「桥转发的 IPv6 RA 帧」生效（不看 IP 地址，只看以太类型与 ICMPv6 类型）</text>
+<text x="49.0" y="590.2" font-size="10.6" fill="#334155" xml:space="preserve">→ 对照：ip6tables -t filter -A FORWARD 写同名规则时 pf 是 PF_INET6，桥转发的帧要先被 br_netfilter 提升才看得到</text>
+<text x="36.0" y="629.6" font-size="11.0" fill="#64748b" xml:space="preserve">说明：ebtables 的链名：filter 表用 INPUT/FORWARD/OUTPUT；nat 表用 PREROUTING/OUTPUT/POSTROUTING；broute 表用 BROUTING（挂在 NF_BR_PRE_ROUTING 上）。本图是机制教学版，具体表项以本机 ebtables -t &lt;表&gt; -L 为准。</text>
+</svg></div>
+    <p class="src">矢量源：<code>图17-三条泳道与表矩阵-二层世界.svg</code>　位图：<code>图17-三条泳道与表矩阵-二层世界.png</code></p>
+  </div>
+
+  <h3>2.1 逐条链（二层世界）：五条 NF_BR_* 链各自能做什么</h3>
+  <p class="cap">和 1.1 那张表完全同构。对着看一遍，就知道「同名不同族」到底差在哪。</p>
+  <table class="detail">
+    <thead><tr><th>链</th><th>什么时候被问到</th><th>这时已知什么</th><th>能挂的表</th><th>典型用途</th><th>容易踩的坑</th></tr></thead>
+    <tbody><tr><td class='k'>NF_BR_PRE_ROUTING</td><td>帧刚从网卡上来，桥还没查 FDB</td><td>入接口、目的 MAC、以太类型（里面装的是什么协议还不用关心）</td><td><code>broute、nat(DNAT)</code></td><td>把该走路由的帧「上交」三层；改去向</td><td>broute 表的链名叫 BROUTING，不叫 PREROUTING；这里没有 filter</td></tr>
+<tr><td class='k'>NF_BR_LOCAL_IN</td><td>查 FDB 判定「发给本机 / 桥自己」</td><td>入接口、完整帧（里面已经能看到 IP 头）</td><td><code>filter</code></td><td>限制谁能访问网关自己（管理、DHCP、ARP）</td><td>桥转发的帧不经过这一站 —— 写在这儿的过滤规则管不到转发</td></tr>
+<tr><td class='k'>NF_BR_FORWARD</td><td>查 FDB 判定「从另一个口出去」</td><td>入接口 + 出接口 + 完整帧</td><td><code>filter</code></td><td>桥转发的访问控制：谁能和谁通</td><td>只做 MAC 层转发，不看 IP 路由；三层世界也有一条叫 FORWARD 的链，是另一套</td></tr>
+<tr><td class='k'>NF_BR_LOCAL_OUT</td><td>本机协议栈产生帧（要发给某个口）</td><td>出接口、完整帧；没有入接口这个概念</td><td><code>filter、nat</code></td><td>拦设备自己发的帧</td><td>常用 LAST 优先级，等桥算完出接口再判</td></tr>
+<tr><td class='k'>NF_BR_POST_ROUTING</td><td>帧即将交给驱动发出</td><td>出接口、完整帧</td><td><code>nat(SNAT)</code></td><td>改源地址映射</td><td>过滤不挂这里；ebtables 也不做 TTL 改写（那是三层世界的 mangle）</td></tr></tbody>
+  </table>
+
+  <h3>2.2 逐张表（二层世界）：ebtables 的三张表</h3>
+  <p class="cap">二层世界只有三张表。不是漏写了——二层没有连接跟踪，也就没有 raw；不做包头改写，也就没有 mangle；没有 SELinux 标签，也就没有 security。</p>
+  <table class="detail">
+    <thead><tr><th>表</th><th>管什么</th><th>挂在哪</th><th>一条典型规则</th><th>什么时候用</th><th>容易踩的坑</th></tr></thead>
+    <tbody><tr><td class='k'>filter</td><td>放行 / 丢弃以太帧 —— 二层世界唯一做过滤的表</td><td>INPUT、FORWARD、OUTPUT</td><td><code>ebtables -t filter -A FORWARD -p IPv6 -j DROP</code></td><td>桥转发的访问控制、按域隔离</td><td>只知道「哪个口进、哪个口出」，不知道三层的业务语义（比如哪条 WAN 绑了哪个口）——粒度较粗</td></tr>
+<tr><td class='k'>nat</td><td>改 MAC / IP 地址映射</td><td>PREROUTING(DNAT)、OUTPUT、POSTROUTING(SNAT)</td><td><code>ebtables -t nat -A PREROUTING -p IPv4 -d 00:11:22:33:44:55 -j dnat --to-destination 66:77:88:99:aa:bb</code></td><td>桥下按 MAC 做透明改址（少见）</td><td>和三层世界的 nat 是两套独立实现；日常几乎不用</td></tr>
+<tr><td class='k'>broute</td><td>把「本该桥转发」的帧上交三层处理（bridge routing）</td><td>BROUTING（挂在 NF_BR_PRE_ROUTING 上，优先级最前）</td><td><code>ebtables -t broute -A BROUTING -p IPv4 -i eth0 -j DROP</code></td><td>把某些帧从「桥转发」改判成「走路由/上交」</td><td>最容易忽略的一张表；链名不叫 PREROUTING，写错就永远不命中</td></tr>
+<tr><td class='k'>（没有 raw / mangle / security）</td><td>二层没有连接跟踪，也没有包头改写和 SELinux 标签</td><td>—</td><td><code>—</code></td><td>这些需求都在三层世界用 iptables 的对应表做</td><td>别在 ebtables 里找 raw/mangle——找不到，不是没装</td></tr></tbody>
+  </table>
+</section>
+
+<section id="s3">
+  <h2>3 · 两个世界：各问各的，靠 br_netfilter 才交汇</h2>
+  <p class="cap">把两张「包的一生」摆在一起：链名完全相同（都有 FORWARD），却是两次不相干的询问。同一时刻一个包只在一个世界里被问。</p>
+  
+  <div class="subfig" id="f5">
+    <h3>图 18 · 两套世界并排</h3>
+    <p class="cap">左：三层世界的五个检查站；右：二层世界的同名五个检查站。底部：br_netfilter 怎么把帧借给三层钩子看一眼（不是让帧上三层）。</p>
+    <div class="fig"><svg xmlns="http://www.w3.org/2000/svg" width="1660" height="956" viewBox="0 0 1660 956" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="956" fill="#ffffff"/>
+<text x="36.0" y="42.0" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 18 · 两套世界并排：同一个包的一生，三层世界与二层世界各走一遍</text>
+<text x="36.0" y="70.0" font-size="12.3" fill="#64748b" xml:space="preserve">左：三层世界的五个检查站；右：二层世界的五个检查站。两边同名、同构，默认互不相干、各问各的。</text>
+<text x="36.0" y="92.0" font-size="12.3" fill="#64748b" xml:space="preserve">唯一交汇点是 br_netfilter 的「借钩子」：桥执行自己的钩子时，把帧临时借给对应的三层钩子跑一遍，跑完还给桥 —— 不是让帧上三层。</text>
+<line x1="36" y1="112.0" x2="1624.0" y2="112.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="36.0" y="148.0" width="772.0" height="624.0" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="1.6"/>
+<rect x="36.0" y="148.0" width="772.0" height="34.0" rx="12" fill="#eef2ff"/>
+<text x="52.0" y="170.0" font-size="13.4" fill="#4f46e5" xml:space="preserve" font-weight="700">PF_INET / PF_INET6　三层</text>
+<text x="792.0" y="170.0" font-size="10.8" fill="#64748b" xml:space="preserve" text-anchor="end">iptables / ip6tables 挂在这里</text>
+<rect x="848.0" y="148.0" width="776.0" height="624.0" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.6"/>
+<rect x="848.0" y="148.0" width="776.0" height="34.0" rx="12" fill="#ecfeff"/>
+<text x="864.0" y="170.0" font-size="13.4" fill="#0891b2" xml:space="preserve" font-weight="700">PF_BRIDGE　二层</text>
+<text x="1608.0" y="170.0" font-size="10.8" fill="#64748b" xml:space="preserve" text-anchor="end">ebtables 挂在这里</text>
+<rect x="54.0" y="194.0" width="736.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="194.0" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="213.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">网卡收包：netif_receive_skb()</text>
+<text x="67.0" y="230.0" font-size="10.6" fill="#334155" xml:space="preserve">skb-&gt;dev = 入口网卡；此时还没进任何 netfilter 钩子</text>
+<line x1="422.0" y1="247.4" x2="422.0" y2="262.4" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 422.0 267.4 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="54.0" y="269.4" width="736.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="269.4" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="288.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_INET_PRE_ROUTING</text>
+<text x="781.0" y="288.4" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">hook ①</text>
+<text x="67.0" y="305.4" font-size="10.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">raw / mangle / nat(DNAT)；conntrack 在 -200 先跑</text>
+<line x1="422.0" y1="322.8" x2="422.0" y2="337.8" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 422.0 342.8 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="54.0" y="344.8" width="736.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="344.8" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="363.8" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">路由决策 ip_route_input()</text>
+<text x="67.0" y="380.8" font-size="10.6" fill="#334155" xml:space="preserve">目的地址是本机 → 上送；不是本机 → 走转发</text>
+<line x1="228.0" y1="398.2" x2="228.0" y2="415.2" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 228.0 420.2 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<text x="237.0" y="413.2" font-size="10.6" fill="#64748b" xml:space="preserve" font-weight="600">本机</text>
+<line x1="606.0" y1="398.2" x2="606.0" y2="415.2" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 606.0 420.2 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<text x="615.0" y="413.2" font-size="10.6" fill="#64748b" xml:space="preserve" font-weight="600">转发</text>
+<rect x="54.0" y="420.2" width="348.0" height="68.8" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="420.2" width="4.5" height="68.8" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="439.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_INET_LOCAL_IN</text>
+<text x="393.0" y="439.2" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">hook ②</text>
+<text x="67.0" y="456.2" font-size="10.6" fill="#334155" xml:space="preserve">filter / mangle</text>
+<text x="67.0" y="471.6" font-size="10.6" fill="#334155" xml:space="preserve">→ 本机 socket 收</text>
+<line x1="228.0" y1="489.0" x2="228.0" y2="504.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 228.0 509.0 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="54.0" y="511.0" width="348.0" height="50.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="511.0" width="4.5" height="50.0" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="530.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">本机 socket（应用层）</text>
+<text x="67.0" y="547.0" font-size="10.6" fill="#334155" xml:space="preserve">包交给本地进程：sshd / dnsmasq / webServer …</text>
+<rect x="422.0" y="420.2" width="368.0" height="68.8" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="422.0" y="420.2" width="4.5" height="68.8" rx="2" fill="#4f46e5"/>
+<text x="435.0" y="439.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_INET_FORWARD</text>
+<text x="781.0" y="439.2" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">hook ③</text>
+<text x="435.0" y="456.2" font-size="10.6" fill="#334155" xml:space="preserve">filter / mangle</text>
+<text x="435.0" y="471.6" font-size="10.6" fill="#334155" xml:space="preserve">→ 继续往下走</text>
+<line x1="606.0" y1="489.0" x2="606.0" y2="504.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 606.0 509.0 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="422.0" y="511.0" width="368.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="422.0" y="511.0" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="435.0" y="530.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_INET_POST_ROUTING</text>
+<text x="781.0" y="530.0" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">hook ⑤</text>
+<text x="435.0" y="547.0" font-size="10.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">nat(SNAT) / mangle</text>
+<line x1="606.0" y1="564.4" x2="606.0" y2="577.4" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 606.0 582.4 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="422.0" y="584.4" width="368.0" height="34.0" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="422.0" y="584.4" width="4.5" height="34.0" rx="2" fill="#4f46e5"/>
+<text x="435.0" y="603.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">驱动 TX</text>
+<rect x="54.0" y="642.4" width="736.0" height="53.4" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="54.0" y="642.4" width="4.5" height="53.4" rx="2" fill="#4f46e5"/>
+<text x="67.0" y="661.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">本机发包：NF_INET_LOCAL_OUT（④）→ 路由 → NF_INET_POST_ROUTING（⑤）→ TX</text>
+<text x="67.0" y="678.4" font-size="10.6" fill="#334155" xml:space="preserve">设备自己产生的包从 LOCAL_OUT 进 netfilter，再到出口</text>
+<rect x="866.0" y="194.0" width="740.0" height="53.4" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="194.0" width="4.5" height="53.4" rx="2" fill="#0891b2"/>
+<text x="879.0" y="213.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">网卡收帧：br_handle_frame()</text>
+<text x="879.0" y="230.0" font-size="10.6" fill="#334155" xml:space="preserve">skb-&gt;dev = 入口物理口；帧里可能是 v4 / v6 / ARP，桥先不看它是什么</text>
+<line x1="1236.0" y1="247.4" x2="1236.0" y2="262.4" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1236.0 267.4 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="866.0" y="269.4" width="740.0" height="53.4" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="269.4" width="4.5" height="53.4" rx="2" fill="#0891b2"/>
+<text x="879.0" y="288.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_PRE_ROUTING</text>
+<text x="1597.0" y="288.4" font-size="10.2" fill="#0891b2" xml:space="preserve" font-weight="700" text-anchor="end">hook ①</text>
+<text x="879.0" y="305.4" font-size="10.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">ebtables broute / nat(DNAT)</text>
+<line x1="1236.0" y1="322.8" x2="1236.0" y2="337.8" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1236.0 342.8 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="866.0" y="344.8" width="740.0" height="53.4" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="344.8" width="4.5" height="53.4" rx="2" fill="#0891b2"/>
+<text x="879.0" y="363.8" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">桥查 FDB：br_fdb_get()</text>
+<text x="879.0" y="380.8" font-size="10.6" fill="#334155" xml:space="preserve">目的 MAC 是本机/桥 → 上送；是别的口 → 转发；查不到 → 泛洪到所有成员口</text>
+<line x1="1036.0" y1="398.2" x2="1036.0" y2="415.2" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1036.0 420.2 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<text x="1045.0" y="413.2" font-size="10.6" fill="#64748b" xml:space="preserve" font-weight="600">上送</text>
+<line x1="1415.0" y1="398.2" x2="1415.0" y2="415.2" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1415.0 420.2 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<text x="1424.0" y="413.2" font-size="10.6" fill="#64748b" xml:space="preserve" font-weight="600">转发 / 泛洪</text>
+<rect x="866.0" y="420.2" width="340.0" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="420.2" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="879.0" y="439.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_LOCAL_IN</text>
+<text x="1197.0" y="439.2" font-size="10.2" fill="#0891b2" xml:space="preserve" font-weight="700" text-anchor="end">hook ②</text>
+<text x="879.0" y="456.2" font-size="10.6" fill="#334155" xml:space="preserve">ebtables filter INPUT</text>
+<text x="879.0" y="471.6" font-size="10.6" fill="#334155" xml:space="preserve">→ 本机 IP 栈</text>
+<line x1="1036.0" y1="489.0" x2="1036.0" y2="504.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1036.0 509.0 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="866.0" y="511.0" width="340.0" height="50.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="511.0" width="4.5" height="50.0" rx="2" fill="#0891b2"/>
+<text x="879.0" y="530.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">本机 IP 栈</text>
+<text x="879.0" y="547.0" font-size="10.6" fill="#334155" xml:space="preserve">帧被剥掉以太头，按 v4/v6 继续走 IP 家族那一套</text>
+<rect x="1224.0" y="420.2" width="382.0" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1224.0" y="420.2" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="1237.0" y="439.2" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_FORWARD</text>
+<text x="1597.0" y="439.2" font-size="10.2" fill="#0891b2" xml:space="preserve" font-weight="700" text-anchor="end">hook ③</text>
+<text x="1237.0" y="456.2" font-size="10.6" fill="#334155" xml:space="preserve">ebtables filter FORWARD</text>
+<text x="1237.0" y="471.6" font-size="10.6" fill="#334155" xml:space="preserve">★ 桥转发的必经站</text>
+<line x1="1415.0" y1="489.0" x2="1415.0" y2="504.0" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1415.0 509.0 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="1224.0" y="511.0" width="382.0" height="53.4" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1224.0" y="511.0" width="4.5" height="53.4" rx="2" fill="#0891b2"/>
+<text x="1237.0" y="530.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">NF_BR_POST_ROUTING</text>
+<text x="1597.0" y="530.0" font-size="10.2" fill="#0891b2" xml:space="preserve" font-weight="700" text-anchor="end">hook ⑤</text>
+<text x="1237.0" y="547.0" font-size="10.6" fill="#334155" xml:space="preserve">帧发到出口口之前的最后一道</text>
+<line x1="1415.0" y1="564.4" x2="1415.0" y2="577.4" stroke="#94a3b8" stroke-width="1.5"/>
+<path d="M 1415.0 582.4 l -4.5 -8 l 9 0 z" fill="#94a3b8"/>
+<rect x="1224.0" y="584.4" width="382.0" height="34.0" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1224.0" y="584.4" width="4.5" height="34.0" rx="2" fill="#0891b2"/>
+<text x="1237.0" y="603.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">出口口 TX → LAN 侧 PC</text>
+<rect x="866.0" y="642.4" width="740.0" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="866.0" y="642.4" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="879.0" y="661.4" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">本机发包：NF_BR_LOCAL_OUT（④）</text>
+<text x="879.0" y="678.4" font-size="10.6" fill="#334155" xml:space="preserve">ebtables filter OUTPUT</text>
+<text x="879.0" y="693.8" font-size="10.6" fill="#334155" xml:space="preserve">→ 出口口 TX</text>
+<text x="422.0" y="802.0" font-size="11.0" fill="#64748b" xml:space="preserve" text-anchor="middle">左：只有 IP 包才进得来，桥转发的帧默认根本不到这一套（除非 br_netfilter 提升）</text>
+<text x="1236.0" y="802.0" font-size="11.0" fill="('#dc2626', '#fff5f5')" xml:space="preserve" font-weight="700" text-anchor="middle">右：帧进桥就一定走这里；二层能插手的地方只有 ③ 和 ④</text>
+<rect x="36.0" y="820.0" width="1588.0" height="84.2" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36.0" y="820.0" width="4.5" height="84.2" rx="2" fill="#d97706"/>
+<text x="49.0" y="839.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">两套体系怎么交汇：br_netfilter 把帧「借」给三层的钩子看一眼</text>
+<text x="49.0" y="856.0" font-size="10.6" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">br_netfilter.ko 加载后，桥在 PRE_ROUTING / FORWARD / POST_ROUTING 里调用 br_nf_*，让 PF_INET/PF_INET6 的钩子也能看到桥流量</text>
+<text x="49.0" y="871.4" font-size="10.6" fill="#334155" xml:space="preserve">开关是 sysctl：net.bridge.bridge-nf-call-iptables / -ip6tables / -arptables。关掉时 ip6tables 的 FORWARD 完全看不到桥转发的 v6 帧</text>
+<text x="49.0" y="886.8" font-size="10.6" fill="#334155" xml:space="preserve">怎么确认：lsmod | grep br_netfilter　＋　sysctl net.bridge.bridge-nf-call-ip6tables（默认值随发行版/内核配置而变）</text>
+<text x="36.0" y="926.2" font-size="11.0" fill="#64748b" xml:space="preserve">本图为框架示意：两个世界各五个钩子、名称与挂载者一一对应；具体的注册项与优先级以本机 lsmod / 驱动源码为准。</text>
+</svg></div>
+    <p class="src">矢量源：<code>图18-两套世界对照.svg</code>　位图：<code>图18-两套世界对照.png</code></p>
+  </div>
+
+  <h3>3.1 最常见的一个疑问：一个包会不会「先二层、再三层」？</h3>
+  <p class="cap">不会。<b>同一时刻只走一条，是分岔，不是串联。</b>之所以感觉像串行，是因为三层转发的「收包那一段」确实经过二层设备（帧先从网卡上来、桥先看到它），但那不叫二层转发。</p>
+  <pre class="flow">
+收帧 → 查 FDB
+  ├─ 目的 MAC = 本机 / 桥自己  → 上交三层（这才是三层的入口）
+  │      └─ 查路由 ─┬─ 目的地址是本机 → 交给本机进程
+  │                 └─ 不是本机     → 三层转发：TTL−1、重新封装、从出口发出
+  └─ 目的 MAC = 另一个口        → 二层转发：帧原样从那个口送出去，结束（压根不上三层）</pre>
+  <table class="detail">
+    <thead><tr><th>对比项</th><th>二层转发（bridge forwarding）</th><th>三层转发（IP routing）</th></tr></thead>
+    <tbody>
+      <tr><td class="k">按什么转发</td><td>目的 <b>MAC</b></td><td>目的 <b>IP</b></td></tr>
+      <tr><td class="k">还是原来那个帧吗</td><td>是，原样送出</td><td><b>不是</b>：剥以太头 → TTL−1 → 重新封装，出去的是新帧</td></tr>
+      <tr><td class="k">上不上三层</td><td>不上</td><td>上（这就是三层的活）</td></tr>
+      <tr><td class="k">谁在做</td><td><code>br_handle_frame</code> → <code>br_forward</code></td><td><code>ip_rcv</code> → <code>ip_forward</code> → <code>ip_output</code></td></tr>
+      <tr><td class="k">netfilter 钩子</td><td><code>PF_BRIDGE</code> 的 FORWARD</td><td><code>PF_INET / PF_INET6</code> 的 FORWARD</td></tr>
+      <tr><td class="k">典型场景</td><td>交换机行为：同网段互访、组播泛洪</td><td>网关行为：跨网段转发、NAT</td></tr>
+    </tbody>
+  </table>
+  <div class="note bad">
+    <strong>由此得到一条实用推论：</strong>一个报文要么被 bridge 转发、要么被 IP 路由转发，<b>不会两者都走</b>。
+    所以拿 iptables 的 FORWARD 规则去拦「被桥转发的流量」，注定不命中——那些帧从来没上到三层。
+  </div>
+  <div class="note">
+    <strong>一个边界：</strong>三层转发的<b>出口</b>如果恰好是桥的成员口（例如出口是 <code>br0</code>），发帧时会再经过一次桥的
+    <code>LOCAL_OUT</code> / <code>POST_ROUTING</code>。但那是「本机发出的帧经过桥」，路径与「桥转发」不同，别混。
+  </div>
+
+  <h3>3.2 顺着问一句：三层的 INPUT / OUTPUT / 转发，在二层分别长什么样？</h3>
+  <p class="cap">先加一个<b>前提</b>：接口必须在桥上（是 bridge 成员，或本身就是桥设备）。如果是独立 IP 接口（不在任何 bridge 里），<code>PF_BRIDGE</code> 那一套从头到尾不参与。满足这个前提，四条路径的形状如下：</p>
+  <table class="detail">
+    <thead><tr><th>报文命运</th><th>桥（二层）看到的钩子</th><th>IP（三层）看到的钩子</th></tr></thead>
+    <tbody>
+      <tr><td class="k">二层转发</td><td>PRE_ROUTING → <b>FORWARD</b> → POST_ROUTING</td><td>不经过（除非 br_netfilter 提升）</td></tr>
+      <tr><td class="k">三层转发（IP routing）</td><td>PRE_ROUTING → <b>LOCAL_IN</b> → <b>LOCAL_OUT</b> → POST_ROUTING</td><td>PRE_ROUTING → <b>FORWARD</b> → POST_ROUTING</td></tr>
+      <tr><td class="k">送给本机（三层 INPUT）</td><td>PRE_ROUTING → <b>LOCAL_IN</b></td><td>PRE_ROUTING → LOCAL_IN</td></tr>
+      <tr><td class="k">本机发出（三层 OUTPUT）</td><td><b>LOCAL_OUT</b> → POST_ROUTING</td><td>LOCAL_OUT → POST_ROUTING</td></tr>
+    </tbody>
+  </table>
+  <div class="note br">
+    <strong>为什么会这样——桥只认 MAC，不认 IP。</strong>三层转发时，帧的目的 MAC 是网关自己的 MAC，
+    桥查 FDB 看到「这个 MAC 是我」，就当作「发给本机的帧」走 <code>LOCAL_IN</code> 上交三层；
+    IP 层拆开看目的 IP 发现不是自己，才走 <code>NF_INET_FORWARD</code> 转出去；发出去时对桥来说又是「本机产生的新帧」，走 <code>LOCAL_OUT</code>。
+    所以三层转发在桥层看，形状是<b>收上来再发出去</b>，中间那个「转发」决策桥完全不知道。
+  </div>
+  <div class="note good">
+    <strong>最有用的一个结论：两个世界的「转发链」是错开的。</strong>
+    二层转发用桥的 <code>FORWARD</code>；三层转发用 IP 的 <code>FORWARD</code>。同一台网关里一个报文只会进其中一个——
+    所以先判「它是二层转发还是三层转发」，再决定去看哪一张 <code>FORWARD</code> 表，顺序不能反。
+  </div>
+  <div class="note">
+    <strong>一处别过度断言：</strong>表里「三层转发的桥层 <code>LOCAL_OUT</code>」是否真被调用，取决于桥的发送路径与
+    <code>br_netfilter</code> 是否加载——某些内核配置下桥的 <code>LOCAL_OUT</code> / <code>POST_ROUTING</code> 钩子点不会被触发。
+    严谨说法是：<b>只要桥参与了这个帧，形状就如上表</b>；具体到某台设备是否触发，要看模块加载与内核配置。
+  </div>
+
+  <p class="cap" style="margin-top:14px">把「哪个世界 × 哪个检查站」摊成矩阵：四个世界各问各的，互不代劳。</p>
+  
+  <table class="matrix">
+    <thead><tr><th>pf ＼ hooknum</th><th>PRE_ROUTING</th><th>LOCAL_IN</th><th>FORWARD</th><th>LOCAL_OUT</th><th>POST_ROUTING</th></tr></thead>
+    <tbody>
+      <tr><td class="k">PF_INET / PF_INET6</td>
+          <td>raw·mangle·nat(DNAT)<br>conntrack</td><td>filter·mangle</td>
+          <td>filter·mangle</td><td>raw·mangle·nat</td><td>mangle·nat(SNAT)</td></tr>
+      <tr class="hit"><td class="k">PF_BRIDGE</td>
+          <td>ebtables nat·broute</td><td>ebtables filter</td>
+          <td><b>ebtables filter</b></td><td><b>ebtables filter·nat</b></td><td>ebtables nat</td></tr>
+      <tr><td class="k">PF_ARP</td><td colspan="5">ARP 用<b>自己的一套三钩子</b>：<code>NF_ARP_IN</code> / <code>NF_ARP_OUT</code> / <code>NF_ARP_FORWARD</code>（对应 arptables 的 INPUT / OUTPUT / FORWARD），与上面五个 hooknum 不一一对应</td></tr>
+      <tr><td class="k">PF_NETDEV</td><td colspan="5">ingress / egress（tc 层，在协议栈更早的位置，与防火墙规则无关）</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <strong>两个世界唯一的交汇点：</strong><code>br_netfilter.ko</code> 加载后，桥在执行自己的钩子时，会把帧「借」给<b>对应的那个</b>三层钩子跑一遍（桥的 <code>FORWARD</code> → IP 的 <code>FORWARD</code>），跑完再还给桥继续处理。
+    开关是 <code>net.bridge.bridge-nf-call-iptables</code> / <code>-ip6tables</code> / <code>-arptables</code>，默认值随发行版和内核配置而变。
+    关着的时候，ip6tables 的 FORWARD 完全看不到桥转发的 v6 帧。
+  </div>
+</section>
+
+<section id="s4">
+  <h2>4 · 同一个检查站上，谁先动手</h2>
+  <p class="cap">知道「在哪条链」还不够。一条链上可能同时站着好几个执行者（各个表、br_netfilter、厂商模块），必须再回答两个问题：<b>谁先跑</b>（priority）、<b>谁说了算</b>（verdict）。上一章那句「表按 raw→mangle→nat→filter 固定顺序执行」，其实就是这张图在三层世界的表现。</p>
+  
+  <div class="subfig" id="f6">
+    <h3>图 19 · 同一个检查站上，谁先动手</h3>
+    <p class="cap">一条链上多个执行者按 priority 排队、四种 verdict 的含义，以及 FIRST / LAST 怎么选。</p>
+    <div class="fig"><svg xmlns="http://www.w3.org/2000/svg" width="1660" height="572" viewBox="0 0 1660 572" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="572" fill="#ffffff"/>
+<text x="36.0" y="42.0" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 19 · 同一个检查站上，谁先动手：priority 排队与四种裁决</text>
+<text x="36.0" y="70.0" font-size="12.3" fill="#64748b" xml:space="preserve">一个检查站（钩子点）上不止一个执行者：iptables / ebtables 的各个表、br_netfilter、厂商自研模块，都往同一个钩子上注册回调。</text>
+<text x="36.0" y="92.0" font-size="12.3" fill="#64748b" xml:space="preserve">谁先跑由 priority 决定（数值小的先），谁说了算由 verdict 决定（任一回调返回 NF_DROP，包就没了，后面的不再执行）。</text>
+<line x1="36" y1="112.0" x2="1624.0" y2="112.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36.0" y="140.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">以 NF_BR_FORWARD 为例：谁先看到这一帧</text>
+<line x1="46" y1="272.0" x2="1614.0" y2="272.0" stroke="#94a3b8" stroke-width="1.6"/>
+<path d="M 1624.0 272.0 l -9 -4.5 l 0 9 z" fill="#94a3b8"/>
+<text x="46.0" y="294.0" font-size="10.8" fill="#64748b" xml:space="preserve">priority 小（先跑）</text>
+<text x="1624.0" y="294.0" font-size="10.8" fill="#64748b" xml:space="preserve" text-anchor="end">priority 大（后跑）</text>
+<rect x="36.0" y="156.0" width="298.4" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36.0" y="156.0" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="49.0" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">ebtables nat / broute</text>
+<text x="49.0" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">≈ -300</text>
+<text x="49.0" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">ebtables 的 nat / broute 表</text>
+<line x1="185.2" y1="224.8" x2="185.2" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="185.2" cy="272.0" r="4" fill="#0891b2"/>
+<rect x="358.4" y="156.0" width="298.4" height="68.8" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="358.4" y="156.0" width="4.5" height="68.8" rx="2" fill="#0891b2"/>
+<text x="371.4" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">ebtables filter</text>
+<text x="371.4" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">≈ -200</text>
+<text x="371.4" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">ebtables 的 filter 表（就是 -L FORWARD 看到的那些）</text>
+<line x1="507.6" y1="224.8" x2="507.6" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="507.6" cy="272.0" r="4" fill="#0891b2"/>
+<rect x="680.8" y="156.0" width="298.4" height="68.8" rx="8" fill="#fff9ee" stroke="#d97706" stroke-width="1.1"/>
+<rect x="680.8" y="156.0" width="4.5" height="68.8" rx="2" fill="#d97706"/>
+<text x="693.8" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">br_netfilter</text>
+<text x="693.8" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">= 0</text>
+<text x="693.8" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">把帧借给三层的 FORWARD 钩子，ip6tables 才看得到</text>
+<line x1="830.0" y1="224.8" x2="830.0" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="830.0" cy="272.0" r="4" fill="#d97706"/>
+<rect x="1003.2" y="156.0" width="298.4" height="68.8" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="1003.2" y="156.0" width="4.5" height="68.8" rx="2" fill="#4f46e5"/>
+<text x="1016.2" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">厂商自研模块</text>
+<text x="1292.6" y="175.0" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">可插拔</text>
+<text x="1016.2" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">可自选</text>
+<text x="1016.2" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">按自己的策略插队（常取 LAST 以便看到出接口）</text>
+<line x1="1152.4" y1="224.8" x2="1152.4" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="1152.4" cy="272.0" r="4" fill="#4f46e5"/>
+<rect x="1325.6" y="156.0" width="298.4" height="68.8" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="1325.6" y="156.0" width="4.5" height="68.8" rx="2" fill="#475569"/>
+<text x="1338.6" y="175.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">链尾：帧离开钩子点</text>
+<text x="1338.6" y="192.0" font-size="9.8" fill="#334155" xml:space="preserve">同值 INT_MAX</text>
+<text x="1338.6" y="207.4" font-size="9.8" fill="#334155" xml:space="preserve">同优先级的 handler 谁先跑由注册先后决定</text>
+<line x1="1474.8" y1="224.8" x2="1474.8" y2="268.0" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="1474.8" cy="272.0" r="4" fill="#475569"/>
+<text x="36.0" y="332.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">每个 handler 返回一个 verdict（这是 netfilter 的「返回值协议」）</text>
+<rect x="36.0" y="348.0" width="383.5" height="62.0" rx="8" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36.0" y="348.0" width="4.5" height="62.0" rx="2" fill="#0f9d58"/>
+<text x="49.0" y="367.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_ACCEPT</text>
+<text x="49.0" y="384.0" font-size="9.8" fill="#334155" xml:space="preserve">放行，交给同一个钩子点上的下一个 handler</text>
+<rect x="437.5" y="348.0" width="383.5" height="62.0" rx="8" fill="#fff5f5" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="437.5" y="348.0" width="4.5" height="62.0" rx="2" fill="#dc2626"/>
+<text x="450.5" y="367.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_DROP</text>
+<text x="450.5" y="384.0" font-size="9.8" fill="#334155" xml:space="preserve">丢弃，后面所有 handler 都不再执行 —— 最常见的拦截手段</text>
+<rect x="839.0" y="348.0" width="383.5" height="62.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="839.0" y="348.0" width="4.5" height="62.0" rx="2" fill="#475569"/>
+<text x="852.0" y="367.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_STOLEN</text>
+<text x="852.0" y="384.0" font-size="9.8" fill="#334155" xml:space="preserve">这个 handler 把包拿走了，不再往下走（少见）</text>
+<rect x="1240.5" y="348.0" width="383.5" height="62.0" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="1240.5" y="348.0" width="4.5" height="62.0" rx="2" fill="#475569"/>
+<text x="1253.5" y="367.0" font-size="11.6" fill="#0f172a" xml:space="preserve" font-weight="700">NF_QUEUE</text>
+<text x="1253.5" y="384.0" font-size="9.8" fill="#334155" xml:space="preserve">交给用户态（nfnetlink_queue / NFQUEUE target）</text>
+<rect x="36.0" y="436.0" width="1588.0" height="84.2" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36.0" y="436.0" width="4.5" height="84.2" rx="2" fill="#0891b2"/>
+<text x="49.0" y="455.0" font-size="12.2" fill="#0f172a" xml:space="preserve" font-weight="700">priority 怎么选：FIRST 还是 LAST</text>
+<text x="49.0" y="472.0" font-size="10.6" fill="#334155" xml:space="preserve">用 FIRST：越早越好，抢在别人前面丢或改；代价是看到的信息最少（比如桥还没算出去向）。</text>
+<text x="49.0" y="487.4" font-size="10.6" fill="#334155" xml:space="preserve">用 LAST：等别人都跑完才轮到你；代价是排在后面，但此时入/出口、状态都已确定，判据最可靠。</text>
+<text x="49.0" y="502.8" font-size="10.6" fill="#334155" xml:space="preserve">经验：判据要按「从哪个口出」来判断就选 LAST；只想无脑拦一类报文，选 FIRST 更快。</text>
+<text x="36.0" y="542.2" font-size="11.0" fill="#64748b" xml:space="preserve">注：priority 数值仅给相对量级（5.10 内核 uapi 头文件）；同优先级下谁先跑，由注册先后决定，不要依赖。</text>
+</svg></div>
+    <p class="src">矢量源：<code>图19-检查站排队与裁决.svg</code>　位图：<code>图19-检查站排队与裁决.png</code></p>
+  </div>
+  <div class="kv">
+    <div><b>priority 小的先跑</b>表之间的固定顺序、自研模块插队，都靠它</div>
+    <div><b>任一 handler 返回 DROP 就结束</b>后面的 handler 不再执行，包直接没了</div>
+    <div><b>FIRST vs LAST</b>想抢先拦用 FIRST；想按「从哪个口出」判断，用 LAST</div>
+    <div><b>同优先级不可依赖</b>谁先跑由注册先后决定，别把逻辑压在这上面</div>
+  </div>
+</section>
+
+<section id="s5">
+  <h2>5 · 新人最常踩的八个坑</h2>
+  <ol class="pits">
+    <li><b>DROP 还是 REJECT</b>：DROP 静默丢，客户端只能等到超时；REJECT 会回一个错误，体验更好，但也会暴露「这儿有防火墙」。</li>
+<li><b>忘了默认策略</b>：每条链末尾都有一个隐式 policy（通常是 ACCEPT）。只加 <code>-j DROP</code> 而 policy 是 ACCEPT，其余流量照样过；反过来 policy 设 DROP 又忘了放行 ESTABLISHED，连回包都会被丢。</li>
+<li><b>-A 和 -I 混用</b>：<code>-A</code> 追加到末尾、<code>-I</code> 插到最前。防火墙是「第一条命中即生效」，插错位置等于没写。</li>
+<li><b>-i / -o 用错链</b>：INPUT、PREROUTING 只有入接口 <code>-i</code>；OUTPUT、POSTROUTING 只有出接口 <code>-o</code>；只有 FORWARD 两个都能用。</li>
+<li><b>以为 nat 规则每次都命中</b>：nat 只处理新连接的第一个包，后续包由 conntrack 直接翻译。规则计数器只涨 1 是正常的，不是没生效。</li>
+<li><b>用 iptables 去挡桥流量</b>：桥转发的帧默认不经过 IP 家族的钩子，得靠 br_netfilter 把帧借给三层看一眼；否则规则写得再对也拦不住。</li>
+<li><b>状态匹配依赖 conntrack</b>：<code>-m state</code> / <code>-m conntrack</code> 的前提是 conntrack 在跑；raw 表里打了 NOTRACK 之后，状态匹配就失效了。</li>
+<li><b>规则忘了持久化</b>：iptables 命令只作用于运行期，重启即丢。要用 <code>iptables-save</code> / <code>netfilter-persistent</code>，或者系统自己的配置体系落盘。</li>
+  </ol>
+</section>
+
+<section id="s6">
+  <h2>6 · 通用排查方法：三步定位</h2>
+  <p class="cap">任何「防火墙配了却没生效」的问题，都按这三步走。跳步一定会误判。</p>
+  <table class="detail">
+    <thead><tr><th>步骤</th><th>问什么</th><th>怎么答</th><th>答错的后果</th></tr></thead>
+    <tbody>
+      <tr><td class="k">① 判泳道</td><td>这个包是<b>给我的</b>、<b>过路的</b>、还是<b>我发的</b>？</td>
+        <td>抓包看目的地址 / 目的 MAC；看它是送到本机服务，还是被转出去</td>
+        <td>泳道判错，后面看哪条链都是白看</td></tr>
+      <tr><td class="k">② 找世界与链</td><td>它在哪个世界被问：IP 还是桥？走的是哪条链？</td>
+        <td>二层转发 → 二层世界的 FORWARD；IP 转发 → 三层世界的 FORWARD；发往本机 → LOCAL_IN</td>
+        <td>拿 iptables 的规则去拦桥转发，永远不命中</td></tr>
+      <tr><td class="k">③ 看表与规则</td><td>那条链上站着谁？规则的匹配条件对得上吗？计数器涨不涨？</td>
+        <td><code>iptables/ebtables -L -v</code> 看规则与命中计数；对不上就换方向 / 换接口 / 换协议</td>
+        <td>规则在但没命中，会被误判成「规则没生效」</td></tr>
+    </tbody>
+  </table>
+  <div class="note good">
+    <strong>一个常见误判的例子：</strong>二层面的 INPUT 链计数器在涨，就以为「这类报文已经被拦住了」。
+    它涨只说明有报文到了「发给本机」那一站，而过路的报文根本不经过那一站 —— 两件事不能互相证明。
+  </div>
+</section>
+
+<section id="s7">
+  <h2>7 · 常用命令速查</h2>
+  <table class="detail">
+    <thead><tr><th>命令</th><th>看什么</th><th>说明</th></tr></thead>
+    <tbody><tr><td><code>iptables -t filter -L -v --line-numbers</code></td><td>看 IPv4 过滤规则与计数器</td><td>-v 才有命中计数；--line-numbers 方便删</td></tr>
+<tr><td><code>ip6tables -t filter -L -v</code></td><td>看 IPv6 过滤规则</td><td>桥流量需要 br_netfilter 才出现在这里</td></tr>
+<tr><td><code>iptables -t nat -L -v</code></td><td>看 DNAT / SNAT 规则</td><td>计数器只涨 1 是正常（只处理新连接）</td></tr>
+<tr><td><code>ebtables -t filter -L -v</code></td><td>看二层过滤规则</td><td>INPUT / FORWARD / OUTPUT 三条链</td></tr>
+<tr><td><code>ebtables -t broute -L</code></td><td>看 broute 规则</td><td>链名叫 BROUTING，挂在 PRE_ROUTING</td></tr>
+<tr><td><code>cat /proc/net/nf_conntrack</code></td><td>看连接跟踪表</td><td>只对 IP 家族有效；二层没有</td></tr>
+<tr><td><code>sysctl net.bridge.bridge-nf-call-ip6tables</code></td><td>br_netfilter 是否把桥帧交给 ip6tables</td><td>0 表示 ip6tables 看不到桥转发的 v6</td></tr>
+<tr><td><code>lsmod | grep -E "br_netfilter|nf_"</code></td><td>相关内核模块是否加载</td><td>br_netfilter 没加载时，上面的 sysctl 不存在</td></tr>
+<tr><td><code>iptables-save &gt; /etc/...</code></td><td>持久化规则</td><td>重启后自动加载需要发行版配套机制</td></tr></tbody>
+  </table>
+  <div class="note br">
+    <strong>看计数器的习惯：</strong>先 <code>iptables -Z</code> / <code>ebtables -Z</code> 清零，再复现一次，这样计数才干净。
+    <code>-v</code> 不加，看不到命中次数，就等于在猜。
+  </div>
+</section>
+
+</main>
+<footer>
+  本页由脚本生成，<strong>不要手改</strong>：改 <code>工具/图/report_netfilter_guide.py</code> 后重跑
+  <code>python3 工具/图/report_netfilter_guide.py</code>；图来自 <code>fig_netfilter_framework.py</code>，
+  要改图得改那个脚本再生成。<br>
+  通用机制按 Linux 5.10 内核；具体表项、sysctl 默认值以本机输出为准，不同发行版/内核可能有差异。<br>
+  本报告<strong>不含任何具体问题单的内容</strong>；带实测、判据与修复分析的那份是同目录的另一份分析报告（不在本教材范围内）。
+</footer>
+</body></html>
