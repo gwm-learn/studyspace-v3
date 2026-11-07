@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="580" viewBox="0 0 1660 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1660" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1624" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 0 · 流程与矩阵（模板示例）</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">所有图共用默认字体和组件；画布宽高、泳道数量、颜色都按内容调整。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看图例，再看泳道；颜色只是辅助，文字标签才是主要依据。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">共用段</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">路径 A</text>
+<line x1="228.2" y1="142" x2="258.2" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="266.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">路径 B</text>
+<line x1="325.4" y1="142" x2="355.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="363.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">路径 C</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 泳道：数量按内容决定</text>
+<rect x="36" y="190" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">路径 A</text>
+<text x="46" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">（示例）</text>
+<text x="46" y="246" font-size="9" fill="#64748b" xml:space="preserve">第一步</text>
+<text x="46" y="259" font-size="9" fill="#64748b" xml:space="preserve">第二步</text>
+<rect x="154" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">接收</text>
+<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">输入数据</text>
+<text x="167" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">或事件</text>
+<line x1="312" y1="231" x2="322" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,231 313,226.5 313,235.5" fill="#94a3b8"/>
+<rect x="322" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="322" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="335" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">判断</text>
+<text x="335" y="226" font-size="8.8" fill="#334155" xml:space="preserve">满足条件？</text>
+<text x="335" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">走哪条路径</text>
+<line x1="480" y1="231" x2="490" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,231 481,226.5 481,235.5" fill="#94a3b8"/>
+<rect x="490" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="490" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="503" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">处理</text>
+<text x="639" y="209" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">A</text>
+<text x="503" y="226" font-size="8.8" fill="#334155" xml:space="preserve">执行动作</text>
+<text x="503" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">记录结果</text>
+<line x1="648" y1="231" x2="658" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="658,231 649,226.5 649,235.5" fill="#94a3b8"/>
+<rect x="658" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="658" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="671" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">返回</text>
+<text x="807" y="209" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">A</text>
+<text x="671" y="226" font-size="8.8" fill="#334155" xml:space="preserve">输出结果</text>
+<text x="671" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">结束</text>
+<rect x="36" y="302" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="324" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">路径 B</text>
+<text x="46" y="340" font-size="9.4" fill="#64748b" xml:space="preserve">（示例）</text>
+<text x="46" y="358" font-size="9" fill="#64748b" xml:space="preserve">第一步</text>
+<text x="46" y="371" font-size="9" fill="#64748b" xml:space="preserve">第二步</text>
+<rect x="154" y="302" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154" y="302" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="167" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">接收</text>
+<text x="167" y="338" font-size="8.8" fill="#334155" xml:space="preserve">输入数据</text>
+<text x="167" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">或事件</text>
+<line x1="312" y1="343" x2="322" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,343 313,338.5 313,347.5" fill="#94a3b8"/>
+<rect x="322" y="302" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="322" y="302" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="335" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">判断</text>
+<text x="335" y="338" font-size="8.8" fill="#334155" xml:space="preserve">满足条件？</text>
+<text x="335" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">走哪条路径</text>
+<line x1="480" y1="343" x2="490" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,343 481,338.5 481,347.5" fill="#94a3b8"/>
+<rect x="490" y="302" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="490" y="302" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="503" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">分流</text>
+<text x="639" y="321" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">B</text>
+<text x="503" y="338" font-size="8.8" fill="#334155" xml:space="preserve">交给其他</text>
+<text x="503" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">模块处理</text>
+<line x1="648" y1="343" x2="658" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="658,343 649,338.5 649,347.5" fill="#94a3b8"/>
+<rect x="658" y="302" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="658" y="302" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="671" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">输出</text>
+<text x="671" y="338" font-size="8.8" fill="#334155" xml:space="preserve">继续传递</text>
+<text x="671" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">或落盘</text>
+<rect x="36" y="414" width="108" height="90" fill="#fff9ee" rx="9" stroke="#d97706" stroke-width="1.2"/>
+<text x="46" y="436" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">路径 C</text>
+<text x="46" y="452" font-size="9.4" fill="#64748b" xml:space="preserve">（示例）</text>
+<text x="46" y="470" font-size="9" fill="#64748b" xml:space="preserve">本机产生</text>
+<text x="46" y="483" font-size="9" fill="#64748b" xml:space="preserve">新的数据</text>
+<rect x="154" y="414" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="154" y="414" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="167" y="433" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">生成</text>
+<text x="303" y="433" font-size="10.2" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="end">C</text>
+<text x="167" y="450" font-size="8.8" fill="#334155" xml:space="preserve">构造数据</text>
+<text x="167" y="465.4" font-size="8.8" fill="#334155" xml:space="preserve">或请求</text>
+<line x1="312" y1="455" x2="322" y2="455" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,455 313,450.5 313,459.5" fill="#94a3b8"/>
+<rect x="322" y="414" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="322" y="414" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="335" y="433" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">处理</text>
+<text x="335" y="450" font-size="8.8" fill="#334155" xml:space="preserve">执行动作</text>
+<text x="335" y="465.4" font-size="8.8" fill="#334155" xml:space="preserve">记录结果</text>
+<line x1="480" y1="455" x2="490" y2="455" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,455 481,450.5 481,459.5" fill="#94a3b8"/>
+<rect x="490" y="414" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="490" y="414" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="503" y="433" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">发送</text>
+<text x="503" y="450" font-size="8.8" fill="#334155" xml:space="preserve">交给下游</text>
+<text x="503" y="465.4" font-size="8.8" fill="#334155" xml:space="preserve">或设备</text>
+<text x="1024" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 矩阵：行列数按内容决定</text>
+<rect x="1024" y="190" width="600" height="30" fill="#f1f5f9" rx="6"/>
+<text x="1032" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">对象 ＼ 阶段</text>
+<text x="1174" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">准备</text>
+<text x="1274" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">执行</text>
+<text x="1374" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">检查</text>
+<text x="1474" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">输出</text>
+<text x="1574" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">归档</text>
+<rect x="1024" y="220" width="600" height="30" fill="#ffffff"/>
+<line x1="1024" y1="220" x2="1624" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">对象 A</text>
+<text x="1174" y="240" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1274" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1374" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1474" y="240" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1574" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<rect x="1024" y="250" width="600" height="30" fill="#ffffff"/>
+<line x1="1024" y1="250" x2="1624" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">对象 B</text>
+<text x="1174" y="270" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1274" y="270" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1374" y="270" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1474" y="270" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1574" y="270" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<rect x="1024" y="280" width="600" height="30" fill="#ffffff"/>
+<line x1="1024" y1="280" x2="1624" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">对象 C</text>
+<text x="1174" y="300" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1274" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1374" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1474" y="300" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1574" y="300" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<rect x="1024" y="310" width="600" height="30" fill="#ffffff"/>
+<line x1="1024" y1="310" x2="1624" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">对象 D</text>
+<text x="1174" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1274" y="330" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1374" y="330" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1474" y="330" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1574" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<rect x="1024" y="340" width="600" height="30" fill="#ffffff"/>
+<line x1="1024" y1="340" x2="1624" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1032" y="360" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">对象 E</text>
+<text x="1174" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1274" y="360" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1374" y="360" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1474" y="360" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1574" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<line x1="1024" y1="370" x2="1624" y2="370" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="1024" y="390" width="600" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="1040" y="420" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图顺序</text>
+<text x="1040" y="444" font-size="10.2" fill="#334155" xml:space="preserve">① 先看图例：颜色分别代表什么？</text>
+<text x="1040" y="462" font-size="10.2" fill="#334155" xml:space="preserve">② 再看泳道：每一步在哪个阶段发生？</text>
+<text x="1040" y="480" font-size="10.2" fill="#334155" xml:space="preserve">③ 最后看矩阵：对象和阶段如何对应？</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">改图时优先复制本脚本，不要手改 SVG；生成后检查 XML 和 Markdown 图片链接。</text>
+</svg>

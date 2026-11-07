@@ -20,6 +20,10 @@
 | [60-软件开发](./60-软件开发/.readme.md) | C、数据结构、Shell、Python、构建调试 |
 | [80-工具与环境](./80-工具与环境/.readme.md) | Git、Docker、WSL 等 |
 
+## 仓库工具
+
+- [.图表模板](./.图表模板/.readme.md)：技术图 SVG 模板，非学习笔记本身。
+
 ## 提交规范
 
 提交信息统一使用 `.gitmessage` 模板，并由 `.githooks/commit-msg` 校验。

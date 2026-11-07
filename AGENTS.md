@@ -70,6 +70,7 @@
 | 查产品方案 | `40-产品与方案/.readme.md` | 对应产品目录 |
 | 查软件开发 | `60-软件开发/.readme.md` | 对应语言/工具目录 |
 | 查工具环境 | `80-工具与环境/.readme.md` | 对应工具目录 |
+| 生成/修改技术图 | `.图表模板/figure-style.md` | `svg-figure-template.py` + `example.svg` |
 | 整理索引/链接 | 根 `README.md` + 目标 `.readme.md` | 相关目录和文件 |
 | 检查仓库结构 | `README.md` + 顶层 `.readme.md` | 按需抽查 |
 
@@ -84,6 +85,7 @@
 | `40-产品与方案/` | CPE、智能网关、FTTR、ONU/ONT | [.readme](./40-产品与方案/.readme.md) |
 | `60-软件开发/` | C、数据结构、Shell、Python、构建调试 | [.readme](./60-软件开发/.readme.md) |
 | `80-工具与环境/` | Git、Docker、WSL | [.readme](./80-工具与环境/.readme.md) |
+| `.图表模板/` | 技术图模板（非学习内容） | [.readme](./.图表模板/.readme.md) |
 
 更细的目录说明由各目录 `.readme.md` 维护，本表只用于快速路由。
 
@@ -106,6 +108,7 @@
 - 时间类文件使用 `YYYY-MM-DD-主题.md`。
 - 每篇笔记建议包含：一句话结论、背景、原理/实现、实验或案例、踩坑、参考、关联链接。
 - 跨主题内容用链接引用，不在多个目录重复维护。
+- 生成技术图时，遵循 `.图表模板/figure-style.md`，优先复用 `svg-figure-template.py`。
 - 链接使用相对 Markdown；GitHub 不解析 `[[Wiki 链接]]`。
 - 图片和大 HTML 只引用路径，不嵌入大段 Base64。
 - 公开仓库不提交敏感信息：SDK 源码、原理图、运营商规范、现网日志、密钥、Token、客户信息。
