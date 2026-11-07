@@ -83,7 +83,7 @@
 | `20-平台与系统/` | Linux、OpenWrt、嵌入式系统 | [.readme](./20-平台与系统/.readme.md) |
 | `30-平台与芯片/` | 海思、MTK、QCA、展锐等平台 | [.readme](./30-平台与芯片/.readme.md) |
 | `40-产品与方案/` | CPE、智能网关、FTTR、ONU/ONT | [.readme](./40-产品与方案/.readme.md) |
-| `60-软件开发/` | C、数据结构、Shell、Python、构建调试 | [.readme](./60-软件开发/.readme.md) |
+| `60-软件开发/` | C、数据结构、Shell、构建调试 | [.readme](./60-软件开发/.readme.md) |
 | `80-工具与环境/` | Git、Docker、WSL | [.readme](./80-工具与环境/.readme.md) |
 | `.图表模板/` | 技术图模板（非学习内容） | [.readme](./.图表模板/.readme.md) |
 

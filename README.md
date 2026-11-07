@@ -17,7 +17,7 @@
 | [20-平台与系统](./20-平台与系统/.readme.md) | Linux、OpenWrt、嵌入式基础 |
 | [30-平台与芯片](./30-平台与芯片/.readme.md) | 海思、MTK、QCA、展锐等平台差异 |
 | [40-产品与方案](./40-产品与方案/.readme.md) | CPE、智能网关、FTTR、ONU/ONT 等 |
-| [60-软件开发](./60-软件开发/.readme.md) | C、数据结构、Shell、Python、构建调试 |
+| [60-软件开发](./60-软件开发/.readme.md) | C、数据结构、Shell、构建调试 |
 | [80-工具与环境](./80-工具与环境/.readme.md) | Git、Docker、WSL 等 |
 
 ## 仓库工具
