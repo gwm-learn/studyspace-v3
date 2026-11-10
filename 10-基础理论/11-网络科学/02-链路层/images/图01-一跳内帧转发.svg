@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 一跳内帧转发：交换机只认 MAC</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">主机 A 发帧，交换机学习源 MAC、查目的 MAC，未知就泛洪。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">跨网段不归这一跳管，目的 MAC 会变成网关。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层 / 补充</text>
+<line x1="298.6" y1="142" x2="328.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="336.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<rect x="40" y="210" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="53" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">主机 A</text>
+<text x="53" y="246" font-size="9.6" fill="#334155" xml:space="preserve">IP 包</text>
+<text x="53" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">封装成帧</text>
+<rect x="320" y="200" width="210" height="90" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="320" y="200" width="4.5" height="90" fill="#0891b2" rx="2"/>
+<text x="333" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">二层交换机</text>
+<text x="333" y="236" font-size="9.6" fill="#334155" xml:space="preserve">学源 MAC</text>
+<text x="333" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">查目的 MAC</text>
+<text x="333" y="266.8" font-size="9.6" fill="#334155" xml:space="preserve">未知泛洪</text>
+<rect x="660" y="210" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="660" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="673" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">主机 B</text>
+<text x="673" y="246" font-size="9.6" fill="#334155" xml:space="preserve">同网段</text>
+<text x="673" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">收到帧</text>
+<rect x="320" y="350" width="250" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="320" y="350" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="333" y="369" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">FDB（MAC 表）</text>
+<text x="333" y="386" font-size="9.6" fill="#334155" xml:space="preserve">MAC → 端口</text>
+<text x="333" y="401.4" font-size="9.6" fill="#334155" xml:space="preserve">默认约 300s 老化</text>
+<line x1="210" y1="245" x2="320" y2="245" stroke="#475569" stroke-width="2"/>
+<polygon points="320,245 311,240.5 311,249.5" fill="#475569"/>
+<text x="271" y="238" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">帧</text>
+<line x1="530" y1="245" x2="660" y2="245" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="660,245 651,240.5 651,249.5" fill="#0f9d58"/>
+<text x="601" y="238" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">命中单播</text>
+<line x1="431.08" y1="290" x2="439.19" y2="350" stroke="#4f46e5" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="439.19,350 442.44,340.48 433.52,341.68" fill="#4f46e5"/>
+<text x="441.14" y="313" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">学习 / 查询</text>
+<rect x="36" y="486" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="516" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="540" font-size="10.2" fill="#334155" xml:space="preserve">未知单播、广播、组播都会泛洪。</text>
+<text x="52" y="558" font-size="10.2" fill="#334155" xml:space="preserve">广播域太大 + 环路 = 广播风暴。</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

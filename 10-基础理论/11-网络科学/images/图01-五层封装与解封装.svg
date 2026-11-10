@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="800" viewBox="0 0 1180 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="800" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 五层封装与解封装：每层只加自己的头</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">发送时逐层加头，接收时逐层剥头；隧道会再加一层封装。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">归层看“封装的是谁”，不看它跑在哪个端口上。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">封装</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">解封装</text>
+<rect x="150" y="190" width="420" height="54" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="150" y="190" width="4.5" height="54" fill="#0f9d58" rx="2"/>
+<text x="163" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">应用层 · 报文</text>
+<text x="163" y="226" font-size="9.6" fill="#334155" xml:space="preserve">HTTP / DNS / DHCP 数据</text>
+<rect x="150" y="276" width="510" height="54" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="150" y="276" width="4.5" height="54" fill="#4f46e5" rx="2"/>
+<text x="163" y="295" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">传输层 · 段</text>
+<text x="163" y="312" font-size="9.6" fill="#334155" xml:space="preserve">TCP / UDP 头 + 端口</text>
+<rect x="150" y="362" width="600" height="54" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="150" y="362" width="4.5" height="54" fill="#4f46e5" rx="2"/>
+<text x="163" y="381" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网络层 · 包</text>
+<text x="163" y="398" font-size="9.6" fill="#334155" xml:space="preserve">IP 头 + 地址 + TTL</text>
+<rect x="150" y="448" width="690" height="54" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="150" y="448" width="4.5" height="54" fill="#0891b2" rx="2"/>
+<text x="163" y="467" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">链路层 · 帧</text>
+<text x="163" y="484" font-size="9.6" fill="#334155" xml:space="preserve">以太头 + MAC + FCS</text>
+<rect x="150" y="534" width="780" height="54" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="150" y="534" width="4.5" height="54" fill="#475569" rx="2"/>
+<text x="163" y="553" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">物理层 · 比特</text>
+<text x="163" y="570" font-size="9.6" fill="#334155" xml:space="preserve">编码 / 调制 / 介质</text>
+<line x1="112" y1="215" x2="112" y2="556" stroke="#4f46e5" stroke-width="2.2" stroke-dasharray="3 3"/>
+<polygon points="112,556 116.5,547 107.5,547" fill="#4f46e5"/>
+<text x="60" y="379.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">封装</text>
+<line x1="952" y1="556" x2="952" y2="215" stroke="#0f9d58" stroke-width="2.2" stroke-dasharray="3 3"/>
+<polygon points="952,215 947.5,224 956.5,224" fill="#0f9d58"/>
+<text x="962" y="379.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">解封装</text>
+<rect x="36" y="626" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="656" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="680" font-size="10.2" fill="#334155" xml:space="preserve">MTU 1500 是链路层载荷上限，不是帧长。</text>
+<text x="52" y="698" font-size="10.2" fill="#334155" xml:space="preserve">隧道会额外加头，可用 MTU 更小。</text>
+<text x="36" y="746" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

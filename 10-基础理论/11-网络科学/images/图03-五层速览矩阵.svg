@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 五层速览：每层的 PDU、地址与设备</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">按层看 PDU、地址/标识、典型设备与核心协议。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">这张表回答“这一层到底管什么”。</text>
+<rect x="36" y="190" width="1100" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">层</text>
+<text x="366" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">PDU</text>
+<text x="586" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">地址/标识</text>
+<text x="806" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型设备</text>
+<text x="1026" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">核心协议</text>
+<rect x="36" y="220" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="220" x2="1136" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">应用层</text>
+<text x="366" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">报文</text>
+<text x="586" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">域名/URL</text>
+<text x="806" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">主机/服务器</text>
+<text x="1026" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">DHCP/DNS/HTTP</text>
+<rect x="36" y="250" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="250" x2="1136" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">传输层</text>
+<text x="366" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">段/数据报</text>
+<text x="586" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">端口+五元组</text>
+<text x="806" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">协议栈/网关</text>
+<text x="1026" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">TCP/UDP/QUIC</text>
+<rect x="36" y="280" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="280" x2="1136" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">网络层</text>
+<text x="366" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">包</text>
+<text x="586" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IP+协议号</text>
+<text x="806" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">路由器</text>
+<text x="1026" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IPv4/IPv6/ICMP</text>
+<rect x="36" y="310" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="310" x2="1136" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">链路层</text>
+<text x="366" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">帧</text>
+<text x="586" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">MAC/VLAN</text>
+<text x="806" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">交换机/桥</text>
+<text x="1026" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Ethernet/ARP/VLAN</text>
+<rect x="36" y="340" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="340" x2="1136" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="360" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">物理层</text>
+<text x="366" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">比特</text>
+<text x="586" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">端口/波长</text>
+<text x="806" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">PHY/光模块</text>
+<text x="1026" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">802.3 PHY</text>
+<line x1="36" y1="370" x2="1136" y2="370" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="396" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="426" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="450" font-size="10.2" fill="#334155" xml:space="preserve">MTU 是链路层载荷上限，不是帧长。</text>
+<text x="52" y="468" font-size="10.2" fill="#334155" xml:space="preserve">隧道会在外层再加封装，归层看载荷。</text>
+<text x="36" y="506" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="540" viewBox="0 0 1180 540" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="540" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · TCP 滑动窗口：ACK 推着窗口右移</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">发送窗口 = min(rwnd, cwnd)；窗口内可连续发送，不必逐个等 ACK。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">收到累积 ACK 后左沿右移，窗口整体滑动。</text>
+<rect x="36" y="220" width="260" height="54" fill="#f2fcf5" rx="4" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="166" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">已确认</text>
+<text x="166" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">40B</text>
+<rect x="296" y="220" width="360" height="54" fill="#eef2ff" rx="4" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="476" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">可发送</text>
+<text x="476" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">40B</text>
+<rect x="656" y="220" width="300" height="54" fill="#f8fafc" rx="4" stroke="#475569" stroke-width="1.1"/>
+<text x="806" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">不可发送</text>
+<text x="806" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">40B</text>
+<line x1="36" y1="301" x2="54" y2="301" stroke="#0f9d58" stroke-width="3"/>
+<text x="62" y="308" font-size="9.4" fill="#334155" xml:space="preserve">已确认 · 40B · 可释放</text>
+<line x1="596" y1="301" x2="614" y2="301" stroke="#4f46e5" stroke-width="3"/>
+<text x="622" y="308" font-size="9.4" fill="#334155" xml:space="preserve">可发送 · 40B · 窗口内</text>
+<line x1="36" y1="325" x2="54" y2="325" stroke="#475569" stroke-width="3"/>
+<text x="62" y="332" font-size="9.4" fill="#334155" xml:space="preserve">不可发送 · 40B · 等窗口</text>
+<rect x="36" y="376" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="406" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="430" font-size="10.2" fill="#334155" xml:space="preserve">ACK=N 表示 N 之前全部收到。</text>
+<text x="52" y="448" font-size="10.2" fill="#334155" xml:space="preserve">rwnd 管接收方，cwnd 管网络。</text>
+<text x="36" y="486" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="504" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · ZeroTier 组网与路径：P2P 优先，中继兜底</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">控制器下发成员权限、IP、路由和 MTU；root 帮助发现与打洞。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">能直连就走 P2P，打不通才经 root 中继。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<line x1="183.8" y1="142" x2="213.8" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="221.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
+<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<rect x="30" y="170" width="190" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="30" y="170" width="4.5" height="72" fill="#d97706" rx="2"/>
+<text x="43" y="189" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Controller</text>
+<text x="43" y="206" font-size="9.6" fill="#334155" xml:space="preserve">Network ID</text>
+<text x="43" y="221.4" font-size="9.6" fill="#334155" xml:space="preserve">成员授权 / 配置</text>
+<rect x="340" y="170" width="190" height="72" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="340" y="170" width="4.5" height="72" fill="#475569" rx="2"/>
+<text x="353" y="189" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Planet / Moon</text>
+<text x="353" y="206" font-size="9.6" fill="#334155" xml:space="preserve">发现 / 打洞</text>
+<text x="353" y="221.4" font-size="9.6" fill="#334155" xml:space="preserve">中继兜底</text>
+<rect x="140" y="340" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="140" y="340" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="153" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">节点 A</text>
+<text x="153" y="376" font-size="9.6" fill="#334155" xml:space="preserve">Leaf</text>
+<text x="153" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">虚拟 L2 接口</text>
+<rect x="400" y="340" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="400" y="340" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="413" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">节点 B</text>
+<text x="413" y="376" font-size="9.6" fill="#334155" xml:space="preserve">Leaf</text>
+<text x="413" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">同一 Network</text>
+<rect x="660" y="340" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="660" y="340" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="673" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">节点 C</text>
+<text x="673" y="376" font-size="9.6" fill="#334155" xml:space="preserve">Leaf</text>
+<text x="673" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">NAT 后</text>
+<line x1="220" y1="206" x2="340" y2="206" stroke="#d97706" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="340,206 331,201.5 331,210.5" fill="#d97706"/>
+<text x="286" y="199" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">配置 / 发现</text>
+<line x1="310" y1="375" x2="400" y2="375" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="400,375 391,370.5 391,379.5" fill="#0f9d58"/>
+<text x="361" y="368" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">P2P 直连</text>
+<line x1="680.8" y1="340" x2="501.04" y2="242" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="501.04,242 506.78,250.26 511.09,242.36" fill="#dc2626"/>
+<text x="596.92" y="284" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">中继</text>
+<line x1="445.65" y1="242" x2="474.64" y2="340" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="474.64,340 476.41,330.09 467.78,332.65" fill="#dc2626"/>
+<text x="466.15" y="284" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">转发</text>
+<rect x="36" y="460" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="490" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="514" font-size="10.2" fill="#334155" xml:space="preserve">它承载以太帧，属二层 overlay，不是三层 VPN。</text>
+<text x="52" y="532" font-size="10.2" fill="#334155" xml:space="preserve">不替代 STP；桥接时环路要自己防。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 以太网帧格式：三个长度先分清</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Ethernet II 的字段顺序固定；前导码与 SFD 不计入帧长。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">1500 是载荷，1518 是帧长，1522 是带 VLAN 的帧长。</text>
+<rect x="36" y="220" width="74" height="54" fill="#f8fafc" rx="4" stroke="#475569" stroke-width="1.1"/>
+<text x="73" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">前导码</text>
+<text x="73" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">7B</text>
+<rect x="110" y="220" width="64" height="54" fill="#f8fafc" rx="4" stroke="#475569" stroke-width="1.1"/>
+<text x="142" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">SFD</text>
+<text x="142" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">1B</text>
+<rect x="174" y="220" width="120" height="54" fill="#ecfeff" rx="4" stroke="#0891b2" stroke-width="1.1"/>
+<text x="234" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">目的 MAC</text>
+<text x="234" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">6B</text>
+<rect x="294" y="220" width="120" height="54" fill="#ecfeff" rx="4" stroke="#0891b2" stroke-width="1.1"/>
+<text x="354" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">源 MAC</text>
+<text x="354" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">6B</text>
+<rect x="414" y="220" width="88" height="54" fill="#eef2ff" rx="4" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="458" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Type</text>
+<text x="458" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">2B</text>
+<rect x="502" y="220" width="480" height="54" fill="#f2fcf5" rx="4" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="742" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">载荷</text>
+<text x="742" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">46–1500B</text>
+<rect x="982" y="220" width="84" height="54" fill="#fff5f5" rx="4" stroke="#dc2626" stroke-width="1.1"/>
+<text x="1024" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">FCS</text>
+<text x="1024" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">4B</text>
+<line x1="36" y1="301" x2="54" y2="301" stroke="#475569" stroke-width="3"/>
+<text x="62" y="308" font-size="9.4" fill="#334155" xml:space="preserve">前导码 · 7B · 时钟同步</text>
+<line x1="596" y1="301" x2="614" y2="301" stroke="#475569" stroke-width="3"/>
+<text x="622" y="308" font-size="9.4" fill="#334155" xml:space="preserve">SFD · 1B · 帧开始</text>
+<line x1="36" y1="325" x2="54" y2="325" stroke="#0891b2" stroke-width="3"/>
+<text x="62" y="332" font-size="9.4" fill="#334155" xml:space="preserve">目的 MAC · 6B · 这一跳接收方</text>
+<line x1="596" y1="325" x2="614" y2="325" stroke="#0891b2" stroke-width="3"/>
+<text x="622" y="332" font-size="9.4" fill="#334155" xml:space="preserve">源 MAC · 6B · 交换机据此学习</text>
+<line x1="36" y1="349" x2="54" y2="349" stroke="#4f46e5" stroke-width="3"/>
+<text x="62" y="356" font-size="9.4" fill="#334155" xml:space="preserve">Type · 2B · 上层协议</text>
+<line x1="596" y1="349" x2="614" y2="349" stroke="#0f9d58" stroke-width="3"/>
+<text x="622" y="356" font-size="9.4" fill="#334155" xml:space="preserve">载荷 · 46–1500B · IP 数据</text>
+<line x1="36" y1="373" x2="54" y2="373" stroke="#dc2626" stroke-width="3"/>
+<text x="62" y="380" font-size="9.4" fill="#334155" xml:space="preserve">FCS · 4B · 只校验一跳</text>
+<rect x="36" y="424" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="454" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="478" font-size="10.2" fill="#334155" xml:space="preserve">最小帧 64 字节来自 CSMA/CD 冲突检测。</text>
+<text x="52" y="496" font-size="10.2" fill="#334155" xml:space="preserve">跨网段时目的 MAC 是网关，不是最终主机。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

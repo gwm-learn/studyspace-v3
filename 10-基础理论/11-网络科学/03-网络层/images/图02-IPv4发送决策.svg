@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · IPv4 发送决策：先比网段，再决定问谁</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">主机先用自己的掩码判断目的是否同网段。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">同网段 ARP 问目的主机，跨网段 ARP 问网关。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="351.8" y1="142" x2="381.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="389.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<rect x="30" y="210" width="170" height="70" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="30" y="210" width="4.5" height="70" fill="#475569" rx="2"/>
+<text x="43" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">应用发包</text>
+<text x="43" y="246" font-size="9.6" fill="#334155" xml:space="preserve">目的 IP</text>
+<text x="43" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">查路由</text>
+<rect x="240" y="210" width="180" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="240" y="210" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="253" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">判断网段</text>
+<text x="253" y="246" font-size="9.6" fill="#334155" xml:space="preserve">IP &amp; mask</text>
+<text x="253" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">与目的比较</text>
+<rect x="470" y="120" width="180" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="470" y="120" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="483" y="139" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">同网段</text>
+<text x="483" y="156" font-size="9.6" fill="#334155" xml:space="preserve">ARP 目的主机</text>
+<text x="483" y="171.4" font-size="9.6" fill="#334155" xml:space="preserve">直接封装</text>
+<rect x="470" y="300" width="180" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="470" y="300" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="483" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">跨网段</text>
+<text x="483" y="336" font-size="9.6" fill="#334155" xml:space="preserve">ARP 网关</text>
+<text x="483" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">交给下一跳</text>
+<rect x="720" y="120" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="720" y="120" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="733" y="139" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">目的主机</text>
+<text x="733" y="156" font-size="9.6" fill="#334155" xml:space="preserve">收到帧</text>
+<text x="733" y="171.4" font-size="9.6" fill="#334155" xml:space="preserve">上交 IP</text>
+<rect x="720" y="300" width="170" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="720" y="300" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="733" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网关</text>
+<text x="733" y="336" font-size="9.6" fill="#334155" xml:space="preserve">继续转发</text>
+<text x="733" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">TTL−1</text>
+<line x1="200" y1="245" x2="240" y2="245" stroke="#475569" stroke-width="2"/>
+<polygon points="240,245 231,240.5 231,249.5" fill="#475569"/>
+<text x="226" y="238" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">查路由</text>
+<line x1="419.44" y1="210" x2="470.56" y2="190" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="470.56,190 460.53,189.09 463.81,197.47" fill="#0f9d58"/>
+<text x="451" y="193" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">同网段</text>
+<line x1="419.44" y1="280" x2="470.56" y2="300" stroke="#d97706" stroke-width="2"/>
+<polygon points="470.56,300 463.81,292.53 460.53,300.91" fill="#d97706"/>
+<text x="451" y="283" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">跨网段</text>
+<line x1="650" y1="155" x2="720" y2="155" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="720,155 711,150.5 711,159.5" fill="#0f9d58"/>
+<text x="691" y="148" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">目的 MAC</text>
+<line x1="650" y1="335" x2="720" y2="335" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="720,335 711,330.5 711,339.5" fill="#4f46e5"/>
+<text x="691" y="328" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">网关 MAC</text>
+<rect x="36" y="420" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="474" font-size="10.2" fill="#334155" xml:space="preserve">IP 目的地址始终不变，变的是下一跳 MAC。</text>
+<text x="52" y="492" font-size="10.2" fill="#334155" xml:space="preserve">跨网段时最终主机 MAC 只在最后一跳出现。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

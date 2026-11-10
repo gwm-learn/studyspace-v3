@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · IPv6 地址配置：RA、DAD 与 DHCPv6</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">主机先发 RS 请求 RA；RA 给出前缀、MTU 与 M/O/A 标志。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">SLAAC 生成地址后做 DAD；需要可控地址时再走 DHCPv6。</text>
+<rect x="36" y="180" width="190" height="46" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="180" width="4.5" height="46" fill="#0f9d58" rx="2"/>
+<text x="49" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">主机</text>
+<line x1="131" y1="226" x2="131" y2="544" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="316" y="180" width="190" height="46" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="316" y="180" width="4.5" height="46" fill="#4f46e5" rx="2"/>
+<text x="329" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">路由器</text>
+<line x1="411" y1="226" x2="411" y2="544" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="596" y="180" width="190" height="46" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="596" y="180" width="4.5" height="46" fill="#d97706" rx="2"/>
+<text x="609" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">DHCPv6</text>
+<line x1="691" y1="226" x2="691" y2="544" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="131" y1="270" x2="411" y2="270" stroke="#475569" stroke-width="2"/>
+<polygon points="411,270 402,265.5 402,274.5" fill="#475569"/>
+<text x="277" y="262" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">RS：请求路由器通告</text>
+<line x1="411" y1="314" x2="131" y2="314" stroke="#475569" stroke-width="2"/>
+<polygon points="131,314 140,318.5 140,309.5" fill="#475569"/>
+<text x="277" y="306" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">RA：前缀 / MTU / 标志</text>
+<line x1="131" y1="358" x2="131" y2="358" stroke="#475569" stroke-width="2"/>
+<polygon points="131,358 122,353.5 122,362.5" fill="#475569"/>
+<text x="137" y="350" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SLAAC：前缀 + 接口 ID</text>
+<line x1="131" y1="402" x2="131" y2="402" stroke="#475569" stroke-width="2"/>
+<polygon points="131,402 122,397.5 122,406.5" fill="#475569"/>
+<text x="137" y="394" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">DAD：NS 问“谁是这个地址”</text>
+<line x1="131" y1="446" x2="691" y2="446" stroke="#475569" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="691,446 682,441.5 682,450.5" fill="#475569"/>
+<text x="417" y="438" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SOLICIT（若 M=1）</text>
+<line x1="691" y1="490" x2="131" y2="490" stroke="#475569" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="131,490 140,494.5 140,485.5" fill="#475569"/>
+<text x="417" y="482" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">REPLY：地址 / 参数</text>
+<rect x="36" y="544" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="574" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="598" font-size="10.2" fill="#334155" xml:space="preserve">A=1 允许 SLAAC；M=1 地址走 DHCPv6；O=1 参数走 DHCPv6。</text>
+<text x="52" y="616" font-size="10.2" fill="#334155" xml:space="preserve">DHCPv6 不提供默认网关，默认路由仍靠 RA。</text>
+<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

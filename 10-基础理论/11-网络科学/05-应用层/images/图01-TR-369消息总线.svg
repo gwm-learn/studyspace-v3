@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · TR-369/USP：管理变成发布/订阅</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Agent、Controller 都连 Broker；用 to_id/from_id 寻址。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">MTP 可选 MQTT/WebSocket/STOMP，消息异步、可订阅。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<line x1="183.8" y1="142" x2="213.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="221.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="278.8" y1="142" x2="308.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="316.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<rect x="380" y="180" width="220" height="80" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="380" y="180" width="4.5" height="80" fill="#d97706" rx="2"/>
+<text x="393" y="199" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">MTP Broker</text>
+<text x="393" y="216" font-size="9.6" fill="#334155" xml:space="preserve">MQTT / WebSocket</text>
+<text x="393" y="231.4" font-size="9.6" fill="#334155" xml:space="preserve">TLS + 认证</text>
+<rect x="80" y="340" width="200" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="80" y="340" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="93" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Controller 1</text>
+<text x="93" y="376" font-size="9.6" fill="#334155" xml:space="preserve">运营商</text>
+<text x="93" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">Get/Set/Operate</text>
+<rect x="620" y="340" width="200" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="620" y="340" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="633" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Controller 2</text>
+<text x="633" y="376" font-size="9.6" fill="#334155" xml:space="preserve">第三方服务</text>
+<text x="633" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">订阅事件</text>
+<rect x="280" y="460" width="180" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="280" y="460" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="293" y="479" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Agent 1</text>
+<text x="293" y="496" font-size="9.6" fill="#334155" xml:space="preserve">CPE / 网关</text>
+<text x="293" y="511.4" font-size="9.6" fill="#334155" xml:space="preserve">Notify</text>
+<rect x="500" y="460" width="180" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="500" y="460" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="513" y="479" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Agent 2</text>
+<text x="513" y="496" font-size="9.6" fill="#334155" xml:space="preserve">IoT 设备</text>
+<text x="513" y="511.4" font-size="9.6" fill="#334155" xml:space="preserve">Notify</text>
+<line x1="250" y1="340" x2="410" y2="260" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="410,260 399.94,260 403.96,268.05" fill="#4f46e5"/>
+<text x="336" y="293" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">发布</text>
+<line x1="668.06" y1="340" x2="549.35" y2="260" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="549.35,260 554.3,268.76 559.33,261.3" fill="#4f46e5"/>
+<text x="614.71" y="293" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">订阅</text>
+<line x1="472.55" y1="260" x2="385.27" y2="460" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="385.27,460 393,453.55 384.75,449.95" fill="#0f9d58"/>
+<text x="434.91" y="353" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">下发</text>
+<line x1="385.27" y1="460" x2="472.55" y2="260" stroke="#0f9d58" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="472.55,260 464.82,266.45 473.07,270.05" fill="#0f9d58"/>
+<text x="434.91" y="353" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Notify</text>
+<line x1="504.55" y1="260" x2="577.27" y2="460" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="577.27,460 578.43,450 569.97,453.08" fill="#0f9d58"/>
+<text x="546.91" y="353" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">下发</text>
+<rect x="36" y="580" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="610" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="634" font-size="10.2" fill="#334155" xml:space="preserve">异步消息适合弱网/大规模设备。</text>
+<text x="52" y="652" font-size="10.2" fill="#334155" xml:space="preserve">Broker 是信任中心，主题权限要隔离。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

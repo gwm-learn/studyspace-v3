@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="740" viewBox="0 0 1180 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 协议归层矩阵：看封装在谁里面</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">横轴是五层，纵轴是协议；“✓”表示归属层。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">边界列记录最容易放错的地方。</text>
+<rect x="36" y="190" width="1100" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">协议</text>
+<text x="271.71" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">物理</text>
+<text x="428.86" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">链路</text>
+<text x="586" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">网络</text>
+<text x="743.14" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">传输</text>
+<text x="900.29" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">应用</text>
+<text x="1057.43" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">边界</text>
+<rect x="36" y="220" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="220" x2="1136" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">以太网</text>
+<text x="271.71" y="240" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="428.86" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="586" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="743.14" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1057.43" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">帧</text>
+<rect x="36" y="250" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="250" x2="1136" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">VLAN</text>
+<text x="271.71" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="270" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="586" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="743.14" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1057.43" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">广播域</text>
+<rect x="36" y="280" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="280" x2="1136" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">ARP</text>
+<text x="271.71" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="300" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="586" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="743.14" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1057.43" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">用 IP 找 MAC</text>
+<rect x="36" y="310" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="310" x2="1136" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">L2TP / ZeroTier</text>
+<text x="271.71" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="330" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="586" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="743.14" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1057.43" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">承载以太帧</text>
+<rect x="36" y="340" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="340" x2="1136" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="360" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">IPv4 / IPv6</text>
+<text x="271.71" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="586" y="360" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="743.14" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1057.43" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">包</text>
+<rect x="36" y="370" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="370" x2="1136" y2="370" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="390" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">ICMP / IGMP</text>
+<text x="271.71" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="586" y="390" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="743.14" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1057.43" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">封装在 IP 内</text>
+<rect x="36" y="400" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="400" x2="1136" y2="400" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="420" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">WireGuard</text>
+<text x="271.71" y="420" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="420" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="586" y="420" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="743.14" y="420" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="420" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1057.43" y="420" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">承载 IP 包</text>
+<rect x="36" y="430" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="430" x2="1136" y2="430" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="450" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">TCP / UDP / QUIC</text>
+<text x="271.71" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="586" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="743.14" y="450" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="900.29" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1057.43" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">端口与可靠性</text>
+<rect x="36" y="460" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="460" x2="1136" y2="460" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="480" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">TLS</text>
+<text x="271.71" y="480" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="480" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="586" y="480" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="743.14" y="480" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="480" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="1057.43" y="480" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">传输之上 / 应用之下</text>
+<rect x="36" y="490" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="490" x2="1136" y2="490" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="510" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">DHCP / DNS / HTTP</text>
+<text x="271.71" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="586" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="743.14" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="510" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1057.43" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">业务语义</text>
+<rect x="36" y="520" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="520" x2="1136" y2="520" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="540" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">TR-069 / TR-369</text>
+<text x="271.71" y="540" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="428.86" y="540" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="586" y="540" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="743.14" y="540" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle"></text>
+<text x="900.29" y="540" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1057.43" y="540" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">管理协议</text>
+<line x1="36" y1="550" x2="1136" y2="550" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="576" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="606" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="630" font-size="10.2" fill="#334155" xml:space="preserve">同一个协议只归一层；跨层能力写在边界列。</text>
+<text x="52" y="648" font-size="10.2" fill="#334155" xml:space="preserve">新增协议先改矩阵，再写正文。</text>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

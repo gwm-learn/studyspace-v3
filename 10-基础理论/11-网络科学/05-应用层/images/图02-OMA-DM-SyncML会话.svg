@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="680" viewBox="0 0 1180 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · OMA DM SyncML 会话：多包交换与原子执行</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">服务器发 Alert 触发，客户端回 Package 1；双方交替发送多包。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">命令可用 Sequence 顺序执行，或用 Atomic 保证全成功/全回滚。</text>
+<rect x="36" y="180" width="190" height="46" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="180" width="4.5" height="46" fill="#4f46e5" rx="2"/>
+<text x="49" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">DM Server</text>
+<line x1="131" y1="226" x2="131" y2="500" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="316" y="180" width="190" height="46" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="316" y="180" width="4.5" height="46" fill="#0f9d58" rx="2"/>
+<text x="329" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">DM Client</text>
+<line x1="411" y1="226" x2="411" y2="500" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="131" y1="270" x2="411" y2="270" stroke="#475569" stroke-width="2"/>
+<polygon points="411,270 402,265.5 402,274.5" fill="#475569"/>
+<text x="277" y="262" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Alert 1201（触发）</text>
+<line x1="411" y1="314" x2="131" y2="314" stroke="#475569" stroke-width="2"/>
+<polygon points="131,314 140,318.5 140,309.5" fill="#475569"/>
+<text x="277" y="306" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Package 1（认证/设备信息）</text>
+<line x1="131" y1="358" x2="411" y2="358" stroke="#475569" stroke-width="2"/>
+<polygon points="411,358 402,353.5 402,362.5" fill="#475569"/>
+<text x="277" y="350" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Package 2（Get/Replace/Exec）</text>
+<line x1="411" y1="402" x2="131" y2="402" stroke="#475569" stroke-width="2"/>
+<polygon points="131,402 140,406.5 140,397.5" fill="#475569"/>
+<text x="277" y="394" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Package 3（结果/Status）</text>
+<line x1="131" y1="446" x2="411" y2="446" stroke="#475569" stroke-width="2"/>
+<polygon points="411,446 402,441.5 402,450.5" fill="#475569"/>
+<text x="277" y="438" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Package 4（确认/结束）</text>
+<rect x="36" y="500" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="554" font-size="10.2" fill="#334155" xml:space="preserve">Bootstrap 先给服务器地址、认证与初始配置。</text>
+<text x="52" y="572" font-size="10.2" fill="#334155" xml:space="preserve">固件升级（FUMO）要签名与回滚保护。</text>
+<text x="36" y="626" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

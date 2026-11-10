@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · TR-069 报文与会话：SOAP 里装 RPC</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">CWMP 是 SOAP over HTTP(S)：Header 带 CWMP ID，Body 带 Inform/RPC。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">一次 HTTP 往返就是一个 CWMP 会话，可连续多个包。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<line x1="415.6" y1="142" x2="445.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="453.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层 / 补充</text>
+<rect x="30" y="210" width="180" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="30" y="210" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="43" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">CPE</text>
+<text x="43" y="246" font-size="9.6" fill="#334155" xml:space="preserve">HTTP 客户端</text>
+<text x="43" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">发 Inform</text>
+<rect x="650" y="210" width="180" height="76" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="650" y="210" width="4.5" height="76" fill="#4f46e5" rx="2"/>
+<text x="663" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ACS</text>
+<text x="663" y="246" font-size="9.6" fill="#334155" xml:space="preserve">HTTP 服务端</text>
+<text x="663" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">下发 RPC</text>
+<rect x="290" y="180" width="260" height="110" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="290" y="180" width="4.5" height="110" fill="#d97706" rx="2"/>
+<text x="303" y="199" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">SOAP Envelope</text>
+<text x="303" y="216" font-size="9.6" fill="#334155" xml:space="preserve">Header：CWMP ID</text>
+<text x="303" y="231.4" font-size="9.6" fill="#334155" xml:space="preserve">Body：Inform / RPC</text>
+<rect x="290" y="340" width="260" height="90" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="290" y="340" width="4.5" height="90" fill="#0891b2" rx="2"/>
+<text x="303" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">常用 RPC</text>
+<text x="303" y="376" font-size="9.6" fill="#334155" xml:space="preserve">Get/SetParameterValues</text>
+<text x="303" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">Download / Reboot</text>
+<line x1="210" y1="244.1" x2="290" y2="240.63" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="290,240.63 280.81,236.53 281.2,245.52" fill="#0f9d58"/>
+<text x="256" y="235.37" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">POST</text>
+<line x1="550" y1="240.28" x2="650" y2="244.34" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="650,244.34 641.19,239.48 640.82,248.47" fill="#4f46e5"/>
+<text x="606" y="235.31" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">HTTP(S)</text>
+<line x1="651.24" y1="286" x2="525.11" y2="340" stroke="#0891b2" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="525.11,340 535.15,340.59 531.61,332.32" fill="#0891b2"/>
+<text x="594.18" y="306" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">任务</text>
+<line x1="321.46" y1="340" x2="203.21" y2="286" stroke="#0f9d58" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="203.21,286 209.53,293.83 213.27,285.65" fill="#0f9d58"/>
+<text x="268.34" y="306" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">响应结果</text>
+<rect x="36" y="480" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="510" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="534" font-size="10.2" fill="#334155" xml:space="preserve">Connection Request 只触发 CPE 回连，不直接下发配置。</text>
+<text x="52" y="552" font-size="10.2" fill="#334155" xml:space="preserve">数据模型版本（TR-098/181）要对齐。</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

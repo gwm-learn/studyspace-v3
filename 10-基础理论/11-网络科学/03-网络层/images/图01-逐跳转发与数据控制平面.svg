@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 逐跳转发：控制平面算表，数据平面查表</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">控制平面运行路由协议，算出 RIB，再把最优路由下发为 FIB。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">数据平面每个包只查 FIB，TTL 减 1，逐跳转发。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<line x1="183.8" y1="142" x2="213.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="221.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="278.8" y1="142" x2="308.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="316.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<rect x="30" y="170" width="200" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="30" y="170" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="43" y="189" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">路由协议</text>
+<text x="43" y="206" font-size="9.6" fill="#334155" xml:space="preserve">OSPF / BGP</text>
+<text x="43" y="221.4" font-size="9.6" fill="#334155" xml:space="preserve">邻居与拓扑</text>
+<rect x="290" y="170" width="180" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="290" y="170" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="303" y="189" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">RIB</text>
+<text x="303" y="206" font-size="9.6" fill="#334155" xml:space="preserve">候选路由</text>
+<text x="303" y="221.4" font-size="9.6" fill="#334155" xml:space="preserve">AD / metric</text>
+<rect x="530" y="170" width="180" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="530" y="170" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="543" y="189" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">FIB</text>
+<text x="543" y="206" font-size="9.6" fill="#334155" xml:space="preserve">最优路由</text>
+<text x="543" y="221.4" font-size="9.6" fill="#334155" xml:space="preserve">下一跳 / 出接口</text>
+<rect x="160" y="340" width="180" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="160" y="340" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="173" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">路由器 1</text>
+<text x="173" y="376" font-size="9.6" fill="#334155" xml:space="preserve">查 FIB</text>
+<text x="173" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">TTL−1</text>
+<rect x="430" y="340" width="180" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="430" y="340" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="443" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">路由器 2</text>
+<text x="443" y="376" font-size="9.6" fill="#334155" xml:space="preserve">查 FIB</text>
+<text x="443" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">TTL−1</text>
+<rect x="700" y="340" width="180" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="700" y="340" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="713" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">目的主机</text>
+<text x="713" y="376" font-size="9.6" fill="#334155" xml:space="preserve">收包</text>
+<text x="713" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">上交传输层</text>
+<line x1="230" y1="205" x2="290" y2="205" stroke="#d97706" stroke-width="2"/>
+<polygon points="290,205 281,200.5 281,209.5" fill="#d97706"/>
+<text x="266" y="198" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">算路</text>
+<line x1="470" y1="205" x2="530" y2="205" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="530,205 521,200.5 521,209.5" fill="#4f46e5"/>
+<text x="506" y="198" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">选最优</text>
+<line x1="543.82" y1="240" x2="326.18" y2="340" stroke="#0f9d58" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="326.18,340 336.23,340.33 332.48,332.15" fill="#0f9d58"/>
+<text x="441" y="283" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">下发</text>
+<line x1="340" y1="375" x2="430" y2="375" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="430,375 421,370.5 421,379.5" fill="#4f46e5"/>
+<text x="391" y="368" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">逐跳</text>
+<line x1="610" y1="375" x2="700" y2="375" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="700,375 691,370.5 691,379.5" fill="#4f46e5"/>
+<text x="661" y="368" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">逐跳</text>
+<rect x="36" y="460" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="490" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="514" font-size="10.2" fill="#334155" xml:space="preserve">转发不跑 SPF/BGP，只查已经算好的表。</text>
+<text x="52" y="532" font-size="10.2" fill="#334155" xml:space="preserve">TTL 归零丢包并回 ICMP 超时。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

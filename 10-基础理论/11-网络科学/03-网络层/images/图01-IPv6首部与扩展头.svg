@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · IPv6 固定首部与扩展头：基本头不变，功能外挂</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">基本头固定 40 字节；扩展头用 Next Header 串成链。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">中间路由器不分片，PMTUD 依赖 ICMPv6 Packet Too Big。</text>
+<rect x="36" y="220" width="64" height="54" fill="#f8fafc" rx="4" stroke="#475569" stroke-width="1.1"/>
+<text x="68" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">版本</text>
+<text x="68" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">4b</text>
+<rect x="100" y="220" width="90" height="54" fill="#fff9ee" rx="4" stroke="#d97706" stroke-width="1.1"/>
+<text x="145" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">流量类</text>
+<text x="145" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">8b</text>
+<rect x="190" y="220" width="110" height="54" fill="#eef2ff" rx="4" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="245" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">流标签</text>
+<text x="245" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">20b</text>
+<rect x="300" y="220" width="100" height="54" fill="#eef2ff" rx="4" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="350" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">载荷长度</text>
+<text x="350" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">16b</text>
+<rect x="400" y="220" width="90" height="54" fill="#ecfeff" rx="4" stroke="#0891b2" stroke-width="1.1"/>
+<text x="445" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">下一头</text>
+<text x="445" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">8b</text>
+<rect x="490" y="220" width="90" height="54" fill="#fff5f5" rx="4" stroke="#dc2626" stroke-width="1.1"/>
+<text x="535" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">跳数限制</text>
+<text x="535" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">8b</text>
+<rect x="580" y="220" width="240" height="54" fill="#f2fcf5" rx="4" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="700" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">源地址</text>
+<text x="700" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">128b</text>
+<rect x="820" y="220" width="240" height="54" fill="#f2fcf5" rx="4" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="940" y="244" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">目的地址</text>
+<text x="940" y="261" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">128b</text>
+<line x1="36" y1="301" x2="54" y2="301" stroke="#475569" stroke-width="3"/>
+<text x="62" y="308" font-size="9.4" fill="#334155" xml:space="preserve">版本 · 4b · IPv6=6</text>
+<line x1="596" y1="301" x2="614" y2="301" stroke="#d97706" stroke-width="3"/>
+<text x="622" y="308" font-size="9.4" fill="#334155" xml:space="preserve">流量类 · 8b · DSCP/ECN</text>
+<line x1="36" y1="325" x2="54" y2="325" stroke="#4f46e5" stroke-width="3"/>
+<text x="62" y="332" font-size="9.4" fill="#334155" xml:space="preserve">流标签 · 20b · 流标识</text>
+<line x1="596" y1="325" x2="614" y2="325" stroke="#4f46e5" stroke-width="3"/>
+<text x="622" y="332" font-size="9.4" fill="#334155" xml:space="preserve">载荷长度 · 16b · 扩展头+数据</text>
+<line x1="36" y1="349" x2="54" y2="349" stroke="#0891b2" stroke-width="3"/>
+<text x="62" y="356" font-size="9.4" fill="#334155" xml:space="preserve">下一头 · 8b · TCP/UDP/ICMPv6</text>
+<line x1="596" y1="349" x2="614" y2="349" stroke="#dc2626" stroke-width="3"/>
+<text x="622" y="356" font-size="9.4" fill="#334155" xml:space="preserve">跳数限制 · 8b · 每跳减 1</text>
+<line x1="36" y1="373" x2="54" y2="373" stroke="#0f9d58" stroke-width="3"/>
+<text x="62" y="380" font-size="9.4" fill="#334155" xml:space="preserve">源地址 · 128b · 128 位</text>
+<line x1="596" y1="373" x2="614" y2="373" stroke="#0f9d58" stroke-width="3"/>
+<text x="622" y="380" font-size="9.4" fill="#334155" xml:space="preserve">目的地址 · 128b · 128 位</text>
+<rect x="36" y="424" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="454" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="478" font-size="10.2" fill="#334155" xml:space="preserve">扩展头顺序：逐跳 → 路由 → 分片 → 目的选项 → 上层。</text>
+<text x="52" y="496" font-size="10.2" fill="#334155" xml:space="preserve">NDP、SLAAC、MLD 都由 ICMPv6 承载。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

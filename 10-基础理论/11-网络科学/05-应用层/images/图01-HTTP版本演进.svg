@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="700" viewBox="0 0 1180 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · HTTP/1.1 → 2 → 3：解决不同的队头阻塞</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">1.1 同连接串行；2 在 TCP 上多路复用；3 把流搬到 QUIC。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">语义（方法/状态码/头）基本不变，变的是传输方式。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<line x1="183.8" y1="142" x2="213.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="221.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="278.8" y1="142" x2="308.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="316.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<rect x="36" y="190" width="108" height="90" fill="#fff9ee" rx="9" stroke="#d97706" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">HTTP/1.1</text>
+<text x="46" y="228" font-size="9" fill="#64748b" xml:space="preserve">TCP 单连接</text>
+<text x="46" y="241" font-size="9" fill="#64748b" xml:space="preserve">串行请求</text>
+<rect x="154" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="154" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">请求 1</text>
+<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">等响应</text>
+<text x="167" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">队头阻塞</text>
+<line x1="312" y1="231" x2="324" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="324,231 315,226.5 315,235.5" fill="#94a3b8"/>
+<rect x="324" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="324" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="337" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">请求 2</text>
+<text x="337" y="226" font-size="8.8" fill="#334155" xml:space="preserve">排队</text>
+<text x="337" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">复用连接</text>
+<line x1="482" y1="231" x2="494" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="494,231 485,226.5 485,235.5" fill="#94a3b8"/>
+<rect x="494" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="494" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="507" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">请求 3</text>
+<text x="507" y="226" font-size="8.8" fill="#334155" xml:space="preserve">排队</text>
+<text x="507" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">或开新连接</text>
+<rect x="36" y="302" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="324" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">HTTP/2</text>
+<text x="46" y="340" font-size="9" fill="#64748b" xml:space="preserve">TCP 多路复用</text>
+<text x="46" y="353" font-size="9" fill="#64748b" xml:space="preserve">二进制分帧</text>
+<rect x="154" y="302" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154" y="302" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="167" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">流 1</text>
+<text x="167" y="338" font-size="8.8" fill="#334155" xml:space="preserve">独立流</text>
+<text x="167" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">共享 TCP</text>
+<line x1="312" y1="343" x2="324" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="324,343 315,338.5 315,347.5" fill="#94a3b8"/>
+<rect x="324" y="302" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="324" y="302" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="337" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">流 2</text>
+<text x="337" y="338" font-size="8.8" fill="#334155" xml:space="preserve">独立流</text>
+<text x="337" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">TCP 丢包仍阻塞</text>
+<line x1="482" y1="343" x2="494" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="494,343 485,338.5 485,347.5" fill="#94a3b8"/>
+<rect x="494" y="302" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="494" y="302" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="507" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">流 3</text>
+<text x="507" y="338" font-size="8.8" fill="#334155" xml:space="preserve">头压缩</text>
+<text x="507" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">HPACK</text>
+<rect x="36" y="414" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="46" y="436" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">HTTP/3</text>
+<text x="46" y="452" font-size="9" fill="#64748b" xml:space="preserve">QUIC / UDP</text>
+<text x="46" y="465" font-size="9" fill="#64748b" xml:space="preserve">流级恢复</text>
+<rect x="154" y="414" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="154" y="414" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="167" y="433" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">流 1</text>
+<text x="167" y="450" font-size="8.8" fill="#334155" xml:space="preserve">独立重传</text>
+<text x="167" y="465.4" font-size="8.8" fill="#334155" xml:space="preserve">0-RTT</text>
+<line x1="312" y1="455" x2="324" y2="455" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="324,455 315,450.5 315,459.5" fill="#94a3b8"/>
+<rect x="324" y="414" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="324" y="414" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="337" y="433" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">流 2</text>
+<text x="337" y="450" font-size="8.8" fill="#334155" xml:space="preserve">互不阻塞</text>
+<text x="337" y="465.4" font-size="8.8" fill="#334155" xml:space="preserve">连接迁移</text>
+<line x1="482" y1="455" x2="494" y2="455" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="494,455 485,450.5 485,459.5" fill="#94a3b8"/>
+<rect x="494" y="414" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="494" y="414" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="507" y="433" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">流 3</text>
+<text x="507" y="450" font-size="8.8" fill="#334155" xml:space="preserve">内置 TLS 1.3</text>
+<text x="507" y="465.4" font-size="8.8" fill="#334155" xml:space="preserve">UDP 可能被限</text>
+<rect x="36" y="532" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="562" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="586" font-size="10.2" fill="#334155" xml:space="preserve">HTTP/2 解决应用层串行，不解决 TCP 层队头阻塞。</text>
+<text x="52" y="604" font-size="10.2" fill="#334155" xml:space="preserve">HTTP/3 走 UDP，网络策略要放行。</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

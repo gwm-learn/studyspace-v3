@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · SNAT 与 DNAT：改地址，记映射</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">SNAT 改源，让内网共享公网；DNAT 改目的，做端口映射。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">只有新连接首包走规则，后续包由 conntrack 直接翻译。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="351.8" y1="142" x2="381.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="389.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层 / 补充</text>
+<rect x="36" y="190" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">SNAT</text>
+<text x="46" y="228" font-size="9" fill="#64748b" xml:space="preserve">内网访问公网</text>
+<text x="46" y="241" font-size="9" fill="#64748b" xml:space="preserve">改源地址/端口</text>
+<rect x="154" y="190" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="154" y="190" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">内网发包</text>
+<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">192.168.1.10:5000</text>
+<text x="167" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">目的 8.8.8.8:53</text>
+<line x1="312" y1="231" x2="324" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="324,231 315,226.5 315,235.5" fill="#94a3b8"/>
+<rect x="324" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="324" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="337" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">改源</text>
+<text x="337" y="226" font-size="8.8" fill="#334155" xml:space="preserve">→ 1.2.3.4:6000</text>
+<text x="337" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">写 conntrack</text>
+<line x1="482" y1="231" x2="494" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="494,231 485,226.5 485,235.5" fill="#94a3b8"/>
+<rect x="494" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="494" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="507" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">服务器回包</text>
+<text x="507" y="226" font-size="8.8" fill="#334155" xml:space="preserve">目的 1.2.3.4:6000</text>
+<text x="507" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">公网地址</text>
+<line x1="652" y1="231" x2="664" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="664,231 655,226.5 655,235.5" fill="#94a3b8"/>
+<rect x="664" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="664" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="677" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">查表还原</text>
+<text x="677" y="226" font-size="8.8" fill="#334155" xml:space="preserve">→ 192.168.1.10</text>
+<text x="677" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">交给内网</text>
+<rect x="36" y="302" width="108" height="90" fill="#ecfeff" rx="9" stroke="#0891b2" stroke-width="1.2"/>
+<text x="46" y="324" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">DNAT</text>
+<text x="46" y="340" font-size="9" fill="#64748b" xml:space="preserve">公网访问内网</text>
+<text x="46" y="353" font-size="9" fill="#64748b" xml:space="preserve">改目的地址/端口</text>
+<rect x="154" y="302" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="154" y="302" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="167" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">公网访问</text>
+<text x="167" y="338" font-size="8.8" fill="#334155" xml:space="preserve">1.2.3.4:8080</text>
+<text x="167" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">端口映射</text>
+<line x1="312" y1="343" x2="324" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="324,343 315,338.5 315,347.5" fill="#94a3b8"/>
+<rect x="324" y="302" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="324" y="302" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="337" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">改目的</text>
+<text x="337" y="338" font-size="8.8" fill="#334155" xml:space="preserve">→ 192.168.1.20:80</text>
+<text x="337" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">写 conntrack</text>
+<line x1="482" y1="343" x2="494" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="494,343 485,338.5 485,347.5" fill="#94a3b8"/>
+<rect x="494" y="302" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="494" y="302" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="507" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">内网回包</text>
+<text x="507" y="338" font-size="8.8" fill="#334155" xml:space="preserve">源 192.168.1.20:80</text>
+<text x="507" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">目的公网</text>
+<line x1="652" y1="343" x2="664" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="664,343 655,338.5 655,347.5" fill="#94a3b8"/>
+<rect x="664" y="302" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="664" y="302" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="677" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">源改回</text>
+<text x="677" y="338" font-size="8.8" fill="#334155" xml:space="preserve">→ 1.2.3.4:8080</text>
+<text x="677" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">常需 SNAT 配合</text>
+<rect x="36" y="420" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="474" font-size="10.2" fill="#334155" xml:space="preserve">NAT 不是防火墙；隐藏内网不等于访问控制。</text>
+<text x="52" y="492" font-size="10.2" fill="#334155" xml:space="preserve">对称 NAT 最难穿透，P2P 常需中继。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

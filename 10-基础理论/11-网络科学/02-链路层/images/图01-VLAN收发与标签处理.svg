@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · VLAN 收发与标签处理：PVID 决定归属</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Access 端口收无标签帧打 PVID，发帧剥标签。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">Trunk 端口默认保留标签，native VLAN 的帧不打标签。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
+<line x1="256.8" y1="142" x2="286.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="294.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="351.8" y1="142" x2="381.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="389.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层 / 补充</text>
+<rect x="36" y="190" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">Access</text>
+<text x="46" y="228" font-size="9" fill="#64748b" xml:space="preserve">接终端</text>
+<text x="46" y="241" font-size="9" fill="#64748b" xml:space="preserve">只属于一个 VLAN</text>
+<rect x="154" y="190" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="154" y="190" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">收帧</text>
+<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">无标签</text>
+<text x="167" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">或 PVID 标签</text>
+<line x1="312" y1="231" x2="324" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="324,231 315,226.5 315,235.5" fill="#94a3b8"/>
+<rect x="324" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="324" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="337" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">打 PVID</text>
+<text x="337" y="226" font-size="8.8" fill="#334155" xml:space="preserve">写入 VLAN ID</text>
+<text x="337" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">查允许列表</text>
+<line x1="482" y1="231" x2="494" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="494,231 485,226.5 485,235.5" fill="#94a3b8"/>
+<rect x="494" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="494" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="507" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">查 FDB</text>
+<text x="507" y="226" font-size="8.8" fill="#334155" xml:space="preserve">按 VLAN 隔离</text>
+<text x="507" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">找出口</text>
+<line x1="652" y1="231" x2="664" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="664,231 655,226.5 655,235.5" fill="#94a3b8"/>
+<rect x="664" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="664" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="677" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">剥标签发出</text>
+<text x="677" y="226" font-size="8.8" fill="#334155" xml:space="preserve">终端看到</text>
+<text x="677" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">普通以太帧</text>
+<rect x="36" y="302" width="108" height="90" fill="#ecfeff" rx="9" stroke="#0891b2" stroke-width="1.2"/>
+<text x="46" y="324" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">Trunk</text>
+<text x="46" y="340" font-size="9" fill="#64748b" xml:space="preserve">接交换机</text>
+<text x="46" y="353" font-size="9" fill="#64748b" xml:space="preserve">可承载多 VLAN</text>
+<rect x="154" y="302" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="154" y="302" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="167" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">收帧</text>
+<text x="167" y="338" font-size="8.8" fill="#334155" xml:space="preserve">带标签</text>
+<text x="167" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">查允许列表</text>
+<line x1="312" y1="343" x2="324" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="324,343 315,338.5 315,347.5" fill="#94a3b8"/>
+<rect x="324" y="302" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="324" y="302" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="337" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">保留标签</text>
+<text x="337" y="338" font-size="8.8" fill="#334155" xml:space="preserve">按 VID 转发</text>
+<text x="337" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">native 例外</text>
+<line x1="482" y1="343" x2="494" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="494,343 485,338.5 485,347.5" fill="#94a3b8"/>
+<rect x="494" y="302" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="494" y="302" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="507" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">查 FDB</text>
+<text x="507" y="338" font-size="8.8" fill="#334155" xml:space="preserve">每个 VLAN</text>
+<text x="507" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">独立表项</text>
+<line x1="652" y1="343" x2="664" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="664,343 655,338.5 655,347.5" fill="#94a3b8"/>
+<rect x="664" y="302" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="664" y="302" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="677" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">带标签发出</text>
+<text x="677" y="338" font-size="8.8" fill="#334155" xml:space="preserve">对端凭标签</text>
+<text x="677" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">区分 VLAN</text>
+<rect x="36" y="420" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="474" font-size="10.2" fill="#334155" xml:space="preserve">两端 native VLAN/PVID 必须一致，否则串 VLAN。</text>
+<text x="52" y="492" font-size="10.2" fill="#334155" xml:space="preserve">VLAN 隔离广播域，不是安全域。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

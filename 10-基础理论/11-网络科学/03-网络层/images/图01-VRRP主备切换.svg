@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · VRRP 主备切换：终端只认虚拟网关</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Master 持有虚拟 IP/MAC 并周期通告；Backup 收不到就接管。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">切换后发免费 ARP，刷新虚拟 IP → 虚拟 MAC 的映射。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<rect x="40" y="340" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="340" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="53" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">终端</text>
+<text x="53" y="376" font-size="9.6" fill="#334155" xml:space="preserve">网关 = VIP</text>
+<text x="53" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">不知道主备</text>
+<rect x="330" y="180" width="190" height="64" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="330" y="180" width="4.5" height="64" fill="#4f46e5" rx="2"/>
+<text x="343" y="199" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">虚拟路由器</text>
+<text x="511" y="199" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">VIP</text>
+<text x="343" y="216" font-size="9.6" fill="#334155" xml:space="preserve">VIP 192.168.1.1</text>
+<text x="343" y="231.4" font-size="9.6" fill="#334155" xml:space="preserve">虚拟 MAC</text>
+<rect x="270" y="340" width="180" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="270" y="340" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="283" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Master</text>
+<text x="441" y="359" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">M</text>
+<text x="283" y="376" font-size="9.6" fill="#334155" xml:space="preserve">转发 / 通告</text>
+<text x="283" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">优先级高</text>
+<rect x="540" y="340" width="180" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="540" y="340" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="553" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Backup</text>
+<text x="711" y="359" font-size="10.2" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="end">B</text>
+<text x="553" y="376" font-size="9.6" fill="#334155" xml:space="preserve">监听通告</text>
+<text x="553" y="391.4" font-size="9.6" fill="#334155" xml:space="preserve">准备接管</text>
+<line x1="189.42" y1="340" x2="366.1" y2="244" stroke="#475569" stroke-width="2"/>
+<polygon points="366.1,244 356.05,244.34 360.34,252.25" fill="#475569"/>
+<text x="283.76" y="285" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">默认网关</text>
+<line x1="412.24" y1="244" x2="373.96" y2="340" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="373.96,340 381.47,333.31 373.11,329.97" fill="#0f9d58"/>
+<text x="399.1" y="285" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">实际转发</text>
+<line x1="465.25" y1="244" x2="585.98" y2="340" stroke="#d97706" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="585.98,340 581.74,330.88 576.14,337.92" fill="#d97706"/>
+<text x="531.61" y="285" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">备份</text>
+<line x1="450" y1="375" x2="540" y2="375" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="540,375 531,370.5 531,379.5" fill="#dc2626"/>
+<rect x="36" y="460" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="490" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="514" font-size="10.2" fill="#334155" xml:space="preserve">双 Master 常见于组播被隔离或 VRID 冲突。</text>
+<text x="52" y="532" font-size="10.2" fill="#334155" xml:space="preserve">VRRP 只保网关，不保上行链路与会话状态。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

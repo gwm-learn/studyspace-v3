@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · TCP 三次握手与四次挥手：两个方向各自确认</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">三次握手同步双方 ISN，防止旧 SYN 造成半开连接。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">四次挥手因为全双工，两个发送方向要分别关闭。</text>
+<rect x="36" y="180" width="190" height="46" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="180" width="4.5" height="46" fill="#4f46e5" rx="2"/>
+<text x="49" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">客户端</text>
+<line x1="131" y1="226" x2="131" y2="588" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="316" y="180" width="190" height="46" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="316" y="180" width="4.5" height="46" fill="#0f9d58" rx="2"/>
+<text x="329" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">服务端</text>
+<line x1="411" y1="226" x2="411" y2="588" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="131" y1="270" x2="411" y2="270" stroke="#475569" stroke-width="2"/>
+<polygon points="411,270 402,265.5 402,274.5" fill="#475569"/>
+<text x="277" y="262" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SYN=1, seq=x</text>
+<line x1="411" y1="314" x2="131" y2="314" stroke="#475569" stroke-width="2"/>
+<polygon points="131,314 140,318.5 140,309.5" fill="#475569"/>
+<text x="277" y="306" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SYN=1, ACK=1, seq=y</text>
+<line x1="131" y1="358" x2="411" y2="358" stroke="#475569" stroke-width="2"/>
+<polygon points="411,358 402,353.5 402,362.5" fill="#475569"/>
+<text x="277" y="350" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">ACK=1, ack=y+1</text>
+<line x1="131" y1="402" x2="411" y2="402" stroke="#475569" stroke-width="2"/>
+<polygon points="411,402 402,397.5 402,406.5" fill="#475569"/>
+<text x="277" y="394" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">FIN=1, seq=u</text>
+<line x1="411" y1="446" x2="131" y2="446" stroke="#475569" stroke-width="2"/>
+<polygon points="131,446 140,450.5 140,441.5" fill="#475569"/>
+<text x="277" y="438" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">ACK=1, ack=u+1</text>
+<line x1="411" y1="490" x2="131" y2="490" stroke="#475569" stroke-width="2"/>
+<polygon points="131,490 140,494.5 140,485.5" fill="#475569"/>
+<text x="277" y="482" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">FIN=1, seq=w</text>
+<line x1="131" y1="534" x2="411" y2="534" stroke="#475569" stroke-width="2"/>
+<polygon points="411,534 402,529.5 402,538.5" fill="#475569"/>
+<text x="277" y="526" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">ACK=1, ack=w+1 → TIME-WAIT</text>
+<rect x="36" y="588" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="618" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="642" font-size="10.2" fill="#334155" xml:space="preserve">TIME-WAIT 等 2MSL：保证最后 ACK 可达，让旧报文消亡。</text>
+<text x="52" y="660" font-size="10.2" fill="#334155" xml:space="preserve">第三次 ACK 丢失时，服务端会重传 SYN+ACK。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

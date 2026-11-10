@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 路由表与最长前缀：越具体越优先</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先比前缀长度，再比管理距离，最后比 metric。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">前缀相同才轮到 AD/metric；仍相同则 ECMP。</text>
+<rect x="36" y="190" width="1100" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">目的前缀</text>
+<text x="366" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">下一跳</text>
+<text x="586" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">来源</text>
+<text x="806" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">AD</text>
+<text x="1026" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">结果</text>
+<rect x="36" y="220" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="220" x2="1136" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">0.0.0.0/0</text>
+<text x="366" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">ISP</text>
+<text x="586" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">静态</text>
+<text x="806" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">1</text>
+<text x="1026" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">默认路由</text>
+<rect x="36" y="250" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="250" x2="1136" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">10.0.0.0/8</text>
+<text x="366" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">R1</text>
+<text x="586" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">OSPF</text>
+<text x="806" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">110</text>
+<text x="1026" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">候选</text>
+<rect x="36" y="280" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="280" x2="1136" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">10.1.0.0/16</text>
+<text x="366" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">R2</text>
+<text x="586" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">OSPF</text>
+<text x="806" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">110</text>
+<text x="1026" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">更具体</text>
+<rect x="36" y="310" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="310" x2="1136" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">10.1.2.0/24</text>
+<text x="366" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">R3</text>
+<text x="586" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">直连</text>
+<text x="806" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">0</text>
+<text x="1026" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">最终命中</text>
+<rect x="36" y="340" width="1100" height="30" fill="#ffffff"/>
+<line x1="36" y1="340" x2="1136" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="360" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">10.1.2.0/24</text>
+<text x="366" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">R4</text>
+<text x="586" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">RIP</text>
+<text x="806" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">120</text>
+<text x="1026" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">被直连压过</text>
+<line x1="36" y1="370" x2="1136" y2="370" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="396" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="426" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="450" font-size="10.2" fill="#334155" xml:space="preserve">到 10.1.2.9 的包命中 /24，而不是 /8 或默认路由。</text>
+<text x="52" y="468" font-size="10.2" fill="#334155" xml:space="preserve">管理距离决定“信谁”，metric 决定“同协议内谁更优”。</text>
+<text x="36" y="506" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

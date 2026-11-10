@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · PIM 组播树：共享树与源树</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">PIM-SM 先建共享树（RP），接收者加入后再优化到源树。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">转发按 RPF 检查来向，防止环路与重复。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<line x1="183.8" y1="142" x2="213.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="221.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="278.8" y1="142" x2="308.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="316.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层 / 补充</text>
+<line x1="404.6" y1="142" x2="434.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="442.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<rect x="30" y="200" width="170" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="30" y="200" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="43" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">组播源</text>
+<text x="43" y="236" font-size="9.6" fill="#334155" xml:space="preserve">239.1.1.1</text>
+<text x="43" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">只发一份</text>
+<rect x="250" y="200" width="170" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="250" y="200" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="263" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">第一跳路由器</text>
+<text x="263" y="236" font-size="9.6" fill="#334155" xml:space="preserve">注册到 RP</text>
+<text x="263" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">RPF 检查</text>
+<rect x="480" y="200" width="170" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="480" y="200" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="493" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">RP</text>
+<text x="493" y="236" font-size="9.6" fill="#334155" xml:space="preserve">共享树 (*,G)</text>
+<text x="493" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">汇聚点</text>
+<rect x="700" y="200" width="170" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="700" y="200" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="713" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">末跳路由器</text>
+<text x="713" y="236" font-size="9.6" fill="#334155" xml:space="preserve">加入/剪枝</text>
+<text x="713" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">复制</text>
+<rect x="650" y="360" width="140" height="66" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="650" y="360" width="4.5" height="66" fill="#0f9d58" rx="2"/>
+<text x="663" y="379" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">接收者 1</text>
+<text x="663" y="396" font-size="9.6" fill="#334155" xml:space="preserve">已加入</text>
+<rect x="830" y="360" width="140" height="66" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="830" y="360" width="4.5" height="66" fill="#0f9d58" rx="2"/>
+<text x="843" y="379" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">接收者 2</text>
+<text x="843" y="396" font-size="9.6" fill="#334155" xml:space="preserve">已加入</text>
+<line x1="200" y1="235" x2="250" y2="235" stroke="#d97706" stroke-width="2"/>
+<polygon points="250,235 241,230.5 241,239.5" fill="#d97706"/>
+<text x="231" y="228" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">组播流</text>
+<line x1="420" y1="235" x2="480" y2="235" stroke="#0891b2" stroke-width="2"/>
+<polygon points="480,235 471,230.5 471,239.5" fill="#0891b2"/>
+<text x="456" y="228" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">注册</text>
+<line x1="650" y1="235" x2="700" y2="235" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="700,235 691,230.5 691,239.5" fill="#4f46e5"/>
+<text x="681" y="228" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">共享树</text>
+<line x1="770.6" y1="270" x2="733.58" y2="360" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="733.58,360 741.16,353.39 732.84,349.96" fill="#0f9d58"/>
+<text x="758.09" y="308" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">复制</text>
+<line x1="810.47" y1="270" x2="875.98" y2="360" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="875.98,360 874.32,350.08 867.05,355.37" fill="#0f9d58"/>
+<text x="849.23" y="308" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">复制</text>
+<rect x="36" y="476" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="506" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="530" font-size="10.2" fill="#334155" xml:space="preserve">PIM-DM 先泛洪再剪枝，适合密集成员。</text>
+<text x="52" y="548" font-size="10.2" fill="#334155" xml:space="preserve">PIM-SSM 直接建源树，适合已知源的 IPTV。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

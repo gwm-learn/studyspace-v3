@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="480" viewBox="0 0 1180 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="480" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 分片、重组与 PMTUD：大包怎么过去</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">包大于出接口 MTU 时，IPv4 可分片，IPv6 中间路由器直接丢弃。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">PMTUD 靠 DF + ICMP 反馈让源主机自己调小。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<line x1="183.8" y1="142" x2="213.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="221.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="278.8" y1="142" x2="308.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="316.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<rect x="36" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">3000B 大包</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">DF=1</text>
+<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">源主机</text>
+<line x1="194" y1="231" x2="206" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,231 197,226.5 197,235.5" fill="#94a3b8"/>
+<rect x="206" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="206" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">片 1</text>
+<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">offset 0</text>
+<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">MF=1</text>
+<line x1="364" y1="231" x2="376" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,231 367,226.5 367,235.5" fill="#94a3b8"/>
+<rect x="376" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="376" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">片 2</text>
+<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">offset 185</text>
+<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">MF=1</text>
+<line x1="534" y1="231" x2="546" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,231 537,226.5 537,235.5" fill="#94a3b8"/>
+<rect x="546" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="546" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">片 3</text>
+<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">offset 370</text>
+<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">MF=0</text>
+<line x1="704" y1="231" x2="716" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="716,231 707,226.5 707,235.5" fill="#94a3b8"/>
+<rect x="716" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="716" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="729" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">目的重组</text>
+<text x="729" y="226" font-size="8.8" fill="#334155" xml:space="preserve">按 ID/offset</text>
+<text x="729" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">丢一片全废</text>
+<rect x="36" y="310" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">PMTUD 黑洞：ICMP 被拦，大包一直重试失败。</text>
+<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">对策：放行 ICMP + MSS 钳制 + 调 MTU。</text>
+<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="480" viewBox="0 0 1180 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="480" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · TCP 拥塞控制：慢启动、拥塞避免、快速恢复</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">cwnd 从 1 MSS 开始指数增长，到 ssthresh 后线性增长。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">3 个重复 ACK 触发快速重传/恢复；超时则 cwnd 归 1。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<line x1="415.6" y1="142" x2="445.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="453.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层 / 补充</text>
+<line x1="541.4" y1="142" x2="571.4" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="579.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">丢弃 / 风险</text>
+<rect x="36" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">慢启动</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">每 RTT 翻倍</text>
+<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">指数增长</text>
+<line x1="194" y1="231" x2="206" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,231 197,226.5 197,235.5" fill="#94a3b8"/>
+<rect x="206" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="206" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">拥塞避免</text>
+<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">每 RTT +1 MSS</text>
+<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">线性增长</text>
+<line x1="364" y1="231" x2="376" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,231 367,226.5 367,235.5" fill="#94a3b8"/>
+<rect x="376" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="376" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">3 重复 ACK</text>
+<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">快速重传</text>
+<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">cwnd 减半</text>
+<line x1="534" y1="231" x2="546" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,231 537,226.5 537,235.5" fill="#94a3b8"/>
+<rect x="546" y="190" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="546" y="190" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">快速恢复</text>
+<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">继续发送</text>
+<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">避免归 1</text>
+<line x1="704" y1="231" x2="716" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="716,231 707,226.5 707,235.5" fill="#94a3b8"/>
+<rect x="716" y="190" width="158" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="716" y="190" width="4.5" height="82" fill="#dc2626" rx="2"/>
+<text x="729" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">超时</text>
+<text x="729" y="226" font-size="8.8" fill="#334155" xml:space="preserve">cwnd=1</text>
+<text x="729" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">重新慢启动</text>
+<rect x="36" y="310" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">发送窗口 = min(rwnd, cwnd)。</text>
+<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">CUBIC/BBR 对丢包/时延的反应不同。</text>
+<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

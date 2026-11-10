@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="880" viewBox="0 0 1180 880" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="880" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · ZeroTier 封装层次：以太帧套进 UDP</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">内层是以太帧，VL2 做虚拟交换机，VL1 负责身份、加密与路径。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">外层仍是普通 UDP/IP，所以能穿过大多数 NAT。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">封装</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">解封装</text>
+<rect x="150" y="190" width="420" height="54" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="150" y="190" width="4.5" height="54" fill="#0f9d58" rx="2"/>
+<text x="163" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">以太帧</text>
+<text x="163" y="226" font-size="9.6" fill="#334155" xml:space="preserve">DA + SA + Type + Payload</text>
+<rect x="150" y="276" width="510" height="54" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="150" y="276" width="4.5" height="54" fill="#4f46e5" rx="2"/>
+<text x="163" y="295" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">VL2</text>
+<text x="163" y="312" font-size="9.6" fill="#334155" xml:space="preserve">虚拟交换机 / 广播组播</text>
+<rect x="150" y="362" width="600" height="54" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="150" y="362" width="4.5" height="54" fill="#d97706" rx="2"/>
+<text x="163" y="381" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">VL1</text>
+<text x="163" y="398" font-size="9.6" fill="#334155" xml:space="preserve">身份、加密、HELLO、中继</text>
+<rect x="150" y="448" width="690" height="54" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="150" y="448" width="4.5" height="54" fill="#0891b2" rx="2"/>
+<text x="163" y="467" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">UDP</text>
+<text x="163" y="484" font-size="9.6" fill="#334155" xml:space="preserve">默认 9993</text>
+<rect x="150" y="534" width="780" height="54" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="150" y="534" width="4.5" height="54" fill="#475569" rx="2"/>
+<text x="163" y="553" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IP</text>
+<text x="163" y="570" font-size="9.6" fill="#334155" xml:space="preserve">公网地址</text>
+<rect x="150" y="620" width="870" height="54" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="150" y="620" width="4.5" height="54" fill="#475569" rx="2"/>
+<text x="163" y="639" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Ethernet（外层）</text>
+<text x="163" y="656" font-size="9.6" fill="#334155" xml:space="preserve">物理链路</text>
+<line x1="112" y1="215" x2="112" y2="642" stroke="#4f46e5" stroke-width="2.2" stroke-dasharray="3 3"/>
+<polygon points="112,642 116.5,633 107.5,633" fill="#4f46e5"/>
+<text x="60" y="422.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">封装</text>
+<line x1="1042" y1="642" x2="1042" y2="215" stroke="#0f9d58" stroke-width="2.2" stroke-dasharray="3 3"/>
+<polygon points="1042,215 1037.5,224 1046.5,224" fill="#0f9d58"/>
+<text x="1052" y="422.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">解封装</text>
+<rect x="36" y="712" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="742" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="766" font-size="10.2" fill="#334155" xml:space="preserve">数据面默认加密；控制器只下发配置。</text>
+<text x="52" y="784" font-size="10.2" fill="#334155" xml:space="preserve">桥接 zt 与物理口时，环路要自己防。</text>
+<text x="36" y="826" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="844" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

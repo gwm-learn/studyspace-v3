@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="700" viewBox="0 0 1180 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · STP 选举与收敛：把环剪成树</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先选根桥，再为每台交换机选根端口、为每个网段选指定端口，其余阻塞。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">STP 要 30–50 秒；RSTP 用握手和边缘端口降到亚秒级。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">丢弃 / 风险</text>
+<rect x="400" y="170" width="190" height="64" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="400" y="170" width="4.5" height="64" fill="#0f9d58" rx="2"/>
+<text x="413" y="189" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">根桥</text>
+<text x="581" y="189" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">根</text>
+<text x="413" y="206" font-size="9.6" fill="#334155" xml:space="preserve">优先级 + MAC 最小</text>
+<text x="413" y="221.4" font-size="9.6" fill="#334155" xml:space="preserve">所有端口都是指定端口</text>
+<rect x="180" y="300" width="190" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="180" y="300" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="193" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">SW1</text>
+<text x="361" y="319" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">RP</text>
+<text x="193" y="336" font-size="9.6" fill="#334155" xml:space="preserve">根端口朝根</text>
+<text x="193" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">另一口阻塞</text>
+<rect x="620" y="300" width="190" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="620" y="300" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="633" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">SW2</text>
+<text x="801" y="319" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">DP</text>
+<text x="633" y="336" font-size="9.6" fill="#334155" xml:space="preserve">根端口朝根</text>
+<text x="633" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">指定端口向下</text>
+<rect x="400" y="420" width="210" height="56" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="400" y="420" width="4.5" height="56" fill="#dc2626" rx="2"/>
+<text x="413" y="439" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">阻塞端口</text>
+<text x="601" y="439" font-size="10.2" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="end">BLK</text>
+<text x="413" y="456" font-size="9.6" fill="#334155" xml:space="preserve">逻辑断开，物理仍连</text>
+<text x="413" y="471.4" font-size="9.6" fill="#334155" xml:space="preserve">故障时接管</text>
+<line x1="442.07" y1="234" x2="332.89" y2="300" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="332.89,300 342.92,299.19 338.27,291.49" fill="#0f9d58"/>
+<text x="393.48" y="260" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">DP</text>
+<line x1="547.93" y1="234" x2="657.11" y2="300" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="657.11,300 651.73,291.49 647.08,299.19" fill="#0f9d58"/>
+<text x="608.52" y="260" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">DP</text>
+<line x1="370" y1="335" x2="620" y2="335" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="620,335 611,330.5 611,339.5" fill="#dc2626"/>
+<text x="501" y="328" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">冗余链路</text>
+<line x1="346.24" y1="370" x2="448.01" y2="420" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="448.01,420 441.92,411.99 437.95,420.07" fill="#dc2626"/>
+<text x="403.12" y="388" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">预备</text>
+<rect x="36" y="526" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="556" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="580" font-size="10.2" fill="#334155" xml:space="preserve">根桥位置要手工规划，别让边缘设备当选。</text>
+<text x="52" y="598" font-size="10.2" fill="#334155" xml:space="preserve">边缘端口 + BPDU Guard 防私接成环。</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>
