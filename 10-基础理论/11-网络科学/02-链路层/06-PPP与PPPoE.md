@@ -21,6 +21,7 @@ PPP 是点对点链路上的「三件套」：先建链路（LCP），再验身�
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：先握手，再验身，最后配地址
@@ -272,6 +273,23 @@ BCP（PPP Bridging Control Protocol）可以在 PPP 链路上桥接二层帧，�
 | BNG/BRAS | 运营商侧终结 PPPoE 会话，做认证、计费、限速 |
 
 一句话：**PPP 负责「点对点链路怎么建、怎么验、怎么配」，PPPoE 负责「把这条链路装进以太网」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| PPP | Point-to-Point Protocol | 点对点链路协议。 |
+| LCP | Link Control Protocol | 链路控制协议。 |
+| PAP | Password Authentication Protocol | 明文口令认证。 |
+| CHAP | Challenge Handshake Authentication Protocol | 挑战握手认证。 |
+| NCP | Network Control Protocol | 网络控制协议族。 |
+| IPCP | Internet Protocol Control Protocol | PPP 上的 IPv4 配置协议。 |
+| MRU | Maximum Receive Unit | 最大接收单元。 |
+| PPPoE | Point-to-Point Protocol over Ethernet | 把 PPP 装进以太网。 |
+| PADI/PADO/PADR/PADS/PADT | PPPoE Active Discovery Initiation / Offer / Request / Session-confirmation / Terminate | PPPoE 发现与会话的五种报文。 |
+| Session ID | — | PPPoE 会话标识。 |
 
 ## 8 · 参考与关联
 

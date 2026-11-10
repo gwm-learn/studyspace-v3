@@ -21,6 +21,7 @@ DNS 是一个分布式、层次化的「名字 → 地址」目录：从右往�
 - [5 缓存与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：从右往左问路
@@ -266,6 +267,29 @@ DoH 把 DNS 藏进 HTTPS，绕过网络管理员的审计，也让解析流量�
 | DNSSEC | 在 DNS 报文上增加签名记录（RRSIG/DNSKEY/DS） |
 
 一句话：**DNS 负责「名字换成地址」，不负责「地址能不能通」，也不保证换到的地址一定可信。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| DNS | Domain Name System | 域名系统。 |
+| 递归/迭代 | — | 要最终答案/只给下一站。 |
+| RR | Resource Record | 资源记录。 |
+| TTL | Time To Live | 缓存生存时间。 |
+| A/AAAA | Address / IPv6 Address | IPv4/IPv6 地址记录。 |
+| CNAME | Canonical Name | 别名记录。 |
+| MX | Mail Exchanger | 邮件交换记录。 |
+| NS | Neighbor Solicitation | 权威服务器记录。 |
+| PTR | Pointer | 反向解析记录。 |
+| SOA | Start of Authority | 区域起始记录。 |
+| TXT | Text | 文本记录。 |
+| SRV | Service | 服务定位记录。 |
+| 负缓存 | — | 缓存 NXDOMAIN 等否定应答。 |
+| DoH/DoT | DNS over HTTPS / DNS over TLS | DNS over HTTPS/TLS。 |
+| DNSSEC | Domain Name System Security Extensions | DNS 记录签名。 |
+| EDNS0 | Extension Mechanisms for DNS version 0 | DNS 扩展机制。 |
 
 ## 8 · 参考与关联
 

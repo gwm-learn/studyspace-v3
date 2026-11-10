@@ -21,6 +21,7 @@ DHCPv4 把 IP 地址「租」给客户端：四步广播谈判拿到地址，租
 - [5 状态机与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：地址是租来的
@@ -268,6 +269,25 @@ DHCP 复用 BOOTP 的报文格式，靠 magic cookie 和 options 扩展。好处
 | NAT | 家用网关常同时做 DHCP 服务器与 NAT，但两者职责独立 |
 
 一句话：**DHCP 把「地址配置」从手工变成租约，但把「谁能发地址」的信任问题留给了接入层。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| DHCP | Dynamic Host Configuration Protocol | 动态主机配置协议。 |
+| BOOTP | Bootstrap Protocol | DHCP 的前身。 |
+| DORA | Discover-Offer-Request-Acknowledge | DISCOVER/OFFER/REQUEST/ACK 四步。 |
+| 租约 | — | 地址使用期限。 |
+| T1/T2 | Timer 1 / Timer 2 | 续租/重绑定定时器。 |
+| giaddr | Gateway IP Address | 中继接口地址。 |
+| 中继 | — | 跨网段转发 DHCP。 |
+| option 82 | — | 中继附加的端口/用户信息。 |
+| chaddr | Client Hardware Address | 客户端硬件地址。 |
+| xid | Transaction Identifier | 事务 ID。 |
+| NAK | Negative Acknowledgment | 服务器拒绝请求。 |
+| DECLINE | — | 客户端报告地址冲突。 |
 
 ## 8 · 参考与关联
 

@@ -21,6 +21,7 @@ UPnP 让局域网设备「自己被发现、自己描述、自己配置」：最
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：发现 → 描述 → 控制 → 订阅
@@ -221,6 +222,23 @@ PCP 是 IETF 标准，能力更强（含 IPv6、租约、认证扩展），但�
 | PCP/NAT-PMP | 同类端口映射方案 |
 
 一句话：**UPnP 负责「让应用自己找到网关并开端口」，不负责「认证」，也不保证「跨网段可用」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| UPnP | Universal Plug and Play | 通用即插即用。 |
+| SSDP | Simple Service Discovery Protocol | 简单服务发现协议。 |
+| IGD | Internet Gateway Device | 互联网网关设备。 |
+| SOAP | Simple Object Access Protocol | 基于 XML 的远程调用。 |
+| GENA | General Event Notification Architecture | 通用事件通知。 |
+| M-SEARCH | Multicast Search | SSDP 搜索报文。 |
+| NOTIFY | — | SSDP 或事件通告。 |
+| control URL | — | 服务控制入口。 |
+| LeaseDuration | — | 端口映射租期。 |
+| NAT-PMP/PCP | NAT Port Mapping Protocol / Port Control Protocol | 端口映射协议。 |
 
 ## 8 · 参考与关联
 

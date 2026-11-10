@@ -21,6 +21,7 @@ SNMP 是网管站（NMS）和设备代理之间的「读写变量」协议：NMS
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：按 OID 读写变量
@@ -197,6 +198,25 @@ SNMP 跑在 UDP 上，丢包靠 NMS 超时重试；大规模轮询会同时给�
 | 网管系统 | NMS 负责采集、存储、告警、展示 |
 
 一句话：**SNMP 负责「按 OID 读写设备变量」，不负责「变量语义」，也不保证「告警一定送达」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| SNMP | Simple Network Management Protocol | 简单网络管理协议。 |
+| NMS | Network Management System | 网管站。 |
+| Agent | — | 设备侧代理。 |
+| MIB | Management Information Base | 管理信息库。 |
+| OID | Object Identifier | 对象标识符。 |
+| SMI | Structure of Management Information | 管理信息结构。 |
+| BER | Basic Encoding Rules | ASN.1 编码。 |
+| Get/GetNext/GetBulk/Set | — | 读、遍历、批量读、写。 |
+| Trap/Inform | — | 主动告警/需确认告警。 |
+| USM | User-based Security Model | 用户安全模型。 |
+| VACM | View-based Access Control Model | 视图访问控制。 |
+| community | — | v1/v2c 团体名。 |
 
 ## 8 · 参考与关联
 

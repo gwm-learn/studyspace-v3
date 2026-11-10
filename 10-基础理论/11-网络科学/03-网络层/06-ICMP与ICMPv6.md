@@ -21,6 +21,7 @@ ICMP 是 IP 的差错报告员和诊断工具：路由不通、TTL 耗尽、包�
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：IP 的副官
@@ -249,6 +250,23 @@ IPv4 没有 ICMP 还能勉强转发（ARP、DHCP 独立）；IPv6 把 NDP、SLAA
 | 路由 | 重定向、路由器发现属于网络层控制功能 |
 
 一句话：**ICMP 负责「报告 IP 没做成的事」，ICMPv6 还负责「让 IPv6 能开始工作」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| ICMP | Internet Control Message Protocol | 网络层差错与控制协议。 |
+| ICMPv6 | Internet Control Message Protocol for IPv6 | IPv6 的 ICMP。 |
+| Echo | — | 回显请求/应答，ping 使用。 |
+| TTL | Time To Live | 剩余跳数。 |
+| traceroute | — | 用 TTL 递增探测路径。 |
+| NDP | Neighbor Discovery Protocol | IPv6 邻居发现。 |
+| MLD | Multicast Listener Discovery | IPv6 组播成员管理。 |
+| PMTUD | Path Maximum Transmission Unit Discovery | 路径 MTU 发现。 |
+| Type/Code | — | ICMP 类型/代码。 |
+| 差错报文 | — | 报告不可达、超时、参数错误。 |
 
 ## 8 · 参考与关联
 

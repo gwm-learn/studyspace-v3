@@ -21,6 +21,7 @@ VRRP 把多台路由器组成一台「虚拟路由器」，共享一个虚拟 IP
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：一台虚拟路由器
@@ -213,6 +214,23 @@ VRRPv2 的简单认证（明文/弱校验）不能防伪造，v3 直接移除。
 | IPv6 | VRRPv3 支持 IPv6，虚拟 MAC 仍为 `00:00:5E:00:01:XX` |
 
 一句话：**VRRP 负责「网关这一跳的冗余」，不负责「上行链路、会话状态、路由收敛」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| VRRP | Virtual Router Redundancy Protocol | 虚拟路由器冗余协议。 |
+| VRID | Virtual Router Identifier | 虚拟路由器组号。 |
+| VIP | Virtual IP | 虚拟 IP。 |
+| Master/Backup | — | 主/备角色。 |
+| 虚拟 MAC | — | 00:00:5E:00:01:XX。 |
+| 抢占 | — | 高优先级是否夺回 Master。 |
+| Track | — | 联动接口、路由或 BFD 调整优先级。 |
+| BFD | Bidirectional Forwarding Detection | 双向转发检测。 |
+| HSRP | Hot Standby Router Protocol | Cisco 的同类私有协议。 |
+| GARP | Gratuitous Address Resolution Protocol | 免费 ARP。 |
 
 ## 8 · 参考与关联
 

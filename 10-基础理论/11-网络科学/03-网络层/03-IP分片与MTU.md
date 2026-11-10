@@ -21,6 +21,7 @@ MTU 是链路层能承载的 IP 包上限。包比 MTU 大时只有两条路：�
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：包太大，要么切，要么退
@@ -214,6 +215,22 @@ DF=1 可以避免分片、触发 PMTUD；但如果 ICMP 反馈被拦，就会形
 | NAT | 分片包经过 NAT 时端口信息可能只在前一片，增加处理复杂度 |
 
 一句话：**MTU 决定「一个包最大能多大」，分片是补救，PMTUD + MSS 钳制才是正解。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| MTU | Maximum Transmission Unit | 链路层载荷上限。 |
+| MSS | Maximum Segment Size | TCP 最大报文段长度。 |
+| 分片 | — | 把大包切成片。 |
+| 重组 | — | 目的主机按 ID 和 offset 还原。 |
+| DF | Don't Fragment | 禁止分片标志。 |
+| MF | More Fragments | 还有后续分片标志。 |
+| PMTUD | Path Maximum Transmission Unit Discovery | 路径 MTU 发现。 |
+| MSS Clamping | Maximum Segment Size Clamping | 把 SYN 的 MSS 钳制到较小值。 |
+| 隧道开销 | — | 封装额外头部占用的 MTU。 |
 
 ## 8 · 参考与关联
 

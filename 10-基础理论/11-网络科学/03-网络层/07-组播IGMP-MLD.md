@@ -21,6 +21,7 @@ layer: 03-网络层
 - [5 组播路由与状态](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：订阅，而不是广播
@@ -215,6 +216,23 @@ SSM 让接收者指定源，避免「任意源都能往组里发」的滥用，�
 | mDNS/SSDP | 应用层组播，依赖二层组播可达 |
 
 一句话：**IGMP/MLD 负责「谁还要这个组」，组播路由负责「流量往哪复制」，Snooping 负责「别泛洪到没人的端口」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| 组播 | — | 一对多按成员复制。 |
+| IGMP | Internet Group Management Protocol | IPv4 组播成员管理。 |
+| MLD | Multicast Listener Discovery | IPv6 组播成员管理。 |
+| PIM | Protocol Independent Multicast | 组播路由协议。 |
+| RP | Rendezvous Point | 共享树汇聚点。 |
+| RPF | Reverse Path Forwarding | 反向路径转发检查。 |
+| SSM | Source-Specific Multicast | 指定源组播。 |
+| Snooping | — | 交换机监听成员报文。 |
+| Proxy | — | 代理上下游成员关系。 |
+| (*,G)/(S,G) | — | 共享树/源树表项。 |
 
 ## 8 · 参考与关联
 

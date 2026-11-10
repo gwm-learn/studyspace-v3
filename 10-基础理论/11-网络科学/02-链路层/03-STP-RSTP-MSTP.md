@@ -21,6 +21,7 @@ layer: 02-链路层
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：把环剪成树
@@ -208,6 +209,23 @@ STP 用「先阻塞、再慢慢放开」保证无环，代价是收敛慢。RSTP
 | 三层路由 | 三层环由路由协议/水平分割处理，不归 STP |
 
 一句话：**STP 负责「把二层环剪成树」，不负责「隔离广播域」，也不负责「三层选路」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| STP/RSTP/MSTP | Spanning Tree Protocol / Rapid Spanning Tree Protocol / Multiple Spanning Tree Protocol | 生成树/快速生成树/多实例生成树。 |
+| BPDU | Bridge Protocol Data Unit | 生成树协议报文。 |
+| 根桥 | — | 被选为树根的交换机。 |
+| 根端口 | — | 交换机到根桥开销最小的端口。 |
+| 指定端口 | — | 网段上负责转发的端口。 |
+| 阻塞端口 | — | 逻辑上不转发、用于防环的端口。 |
+| Hello/Forward Delay/Max Age | — | STP 的三个定时器。 |
+| 边缘端口 | — | 接终端、可直接转发的端口。 |
+| BPDU Guard | Bridge Protocol Data Unit Guard | 边缘口收到 BPDU 就关闭的保护。 |
+| TC | Topology Change | 拓扑变化通知。 |
 
 ## 8 · 参考与关联
 

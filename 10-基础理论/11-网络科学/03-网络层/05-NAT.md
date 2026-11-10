@@ -21,6 +21,7 @@ NAT 在转发路径上改写 IP 地址（通常还改端口），让多个内网
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：改地址，记映射
@@ -205,6 +206,23 @@ IPv6 地址充足，理论上不需要 NAT；但 NAT66 仍被用于「不暴露�
 | UPnP/PCP | 让应用自动申请端口映射 |
 
 一句话：**NAT 负责「用少量公网地址复用大量内网连接」，不负责「安全」，也不保证「外部可主动访问」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| NAT | Network Address Translation | 地址转换。 |
+| SNAT | Source Network Address Translation | 改源地址。 |
+| DNAT | Destination Network Address Translation | 改目的地址。 |
+| MASQUERADE | — | 源地址取出口接口地址。 |
+| PAT/NAPT | Port Address Translation / Network Address Port Translation | 地址加端口复用。 |
+| conntrack | Connection Tracking | 连接跟踪。 |
+| ALG | Application Layer Gateway | 应用层网关。 |
+| 锥型 NAT | — | 按映射开放程度分类。 |
+| CGNAT | Carrier-Grade Network Address Translation | 运营商级 NAT。 |
+| hairpin NAT | — | 内网经公网地址访问内网。 |
 
 ## 8 · 参考与关联
 

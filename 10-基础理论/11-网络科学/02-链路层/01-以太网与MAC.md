@@ -21,6 +21,7 @@ layer: 02-链路层
 - [5 交换机怎么转发](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻层的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：帧、MAC、FDB
@@ -252,6 +253,22 @@ FCS 只覆盖一跳，且每跳重算。交换机收到坏帧直接丢，不会�
 | IP 分片/MTU | 帧载荷上限决定 MTU | 分片、PMTUD 属于网络层，不在链路层解决 |
 
 一句话总结：**链路层负责「这一跳送到」，不负责「一定送到」，也不负责「送到哪张网」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| Ethernet II | — | 最常见的以太网帧格式。 |
+| EtherType | — | 以太帧中标识上层协议的 2 字节字段。 |
+| FCS | Frame Check Sequence | 帧校验序列，使用 CRC-32。 |
+| CRC | Cyclic Redundancy Check | 循环冗余校验。 |
+| OUI | Organizationally Unique Identifier | MAC 前 3 字节的厂商标识。 |
+| I/G | Individual/Group | MAC 首字节最低位，区分单播/组播。 |
+| U/L | Universal/Local | MAC 首字节次低位，区分全局/本地管理。 |
+| FDB | Forwarding Database | 交换机 MAC 地址表。 |
+| runt | — | 小于最小帧长的异常小帧。 |
 
 ## 8 · 参考与关联
 

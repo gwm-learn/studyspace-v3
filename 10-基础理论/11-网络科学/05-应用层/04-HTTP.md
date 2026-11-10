@@ -21,6 +21,7 @@ HTTP 是「请求—响应」式的应用层协议：客户端说「我要什么
 - [5 状态与连接](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：一问一答，语义在头里
@@ -240,6 +241,27 @@ HTTP/1.1 文本易读、易调试，但解析慢、头重复；HTTP/2 二进制�
 | 网关 | 管理页面、TR-069 的 CWMP 都跑在 HTTP(S) 上 |
 
 一句话：**HTTP 负责「请求什么、结果如何」，不负责「怎么可靠传输」，也不负责「内容是否可信」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| HTTP | Hypertext Transfer Protocol | 请求-响应式应用协议。 |
+| 方法 | — | GET、POST、PUT 等。 |
+| 状态码 | — | 200、301、404 等。 |
+| 头 | — | 元数据字段。 |
+| Cookie | — | 会话状态。 |
+| ETag | Entity Tag | 内容指纹。 |
+| Cache-Control | — | 缓存策略。 |
+| 304 | — | 未修改，继续用缓存。 |
+| HTTP/2 | Hypertext Transfer Protocol version 2 | 二进制多路复用。 |
+| HTTP/3 | Hypertext Transfer Protocol version 3 | 基于 QUIC。 |
+| QUIC | Quick UDP Internet Connections | 基于 UDP 的可靠传输。 |
+| TLS | Transport Layer Security | 传输层加密。 |
+| HSTS | HTTP Strict Transport Security | 强制 HTTPS。 |
+| CORS | Cross-Origin Resource Sharing | 跨域资源共享。 |
 
 ## 8 · 参考与关联
 

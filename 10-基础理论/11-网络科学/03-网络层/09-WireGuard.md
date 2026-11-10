@@ -21,6 +21,7 @@ WireGuard 是一个极简的三层隧道：每个 peer 用公钥标识，Allowed
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：公钥 + 允许的 IP
@@ -247,6 +248,22 @@ WireGuard 开销大，默认 1420 只适用于 1500 的底层路径。PPPoE（14
 | IPsec | 同为三层 VPN，WireGuard 更简单，IPsec 生态/策略更丰富 |
 
 一句话：**WireGuard 负责「用公钥和 AllowedIPs 建一条加密的三层隧道」，不负责「自动组网、二层互通、用户认证」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| WireGuard | — | 基于 UDP 的三层隧道。 |
+| Noise_IK | — | 一次往返的身份认证握手。 |
+| AllowedIPs | — | 允许的源/目的网段，兼作路由与 ACL。 |
+| Cryptokey Routing | — | 公钥加 AllowedIPs 的路由模型。 |
+| Endpoint | — | 对端公网地址和端口。 |
+| Keepalive | — | 保活间隔。 |
+| rekey | — | 会话密钥重协商。 |
+| PSK | Pre-Shared Key | 预共享密钥。 |
+| MTU | Maximum Transmission Unit | 隧道接口最大传输单元。 |
 
 ## 8 · 参考与关联
 

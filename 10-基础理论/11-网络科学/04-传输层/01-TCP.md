@@ -21,6 +21,7 @@ TCP 用四件工具把不可靠的 IP 变成可靠的字节流：**编号、确�
 - [5 状态机与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：字节流 + 四个计数器
@@ -326,6 +327,26 @@ Nagle 算法会攒小包再发，延迟确认会推迟 ACK，两者叠加可能�
 | 防火墙 | 状态防火墙依据 SYN/ACK/FIN/RST 判断连接生命周期 |
 
 一句话：**TCP 把「网络可能丢包」这件事，变成应用看不见的字节流；代价是状态、延迟和队头阻塞。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| TCP | Transmission Control Protocol | 可靠、按序的字节流协议。 |
+| seq/ack | Sequence Number / Acknowledgment Number | 序列号/确认号。 |
+| ISN | Initial Sequence Number | 初始序列号。 |
+| MSS | Maximum Segment Size | 最大报文段长度。 |
+| SACK | Selective Acknowledgment | 选择确认。 |
+| 窗口缩放 | — | 扩大 16 位窗口。 |
+| rwnd/cwnd | Receive Window / Congestion Window | 接收窗口/拥塞窗口。 |
+| RTO | Retransmission Timeout | 重传超时。 |
+| SRTT/RTTVAR | Smoothed Round-Trip Time / Round-Trip Time Variation | 平滑 RTT/偏差。 |
+| 慢启动/拥塞避免/快速重传/快速恢复 | — | 拥塞控制四阶段。 |
+| TIME-WAIT | — | 主动关闭后的等待状态。 |
+| 2MSL | Two Maximum Segment Lifetime | 两倍最大报文段寿命。 |
+| HOL | Head-of-Line | 队头阻塞。 |
 
 ## 8 · 参考与关联
 

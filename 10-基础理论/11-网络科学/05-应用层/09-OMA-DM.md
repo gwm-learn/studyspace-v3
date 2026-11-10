@@ -21,6 +21,7 @@ OMA DM 是移动设备管理的老牌标准：服务器和设备通过 SyncML �
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：管理一棵树
@@ -237,6 +238,23 @@ SyncML 是 XML，报文冗长、解析开销大。移动网络带宽有限时，
 | 运营商网管 | 设备注册、策略下发、诊断 |
 
 一句话：**OMA DM 负责「按树读写设备管理对象」，不负责「定义所有厂商节点」，也不保证「Push 一定送达」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| OMA DM | Open Mobile Alliance Device Management | 移动设备管理标准。 |
+| SyncML | Synchronization Markup Language | 同步标记语言，DM 的承载。 |
+| DM Tree | Device Management Tree | 管理对象树。 |
+| Bootstrap | — | 首次配置引导。 |
+| Alert | — | 会话触发报文。 |
+| Package | — | SyncML 会话包。 |
+| Atomic/Sequence | — | 原子执行/顺序执行。 |
+| FUMO | Firmware Update Management Object | 固件更新管理对象。 |
+| OBEX | Object Exchange | 对象交换承载。 |
+| WAP Push | Wireless Application Protocol Push | 推送触发。 |
 
 ## 8 · 参考与关联
 

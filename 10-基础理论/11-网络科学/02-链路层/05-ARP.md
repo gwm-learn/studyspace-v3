@@ -21,6 +21,7 @@ ARP 是 IPv4 的地址翻译官：拿 IP 地址换 MAC 地址。它只在本广�
 - [5 缓存、老化与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：IP 是地址，MAC 是门牌
@@ -226,6 +227,21 @@ RARP 方向相反：已知 MAC，反查 IP，用于无盘工作站。它要求�
 | 路由 | 跨网段时 ARP 只解析网关，路由决定下一跳是谁 |
 
 一句话：**ARP 把三层地址翻译成二层地址，但翻译范围仅限一个广播域。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| ARP | Address Resolution Protocol | IPv4 地址到 MAC 的解析协议。 |
+| ARP 缓存 | Address Resolution Protocol cache | 本地的 IP 到 MAC 映射表。 |
+| 代理 ARP | — | 路由器替其他网段回答 ARP。 |
+| 免费 ARP | — | 主动通告或检测冲突的 ARP。 |
+| DAI | Dynamic ARP Inspection | 动态 ARP 检测。 |
+| RARP | Reverse Address Resolution Protocol | 已知 MAC 反查 IP 的旧协议。 |
+| NDP | Neighbor Discovery Protocol | IPv6 的邻居发现。 |
+| GARP | Gratuitous Address Resolution Protocol | 免费 ARP 的另一种叫法。 |
 
 ## 8 · 参考与关联
 

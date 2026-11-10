@@ -12,6 +12,8 @@ DHCPv6 给 IPv6 主机分配地址、下发参数，还能把一整段前缀「�
 
 > 本篇定位：有状态/无状态两种模式、四步与两步交互、IA_NA/IA_PD、中继与 DAD。SLAAC 的细节在 IPv6 篇。
 
+> 术语提示：RA（Router Advertisement，路由器通告）、RS（Router Solicitation，路由器请求）、SLAAC（Stateless Address Autoconfiguration，无状态地址自动配置）、DAD（Duplicate Address Detection，重复地址检测）、DUID（DHCP Unique Identifier，DHCPv6 客户端唯一标识）；完整表见文末「名词解释」。
+
 ## 目录
 
 - [1 一句话模型](#s1)
@@ -21,6 +23,7 @@ DHCPv6 给 IPv6 主机分配地址、下发参数，还能把一整段前缀「�
 - [5 状态与定时器](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：地址、参数、前缀，分开给
@@ -265,6 +268,26 @@ DHCPv6 不提供默认网关，默认路由靠 RA。即使 DHCPv6 分配了地�
 | 路由 | PD 的前缀要注入下游路由 |
 
 一句话：**DHCPv6 负责「地址、参数、前缀」，默认路由仍归 RA；它不解决「谁来保证服务器可信」。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| DHCPv6 | Dynamic Host Configuration Protocol for IPv6 | IPv6 动态主机配置协议。 |
+| RA | Router Advertisement | 路由器通告，携带前缀、MTU、默认路由与 M/O/A 标志。 |
+| RS | Router Solicitation | 路由器请求，主机主动索取 RA。 |
+| SLAAC | Stateless Address Autoconfiguration | 无状态地址自动配置。 |
+| DAD | Duplicate Address Detection | 重复地址检测。 |
+| DUID | DHCP Unique Identifier | DHCPv6 客户端唯一标识。 |
+| IA_NA | Identity Association for Non-temporary Addresses | 非临时地址选项。 |
+| IA_PD | Identity Association for Prefix Delegation | 前缀委派选项。 |
+| ORO | Option Request Option | 客户端请求的选项列表。 |
+| M/O/A | Managed / Other / Autonomous | 有状态地址、其他参数、SLAAC 三个标志。 |
+| 中继 | — | RELAY-FORW/REPLY 跨链路转发。 |
+| Rapid Commit | — | 两步快速提交。 |
+| preferred/valid lifetime | — | 首选生存期/有效生存期。 |
 
 ## 8 · 参考与关联
 

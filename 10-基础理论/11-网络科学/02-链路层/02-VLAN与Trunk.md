@@ -21,6 +21,7 @@ VLAN 用 12 位标签把一台物理交换机切成多个逻辑广播域：同�
 - [5 状态与表项](#s5)
 - [6 设计取舍与边界](#s6)
 - [7 与相邻协议的关系](#s7)
+- [名词解释](#名词解释)
 - [8 参考与关联](#s8)
 
 ## 1 · 一句话模型：在帧上贴房间号
@@ -197,6 +198,23 @@ Access 简单、终端无感；Trunk 灵活、节省链路。混合场景用 Hyb
 | 20-网络子系统 | Linux bridge 的 VLAN filtering、DSA 的 VLAN 处理归 20 |
 
 一句话：**VLAN 负责「把广播域切开」，不负责「让不同 VLAN 通」，后者是三层的事。**
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| 802.1Q | — | VLAN 标签标准。 |
+| TPID | Tag Protocol Identifier | 标签协议标识，通常为 0x8100。 |
+| PCP | Priority Code Point | 3 位优先级。 |
+| DEI | Drop Eligible Indicator | 丢弃合格指示。 |
+| VID | VLAN Identifier | 12 位 VLAN ID。 |
+| PVID | Port VLAN Identifier | 端口默认 VLAN。 |
+| Access | — | 接终端、收发通常不带标签。 |
+| Trunk | — | 交换机互联、默认保留标签。 |
+| native VLAN | — | Trunk 上不打标签的 VLAN。 |
+| QinQ | — | 双层 VLAN 标签。 |
 
 ## 8 · 参考与关联
 
