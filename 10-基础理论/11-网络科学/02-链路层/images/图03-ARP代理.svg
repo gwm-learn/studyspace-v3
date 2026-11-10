@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="520" viewBox="0 0 1180 520" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="520" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 代理 ARP：路由器替另一个网段回答</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">主机 A 没配网关，直接广播问主机 B 的 MAC。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">路由器有到 B 的路由，就用自己的 MAC 代答，之后转发。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<rect x="40" y="220" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="220" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="53" y="239" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">主机 A</text>
+<text x="53" y="256" font-size="9.6" fill="#334155" xml:space="preserve">无网关</text>
+<text x="53" y="271.4" font-size="9.6" fill="#334155" xml:space="preserve">广播问 B</text>
+<rect x="300" y="210" width="190" height="90" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="210" width="4.5" height="90" fill="#4f46e5" rx="2"/>
+<text x="313" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">路由器</text>
+<text x="313" y="246" font-size="9.6" fill="#334155" xml:space="preserve">开启代理 ARP</text>
+<text x="313" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">有到 B 的路由</text>
+<rect x="620" y="220" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="620" y="220" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="633" y="239" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">主机 B</text>
+<text x="633" y="256" font-size="9.6" fill="#334155" xml:space="preserve">另一网段</text>
+<text x="633" y="271.4" font-size="9.6" fill="#334155" xml:space="preserve">真实目的</text>
+<line x1="210" y1="255" x2="300" y2="255" stroke="#d97706" stroke-width="2"/>
+<polygon points="300,255 291,250.5 291,259.5" fill="#d97706"/>
+<text x="261" y="248" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">ARP 问 B 的 MAC</text>
+<line x1="300" y1="255" x2="210" y2="255" stroke="#d97706" stroke-width="2"/>
+<polygon points="210,255 219,259.5 219,250.5" fill="#d97706"/>
+<text x="261" y="248" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">回自己的 MAC</text>
+<line x1="210" y1="255" x2="300" y2="255" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="300,255 291,250.5 291,259.5" fill="#4f46e5"/>
+<text x="261" y="248" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">数据发给路由器</text>
+<line x1="490" y1="255" x2="620" y2="255" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="620,255 611,250.5 611,259.5" fill="#0f9d58"/>
+<text x="561" y="248" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">按路由转发</text>
+<rect x="36" y="350" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="380" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="404" font-size="10.2" fill="#334155" xml:space="preserve">主机不知道网关存在，以为 B 就在本网段。</text>
+<text x="52" y="422" font-size="10.2" fill="#334155" xml:space="preserve">代理 ARP 会隐藏真实拓扑，排障要留意。</text>
+<text x="36" y="466" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="484" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

@@ -190,6 +190,13 @@ config wireguard_wg0
 
 ## 5 · 状态与定时器
 
+![图 03 · WireGuard密钥生命周期](images/图03-WireGuard密钥生命周期.svg)
+
+**读图**：握手生成会话密钥，使用中按时间/消息数 rekey；旧密钥过期后直接拒绝。
+
+> 图源：`images/图03-WireGuard密钥生命周期.svg`
+
+
 WireGuard 是「无连接」的，但每个 peer 维护会话状态：
 
 | 状态/定时器 | 说明 |

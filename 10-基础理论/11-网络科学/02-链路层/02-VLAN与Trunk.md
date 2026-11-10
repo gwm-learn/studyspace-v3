@@ -146,6 +146,13 @@ VLAN 隔离了二层，跨 VLAN 必须经过三层：
 
 ## 5 · 状态与表项
 
+![图 02 · VLAN三张表](images/图02-VLAN三张表.svg)
+
+**读图**：VLAN 表是静态配置，FDB 动态学习且按 VLAN 隔离，端口表决定 PVID 与 tagged/untagged。
+
+> 图源：`images/图02-VLAN三张表.svg`
+
+
 VLAN 本身没有协议状态机，它的「状态」体现在三张表：
 
 | 表 | 内容 | 老化/更新 |

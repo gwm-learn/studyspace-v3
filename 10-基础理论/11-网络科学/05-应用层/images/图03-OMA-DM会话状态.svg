@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="480" viewBox="0 0 1360 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1360" height="480" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1324" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · OMA DM 会话状态：Alert 触发，多包交换</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">服务器 Alert 触发，客户端回 Package 1；之后双方交替发送 Package。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">最后一包确认后会话结束；任一步失败按策略重试或终止。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<rect x="36" y="190" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">OMA DM</text>
+<text x="46" y="228" font-size="9" fill="#64748b" xml:space="preserve">会话包</text>
+<rect x="154" y="190" width="140" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="154" y="190" width="4.5" height="72" fill="#d97706" rx="2"/>
+<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Alert</text>
+<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">触发会话</text>
+<line x1="294" y1="226" x2="346" y2="226" stroke="#475569" stroke-width="2"/>
+<polygon points="346,226 337,221.5 337,230.5" fill="#475569"/>
+<text x="320" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">触发</text>
+<rect x="346" y="190" width="140" height="72" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="346" y="190" width="4.5" height="72" fill="#4f46e5" rx="2"/>
+<text x="359" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Package 1</text>
+<text x="359" y="226" font-size="8.8" fill="#334155" xml:space="preserve">认证/设备信息</text>
+<line x1="486" y1="226" x2="538" y2="226" stroke="#475569" stroke-width="2"/>
+<polygon points="538,226 529,221.5 529,230.5" fill="#475569"/>
+<text x="512" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">认证</text>
+<rect x="538" y="190" width="140" height="72" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="538" y="190" width="4.5" height="72" fill="#4f46e5" rx="2"/>
+<text x="551" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Package 2</text>
+<text x="551" y="226" font-size="8.8" fill="#334155" xml:space="preserve">Get/Replace/Exec</text>
+<line x1="678" y1="226" x2="730" y2="226" stroke="#475569" stroke-width="2"/>
+<polygon points="730,226 721,221.5 721,230.5" fill="#475569"/>
+<text x="704" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">命令</text>
+<rect x="730" y="190" width="140" height="72" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="730" y="190" width="4.5" height="72" fill="#0f9d58" rx="2"/>
+<text x="743" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Package 3</text>
+<text x="743" y="226" font-size="8.8" fill="#334155" xml:space="preserve">结果/Status</text>
+<line x1="870" y1="226" x2="922" y2="226" stroke="#475569" stroke-width="2"/>
+<polygon points="922,226 913,221.5 913,230.5" fill="#475569"/>
+<text x="896" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">结果</text>
+<rect x="922" y="190" width="140" height="72" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="922" y="190" width="4.5" height="72" fill="#475569" rx="2"/>
+<text x="935" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Package 4</text>
+<text x="935" y="226" font-size="8.8" fill="#334155" xml:space="preserve">确认/结束</text>
+<line x1="1062" y1="226" x2="1114" y2="226" stroke="#475569" stroke-width="2"/>
+<polygon points="1114,226 1105,221.5 1105,230.5" fill="#475569"/>
+<text x="1088" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">结束</text>
+<rect x="36" y="308" width="1280" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="338" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="362" font-size="10.2" fill="#334155" xml:space="preserve">Atomic 保证一组命令全成功或全回滚。</text>
+<text x="52" y="380" font-size="10.2" fill="#334155" xml:space="preserve">Bootstrap 先下发服务器地址与凭证。</text>
+<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

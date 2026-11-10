@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · conntrack 状态：NAT 与状态防火墙的共同地基</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">NEW 是新连接首包；ESTABLISHED 表示双向都通。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">RELATED 是关联的新连接；INVALID 不属于任何已知连接。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
+<line x1="183.8" y1="142" x2="213.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="221.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
+<line x1="320.6" y1="142" x2="350.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="358.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层 / 补充</text>
+<line x1="446.4" y1="142" x2="476.4" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="484.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">丢弃 / 风险</text>
+<rect x="40" y="210" width="170" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="40" y="210" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="53" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">NEW</text>
+<text x="53" y="246" font-size="9.6" fill="#334155" xml:space="preserve">首包</text>
+<text x="53" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">建表项</text>
+<rect x="270" y="210" width="200" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="270" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="283" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ESTABLISHED</text>
+<text x="283" y="246" font-size="9.6" fill="#334155" xml:space="preserve">双向流量</text>
+<text x="283" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">NAT 翻译</text>
+<rect x="530" y="150" width="190" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="530" y="150" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="543" y="169" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">RELATED</text>
+<text x="543" y="186" font-size="9.6" fill="#334155" xml:space="preserve">关联连接</text>
+<text x="543" y="201.4" font-size="9.6" fill="#334155" xml:space="preserve">如 FTP 数据</text>
+<rect x="530" y="300" width="190" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="530" y="300" width="4.5" height="70" fill="#dc2626" rx="2"/>
+<text x="543" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">INVALID</text>
+<text x="543" y="336" font-size="9.6" fill="#334155" xml:space="preserve">畸形/超时</text>
+<text x="543" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">直接丢弃</text>
+<line x1="210" y1="245" x2="270" y2="245" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="270,245 261,240.5 261,249.5" fill="#0f9d58"/>
+<text x="246" y="238" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">确认</text>
+<line x1="470" y1="221.47" x2="530" y2="207.35" stroke="#0891b2" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="530,207.35 520.21,205.03 522.27,213.79" fill="#0891b2"/>
+<text x="506" y="207.41" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">派生</text>
+<line x1="469.17" y1="280" x2="530" y2="301.47" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="530,301.47 523.01,294.23 520.02,302.72" fill="#dc2626"/>
+<text x="505.58" y="283.74" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">超时/异常</text>
+<rect x="36" y="420" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="474" font-size="10.2" fill="#334155" xml:space="preserve">只有新连接首包走 NAT 规则，后续靠 conntrack。</text>
+<text x="52" y="492" font-size="10.2" fill="#334155" xml:space="preserve">表满会丢新连接，表现为老连接正常、新连接失败。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+</svg>

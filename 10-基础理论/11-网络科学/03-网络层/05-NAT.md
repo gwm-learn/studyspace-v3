@@ -143,6 +143,13 @@ DNAT 只改目的，回程必须靠 conntrack 或额外 SNAT 才能正确还原�
 
 ## 5 · 状态与定时器
 
+![图 02 · conntrack状态](images/图02-conntrack状态.svg)
+
+**读图**：NEW 建表项，ESTABLISHED 双向通；RELATED 是关联新连接，INVALID 直接丢弃。
+
+> 图源：`images/图02-conntrack状态.svg`
+
+
 conntrack 的四个状态：
 
 | 状态 | 含义 |

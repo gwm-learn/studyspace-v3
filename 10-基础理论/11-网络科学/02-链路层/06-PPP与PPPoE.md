@@ -210,6 +210,13 @@ IPv6 场景用 IPv6CP 协商接口标识，地址前缀通常由 RA 下发。
 
 ## 5 · 状态与定时器
 
+![图 02 · PPP阶段状态](images/图02-PPP阶段状态.svg)
+
+**读图**：LCP→认证→NCP→Open；任一步失败或收到 Terminate 都回到 Dead。
+
+> 图源：`images/图02-PPP阶段状态.svg`
+
+
 PPP 没有 TCP 那样的状态机，但有一条明确的阶段链：
 
 ```text

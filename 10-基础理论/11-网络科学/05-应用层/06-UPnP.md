@@ -161,6 +161,13 @@ M-SEARCH 的关键字段：`ST`（搜索目标，如 `urn:schemas-upnp-org:devic
 
 ## 5 · 状态与定时器
 
+![图 02 · UPnP订阅与租约](images/图02-UPnP订阅与租约.svg)
+
+**读图**：SUBSCRIBE 订阅事件，NOTIFY 回调；端口映射带 LeaseDuration，到期自动删除。
+
+> 图源：`images/图02-UPnP订阅与租约.svg`
+
+
 | 项 | 说明 |
 | --- | --- |
 | NOTIFY 周期 | 设备上线/下线通告，另有周期重发 |

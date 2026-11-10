@@ -143,6 +143,13 @@ msg-type(1) + transaction-id(3) + options(变长)
 
 ### 4.5 前缀委派（IA_PD）
 
+![图 03 · DHCPv6-PD委派](images/图03-DHCPv6-PD委派.svg)
+
+**读图**：上游委派 /56，网关切出多个 /64，用 RA 下发给各 LAN；不需要 NAT。
+
+> 图源：`images/图03-DHCPv6-PD委派.svg`
+
+
 运营商给家庭网关委派一段前缀（如 `/56`），网关再从中切出 `/64` 给 LAN：
 
 ```text
@@ -183,6 +190,13 @@ PD 让下游路由器不需要 NAT，也能给每个 LAN 分配全局可路由�
 | 地址能配但无法上网 | 有地址无默认路由 | RA 未发/默认路由缺失，DHCPv6 不负责默认网关 |
 
 ## 5 · 状态与定时器
+
+![图 02 · DHCPv6状态机](images/图02-DHCPv6状态机.svg)
+
+**读图**：SOLICIT/ADVERTISE/REQUEST/REPLY 后进入 BOUND；T1 续租、T2 重绑定，失败回 INIT。
+
+> 图源：`images/图02-DHCPv6状态机.svg`
+
 
 客户端状态与 DHCPv4 类似，但用 lifetime 而不是单一租期：
 

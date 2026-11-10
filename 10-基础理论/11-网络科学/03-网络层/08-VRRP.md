@@ -147,6 +147,13 @@ Track 让 VRRP 感知接口/路由/链路状态：
 
 ## 5 · 状态与定时器
 
+![图 02 · VRRP状态机](images/图02-VRRP状态机.svg)
+
+**读图**：Initialize 参与选举，Backup 监听，Master 转发；超时或故障触发切换。
+
+> 图源：`images/图02-VRRP状态机.svg`
+
+
 | 状态 | 含义 |
 | --- | --- |
 | Initialize | 启动/配置变化，准备参与选举 |

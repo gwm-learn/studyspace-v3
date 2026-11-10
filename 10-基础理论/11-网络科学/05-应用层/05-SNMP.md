@@ -143,6 +143,13 @@ v1/v2c 只用团体名（community），相当于明文密码；生产环境应�
 
 ## 5 · 状态与定时器
 
+![图 02 · SNMP轮询与告警](images/图02-SNMP轮询与告警.svg)
+
+**读图**：NMS 周期 Get 采集 MIB；Agent 主动发 Trap/Inform，Inform 需要确认并可重传。
+
+> 图源：`images/图02-SNMP轮询与告警.svg`
+
+
 SNMP 基于 UDP，协议本身无连接状态；状态在 NMS 和 Agent 的配置里：
 
 | 项 | 说明 |

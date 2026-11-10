@@ -132,6 +132,13 @@ MSTP 还有 IST（内部生成树）和 CST（公共生成树）的概念，用�
 
 ## 5 · 状态与定时器
 
+![图 02 · STP端口状态](images/图02-STP端口状态.svg)
+
+**读图**：STP 要经过 Listening/Learning 各 15 秒；RSTP 合并为 Discarding/Learning/Forwarding 三种。
+
+> 图源：`images/图02-STP端口状态.svg`
+
+
 ### 5.1 STP 五种端口状态
 
 | 状态 | 收 BPDU | 发 BPDU | 学 MAC | 转发数据 |
