@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="700" viewBox="0 0 1020 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1020" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="984" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · FTTR 光功率预算与故障定位</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">收光 = 发光 − 光纤/分光/连接器损耗 − 余量，必须高于灵敏度。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：上半段算预算，下半段按“主干—分支—从网关—终端”四段定位。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">功率预算</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">损耗项</text>
+<line x1="237" y1="142" x2="267" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="275" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">收光判定</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 光功率预算</text>
+<rect x="36" y="190" width="170" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">发光功率</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">主/从网关 TX</text>
+<line x1="206" y1="231" x2="226" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="226,231 217,226.5 217,235.5" fill="#94a3b8"/>
+<rect x="226" y="190" width="170" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="226" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="239" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">光纤损耗</text>
+<text x="239" y="226" font-size="9.6" fill="#334155" xml:space="preserve">距离 × 衰减</text>
+<line x1="396" y1="231" x2="416" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="416,231 407,226.5 407,235.5" fill="#94a3b8"/>
+<rect x="416" y="190" width="170" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="416" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="429" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">分光损耗</text>
+<text x="429" y="226" font-size="9.6" fill="#334155" xml:space="preserve">1:N 插损</text>
+<line x1="586" y1="231" x2="606" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="606,231 597,226.5 597,235.5" fill="#94a3b8"/>
+<rect x="606" y="190" width="170" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="606" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="619" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">连接/熔接</text>
+<text x="619" y="226" font-size="9.6" fill="#334155" xml:space="preserve">脏污/弯折</text>
+<line x1="776" y1="231" x2="796" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="796,231 787,226.5 787,235.5" fill="#94a3b8"/>
+<rect x="796" y="190" width="180" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="796" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="809" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">收光判定</text>
+<text x="809" y="226" font-size="9.6" fill="#334155" xml:space="preserve">≥ 灵敏度 + 余量</text>
+<text x="36" y="340" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 故障定位顺序</text>
+<rect x="36" y="354" width="190" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="354" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="49" y="373" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">主干</text>
+<text x="49" y="390" font-size="8.8" fill="#334155" xml:space="preserve">OLT ↔ 主网关</text>
+<text x="49" y="405.4" font-size="8.8" fill="#334155" xml:space="preserve">光功率/注册</text>
+<line x1="226" y1="395" x2="250" y2="395" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="250,395 241,390.5 241,399.5" fill="#94a3b8"/>
+<rect x="250" y="354" width="190" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="250" y="354" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="263" y="373" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">分支</text>
+<text x="263" y="390" font-size="8.8" fill="#334155" xml:space="preserve">分光器/光纤</text>
+<text x="263" y="405.4" font-size="8.8" fill="#334155" xml:space="preserve">单纤损耗</text>
+<line x1="440" y1="395" x2="464" y2="395" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="464,395 455,390.5 455,399.5" fill="#94a3b8"/>
+<rect x="464" y="354" width="190" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="464" y="354" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="477" y="373" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">从网关</text>
+<text x="477" y="390" font-size="8.8" fill="#334155" xml:space="preserve">供电/注册</text>
+<text x="477" y="405.4" font-size="8.8" fill="#334155" xml:space="preserve">拓扑是否可见</text>
+<line x1="654" y1="395" x2="678" y2="395" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="678,395 669,390.5 669,399.5" fill="#94a3b8"/>
+<rect x="678" y="354" width="190" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="678" y="354" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="691" y="373" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">终端</text>
+<text x="691" y="390" font-size="8.8" fill="#334155" xml:space="preserve">Wi-Fi/漫游</text>
+<text x="691" y="405.4" font-size="8.8" fill="#334155" xml:space="preserve">RSSI/切换</text>
+<rect x="36" y="490" width="900" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="520" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="544" font-size="10.2" fill="#334155" xml:space="preserve">① 光功率不足优先查连接器脏污、弯折和分光比，不要先怀疑 Wi-Fi 配置。</text>
+<text x="52" y="562" font-size="10.2" fill="#334155" xml:space="preserve">② 单房间故障看分支，全屋故障看主干；不要从终端开始猜。</text>
+<text x="52" y="580" font-size="10.2" fill="#334155" xml:space="preserve">③ 预算要留余量：温度、老化、弯折都会让收光继续下降。</text>
+<text x="36" y="628" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/45-FTTR/01-FTTR光层与运维.md</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">参考：ITU-T G.657 / G.984</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

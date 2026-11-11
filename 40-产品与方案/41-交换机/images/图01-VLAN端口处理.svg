@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="740" viewBox="0 0 860 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="860" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="824" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · VLAN 在端口上的 tag 处理</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Access 口打 PVID、发帧去 tag；Trunk 口按允许列表放行，PVID 决定无 tag 帧归属。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看入口怎么处理 tag，再看出口是否保留 tag。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">入口</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">查表</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">出口</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">丢弃</text>
+<rect x="36" y="190" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">Access 入</text>
+<text x="46" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">接终端</text>
+<text x="46" y="246" font-size="9" fill="#64748b" xml:space="preserve">只属于一个 VLAN</text>
+<rect x="154" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">收无 tag 帧</text>
+<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">终端通常不打 tag</text>
+<line x1="312" y1="231" x2="322" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,231 313,226.5 313,235.5" fill="#94a3b8"/>
+<rect x="322" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="322" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="335" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">打 PVID</text>
+<text x="335" y="226" font-size="8.8" fill="#334155" xml:space="preserve">VLAN = PVID</text>
+<line x1="480" y1="231" x2="490" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,231 481,226.5 481,235.5" fill="#94a3b8"/>
+<rect x="490" y="190" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="490" y="190" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="503" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">查 VLAN 表</text>
+<text x="503" y="226" font-size="8.8" fill="#334155" xml:space="preserve">确认成员端口</text>
+<line x1="648" y1="231" x2="658" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="658,231 649,226.5 649,235.5" fill="#94a3b8"/>
+<rect x="658" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="658" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="671" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">进入转发</text>
+<text x="671" y="226" font-size="8.8" fill="#334155" xml:space="preserve">查 MAC 表</text>
+<rect x="36" y="300" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="322" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">Trunk 入</text>
+<text x="46" y="338" font-size="9.4" fill="#64748b" xml:space="preserve">接交换机/AP</text>
+<text x="46" y="356" font-size="9" fill="#64748b" xml:space="preserve">承载多个 VLAN</text>
+<rect x="154" y="300" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154" y="300" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="167" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">收带 tag 帧</text>
+<text x="167" y="336" font-size="8.8" fill="#334155" xml:space="preserve">检查 VLAN ID</text>
+<line x1="312" y1="341" x2="322" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,341 313,336.5 313,345.5" fill="#94a3b8"/>
+<rect x="322" y="300" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="322" y="300" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="335" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">查允许列表</text>
+<text x="335" y="336" font-size="8.8" fill="#334155" xml:space="preserve">在列表内才通过</text>
+<line x1="480" y1="341" x2="490" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,341 481,336.5 481,345.5" fill="#94a3b8"/>
+<rect x="490" y="300" width="158" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="490" y="300" width="4.5" height="82" fill="#dc2626" rx="2"/>
+<text x="503" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">不在列表</text>
+<text x="503" y="336" font-size="8.8" fill="#334155" xml:space="preserve">直接丢弃</text>
+<line x1="648" y1="341" x2="658" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="658,341 649,336.5 649,345.5" fill="#94a3b8"/>
+<rect x="658" y="300" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="658" y="300" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="671" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">无 tag 帧</text>
+<text x="671" y="336" font-size="8.8" fill="#334155" xml:space="preserve">打 PVID 或丢弃</text>
+<rect x="36" y="410" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="46" y="432" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">出口</text>
+<text x="46" y="448" font-size="9.4" fill="#64748b" xml:space="preserve">按链路类型</text>
+<text x="46" y="466" font-size="9" fill="#64748b" xml:space="preserve">决定是否带 tag</text>
+<rect x="154" y="410" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="154" y="410" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="167" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Access 出</text>
+<text x="167" y="446" font-size="8.8" fill="#334155" xml:space="preserve">去掉 tag</text>
+<line x1="312" y1="451" x2="322" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,451 313,446.5 313,455.5" fill="#94a3b8"/>
+<rect x="322" y="410" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="322" y="410" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="335" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Trunk 出</text>
+<text x="335" y="446" font-size="8.8" fill="#334155" xml:space="preserve">保留 tag</text>
+<line x1="480" y1="451" x2="490" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,451 481,446.5 481,455.5" fill="#94a3b8"/>
+<rect x="490" y="410" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="490" y="410" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="503" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">PVID 出</text>
+<text x="503" y="446" font-size="8.8" fill="#334155" xml:space="preserve">可按配置去 tag</text>
+<line x1="648" y1="451" x2="658" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="658,451 649,446.5 649,455.5" fill="#94a3b8"/>
+<rect x="658" y="410" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="658" y="410" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="671" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">终端收到</text>
+<text x="671" y="446" font-size="8.8" fill="#334155" xml:space="preserve">无 tag 帧</text>
+<rect x="36" y="540" width="760" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="570" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="594" font-size="10.2" fill="#334155" xml:space="preserve">① 两端链路类型不匹配，是最常见的“不通”：一端 Trunk 带 tag，另一端 Access 会丢弃。</text>
+<text x="52" y="612" font-size="10.2" fill="#334155" xml:space="preserve">② Trunk 的 PVID 配错，会把管理流量送进错误 VLAN。</text>
+<text x="52" y="630" font-size="10.2" fill="#334155" xml:space="preserve">③ Hybrid 的 untagged 列表是厂商扩展，排障时要单独确认。</text>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/41-交换机/01-交换机业务与组网.md</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

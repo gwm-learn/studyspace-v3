@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="660" viewBox="0 0 900 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="900" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="864" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 交换机验收测试拓扑</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">性能测试用测试仪两端直连 DUT；业务测试按真实组网加入终端和环网。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看性能基线路径，再看业务与环网测试的旁路。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">性能路径</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">业务/环网</text>
+<line x1="254.6" y1="142" x2="284.6" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="292.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">管理</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 单机性能：测试仪两端直连</text>
+<rect x="36" y="190" width="210" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">测试仪 Port1</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">按帧长/速率打流</text>
+<line x1="246" y1="231" x2="286" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="286,231 277,226.5 277,235.5" fill="#94a3b8"/>
+<rect x="286" y="190" width="210" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="286" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="299" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DUT</text>
+<text x="299" y="226" font-size="9.6" fill="#334155" xml:space="preserve">被测交换机</text>
+<line x1="496" y1="231" x2="536" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="536,231 527,226.5 527,235.5" fill="#94a3b8"/>
+<rect x="536" y="190" width="210" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="536" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="549" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">测试仪 Port2</text>
+<text x="549" y="226" font-size="9.6" fill="#334155" xml:space="preserve">统计收发/时延</text>
+<text x="36" y="320" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 业务与环网：按组网加终端/备用链路</text>
+<rect x="36" y="334" width="180" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="334" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="49" y="353" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">管理 PC</text>
+<text x="49" y="370" font-size="8.8" fill="#334155" xml:space="preserve">CLI/Web 配置</text>
+<line x1="216" y1="375" x2="252" y2="375" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="252,375 243,370.5 243,379.5" fill="#94a3b8"/>
+<rect x="252" y="334" width="180" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="252" y="334" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="265" y="353" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">DUT A</text>
+<text x="265" y="370" font-size="8.8" fill="#334155" xml:space="preserve">接入交换机</text>
+<line x1="432" y1="375" x2="468" y2="375" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="468,375 459,370.5 459,379.5" fill="#94a3b8"/>
+<rect x="468" y="334" width="180" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="468" y="334" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="481" y="353" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">DUT B</text>
+<text x="481" y="370" font-size="8.8" fill="#334155" xml:space="preserve">汇聚/备用链路</text>
+<line x1="648" y1="375" x2="684" y2="375" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="684,375 675,370.5 675,379.5" fill="#94a3b8"/>
+<rect x="684" y="334" width="180" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="684" y="334" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="697" y="353" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">终端</text>
+<text x="697" y="370" font-size="8.8" fill="#334155" xml:space="preserve">打流/业务验证</text>
+<rect x="36" y="460" width="820" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="490" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="514" font-size="10.2" fill="#334155" xml:space="preserve">① 性能测试必须直连，中间加交换机/分光会引入额外丢包和时延。</text>
+<text x="52" y="532" font-size="10.2" fill="#334155" xml:space="preserve">② 环网测试要能远程断开一条链路，记录业务中断时间。</text>
+<text x="52" y="550" font-size="10.2" fill="#334155" xml:space="preserve">③ 管理口单独接管理 PC，避免管理流量和测试流量互相干扰。</text>
+<text x="36" y="588" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/41-交换机/02-交换机测试与验收.md</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">参考：RFC 2544 / RFC 2889</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

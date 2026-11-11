@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="960" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="924" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 光猫形态谱系与下游关系</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">集成度从左到右提高；桥接型把拨号/覆盖交给下游，FTTR 主光猫再向下延伸光纤。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看形态演进，再看“拨号/管理/覆盖”由谁承担。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">桥接</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">路由</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">高速/FTTR</text>
+<rect x="36" y="200" width="200" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">桥接型 SFU</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PON ↔ 以太</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">不拨号/无 Wi-Fi</text>
+<line x1="236" y1="241" x2="258" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="258,241 249,236.5 249,245.5" fill="#94a3b8"/>
+<rect x="258" y="200" width="200" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="258" y="200" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="271" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">路由型 HGU</text>
+<text x="271" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PPPoE/NAT/Wi-Fi</text>
+<text x="271" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">一体机</text>
+<line x1="458" y1="241" x2="480" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="480,241 471,236.5 471,245.5" fill="#94a3b8"/>
+<rect x="480" y="200" width="200" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="480" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="493" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">10G 光猫</text>
+<text x="493" y="236" font-size="9.6" fill="#334155" xml:space="preserve">XG(S)-PON</text>
+<text x="493" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">2.5G/10G LAN</text>
+<line x1="680" y1="241" x2="702" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="702,241 693,236.5 693,245.5" fill="#94a3b8"/>
+<rect x="702" y="200" width="200" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="702" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="715" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">FTTR 主光猫</text>
+<text x="715" y="236" font-size="9.6" fill="#334155" xml:space="preserve">路由 + 光纤下行</text>
+<text x="715" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">带从网关</text>
+<text x="36" y="350" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">拨号 / 管理 / 覆盖由谁承担</text>
+<rect x="36" y="364" width="880" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="384" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">形态</text>
+<text x="300" y="384" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">拨号</text>
+<text x="476" y="384" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">管理</text>
+<text x="652" y="384" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">覆盖</text>
+<text x="828" y="384" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">下游设备</text>
+<rect x="36" y="394" width="880" height="30" fill="#ffffff"/>
+<line x1="36" y1="394" x2="916" y2="394" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="414" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">桥接 SFU</text>
+<text x="300" y="414" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">下游路由</text>
+<text x="476" y="414" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">OMCI/TR-069</text>
+<text x="652" y="414" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">下游路由/AP</text>
+<text x="828" y="414" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">路由器</text>
+<rect x="36" y="424" width="880" height="30" fill="#ffffff"/>
+<line x1="36" y1="424" x2="916" y2="424" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="444" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">路由 HGU</text>
+<text x="300" y="444" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">光猫</text>
+<text x="476" y="444" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">OMCI/TR-069</text>
+<text x="652" y="444" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">光猫 Wi-Fi</text>
+<text x="828" y="444" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">无/交换机</text>
+<rect x="36" y="454" width="880" height="30" fill="#ffffff"/>
+<line x1="36" y1="454" x2="916" y2="454" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="474" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">10G 光猫</text>
+<text x="300" y="474" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">光猫</text>
+<text x="476" y="474" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">OMCI/TR-069</text>
+<text x="652" y="474" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">光猫 Wi-Fi</text>
+<text x="828" y="474" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">交换机/AP</text>
+<rect x="36" y="484" width="880" height="30" fill="#ffffff"/>
+<line x1="36" y1="484" x2="916" y2="484" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="504" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">FTTR 主光猫</text>
+<text x="300" y="504" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">主光猫</text>
+<text x="476" y="504" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">OMCI/TR-069</text>
+<text x="652" y="504" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">从网关</text>
+<text x="828" y="504" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">从网关</text>
+<line x1="36" y1="514" x2="916" y2="514" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="530" width="880" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="560" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="584" font-size="10.2" fill="#334155" xml:space="preserve">① 光猫是 ONU/ONT 的家用俗称，不是独立于 ONU 的另一类设备。</text>
+<text x="52" y="602" font-size="10.2" fill="#334155" xml:space="preserve">② 桥接与路由是产品定义差异，不是“高级/低级”。</text>
+<text x="52" y="620" font-size="10.2" fill="#334155" xml:space="preserve">③ 只有宽带、内网、Wi-Fi 都超过千兆，10G 光猫才有实际收益。</text>
+<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/46-ONU-ONT/03-光猫产品形态.md</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

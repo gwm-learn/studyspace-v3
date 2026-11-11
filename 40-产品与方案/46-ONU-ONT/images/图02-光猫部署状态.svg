@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="640" viewBox="0 0 1060 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1060" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 光猫部署状态</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">不同形态的光猫，状态链相同，但“谁拨号/谁管理/谁覆盖”不同。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先确认形态，再看对应状态由谁负责。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常状态</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">完成/可用</text>
+<line x1="254.6" y1="142" x2="284.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="292.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败/回退</text>
+<rect x="36" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PON 注册</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">光猫</text>
+<line x1="216" y1="241" x2="234" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="234,241 225,236.5 225,245.5" fill="#94a3b8"/>
+<rect x="234" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="234" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="247" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">WAN 拨号</text>
+<text x="247" y="236" font-size="9.6" fill="#334155" xml:space="preserve">光猫或下游</text>
+<line x1="414" y1="241" x2="432" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="432,241 423,236.5 423,245.5" fill="#94a3b8"/>
+<rect x="432" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="432" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="445" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">桥/路由 Up</text>
+<text x="445" y="236" font-size="9.6" fill="#334155" xml:space="preserve">形态决定</text>
+<line x1="612" y1="241" x2="630" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="630,241 621,236.5 621,245.5" fill="#94a3b8"/>
+<rect x="630" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="630" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="643" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">管理在线</text>
+<text x="643" y="236" font-size="9.6" fill="#334155" xml:space="preserve">OMCI/TR-069</text>
+<line x1="810" y1="241" x2="828" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="828,241 819,236.5 819,245.5" fill="#94a3b8"/>
+<rect x="828" y="200" width="180" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="828" y="200" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="841" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">升级确认</text>
+<text x="841" y="236" font-size="9.6" fill="#334155" xml:space="preserve">双镜像</text>
+<line x1="522" y1="282" x2="522" y2="350" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="522,350 526.5,341 517.5,341" fill="#dc2626"/>
+<rect x="412" y="350" width="220" height="64" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="412" y="350" width="4.5" height="64" fill="#dc2626" rx="2"/>
+<text x="425" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">失败/超时</text>
+<text x="425" y="386" font-size="8.8" fill="#334155" xml:space="preserve">注册/拨号失败 → 回退下游或重试</text>
+<rect x="36" y="450" width="920" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">定时器与边界</text>
+<text x="52" y="504" font-size="10.2" fill="#334155" xml:space="preserve">桥接型把拨号状态交给下游路由。</text>
+<text x="52" y="522" font-size="10.2" fill="#334155" xml:space="preserve">路由型由光猫自己维护 WAN 状态。</text>
+<text x="52" y="540" font-size="10.2" fill="#334155" xml:space="preserve">升级确认依赖双镜像与回滚窗口。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/46-ONU-ONT/03-光猫产品形态.md</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="740" viewBox="0 0 880 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="880" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="844" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · TR-069 会话与升级流程</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">CPE 主动 Inform 建立会话，ACS 在同一会话里连续下发 RPC；升级后由 BOOT 事件确认。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看会话主线，再看升级支线；两者的失败处理都在 CPE 侧。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">会话</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">升级</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">ACS 动作</text>
+<rect x="36" y="190" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">会话</text>
+<text x="46" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">CWMP</text>
+<text x="46" y="246" font-size="9" fill="#64748b" xml:space="preserve">参数读写/诊断</text>
+<rect x="154" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Inform</text>
+<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">BOOT/PERIODIC</text>
+<line x1="312" y1="231" x2="322" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,231 313,226.5 313,235.5" fill="#94a3b8"/>
+<rect x="322" y="190" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="322" y="190" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="335" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">InformResponse</text>
+<text x="335" y="226" font-size="8.8" fill="#334155" xml:space="preserve">空响应</text>
+<line x1="480" y1="231" x2="490" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,231 481,226.5 481,235.5" fill="#94a3b8"/>
+<rect x="490" y="190" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="490" y="190" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="503" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Get/Set</text>
+<text x="503" y="226" font-size="8.8" fill="#334155" xml:space="preserve">读/写参数</text>
+<line x1="648" y1="231" x2="658" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="658,231 649,226.5 649,235.5" fill="#94a3b8"/>
+<rect x="658" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="658" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="671" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">响应/结束</text>
+<text x="671" y="226" font-size="8.8" fill="#334155" xml:space="preserve">会话关闭</text>
+<rect x="36" y="300" width="108" height="90" fill="#fff9ee" rx="9" stroke="#d97706" stroke-width="1.2"/>
+<text x="46" y="322" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">连接请求</text>
+<text x="46" y="338" font-size="9.4" fill="#64748b" xml:space="preserve">ACS 主动</text>
+<text x="46" y="356" font-size="9" fill="#64748b" xml:space="preserve">CPE 在 NAT 后需穿透</text>
+<rect x="154" y="300" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="154" y="300" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="167" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ACS 发起</text>
+<text x="167" y="336" font-size="8.8" fill="#334155" xml:space="preserve">HTTP GET</text>
+<line x1="312" y1="341" x2="322" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,341 313,336.5 313,345.5" fill="#94a3b8"/>
+<rect x="322" y="300" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="322" y="300" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="335" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">CPE 应答</text>
+<text x="335" y="336" font-size="8.8" fill="#334155" xml:space="preserve">200 OK</text>
+<line x1="480" y1="341" x2="490" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,341 481,336.5 481,345.5" fill="#94a3b8"/>
+<rect x="490" y="300" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="490" y="300" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="503" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">反向连接</text>
+<text x="503" y="336" font-size="8.8" fill="#334155" xml:space="preserve">CPE → ACS</text>
+<line x1="648" y1="341" x2="658" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="658,341 649,336.5 649,345.5" fill="#94a3b8"/>
+<rect x="658" y="300" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="658" y="300" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="671" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">下发任务</text>
+<text x="671" y="336" font-size="8.8" fill="#334155" xml:space="preserve">同普通会话</text>
+<rect x="36" y="410" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="46" y="432" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">升级</text>
+<text x="46" y="448" font-size="9.4" fill="#64748b" xml:space="preserve">Download</text>
+<text x="46" y="466" font-size="9" fill="#64748b" xml:space="preserve">校验/回滚</text>
+<rect x="154" y="410" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="154" y="410" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="167" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Download</text>
+<text x="167" y="446" font-size="8.8" fill="#334155" xml:space="preserve">URL/校验和</text>
+<line x1="312" y1="451" x2="322" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,451 313,446.5 313,455.5" fill="#94a3b8"/>
+<rect x="322" y="410" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="322" y="410" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="335" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">下载/校验</text>
+<text x="335" y="446" font-size="8.8" fill="#334155" xml:space="preserve">哈希/签名</text>
+<line x1="480" y1="451" x2="490" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,451 481,446.5 481,455.5" fill="#94a3b8"/>
+<rect x="490" y="410" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="490" y="410" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="503" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">写备用分区</text>
+<text x="503" y="446" font-size="8.8" fill="#334155" xml:space="preserve">置启动标志</text>
+<line x1="648" y1="451" x2="658" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="658,451 649,446.5 649,455.5" fill="#94a3b8"/>
+<rect x="658" y="410" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="658" y="410" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="671" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">重启确认</text>
+<text x="671" y="446" font-size="8.8" fill="#334155" xml:space="preserve">BOOT + 版本</text>
+<rect x="36" y="540" width="800" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="570" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="594" font-size="10.2" fill="#334155" xml:space="preserve">① 所有会话由 CPE 发起；ACS 主动下发必须先做 Connection Request。</text>
+<text x="52" y="612" font-size="10.2" fill="#334155" xml:space="preserve">② 升级失败要能回滚到旧分区，重启后由 BOOT 事件确认版本。</text>
+<text x="52" y="630" font-size="10.2" fill="#334155" xml:space="preserve">③ 参数路径必须与 TR-098/TR-181 对齐，私有参数只做补充。</text>
+<text x="36" y="668" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/43-CPE/02-TR-069与ACS运维.md</text>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">参考：TR-069 / TR-098 / TR-181</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

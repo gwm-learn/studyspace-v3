@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="800" viewBox="0 0 960 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="960" height="800" fill="#ffffff"/>
+<line x1="36" y1="112" x2="924" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 多协议接入与网络隔离</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">南向把 Wi-Fi/BLE/Zigbee/Thread 抽象成统一设备模型；IoT 设备放在独立 VLAN，受控访问主网和云。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看左侧协议接入，再看中间的隔离边界，最后看右侧的去向。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">子设备</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">网关</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">隔离边界</text>
+<line x1="321" y1="142" x2="351" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="359" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">云端/主网</text>
+<rect x="36" y="200" width="190" height="170" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="170" fill="#0891b2" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">子设备</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">Wi-Fi：摄像头/家电</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">BLE：门锁/传感器</text>
+<text x="49" y="266.8" font-size="9.6" fill="#334155" xml:space="preserve">Zigbee：灯/开关</text>
+<text x="49" y="282.2" font-size="9.6" fill="#334155" xml:space="preserve">Thread：低功耗设备</text>
+<line x1="226" y1="285" x2="300" y2="285" stroke="#94a3b8" stroke-width="1.8"/>
+<polygon points="300,285 291,280.5 291,289.5" fill="#94a3b8"/>
+<rect x="300" y="200" width="230" height="170" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="200" width="4.5" height="170" fill="#4f46e5" rx="2"/>
+<text x="313" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网关协议栈</text>
+<text x="313" y="236" font-size="9.6" fill="#334155" xml:space="preserve">Wi-Fi AP</text>
+<text x="313" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">BLE 配网代理</text>
+<text x="313" y="266.8" font-size="9.6" fill="#334155" xml:space="preserve">Zigbee 协调器</text>
+<text x="313" y="282.2" font-size="9.6" fill="#334155" xml:space="preserve">Thread 边界路由器</text>
+<text x="313" y="297.6" font-size="9.6" fill="#334155" xml:space="preserve">Matter 控制器/桥</text>
+<line x1="530" y1="285" x2="604" y2="285" stroke="#94a3b8" stroke-width="1.8"/>
+<polygon points="604,285 595,280.5 595,289.5" fill="#94a3b8"/>
+<text x="545" y="273" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">统一模型</text>
+<rect x="604" y="200" width="210" height="170" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="604" y="200" width="4.5" height="170" fill="#4f46e5" rx="2"/>
+<text x="617" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">设备抽象</text>
+<text x="617" y="236" font-size="9.6" fill="#334155" xml:space="preserve">属性/服务/事件</text>
+<text x="617" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">场景引擎</text>
+<text x="617" y="266.8" font-size="9.6" fill="#334155" xml:space="preserve">本地控制</text>
+<rect x="36" y="470" width="300" height="110" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="470" width="4.5" height="110" fill="#d97706" rx="2"/>
+<text x="49" y="489" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IoT VLAN / 独立 SSID</text>
+<text x="49" y="506" font-size="9.6" fill="#334155" xml:space="preserve">只允许必要外联</text>
+<text x="49" y="521.4" font-size="9.6" fill="#334155" xml:space="preserve">禁止访问主网络</text>
+<line x1="336" y1="525" x2="410" y2="525" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="410,525 401,520.5 401,529.5" fill="#d97706"/>
+<text x="339" y="513" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">受控 ACL</text>
+<rect x="410" y="470" width="230" height="110" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="410" y="470" width="4.5" height="110" fill="#0f9d58" rx="2"/>
+<text x="423" y="489" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">主网络</text>
+<text x="423" y="506" font-size="9.6" fill="#334155" xml:space="preserve">手机/PC/NAS</text>
+<text x="423" y="521.4" font-size="9.6" fill="#334155" xml:space="preserve">本地管理</text>
+<line x1="640" y1="525" x2="714" y2="525" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="714,525 705,520.5 705,529.5" fill="#0f9d58"/>
+<rect x="714" y="470" width="210" height="110" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="714" y="470" width="4.5" height="110" fill="#0f9d58" rx="2"/>
+<text x="727" y="489" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">云平台</text>
+<text x="727" y="506" font-size="9.6" fill="#334155" xml:space="preserve">远程控制</text>
+<text x="727" y="521.4" font-size="9.6" fill="#334155" xml:space="preserve">OTA/遥测</text>
+<rect x="36" y="610" width="888" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="640" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="664" font-size="10.2" fill="#334155" xml:space="preserve">① 多协议不是目的：上层只消费统一设备模型，才能做跨协议场景。</text>
+<text x="52" y="682" font-size="10.2" fill="#334155" xml:space="preserve">② IoT 与主网络必须隔离，跨网访问只开必要端口和发现协议。</text>
+<text x="52" y="700" font-size="10.2" fill="#334155" xml:space="preserve">③ 2.4G 上 Wi-Fi/BLE/Zigbee/Thread 共存，天线和信道要一起设计。</text>
+<text x="36" y="746" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/44-智能网关/02-智能家居与安全.md</text>
+<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>
