@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="720" viewBox="0 0 1020 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1020" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="984" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 信道损伤：信号在路上会发生什么</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">发送端送出的是「理想的符号」，到达接收端时已经叠加了衰减、噪声、失真和干扰。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">通信工程的大部分工作，就是识别哪一类损伤占主导，再用对应的手段补偿。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">信号路径</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">损伤</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">补偿</text>
+<rect x="36" y="200" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">发送信号</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">已调制符号</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">功率/带宽受限</text>
+<line x1="194" y1="244" x2="208" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="208,244 199,239.5 199,248.5" fill="#94a3b8"/>
+<rect x="208" y="200" width="158" height="88" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="208" y="200" width="4.5" height="88" fill="#475569" rx="2"/>
+<text x="221" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">传输介质</text>
+<text x="221" y="236" font-size="9.6" fill="#334155" xml:space="preserve">双绞线/光纤/空气</text>
+<text x="221" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">距离与频段决定损耗</text>
+<line x1="366" y1="244" x2="380" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="380,244 371,239.5 371,248.5" fill="#94a3b8"/>
+<rect x="380" y="200" width="158" height="88" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="380" y="200" width="4.5" height="88" fill="#dc2626" rx="2"/>
+<text x="393" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">损伤叠加</text>
+<text x="393" y="236" font-size="9.6" fill="#334155" xml:space="preserve">衰减·噪声·多径</text>
+<text x="393" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">失真·干扰</text>
+<line x1="538" y1="244" x2="552" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="552,244 543,239.5 543,248.5" fill="#94a3b8"/>
+<rect x="552" y="200" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="552" y="200" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="565" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">接收信号</text>
+<text x="565" y="236" font-size="9.6" fill="#334155" xml:space="preserve">幅度变小</text>
+<text x="565" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">波形变脏</text>
+<line x1="710" y1="244" x2="724" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="724,244 715,239.5 715,248.5" fill="#94a3b8"/>
+<rect x="724" y="200" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="724" y="200" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="737" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">补偿与判决</text>
+<text x="737" y="236" font-size="9.6" fill="#334155" xml:space="preserve">均衡·滤波·FEC</text>
+<text x="737" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">同步与检测</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">四类损伤：现象与对策</text>
+<rect x="36" y="348" width="940" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">损伤</text>
+<text x="388.5" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">物理原因</text>
+<text x="623.5" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">可观测现象</text>
+<text x="858.5" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型补偿</text>
+<rect x="36" y="378" width="940" height="32" fill="#ffffff"/>
+<line x1="36" y1="378" x2="976" y2="378" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="398" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">衰减</text>
+<text x="388.5" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">介质损耗、距离、频率越高损耗越大</text>
+<text x="623.5" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">接收功率下降、覆盖变差</text>
+<text x="858.5" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">放大器、缩短距离、换介质</text>
+<rect x="36" y="410" width="940" height="32" fill="#ffffff"/>
+<line x1="36" y1="410" x2="976" y2="410" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="430" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">噪声</text>
+<text x="388.5" y="430" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">热噪声、散粒噪声、外部干扰</text>
+<text x="623.5" y="430" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">SNR 下降、误码率上升</text>
+<text x="858.5" y="430" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">滤波、提高功率、低噪声器件</text>
+<rect x="36" y="442" width="940" height="32" fill="#ffffff"/>
+<line x1="36" y1="442" x2="976" y2="442" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="462" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">多径/色散</text>
+<text x="388.5" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">信号经不同路径或不同频率速度不同</text>
+<text x="623.5" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">码间干扰、眼图闭合</text>
+<text x="858.5" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">均衡、OFDM、保护间隔</text>
+<rect x="36" y="474" width="940" height="32" fill="#ffffff"/>
+<line x1="36" y1="474" x2="976" y2="474" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="494" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">干扰</text>
+<text x="388.5" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">邻频、同频、自干扰</text>
+<text x="623.5" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">吞吐下降、重传增多</text>
+<text x="858.5" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">滤波、隔离、功率控制、调度</text>
+<line x1="36" y1="506" x2="976" y2="506" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="520" width="940" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="550" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="574" font-size="10.2" fill="#334155" xml:space="preserve">① 先判断「是功率不够，还是信噪比不够」：功率不够靠放大，噪声太大靠滤波/靠近/换频。</text>
+<text x="52" y="592" font-size="10.2" fill="#334155" xml:space="preserve">② 多径与色散是「波形被摊平」，表现为码间干扰；均衡和 OFDM 都是为了让符号互不重叠。</text>
+<text x="52" y="610" font-size="10.2" fill="#334155" xml:space="preserve">③ 干扰是「别人占了我的资源」，和噪声不同，单靠提高功率往往无效，必须隔离或协调。</text>
+<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">说明：损伤分类为工程归纳，具体信道模型以对应标准与实测为准。</text>
+</svg>

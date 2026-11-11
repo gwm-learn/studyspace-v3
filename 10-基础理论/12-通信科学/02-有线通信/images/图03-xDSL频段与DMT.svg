@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1000" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="964" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · xDSL：在电话线上“挤”出宽带</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">xDSL 把 0–100 MHz 以上的铜线频谱切成很多窄子信道，用 DMT 按信噪比动态分配比特。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">越靠近用户（FTTC/FTTB），铜线越短，可用带宽越高；这是 G.fast 的前提。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">上行</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">下行</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">更高频段</text>
+<line x1="310" y1="142" x2="340" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="348" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">边界</text>
+<line x1="60" y1="250" x2="940" y2="250" stroke="#475569" stroke-width="1.6"/>
+<line x1="60" y1="244" x2="60" y2="256" stroke="#475569" stroke-width="1.2"/>
+<text x="60" y="274" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">0</text>
+<line x1="220" y1="244" x2="220" y2="256" stroke="#475569" stroke-width="1.2"/>
+<text x="220" y="274" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">138 kHz</text>
+<line x1="420" y1="244" x2="420" y2="256" stroke="#475569" stroke-width="1.2"/>
+<text x="420" y="274" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">1.1 MHz</text>
+<line x1="600" y1="244" x2="600" y2="256" stroke="#475569" stroke-width="1.2"/>
+<text x="600" y="274" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">17 MHz</text>
+<line x1="780" y1="244" x2="780" y2="256" stroke="#475569" stroke-width="1.2"/>
+<text x="780" y="274" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">30 MHz</text>
+<line x1="920" y1="244" x2="920" y2="256" stroke="#475569" stroke-width="1.2"/>
+<text x="920" y="274" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">106 MHz+</text>
+<rect x="64" y="206" width="152" height="26" fill="#0f9d58" rx="3" stroke="#0f9d58" stroke-width="1"/>
+<text x="140" y="224" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">ADSL 上行</text>
+<rect x="220" y="206" width="196" height="26" fill="#4f46e5" rx="3" stroke="#4f46e5" stroke-width="1"/>
+<text x="318" y="224" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">ADSL 下行</text>
+<rect x="64" y="166" width="530" height="26" fill="#d97706" rx="3" stroke="#d97706" stroke-width="1"/>
+<text x="329" y="184" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">VDSL2：上行 + 下行，最高 17/30 MHz（剖面可配）</text>
+<rect x="64" y="126" width="856" height="26" fill="#0891b2" rx="3" stroke="#0891b2" stroke-width="1"/>
+<text x="492" y="144" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">G.fast：最高 106/212 MHz，距离通常 &lt; 250 m</text>
+<text x="60" y="300" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">DMT：把一条铜线切成很多窄子信道</text>
+<text x="60" y="318" font-size="9.6" fill="#64748b" xml:space="preserve">每个子信道根据 SNR 决定装载几个比特；SNR 差的子信道少装或不装，这就是“比特加载”。</text>
+<rect x="60" y="400" width="15" height="30" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="82" y="390.1" width="15" height="39.9" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="104" y="378.49" width="15" height="51.51" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="126" y="382.65" width="15" height="47.35" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="148" y="400.61" width="15" height="29.39" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="170" y="388.07" width="15" height="41.93" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="192" y="382.37" width="15" height="47.63" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="214" y="378.6" width="15" height="51.4" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="236" y="390.54" width="15" height="39.46" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="258" y="411.43" width="15" height="18.57" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="280" y="377.66" width="15" height="52.34" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="302" y="378.4" width="15" height="51.6" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="324" y="382.94" width="15" height="47.06" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="346" y="401.15" width="15" height="28.85" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="368" y="399.54" width="15" height="30.46" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="390" y="370.09" width="15" height="59.91" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="412" y="378.71" width="15" height="51.29" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="434" y="390.98" width="15" height="39.02" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="456" y="410.86" width="15" height="19.14" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="478" y="389.23" width="15" height="40.77" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="500" y="366.32" width="15" height="63.68" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="522" y="383.24" width="15" height="46.76" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="544" y="401.69" width="15" height="28.31" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="566" y="399.01" width="15" height="30.99" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="588" y="381.82" width="15" height="48.18" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="610" y="366.83" width="15" height="63.17" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="632" y="391.44" width="15" height="38.56" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="654" y="410.29" width="15" height="19.71" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="676" y="388.81" width="15" height="41.19" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="698" y="378.25" width="15" height="51.75" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="720" y="371.55" width="15" height="58.45" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="742" y="402.24" width="15" height="27.76" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="764" y="398.48" width="15" height="31.52" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="786" y="381.56" width="15" height="48.44" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="808" y="378.96" width="15" height="51.04" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="830" y="379.89" width="15" height="50.11" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="852" y="409.71" width="15" height="20.29" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="874" y="388.4" width="15" height="41.6" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="896" y="378.18" width="15" height="51.82" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<rect x="918" y="383.87" width="15" height="46.13" fill="#0f9d58" rx="2" stroke="#0f9d58" stroke-width="1"/>
+<line x1="60" y1="432" x2="940" y2="432" stroke="#475569" stroke-width="1.4"/>
+<text x="60" y="450" font-size="9.2" fill="#64748b" xml:space="preserve">子信道编号 →（示意）</text>
+<text x="60" y="470" font-size="9.6" fill="#334155" xml:space="preserve">高度 ≈ 该子信道可承载的比特数；凹陷处通常是窄带干扰或桥接抽头。</text>
+<rect x="60" y="500" width="880" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="554" font-size="10.2" fill="#334155" xml:space="preserve">① 先看频率轴：ADSL/VDSL/G.fast 的频段逐代上移，但高频衰减更快，所以距离越来越短。</text>
+<text x="76" y="572" font-size="10.2" fill="#334155" xml:space="preserve">② 再看 DMT 柱状图：不是每个子信道都一样快，系统按 SNR 动态分配比特。</text>
+<text x="76" y="590" font-size="10.2" fill="#334155" xml:space="preserve">③ 铜线的敌人是“串扰”和“桥接抽头”，不是“线太长”这么简单。</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">说明：频段为量级示意，ADSL/VDSL2/G.fast 的具体剖面与速率以 ITU-T G.992/G.993/G.9701 为准。</text>
+</svg>

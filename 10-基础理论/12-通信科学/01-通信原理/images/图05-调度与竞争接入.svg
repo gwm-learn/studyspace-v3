@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="860" viewBox="0 0 1080 860" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="860" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · 调度接入 vs 竞争接入：谁决定“什么时候发”</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">调度接入由中心节点分配时隙：终端先申请，拿到授权再发，冲突可控但多一次往返。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">竞争接入由终端自己抢：先听后发、随机退避，低负载快，高负载碰撞多。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">调度接入</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">竞争接入</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">冲突/等待</text>
+<line x1="360.6" y1="142" x2="390.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="398.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">授权</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 调度接入（蜂窝上行 / PON 上行）</text>
+<rect x="36" y="194" width="140" height="86" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="216" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">终端</text>
+<text x="46" y="232" font-size="9.4" fill="#64748b" xml:space="preserve">有数据</text>
+<text x="46" y="250" font-size="9" fill="#64748b" xml:space="preserve">缓存数据</text>
+<text x="46" y="263" font-size="9" fill="#64748b" xml:space="preserve">发 SR</text>
+<rect x="196" y="194" width="158" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="196" y="194" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="209" y="213" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">SR</text>
+<text x="209" y="230" font-size="8.8" fill="#334155" xml:space="preserve">请求资源</text>
+<line x1="354" y1="237" x2="364" y2="237" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="364,237 355,232.5 355,241.5" fill="#94a3b8"/>
+<rect x="364" y="194" width="158" height="86" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="364" y="194" width="4.5" height="86" fill="#dc2626" rx="2"/>
+<text x="377" y="213" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">等待 Grant</text>
+<text x="377" y="230" font-size="8.8" fill="#334155" xml:space="preserve">中心节点调度</text>
+<line x1="522" y1="237" x2="532" y2="237" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="532,237 523,232.5 523,241.5" fill="#94a3b8"/>
+<rect x="532" y="194" width="158" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="532" y="194" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="545" y="213" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">授权到达</text>
+<text x="545" y="230" font-size="8.8" fill="#334155" xml:space="preserve">时隙/带宽</text>
+<line x1="690" y1="237" x2="700" y2="237" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="700,237 691,232.5 691,241.5" fill="#94a3b8"/>
+<rect x="700" y="194" width="158" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="700" y="194" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="713" y="213" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">发送</text>
+<text x="713" y="230" font-size="8.8" fill="#334155" xml:space="preserve">指定资源</text>
+<line x1="858" y1="237" x2="868" y2="237" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="868,237 859,232.5 859,241.5" fill="#94a3b8"/>
+<rect x="868" y="194" width="158" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="868" y="194" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="881" y="213" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ACK</text>
+<text x="881" y="230" font-size="8.8" fill="#334155" xml:space="preserve">成功/重传</text>
+<text x="36" y="310" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 竞争接入（Wi-Fi / 部分 IoT）</text>
+<rect x="36" y="328" width="140" height="86" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="46" y="350" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">终端</text>
+<text x="46" y="366" font-size="9.4" fill="#64748b" xml:space="preserve">有数据</text>
+<text x="46" y="384" font-size="9" fill="#64748b" xml:space="preserve">监听信道</text>
+<text x="46" y="397" font-size="9" fill="#64748b" xml:space="preserve">随机退避</text>
+<rect x="196" y="328" width="158" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="196" y="328" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="209" y="347" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">监听</text>
+<text x="209" y="364" font-size="8.8" fill="#334155" xml:space="preserve">空闲?</text>
+<line x1="354" y1="371" x2="364" y2="371" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="364,371 355,366.5 355,375.5" fill="#94a3b8"/>
+<rect x="364" y="328" width="158" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="364" y="328" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="377" y="347" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">退避</text>
+<text x="377" y="364" font-size="8.8" fill="#334155" xml:space="preserve">随机窗口</text>
+<line x1="522" y1="371" x2="532" y2="371" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="532,371 523,366.5 523,375.5" fill="#94a3b8"/>
+<rect x="532" y="328" width="158" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="532" y="328" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="545" y="347" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">发送</text>
+<text x="545" y="364" font-size="8.8" fill="#334155" xml:space="preserve">占用空口</text>
+<line x1="690" y1="371" x2="700" y2="371" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="700,371 691,366.5 691,375.5" fill="#94a3b8"/>
+<rect x="700" y="328" width="158" height="86" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="700" y="328" width="4.5" height="86" fill="#dc2626" rx="2"/>
+<text x="713" y="347" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">冲突?</text>
+<text x="713" y="364" font-size="8.8" fill="#334155" xml:space="preserve">同时发送</text>
+<line x1="858" y1="371" x2="868" y2="371" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="868,371 859,366.5 859,375.5" fill="#94a3b8"/>
+<rect x="868" y="328" width="158" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="868" y="328" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="881" y="347" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">窗口加倍</text>
+<text x="881" y="364" font-size="8.8" fill="#334155" xml:space="preserve">重试</text>
+<text x="36" y="450" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">怎么选</text>
+<rect x="36" y="468" width="960" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="488" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">维度</text>
+<text x="516" y="488" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">调度接入</text>
+<text x="836" y="488" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">竞争接入</text>
+<rect x="36" y="498" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="498" x2="996" y2="498" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="518" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">冲突</text>
+<text x="516" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">基本没有</text>
+<text x="836" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">高负载明显</text>
+<rect x="36" y="528" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="528" x2="996" y2="528" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="548" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">时延</text>
+<text x="516" y="548" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">有请求-授权往返</text>
+<text x="836" y="548" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">低负载低，高负载高</text>
+<rect x="36" y="558" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="558" x2="996" y2="558" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="578" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">QoS</text>
+<text x="516" y="578" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">易保障</text>
+<text x="836" y="578" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">难保障</text>
+<rect x="36" y="588" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="588" x2="996" y2="588" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="608" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">典型</text>
+<text x="516" y="608" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">蜂窝、PON 上行</text>
+<text x="836" y="608" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Wi-Fi、部分 IoT</text>
+<rect x="36" y="618" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="618" x2="996" y2="618" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="638" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">关键参数</text>
+<text x="516" y="638" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">SR 周期、Grant 有效期</text>
+<text x="836" y="638" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">退避窗口、NAV</text>
+<line x1="36" y1="648" x2="996" y2="648" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="660" width="960" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="690" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="714" font-size="10.2" fill="#334155" xml:space="preserve">① 上半部分：终端先发 SR，等中心节点授权，再在指定时隙发送——多一次往返，但不会撞车。</text>
+<text x="52" y="732" font-size="10.2" fill="#334155" xml:space="preserve">② 下半部分：终端自己听、自己退避；冲突后窗口加倍，用时间换成功率。</text>
+<text x="52" y="750" font-size="10.2" fill="#334155" xml:space="preserve">③ 判断口诀：空闲也要等一次往返 → 调度；空闲很快、拥塞很慢 → 竞争。</text>
+<text x="36" y="806" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="824" font-size="12.3" fill="#64748b" xml:space="preserve">说明：流程为简化示意，具体 SR/Grant/退避参数以 3GPP/IEEE 802.11 为准。</text>
+</svg>

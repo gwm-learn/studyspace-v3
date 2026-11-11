@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · Wi-Fi 频段与信道：2.4 GHz 重叠，5/6 GHz 选择更多</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">2.4 GHz 只有 1/6/11 三个互不重叠的 20 MHz 信道，邻频干扰是常态。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">5 GHz 信道多、干扰少，但有 DFS/功率限制；6 GHz 更宽，但覆盖更短。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">20 MHz 信道</text>
+<line x1="166.2" y1="142" x2="196.2" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="204.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">非重叠</text>
+<line x1="261.2" y1="142" x2="291.2" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="299.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">DFS/限制</text>
+<line x1="371.6" y1="142" x2="401.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="409.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">6 GHz</text>
+<text x="36" y="170" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">2.4 GHz：13 个信道，只有 1/6/11 不重叠</text>
+<rect x="36" y="190" width="120" height="46" fill="#0f9d58" rx="4" stroke="#0f9d58" stroke-width="1"/>
+<text x="96" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH1</text>
+<rect x="80" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="140" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH2</text>
+<rect x="124" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="184" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH3</text>
+<rect x="168" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="228" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH4</text>
+<rect x="212" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="272" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH5</text>
+<rect x="256" y="190" width="120" height="46" fill="#0f9d58" rx="4" stroke="#0f9d58" stroke-width="1"/>
+<text x="316" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH6</text>
+<rect x="300" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="360" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH7</text>
+<rect x="344" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="404" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH8</text>
+<rect x="388" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="448" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH9</text>
+<rect x="432" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="492" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH10</text>
+<rect x="476" y="190" width="120" height="46" fill="#0f9d58" rx="4" stroke="#0f9d58" stroke-width="1"/>
+<text x="536" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH11</text>
+<rect x="520" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="580" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH12</text>
+<rect x="564" y="190" width="120" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="624" y="218" font-size="9" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">CH13</text>
+<text x="36" y="256" font-size="9.4" fill="#64748b" xml:space="preserve">每个信道 20 MHz，中心频率间隔 5 MHz → 相邻信道必然重叠</text>
+<text x="36" y="300" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">5 GHz：UNII 频段与 DFS</text>
+<rect x="36" y="320" width="230" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="151" y="340" font-size="9.6" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">UNII-1</text>
+<text x="151" y="356" font-size="8.8" fill="#ffffff" xml:space="preserve" font-weight="600" text-anchor="middle">36–48</text>
+<rect x="300" y="320" width="230" height="46" fill="#d97706" rx="4" stroke="#d97706" stroke-width="1"/>
+<text x="415" y="340" font-size="9.6" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">UNII-2A</text>
+<text x="415" y="356" font-size="8.8" fill="#ffffff" xml:space="preserve" font-weight="600" text-anchor="middle">52–64</text>
+<rect x="560" y="320" width="230" height="46" fill="#d97706" rx="4" stroke="#d97706" stroke-width="1"/>
+<text x="675" y="340" font-size="9.6" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">UNII-2C</text>
+<text x="675" y="356" font-size="8.8" fill="#ffffff" xml:space="preserve" font-weight="600" text-anchor="middle">100–144</text>
+<rect x="820" y="320" width="230" height="46" fill="#4f46e5" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="935" y="340" font-size="9.6" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">UNII-3</text>
+<text x="935" y="356" font-size="8.8" fill="#ffffff" xml:space="preserve" font-weight="600" text-anchor="middle">149–165</text>
+<text x="36" y="386" font-size="9.4" fill="#64748b" xml:space="preserve">UNII-2A/2C 通常需要 DFS/TPC；气象雷达等会触发信道切换。</text>
+<text x="36" y="430" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">6 GHz：信道更多、更宽，但覆盖更短</text>
+<rect x="36" y="450" width="940" height="40" fill="#0891b2" rx="4" stroke="#0891b2" stroke-width="1"/>
+<text x="506" y="475" font-size="9.6" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">6 GHz（Wi-Fi 6E/7）：20/40/80/160/320 MHz，低干扰但穿透差</text>
+<rect x="36" y="516" width="940" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="536" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">频段</text>
+<text x="388.5" y="536" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">优点</text>
+<text x="623.5" y="536" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">缺点</text>
+<text x="858.5" y="536" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">工程建议</text>
+<rect x="36" y="546" width="940" height="28" fill="#ffffff"/>
+<line x1="36" y1="546" x2="976" y2="546" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="566" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">2.4 GHz</text>
+<text x="388.5" y="566" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">穿墙好、覆盖广</text>
+<text x="623.5" y="566" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">信道少、干扰多</text>
+<text x="858.5" y="566" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">只用 1/6/11；尽量 20 MHz</text>
+<rect x="36" y="574" width="940" height="28" fill="#ffffff"/>
+<line x1="36" y1="574" x2="976" y2="574" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="594" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">5 GHz</text>
+<text x="388.5" y="594" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">信道多、速率高</text>
+<text x="623.5" y="594" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">穿墙差、DFS 限制</text>
+<text x="858.5" y="594" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">优先 80 MHz；避开雷达信道</text>
+<rect x="36" y="602" width="940" height="28" fill="#ffffff"/>
+<line x1="36" y1="602" x2="976" y2="602" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="622" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">6 GHz</text>
+<text x="388.5" y="622" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">干净、带宽大</text>
+<text x="623.5" y="622" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">覆盖最短、终端少</text>
+<text x="858.5" y="622" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">近距离高密度；注意功率/法规</text>
+<line x1="36" y1="630" x2="976" y2="630" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">说明：信道编号/频段以各国法规与 IEEE 802.11 为准；DFS 要求随地区不同。</text>
+</svg>

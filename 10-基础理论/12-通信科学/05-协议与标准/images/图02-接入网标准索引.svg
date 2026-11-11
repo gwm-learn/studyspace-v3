@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="760" viewBox="0 0 1080 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 接入网标准索引：一种接入，对应一组文档</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">接入网的标准不是单一文档，而是“物理层 + 传输汇聚 + 管理 + 业务”多层组合。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">查标准时先定位接入方式，再按“光/铜/同轴/无线”找对应组织与文档族。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">光纤</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">铜线</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">同轴</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">无线</text>
+<text x="36" y="170" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">按接入方式查标准</text>
+<rect x="36" y="188" width="1000" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="208" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">接入方式</text>
+<text x="336" y="208" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">物理/传输标准</text>
+<text x="536" y="208" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">管理/业务</text>
+<text x="736" y="208" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">关键文档（示例）</text>
+<text x="936" y="208" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">备注</text>
+<rect x="36" y="218" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="218" x2="1036" y2="218" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="238" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">GPON</text>
+<text x="336" y="238" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">ITU-T G.984.1/2/3</text>
+<text x="536" y="238" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.988 OMCI</text>
+<text x="736" y="238" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.984 系列</text>
+<text x="936" y="238" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">2.5G/1.25G，1490/1310 nm</text>
+<rect x="36" y="246" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="246" x2="1036" y2="246" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="266" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">XG-PON</text>
+<text x="336" y="266" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">ITU-T G.987 系列</text>
+<text x="536" y="266" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.988</text>
+<text x="736" y="266" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.987.1/2/3</text>
+<text x="936" y="266" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">10G/2.5G，1577/1270 nm</text>
+<rect x="36" y="274" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="274" x2="1036" y2="274" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="294" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">XGS-PON</text>
+<text x="336" y="294" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">ITU-T G.9807.1</text>
+<text x="536" y="294" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.988</text>
+<text x="736" y="294" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.9807.1</text>
+<text x="936" y="294" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">10G/10G 对称</text>
+<rect x="36" y="302" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="302" x2="1036" y2="302" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="322" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">EPON</text>
+<text x="336" y="322" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IEEE 802.3ah</text>
+<text x="536" y="322" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">运营商规范</text>
+<text x="736" y="322" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">802.3ah</text>
+<text x="936" y="322" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">1G/1G，以太网帧</text>
+<rect x="36" y="330" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="330" x2="1036" y2="330" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="350" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">10G-EPON</text>
+<text x="336" y="350" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IEEE 802.3av</text>
+<text x="536" y="350" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">运营商规范</text>
+<text x="736" y="350" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">802.3av</text>
+<text x="936" y="350" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">10G/10G 或 10G/1G</text>
+<rect x="36" y="358" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="358" x2="1036" y2="358" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="378" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">ADSL/VDSL</text>
+<text x="336" y="378" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">ITU-T G.992/G.993</text>
+<text x="536" y="378" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.997.1</text>
+<text x="736" y="378" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.992/G.993 系列</text>
+<text x="936" y="378" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">铜线，DMT</text>
+<rect x="36" y="386" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="386" x2="1036" y2="386" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="406" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">G.fast</text>
+<text x="336" y="406" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">ITU-T G.9701</text>
+<text x="536" y="406" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.997.1</text>
+<text x="736" y="406" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">G.9701</text>
+<text x="936" y="406" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">短距铜线，106/212 MHz</text>
+<rect x="36" y="414" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="414" x2="1036" y2="414" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="434" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">HFC</text>
+<text x="336" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">DOCSIS 3.0/3.1/4.0</text>
+<text x="536" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">运营商规范</text>
+<text x="736" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">DOCSIS 系列</text>
+<text x="936" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">同轴 + CMTS</text>
+<rect x="36" y="442" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="442" x2="1036" y2="442" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="462" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">以太网接入</text>
+<text x="336" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IEEE 802.3</text>
+<text x="536" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IEEE 802.1Q</text>
+<text x="736" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">802.3/802.1Q</text>
+<text x="936" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">园区/企业</text>
+<rect x="36" y="470" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="470" x2="1036" y2="470" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="490" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Wi-Fi</text>
+<text x="336" y="490" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IEEE 802.11</text>
+<text x="536" y="490" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Wi-Fi Alliance 认证</text>
+<text x="736" y="490" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">802.11a/b/g/n/ac/ax/be</text>
+<text x="936" y="490" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">2.4/5/6 GHz</text>
+<rect x="36" y="498" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="498" x2="1036" y2="498" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="518" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">蜂窝</text>
+<text x="336" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">3GPP 36/38 系列</text>
+<text x="536" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">3GPP 23 系列</text>
+<text x="736" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">36.211/38.211 等</text>
+<text x="936" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">LTE/NR</text>
+<line x1="36" y1="526" x2="1036" y2="526" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="560" width="1000" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="590" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="614" font-size="10.2" fill="#334155" xml:space="preserve">① 先按介质定位：光纤看 ITU-T G.98x / IEEE 802.3ah/av，铜线看 G.99x/G.9701，同轴看 DOCSIS。</text>
+<text x="52" y="632" font-size="10.2" fill="#334155" xml:space="preserve">② 再看“传输 + 管理”：PON 的 G.984 负责传输，G.988 OMCI 负责管理，两者不能混。</text>
+<text x="52" y="650" font-size="10.2" fill="#334155" xml:space="preserve">③ 最后看“地区/运营商规范”：同一标准在不同运营商可能有不同的剖面/配置要求。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">说明：文档编号为常见入口，具体版本/修订以 ITU-T/IEEE/3GPP 官方发布为准。</text>
+</svg>

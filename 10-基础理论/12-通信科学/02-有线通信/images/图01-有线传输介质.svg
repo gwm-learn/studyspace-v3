@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 有线介质：带宽、距离与抗干扰的三角取舍</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">有线通信把信号约束在导体或光纤里，换来比无线更稳定的信噪比和更高的带宽。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">四种介质对应四种工程场景：短距桌面、同轴入户、光纤骨干、电力线补盲。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">短距</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中距</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">长距</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">特殊场景</text>
+<rect x="36" y="200" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">双绞线</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">Cat5e/Cat6/Cat6a</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">差分传输、成本低</text>
+<line x1="194" y1="246" x2="212" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="212,246 203,241.5 203,250.5" fill="#94a3b8"/>
+<rect x="212" y="200" width="158" height="92" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="212" y="200" width="4.5" height="92" fill="#d97706" rx="2"/>
+<text x="225" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">同轴电缆</text>
+<text x="225" y="236" font-size="9.6" fill="#334155" xml:space="preserve">75 Ω、屏蔽好</text>
+<text x="225" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">有线电视/旧式入户</text>
+<line x1="370" y1="246" x2="388" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="388,246 379,241.5 379,250.5" fill="#94a3b8"/>
+<rect x="388" y="200" width="158" height="92" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="388" y="200" width="4.5" height="92" fill="#0f9d58" rx="2"/>
+<text x="401" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">光纤</text>
+<text x="401" y="236" font-size="9.6" fill="#334155" xml:space="preserve">单模/多模</text>
+<text x="401" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">带宽高、抗电磁干扰</text>
+<line x1="546" y1="246" x2="564" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="564,246 555,241.5 555,250.5" fill="#94a3b8"/>
+<rect x="564" y="200" width="158" height="92" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="564" y="200" width="4.5" height="92" fill="#0891b2" rx="2"/>
+<text x="577" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">电力线</text>
+<text x="577" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PLC/G.hn</text>
+<text x="577" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">借用电线，免布线</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">选型看四个量</text>
+<rect x="36" y="348" width="968" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">介质</text>
+<text x="326.4" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型带宽</text>
+<text x="520" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型距离</text>
+<text x="713.6" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">抗干扰</text>
+<text x="907.2" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">主要边界</text>
+<rect x="36" y="378" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="378" x2="1004" y2="378" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="398" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">双绞线 Cat5e</text>
+<text x="326.4" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">100 MHz 级</text>
+<text x="520" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">100 m</text>
+<text x="713.6" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">中（差分+屏蔽）</text>
+<text x="907.2" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">距离短，高频损耗与串扰明显</text>
+<rect x="36" y="408" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="408" x2="1004" y2="408" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="428" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">双绞线 Cat6a</text>
+<text x="326.4" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">500 MHz 级</text>
+<text x="520" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">100 m</text>
+<text x="713.6" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">较好</text>
+<text x="907.2" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">线径粗、施工半径大、成本高</text>
+<rect x="36" y="438" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="438" x2="1004" y2="438" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="458" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">同轴</text>
+<text x="326.4" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数百 MHz 到 1 GHz 级</text>
+<text x="520" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数十到数百米</text>
+<text x="713.6" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">好（屏蔽）</text>
+<text x="907.2" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">接头/分支器损耗，逐步被光纤取代</text>
+<rect x="36" y="468" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="468" x2="1004" y2="468" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="488" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">单模光纤</text>
+<text x="326.4" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数十 THz 级</text>
+<text x="520" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数 km 到数十 km</text>
+<text x="713.6" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">极好（免疫 EMI）</text>
+<text x="907.2" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">需要光模块，弯曲/连接器损耗</text>
+<rect x="36" y="498" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="498" x2="1004" y2="498" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="518" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">多模光纤</text>
+<text x="326.4" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数百 MHz·km 级</text>
+<text x="520" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数百米</text>
+<text x="713.6" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">极好</text>
+<text x="907.2" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">模式色散限制距离，适合机房内</text>
+<rect x="36" y="528" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="528" x2="1004" y2="528" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="548" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">电力线</text>
+<text x="326.4" y="548" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数 MHz 到数十 MHz</text>
+<text x="520" y="548" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">一个配电域</text>
+<text x="713.6" y="548" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">差（噪声大）</text>
+<text x="907.2" y="548" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">共享介质、噪声随电器变化</text>
+<line x1="36" y1="558" x2="1004" y2="558" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="570" width="968" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="600" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="624" font-size="10.2" fill="#334155" xml:space="preserve">① 先看距离：100 m 以内优先双绞线，超过 100 m 或跨楼优先光纤。</text>
+<text x="52" y="642" font-size="10.2" fill="#334155" xml:space="preserve">② 再看带宽：Cat5e 够千兆，2.5G/5G 建议 Cat6/Cat6a，10G 短距可用 Cat6a。</text>
+<text x="52" y="660" font-size="10.2" fill="#334155" xml:space="preserve">③ 最后看环境：强电/变频器/室外雷击区域，光纤的抗干扰和隔离优势最大。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">说明：带宽与距离为量级示意，具体以 IEEE 802.3 对应 PHY 与线缆标准为准。</text>
+</svg>

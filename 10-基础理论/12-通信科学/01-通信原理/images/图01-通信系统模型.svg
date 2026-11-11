@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1400" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1364" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 通信系统：消息 → 比特 → 信号 → 消息</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">发送端把消息变成比特，再把比特变成适合信道的信号；接收端做反向恢复。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">信道是唯一不可控的一段，衰减、噪声、多径和干扰都在这里叠加。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">发送端</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">信道</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">接收端</text>
+<line x1="310" y1="142" x2="340" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="348" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">性能指标</text>
+<rect x="36" y="200" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">信源</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">语音/图像/数据</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">产生消息</text>
+<line x1="194" y1="242" x2="203" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="203,242 194,237.5 194,246.5" fill="#94a3b8"/>
+<rect x="203" y="200" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="203" y="200" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="216" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">信源编码</text>
+<text x="216" y="236" font-size="9.6" fill="#334155" xml:space="preserve">压缩、去冗余</text>
+<text x="216" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">模数转换</text>
+<line x1="361" y1="242" x2="370" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="370,242 361,237.5 361,246.5" fill="#94a3b8"/>
+<rect x="370" y="200" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="370" y="200" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="383" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">信道编码</text>
+<text x="383" y="236" font-size="9.6" fill="#334155" xml:space="preserve">加冗余、纠错</text>
+<text x="383" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">FEC/CRC</text>
+<line x1="528" y1="242" x2="537" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="537,242 528,237.5 528,246.5" fill="#94a3b8"/>
+<rect x="537" y="200" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="537" y="200" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="550" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">调制</text>
+<text x="550" y="236" font-size="9.6" fill="#334155" xml:space="preserve">比特 → 符号</text>
+<text x="550" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">载波/基带</text>
+<line x1="695" y1="242" x2="704" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="704,242 695,237.5 695,246.5" fill="#94a3b8"/>
+<rect x="704" y="200" width="158" height="84" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="704" y="200" width="4.5" height="84" fill="#d97706" rx="2"/>
+<text x="717" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">信道</text>
+<text x="717" y="236" font-size="9.6" fill="#334155" xml:space="preserve">双绞线/光纤/空气</text>
+<text x="717" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">衰减·噪声·多径</text>
+<line x1="862" y1="242" x2="871" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="871,242 862,237.5 862,246.5" fill="#94a3b8"/>
+<rect x="871" y="200" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="871" y="200" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="884" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">解调</text>
+<text x="884" y="236" font-size="9.6" fill="#334155" xml:space="preserve">符号 → 比特</text>
+<text x="884" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">判决/同步</text>
+<line x1="1029" y1="242" x2="1038" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="1038,242 1029,237.5 1029,246.5" fill="#94a3b8"/>
+<rect x="1038" y="200" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="1038" y="200" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="1051" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">信道解码</text>
+<text x="1051" y="236" font-size="9.6" fill="#334155" xml:space="preserve">纠错、校验</text>
+<text x="1051" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">去冗余</text>
+<line x1="1196" y1="242" x2="1205" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="1205,242 1196,237.5 1196,246.5" fill="#94a3b8"/>
+<rect x="1205" y="200" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="1205" y="200" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="1218" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">信宿</text>
+<text x="1218" y="236" font-size="9.6" fill="#334155" xml:space="preserve">还原消息</text>
+<text x="1218" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">播放/显示/存储</text>
+<text x="36" y="320" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">一条链路能不能通，最终落在四个量上</text>
+<rect x="36" y="338" width="960" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="358" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">指标</text>
+<text x="396" y="358" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">由什么决定</text>
+<text x="636" y="358" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">工程含义</text>
+<text x="876" y="358" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">常见误判</text>
+<rect x="36" y="368" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="368" x2="996" y2="368" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="388" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">带宽 B</text>
+<text x="396" y="388" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">介质与设备支持的频率范围</text>
+<text x="636" y="388" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">能容纳多少符号/秒</text>
+<text x="876" y="388" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">带宽大不等于速率一定高</text>
+<rect x="36" y="398" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="398" x2="996" y2="398" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="418" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">信噪比 SNR</text>
+<text x="396" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">发送功率、距离、噪声与干扰</text>
+<text x="636" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">决定高阶调制能否可靠解调</text>
+<text x="876" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">只看 RSSI 不看噪声</text>
+<rect x="36" y="428" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="428" x2="996" y2="428" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="448" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">信道容量 C</text>
+<text x="396" y="448" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">B 与 SNR（香农公式）</text>
+<text x="636" y="448" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">理论可达的上限</text>
+<text x="876" y="448" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">把容量当成实际吞吐</text>
+<rect x="36" y="458" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="458" x2="996" y2="458" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="478" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">误码率 BER</text>
+<text x="396" y="478" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">调制阶数、编码、信道质量</text>
+<text x="636" y="478" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">决定重传与业务体验</text>
+<text x="876" y="478" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">链路 up 就认为无错</text>
+<line x1="36" y1="488" x2="996" y2="488" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="500" width="960" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="554" font-size="10.2" fill="#334155" xml:space="preserve">① 先看中间的信道：发送端所有设计都是为了对抗它，接收端所有处理都是在弥补它。</text>
+<text x="52" y="572" font-size="10.2" fill="#334155" xml:space="preserve">② 信源编码追求「更少比特」，信道编码追求「更抗错误」，两者目标相反、位置不同。</text>
+<text x="52" y="590" font-size="10.2" fill="#334155" xml:space="preserve">③ 香农公式 C = B·log₂(1+SNR) 只给上限，实际速率还要扣除编码开销、协议开销与重传。</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">说明：图为通用通信系统模型，不绑定具体制式；参数以对应标准为准。</text>
+</svg>

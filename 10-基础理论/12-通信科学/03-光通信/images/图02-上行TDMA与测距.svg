@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="720" viewBox="0 0 1000 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1000" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="964" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 上行 TDMA 与测距：让所有 ONU 的突发“排队进门”</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">不同 ONU 到 OLT 的距离不同，信号到达时间也不同；测距就是测 RTT，再给每个 ONU 一个均衡时延。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">上行时隙之间留保护间隔，防止近端 ONU 的突发压到远端 ONU 的时隙。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">ONU 1</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">ONU 2</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">ONU 3</text>
+<line x1="321" y1="142" x2="351" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="359" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">保护间隔</text>
+<line x1="40" y1="240" x2="960" y2="240" stroke="#475569" stroke-width="1.6"/>
+<text x="40" y="264" font-size="9.4" fill="#64748b" xml:space="preserve">时间 →</text>
+<rect x="60" y="194" width="150" height="32" fill="#4f46e5" rx="3" stroke="#4f46e5" stroke-width="1"/>
+<text x="135" y="214" font-size="9.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">ONU1</text>
+<text x="135" y="184" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">burst</text>
+<rect x="222" y="194" width="130" height="32" fill="#0f9d58" rx="3" stroke="#0f9d58" stroke-width="1"/>
+<text x="287" y="214" font-size="9.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">ONU2</text>
+<text x="287" y="184" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">burst</text>
+<rect x="364" y="194" width="170" height="32" fill="#d97706" rx="3" stroke="#d97706" stroke-width="1"/>
+<text x="449" y="214" font-size="9.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">ONU3</text>
+<text x="449" y="184" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">burst</text>
+<rect x="546" y="194" width="150" height="32" fill="#4f46e5" rx="3" stroke="#4f46e5" stroke-width="1"/>
+<text x="621" y="214" font-size="9.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">ONU1</text>
+<text x="621" y="184" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">burst</text>
+<rect x="708" y="194" width="130" height="32" fill="#0f9d58" rx="3" stroke="#0f9d58" stroke-width="1"/>
+<text x="773" y="214" font-size="9.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">ONU2</text>
+<text x="773" y="184" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">burst</text>
+<rect x="850" y="194" width="100" height="32" fill="#d97706" rx="3" stroke="#d97706" stroke-width="1"/>
+<text x="900" y="214" font-size="9.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">ONU3</text>
+<text x="900" y="184" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">burst</text>
+<rect x="210" y="194" width="12" height="32" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="352" y="194" width="12" height="32" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="534" y="194" width="12" height="32" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="696" y="194" width="12" height="32" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<rect x="838" y="194" width="12" height="32" fill="#dc2626" rx="2" stroke="#dc2626" stroke-width="1"/>
+<text x="480" y="170" font-size="9.2" fill="#dc2626" xml:space="preserve" font-weight="600">红色 = guard gap（保护间隔）</text>
+<text x="40" y="310" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">ONU 注册：先报到，再测距，最后授权</text>
+<rect x="40" y="330" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="40" y="330" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="53" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① OLT 发发现授权</text>
+<text x="53" y="366" font-size="9.6" fill="#334155" xml:space="preserve">广播允许新 ONU</text>
+<text x="53" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">上报 Serial Number</text>
+<line x1="198" y1="374" x2="208" y2="374" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="208,374 199,369.5 199,378.5" fill="#94a3b8"/>
+<rect x="208" y="330" width="158" height="88" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="208" y="330" width="4.5" height="88" fill="#0891b2" rx="2"/>
+<text x="221" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② ONU 上报 SN</text>
+<text x="221" y="366" font-size="9.6" fill="#334155" xml:space="preserve">携带序列号</text>
+<text x="221" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">可能带注册密码</text>
+<line x1="366" y1="374" x2="376" y2="374" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,374 367,369.5 367,378.5" fill="#94a3b8"/>
+<rect x="376" y="330" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="376" y="330" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="389" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ OLT 分配 ONU-ID</text>
+<text x="389" y="366" font-size="9.6" fill="#334155" xml:space="preserve">识别合法 ONU</text>
+<text x="389" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">建立管理通道</text>
+<line x1="534" y1="374" x2="544" y2="374" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="544,374 535,369.5 535,378.5" fill="#94a3b8"/>
+<rect x="544" y="330" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="544" y="330" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="557" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 测距 Ranging</text>
+<text x="557" y="366" font-size="9.6" fill="#334155" xml:space="preserve">测 RTT</text>
+<text x="557" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">下发均衡时延</text>
+<line x1="702" y1="374" x2="712" y2="374" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="712,374 703,369.5 703,378.5" fill="#94a3b8"/>
+<rect x="712" y="330" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="712" y="330" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="725" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">⑤ 授权发送</text>
+<text x="725" y="366" font-size="9.6" fill="#334155" xml:space="preserve">DBA 分配时隙</text>
+<text x="725" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">进入稳定运行</text>
+<text x="40" y="470" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">为什么必须测距</text>
+<rect x="40" y="488" width="920" height="30" fill="#f1f5f9" rx="6"/>
+<text x="48" y="508" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">问题</text>
+<text x="500" y="508" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">后果</text>
+<text x="806.67" y="508" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">解决</text>
+<rect x="40" y="518" width="920" height="28" fill="#ffffff"/>
+<line x1="40" y1="518" x2="960" y2="518" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="538" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">不同 ONU 距离不同</text>
+<text x="500" y="538" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">突发到达时间错位</text>
+<text x="806.67" y="538" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">测 RTT，分配均衡时延 EqD</text>
+<rect x="40" y="546" width="920" height="28" fill="#ffffff"/>
+<line x1="40" y1="546" x2="960" y2="546" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="566" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">光纤温度/老化变化</text>
+<text x="500" y="566" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">时隙缓慢漂移</text>
+<text x="806.67" y="566" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">周期性测距/跟踪</text>
+<rect x="40" y="574" width="920" height="28" fill="#ffffff"/>
+<line x1="40" y1="574" x2="960" y2="574" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="594" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">近端 ONU 功率过强</text>
+<text x="500" y="594" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">淹没远端 ONU 突发</text>
+<text x="806.67" y="594" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">功率控制 + 保护间隔</text>
+<rect x="40" y="602" width="920" height="28" fill="#ffffff"/>
+<line x1="40" y1="602" x2="960" y2="602" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="622" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">新 ONU 突然上线</text>
+<text x="500" y="622" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">与在线 ONU 冲突</text>
+<text x="806.67" y="622" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">发现窗口 + 注册流程</text>
+<line x1="40" y1="630" x2="960" y2="630" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">说明：突发/保护间隔为示意，实际时隙长度、发现窗口与测距周期以 ITU-T G.984.3 为准。</text>
+</svg>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="760" viewBox="0 0 1060 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1060" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 光模块：电信号 ↔ 光信号的双向翻译</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">光模块内部是“电接口 + 激光器/驱动器 + 光接口 + 接收探测/放大”的完整链路。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">选型看四件事：速率、波长、传输距离/光纤类型、DDM 与端口兼容。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">电信号</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">光信号</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">监控</text>
+<line x1="310" y1="142" x2="340" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="348" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">边界</text>
+<rect x="36" y="200" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">主机 SerDes</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">高速电信号</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">TX/RX 差分对</text>
+<line x1="194" y1="244" x2="206" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,244 197,239.5 197,248.5" fill="#94a3b8"/>
+<rect x="206" y="200" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="200" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="219" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">驱动/激光器</text>
+<text x="219" y="236" font-size="9.6" fill="#334155" xml:space="preserve">电 → 光</text>
+<text x="219" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">DFB/FP/EML/VCSEL</text>
+<line x1="364" y1="244" x2="376" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,244 367,239.5 367,248.5" fill="#94a3b8"/>
+<rect x="376" y="200" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="376" y="200" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="389" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">光接口</text>
+<text x="389" y="236" font-size="9.6" fill="#334155" xml:space="preserve">波长/光纤类型</text>
+<text x="389" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">LC/SC/MPO</text>
+<line x1="534" y1="244" x2="546" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,244 537,239.5 537,248.5" fill="#94a3b8"/>
+<rect x="546" y="200" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="546" y="200" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="559" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">探测/放大</text>
+<text x="559" y="236" font-size="9.6" fill="#334155" xml:space="preserve">光 → 电</text>
+<text x="559" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">PIN/APD + TIA</text>
+<line x1="704" y1="244" x2="716" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="716,244 707,239.5 707,248.5" fill="#94a3b8"/>
+<rect x="716" y="200" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="716" y="200" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="729" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">限幅/均衡</text>
+<text x="729" y="236" font-size="9.6" fill="#334155" xml:space="preserve">整形、时钟恢复</text>
+<text x="729" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">输出到 SerDes</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">封装与典型场景</text>
+<rect x="36" y="348" width="980" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">封装</text>
+<text x="330" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型速率</text>
+<text x="526" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型距离</text>
+<text x="722" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">场景</text>
+<text x="918" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">边界</text>
+<rect x="36" y="378" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="378" x2="1016" y2="378" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="398" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SFP</text>
+<text x="330" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">1G/2.5G</text>
+<text x="526" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数百 m–数十 km</text>
+<text x="722" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">接入、交换机</text>
+<text x="918" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">速率与端口匹配</text>
+<rect x="36" y="406" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="406" x2="1016" y2="406" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="426" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SFP+</text>
+<text x="330" y="426" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">10G</text>
+<text x="526" y="426" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">300 m–40 km</text>
+<text x="722" y="426" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数据中心、园区</text>
+<text x="918" y="426" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">DDM/兼容性</text>
+<rect x="36" y="434" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="434" x2="1016" y2="434" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="454" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SFP28</text>
+<text x="330" y="454" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">25G</text>
+<text x="526" y="454" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">100 m–10 km</text>
+<text x="722" y="454" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">服务器/交换机</text>
+<text x="918" y="454" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">散热与功耗</text>
+<rect x="36" y="462" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="462" x2="1016" y2="462" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="482" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">QSFP+/QSFP28</text>
+<text x="330" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">40G/100G</text>
+<text x="526" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">短距多模/长距单模</text>
+<text x="722" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数据中心骨干</text>
+<text x="918" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">MPO 极性</text>
+<rect x="36" y="490" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="490" x2="1016" y2="490" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="510" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">QSFP-DD/OSFP</text>
+<text x="330" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">400G/800G</text>
+<text x="526" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">短距为主</text>
+<text x="722" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数据中心</text>
+<text x="918" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">功耗/散热挑战</text>
+<line x1="36" y1="518" x2="1016" y2="518" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="530" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">选型四问</text>
+<rect x="36" y="548" width="980" height="128" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="578" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="602" font-size="10.2" fill="#334155" xml:space="preserve">① 速率对不对：1G 口插 10G 模块通常不协商，反之亦然。</text>
+<text x="52" y="620" font-size="10.2" fill="#334155" xml:space="preserve">② 波长/光纤对不对：850 nm 多模、1310/1550 nm 单模，不能混用。</text>
+<text x="52" y="638" font-size="10.2" fill="#334155" xml:space="preserve">③ 距离够不够：模块的 reach 是“典型最大距离”，还要扣连接器/熔接损耗。</text>
+<text x="52" y="656" font-size="10.2" fill="#334155" xml:space="preserve">④ DDM 能不能读：收光/发光/温度/电压是现场排障的第一手数据。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">说明：封装/速率/距离为常见组合，具体以 MSA（SFP/SFF/QSFP）与厂商规格书为准。</text>
+</svg>

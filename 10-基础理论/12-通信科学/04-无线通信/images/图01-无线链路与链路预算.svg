@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 无线链路：功率从发射机走到接收机</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">无线链路没有“线”，功率按距离平方衰减，还要叠加多径、遮挡和干扰。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">链路预算把发射功率、天线增益、路径损耗、噪声系数和解调门限都折算成 dB。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">发射</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">空间</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">接收</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">增益/损耗</text>
+<rect x="36" y="200" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">基带</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">编码/调制</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">I/Q 符号</text>
+<line x1="194" y1="242" x2="203" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="203,242 194,237.5 194,246.5" fill="#94a3b8"/>
+<rect x="203" y="200" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="203" y="200" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="216" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">上变频</text>
+<text x="216" y="236" font-size="9.6" fill="#334155" xml:space="preserve">搬到载频</text>
+<text x="216" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">本振</text>
+<line x1="361" y1="242" x2="370" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="370,242 361,237.5 361,246.5" fill="#94a3b8"/>
+<rect x="370" y="200" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="370" y="200" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="383" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PA</text>
+<text x="383" y="236" font-size="9.6" fill="#334155" xml:space="preserve">功率放大</text>
+<text x="383" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">线性度/效率</text>
+<line x1="528" y1="242" x2="537" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="537,242 528,237.5 528,246.5" fill="#94a3b8"/>
+<rect x="537" y="200" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="537" y="200" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="550" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">天线</text>
+<text x="550" y="236" font-size="9.6" fill="#334155" xml:space="preserve">增益 Gtx</text>
+<text x="550" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">EIRP</text>
+<line x1="695" y1="242" x2="704" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="704,242 695,237.5 695,246.5" fill="#94a3b8"/>
+<rect x="704" y="200" width="158" height="84" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="704" y="200" width="4.5" height="84" fill="#d97706" rx="2"/>
+<text x="717" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">空间信道</text>
+<text x="717" y="236" font-size="9.6" fill="#334155" xml:space="preserve">路径损耗</text>
+<text x="717" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">多径/遮挡</text>
+<line x1="862" y1="242" x2="871" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="871,242 862,237.5 862,246.5" fill="#94a3b8"/>
+<rect x="871" y="200" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="871" y="200" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="884" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">接收天线</text>
+<text x="884" y="236" font-size="9.6" fill="#334155" xml:space="preserve">增益 Grx</text>
+<text x="884" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">噪声温度</text>
+<line x1="1029" y1="242" x2="1038" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="1038,242 1029,237.5 1029,246.5" fill="#94a3b8"/>
+<rect x="1038" y="200" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="1038" y="200" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="1051" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LNA/下变频</text>
+<text x="1051" y="236" font-size="9.6" fill="#334155" xml:space="preserve">低噪放</text>
+<text x="1051" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">搬回基带</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">链路预算：把乘法变成加法</text>
+<rect x="36" y="348" width="968" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">项目</text>
+<text x="399" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型表达</text>
+<text x="641" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">作用</text>
+<text x="883" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">边界</text>
+<rect x="36" y="378" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="378" x2="1004" y2="378" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="398" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">发射功率</text>
+<text x="399" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Ptx（dBm）</text>
+<text x="641" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">链路起点</text>
+<text x="883" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">受法规/功耗/线性度限制</text>
+<rect x="36" y="408" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="408" x2="1004" y2="408" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="428" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">天线增益</text>
+<text x="399" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Gtx/Grx（dBi）</text>
+<text x="641" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">把能量集中到某方向</text>
+<text x="883" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">方向图/尺寸/频段决定</text>
+<rect x="36" y="438" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="438" x2="1004" y2="438" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="458" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">EIRP</text>
+<text x="399" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Ptx + Gtx（dBm）</text>
+<text x="641" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">等效全向辐射功率</text>
+<text x="883" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">法规常按 EIRP 限值</text>
+<rect x="36" y="468" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="468" x2="1004" y2="468" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="488" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">路径损耗</text>
+<text x="399" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">20log₁₀(d) + 20log₁₀(f) + 常数</text>
+<text x="641" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">自由空间衰减</text>
+<text x="883" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">实际还要加遮挡/多径余量</text>
+<rect x="36" y="498" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="498" x2="1004" y2="498" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="518" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">噪声</text>
+<text x="399" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">−174 + 10logB + NF（dBm）</text>
+<text x="641" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">接收底噪</text>
+<text x="883" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">干扰另算，用 SINR</text>
+<rect x="36" y="528" width="968" height="30" fill="#ffffff"/>
+<line x1="36" y1="528" x2="1004" y2="528" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="548" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">解调门限</text>
+<text x="399" y="548" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">SNR_min（dB）</text>
+<text x="641" y="548" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">目标误码率所需</text>
+<text x="883" y="548" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">随调制/编码变化</text>
+<line x1="36" y1="558" x2="1004" y2="558" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="570" width="968" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="600" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="624" font-size="10.2" fill="#334155" xml:space="preserve">① 先看发射端：EIRP = 发射功率 + 天线增益，法规通常限制 EIRP 而不是单看 PA 功率。</text>
+<text x="52" y="642" font-size="10.2" fill="#334155" xml:space="preserve">② 再看空间：自由空间损耗随距离平方、频率平方增长；室内还要加墙体/多径余量。</text>
+<text x="52" y="660" font-size="10.2" fill="#334155" xml:space="preserve">③ 最后看接收端：LNA 的噪声系数决定底噪，解调门限决定“多弱还能解”。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">说明：公式为自由空间/热噪声的简化形式；实际链路预算以 3GPP/ITU-R 模型与实测为准。</text>
+</svg>

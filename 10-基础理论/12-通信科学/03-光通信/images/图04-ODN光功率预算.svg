@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="800" viewBox="0 0 1060 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1060" height="800" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · ODN 光功率预算：把每一段损耗算成 dB</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">光功率预算 = 发送光功率 − 接收灵敏度；链路上每个分光器、接头、熔接点、每公里光纤都要扣。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">预算不够时，先看分光比和光纤长度，再看连接器/熔接质量，最后才考虑换模块。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">光功率</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">损耗</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">余量</text>
+<rect x="36" y="200" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">OLT 发光</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">Ptx（dBm）</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">Class B+/C+</text>
+<line x1="194" y1="244" x2="206" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,244 197,239.5 197,248.5" fill="#94a3b8"/>
+<rect x="206" y="200" width="158" height="88" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="206" y="200" width="4.5" height="88" fill="#dc2626" rx="2"/>
+<text x="219" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">feeder 光纤</text>
+<text x="219" y="236" font-size="9.6" fill="#334155" xml:space="preserve">0.2–0.35 dB/km</text>
+<text x="219" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">长度 × 系数</text>
+<line x1="364" y1="244" x2="376" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,244 367,239.5 367,248.5" fill="#94a3b8"/>
+<rect x="376" y="200" width="158" height="88" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="376" y="200" width="4.5" height="88" fill="#dc2626" rx="2"/>
+<text x="389" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">分光器</text>
+<text x="389" y="236" font-size="9.6" fill="#334155" xml:space="preserve">1:8 ≈ 10.5 dB</text>
+<text x="389" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">1:32 ≈ 17 dB</text>
+<line x1="534" y1="244" x2="546" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,244 537,239.5 537,248.5" fill="#94a3b8"/>
+<rect x="546" y="200" width="158" height="88" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="546" y="200" width="4.5" height="88" fill="#dc2626" rx="2"/>
+<text x="559" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">drop 光纤</text>
+<text x="559" y="236" font-size="9.6" fill="#334155" xml:space="preserve">每户一段</text>
+<text x="559" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">长度 × 系数</text>
+<line x1="704" y1="244" x2="716" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="716,244 707,239.5 707,248.5" fill="#94a3b8"/>
+<rect x="716" y="200" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="716" y="200" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="729" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ONU 收光</text>
+<text x="729" y="236" font-size="9.6" fill="#334155" xml:space="preserve">Rx（dBm）</text>
+<text x="729" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">≥ 灵敏度</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">典型损耗（量级，需按器件核对）</text>
+<rect x="36" y="348" width="980" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">项目</text>
+<text x="526" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型损耗</text>
+<text x="852.67" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">说明</text>
+<rect x="36" y="378" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="378" x2="1016" y2="378" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="398" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">1:2 分光器</text>
+<text x="526" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">≈ 3.5 dB</text>
+<text x="852.67" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">理论 3.0 dB + 额外损耗</text>
+<rect x="36" y="406" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="406" x2="1016" y2="406" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="426" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">1:8 分光器</text>
+<text x="526" y="426" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">≈ 10.5 dB</text>
+<text x="852.67" y="426" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">理论 9.0 dB + 额外损耗</text>
+<rect x="36" y="434" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="434" x2="1016" y2="434" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="454" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">1:32 分光器</text>
+<text x="526" y="454" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">≈ 17 dB</text>
+<text x="852.67" y="454" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">理论 15 dB + 额外损耗</text>
+<rect x="36" y="462" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="462" x2="1016" y2="462" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="482" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">连接器（每对）</text>
+<text x="526" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">0.3–0.5 dB</text>
+<text x="852.67" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">端面清洁/研磨质量影响大</text>
+<rect x="36" y="490" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="490" x2="1016" y2="490" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="510" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">熔接点</text>
+<text x="526" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">≈ 0.1 dB</text>
+<text x="852.67" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">每个熔接点都要计</text>
+<rect x="36" y="518" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="518" x2="1016" y2="518" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="538" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">光纤衰减</text>
+<text x="526" y="538" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">0.2–0.35 dB/km</text>
+<text x="852.67" y="538" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">波长越长损耗越低</text>
+<rect x="36" y="546" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="546" x2="1016" y2="546" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="566" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">设计余量</text>
+<text x="526" y="566" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">≥ 3 dB</text>
+<text x="852.67" y="566" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">老化、温度、弯曲、维修</text>
+<line x1="36" y1="574" x2="1016" y2="574" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="590" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">一个算例</text>
+<rect x="36" y="610" width="980" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="640" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="664" font-size="10.2" fill="#334155" xml:space="preserve">例：1:32 分光（17 dB）+ 10 km 光纤（10×0.25=2.5 dB）+ 4 个连接器（2 dB）+ 2 个熔接（0.2 dB）+ 余量 3 dB ≈ 24.7 dB。</text>
+<text x="52" y="682" font-size="10.2" fill="#334155" xml:space="preserve">若 OLT 发光 +3 dBm、ONU 灵敏度 −27 dBm，则可用预算 30 dB，剩余约 5 dB，链路可行。</text>
+<text x="52" y="700" font-size="10.2" fill="#334155" xml:space="preserve">若分光比改成 1:64（≈20.4 dB），预算立刻紧张；这时要么缩短距离，要么换更高功率等级/更低损耗方案。</text>
+<text x="36" y="746" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">说明：损耗值为工程常用量级，分光器/连接器/光纤的实测值以器件规格书与 ITU-T G.984.2 光预算等级为准。</text>
+</svg>

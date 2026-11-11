@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="740" viewBox="0 0 1140 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · PON：一根主干光纤，被分光器分给多户</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">PON 是点对多点：局端 OLT 一根光纤出去，经无源分光器分成多路到 ONU，中间不需要供电。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">下行是广播 TDM，所有 ONU 都能收到，靠 GEM Port/ONU-ID 过滤；上行是 TDMA，各 ONU 按授权时隙发送。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">下行 1490 nm</text>
+<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">上行 1310 nm</text>
+<line x1="309.6" y1="142" x2="339.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="347.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">无源分光</text>
+<line x1="415.6" y1="142" x2="445.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="453.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">用户侧</text>
+<rect x="36" y="200" width="170" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">OLT</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">局端光线路终端</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">PON 口/上行口</text>
+<rect x="276" y="200" width="190" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="276" y="200" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="289" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">分光器</text>
+<text x="289" y="236" font-size="9.6" fill="#334155" xml:space="preserve">1:2 / 1:4 / 1:8</text>
+<text x="289" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">1:16 / 1:32 / 1:64</text>
+<rect x="560" y="150" width="130" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="560" y="150" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="573" y="169" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ONU 1</text>
+<text x="573" y="186" font-size="8.8" fill="#334155" xml:space="preserve">用户侧</text>
+<line x1="466" y1="243" x2="554" y2="185" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<polygon points="554,185 544.01,186.2 548.96,193.71" fill="#94a3b8"/>
+<text x="578" y="140" font-size="8.8" fill="#64748b" xml:space="preserve">drop 1</text>
+<rect x="760" y="150" width="130" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="760" y="150" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="773" y="169" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ONU 2</text>
+<text x="773" y="186" font-size="8.8" fill="#334155" xml:space="preserve">用户侧</text>
+<line x1="466" y1="243" x2="754" y2="185" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<polygon points="754,185 744.29,182.37 746.07,191.19" fill="#94a3b8"/>
+<text x="778" y="140" font-size="8.8" fill="#64748b" xml:space="preserve">drop 2</text>
+<rect x="960" y="150" width="130" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="960" y="150" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="973" y="169" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ONU 3</text>
+<text x="973" y="186" font-size="8.8" fill="#334155" xml:space="preserve">用户侧</text>
+<line x1="466" y1="243" x2="954" y2="185" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<polygon points="954,185 944.53,181.59 945.59,190.53" fill="#94a3b8"/>
+<text x="978" y="140" font-size="8.8" fill="#64748b" xml:space="preserve">drop 3</text>
+<line x1="206" y1="243" x2="270" y2="243" stroke="#4f46e5" stroke-width="2.2"/>
+<polygon points="270,243 261,238.5 261,247.5" fill="#4f46e5"/>
+<text x="212" y="232" font-size="9" fill="#4f46e5" xml:space="preserve" font-weight="700">feeder</text>
+<text x="476" y="262" font-size="9" fill="#d97706" xml:space="preserve" font-weight="700">splitter</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">波长分配（GPON 为例）</text>
+<rect x="36" y="348" width="620" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">方向</text>
+<text x="268.5" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">波长</text>
+<text x="423.5" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">复用方式</text>
+<text x="578.5" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">谁收</text>
+<rect x="36" y="378" width="620" height="32" fill="#ffffff"/>
+<line x1="36" y1="378" x2="656" y2="378" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="398" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">下行</text>
+<text x="268.5" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">1490 nm</text>
+<text x="423.5" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">TDM 广播</text>
+<text x="578.5" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">所有 ONU，按 ONU-ID 过滤</text>
+<rect x="36" y="410" width="620" height="32" fill="#ffffff"/>
+<line x1="36" y1="410" x2="656" y2="410" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="430" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">上行</text>
+<text x="268.5" y="430" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">1310 nm</text>
+<text x="423.5" y="430" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">TDMA 突发</text>
+<text x="578.5" y="430" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">OLT，按授权时隙接收</text>
+<rect x="36" y="442" width="620" height="32" fill="#ffffff"/>
+<line x1="36" y1="442" x2="656" y2="442" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="462" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">视频（可选）</text>
+<text x="268.5" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">1550 nm</text>
+<text x="423.5" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">叠加</text>
+<text x="578.5" y="462" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">需要视频业务的 ONU</text>
+<line x1="36" y1="474" x2="656" y2="474" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="700" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">PON 家族</text>
+<rect x="700" y="348" width="320" height="30" fill="#f1f5f9" rx="6"/>
+<text x="708" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">标准</text>
+<text x="940" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">下行/上行</text>
+<rect x="700" y="378" width="320" height="30" fill="#ffffff"/>
+<line x1="700" y1="378" x2="1020" y2="378" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="708" y="398" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">GPON</text>
+<text x="940" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">2.5G / 1.25G</text>
+<rect x="700" y="408" width="320" height="30" fill="#ffffff"/>
+<line x1="700" y1="408" x2="1020" y2="408" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="708" y="428" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">XG-PON</text>
+<text x="940" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">10G / 2.5G</text>
+<rect x="700" y="438" width="320" height="30" fill="#ffffff"/>
+<line x1="700" y1="438" x2="1020" y2="438" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="708" y="458" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">XGS-PON</text>
+<text x="940" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">10G / 10G</text>
+<rect x="700" y="468" width="320" height="30" fill="#ffffff"/>
+<line x1="700" y1="468" x2="1020" y2="468" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="708" y="488" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">EPON</text>
+<text x="940" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">1G / 1G</text>
+<rect x="700" y="498" width="320" height="30" fill="#ffffff"/>
+<line x1="700" y1="498" x2="1020" y2="498" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="708" y="518" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">10G-EPON</text>
+<text x="940" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">10G / 10G</text>
+<line x1="700" y1="528" x2="1020" y2="528" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="540" width="980" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="570" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="594" font-size="10.2" fill="#334155" xml:space="preserve">① 先看拓扑：OLT 一根 feeder 光纤到分光器，分光器再分 drop 光纤到各 ONU，中间没有有源设备。</text>
+<text x="52" y="612" font-size="10.2" fill="#334155" xml:space="preserve">② 再看波长：下行和上行用不同波长，所以同一根光纤可以同时双向传输（WDM）。</text>
+<text x="52" y="630" font-size="10.2" fill="#334155" xml:space="preserve">③ 最后看复用：下行广播、上行突发，ONU 必须等 OLT 授权才能发，否则会撞车。</text>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">说明：速率为标称线路速率；分光比与波长以 ITU-T G.984/G.987/G.9807 及厂商实现为准。</text>
+</svg>

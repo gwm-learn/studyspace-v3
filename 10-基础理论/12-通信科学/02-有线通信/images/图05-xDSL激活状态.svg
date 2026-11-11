@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="780" viewBox="0 0 1040 780" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1040" height="780" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1004" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · xDSL 激活：从握手、训练到 Showtime</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">xDSL 不是插上线就通：要先握手确认对端，再训练测信道、协商速率/功率，最后进入 Showtime。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">Showtime 中还会用 SRA/bit swap 跟踪噪声变化；跟踪失败就重新训练。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常路径</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">训练/协商</text>
+<line x1="254.6" y1="142" x2="284.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="292.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">异常/重训</text>
+<line x1="367.2" y1="142" x2="397.2" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="405.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">稳定态</text>
+<rect x="36" y="200" width="158" height="92" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="92" fill="#475569" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Idle</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">线路未激活</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">等待事件</text>
+<line x1="194" y1="246" x2="210" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="210,246 201,241.5 201,250.5" fill="#94a3b8"/>
+<rect x="210" y="200" width="158" height="92" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="210" y="200" width="4.5" height="92" fill="#d97706" rx="2"/>
+<text x="223" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Handshake</text>
+<text x="223" y="236" font-size="9.6" fill="#334155" xml:space="preserve">确认 DSLAM</text>
+<text x="223" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">交换能力</text>
+<line x1="368" y1="246" x2="384" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="384,246 375,241.5 375,250.5" fill="#94a3b8"/>
+<rect x="384" y="200" width="158" height="92" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="384" y="200" width="4.5" height="92" fill="#d97706" rx="2"/>
+<text x="397" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Training</text>
+<text x="397" y="236" font-size="9.6" fill="#334155" xml:space="preserve">测衰减/SNR</text>
+<text x="397" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">协商剖面</text>
+<line x1="542" y1="246" x2="558" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="558,246 549,241.5 549,250.5" fill="#94a3b8"/>
+<rect x="558" y="200" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="558" y="200" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="571" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Showtime</text>
+<text x="571" y="236" font-size="9.6" fill="#334155" xml:space="preserve">稳定传输</text>
+<text x="571" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">SRA/bit swap</text>
+<line x1="637" y1="308" x2="463" y2="308" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="463,308 472,312.5 472,303.5" fill="#dc2626"/>
+<text x="470" y="326" font-size="9.2" fill="#dc2626" xml:space="preserve" font-weight="600">失步/噪声 → 重新训练</text>
+<text x="36" y="350" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">每个阶段在做什么</text>
+<rect x="36" y="368" width="960" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="388" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">阶段</text>
+<text x="396" y="388" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">目的</text>
+<text x="636" y="388" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">关键动作</text>
+<text x="876" y="388" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">失败表现</text>
+<rect x="36" y="398" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="398" x2="996" y2="398" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="418" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Handshake</text>
+<text x="396" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">确认对端是 DSLAM</text>
+<text x="636" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">交换能力/版本</text>
+<text x="876" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">一直激活不了</text>
+<rect x="36" y="426" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="426" x2="996" y2="426" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="446" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Training</text>
+<text x="396" y="446" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">测信道、定参数</text>
+<text x="636" y="446" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">测 SNR、选剖面/功率</text>
+<text x="876" y="446" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">速率低或训练失败</text>
+<rect x="36" y="454" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="454" x2="996" y2="454" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="474" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Showtime</text>
+<text x="396" y="474" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">稳定传输</text>
+<text x="636" y="474" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">DMT 比特加载、FEC</text>
+<text x="876" y="474" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">误码/掉线</text>
+<rect x="36" y="482" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="482" x2="996" y2="482" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="502" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SRA</text>
+<text x="396" y="502" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">无缝调速</text>
+<text x="636" y="502" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">不重训调整速率</text>
+<text x="876" y="502" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">速率突变</text>
+<rect x="36" y="510" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="510" x2="996" y2="510" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="530" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Bit Swap</text>
+<text x="396" y="530" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">避开突发噪声</text>
+<text x="636" y="530" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">子载波搬比特</text>
+<text x="876" y="530" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">局部误码</text>
+<rect x="36" y="538" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="538" x2="996" y2="538" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="558" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Re-train</text>
+<text x="396" y="558" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">恢复</text>
+<text x="636" y="558" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">重新握手/训练</text>
+<text x="876" y="558" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">短时断网</text>
+<line x1="36" y1="566" x2="996" y2="566" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="580" width="960" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="610" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="634" font-size="10.2" fill="#334155" xml:space="preserve">① 先看四个状态：Idle → Handshake → Training → Showtime，正常只走一次。</text>
+<text x="52" y="652" font-size="10.2" fill="#334155" xml:space="preserve">② 再看回环：Showtime 中噪声/失步会触发 Re-train，表现为“断一下又恢复”。</text>
+<text x="52" y="670" font-size="10.2" fill="#334155" xml:space="preserve">③ 工程判断：频繁 Re-train 查线路/接头/串扰；Showtime 中缓慢降速查噪声/SRA。</text>
+<text x="36" y="726" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="744" font-size="12.3" fill="#64748b" xml:space="preserve">说明：状态名称为工程简化，具体状态机/定时器以 ITU-T G.992/G.993/G.9701 与芯片实现为准。</text>
+</svg>

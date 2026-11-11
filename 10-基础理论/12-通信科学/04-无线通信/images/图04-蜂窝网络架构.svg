@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="760" viewBox="0 0 1060 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1060" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 蜂窝网络：接入网 + 核心网，4G 到 5G 的分工变化</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">4G：eNB + EPC（MME/S-GW/P-GW），控制与用户平面分开但网元较多。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">5G：gNB/ng-eNB + 5GC（AMF/SMF/UPF），控制面与用户面进一步分离，接口改成 NG/Xn。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">控制面</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">用户面</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">接入网</text>
+<text x="36" y="170" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">4G LTE / EPC</text>
+<rect x="36" y="190" width="180" height="80" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="80" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">UE</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">终端</text>
+<rect x="286" y="190" width="190" height="80" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="286" y="190" width="4.5" height="80" fill="#d97706" rx="2"/>
+<text x="299" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">eNB</text>
+<text x="299" y="226" font-size="9.6" fill="#334155" xml:space="preserve">E-UTRAN</text>
+<text x="299" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">无线资源管理</text>
+<rect x="546" y="150" width="170" height="64" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="546" y="150" width="4.5" height="64" fill="#4f46e5" rx="2"/>
+<text x="559" y="169" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">MME</text>
+<text x="559" y="186" font-size="8.8" fill="#334155" xml:space="preserve">NAS/移动性</text>
+<rect x="546" y="230" width="170" height="64" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="546" y="230" width="4.5" height="64" fill="#0f9d58" rx="2"/>
+<text x="559" y="249" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">S-GW</text>
+<text x="559" y="266" font-size="8.8" fill="#334155" xml:space="preserve">用户面锚点</text>
+<rect x="786" y="190" width="170" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="786" y="190" width="4.5" height="80" fill="#0f9d58" rx="2"/>
+<text x="799" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">P-GW</text>
+<text x="799" y="226" font-size="8.8" fill="#334155" xml:space="preserve">IP 分配/计费</text>
+<line x1="216" y1="230" x2="280" y2="230" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="280,230 271,225.5 271,234.5" fill="#94a3b8"/>
+<line x1="476" y1="210" x2="540" y2="182" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="540,182 529.95,181.48 533.56,189.73" fill="#4f46e5"/>
+<line x1="476" y1="240" x2="540" y2="262" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="540,262 532.95,254.82 530.03,263.33" fill="#0f9d58"/>
+<line x1="716" y1="262" x2="780" y2="240" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="780,240 770.03,238.67 772.95,247.18" fill="#0f9d58"/>
+<text x="500" y="146" font-size="8.6" fill="#4f46e5" xml:space="preserve">S1-MME</text>
+<text x="500" y="296" font-size="8.6" fill="#0f9d58" xml:space="preserve">S1-U</text>
+<text x="36" y="340" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">5G NR / 5GC</text>
+<rect x="36" y="360" width="180" height="80" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="360" width="4.5" height="80" fill="#475569" rx="2"/>
+<text x="49" y="379" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">UE</text>
+<text x="49" y="396" font-size="9.6" fill="#334155" xml:space="preserve">终端</text>
+<rect x="286" y="360" width="190" height="80" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="286" y="360" width="4.5" height="80" fill="#d97706" rx="2"/>
+<text x="299" y="379" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">gNB / ng-eNB</text>
+<text x="299" y="396" font-size="9.6" fill="#334155" xml:space="preserve">NG-RAN</text>
+<text x="299" y="411.4" font-size="9.6" fill="#334155" xml:space="preserve">RRC/调度</text>
+<rect x="546" y="320" width="170" height="64" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="546" y="320" width="4.5" height="64" fill="#4f46e5" rx="2"/>
+<text x="559" y="339" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">AMF</text>
+<text x="559" y="356" font-size="8.8" fill="#334155" xml:space="preserve">注册/移动性</text>
+<rect x="546" y="400" width="170" height="64" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="546" y="400" width="4.5" height="64" fill="#4f46e5" rx="2"/>
+<text x="559" y="419" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">SMF</text>
+<text x="559" y="436" font-size="8.8" fill="#334155" xml:space="preserve">PDU 会话</text>
+<rect x="786" y="360" width="170" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="786" y="360" width="4.5" height="80" fill="#0f9d58" rx="2"/>
+<text x="799" y="379" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">UPF</text>
+<text x="799" y="396" font-size="8.8" fill="#334155" xml:space="preserve">用户面/转发</text>
+<line x1="216" y1="400" x2="280" y2="400" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="280,400 271,395.5 271,404.5" fill="#94a3b8"/>
+<line x1="476" y1="382" x2="540" y2="352" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="540,352 529.94,351.75 533.76,359.89" fill="#4f46e5"/>
+<line x1="476" y1="400" x2="540" y2="420" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="540,420 532.75,413.02 530.07,421.61" fill="#4f46e5"/>
+<line x1="716" y1="420" x2="780" y2="400" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="780,400 770.07,398.39 772.75,406.98" fill="#0f9d58"/>
+<text x="500" y="318" font-size="8.6" fill="#4f46e5" xml:space="preserve">NG-C</text>
+<text x="500" y="470" font-size="8.6" fill="#0f9d58" xml:space="preserve">NG-U</text>
+<rect x="36" y="500" width="980" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="520" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">对比项</text>
+<text x="526" y="520" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">4G</text>
+<text x="852.67" y="520" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">5G</text>
+<rect x="36" y="530" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="530" x2="1016" y2="530" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="550" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">核心网</text>
+<text x="526" y="550" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">EPC（MME/S-GW/P-GW）</text>
+<text x="852.67" y="550" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">5GC（AMF/SMF/UPF）</text>
+<rect x="36" y="558" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="558" x2="1016" y2="558" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="578" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">接入网</text>
+<text x="526" y="578" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">eNB（E-UTRAN）</text>
+<text x="852.67" y="578" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">gNB + ng-eNB（NG-RAN）</text>
+<rect x="36" y="586" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="586" x2="1016" y2="586" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="606" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">接口</text>
+<text x="526" y="606" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">S1 / X2</text>
+<text x="852.67" y="606" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">NG / Xn</text>
+<rect x="36" y="614" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="614" x2="1016" y2="614" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="634" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">控制面</text>
+<text x="526" y="634" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">MME 集中</text>
+<text x="852.67" y="634" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">AMF + SMF 分离</text>
+<rect x="36" y="642" width="980" height="28" fill="#ffffff"/>
+<line x1="36" y1="642" x2="1016" y2="642" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="662" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">用户面</text>
+<text x="526" y="662" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">S-GW/P-GW</text>
+<text x="852.67" y="662" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">UPF</text>
+<line x1="36" y1="670" x2="1016" y2="670" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">说明：图为功能示意，未画全 HSS/UDM/PCRF/PCF 等网元；接口以 3GPP 23.002/38.300 为准。</text>
+</svg>

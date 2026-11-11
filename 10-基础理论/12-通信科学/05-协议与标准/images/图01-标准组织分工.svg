@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="760" viewBox="0 0 1040 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1040" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1004" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 通信标准组织：各管一段，互相引用</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">ITU-T 管电信网络与传输，IEEE 802 管局域网/城域网，IETF 管互联网协议，3GPP 管蜂窝。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">一个产品往往同时引用多个组织：例如 5G CPE = 3GPP 空口 + IETF IP + IEEE 802.3/802.11 + ITU-T 光接口。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">电信/传输</text>
+<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">局域网</text>
+<line x1="243.6" y1="142" x2="273.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="281.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">互联网</text>
+<line x1="338.6" y1="142" x2="368.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="376.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">蜂窝</text>
+<rect x="36" y="200" width="158" height="94" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="94" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ITU-T</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">电信网络/传输</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">G.984/PON、G.652</text>
+<line x1="194" y1="247" x2="210" y2="247" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="210,247 201,242.5 201,251.5" fill="#94a3b8"/>
+<rect x="210" y="200" width="158" height="94" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="210" y="200" width="4.5" height="94" fill="#0f9d58" rx="2"/>
+<text x="223" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IEEE 802</text>
+<text x="223" y="236" font-size="9.6" fill="#334155" xml:space="preserve">LAN/MAN</text>
+<text x="223" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">802.3 以太网、802.11</text>
+<line x1="368" y1="247" x2="384" y2="247" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="384,247 375,242.5 375,251.5" fill="#94a3b8"/>
+<rect x="384" y="200" width="158" height="94" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="384" y="200" width="4.5" height="94" fill="#d97706" rx="2"/>
+<text x="397" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IETF</text>
+<text x="397" y="236" font-size="9.6" fill="#334155" xml:space="preserve">互联网协议</text>
+<text x="397" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">RFC: IP/TCP/DNS</text>
+<line x1="542" y1="247" x2="558" y2="247" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="558,247 549,242.5 549,251.5" fill="#94a3b8"/>
+<rect x="558" y="200" width="158" height="94" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="558" y="200" width="4.5" height="94" fill="#0891b2" rx="2"/>
+<text x="571" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">3GPP</text>
+<text x="571" y="236" font-size="9.6" fill="#334155" xml:space="preserve">蜂窝系统</text>
+<text x="571" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">38 系列 NR、23 系列</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">其他常被引用的组织</text>
+<rect x="36" y="348" width="960" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">组织</text>
+<text x="396" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">范围</text>
+<text x="636" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型文档</text>
+<text x="876" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">边界</text>
+<rect x="36" y="378" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="378" x2="996" y2="378" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="398" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">ITU-R</text>
+<text x="396" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">无线电频谱/传播</text>
+<text x="636" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">P.525/P.526/M.1036</text>
+<text x="876" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">不做具体设备协议</text>
+<rect x="36" y="406" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="406" x2="996" y2="406" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="426" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">BBF</text>
+<text x="396" y="426" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">宽带接入/固网</text>
+<text x="636" y="426" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">TR-069/TR-369</text>
+<text x="876" y="426" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">常与 ITU-T PON 配合</text>
+<rect x="36" y="434" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="434" x2="996" y2="434" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="454" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">ETSI</text>
+<text x="396" y="454" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">欧洲标准/3GPP 伙伴</text>
+<text x="636" y="454" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">EN/TS</text>
+<text x="876" y="454" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">3GPP 的欧洲区域落地</text>
+<rect x="36" y="462" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="462" x2="996" y2="462" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="482" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">ISO/IEC</text>
+<text x="396" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">通用/网络参考模型</text>
+<text x="636" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">OSI、11801 布线</text>
+<text x="876" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">偏框架/基础</text>
+<rect x="36" y="490" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="490" x2="996" y2="490" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="510" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Wi-Fi Alliance</text>
+<text x="396" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Wi-Fi 互操作认证</text>
+<text x="636" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">WPA3/Wi-Fi 6 认证</text>
+<text x="876" y="510" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">认证而非协议本身</text>
+<rect x="36" y="518" width="960" height="28" fill="#ffffff"/>
+<line x1="36" y1="518" x2="996" y2="518" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="538" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">MEF</text>
+<text x="396" y="538" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">城域以太网业务</text>
+<text x="636" y="538" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">MEF 3.0</text>
+<text x="876" y="538" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">业务定义/运维</text>
+<line x1="36" y1="546" x2="996" y2="546" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="560" width="960" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="590" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="614" font-size="10.2" fill="#334155" xml:space="preserve">① 先看“管哪一段”：无线频谱→ITU-R，光/铜接入→ITU-T，局域网→IEEE，互联网→IETF，蜂窝→3GPP。</text>
+<text x="52" y="632" font-size="10.2" fill="#334155" xml:space="preserve">② 再看“谁引用谁”：3GPP 的 IP 传输用 IETF 协议，PON 的 OMCI 常与 BBF/运营商规范配合。</text>
+<text x="52" y="650" font-size="10.2" fill="#334155" xml:space="preserve">③ 最后看“是标准还是认证”：Wi-Fi Alliance 做互操作认证，协议本身在 IEEE 802.11。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">说明：组织分工为常见归类，具体项目可能跨组织联合制定。</text>
+</svg>

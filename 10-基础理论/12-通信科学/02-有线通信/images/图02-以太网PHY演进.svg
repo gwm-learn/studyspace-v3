@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="780" viewBox="0 0 1140 780" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="780" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 以太网 PHY：速率翻倍靠编码、线对和带宽</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">从 10 M 到 10 G，每一次提速都不是简单的“跑快一点”，而是换编码、换线对、换调制。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">自协商只交换能力，不保证两端配置一致；一端强制、一端自协商是最常见的降速原因。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">早期</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">百兆/千兆</text>
+<line x1="232.6" y1="142" x2="262.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="270.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">2.5G/5G</text>
+<line x1="340.8" y1="142" x2="370.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="378.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">10G 及以上</text>
+<rect x="36" y="200" width="158" height="92" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="92" fill="#475569" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">10BASE-T</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">曼彻斯特编码</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">2 对、100 m</text>
+<line x1="194" y1="246" x2="206" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,246 197,241.5 197,250.5" fill="#94a3b8"/>
+<rect x="206" y="200" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="206" y="200" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="219" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">100BASE-TX</text>
+<text x="219" y="236" font-size="9.6" fill="#334155" xml:space="preserve">4B/5B + MLT-3</text>
+<text x="219" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">2 对、100 m</text>
+<line x1="364" y1="246" x2="376" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,246 367,241.5 367,250.5" fill="#94a3b8"/>
+<rect x="376" y="200" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="376" y="200" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="389" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">1000BASE-T</text>
+<text x="389" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PAM-5、4 对双向</text>
+<text x="389" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">100 m</text>
+<line x1="534" y1="246" x2="546" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,246 537,241.5 537,250.5" fill="#94a3b8"/>
+<rect x="546" y="200" width="158" height="92" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="546" y="200" width="4.5" height="92" fill="#d97706" rx="2"/>
+<text x="559" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">2.5G/5G BASE-T</text>
+<text x="559" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PAM-16 级</text>
+<text x="559" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">Cat5e/Cat6</text>
+<line x1="704" y1="246" x2="716" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="716,246 707,241.5 707,250.5" fill="#94a3b8"/>
+<rect x="716" y="200" width="158" height="92" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="716" y="200" width="4.5" height="92" fill="#0f9d58" rx="2"/>
+<text x="729" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">10GBASE-T</text>
+<text x="729" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PAM-16 + LDPC</text>
+<text x="729" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">Cat6a、30–100 m</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">编码与线对：为什么千兆能在双绞线上跑</text>
+<rect x="36" y="348" width="1000" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">速率</text>
+<text x="336" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型编码</text>
+<text x="536" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">线对使用</text>
+<text x="736" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">关键约束</text>
+<text x="936" y="368" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">常见误判</text>
+<rect x="36" y="378" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="378" x2="1036" y2="378" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="398" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">10 M</text>
+<text x="336" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">曼彻斯特</text>
+<text x="536" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">2 对（1 发 1 收）</text>
+<text x="736" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">时钟恢复靠编码跳变</text>
+<text x="936" y="398" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">以为可以随便用 4 对线</text>
+<rect x="36" y="408" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="408" x2="1036" y2="408" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="428" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">100 M</text>
+<text x="336" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">4B/5B + MLT-3</text>
+<text x="536" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">2 对</text>
+<text x="736" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">5B 开销 20%</text>
+<text x="936" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">把 100 M 当成 1000 M 的缩小版</text>
+<rect x="36" y="438" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="438" x2="1036" y2="438" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="458" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">1 G</text>
+<text x="336" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">PAM-5、4D-PAM5</text>
+<text x="536" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">4 对双向</text>
+<text x="736" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">每对 250 M 符号/秒</text>
+<text x="936" y="458" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">用劣质线导致回波/串扰</text>
+<rect x="36" y="468" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="468" x2="1036" y2="468" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="488" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">2.5G/5G</text>
+<text x="336" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">PAM-16</text>
+<text x="536" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">4 对</text>
+<text x="736" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">依赖 Cat5e/Cat6 质量</text>
+<text x="936" y="488" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">以为 Cat5e 一定支持 5G</text>
+<rect x="36" y="498" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="498" x2="1036" y2="498" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="518" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">10 G</text>
+<text x="336" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">PAM-16 + LDPC</text>
+<text x="536" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">4 对</text>
+<text x="736" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Cat6a、距离缩短</text>
+<text x="936" y="518" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">忽略布线等级与 Alien Crosstalk</text>
+<line x1="36" y1="528" x2="1036" y2="528" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="544" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">自协商：两端都要“说同一种语言”</text>
+<rect x="36" y="562" width="1000" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="582" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">两端配置</text>
+<text x="536" y="582" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">结果</text>
+<text x="869.33" y="582" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">风险</text>
+<rect x="36" y="592" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="592" x2="1036" y2="592" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="612" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">都自协商</text>
+<text x="536" y="612" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">取共同支持的最高能力</text>
+<text x="869.33" y="612" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">基本无风险</text>
+<rect x="36" y="620" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="620" x2="1036" y2="620" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="640" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">都强制且一致</text>
+<text x="536" y="640" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">按强制值工作</text>
+<text x="869.33" y="640" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">配置遗漏时易不匹配</text>
+<rect x="36" y="648" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="648" x2="1036" y2="648" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="668" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">一端强制、一端自协商</text>
+<text x="536" y="668" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">可能降速或双工不匹配</text>
+<text x="869.33" y="668" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">链路 up 但大量 CRC/冲突</text>
+<rect x="36" y="676" width="1000" height="28" fill="#ffffff"/>
+<line x1="36" y1="676" x2="1036" y2="676" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="696" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">一端 1000M、一端 100M</text>
+<text x="536" y="696" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">降到 100M</text>
+<text x="869.33" y="696" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">带宽损失，容易被误判为“网线坏”</text>
+<line x1="36" y1="704" x2="1036" y2="704" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="726" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="744" font-size="12.3" fill="#64748b" xml:space="preserve">说明：编码名称与距离为常见实现，具体以 IEEE 802.3 各 clause 为准；2.5G/5G 由 802.3bz 定义。</text>
+</svg>

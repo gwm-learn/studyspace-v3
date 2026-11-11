@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="760" viewBox="0 0 1080 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 07 · 短距无线：BLE、ZigBee、Thread 各管一段场景</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">三者都工作在 2.4 GHz（Thread/ZigBee 也可用 sub-GHz），但协议栈、拓扑和功耗目标不同。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">BLE 偏“手机外设/低功耗点对点”，ZigBee/Thread 偏“多跳自组网/家居设备”。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">BLE</text>
+<line x1="117.8" y1="142" x2="147.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="155.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">ZigBee</text>
+<line x1="219.4" y1="142" x2="249.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="257.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">Thread</text>
+<line x1="321" y1="142" x2="351" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="359" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">共同点</text>
+<rect x="36" y="190" width="960" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">维度</text>
+<text x="396" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">BLE</text>
+<text x="636" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">ZigBee</text>
+<text x="876" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">Thread</text>
+<rect x="36" y="220" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="220" x2="996" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">标准</text>
+<text x="396" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Bluetooth SIG</text>
+<text x="636" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IEEE 802.15.4 + ZigBee</text>
+<text x="876" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IEEE 802.15.4 + Thread Group</text>
+<rect x="36" y="250" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="250" x2="996" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">频段</text>
+<text x="396" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">2.4 GHz（含广播）</text>
+<text x="636" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">2.4 GHz / sub-GHz</text>
+<text x="876" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">2.4 GHz</text>
+<rect x="36" y="280" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="280" x2="996" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">拓扑</text>
+<text x="396" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">点对点/星形/ Mesh（BLE Mesh）</text>
+<text x="636" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Mesh（协调器/路由器/终端）</text>
+<text x="876" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Mesh（边界路由器/路由器/终端）</text>
+<rect x="36" y="310" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="310" x2="996" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">IP</text>
+<text x="396" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">非 IP（GATT）</text>
+<text x="636" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">非 IP（ZCL）</text>
+<text x="876" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">IPv6（6LoWPAN）</text>
+<rect x="36" y="340" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="340" x2="996" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="360" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">功耗</text>
+<text x="396" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">极低（纽扣电池）</text>
+<text x="636" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">低</text>
+<text x="876" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">低</text>
+<rect x="36" y="370" width="960" height="30" fill="#ffffff"/>
+<line x1="36" y1="370" x2="996" y2="370" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="390" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">典型</text>
+<text x="396" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">手环/耳机/传感器</text>
+<text x="636" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">灯控/传感器</text>
+<text x="876" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">智能家居/ Matter</text>
+<line x1="36" y1="400" x2="996" y2="400" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="430" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">协议栈对照</text>
+<rect x="36" y="450" width="158" height="88" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="450" width="4.5" height="88" fill="#475569" rx="2"/>
+<text x="49" y="469" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">应用</text>
+<text x="49" y="486" font-size="9.6" fill="#334155" xml:space="preserve">GATT/GAP</text>
+<text x="49" y="501.4" font-size="9.6" fill="#334155" xml:space="preserve">ZCL</text>
+<text x="49" y="516.8" font-size="9.6" fill="#334155" xml:space="preserve">Matter/应用</text>
+<line x1="194" y1="494" x2="206" y2="494" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,494 197,489.5 197,498.5" fill="#94a3b8"/>
+<rect x="206" y="450" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="206" y="450" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="219" y="469" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网络</text>
+<text x="219" y="486" font-size="9.6" fill="#334155" xml:space="preserve">BLE Mesh</text>
+<text x="219" y="501.4" font-size="9.6" fill="#334155" xml:space="preserve">ZigBee 网络层</text>
+<text x="219" y="516.8" font-size="9.6" fill="#334155" xml:space="preserve">IPv6/6LoWPAN</text>
+<line x1="364" y1="494" x2="376" y2="494" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,494 367,489.5 367,498.5" fill="#94a3b8"/>
+<rect x="376" y="450" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="376" y="450" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="389" y="469" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">链路/MAC</text>
+<text x="389" y="486" font-size="9.6" fill="#334155" xml:space="preserve">BLE Link Layer</text>
+<text x="389" y="501.4" font-size="9.6" fill="#334155" xml:space="preserve">IEEE 802.15.4 MAC</text>
+<text x="389" y="516.8" font-size="9.6" fill="#334155" xml:space="preserve">IEEE 802.15.4 MAC</text>
+<line x1="534" y1="494" x2="546" y2="494" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,494 537,489.5 537,498.5" fill="#94a3b8"/>
+<rect x="546" y="450" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="546" y="450" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="559" y="469" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">物理层</text>
+<text x="559" y="486" font-size="9.6" fill="#334155" xml:space="preserve">2.4 GHz GFSK</text>
+<text x="559" y="501.4" font-size="9.6" fill="#334155" xml:space="preserve">2.4 GHz O-QPSK</text>
+<text x="559" y="516.8" font-size="9.6" fill="#334155" xml:space="preserve">2.4 GHz O-QPSK</text>
+<rect x="36" y="570" width="960" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="600" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="624" font-size="10.2" fill="#334155" xml:space="preserve">① 先看“是不是 IP”：Thread 原生 IPv6，适合与互联网直接互通；BLE/ZigBee 通常要网关。</text>
+<text x="52" y="642" font-size="10.2" fill="#334155" xml:space="preserve">② 再看“拓扑”：点对点选 BLE，多跳自组网选 ZigBee/Thread。</text>
+<text x="52" y="660" font-size="10.2" fill="#334155" xml:space="preserve">③ 最后看“生态”：Matter 主要跑在 Thread/Wi-Fi 上，BLE 多用于配网/外设。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">说明：协议栈为简化分层，未列全安全/传输层；具体以 Bluetooth Core、ZigBee 3.0、Thread 1.3 规范为准。</text>
+</svg>

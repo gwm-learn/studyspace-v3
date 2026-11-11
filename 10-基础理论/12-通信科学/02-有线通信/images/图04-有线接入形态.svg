@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="840" viewBox="0 0 1040 840" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1040" height="840" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1004" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 有线接入形态：光纤到哪一段，铜线/网线剩多长</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">FTTx 的差别不在“有没有光纤”，而在“光纤终结在哪个位置、最后一段用什么介质”。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">光纤越靠近用户，速率越高、维护点越少，但施工与光模块成本也越高。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">光纤</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">铜线/同轴</text>
+<line x1="232.6" y1="142" x2="262.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="270.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">用户侧网线</text>
+<rect x="36" y="190" width="150" height="62" fill="#f8fafc" rx="9" stroke="#475569" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">FTTN</text>
+<text x="48" y="228" font-size="8.8" fill="#64748b" xml:space="preserve">光纤到节点</text>
+<rect x="206" y="190" width="300" height="62" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="190" width="4.5" height="62" fill="#0f9d58" rx="2"/>
+<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">光纤段</text>
+<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">光纤到节点</text>
+<line x1="506" y1="221" x2="534" y2="221" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="534,221 525,216.5 525,225.5" fill="#94a3b8"/>
+<rect x="534" y="190" width="250" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="534" y="190" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="547" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">最后一段</text>
+<text x="547" y="226" font-size="8.8" fill="#334155" xml:space="preserve">节点→用户：铜线（xDSL）</text>
+<text x="804" y="220" font-size="9.2" fill="#334155" xml:space="preserve">覆盖广、改造小；速率受铜线长度限制</text>
+<rect x="36" y="264" width="150" height="62" fill="#f8fafc" rx="9" stroke="#475569" stroke-width="1.2"/>
+<text x="46" y="286" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">FTTC</text>
+<text x="48" y="302" font-size="8.8" fill="#64748b" xml:space="preserve">光纤到路边/交接箱</text>
+<rect x="206" y="264" width="300" height="62" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="264" width="4.5" height="62" fill="#0f9d58" rx="2"/>
+<text x="219" y="283" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">光纤段</text>
+<text x="219" y="300" font-size="8.8" fill="#334155" xml:space="preserve">光纤到路边/交接箱</text>
+<line x1="506" y1="295" x2="534" y2="295" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="534,295 525,290.5 525,299.5" fill="#94a3b8"/>
+<rect x="534" y="264" width="250" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="534" y="264" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="547" y="283" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">最后一段</text>
+<text x="547" y="300" font-size="8.8" fill="#334155" xml:space="preserve">交接箱→用户：铜线（VDSL/G.fast）</text>
+<text x="804" y="294" font-size="9.2" fill="#334155" xml:space="preserve">比 FTTN 短，速率更高；仍需铜线维护</text>
+<rect x="36" y="338" width="150" height="62" fill="#f8fafc" rx="9" stroke="#475569" stroke-width="1.2"/>
+<text x="46" y="360" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">FTTB</text>
+<text x="48" y="376" font-size="8.8" fill="#64748b" xml:space="preserve">光纤到楼</text>
+<rect x="206" y="338" width="300" height="62" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="338" width="4.5" height="62" fill="#0f9d58" rx="2"/>
+<text x="219" y="357" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">光纤段</text>
+<text x="219" y="374" font-size="8.8" fill="#334155" xml:space="preserve">光纤到楼</text>
+<line x1="506" y1="369" x2="534" y2="369" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="534,369 525,364.5 525,373.5" fill="#94a3b8"/>
+<rect x="534" y="338" width="250" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="534" y="338" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="547" y="357" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">最后一段</text>
+<text x="547" y="374" font-size="8.8" fill="#334155" xml:space="preserve">楼内→用户：网线/电话线</text>
+<text x="804" y="368" font-size="9.2" fill="#334155" xml:space="preserve">适合公寓；楼内布线决定最终速率</text>
+<rect x="36" y="412" width="150" height="62" fill="#f8fafc" rx="9" stroke="#475569" stroke-width="1.2"/>
+<text x="46" y="434" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">FTTH</text>
+<text x="48" y="450" font-size="8.8" fill="#64748b" xml:space="preserve">光纤到户</text>
+<rect x="206" y="412" width="300" height="62" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="412" width="4.5" height="62" fill="#0f9d58" rx="2"/>
+<text x="219" y="431" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">光纤段</text>
+<text x="219" y="448" font-size="8.8" fill="#334155" xml:space="preserve">光纤到户</text>
+<line x1="506" y1="443" x2="534" y2="443" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="534,443 525,438.5 525,447.5" fill="#94a3b8"/>
+<rect x="534" y="412" width="250" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="534" y="412" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="547" y="431" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">最后一段</text>
+<text x="547" y="448" font-size="8.8" fill="#334155" xml:space="preserve">用户侧：光纤（PON 点对多点）</text>
+<text x="804" y="442" font-size="9.2" fill="#334155" xml:space="preserve">速率最高、维护简单；施工成本最高</text>
+<rect x="36" y="486" width="150" height="62" fill="#f8fafc" rx="9" stroke="#475569" stroke-width="1.2"/>
+<text x="46" y="508" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">HFC</text>
+<text x="48" y="524" font-size="8.8" fill="#64748b" xml:space="preserve">光纤到小区 + 同轴入户</text>
+<rect x="206" y="486" width="300" height="62" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="486" width="4.5" height="62" fill="#0f9d58" rx="2"/>
+<text x="219" y="505" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">光纤段</text>
+<text x="219" y="522" font-size="8.8" fill="#334155" xml:space="preserve">光纤到小区 + 同轴入户</text>
+<line x1="506" y1="517" x2="534" y2="517" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="534,517 525,512.5 525,521.5" fill="#94a3b8"/>
+<rect x="534" y="486" width="250" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="534" y="486" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="547" y="505" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">最后一段</text>
+<text x="547" y="522" font-size="8.8" fill="#334155" xml:space="preserve">同轴分配网 + Cable Modem</text>
+<text x="804" y="516" font-size="9.2" fill="#334155" xml:space="preserve">利用现有电视网；上行噪声汇聚</text>
+<rect x="36" y="560" width="150" height="62" fill="#f8fafc" rx="9" stroke="#475569" stroke-width="1.2"/>
+<text x="46" y="582" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">以太网接入</text>
+<text x="48" y="598" font-size="8.8" fill="#64748b" xml:space="preserve">光纤到楼/小区 + 网线入户</text>
+<rect x="206" y="560" width="300" height="62" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="560" width="4.5" height="62" fill="#0f9d58" rx="2"/>
+<text x="219" y="579" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">光纤段</text>
+<text x="219" y="596" font-size="8.8" fill="#334155" xml:space="preserve">光纤到楼/小区 + 网线入户</text>
+<line x1="506" y1="591" x2="534" y2="591" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="534,591 525,586.5 525,595.5" fill="#94a3b8"/>
+<rect x="534" y="560" width="250" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="534" y="560" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="547" y="579" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">最后一段</text>
+<text x="547" y="596" font-size="8.8" fill="#334155" xml:space="preserve">交换机端口独占</text>
+<text x="804" y="590" font-size="9.2" fill="#334155" xml:space="preserve">企业/园区常用；距离受 100 m 限制</text>
+<rect x="36" y="640" width="960" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="670" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="694" font-size="10.2" fill="#334155" xml:space="preserve">① 从上到下，光纤离用户越来越近，最后一段从“铜线”变成“光纤”。</text>
+<text x="52" y="712" font-size="10.2" fill="#334155" xml:space="preserve">② FTTN/FTTC 的瓶颈是铜线长度与串扰；FTTB 的瓶颈是楼内布线；FTTH 的瓶颈是施工与光功率预算。</text>
+<text x="52" y="730" font-size="10.2" fill="#334155" xml:space="preserve">③ HFC 与以太网接入是两条旁路：前者复用电视同轴，后者复用园区网线。</text>
+<text x="36" y="786" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="804" font-size="12.3" fill="#64748b" xml:space="preserve">说明：形态划分为工程归纳，具体组网以运营商规范与设备能力为准。</text>
+</svg>

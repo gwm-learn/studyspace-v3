@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="600" viewBox="0 0 1080 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 调制：每个符号能带几个比特</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">调制把比特映射成幅度/相位/频率的组合；阶数越高，每符号比特越多，但越依赖高信噪比。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">OFDM 再把一条宽带切成很多窄带子载波，让每个子载波近似平坦衰落。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">星座点</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">子载波</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">边界</text>
+<text x="36" y="166" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">BPSK</text>
+<text x="36" y="184" font-size="9.4" fill="#64748b" xml:space="preserve">1 bit/符号</text>
+<rect x="36" y="192" width="130" height="130" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="101" y1="192" x2="101" y2="322" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<line x1="36" y1="257" x2="166" y2="257" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<circle cx="51.60" cy="257.00" r="3.4" fill="#4f46e5"/>
+<circle cx="150.40" cy="257.00" r="3.4" fill="#4f46e5"/>
+<text x="196" y="166" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">QPSK</text>
+<text x="196" y="184" font-size="9.4" fill="#64748b" xml:space="preserve">2 bit/符号</text>
+<rect x="196" y="192" width="130" height="130" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="261" y1="192" x2="261" y2="322" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<line x1="196" y1="257" x2="326" y2="257" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<circle cx="211.60" cy="306.40" r="3.4" fill="#4f46e5"/>
+<circle cx="211.60" cy="207.60" r="3.4" fill="#4f46e5"/>
+<circle cx="310.40" cy="306.40" r="3.4" fill="#4f46e5"/>
+<circle cx="310.40" cy="207.60" r="3.4" fill="#4f46e5"/>
+<text x="356" y="166" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">16-QAM</text>
+<text x="356" y="184" font-size="9.4" fill="#64748b" xml:space="preserve">4 bit/符号</text>
+<rect x="356" y="192" width="130" height="130" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="421" y1="192" x2="421" y2="322" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<line x1="356" y1="257" x2="486" y2="257" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<circle cx="371.60" cy="306.40" r="3.4" fill="#4f46e5"/>
+<circle cx="371.60" cy="273.47" r="3.4" fill="#4f46e5"/>
+<circle cx="371.60" cy="240.53" r="3.4" fill="#4f46e5"/>
+<circle cx="371.60" cy="207.60" r="3.4" fill="#4f46e5"/>
+<circle cx="404.53" cy="306.40" r="3.4" fill="#4f46e5"/>
+<circle cx="404.53" cy="273.47" r="3.4" fill="#4f46e5"/>
+<circle cx="404.53" cy="240.53" r="3.4" fill="#4f46e5"/>
+<circle cx="404.53" cy="207.60" r="3.4" fill="#4f46e5"/>
+<circle cx="437.47" cy="306.40" r="3.4" fill="#4f46e5"/>
+<circle cx="437.47" cy="273.47" r="3.4" fill="#4f46e5"/>
+<circle cx="437.47" cy="240.53" r="3.4" fill="#4f46e5"/>
+<circle cx="437.47" cy="207.60" r="3.4" fill="#4f46e5"/>
+<circle cx="470.40" cy="306.40" r="3.4" fill="#4f46e5"/>
+<circle cx="470.40" cy="273.47" r="3.4" fill="#4f46e5"/>
+<circle cx="470.40" cy="240.53" r="3.4" fill="#4f46e5"/>
+<circle cx="470.40" cy="207.60" r="3.4" fill="#4f46e5"/>
+<text x="560" y="170" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">OFDM：频域切片 + 并行传输</text>
+<text x="560" y="186" font-size="9.4" fill="#64748b" xml:space="preserve">每个子载波只承载低速符号，符号周期变长，抗多径能力增强。</text>
+<rect x="560" y="200" width="38" height="70" fill="#4f46e5" rx="3" stroke="#4f46e5" stroke-width="1"/>
+<text x="579" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC1</text>
+<rect x="606" y="200" width="38" height="70" fill="#0891b2" rx="3" stroke="#0891b2" stroke-width="1"/>
+<text x="625" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC2</text>
+<rect x="652" y="200" width="38" height="70" fill="#0891b2" rx="3" stroke="#0891b2" stroke-width="1"/>
+<text x="671" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC3</text>
+<rect x="698" y="200" width="38" height="70" fill="#4f46e5" rx="3" stroke="#4f46e5" stroke-width="1"/>
+<text x="717" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC4</text>
+<rect x="744" y="200" width="38" height="70" fill="#0891b2" rx="3" stroke="#0891b2" stroke-width="1"/>
+<text x="763" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC5</text>
+<rect x="790" y="200" width="38" height="70" fill="#0891b2" rx="3" stroke="#0891b2" stroke-width="1"/>
+<text x="809" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC6</text>
+<rect x="836" y="200" width="38" height="70" fill="#4f46e5" rx="3" stroke="#4f46e5" stroke-width="1"/>
+<text x="855" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC7</text>
+<rect x="882" y="200" width="38" height="70" fill="#0891b2" rx="3" stroke="#0891b2" stroke-width="1"/>
+<text x="901" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC8</text>
+<rect x="928" y="200" width="38" height="70" fill="#0891b2" rx="3" stroke="#0891b2" stroke-width="1"/>
+<text x="947" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC9</text>
+<rect x="974" y="200" width="38" height="70" fill="#4f46e5" rx="3" stroke="#4f46e5" stroke-width="1"/>
+<text x="993" y="240" font-size="8.4" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">SC10</text>
+<line x1="548" y1="288" x2="1030" y2="288" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="548" y="304" font-size="9.4" fill="#64748b" xml:space="preserve">频率 →</text>
+<text x="560" y="322" font-size="9.4" fill="#334155" xml:space="preserve">子载波间隔固定（LTE 为 15 kHz），数量决定系统带宽。</text>
+<text x="560" y="356" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">为什么不是「一个载波跑到底」</text>
+<rect x="560" y="372" width="470" height="30" fill="#f1f5f9" rx="6"/>
+<text x="568" y="392" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">手段</text>
+<text x="795" y="392" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">换来什么</text>
+<text x="951.67" y="392" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">代价</text>
+<rect x="560" y="402" width="470" height="28" fill="#ffffff"/>
+<line x1="560" y1="402" x2="1030" y2="402" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="568" y="422" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">更高阶 QAM</text>
+<text x="795" y="422" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">更多 bit/符号</text>
+<text x="951.67" y="422" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">需要更高 SNR</text>
+<rect x="560" y="430" width="470" height="28" fill="#ffffff"/>
+<line x1="560" y1="430" x2="1030" y2="430" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="568" y="450" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">更宽带宽</text>
+<text x="795" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">更高符号率</text>
+<text x="951.67" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">频谱与器件压力</text>
+<rect x="560" y="458" width="470" height="28" fill="#ffffff"/>
+<line x1="560" y1="458" x2="1030" y2="458" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="568" y="478" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">MIMO</text>
+<text x="795" y="478" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">空间复用/分集</text>
+<text x="951.67" y="478" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">天线与算法复杂度</text>
+<rect x="560" y="486" width="470" height="28" fill="#ffffff"/>
+<line x1="560" y1="486" x2="1030" y2="486" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="568" y="506" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">OFDM</text>
+<text x="795" y="506" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">抗多径、灵活调度</text>
+<text x="951.67" y="506" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">PAPR 高、同步要求高</text>
+<line x1="560" y1="514" x2="1030" y2="514" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="356" width="480" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="386" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="410" font-size="10.2" fill="#334155" xml:space="preserve">① 星座点越密，每符号比特越多，但点间距离越小，噪声更容易把点推错。</text>
+<text x="52" y="428" font-size="10.2" fill="#334155" xml:space="preserve">② 所以高阶调制不是免费的，它用 SNR 换速率；链路自适应就是在这两者之间取平衡。</text>
+<text x="52" y="446" font-size="10.2" fill="#334155" xml:space="preserve">③ OFDM 把「一条快信道」拆成「很多条慢信道」，每个子载波只承担一小部分数据。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">说明：星座图为示意，未按标准最小距离比例绘制；OFDM 子载波数仅为示意。</text>
+</svg>
