@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="500" viewBox="0 0 920 500" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="920" height="500" fill="#ffffff"/>
+<line x1="36" y1="112" x2="884" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · make 调用链：从顶层到单个包</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">顶层 make 只做分派；真正的规则分散在 include/、target/、package/。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：实线是主调用，虚线是按需进入的子流程。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主调用</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">子流程</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">产物</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 调用层级</text>
+<rect x="36" y="190" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">make</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">读取顶层 Makefile</text>
+<text x="49" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">两段式开关</text>
+<line x1="194" y1="236" x2="208" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="208,236 199,231.5 199,240.5" fill="#94a3b8"/>
+<rect x="208" y="190" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="208" y="190" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="221" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">toplevel.mk</text>
+<text x="221" y="226" font-size="9.6" fill="#334155" xml:space="preserve">配置/编译目标</text>
+<text x="221" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">分派子目录</text>
+<line x1="366" y1="236" x2="380" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="380,236 371,231.5 371,240.5" fill="#94a3b8"/>
+<rect x="380" y="190" width="158" height="92" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="380" y="190" width="4.5" height="92" fill="#0891b2" rx="2"/>
+<text x="393" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">target/linux</text>
+<text x="393" y="226" font-size="9.6" fill="#334155" xml:space="preserve">目标平台规则</text>
+<text x="393" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">内核与镜像</text>
+<line x1="538" y1="236" x2="552" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="552,236 543,231.5 543,240.5" fill="#94a3b8"/>
+<rect x="552" y="190" width="158" height="92" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="552" y="190" width="4.5" height="92" fill="#0891b2" rx="2"/>
+<text x="565" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">package/*</text>
+<text x="565" y="226" font-size="9.6" fill="#334155" xml:space="preserve">包 Makefile</text>
+<text x="565" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">Build/Install</text>
+<line x1="710" y1="236" x2="724" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="724,236 715,231.5 715,240.5" fill="#94a3b8"/>
+<rect x="724" y="190" width="158" height="92" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="724" y="190" width="4.5" height="92" fill="#0f9d58" rx="2"/>
+<text x="737" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">build_dir</text>
+<text x="737" y="226" font-size="9.6" fill="#334155" xml:space="preserve">解压/编译/安装</text>
+<text x="737" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">中间产物</text>
+<rect x="36" y="320" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="350" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">两段式设计</text>
+<text x="52" y="374" font-size="10.2" fill="#334155" xml:space="preserve">第一次 make 生成 .config 与临时规则；再次 make 才进入实际编译。</text>
+<text x="52" y="392" font-size="10.2" fill="#334155" xml:space="preserve">package/feeds/ 是 feeds install 后建立的符号链接，不是源码副本。</text>
+<text x="36" y="446" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="464" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 构建与包管理 · 结构示意，细节以对应版本源码为准</text>
+</svg>

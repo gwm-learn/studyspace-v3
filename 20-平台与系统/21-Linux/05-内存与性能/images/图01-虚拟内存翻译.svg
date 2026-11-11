@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 虚拟内存：地址承诺，物理页兑现</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">虚拟地址经多级页表翻译成物理页；TLB 缓存翻译结果。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">没映射的页触发缺页，按 VMA/COW/文件页分配或读取。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 就绪</text>
+<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">辅助</text>
+<line x1="245.8" y1="142" x2="275.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="283.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="340.8" y1="142" x2="370.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="378.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 延后</text>
+<line x1="466.6" y1="142" x2="496.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="504.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">风险 / 阻塞</text>
+<rect x="30" y="210" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="30" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="43" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">CPU</text>
+<text x="43" y="246" font-size="9.6" fill="#334155" xml:space="preserve">虚拟地址</text>
+<text x="43" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">读写</text>
+<rect x="240" y="210" width="170" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="240" y="210" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="253" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">TLB</text>
+<text x="253" y="246" font-size="9.6" fill="#334155" xml:space="preserve">命中直接访问</text>
+<text x="253" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">未命中查页表</text>
+<rect x="440" y="210" width="190" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="440" y="210" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="453" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">页表</text>
+<text x="453" y="246" font-size="9.6" fill="#334155" xml:space="preserve">多级</text>
+<text x="453" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">PTE 标志</text>
+<rect x="680" y="210" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="680" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="693" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">物理页</text>
+<text x="693" y="246" font-size="9.6" fill="#334155" xml:space="preserve">buddy 分配</text>
+<text x="693" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">page cache</text>
+<rect x="440" y="350" width="190" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="440" y="350" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="453" y="369" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">VMA</text>
+<text x="453" y="386" font-size="9.6" fill="#334155" xml:space="preserve">代码/堆/栈</text>
+<text x="453" y="401.4" font-size="9.6" fill="#334155" xml:space="preserve">mmap 文件</text>
+<rect x="680" y="350" width="170" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="680" y="350" width="4.5" height="70" fill="#dc2626" rx="2"/>
+<text x="693" y="369" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">缺页</text>
+<text x="693" y="386" font-size="9.6" fill="#334155" xml:space="preserve">分配/读取/COW</text>
+<text x="693" y="401.4" font-size="9.6" fill="#334155" xml:space="preserve">非法→SIGSEGV</text>
+<line x1="200" y1="268" x2="240" y2="268" stroke="#0891b2" stroke-width="2"/>
+<polygon points="240,268 231,263.5 231,272.5" fill="#0891b2"/>
+<text x="226" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">查缓存</text>
+<line x1="410" y1="268" x2="440" y2="268" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="440,268 431,263.5 431,272.5" fill="#4f46e5"/>
+<text x="431" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">未命中</text>
+<line x1="630" y1="268" x2="680" y2="268" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="680,268 671,263.5 671,272.5" fill="#0f9d58"/>
+<text x="661" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">映射</text>
+<line x1="630" y1="408" x2="680" y2="408" stroke="#d97706" stroke-width="2"/>
+<polygon points="680,408 671,403.5 671,412.5" fill="#d97706"/>
+<text x="661" y="401" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">地址在 VMA</text>
+<line x1="765" y1="350" x2="765" y2="280" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="765,280 760.5,289 769.5,289" fill="#dc2626"/>
+<text x="771" y="308" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">分配</text>
+<rect x="36" y="470" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="500" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="524" font-size="10.2" fill="#334155" xml:space="preserve">free 低不等于内存不足，看 available。</text>
+<text x="52" y="542" font-size="10.2" fill="#334155" xml:space="preserve">COW 让 fork 便宜，但写入会复制页。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头与文字标签。</text>
+</svg>

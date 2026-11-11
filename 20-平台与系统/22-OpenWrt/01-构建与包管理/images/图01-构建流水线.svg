@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="480" viewBox="0 0 840 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="480" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · OpenWrt 构建流水线：四段产出</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">从一份 .config 到可烧录镜像；每段都有独立缓存和失败点。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：从左到右看阶段，下方标注该阶段的主要输入与产物。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">准备</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">配置</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">编译</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">出镜像</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 主流水线</text>
+<rect x="36" y="190" width="158" height="86" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="86" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">环境准备</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">Linux 主机</text>
+<text x="49" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">依赖工具链</text>
+<line x1="194" y1="233" x2="212" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="212,233 203,228.5 203,237.5" fill="#94a3b8"/>
+<rect x="212" y="190" width="158" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="212" y="190" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="225" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">配置</text>
+<text x="225" y="226" font-size="9.6" fill="#334155" xml:space="preserve">.config 三级选择</text>
+<text x="225" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">feeds 已安装</text>
+<line x1="370" y1="233" x2="388" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="388,233 379,228.5 379,237.5" fill="#94a3b8"/>
+<rect x="388" y="190" width="158" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="388" y="190" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="401" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">编译</text>
+<text x="401" y="226" font-size="9.6" fill="#334155" xml:space="preserve">工具链/内核/包</text>
+<text x="401" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">按依赖并行</text>
+<line x1="546" y1="233" x2="564" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="564,233 555,228.5 555,237.5" fill="#94a3b8"/>
+<rect x="564" y="190" width="158" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="564" y="190" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="577" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">镜像生成</text>
+<text x="577" y="226" font-size="9.6" fill="#334155" xml:space="preserve">kernel+rootfs</text>
+<text x="577" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">fit / ubi / bin</text>
+<rect x="36" y="310" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">关键边界</text>
+<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">配置错误在编译前就应暴露；编译失败先看 logs/ 与 build_dir/。</text>
+<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">镜像生成阶段才检查设备定义与分区，不要把它当成编译问题。</text>
+<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 构建与包管理 · 结构示意，细节以对应版本源码为准</text>
+</svg>

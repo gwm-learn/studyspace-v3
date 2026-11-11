@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="980" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="944" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · DSA 与 swconfig：交换机端口如何进入 Linux</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">swconfig 是厂商私有配置通道；DSA 把每个端口暴露成独立 netdev。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左侧是旧模型，右侧是新模型，中间是 CPU 口/管道。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">旧模型</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">新模型</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">CPU 链路</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① swconfig</text>
+<rect x="36" y="190" width="340" height="92" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="92" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">switch 驱动</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">一个 eth + swconfig</text>
+<text x="49" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">端口通过配置下发</text>
+<rect x="36" y="300" width="340" height="92" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="300" width="4.5" height="92" fill="#475569" rx="2"/>
+<text x="49" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">用户态</text>
+<text x="49" y="336" font-size="9.6" fill="#334155" xml:space="preserve">swconfig 工具</text>
+<text x="49" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">VLAN/端口隔离</text>
+<text x="430" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② DSA</text>
+<rect x="430" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="430" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="443" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">lan1..n</text>
+<text x="443" y="226" font-size="8.8" fill="#334155" xml:space="preserve">每口一个 netdev</text>
+<line x1="588" y1="234" x2="600" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="600,234 591,229.5 591,238.5" fill="#94a3b8"/>
+<rect x="600" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="600" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="613" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">switchdev</text>
+<text x="613" y="226" font-size="8.8" fill="#334155" xml:space="preserve">桥/VLAN 卸载</text>
+<line x1="758" y1="234" x2="770" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="770,234 761,229.5 761,238.5" fill="#94a3b8"/>
+<rect x="770" y="190" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="770" y="190" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="783" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">CPU 口</text>
+<text x="783" y="226" font-size="8.8" fill="#334155" xml:space="preserve">eth0 管道</text>
+<line x1="206" y1="300" x2="206" y2="284" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="206,284 201.5,293 210.5,293" fill="#94a3b8"/>
+<rect x="36" y="420" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">迁移</text>
+<text x="52" y="474" font-size="10.2" fill="#334155" xml:space="preserve">DSA 下 VLAN 用 bridge vlan / ip link 配置，不再有 swconfig 的全局端口表。</text>
+<text x="52" y="492" font-size="10.2" fill="#334155" xml:space="preserve">端口名和 CPU 口编号由 DTS 决定，换板必须重新确认。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 网络数据面 · 结构示意，细节以对应版本源码为准</text>
+</svg>

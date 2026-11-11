@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="500" viewBox="0 0 1180 500" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="500" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 启动失败定位：先看走到哪一段</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">完全无输出先查硬件；有 U-Boot 再查镜像/参数；内核日志看 panic/initcall。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">最后才查 rootfs 与 init。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">风险 / 阻塞</text>
+<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 延后</text>
+<line x1="287.6" y1="142" x2="317.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="325.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="382.6" y1="142" x2="412.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="420.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 就绪</text>
+<rect x="30" y="210" width="170" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="30" y="210" width="4.5" height="70" fill="#dc2626" rx="2"/>
+<text x="43" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">无输出</text>
+<text x="43" y="246" font-size="9.6" fill="#334155" xml:space="preserve">电源/时钟</text>
+<text x="43" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">DDR/串口</text>
+<rect x="230" y="210" width="170" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="230" y="210" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="243" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">U-Boot</text>
+<text x="243" y="246" font-size="9.6" fill="#334155" xml:space="preserve">镜像/地址</text>
+<text x="243" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">签名/参数</text>
+<rect x="430" y="210" width="170" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="430" y="210" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="443" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Kernel</text>
+<text x="443" y="246" font-size="9.6" fill="#334155" xml:space="preserve">earlycon</text>
+<text x="443" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">initcall_debug</text>
+<rect x="630" y="210" width="170" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="630" y="210" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="643" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">rootfs</text>
+<text x="643" y="246" font-size="9.6" fill="#334155" xml:space="preserve">root=</text>
+<text x="643" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">块设备驱动</text>
+<rect x="830" y="210" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="830" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="843" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">init/服务</text>
+<text x="843" y="246" font-size="9.6" fill="#334155" xml:space="preserve">init=</text>
+<text x="843" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">unit/脚本</text>
+<line x1="200" y1="268" x2="230" y2="268" stroke="#d97706" stroke-width="2"/>
+<polygon points="230,268 221,263.5 221,272.5" fill="#d97706"/>
+<text x="221" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">有输出</text>
+<line x1="400" y1="268" x2="430" y2="268" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="430,268 421,263.5 421,272.5" fill="#4f46e5"/>
+<text x="421" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Starting kernel</text>
+<line x1="600" y1="268" x2="630" y2="268" stroke="#d97706" stroke-width="2"/>
+<polygon points="630,268 621,263.5 621,272.5" fill="#d97706"/>
+<text x="621" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">挂根</text>
+<line x1="800" y1="268" x2="830" y2="268" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="830,268 821,263.5 821,272.5" fill="#0f9d58"/>
+<text x="821" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">exec</text>
+<rect x="36" y="330" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="360" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="384" font-size="10.2" fill="#334155" xml:space="preserve">卡住看最后一条日志，panic 看调用栈。</text>
+<text x="52" y="402" font-size="10.2" fill="#334155" xml:space="preserve">换板子不等于定位根因，至少保留日志/分区/版本。</text>
+<text x="36" y="446" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="464" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头与文字标签。</text>
+</svg>

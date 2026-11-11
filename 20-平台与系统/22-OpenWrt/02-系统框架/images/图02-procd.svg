@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="480" viewBox="0 0 980 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="980" height="480" fill="#ffffff"/>
+<line x1="36" y1="112" x2="944" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · procd：init、服务与看门狗</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">procd 同时扮演 init 和服务管理器；每个服务由 init 脚本声明实例。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左侧是启动链，右侧是服务实例的生命周期。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">启动链</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">服务管理</text>
+<line x1="237" y1="142" x2="267" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="275" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">异常</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 启动链</text>
+<rect x="36" y="190" width="158" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">kernel</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">挂载 rootfs</text>
+<text x="49" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">启动 init</text>
+<line x1="194" y1="232" x2="212" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="212,232 203,227.5 203,236.5" fill="#94a3b8"/>
+<rect x="212" y="190" width="158" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="212" y="190" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="225" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">procd</text>
+<text x="225" y="226" font-size="9.6" fill="#334155" xml:space="preserve">preinit</text>
+<text x="225" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">加载配置</text>
+<line x1="370" y1="232" x2="388" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="388,232 379,227.5 379,236.5" fill="#94a3b8"/>
+<rect x="388" y="190" width="158" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="388" y="190" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="401" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">/etc/rc.d</text>
+<text x="401" y="226" font-size="9.6" fill="#334155" xml:space="preserve">按依赖启动</text>
+<text x="401" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">S 开头脚本</text>
+<text x="430" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 服务实例</text>
+<rect x="430" y="190" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="430" y="190" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="443" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">start_service</text>
+<text x="443" y="226" font-size="9.6" fill="#334155" xml:space="preserve">open_instance</text>
+<text x="443" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">设置 command</text>
+<line x1="588" y1="232" x2="602" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="602,232 593,227.5 593,236.5" fill="#94a3b8"/>
+<rect x="602" y="190" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="602" y="190" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="615" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">运行</text>
+<text x="615" y="226" font-size="9.6" fill="#334155" xml:space="preserve">fork/exec</text>
+<text x="615" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">记录 pid</text>
+<line x1="760" y1="232" x2="774" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="774,232 765,227.5 765,236.5" fill="#94a3b8"/>
+<rect x="774" y="190" width="158" height="84" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="774" y="190" width="4.5" height="84" fill="#dc2626" rx="2"/>
+<text x="787" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">退出</text>
+<text x="787" y="226" font-size="9.6" fill="#334155" xml:space="preserve">respawn 策略</text>
+<text x="787" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">重启或放弃</text>
+<rect x="36" y="310" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">关键点</text>
+<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">只有 USE_PROCD=1 且调用 procd_open_instance 的服务才由 procd 托管。</text>
+<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">respawn 阈值防止崩溃循环；看门狗需要服务主动喂狗。</text>
+<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 系统框架 · 结构示意，细节以对应版本源码为准</text>
+</svg>

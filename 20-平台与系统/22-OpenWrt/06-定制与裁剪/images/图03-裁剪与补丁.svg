@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1200" height="540" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1164" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 裁剪与补丁：先做预算，再动刀</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">裁剪不是“删文件”，而是从包选择和镜像格式入手；补丁要能随版本维护。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左侧是裁剪手段，右侧是补丁生命周期。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">裁剪</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">补丁</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">验证</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 裁剪手段</text>
+<rect x="36" y="190" width="420" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">手段</text>
+<text x="246" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">影响</text>
+<text x="386" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">风险</text>
+<rect x="36" y="220" width="420" height="30" fill="#ffffff"/>
+<line x1="36" y1="220" x2="456" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">去包</text>
+<text x="246" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">rootfs 变小</text>
+<text x="386" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">功能缺失</text>
+<rect x="36" y="250" width="420" height="30" fill="#ffffff"/>
+<line x1="36" y1="250" x2="456" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">去调试/语言</text>
+<text x="246" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">显著变小</text>
+<text x="386" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">排障困难</text>
+<rect x="36" y="280" width="420" height="30" fill="#ffffff"/>
+<line x1="36" y1="280" x2="456" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">压缩/块大小</text>
+<text x="246" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">镜像变小</text>
+<text x="386" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">启动/性能</text>
+<rect x="36" y="310" width="420" height="30" fill="#ffffff"/>
+<line x1="36" y1="310" x2="456" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">kernel 裁剪</text>
+<text x="246" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">内核变小</text>
+<text x="386" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">驱动缺失</text>
+<line x1="36" y1="340" x2="456" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="500" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 补丁生命周期</text>
+<rect x="500" y="190" width="158" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="500" y="190" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="513" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">改源码</text>
+<text x="513" y="226" font-size="8.8" fill="#334155" xml:space="preserve">最小改动</text>
+<line x1="658" y1="233" x2="668" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="668,233 659,228.5 659,237.5" fill="#94a3b8"/>
+<rect x="668" y="190" width="158" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="668" y="190" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="681" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">生成补丁</text>
+<text x="681" y="226" font-size="8.8" fill="#334155" xml:space="preserve">quilt/git</text>
+<line x1="826" y1="233" x2="836" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="836,233 827,228.5 827,237.5" fill="#94a3b8"/>
+<rect x="836" y="190" width="158" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="836" y="190" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="849" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">编译验证</text>
+<text x="849" y="226" font-size="8.8" fill="#334155" xml:space="preserve">clean build</text>
+<line x1="994" y1="233" x2="1004" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="1004,233 995,228.5 995,237.5" fill="#94a3b8"/>
+<rect x="1004" y="190" width="158" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="1004" y="190" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="1017" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">升级复基</text>
+<text x="1017" y="226" font-size="8.8" fill="#334155" xml:space="preserve">rebase/refresh</text>
+<rect x="36" y="360" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="390" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="414" font-size="10.2" fill="#334155" xml:space="preserve">补丁越多，升级合并成本越高；能放产品包就不改上游。</text>
+<text x="52" y="432" font-size="10.2" fill="#334155" xml:space="preserve">裁剪后必须回归启动、网络、升级三条链路。</text>
+<text x="36" y="486" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="504" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 定制与裁剪 · 结构示意，具体路径以目标分支为准</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="600" viewBox="0 0 840 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · netifd：device 与 interface 是两层对象</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">device 描述链路层对象，interface 描述三层配置；proto 脚本把配置落到系统。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看 device 类型，再看 interface 如何引用 device 并选择 proto。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">device</text>
+<line x1="137.6" y1="142" x2="167.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="175.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">interface</text>
+<line x1="259" y1="142" x2="289" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="297" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">proto</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① device 层</text>
+<rect x="36" y="190" width="158" height="80" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="80" fill="#0891b2" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">物理设备</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">eth0 / wlan0</text>
+<line x1="194" y1="230" x2="206" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,230 197,225.5 197,234.5" fill="#94a3b8"/>
+<rect x="206" y="190" width="158" height="80" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="206" y="190" width="4.5" height="80" fill="#0891b2" rx="2"/>
+<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">虚拟设备</text>
+<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">vlan/bridge/macvlan</text>
+<line x1="364" y1="230" x2="376" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,230 367,225.5 367,234.5" fill="#94a3b8"/>
+<rect x="376" y="190" width="158" height="80" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="376" y="190" width="4.5" height="80" fill="#0891b2" rx="2"/>
+<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">device 对象</text>
+<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">名称/类型/配置</text>
+<text x="36" y="300" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② interface 层</text>
+<rect x="36" y="314" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="314" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="49" y="333" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">interface</text>
+<text x="49" y="350" font-size="8.8" fill="#334155" xml:space="preserve">proto=dhcp/pppoe</text>
+<text x="49" y="365.4" font-size="8.8" fill="#334155" xml:space="preserve">device 引用</text>
+<line x1="194" y1="355" x2="206" y2="355" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,355 197,350.5 197,359.5" fill="#94a3b8"/>
+<rect x="206" y="314" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="314" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="219" y="333" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">proto handler</text>
+<text x="219" y="350" font-size="8.8" fill="#334155" xml:space="preserve">/lib/netifd/proto</text>
+<text x="219" y="365.4" font-size="8.8" fill="#334155" xml:space="preserve">*.sh</text>
+<line x1="364" y1="355" x2="376" y2="355" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,355 367,350.5 367,359.5" fill="#94a3b8"/>
+<rect x="376" y="314" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="376" y="314" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="389" y="333" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">系统配置</text>
+<text x="389" y="350" font-size="8.8" fill="#334155" xml:space="preserve">ip/route/dns</text>
+<text x="389" y="365.4" font-size="8.8" fill="#334155" xml:space="preserve">写入内核</text>
+<rect x="36" y="424" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="454" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="478" font-size="10.2" fill="#334155" xml:space="preserve">interface 可以没有独立 device（如 proto 自己创建隧道）。</text>
+<text x="52" y="496" font-size="10.2" fill="#334155" xml:space="preserve">device 配置先于 interface 加载，否则接口会等待设备。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 系统框架 · 结构示意，细节以对应版本源码为准</text>
+</svg>

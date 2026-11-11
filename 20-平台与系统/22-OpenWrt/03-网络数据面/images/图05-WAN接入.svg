@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="800" height="480" fill="#ffffff"/>
+<line x1="36" y1="112" x2="764" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · WAN 接入：四种 proto 共用一套接口状态机</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">无论 PPPoE、DHCP、静态还是 5G，最终都落到 interface 的 up/down 与地址/路由。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看物理承载，再看 proto 差异，最后看共同产物。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">承载</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">proto</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">产物</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 承载与协议</text>
+<rect x="36" y="190" width="158" height="86" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="86" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">以太/WWAN</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">eth / qmi / mbim</text>
+<line x1="194" y1="233" x2="206" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,233 197,228.5 197,237.5" fill="#94a3b8"/>
+<rect x="206" y="190" width="158" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="206" y="190" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">PPPoE</text>
+<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">会话+认证</text>
+<line x1="364" y1="233" x2="376" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,233 367,228.5 367,237.5" fill="#94a3b8"/>
+<rect x="376" y="190" width="158" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="376" y="190" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">DHCP</text>
+<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">租约+续期</text>
+<line x1="534" y1="233" x2="546" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,233 537,228.5 537,237.5" fill="#94a3b8"/>
+<rect x="546" y="190" width="158" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="546" y="190" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">静态/5G</text>
+<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">手工地址/APN</text>
+<text x="36" y="310" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 共同产物</text>
+<rect x="36" y="324" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="324" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="49" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">地址</text>
+<text x="49" y="360" font-size="8.8" fill="#334155" xml:space="preserve">IPv4/IPv6</text>
+<line x1="194" y1="365" x2="206" y2="365" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,365 197,360.5 197,369.5" fill="#94a3b8"/>
+<rect x="206" y="324" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="324" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="219" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">默认路由</text>
+<text x="219" y="360" font-size="8.8" fill="#334155" xml:space="preserve">metric/规则</text>
+<line x1="364" y1="365" x2="376" y2="365" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,365 367,360.5 367,369.5" fill="#94a3b8"/>
+<rect x="376" y="324" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="376" y="324" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="389" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">DNS</text>
+<text x="389" y="360" font-size="8.8" fill="#334155" xml:space="preserve">peerdns</text>
+<line x1="534" y1="365" x2="546" y2="365" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,365 537,360.5 537,369.5" fill="#94a3b8"/>
+<rect x="546" y="324" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="546" y="324" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="559" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">iface 事件</text>
+<text x="559" y="360" font-size="8.8" fill="#334155" xml:space="preserve">ifup/ifdown</text>
+<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 网络数据面 · 结构示意，细节以对应版本源码为准</text>
+</svg>

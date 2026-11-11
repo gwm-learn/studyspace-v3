@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="620" viewBox="0 0 840 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 频段、带宽与功率：先选约束，再谈速率</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">频段决定可用信道与法规，带宽决定抗干扰与峰值速率，功率受监管域限制。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看频段，再看带宽/DFS，最后看功率与天线。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">2.4G</text>
+<line x1="124.4" y1="142" x2="154.4" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="162.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">5G</text>
+<line x1="199.6" y1="142" x2="229.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="237.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">6G</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 频段与带宽</text>
+<rect x="36" y="190" width="760" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">频段</text>
+<text x="321" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型带宽</text>
+<text x="511" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">关键约束</text>
+<text x="701" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">常见用途</text>
+<rect x="36" y="220" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="220" x2="796" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">2.4 GHz</text>
+<text x="321" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">20/40 MHz</text>
+<text x="511" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">信道少、干扰多</text>
+<text x="701" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">覆盖/ IoT</text>
+<rect x="36" y="250" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="250" x2="796" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">5 GHz</text>
+<text x="321" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">20-160 MHz</text>
+<text x="511" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">DFS/功率限制</text>
+<text x="701" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">主力吞吐</text>
+<rect x="36" y="280" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="280" x2="796" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">6 GHz</text>
+<text x="321" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">20-320 MHz</text>
+<text x="511" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Wi-Fi 6E/7</text>
+<text x="701" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">高吞吐/低干扰</text>
+<line x1="36" y1="310" x2="796" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="320" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 选择顺序</text>
+<rect x="36" y="334" width="158" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="334" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="49" y="353" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">监管域</text>
+<text x="49" y="370" font-size="8.8" fill="#334155" xml:space="preserve">country</text>
+<text x="49" y="385.4" font-size="8.8" fill="#334155" xml:space="preserve">可用信道</text>
+<line x1="194" y1="376" x2="206" y2="376" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,376 197,371.5 197,380.5" fill="#94a3b8"/>
+<rect x="206" y="334" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="206" y="334" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="219" y="353" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">频段</text>
+<text x="219" y="370" font-size="8.8" fill="#334155" xml:space="preserve">覆盖 vs 吞吐</text>
+<line x1="364" y1="376" x2="376" y2="376" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,376 367,371.5 367,380.5" fill="#94a3b8"/>
+<rect x="376" y="334" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="376" y="334" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="389" y="353" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">带宽</text>
+<text x="389" y="370" font-size="8.8" fill="#334155" xml:space="preserve">干扰 vs 峰值</text>
+<line x1="534" y1="376" x2="546" y2="376" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,376 537,371.5 537,380.5" fill="#94a3b8"/>
+<rect x="546" y="334" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="546" y="334" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="559" y="353" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">功率/天线</text>
+<text x="559" y="370" font-size="8.8" fill="#334155" xml:space="preserve">EIRP/方向</text>
+<rect x="36" y="440" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="470" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="494" font-size="10.2" fill="#334155" xml:space="preserve">带宽越宽不一定越好：邻频干扰和 DFS 等待会影响稳定性。</text>
+<text x="52" y="512" font-size="10.2" fill="#334155" xml:space="preserve">高功率不等于好覆盖：可能放大干扰与上行不对称。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 无线 · 结构示意，细节以对应版本源码为准</text>
+</svg>

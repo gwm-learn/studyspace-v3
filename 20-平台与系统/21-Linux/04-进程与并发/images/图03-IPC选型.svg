@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · IPC 选型：数据走通道，事件走信号</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">pipe/socket 适合控制流，共享内存适合大数据，信号适合异步事件。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">共享内存要自己做同步与生命周期清理。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 就绪</text>
+<line x1="245.8" y1="142" x2="275.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="283.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="340.8" y1="142" x2="370.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="378.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">辅助</text>
+<line x1="424.8" y1="142" x2="454.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="462.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 延后</text>
+<line x1="550.6" y1="142" x2="580.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="588.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">风险 / 阻塞</text>
+<rect x="40" y="210" width="180" height="76" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="210" width="4.5" height="76" fill="#475569" rx="2"/>
+<text x="53" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">要传什么？</text>
+<text x="53" y="246" font-size="9.6" fill="#334155" xml:space="preserve">数据/事件</text>
+<text x="53" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">是否有边界</text>
+<rect x="280" y="110" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="280" y="110" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="293" y="129" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">pipe/FIFO</text>
+<text x="293" y="146" font-size="9.6" fill="#334155" xml:space="preserve">字节流</text>
+<text x="293" y="161.4" font-size="9.6" fill="#334155" xml:space="preserve">自带阻塞</text>
+<rect x="280" y="310" width="170" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="280" y="310" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="293" y="329" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">共享内存</text>
+<text x="293" y="346" font-size="9.6" fill="#334155" xml:space="preserve">零拷贝</text>
+<text x="293" y="361.4" font-size="9.6" fill="#334155" xml:space="preserve">自己同步</text>
+<rect x="500" y="110" width="170" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="500" y="110" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="513" y="129" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">socket</text>
+<text x="513" y="146" font-size="9.6" fill="#334155" xml:space="preserve">有边界</text>
+<text x="513" y="161.4" font-size="9.6" fill="#334155" xml:space="preserve">可跨机</text>
+<rect x="500" y="310" width="170" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="500" y="310" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="513" y="329" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">signal</text>
+<text x="513" y="346" font-size="9.6" fill="#334155" xml:space="preserve">异步事件</text>
+<text x="513" y="361.4" font-size="9.6" fill="#334155" xml:space="preserve">处理要短</text>
+<rect x="720" y="210" width="180" height="76" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="720" y="210" width="4.5" height="76" fill="#dc2626" rx="2"/>
+<text x="733" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">生命周期</text>
+<text x="733" y="246" font-size="9.6" fill="#334155" xml:space="preserve">unlink/close</text>
+<text x="733" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">防泄漏</text>
+<line x1="220" y1="274" x2="280" y2="168" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="280,168 271.65,173.62 279.48,178.05" fill="#0f9d58"/>
+<text x="256" y="214" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">控制流</text>
+<line x1="220" y1="274" x2="280" y2="368" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="280,368 278.95,357.99 271.36,362.83" fill="#4f46e5"/>
+<text x="256" y="314" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">大数据</text>
+<line x1="220" y1="274" x2="500" y2="168" stroke="#0891b2" stroke-width="2"/>
+<polygon points="500,168 489.99,166.98 493.18,175.39" fill="#0891b2"/>
+<text x="366" y="214" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">双向/跨机</text>
+<line x1="220" y1="274" x2="500" y2="368" stroke="#d97706" stroke-width="2"/>
+<polygon points="500,368 492.9,360.87 490.04,369.4" fill="#d97706"/>
+<text x="366" y="314" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">通知</text>
+<line x1="450" y1="368" x2="720" y2="274" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="720,274 710.02,272.71 712.98,281.21" fill="#dc2626"/>
+<text x="591" y="314" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">清理</text>
+<line x1="670" y1="168" x2="720" y2="274" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="720,274 720.23,263.94 712.09,267.78" fill="#dc2626"/>
+<text x="701" y="214" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">关闭</text>
+<rect x="36" y="430" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="484" font-size="10.2" fill="#334155" xml:space="preserve">信号处理函数只能调用 async-signal-safe 函数。</text>
+<text x="52" y="502" font-size="10.2" fill="#334155" xml:space="preserve">共享内存/消息队列不会自动随进程退出删除。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头与文字标签。</text>
+</svg>

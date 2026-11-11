@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="600" viewBox="0 0 920 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="920" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="884" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 数据面总览：一个包从 WAN 到 LAN</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">接入、路由/NAT、转发、队列四段；每段由不同组件配置，但共用内核路径。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看上行链路，再看包在防火墙与转发之间的分叉。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">接入</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">三层</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">转发</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">队列</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 入向路径</text>
+<rect x="36" y="190" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">WAN 物理口</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">eth/wwan</text>
+<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">DSA 端口</text>
+<line x1="194" y1="234" x2="204" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="204,234 195,229.5 195,238.5" fill="#94a3b8"/>
+<rect x="204" y="190" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="204" y="190" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="217" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">接入协议</text>
+<text x="217" y="226" font-size="8.8" fill="#334155" xml:space="preserve">PPPoE/DHCP</text>
+<text x="217" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">静态/5G</text>
+<line x1="362" y1="234" x2="372" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="372,234 363,229.5 363,238.5" fill="#94a3b8"/>
+<rect x="372" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="372" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="385" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">PREROUTING</text>
+<text x="385" y="226" font-size="8.8" fill="#334155" xml:space="preserve">DNAT/破环</text>
+<text x="385" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">conntrack</text>
+<line x1="530" y1="234" x2="540" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="540,234 531,229.5 531,238.5" fill="#94a3b8"/>
+<rect x="540" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="540" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="553" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">路由判定</text>
+<text x="553" y="226" font-size="8.8" fill="#334155" xml:space="preserve">本机 or 转发</text>
+<line x1="698" y1="234" x2="708" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="708,234 699,229.5 699,238.5" fill="#94a3b8"/>
+<rect x="708" y="190" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="708" y="190" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="721" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">FORWARD</text>
+<text x="721" y="226" font-size="8.8" fill="#334155" xml:space="preserve">zone 策略</text>
+<text x="721" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">放行/丢弃</text>
+<text x="36" y="310" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 出向与队列</text>
+<rect x="36" y="324" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="324" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="49" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">POSTROUTING</text>
+<text x="49" y="360" font-size="8.8" fill="#334155" xml:space="preserve">SNAT/MASQUERADE</text>
+<line x1="194" y1="365" x2="208" y2="365" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="208,365 199,360.5 199,369.5" fill="#94a3b8"/>
+<rect x="208" y="324" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="208" y="324" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="221" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">QoS 队列</text>
+<text x="221" y="360" font-size="8.8" fill="#334155" xml:space="preserve">HTB/CAKE</text>
+<text x="221" y="375.4" font-size="8.8" fill="#334155" xml:space="preserve">DSCP 标记</text>
+<line x1="366" y1="365" x2="380" y2="365" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="380,365 371,360.5 371,369.5" fill="#94a3b8"/>
+<rect x="380" y="324" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="380" y="324" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="393" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">LAN 口</text>
+<text x="393" y="360" font-size="8.8" fill="#334155" xml:space="preserve">bridge/VLAN</text>
+<text x="393" y="375.4" font-size="8.8" fill="#334155" xml:space="preserve">交换机</text>
+<rect x="36" y="430" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="484" font-size="10.2" fill="#334155" xml:space="preserve">硬件 offload 会让部分包绕过内核钩子；调试时先确认 offload 状态。</text>
+<text x="52" y="502" font-size="10.2" fill="#334155" xml:space="preserve">桥转发的帧走二层路径，不经过三层的 FORWARD 链。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 网络数据面 · 结构示意，细节以对应版本源码为准</text>
+</svg>

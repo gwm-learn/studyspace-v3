@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="500" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 06 · QoS：分类、标记、队列、整形</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">入口分类与标记决定优先级；出口队列决定谁先发、发多快。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：从左到右是处理顺序，注意 ingress 与 egress 的队列位置不同。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">分类</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">标记</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">队列</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 处理链</text>
+<rect x="36" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">分类</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">五元组/DSCP</text>
+<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">应用/端口</text>
+<line x1="194" y1="234" x2="206" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,234 197,229.5 197,238.5" fill="#94a3b8"/>
+<rect x="206" y="190" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="206" y="190" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">标记</text>
+<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">DSCP/802.1p</text>
+<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">connmark</text>
+<line x1="364" y1="234" x2="376" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,234 367,229.5 367,238.5" fill="#94a3b8"/>
+<rect x="376" y="190" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="376" y="190" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">队列</text>
+<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">HTB/CAKE</text>
+<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">fq_codel</text>
+<line x1="534" y1="234" x2="546" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,234 537,229.5 537,238.5" fill="#94a3b8"/>
+<rect x="546" y="190" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="546" y="190" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">整形/限速</text>
+<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">shaping</text>
+<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">policing</text>
+<rect x="36" y="320" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="350" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="374" font-size="10.2" fill="#334155" xml:space="preserve">WAN 上行是常见瓶颈，优先在 egress 做整形；下行限速需要 ingress 方案。</text>
+<text x="52" y="392" font-size="10.2" fill="#334155" xml:space="preserve">offload 与 QoS 可能冲突：快路径绕过队列时，限速会失效。</text>
+<text x="36" y="446" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="464" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 网络数据面 · 结构示意，细节以对应版本源码为准</text>
+</svg>

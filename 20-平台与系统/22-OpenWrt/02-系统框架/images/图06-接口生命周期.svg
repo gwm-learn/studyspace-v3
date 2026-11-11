@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="640" viewBox="0 0 860 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="860" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="824" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 06 · interface 生命周期：DOWN → SETUP → UP → TEARDOWN</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">配置状态与运行状态是两套状态机；配置变更先标记，再由事件驱动收敛。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：主路径从左到右，失败/删除走下方回退路径。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">运行状态</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">配置状态</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败/删除</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 运行状态</text>
+<rect x="36" y="190" width="158" height="86" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="86" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">DOWN</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">无设备/未启动</text>
+<line x1="194" y1="233" x2="208" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="208,233 199,228.5 199,237.5" fill="#94a3b8"/>
+<rect x="208" y="190" width="158" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="208" y="190" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="221" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">SETUP</text>
+<text x="221" y="226" font-size="8.8" fill="#334155" xml:space="preserve">创建设备</text>
+<text x="221" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">执行 proto</text>
+<line x1="366" y1="233" x2="380" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="380,233 371,228.5 371,237.5" fill="#94a3b8"/>
+<rect x="380" y="190" width="158" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="380" y="190" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="393" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">UP</text>
+<text x="393" y="226" font-size="8.8" fill="#334155" xml:space="preserve">地址/路由就绪</text>
+<text x="393" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">上报 ubus</text>
+<line x1="538" y1="233" x2="552" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="552,233 543,228.5 543,237.5" fill="#94a3b8"/>
+<rect x="552" y="190" width="158" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="552" y="190" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="565" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">TEARDOWN</text>
+<text x="565" y="226" font-size="8.8" fill="#334155" xml:space="preserve">撤销配置</text>
+<text x="565" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">清理设备</text>
+<text x="36" y="310" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 配置状态</text>
+<rect x="36" y="324" width="760" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="344" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">状态</text>
+<text x="416" y="344" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">含义</text>
+<text x="669.33" y="344" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">触发</text>
+<rect x="36" y="354" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="354" x2="796" y2="354" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="374" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">IFC_NONE</text>
+<text x="416" y="374" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">配置未变更</text>
+<text x="669.33" y="374" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">正常运行</text>
+<rect x="36" y="384" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="384" x2="796" y2="384" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="404" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">IFC_ASSIGN</text>
+<text x="416" y="404" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">有新配置待应用</text>
+<text x="669.33" y="404" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">uci commit / reload</text>
+<rect x="36" y="414" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="414" x2="796" y2="414" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="434" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">IFC_REMOVE</text>
+<text x="416" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">接口待删除</text>
+<text x="669.33" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">删除 section</text>
+<line x1="36" y1="444" x2="796" y2="444" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="464" width="760" height="92" fill="#fff5f5" rx="10" stroke="#dc2626" stroke-width="1"/>
+<text x="52" y="494" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">异常</text>
+<text x="52" y="518" font-size="10.2" fill="#334155" xml:space="preserve">proto 脚本失败会回到 DOWN 并按策略重试；不是所有失败都立刻可见。</text>
+<text x="52" y="536" font-size="10.2" fill="#334155" xml:space="preserve">设备被拔出时，interface 先失去 carrier，再进入 teardown。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 系统框架 · 结构示意，细节以对应版本源码为准</text>
+</svg>

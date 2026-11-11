@@ -13,6 +13,7 @@
 - [5 常见坑](#s5)
 - [6 排查方法](#s6)
 - [7 命令速查](#s7)
+- [名词解释](#名词解释)
 
 ## 1 · 地基：一个包的一生，和它路上的表与链
 
@@ -243,6 +244,26 @@
 | `iptables-save > /etc/...` | 持久化规则 | 重启后自动加载需要发行版配套机制 |
 
 > **看计数器的习惯：**先 `iptables -Z` / `ebtables -Z` 清零，再复现一次，这样计数才干净。 `-v` 不加，看不到命中次数，就等于在猜。
+
+## 名词解释
+
+> 缩写给出英文全称；非缩写用“—”表示。
+
+| 术语 | 英文全称 | 解释 |
+| --- | --- | --- |
+| netfilter | Netfilter | Linux 内核的包过滤/改写框架。 |
+| iptables | IP Tables | 传统的 netfilter 用户态配置工具。 |
+| nftables | Nftables | 新一代 netfilter 配置工具。 |
+| hook | Hook | 协议栈上的检查点。 |
+| chain | Chain | 挂在 hook 上的一组规则。 |
+| table | Table | 按用途分组的链集合。 |
+| conntrack | Connection Tracking | 连接跟踪。 |
+| FDB | Forwarding Database | 网桥 MAC 表。 |
+| PF_BRIDGE | Protocol Family Bridge | 二层桥的协议族。 |
+| br_netfilter | Bridge Netfilter | 把桥帧借给三层钩子。 |
+| DNAT | Destination Network Address Translation | 目的地址转换。 |
+| SNAT | Source Network Address Translation | 源地址转换。 |
+| verdict | Verdict | ACCEPT/DROP/RETURN 等裁决。 |
 
 > **说明**
 >

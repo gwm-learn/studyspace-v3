@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="500" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · feeds：先建索引，再装成符号链接</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">feeds 解决“包源码不在主仓库”的问题；update 与 install 是两件事。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：上半是元数据流，下半是源码/链接落点。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">元数据</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">源码</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">配置</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① update 与 install</text>
+<rect x="36" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">feeds.conf</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">仓库地址</text>
+<text x="49" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">分支/路径</text>
+<line x1="194" y1="234" x2="212" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="212,234 203,229.5 203,238.5" fill="#94a3b8"/>
+<rect x="212" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="212" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="225" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">feeds update</text>
+<text x="225" y="226" font-size="9.6" fill="#334155" xml:space="preserve">拉取源码</text>
+<text x="225" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">生成 index</text>
+<line x1="370" y1="234" x2="388" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="388,234 379,229.5 379,238.5" fill="#94a3b8"/>
+<rect x="388" y="190" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="388" y="190" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="401" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">feeds install</text>
+<text x="401" y="226" font-size="9.6" fill="#334155" xml:space="preserve">按 index 建链接</text>
+<text x="401" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">package/feeds/*</text>
+<line x1="546" y1="234" x2="564" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="564,234 555,229.5 555,238.5" fill="#94a3b8"/>
+<rect x="564" y="190" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="564" y="190" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="577" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">make menuconfig</text>
+<text x="577" y="226" font-size="9.6" fill="#334155" xml:space="preserve">包出现在菜单</text>
+<text x="577" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">写入 .config</text>
+<rect x="36" y="320" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="350" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="374" font-size="10.2" fill="#334155" xml:space="preserve">update 只更新 feed 源码与索引，不会自动改 .config。</text>
+<text x="52" y="392" font-size="10.2" fill="#334155" xml:space="preserve">install 生成的是符号链接；删链接不会删 feed 源码。</text>
+<text x="36" y="446" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="464" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 构建与包管理 · 结构示意，细节以对应版本源码为准</text>
+</svg>

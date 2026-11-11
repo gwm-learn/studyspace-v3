@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="580" viewBox="0 0 840 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · nl80211：一条 netlink 请求如何落到驱动</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">nl80211 是 cfg80211 暴露的 Generic Netlink 家族；命令 + 属性描述操作。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看请求方向，再看内核内的分发与回调。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">请求</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">内核</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">驱动</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 请求与分发</text>
+<rect x="36" y="190" width="158" height="90" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="90" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">用户态工具</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">iw/hostapd</text>
+<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">wpa_supplicant</text>
+<line x1="194" y1="235" x2="206" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,235 197,230.5 197,239.5" fill="#94a3b8"/>
+<rect x="206" y="190" width="158" height="90" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="206" y="190" width="4.5" height="90" fill="#4f46e5" rx="2"/>
+<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Generic Netlink</text>
+<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">family=nl80211</text>
+<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">cmd + attrs</text>
+<line x1="364" y1="235" x2="376" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,235 367,230.5 367,239.5" fill="#94a3b8"/>
+<rect x="376" y="190" width="158" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="376" y="190" width="4.5" height="90" fill="#d97706" rx="2"/>
+<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">cfg80211</text>
+<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">校验/权限</text>
+<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">构造 ops</text>
+<line x1="534" y1="235" x2="546" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,235 537,230.5 537,239.5" fill="#94a3b8"/>
+<rect x="546" y="190" width="158" height="90" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="546" y="190" width="4.5" height="90" fill="#0f9d58" rx="2"/>
+<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">驱动回调</text>
+<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">cfg80211_ops</text>
+<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">硬件操作</text>
+<text x="36" y="310" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 常见命令族</text>
+<rect x="36" y="324" width="760" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="344" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">命令</text>
+<text x="416" y="344" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">作用</text>
+<text x="669.33" y="344" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型工具</text>
+<rect x="36" y="354" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="354" x2="796" y2="354" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="374" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">GET_WIPHY</text>
+<text x="416" y="374" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">查询射频能力</text>
+<text x="669.33" y="374" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">iw phy</text>
+<rect x="36" y="384" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="384" x2="796" y2="384" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="404" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">GET_INTERFACE</text>
+<text x="416" y="404" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">查询接口状态</text>
+<text x="669.33" y="404" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">iw dev</text>
+<rect x="36" y="414" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="414" x2="796" y2="414" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="434" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">TRIGGER_SCAN</text>
+<text x="416" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">触发扫描</text>
+<text x="669.33" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">iw dev scan</text>
+<rect x="36" y="444" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="444" x2="796" y2="444" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="464" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">CONNECT</text>
+<text x="416" y="464" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">STA 连接</text>
+<text x="669.33" y="464" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">wpa_supplicant</text>
+<rect x="36" y="474" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="474" x2="796" y2="474" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="494" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">NEW_KEY</text>
+<text x="416" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">安装密钥</text>
+<text x="669.33" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">hostapd</text>
+<line x1="36" y1="504" x2="796" y2="504" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 无线 · 结构示意，细节以对应版本源码为准</text>
+</svg>

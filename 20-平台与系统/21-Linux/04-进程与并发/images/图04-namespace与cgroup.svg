@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 容器隔离：namespace 管视图，cgroup 管资源</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">namespace 让容器看到独立的 PID/网络/挂载；cgroup 限制 CPU/内存/pids。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">再加 rootfs 与 capabilities/seccomp，才构成容器。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 就绪</text>
+<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="256.8" y1="142" x2="286.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="294.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 延后</text>
+<line x1="382.6" y1="142" x2="412.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="420.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">辅助</text>
+<line x1="466.6" y1="142" x2="496.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="504.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">风险 / 阻塞</text>
+<rect x="40" y="210" width="190" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="210" width="4.5" height="80" fill="#0f9d58" rx="2"/>
+<text x="53" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">容器</text>
+<text x="53" y="246" font-size="9.6" fill="#334155" xml:space="preserve">PID 1</text>
+<text x="53" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">应用进程</text>
+<rect x="290" y="110" width="190" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="290" y="110" width="4.5" height="80" fill="#4f46e5" rx="2"/>
+<text x="303" y="129" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">namespace</text>
+<text x="303" y="146" font-size="9.6" fill="#334155" xml:space="preserve">pid/net/mnt</text>
+<text x="303" y="161.4" font-size="9.6" fill="#334155" xml:space="preserve">ipc/uts/user</text>
+<rect x="290" y="310" width="190" height="80" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="290" y="310" width="4.5" height="80" fill="#d97706" rx="2"/>
+<text x="303" y="329" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">cgroup</text>
+<text x="303" y="346" font-size="9.6" fill="#334155" xml:space="preserve">cpu/memory/io</text>
+<text x="303" y="361.4" font-size="9.6" fill="#334155" xml:space="preserve">pids</text>
+<rect x="540" y="110" width="180" height="80" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="540" y="110" width="4.5" height="80" fill="#0891b2" rx="2"/>
+<text x="553" y="129" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">rootfs</text>
+<text x="553" y="146" font-size="9.6" fill="#334155" xml:space="preserve">pivot_root</text>
+<text x="553" y="161.4" font-size="9.6" fill="#334155" xml:space="preserve">镜像文件</text>
+<rect x="540" y="310" width="180" height="80" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="540" y="310" width="4.5" height="80" fill="#dc2626" rx="2"/>
+<text x="553" y="329" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">安全</text>
+<text x="553" y="346" font-size="9.6" fill="#334155" xml:space="preserve">capabilities</text>
+<text x="553" y="361.4" font-size="9.6" fill="#334155" xml:space="preserve">seccomp/LSM</text>
+<line x1="230" y1="278" x2="290" y2="178" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="290,178 281.51,183.4 289.23,188.03" fill="#4f46e5"/>
+<text x="266" y="221" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">视图隔离</text>
+<line x1="230" y1="278" x2="290" y2="378" stroke="#d97706" stroke-width="2"/>
+<polygon points="290,378 289.23,367.97 281.51,372.6" fill="#d97706"/>
+<text x="266" y="321" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">资源限制</text>
+<line x1="230" y1="278" x2="540" y2="178" stroke="#0891b2" stroke-width="2"/>
+<polygon points="540,178 530.05,176.48 532.82,185.05" fill="#0891b2"/>
+<text x="391" y="221" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">文件系统</text>
+<line x1="230" y1="278" x2="540" y2="378" stroke="#dc2626" stroke-width="2"/>
+<polygon points="540,378 532.82,370.95 530.05,379.52" fill="#dc2626"/>
+<text x="391" y="321" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">权限收敛</text>
+<rect x="36" y="440" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="470" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="494" font-size="10.2" fill="#334155" xml:space="preserve">namespace 不限制资源，cgroup 不隔离视图。</text>
+<text x="52" y="512" font-size="10.2" fill="#334155" xml:space="preserve">共享内核，内核漏洞影响所有容器。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头与文字标签。</text>
+</svg>

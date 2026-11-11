@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="600" viewBox="0 0 840 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · OpenWrt 用户态框架：四条主线</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">内核只负责机制；procd/ubus/UCI/netifd 把机制组织成可管理的系统。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看启动主线，再看配置、IPC 与网络三条横向关系。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">启动</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">配置</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">IPC</text>
+<line x1="285.8" y1="142" x2="315.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="323.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">网络</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 启动与常驻组件</text>
+<rect x="36" y="190" width="158" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">kernel</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">启动 PID 1</text>
+<text x="49" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">uevent</text>
+<line x1="194" y1="232" x2="212" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="212,232 203,227.5 203,236.5" fill="#94a3b8"/>
+<rect x="212" y="190" width="158" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="212" y="190" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="225" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">procd</text>
+<text x="225" y="226" font-size="9.6" fill="#334155" xml:space="preserve">init/服务管理</text>
+<text x="225" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">hotplug</text>
+<line x1="370" y1="232" x2="388" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="388,232 379,227.5 379,236.5" fill="#94a3b8"/>
+<rect x="388" y="190" width="158" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="388" y="190" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="401" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">rc.d 服务</text>
+<text x="401" y="226" font-size="9.6" fill="#334155" xml:space="preserve">init 脚本</text>
+<text x="401" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">常驻进程</text>
+<text x="36" y="306" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 三条横向能力</text>
+<rect x="36" y="320" width="240" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="320" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="49" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">UCI</text>
+<text x="49" y="356" font-size="9.6" fill="#334155" xml:space="preserve">/etc/config/*</text>
+<text x="49" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">配置的唯一入口</text>
+<rect x="292" y="320" width="240" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="292" y="320" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="305" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ubus</text>
+<text x="305" y="356" font-size="9.6" fill="#334155" xml:space="preserve">对象/方法/事件</text>
+<text x="305" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">进程间通信总线</text>
+<rect x="548" y="320" width="240" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="548" y="320" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="561" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">netifd</text>
+<text x="561" y="356" font-size="9.6" fill="#334155" xml:space="preserve">device/interface</text>
+<text x="561" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">协议处理与状态</text>
+<line x1="276" y1="363" x2="292" y2="363" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="292,363 283,358.5 283,367.5" fill="#94a3b8"/>
+<line x1="532" y1="363" x2="548" y2="363" stroke="#94a3b8" stroke-width="1.6"/>
+<polygon points="548,363 539,358.5 539,367.5" fill="#94a3b8"/>
+<rect x="36" y="432" width="752" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="462" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="486" font-size="10.2" fill="#334155" xml:space="preserve">UCI 只存配置，不保证生效；netifd 订阅并应用网络配置。</text>
+<text x="52" y="504" font-size="10.2" fill="#334155" xml:space="preserve">ubus 是总线，不负责持久化；procd 提供进程与服务对象。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 系统框架 · 结构示意，细节以对应版本源码为准</text>
+</svg>

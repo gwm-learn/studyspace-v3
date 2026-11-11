@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 网络栈：一条 skb 的旅程</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">收包：NIC→NAPI→协议栈→netfilter→socket；发包反向。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">netfilter 管过滤/NAT，qdisc 管发送排队。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 延后</text>
+<line x1="340.8" y1="142" x2="370.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="378.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 就绪</text>
+<line x1="466.6" y1="142" x2="496.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="504.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">辅助</text>
+<line x1="550.6" y1="142" x2="580.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="588.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">风险 / 阻塞</text>
+<rect x="30" y="210" width="170" height="70" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="30" y="210" width="4.5" height="70" fill="#475569" rx="2"/>
+<text x="43" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网卡</text>
+<text x="43" y="246" font-size="9.6" fill="#334155" xml:space="preserve">DMA ring</text>
+<text x="43" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">NAPI</text>
+<rect x="240" y="210" width="180" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="240" y="210" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="253" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">协议栈</text>
+<text x="253" y="246" font-size="9.6" fill="#334155" xml:space="preserve">IP/TCP/UDP</text>
+<text x="253" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">sk_buff</text>
+<rect x="460" y="210" width="170" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="460" y="210" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="473" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">netfilter</text>
+<text x="473" y="246" font-size="9.6" fill="#334155" xml:space="preserve">五条链</text>
+<text x="473" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">NAT/过滤</text>
+<rect x="670" y="210" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="670" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="683" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">socket</text>
+<text x="683" y="246" font-size="9.6" fill="#334155" xml:space="preserve">接收队列</text>
+<text x="683" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">fd/sock</text>
+<rect x="880" y="210" width="170" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="880" y="210" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="893" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">进程</text>
+<text x="893" y="246" font-size="9.6" fill="#334155" xml:space="preserve">read/write</text>
+<text x="893" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">epoll</text>
+<rect x="460" y="370" width="170" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="460" y="370" width="4.5" height="70" fill="#dc2626" rx="2"/>
+<text x="473" y="389" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">qdisc</text>
+<text x="473" y="406" font-size="9.6" fill="#334155" xml:space="preserve">排队/限速</text>
+<text x="473" y="421.4" font-size="9.6" fill="#334155" xml:space="preserve">tc</text>
+<line x1="200" y1="268" x2="240" y2="268" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="240,268 231,263.5 231,272.5" fill="#4f46e5"/>
+<text x="226" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">收</text>
+<line x1="420" y1="268" x2="460" y2="268" stroke="#d97706" stroke-width="2"/>
+<polygon points="460,268 451,263.5 451,272.5" fill="#d97706"/>
+<text x="446" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">钩子</text>
+<line x1="630" y1="268" x2="670" y2="268" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="670,268 661,263.5 661,272.5" fill="#0f9d58"/>
+<text x="656" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">入队</text>
+<line x1="840" y1="268" x2="880" y2="268" stroke="#0891b2" stroke-width="2"/>
+<polygon points="880,268 871,263.5 871,272.5" fill="#0891b2"/>
+<text x="866" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">唤醒</text>
+<line x1="420" y1="268" x2="460" y2="428" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="460,428 462.18,418.18 453.45,420.36" fill="#dc2626"/>
+<text x="446" y="341" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">发包</text>
+<rect x="36" y="490" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="520" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="544" font-size="10.2" fill="#334155" xml:space="preserve">硬中断只叫醒，软中断批量收。</text>
+<text x="52" y="562" font-size="10.2" fill="#334155" xml:space="preserve">qdisc 丢包与 netfilter 丢包要分开看。</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头与文字标签。</text>
+</svg>

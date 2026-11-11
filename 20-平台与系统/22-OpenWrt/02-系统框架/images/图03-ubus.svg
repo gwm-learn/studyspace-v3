@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="600" viewBox="0 0 840 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · ubus：对象、方法与事件</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">所有进程通过 ubusd 通信；调用是请求/响应，事件是发布/订阅。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看 ubusd 的位置，再区分 call 与 subscribe 两条路径。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">调用</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">事件</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">对象</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 调用路径</text>
+<rect x="36" y="190" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">client</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">ubus call</text>
+<text x="49" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">参数</text>
+<line x1="194" y1="232" x2="212" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="212,232 203,227.5 203,236.5" fill="#94a3b8"/>
+<rect x="212" y="190" width="158" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="212" y="190" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="225" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ubusd</text>
+<text x="225" y="226" font-size="9.6" fill="#334155" xml:space="preserve">查找对象</text>
+<text x="225" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">转发请求</text>
+<line x1="370" y1="232" x2="388" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="388,232 379,227.5 379,236.5" fill="#94a3b8"/>
+<rect x="388" y="190" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="388" y="190" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="401" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">provider</text>
+<text x="401" y="226" font-size="9.6" fill="#334155" xml:space="preserve">注册方法</text>
+<text x="401" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">执行并返回</text>
+<text x="36" y="306" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 事件路径</text>
+<rect x="36" y="320" width="158" height="84" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36" y="320" width="4.5" height="84" fill="#0891b2" rx="2"/>
+<text x="49" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">provider</text>
+<text x="49" y="356" font-size="9.6" fill="#334155" xml:space="preserve">ubus send</text>
+<text x="49" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">事件名</text>
+<line x1="194" y1="362" x2="212" y2="362" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="212,362 203,357.5 203,366.5" fill="#94a3b8"/>
+<rect x="212" y="320" width="158" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="212" y="320" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="225" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ubusd</text>
+<text x="225" y="356" font-size="9.6" fill="#334155" xml:space="preserve">按订阅分发</text>
+<line x1="370" y1="362" x2="388" y2="362" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="388,362 379,357.5 379,366.5" fill="#94a3b8"/>
+<rect x="388" y="320" width="158" height="84" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="388" y="320" width="4.5" height="84" fill="#0891b2" rx="2"/>
+<text x="401" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">subscriber</text>
+<text x="401" y="356" font-size="9.6" fill="#334155" xml:space="preserve">回调处理</text>
+<text x="401" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">可多个</text>
+<rect x="36" y="430" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="484" font-size="10.2" fill="#334155" xml:space="preserve">ACL 决定谁能调用哪个对象/方法，默认不是全开放。</text>
+<text x="52" y="502" font-size="10.2" fill="#334155" xml:space="preserve">ubus 不保证消息持久化；订阅者离线期间的事件会丢失。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 系统框架 · 结构示意，细节以对应版本源码为准</text>
+</svg>

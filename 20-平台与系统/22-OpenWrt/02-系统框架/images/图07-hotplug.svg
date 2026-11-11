@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="500" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 07 · hotplug：内核事件如何到达脚本</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">内核 uevent 由 procd 接收，按 /etc/hotplug.json 规则分发给 hotplug.d。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左侧是事件源，中间是过滤，右侧是脚本落点。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">内核</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">分发</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">脚本</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 事件链</text>
+<rect x="36" y="190" width="158" height="90" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="90" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">kernel uevent</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">net/usb/block</text>
+<text x="49" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">ACTION/DEVPATH</text>
+<line x1="194" y1="235" x2="208" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="208,235 199,230.5 199,239.5" fill="#94a3b8"/>
+<rect x="208" y="190" width="158" height="90" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="208" y="190" width="4.5" height="90" fill="#4f46e5" rx="2"/>
+<text x="221" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">procd</text>
+<text x="221" y="226" font-size="9.6" fill="#334155" xml:space="preserve">netlink 接收</text>
+<text x="221" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">读取规则</text>
+<line x1="366" y1="235" x2="380" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="380,235 371,230.5 371,239.5" fill="#94a3b8"/>
+<rect x="380" y="190" width="158" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="380" y="190" width="4.5" height="90" fill="#d97706" rx="2"/>
+<text x="393" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">hotplug.json</text>
+<text x="393" y="226" font-size="9.6" fill="#334155" xml:space="preserve">按 subsystem</text>
+<text x="393" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">过滤/转发</text>
+<line x1="538" y1="235" x2="552" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="552,235 543,230.5 543,239.5" fill="#94a3b8"/>
+<rect x="552" y="190" width="158" height="90" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="552" y="190" width="4.5" height="90" fill="#0f9d58" rx="2"/>
+<text x="565" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">hotplug.d</text>
+<text x="565" y="226" font-size="9.6" fill="#334155" xml:space="preserve">执行脚本</text>
+<text x="565" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">环境变量</text>
+<rect x="36" y="320" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="350" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">两类事件</text>
+<text x="52" y="374" font-size="10.2" fill="#334155" xml:space="preserve">内核事件：网口插拔、USB、块设备；环境变量来自 uevent。</text>
+<text x="52" y="392" font-size="10.2" fill="#334155" xml:space="preserve">netifd 事件：ifup/ifdown/ifupdate；由网络状态变化触发。</text>
+<text x="36" y="446" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="464" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 系统框架 · 结构示意，细节以对应版本源码为准</text>
+</svg>

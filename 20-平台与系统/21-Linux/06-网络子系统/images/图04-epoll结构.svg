@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · epoll：红黑树管理，就绪链表返回</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">rbr 管理监控 fd，rdllist 存就绪事件，wq 让 epoll_wait 睡眠。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">socket 有事件时回调把 epitem 挂入 rdllist 并唤醒。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 就绪</text>
+<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="256.8" y1="142" x2="286.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="294.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 延后</text>
+<line x1="382.6" y1="142" x2="412.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="420.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">辅助</text>
+<rect x="40" y="210" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="53" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">fd/file</text>
+<text x="53" y="246" font-size="9.6" fill="#334155" xml:space="preserve">socket/sock</text>
+<text x="53" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">等待队列</text>
+<rect x="260" y="130" width="180" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="260" y="130" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="273" y="149" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">rbr</text>
+<text x="273" y="166" font-size="9.6" fill="#334155" xml:space="preserve">红黑树</text>
+<text x="273" y="181.4" font-size="9.6" fill="#334155" xml:space="preserve">监控 epitem</text>
+<rect x="260" y="300" width="180" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="260" y="300" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="273" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">rdllist</text>
+<text x="273" y="336" font-size="9.6" fill="#334155" xml:space="preserve">就绪链表</text>
+<text x="273" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">O(1) 取</text>
+<rect x="500" y="210" width="180" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="500" y="210" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="513" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">wq</text>
+<text x="513" y="246" font-size="9.6" fill="#334155" xml:space="preserve">epoll_wait</text>
+<text x="513" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">睡眠/唤醒</text>
+<rect x="730" y="210" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="730" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="743" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">epoll_wait</text>
+<text x="743" y="246" font-size="9.6" fill="#334155" xml:space="preserve">拷贝事件</text>
+<text x="743" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">LT/ET</text>
+<line x1="210" y1="268" x2="260" y2="188" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="260,188 251.41,193.25 259.05,198.02" fill="#4f46e5"/>
+<text x="241" y="221" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">ADD</text>
+<line x1="210" y1="268" x2="260" y2="358" stroke="#d97706" stroke-width="2"/>
+<polygon points="260,358 259.56,347.95 251.7,352.32" fill="#d97706"/>
+<text x="241" y="306" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">事件回调</text>
+<line x1="440" y1="358" x2="500" y2="268" stroke="#0891b2" stroke-width="2"/>
+<polygon points="500,268 491.26,272.99 498.75,277.98" fill="#0891b2"/>
+<text x="476" y="306" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">唤醒</text>
+<line x1="680" y1="268" x2="730" y2="268" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="730,268 721,263.5 721,272.5" fill="#0f9d58"/>
+<text x="711" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">返回</text>
+<rect x="36" y="420" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="474" font-size="10.2" fill="#334155" xml:space="preserve">ET 必须一次读到 EAGAIN，否则会饥饿。</text>
+<text x="52" y="492" font-size="10.2" fill="#334155" xml:space="preserve">epoll 高效来自回调，不靠全量扫描。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头与文字标签。</text>
+</svg>

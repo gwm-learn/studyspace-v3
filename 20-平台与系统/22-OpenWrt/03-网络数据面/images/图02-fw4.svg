@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="580" viewBox="0 0 1040 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1040" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1004" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · fw4：UCI 配置编译成 nftables 规则</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">fw4 不是守护进程，而是“配置到规则集”的编译器；reload 时重建表。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左侧是 UCI 语义，中间是 fw4，右侧是内核里的 nft 表/链。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">配置</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">编译</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">内核</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 配置对象</text>
+<rect x="36" y="190" width="420" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">对象</text>
+<text x="246" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">作用</text>
+<text x="386" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型字段</text>
+<rect x="36" y="220" width="420" height="30" fill="#ffffff"/>
+<line x1="36" y1="220" x2="456" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">zone</text>
+<text x="246" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">接口分组</text>
+<text x="386" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">name/networks</text>
+<rect x="36" y="250" width="420" height="30" fill="#ffffff"/>
+<line x1="36" y1="250" x2="456" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">forwarding</text>
+<text x="246" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">zone 间放行</text>
+<text x="386" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">src/dest</text>
+<rect x="36" y="280" width="420" height="30" fill="#ffffff"/>
+<line x1="36" y1="280" x2="456" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">rule</text>
+<text x="246" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">精细规则</text>
+<text x="386" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">proto/port/target</text>
+<rect x="36" y="310" width="420" height="30" fill="#ffffff"/>
+<line x1="36" y1="310" x2="456" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">redirect</text>
+<text x="246" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">DNAT</text>
+<text x="386" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">src_dport/dest_ip</text>
+<rect x="36" y="340" width="420" height="30" fill="#ffffff"/>
+<line x1="36" y1="340" x2="456" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="360" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">nat</text>
+<text x="246" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">SNAT</text>
+<text x="386" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">src/masq</text>
+<line x1="36" y1="370" x2="456" y2="370" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="500" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 生成与加载</text>
+<rect x="500" y="190" width="158" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="500" y="190" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="513" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">UCI</text>
+<text x="513" y="226" font-size="8.8" fill="#334155" xml:space="preserve">/etc/config</text>
+<text x="513" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">firewall</text>
+<line x1="658" y1="233" x2="670" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="670,233 661,228.5 661,237.5" fill="#94a3b8"/>
+<rect x="670" y="190" width="158" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="670" y="190" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="683" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">fw4</text>
+<text x="683" y="226" font-size="8.8" fill="#334155" xml:space="preserve">校验/展开</text>
+<text x="683" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">生成 nft</text>
+<line x1="828" y1="233" x2="840" y2="233" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="840,233 831,228.5 831,237.5" fill="#94a3b8"/>
+<rect x="840" y="190" width="158" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="840" y="190" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="853" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">nftables</text>
+<text x="853" y="226" font-size="8.8" fill="#334155" xml:space="preserve">table inet fw4</text>
+<text x="853" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">chain/rule</text>
+<rect x="36" y="410" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="440" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="464" font-size="10.2" fill="#334155" xml:space="preserve">自定义规则优先放 /etc/nftables.d/，不要直接改生成文件。</text>
+<text x="52" y="482" font-size="10.2" fill="#334155" xml:space="preserve">fw3 与 fw4 的规则语法不同，迁移时不能只换包名。</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 网络数据面 · 结构示意，细节以对应版本源码为准</text>
+</svg>

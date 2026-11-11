@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 中断上下半部：上半部救火，下半部收尾</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">硬中断只做清中断、读状态、调度下半部；耗时工作交给 softirq 或 workqueue。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">分界线是能不能睡眠：软中断不能，workqueue 可以。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 延后</text>
+<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
+<line x1="245.8" y1="142" x2="275.8" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="283.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">风险 / 阻塞</text>
+<line x1="371.6" y1="142" x2="401.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="409.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="466.6" y1="142" x2="496.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="504.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 就绪</text>
+<rect x="30" y="210" width="170" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="30" y="210" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="43" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">设备</text>
+<text x="43" y="246" font-size="9.6" fill="#334155" xml:space="preserve">网卡/GPIO</text>
+<text x="43" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">触发 IRQ</text>
+<rect x="240" y="210" width="180" height="70" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="240" y="210" width="4.5" height="70" fill="#475569" rx="2"/>
+<text x="253" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">中断控制器</text>
+<text x="253" y="246" font-size="9.6" fill="#334155" xml:space="preserve">IRQ 号</text>
+<text x="253" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">优先级</text>
+<rect x="460" y="210" width="190" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="460" y="210" width="4.5" height="70" fill="#dc2626" rx="2"/>
+<text x="473" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">硬中断上半部</text>
+<text x="473" y="246" font-size="9.6" fill="#334155" xml:space="preserve">清中断/读状态</text>
+<text x="473" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">不能睡眠</text>
+<rect x="700" y="120" width="190" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="700" y="120" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="713" y="139" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">softirq/tasklet</text>
+<text x="713" y="156" font-size="9.6" fill="#334155" xml:space="preserve">不能睡眠</text>
+<text x="713" y="171.4" font-size="9.6" fill="#334155" xml:space="preserve">高频短任务</text>
+<rect x="700" y="310" width="190" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="700" y="310" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="713" y="329" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">workqueue</text>
+<text x="713" y="346" font-size="9.6" fill="#334155" xml:space="preserve">进程上下文</text>
+<text x="713" y="361.4" font-size="9.6" fill="#334155" xml:space="preserve">可以睡眠</text>
+<rect x="940" y="210" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="940" y="210" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="953" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">内核线程/进程</text>
+<text x="953" y="246" font-size="9.6" fill="#334155" xml:space="preserve">继续处理</text>
+<text x="953" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">返回用户</text>
+<line x1="200" y1="268" x2="240" y2="268" stroke="#d97706" stroke-width="2"/>
+<polygon points="240,268 231,263.5 231,272.5" fill="#d97706"/>
+<text x="226" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">IRQ</text>
+<line x1="420" y1="268" x2="460" y2="268" stroke="#dc2626" stroke-width="2"/>
+<polygon points="460,268 451,263.5 451,272.5" fill="#dc2626"/>
+<text x="446" y="261" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">调用 handler</text>
+<line x1="650" y1="268" x2="700" y2="178" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="700,178 691.7,183.68 699.56,188.05" fill="#4f46e5"/>
+<line x1="650" y1="268" x2="700" y2="368" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="700,368 700,357.94 691.95,361.96" fill="#0f9d58"/>
+<text x="681" y="311" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">排队</text>
+<line x1="890" y1="178" x2="940" y2="268" stroke="#4f46e5" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="940,268 939.56,257.95 931.7,262.32" fill="#4f46e5"/>
+<text x="921" y="216" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">返回后执行</text>
+<line x1="890" y1="368" x2="940" y2="268" stroke="#0f9d58" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="940,268 931.95,274.04 940,278.06" fill="#0f9d58"/>
+<text x="921" y="311" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">线程执行</text>
+<rect x="36" y="430" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
+<text x="52" y="484" font-size="10.2" fill="#334155" xml:space="preserve">中断上下文不能拿 mutex、不能等 IO。</text>
+<text x="52" y="502" font-size="10.2" fill="#334155" xml:space="preserve">中断风暴会占满 CPU，先看 /proc/interrupts。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头与文字标签。</text>
+</svg>

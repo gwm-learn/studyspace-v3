@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="600" viewBox="0 0 840 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 双分区/回滚：启动成功才算升级完成</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">A/B 或双 rootfs 的核心是“可回退的启动选择”，不是简单复制两份。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看启动分区选择，再看健康检查与标记。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">当前</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">备用</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">引导</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 分区布局</text>
+<rect x="36" y="190" width="158" height="88" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="88" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">bootloader</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">选择分区</text>
+<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">记录尝试次数</text>
+<line x1="194" y1="234" x2="206" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,234 197,229.5 197,238.5" fill="#94a3b8"/>
+<rect x="206" y="190" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="206" y="190" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">rootfs A</text>
+<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">当前系统</text>
+<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">可启动</text>
+<line x1="364" y1="234" x2="376" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,234 367,229.5 367,238.5" fill="#94a3b8"/>
+<rect x="376" y="190" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="376" y="190" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">rootfs B</text>
+<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">新镜像</text>
+<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">待验证</text>
+<line x1="534" y1="234" x2="546" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,234 537,229.5 537,238.5" fill="#94a3b8"/>
+<rect x="546" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="546" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">data/overlay</text>
+<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">配置</text>
+<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">跨分区共享</text>
+<text x="36" y="310" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 健康检查</text>
+<rect x="36" y="324" width="158" height="84" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="324" width="4.5" height="84" fill="#d97706" rx="2"/>
+<text x="49" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">启动新分区</text>
+<text x="49" y="360" font-size="8.8" fill="#334155" xml:space="preserve">标记 pending</text>
+<line x1="194" y1="366" x2="206" y2="366" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,366 197,361.5 197,370.5" fill="#94a3b8"/>
+<rect x="206" y="324" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="206" y="324" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="219" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">自检</text>
+<text x="219" y="360" font-size="8.8" fill="#334155" xml:space="preserve">网络/服务</text>
+<text x="219" y="375.4" font-size="8.8" fill="#334155" xml:space="preserve">看门狗</text>
+<line x1="364" y1="366" x2="376" y2="366" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,366 367,361.5 367,370.5" fill="#94a3b8"/>
+<rect x="376" y="324" width="158" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="376" y="324" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="389" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">确认</text>
+<text x="389" y="360" font-size="8.8" fill="#334155" xml:space="preserve">清除 pending</text>
+<line x1="534" y1="366" x2="546" y2="366" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="546,366 537,361.5 537,370.5" fill="#94a3b8"/>
+<rect x="546" y="324" width="158" height="84" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="546" y="324" width="4.5" height="84" fill="#dc2626" rx="2"/>
+<text x="559" y="343" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">失败</text>
+<text x="559" y="360" font-size="8.8" fill="#334155" xml:space="preserve">回退旧分区</text>
+<rect x="36" y="430" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="484" font-size="10.2" fill="#334155" xml:space="preserve">通用 OpenWrt sysupgrade 默认不是 A/B；双分区通常由厂商/平台脚本实现。</text>
+<text x="52" y="502" font-size="10.2" fill="#334155" xml:space="preserve">overlay 跨分区共享时，配置兼容性要单独验证。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 升级与恢复 · 结构示意，分区名以目标板为准</text>
+</svg>

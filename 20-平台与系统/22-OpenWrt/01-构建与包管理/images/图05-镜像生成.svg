@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="580" viewBox="0 0 980 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="980" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="944" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · 镜像生成：内核、rootfs 与设备定义汇合</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">镜像不是“编译完自然有”，而是由 Device/Profile 规则显式拼装。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：三条输入汇入镜像配方，再按启动介质产出不同文件。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">输入</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">拼装</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">产物</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 三条输入</text>
+<rect x="36" y="190" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Kernel</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">Image 内核</text>
+<text x="49" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">可选 FIT</text>
+<line x1="194" y1="232" x2="212" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="212,232 203,227.5 203,236.5" fill="#94a3b8"/>
+<rect x="212" y="190" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="212" y="190" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="225" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">RootFS</text>
+<text x="225" y="226" font-size="9.6" fill="#334155" xml:space="preserve">squashfs/erofs</text>
+<text x="225" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">overlay</text>
+<line x1="370" y1="232" x2="388" y2="232" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="388,232 379,227.5 379,236.5" fill="#94a3b8"/>
+<rect x="388" y="190" width="158" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="388" y="190" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="401" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DTB/引导件</text>
+<text x="401" y="226" font-size="9.6" fill="#334155" xml:space="preserve">DTS 编译</text>
+<text x="401" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">BL2/FIP</text>
+<line x1="300" y1="286" x2="300" y2="330" stroke="#d97706" stroke-width="2"/>
+<polygon points="300,330 304.5,321 295.5,321" fill="#d97706"/>
+<rect x="220" y="334" width="360" height="74" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="220" y="334" width="4.5" height="74" fill="#d97706" rx="2"/>
+<text x="233" y="353" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Device 配方</text>
+<text x="233" y="370" font-size="9.6" fill="#334155" xml:space="preserve">分区布局 + 镜像命令</text>
+<text x="233" y="385.4" font-size="9.6" fill="#334155" xml:space="preserve">append-metadata / ubinize</text>
+<line x1="580" y1="371" x2="640" y2="371" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="640,371 631,366.5 631,375.5" fill="#0f9d58"/>
+<rect x="644" y="334" width="300" height="74" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="644" y="334" width="4.5" height="74" fill="#0f9d58" rx="2"/>
+<text x="657" y="353" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">产物</text>
+<text x="657" y="370" font-size="9.6" fill="#334155" xml:space="preserve">sysupgrade.itb</text>
+<text x="657" y="385.4" font-size="9.6" fill="#334155" xml:space="preserve">factory.ubi / .bin</text>
+<rect x="36" y="430" width="760" height="74" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">为什么容易错</text>
+<text x="52" y="484" font-size="10.2" fill="#334155" xml:space="preserve">设备定义决定分区与镜像名；换板型却沿用旧镜像，通常在这里出问题。</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 构建与包管理 · 结构示意，细节以对应版本源码为准</text>
+</svg>

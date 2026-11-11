@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="600" viewBox="0 0 840 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 品牌与默认配置：首次启动前完成</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">默认配置有两条路：构建时放进 rootfs，或首次启动用 uci-defaults 生成。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看文件来源，再看首次启动脚本与清理。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">构建时</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">首次启动</text>
+<line x1="237" y1="142" x2="267" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="275" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">运行态</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 文件来源</text>
+<rect x="36" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">files/ overlay</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">直接覆盖 rootfs</text>
+<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">banner/配置/脚本</text>
+<line x1="194" y1="234" x2="208" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="208,234 199,229.5 199,238.5" fill="#94a3b8"/>
+<rect x="208" y="190" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="208" y="190" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="221" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">uci-defaults</text>
+<text x="221" y="226" font-size="8.8" fill="#334155" xml:space="preserve">首次启动执行</text>
+<text x="221" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">成功后自删</text>
+<line x1="366" y1="234" x2="380" y2="234" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="380,234 371,229.5 371,238.5" fill="#94a3b8"/>
+<rect x="380" y="190" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="380" y="190" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="393" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">package</text>
+<text x="393" y="226" font-size="8.8" fill="#334155" xml:space="preserve">装包/装配置</text>
+<text x="393" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">可升级</text>
+<text x="36" y="306" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 生效顺序</text>
+<rect x="36" y="320" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="320" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="49" y="339" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">刷机</text>
+<text x="49" y="356" font-size="8.8" fill="#334155" xml:space="preserve">rootfs 就绪</text>
+<line x1="194" y1="361" x2="208" y2="361" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="208,361 199,356.5 199,365.5" fill="#94a3b8"/>
+<rect x="208" y="320" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="208" y="320" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="221" y="339" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">首次启动</text>
+<text x="221" y="356" font-size="8.8" fill="#334155" xml:space="preserve">跑 uci-defaults</text>
+<line x1="366" y1="361" x2="380" y2="361" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="380,361 371,356.5 371,365.5" fill="#94a3b8"/>
+<rect x="380" y="320" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="380" y="320" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="393" y="339" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">服务启动</text>
+<text x="393" y="356" font-size="8.8" fill="#334155" xml:space="preserve">读取最终配置</text>
+<line x1="538" y1="361" x2="552" y2="361" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="552,361 543,356.5 543,365.5" fill="#94a3b8"/>
+<rect x="552" y="320" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="552" y="320" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="565" y="339" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">用户修改</text>
+<text x="565" y="356" font-size="8.8" fill="#334155" xml:space="preserve">写 overlay</text>
+<rect x="36" y="424" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="454" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="478" font-size="10.2" fill="#334155" xml:space="preserve">uci-defaults 只在首次启动/清 overlay 后执行；升级保留配置时不会重跑。</text>
+<text x="52" y="496" font-size="10.2" fill="#334155" xml:space="preserve">直接改 /etc/config 的默认文件，可能被包升级或 overlay 覆盖。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">OpenWrt 定制与裁剪 · 结构示意，具体路径以目标分支为准</text>
+</svg>
