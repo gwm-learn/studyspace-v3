@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1200" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1164" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 10 · 存储介质选型与写入路径</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">写入要穿过文件系统、块层/MTD、控制器才落到介质；每层都可能放大写入量。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">下半张表按擦除单位、寿命与坏块特性对比五类介质。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">软件层</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">控制器/介质</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 一次写入的路径</text>
+<rect x="36" y="196" width="200" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="49" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">应用 write()</text>
+<text x="49" y="232" font-size="8.8" fill="#334155" xml:space="preserve">小写入、频繁 fsync</text>
+<line x1="236" y1="239" x2="266" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="266,239 257,234.5 257,243.5" fill="#94a3b8"/>
+<rect x="266" y="196" width="200" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="266" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="279" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">文件系统</text>
+<text x="279" y="232" font-size="8.8" fill="#334155" xml:space="preserve">分配、日志、COW</text>
+<line x1="466" y1="239" x2="496" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="496,239 487,234.5 487,243.5" fill="#94a3b8"/>
+<rect x="496" y="196" width="200" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="496" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="509" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">块层 / MTD</text>
+<text x="509" y="232" font-size="8.8" fill="#334155" xml:space="preserve">合并、排序、坏块跳过</text>
+<line x1="696" y1="239" x2="726" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="726,239 717,234.5 717,243.5" fill="#94a3b8"/>
+<rect x="726" y="196" width="200" height="86" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="726" y="196" width="4.5" height="86" fill="#0891b2" rx="2"/>
+<text x="739" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">控制器 / FTL</text>
+<text x="739" y="232" font-size="8.8" fill="#334155" xml:space="preserve">ECC、磨损均衡、GC</text>
+<line x1="926" y1="239" x2="956" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="956,239 947,234.5 947,243.5" fill="#94a3b8"/>
+<rect x="956" y="196" width="200" height="86" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="956" y="196" width="4.5" height="86" fill="#0891b2" rx="2"/>
+<text x="969" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">介质</text>
+<text x="969" y="232" font-size="8.8" fill="#334155" xml:space="preserve">NOR / NAND / eMMC</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 介质对比</text>
+<rect x="36" y="346" width="1084" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="366" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">介质</text>
+<text x="361.2" y="366" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">接口</text>
+<text x="578" y="366" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">擦除单位</text>
+<text x="794.8" y="366" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">寿命（P/E）</text>
+<text x="1011.6" y="366" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">坏块</text>
+<rect x="36" y="376" width="1084" height="32" fill="#ffffff"/>
+<line x1="36" y1="376" x2="1120" y2="376" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="396" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SPI NOR</text>
+<text x="361.2" y="396" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">SPI/QSPI</text>
+<text x="578" y="396" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">4 KB 扇区 / 64 KB 块</text>
+<text x="794.8" y="396" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">10 万级</text>
+<text x="1011.6" y="396" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">少</text>
+<rect x="36" y="408" width="1084" height="32" fill="#ffffff"/>
+<line x1="36" y1="408" x2="1120" y2="408" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="428" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SPI NAND</text>
+<text x="361.2" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">SPI</text>
+<text x="578" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">128 KB 块 + OOB</text>
+<text x="794.8" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数千~数万</text>
+<text x="1011.6" y="428" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">有，需管理</text>
+<rect x="36" y="440" width="1084" height="32" fill="#ffffff"/>
+<line x1="36" y1="440" x2="1120" y2="440" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="460" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">eMMC</text>
+<text x="361.2" y="460" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">MMC 8 位</text>
+<text x="578" y="460" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器管理</text>
+<text x="794.8" y="460" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数千（TLC 更低）</text>
+<text x="1011.6" y="460" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器隐藏</text>
+<rect x="36" y="472" width="1084" height="32" fill="#ffffff"/>
+<line x1="36" y1="472" x2="1120" y2="472" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="492" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">UFS</text>
+<text x="361.2" y="492" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">M-PHY</text>
+<text x="578" y="492" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器管理</text>
+<text x="794.8" y="492" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数千</text>
+<text x="1011.6" y="492" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器隐藏</text>
+<rect x="36" y="504" width="1084" height="32" fill="#ffffff"/>
+<line x1="36" y1="504" x2="1120" y2="504" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="524" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SD 卡</text>
+<text x="361.2" y="524" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">SDIO</text>
+<text x="578" y="524" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器管理</text>
+<text x="794.8" y="524" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数千</text>
+<text x="1011.6" y="524" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器隐藏</text>
+<line x1="36" y1="536" x2="1120" y2="536" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="556" width="1084" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="586" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">③ 寿命与掉电</text>
+<text x="52" y="610" font-size="10.2" fill="#334155" xml:space="preserve">可写总量 ≈ 容量 × P/E ÷ 写放大；先估每天写入量，再选介质与文件系统。</text>
+<text x="52" y="628" font-size="10.2" fill="#334155" xml:space="preserve">频繁小写 + fsync 会显著放大写入；日志、数据库、overlay 是三个主要来源。</text>
+<text x="52" y="646" font-size="10.2" fill="#334155" xml:space="preserve">掉电保护要三层叠加：硬件掉电检测 + 日志/COW 文件系统 + 应用原子替换。</text>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">读图：写入路径越往下越“贵”；选型先看擦除单位与寿命，再看容量与价格。</text>
+</svg>

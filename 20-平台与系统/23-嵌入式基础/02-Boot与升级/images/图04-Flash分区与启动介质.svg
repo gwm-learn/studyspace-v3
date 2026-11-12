@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="760" viewBox="0 0 1160 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1160" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1124" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · Flash 分区与启动介质</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">分区按“可变性”划分：只读引导、可替换系统、可写配置、只读出厂数据。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">下半张表对比启动介质的擦除单位与坏块特性，决定文件系统与升级方式。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">只读/兜底</text>
+<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">可替换系统</text>
+<line x1="265.6" y1="142" x2="295.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="303.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">可写数据</text>
+<line x1="371.6" y1="142" x2="401.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="409.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">出厂数据</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 同一片 Flash 上的分区顺序（示意）</text>
+<rect x="36" y="196" width="150" height="92" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="46" y="218" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">bootloader</text>
+<text x="46" y="238" font-size="9.2" fill="#334155" xml:space="preserve">SPL/U-Boot</text>
+<text x="46" y="274" font-size="9.4" fill="#64748b" xml:space="preserve">只读</text>
+<rect x="186" y="196" width="90" height="92" fill="#fff9ee" stroke="#d97706" stroke-width="1.2"/>
+<text x="196" y="218" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">env</text>
+<text x="196" y="238" font-size="9.2" fill="#334155" xml:space="preserve">双份+CRC</text>
+<text x="196" y="274" font-size="9.4" fill="#64748b" xml:space="preserve">可写</text>
+<rect x="276" y="196" width="160" height="92" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="286" y="218" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">kernel</text>
+<text x="286" y="238" font-size="9.2" fill="#334155" xml:space="preserve">kernel+DTB</text>
+<text x="286" y="274" font-size="9.4" fill="#64748b" xml:space="preserve">升级替换</text>
+<rect x="436" y="196" width="300" height="92" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="446" y="218" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">rootfs</text>
+<text x="446" y="238" font-size="9.2" fill="#334155" xml:space="preserve">squashfs/erofs</text>
+<text x="446" y="274" font-size="9.4" fill="#64748b" xml:space="preserve">升级替换</text>
+<rect x="736" y="196" width="200" height="92" fill="#f2fcf5" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="746" y="218" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">overlay</text>
+<text x="746" y="238" font-size="9.2" fill="#334155" xml:space="preserve">配置/日志</text>
+<text x="746" y="274" font-size="9.4" fill="#64748b" xml:space="preserve">可写</text>
+<rect x="936" y="196" width="170" height="92" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2"/>
+<text x="946" y="218" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">factory</text>
+<text x="946" y="238" font-size="9.2" fill="#334155" xml:space="preserve">MAC/校准</text>
+<text x="946" y="274" font-size="9.4" fill="#64748b" xml:space="preserve">只读</text>
+<text x="36" y="312" font-size="9" fill="#64748b" xml:space="preserve">0x0</text>
+<text x="1102" y="312" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="end">Flash 末尾</text>
+<text x="36" y="352" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 启动介质：擦除单位决定文件系统与升级方式</text>
+<rect x="36" y="368" width="1070" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="388" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">介质</text>
+<text x="357" y="388" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">容量量级</text>
+<text x="571" y="388" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">擦除单位</text>
+<text x="785" y="388" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">坏块</text>
+<text x="999" y="388" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型用途</text>
+<rect x="36" y="398" width="1070" height="32" fill="#ffffff"/>
+<line x1="36" y1="398" x2="1106" y2="398" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="418" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SPI NOR</text>
+<text x="357" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">MB</text>
+<text x="571" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">4 KB 扇区 / 64 KB 块</text>
+<text x="785" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">少</text>
+<text x="999" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">bootloader、小系统</text>
+<rect x="36" y="430" width="1070" height="32" fill="#ffffff"/>
+<line x1="36" y1="430" x2="1106" y2="430" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="450" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SPI NAND</text>
+<text x="357" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">百 MB</text>
+<text x="571" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">128 KB 块 + OOB</text>
+<text x="785" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">有，需管理</text>
+<text x="999" y="450" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">低成本网关、IoT</text>
+<rect x="36" y="462" width="1070" height="32" fill="#ffffff"/>
+<line x1="36" y1="462" x2="1106" y2="462" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="482" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">eMMC</text>
+<text x="357" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">GB</text>
+<text x="571" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器管理</text>
+<text x="785" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器隐藏</text>
+<text x="999" y="482" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">CPE、网关、大容量</text>
+<rect x="36" y="494" width="1070" height="32" fill="#ffffff"/>
+<line x1="36" y1="494" x2="1106" y2="494" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="514" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">SD 卡</text>
+<text x="357" y="514" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">GB</text>
+<text x="571" y="514" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器管理</text>
+<text x="785" y="514" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">控制器隐藏</text>
+<text x="999" y="514" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">研发调试、可插拔</text>
+<rect x="36" y="526" width="1070" height="32" fill="#ffffff"/>
+<line x1="36" y1="526" x2="1106" y2="526" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="546" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">USB</text>
+<text x="357" y="546" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">GB+</text>
+<text x="571" y="546" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">—</text>
+<text x="785" y="546" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">—</text>
+<text x="999" y="546" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">量产烧录、救援</text>
+<line x1="36" y1="558" x2="1106" y2="558" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="570" width="1070" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="600" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="624" font-size="10.2" fill="#334155" xml:space="preserve">① 升级只允许改“可替换/可写”段；bootloader 与 factory 必须由独立机制保护。</text>
+<text x="52" y="642" font-size="10.2" fill="#334155" xml:space="preserve">② NAND 必须配 UBI/UBIFS 或带坏块管理的文件系统；裸 NAND 上直接跑 ext4 会丢数据。</text>
+<text x="52" y="660" font-size="10.2" fill="#334155" xml:space="preserve">③ 分区表一旦量产就难改：镜像大小、overlay 写入量都要留余量。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">示意布局，不代表具体产品的偏移；实际以分区表与 eMMC 硬件分区为准。</text>
+</svg>

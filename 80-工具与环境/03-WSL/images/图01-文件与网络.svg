@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="960" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="924" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · WSL2 的 NAT 路径与端口转发</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Windows→WSL 靠 localhost 转发；局域网→WSL 靠 Windows portproxy；WSL→Windows 用网关地址</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常流量</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">转发/NAT</text>
+<rect x="60" y="200" width="220" height="110" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="60" y="200" width="4.5" height="110" fill="#0f9d58" rx="2"/>
+<text x="73" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">WSL2 发行版</text>
+<text x="73" y="236" font-size="9.6" fill="#334155" xml:space="preserve">eth0: 172.x.x.x</text>
+<text x="73" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">应用监听 0.0.0.0:3000</text>
+<text x="73" y="266.8" font-size="9.6" fill="#334155" xml:space="preserve">sshd 22</text>
+<rect x="370" y="200" width="230" height="110" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="370" y="200" width="4.5" height="110" fill="#d97706" rx="2"/>
+<text x="383" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Windows NAT / 转发</text>
+<text x="383" y="236" font-size="9.6" fill="#334155" xml:space="preserve">vEthernet (WSL)</text>
+<text x="383" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">localhostForwarding</text>
+<text x="383" y="266.8" font-size="9.6" fill="#334155" xml:space="preserve">netsh portproxy</text>
+<rect x="690" y="200" width="220" height="110" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="690" y="200" width="4.5" height="110" fill="#475569" rx="2"/>
+<text x="703" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">局域网 / 其他主机</text>
+<text x="703" y="236" font-size="9.6" fill="#334155" xml:space="preserve">SSH 客户端</text>
+<text x="703" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">浏览器/服务消费者</text>
+<line x1="280" y1="240" x2="370" y2="240" stroke="#4f46e5" stroke-width="2.4"/>
+<polygon points="370,240 361,235.5 361,244.5" fill="#4f46e5"/>
+<line x1="600" y1="240" x2="690" y2="240" stroke="#4f46e5" stroke-width="2.4"/>
+<polygon points="690,240 681,235.5 681,244.5" fill="#4f46e5"/>
+<line x1="690" y1="285" x2="600" y2="285" stroke="#d97706" stroke-width="2.2"/>
+<polygon points="600,285 609,289.5 609,280.5" fill="#d97706"/>
+<line x1="600" y1="285" x2="280" y2="285" stroke="#d97706" stroke-width="2.2"/>
+<polygon points="280,285 289,289.5 289,280.5" fill="#d97706"/>
+<line x1="370" y1="330" x2="280" y2="330" stroke="#d97706" stroke-width="2.2" stroke-dasharray="3 3"/>
+<polygon points="280,330 289,334.5 289,325.5" fill="#d97706"/>
+<text x="333" y="324" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">localhost:3000 → WSL:3000</text>
+<rect x="60" y="380" width="400" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="410" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">NAT 模式的边界</text>
+<text x="76" y="434" font-size="10.2" fill="#334155" xml:space="preserve">WSL 访问 Windows 服务：用默认网关地址。</text>
+<text x="76" y="452" font-size="10.2" fill="#334155" xml:space="preserve">Windows 访问 WSL：localhost 仅保证 TCP。</text>
+<text x="76" y="470" font-size="10.2" fill="#334155" xml:space="preserve">WSL 重启后 IP 变化，portproxy 会失效。</text>
+<rect x="500" y="380" width="410" height="110" fill="#ecfeff" rx="10" stroke="#0891b2" stroke-width="1"/>
+<text x="516" y="410" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">mirrored 模式</text>
+<text x="516" y="434" font-size="10.2" fill="#334155" xml:space="preserve">WSL 共享 Windows 网络接口与 localhost。</text>
+<text x="516" y="452" font-size="10.2" fill="#334155" xml:space="preserve">VPN/IPv6/局域网访问更自然。</text>
+<text x="516" y="470" font-size="10.2" fill="#334155" xml:space="preserve">需要较新 Windows 11；防火墙策略直接生效。</text>
+<rect x="60" y="530" width="850" height="110" fill="#ecfeff" rx="10" stroke="#0891b2" stroke-width="1"/>
+<text x="76" y="560" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="584" font-size="10.2" fill="#334155" xml:space="preserve">上排是出方向：WSL 经 Windows NAT 访问外部。</text>
+<text x="76" y="602" font-size="10.2" fill="#334155" xml:space="preserve">下排是入方向：外部只能先到 Windows，再由 portproxy 转到 WSL 当前 IP。</text>
+<text x="76" y="620" font-size="10.2" fill="#334155" xml:space="preserve">localhost 转发是 Windows→WSL 的便利通道，不是双向的 localhost。</text>
+<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库 .图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">WSL · studyspace-v3</text>
+</svg>

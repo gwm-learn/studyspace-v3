@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="620" viewBox="0 0 1120 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 镜像分层：只读层叠加，容器加可写层</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">镜像是一组按顺序叠加的只读层；容器启动时在最上面加一层可写层，写时复制。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：从下往上是基础镜像到应用层；同一层可被多个镜像共享，tag 只是指向某个 manifest。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">基础镜像层</text>
+<line x1="153" y1="142" x2="183" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="191" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">应用层</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">容器可写层</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 镜像层与容器层</text>
+<rect x="60" y="195" width="430" height="58" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="60" y="195" width="4.5" height="58" fill="#d97706" rx="2"/>
+<text x="73" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">容器可写层（container layer）</text>
+<text x="73" y="231" font-size="9.6" fill="#334155" xml:space="preserve">docker run 时创建；容器删除即丢失</text>
+<rect x="60" y="268" width="430" height="58" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="60" y="268" width="4.5" height="58" fill="#0891b2" rx="2"/>
+<text x="73" y="287" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">应用层：配置与入口</text>
+<text x="73" y="304" font-size="9.6" fill="#334155" xml:space="preserve">COPY config / ENTRYPOINT</text>
+<rect x="60" y="341" width="430" height="58" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="60" y="341" width="4.5" height="58" fill="#0891b2" rx="2"/>
+<text x="73" y="360" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">应用层：复制产物</text>
+<text x="73" y="377" font-size="9.6" fill="#334155" xml:space="preserve">COPY --from=builder /out/app /usr/bin/app</text>
+<rect x="60" y="414" width="430" height="58" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="60" y="414" width="4.5" height="58" fill="#4f46e5" rx="2"/>
+<text x="73" y="433" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">基础镜像层：运行时依赖</text>
+<text x="73" y="450" font-size="9.6" fill="#334155" xml:space="preserve">FROM ubuntu:24.04 + apt 安装的库</text>
+<rect x="60" y="487" width="430" height="58" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="60" y="487" width="4.5" height="58" fill="#4f46e5" rx="2"/>
+<text x="73" y="506" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">基础镜像层：最小根文件系统</text>
+<text x="73" y="523" font-size="9.6" fill="#334155" xml:space="preserve">ubuntu:24.04 的只读层</text>
+<text x="620" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② tag、digest 与共享</text>
+<rect x="620" y="195" width="430" height="30" fill="#f1f5f9" rx="6"/>
+<text x="628" y="215" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">对象</text>
+<text x="835" y="215" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">是否可变</text>
+<text x="978.33" y="215" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">用途</text>
+<rect x="620" y="225" width="430" height="30" fill="#ffffff"/>
+<line x1="620" y1="225" x2="1050" y2="225" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="628" y="245" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">tag</text>
+<text x="835" y="245" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">可变</text>
+<text x="978.33" y="245" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">人读的别名，如 app:1.2</text>
+<rect x="620" y="255" width="430" height="30" fill="#ffffff"/>
+<line x1="620" y1="255" x2="1050" y2="255" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="628" y="275" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">digest</text>
+<text x="835" y="275" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">不可变</text>
+<text x="978.33" y="275" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">内容寻址，如 sha256:...</text>
+<rect x="620" y="285" width="430" height="30" fill="#ffffff"/>
+<line x1="620" y1="285" x2="1050" y2="285" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="628" y="305" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">layer</text>
+<text x="835" y="305" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">不可变</text>
+<text x="978.33" y="305" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">跨镜像共享，按内容去重</text>
+<rect x="620" y="315" width="430" height="30" fill="#ffffff"/>
+<line x1="620" y1="315" x2="1050" y2="315" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="628" y="335" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">container</text>
+<text x="835" y="335" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">可变</text>
+<text x="978.33" y="335" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">运行实例，带可写层</text>
+<line x1="620" y1="345" x2="1050" y2="345" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="620" y="355" width="430" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="636" y="385" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="636" y="409" font-size="10.2" fill="#334155" xml:space="preserve">每条 Dockerfile 指令通常生成一层；层只读，改动发生在最上面的容器层。</text>
+<text x="636" y="427" font-size="10.2" fill="#334155" xml:space="preserve">写时复制：容器改文件时，先把该文件从只读层复制到可写层，再修改。</text>
+<text x="636" y="445" font-size="10.2" fill="#334155" xml:space="preserve">docker commit 可以把可写层固化成新镜像，但不可复现，工程上应由 Dockerfile 构建。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">命令：docker image history &lt;image&gt; 看分层；docker image inspect 看 digest 与配置。</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；具体层数取决于存储驱动与构建方式。</text>
+</svg>

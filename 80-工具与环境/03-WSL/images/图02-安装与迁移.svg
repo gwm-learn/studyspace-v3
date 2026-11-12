@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="560" viewBox="0 0 1220 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1220" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1184" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 安装与迁移：导出 → 注销 → 导入</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">WSL 默认把发行版装在系统盘；迁移的本质是先导出 tar，再注销旧实例，最后导入到目标目录。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：从左到右是迁移顺序；注销会删除旧实例，执行前必须确认 tar 已生成。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">准备</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">导出/导入</text>
+<line x1="232.6" y1="142" x2="262.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="270.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">风险步骤</text>
+<line x1="338.6" y1="142" x2="368.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="376.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">收尾</text>
+<rect x="36" y="195" width="170" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="195" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="49" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">启用功能</text>
+<text x="49" y="231" font-size="8.8" fill="#334155" xml:space="preserve">VirtualMachinePlatform</text>
+<text x="49" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">WSL 可选组件</text>
+<line x1="206" y1="236" x2="226" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="226,236 217,231.5 217,240.5" fill="#94a3b8"/>
+<rect x="226" y="195" width="170" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="226" y="195" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="239" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">安装发行版</text>
+<text x="239" y="231" font-size="8.8" fill="#334155" xml:space="preserve">Microsoft Store</text>
+<text x="239" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">或 appx 离线包</text>
+<line x1="396" y1="236" x2="416" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="416,236 407,231.5 407,240.5" fill="#94a3b8"/>
+<rect x="416" y="195" width="170" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="416" y="195" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="429" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">导出 tar</text>
+<text x="429" y="231" font-size="8.8" fill="#334155" xml:space="preserve">wsl --export</text>
+<text x="429" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">确认文件完整</text>
+<line x1="586" y1="236" x2="606" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="606,236 597,231.5 597,240.5" fill="#94a3b8"/>
+<rect x="606" y="195" width="170" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="606" y="195" width="4.5" height="82" fill="#dc2626" rx="2"/>
+<text x="619" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">注销旧实例</text>
+<text x="619" y="231" font-size="8.8" fill="#334155" xml:space="preserve">wsl --unregister</text>
+<text x="619" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">会删除旧 vhdx</text>
+<line x1="776" y1="236" x2="796" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="796,236 787,231.5 787,240.5" fill="#94a3b8"/>
+<rect x="796" y="195" width="170" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="796" y="195" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="809" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">导入新目录</text>
+<text x="809" y="231" font-size="8.8" fill="#334155" xml:space="preserve">wsl --import</text>
+<text x="809" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">指定 --version 2</text>
+<line x1="966" y1="236" x2="986" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="986,236 977,231.5 977,240.5" fill="#94a3b8"/>
+<rect x="986" y="195" width="180" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="986" y="195" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="999" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">设置默认用户</text>
+<text x="999" y="231" font-size="8.8" fill="#334155" xml:space="preserve">&lt;distro&gt;.exe config</text>
+<text x="999" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">--default-user</text>
+<rect x="36" y="340" width="1050" height="146" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="370" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="394" font-size="10.2" fill="#334155" xml:space="preserve">导出前先 wsl --shutdown，避免 vhdx 正在写入导致 tar 不完整。</text>
+<text x="52" y="412" font-size="10.2" fill="#334155" xml:space="preserve">wsl --unregister 会删除发行版及其数据；tar 是唯一的迁移载体，务必先校验。</text>
+<text x="52" y="430" font-size="10.2" fill="#334155" xml:space="preserve">导入目录必须在 Windows 文件系统上，WSL 会在该目录生成新的 ext4.vhdx。</text>
+<text x="52" y="448" font-size="10.2" fill="#334155" xml:space="preserve">迁移后默认用户可能变成 root，需要用 &lt;distro&gt;.exe config --default-user &lt;name&gt; 修正。</text>
+<text x="52" y="466" font-size="10.2" fill="#334155" xml:space="preserve">资源限制写在 .wslconfig（Windows 用户目录），不要写进发行版的 /etc/wsl.conf。</text>
+<text x="36" y="506" font-size="12.3" fill="#64748b" xml:space="preserve">命令：wsl -l -v、wsl --export、wsl --unregister、wsl --import、wsl --set-default-version 2。</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；不同 Windows 版本的组件名称和默认发行版名可能不同。</text>
+</svg>

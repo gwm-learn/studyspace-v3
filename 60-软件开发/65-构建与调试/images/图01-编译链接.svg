@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="680" viewBox="0 0 1080 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 编译、汇编、链接与库解析</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">每个 .c 独立编译成 .o，链接器解析符号；静态库按需抽取，动态库运行期加载。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：上半部分是四阶段，下半部分对比静态库/动态库的解析时机与产物。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">工具链阶段</text>
+<line x1="153" y1="142" x2="183" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="191" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">目标文件</text>
+<line x1="259" y1="142" x2="289" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="297" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">静态链接</text>
+<line x1="365" y1="142" x2="395" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="403" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">动态链接</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 四阶段</text>
+<rect x="36" y="190" width="150" height="80" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="80" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">foo.c</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">源码 + 头文件</text>
+<line x1="186" y1="230" x2="206" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="206,230 197,225.5 197,234.5" fill="#94a3b8"/>
+<rect x="206" y="190" width="160" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="206" y="190" width="4.5" height="80" fill="#4f46e5" rx="2"/>
+<text x="219" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">cpp</text>
+<text x="219" y="226" font-size="9.6" fill="#334155" xml:space="preserve">宏/包含/条件编译</text>
+<line x1="366" y1="230" x2="386" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="386,230 377,225.5 377,234.5" fill="#94a3b8"/>
+<rect x="386" y="190" width="160" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="386" y="190" width="4.5" height="80" fill="#4f46e5" rx="2"/>
+<text x="399" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">cc1</text>
+<text x="399" y="226" font-size="9.6" fill="#334155" xml:space="preserve">类型检查/优化</text>
+<line x1="546" y1="230" x2="566" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="566,230 557,225.5 557,234.5" fill="#94a3b8"/>
+<rect x="566" y="190" width="160" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="566" y="190" width="4.5" height="80" fill="#4f46e5" rx="2"/>
+<text x="579" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">as</text>
+<text x="579" y="226" font-size="9.6" fill="#334155" xml:space="preserve">机器码/符号表</text>
+<line x1="726" y1="230" x2="746" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="746,230 737,225.5 737,234.5" fill="#94a3b8"/>
+<rect x="746" y="190" width="160" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="746" y="190" width="4.5" height="80" fill="#0f9d58" rx="2"/>
+<text x="759" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ld</text>
+<text x="759" y="226" font-size="9.6" fill="#334155" xml:space="preserve">符号解析/重定位</text>
+<text x="36" y="300" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 静态库 vs 动态库</text>
+<rect x="36" y="314" width="250" height="100" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="314" width="4.5" height="100" fill="#d97706" rx="2"/>
+<text x="49" y="333" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">libfoo.a（静态库）</text>
+<text x="49" y="350" font-size="9.6" fill="#334155" xml:space="preserve">链接时抽取被引用成员</text>
+<text x="49" y="365.4" font-size="9.6" fill="#334155" xml:space="preserve">复制进可执行文件</text>
+<text x="49" y="380.8" font-size="9.6" fill="#334155" xml:space="preserve">运行期无库依赖</text>
+<text x="49" y="396.2" font-size="9.6" fill="#334155" xml:space="preserve">升级需重新链接</text>
+<rect x="330" y="314" width="250" height="100" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="330" y="314" width="4.5" height="100" fill="#0891b2" rx="2"/>
+<text x="343" y="333" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">libfoo.so（共享库）</text>
+<text x="343" y="350" font-size="9.6" fill="#334155" xml:space="preserve">链接时只记录依赖</text>
+<text x="343" y="365.4" font-size="9.6" fill="#334155" xml:space="preserve">运行期由 ld.so 加载</text>
+<text x="343" y="380.8" font-size="9.6" fill="#334155" xml:space="preserve">需要 rpath/LD_LIBRARY_PATH</text>
+<text x="343" y="396.2" font-size="9.6" fill="#334155" xml:space="preserve">ABI 兼容可替换</text>
+<rect x="624" y="314" width="250" height="100" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="624" y="314" width="4.5" height="100" fill="#0f9d58" rx="2"/>
+<text x="637" y="333" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">符号解析</text>
+<text x="637" y="350" font-size="9.6" fill="#334155" xml:space="preserve">T/D/B 已定义</text>
+<text x="637" y="365.4" font-size="9.6" fill="#334155" xml:space="preserve">U 未定义待解析</text>
+<text x="637" y="380.8" font-size="9.6" fill="#334155" xml:space="preserve">弱符号可被覆盖</text>
+<text x="637" y="396.2" font-size="9.6" fill="#334155" xml:space="preserve">nm/readelf 查看</text>
+<text x="36" y="440" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">③ 错误分层</text>
+<rect x="36" y="454" width="1000" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="474" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">阶段</text>
+<text x="536" y="474" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型错误</text>
+<text x="869.33" y="474" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">首要检查</text>
+<rect x="36" y="484" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="484" x2="1036" y2="484" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="504" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">预处理</text>
+<text x="536" y="504" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">头文件找不到、宏展开错误</text>
+<text x="869.33" y="504" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">-I / sysroot / gcc -E</text>
+<rect x="36" y="514" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="514" x2="1036" y2="514" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="534" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">编译</text>
+<text x="536" y="534" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">语法错、类型不匹配、警告</text>
+<text x="869.33" y="534" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">-std / -Wall / 头文件声明</text>
+<rect x="36" y="544" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="544" x2="1036" y2="544" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="564" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">链接</text>
+<text x="536" y="564" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">undefined reference、重复定义</text>
+<text x="869.33" y="564" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">库顺序 / -l / 符号可见性</text>
+<rect x="36" y="574" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="574" x2="1036" y2="574" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="594" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">加载</text>
+<text x="536" y="594" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">libfoo.so not found、GLIBC 版本</text>
+<text x="869.33" y="594" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">rpath / ldconfig / 工具链版本</text>
+<line x1="36" y1="604" x2="1036" y2="604" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="626" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">工具名以 GCC 为例；Clang 的阶段划分相同。</text>
+</svg>

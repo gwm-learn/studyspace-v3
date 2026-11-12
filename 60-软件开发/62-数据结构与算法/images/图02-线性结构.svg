@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="600" viewBox="0 0 1080 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 顺序表、链表与环形队列：搬移 vs 改指针</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">顺序表插入要搬移后续元素；链表插入只改两个指针；环形队列用取模复用空间。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：上半部分对比插入动作，下半部分看 head/tail 与“留一个空槽”判满。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">元素</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">新元素 x</text>
+<line x1="228.2" y1="142" x2="258.2" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="266.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">head/tail 标记</text>
+<line x1="378.2" y1="142" x2="408.2" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="416.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">空槽</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 顺序表在位置 1 插入 x</text>
+<rect x="36" y="190" width="72" height="46" fill="#eef2ff" rx="5" stroke="#4f46e5" stroke-width="1"/>
+<text x="72" y="218" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle">a0</text>
+<rect x="110" y="190" width="72" height="46" fill="#eef2ff" rx="5" stroke="#4f46e5" stroke-width="1"/>
+<text x="146" y="218" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle">a1</text>
+<rect x="184" y="190" width="72" height="46" fill="#eef2ff" rx="5" stroke="#4f46e5" stroke-width="1"/>
+<text x="220" y="218" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle">a2</text>
+<rect x="258" y="190" width="72" height="46" fill="#eef2ff" rx="5" stroke="#4f46e5" stroke-width="1"/>
+<text x="294" y="218" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle">a3</text>
+<rect x="332" y="190" width="72" height="46" fill="#f8fafc" rx="5" stroke="#475569" stroke-width="1"/>
+<text x="368" y="218" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle"></text>
+<text x="36" y="262" font-size="10.2" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">插入前：[a0][a1][a2][a3][ ]</text>
+<line x1="36" y1="288" x2="380" y2="288" stroke="#d97706" stroke-width="1.4"/>
+<polygon points="380,288 371,283.5 371,292.5" fill="#d97706"/>
+<text x="216" y="282" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">从尾部向前搬移 a1..a3</text>
+<rect x="36" y="306" width="72" height="46" fill="#eef2ff" rx="5" stroke="#4f46e5" stroke-width="1"/>
+<text x="72" y="334" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle">a0</text>
+<rect x="110" y="306" width="72" height="46" fill="#f2fcf5" rx="5" stroke="#0f9d58" stroke-width="1"/>
+<text x="146" y="334" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle">x</text>
+<rect x="184" y="306" width="72" height="46" fill="#eef2ff" rx="5" stroke="#4f46e5" stroke-width="1"/>
+<text x="220" y="334" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle">a1</text>
+<rect x="258" y="306" width="72" height="46" fill="#eef2ff" rx="5" stroke="#4f46e5" stroke-width="1"/>
+<text x="294" y="334" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle">a2</text>
+<rect x="332" y="306" width="72" height="46" fill="#eef2ff" rx="5" stroke="#4f46e5" stroke-width="1"/>
+<text x="368" y="334" font-size="10" fill="#0f172a" xml:space="preserve" text-anchor="middle">a3</text>
+<text x="560" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 单链表在 prev 后插入 node</text>
+<rect x="560" y="200" width="120" height="54" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="560" y="200" width="4.5" height="54" fill="#4f46e5" rx="2"/>
+<text x="573" y="219" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">prev</text>
+<text x="573" y="236" font-size="8.8" fill="#334155" xml:space="preserve">next →</text>
+<line x1="680" y1="227" x2="730" y2="227" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="730,227 721,222.5 721,231.5" fill="#d97706"/>
+<rect x="730" y="200" width="120" height="54" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="730" y="200" width="4.5" height="54" fill="#0f9d58" rx="2"/>
+<text x="743" y="219" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">node</text>
+<text x="743" y="236" font-size="8.8" fill="#334155" xml:space="preserve">next →</text>
+<line x1="850" y1="227" x2="900" y2="227" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="900,227 891,222.5 891,231.5" fill="#d97706"/>
+<rect x="900" y="200" width="120" height="54" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="900" y="200" width="4.5" height="54" fill="#475569" rx="2"/>
+<text x="913" y="219" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">old_next</text>
+<text x="913" y="236" font-size="8.8" fill="#334155" xml:space="preserve">next → ∅</text>
+<text x="560" y="286" font-size="10" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">顺序：node-&gt;next = prev-&gt;next;</text>
+<text x="560" y="306" font-size="10" fill="#334155" xml:space="preserve" font-family="'DejaVu Sans Mono','Noto Sans Mono CJK SC',monospace">      prev-&gt;next = node;   /* 先接后断 */</text>
+<text x="36" y="390" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">③ 环形队列：head 读、tail 写，保留一个空槽</text>
+<rect x="36" y="404" width="64" height="44" fill="#f8fafc" rx="4" stroke="#475569" stroke-width="1"/>
+<text x="68" y="431" font-size="9.4" fill="#0f172a" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="102" y="404" width="64" height="44" fill="#f8fafc" rx="4" stroke="#475569" stroke-width="1"/>
+<text x="134" y="431" font-size="9.4" fill="#0f172a" xml:space="preserve" text-anchor="middle">1</text>
+<rect x="168" y="404" width="64" height="44" fill="#fff9ee" rx="4" stroke="#d97706" stroke-width="1"/>
+<text x="200" y="431" font-size="9.4" fill="#0f172a" xml:space="preserve" text-anchor="middle">2</text>
+<rect x="234" y="404" width="64" height="44" fill="#eef2ff" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="266" y="431" font-size="9.4" fill="#0f172a" xml:space="preserve" text-anchor="middle">3</text>
+<rect x="300" y="404" width="64" height="44" fill="#eef2ff" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="332" y="431" font-size="9.4" fill="#0f172a" xml:space="preserve" text-anchor="middle">4</text>
+<rect x="366" y="404" width="64" height="44" fill="#eef2ff" rx="4" stroke="#4f46e5" stroke-width="1"/>
+<text x="398" y="431" font-size="9.4" fill="#0f172a" xml:space="preserve" text-anchor="middle">5</text>
+<rect x="432" y="404" width="64" height="44" fill="#fff9ee" rx="4" stroke="#d97706" stroke-width="1"/>
+<text x="464" y="431" font-size="9.4" fill="#0f172a" xml:space="preserve" text-anchor="middle">6</text>
+<rect x="498" y="404" width="64" height="44" fill="#f8fafc" rx="4" stroke="#475569" stroke-width="1"/>
+<text x="530" y="431" font-size="9.4" fill="#0f172a" xml:space="preserve" text-anchor="middle">7</text>
+<text x="36" y="474" font-size="10.2" fill="#334155" xml:space="preserve">head=2（读） tail=6（写） next(tail)=head ⇒ 满；占用 2..5 共 4 个，容量 8 实际可用 7</text>
+<rect x="600" y="390" width="430" height="128" fill="#fff5f5" rx="10" stroke="#dc2626" stroke-width="1"/>
+<text x="616" y="420" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="616" y="444" font-size="10.2" fill="#334155" xml:space="preserve">・判满：next(tail) == head，牺牲一个槽位</text>
+<text x="616" y="462" font-size="10.2" fill="#334155" xml:space="preserve">・单生产者/单消费者可用原子 head/tail</text>
+<text x="616" y="480" font-size="10.2" fill="#334155" xml:space="preserve">・多生产者仍需锁或更复杂的无锁算法</text>
+<text x="616" y="498" font-size="10.2" fill="#334155" xml:space="preserve">・满时策略：丢弃、覆盖还是背压，必须显式定义</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">下标与容量为示意；实际实现可用掩码替代取模。</text>
+</svg>

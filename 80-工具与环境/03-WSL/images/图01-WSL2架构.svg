@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="700" viewBox="0 0 1040 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1040" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1004" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · WSL2 架构：轻量虚拟机 + 双向通道</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">WSL2 不是“Windows 里的 Linux 兼容层”，而是一个跑真实 Linux 内核的轻量 Hyper-V 虚拟机。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左边是 Windows，中间是虚拟机，右边是发行版；下方三条通道分别对应文件、网络和命令互操作。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">Windows 宿主</text>
+<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">WSL2 虚拟机</text>
+<line x1="300.8" y1="142" x2="330.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="338.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">Linux 发行版</text>
+<line x1="435.4" y1="142" x2="465.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="473.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">互通通道</text>
+<rect x="36" y="195" width="260" height="150" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="195" width="4.5" height="150" fill="#d97706" rx="2"/>
+<text x="49" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Windows 宿主</text>
+<text x="49" y="231" font-size="9.6" fill="#334155" xml:space="preserve">NTFS（C: / D:）</text>
+<text x="49" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">Hyper-V 虚拟交换机</text>
+<text x="49" y="261.8" font-size="9.6" fill="#334155" xml:space="preserve">wsl.exe / Windows Terminal</text>
+<rect x="360" y="195" width="280" height="150" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="360" y="195" width="4.5" height="150" fill="#4f46e5" rx="2"/>
+<text x="373" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">WSL2 轻量虚拟机</text>
+<text x="373" y="231" font-size="9.6" fill="#334155" xml:space="preserve">真实 Linux 内核</text>
+<text x="373" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">vmmem 进程占用内存</text>
+<text x="373" y="261.8" font-size="9.6" fill="#334155" xml:space="preserve">默认 NAT 网络</text>
+<rect x="704" y="195" width="260" height="150" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="704" y="195" width="4.5" height="150" fill="#0891b2" rx="2"/>
+<text x="717" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Linux 发行版</text>
+<text x="717" y="231" font-size="9.6" fill="#334155" xml:space="preserve">Ubuntu / Debian 等 rootfs</text>
+<text x="717" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">ext4.vhdx 虚拟磁盘</text>
+<text x="717" y="261.8" font-size="9.6" fill="#334155" xml:space="preserve">systemd 可选启用</text>
+<line x1="296" y1="270" x2="360" y2="270" stroke="#475569" stroke-width="2.2"/>
+<polygon points="360,270 351,265.5 351,274.5" fill="#475569"/>
+<line x1="640" y1="270" x2="704" y2="270" stroke="#475569" stroke-width="2.2"/>
+<polygon points="704,270 695,265.5 695,274.5" fill="#475569"/>
+<rect x="36" y="390" width="280" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="390" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="49" y="409" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">文件通道</text>
+<text x="49" y="426" font-size="8.8" fill="#334155" xml:space="preserve">/mnt/c → NTFS（drvfs）</text>
+<text x="49" y="441.4" font-size="8.8" fill="#334155" xml:space="preserve">\\wsl$\Distro → Linux 文件</text>
+<rect x="360" y="390" width="280" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="360" y="390" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="373" y="409" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">网络通道</text>
+<text x="373" y="426" font-size="8.8" fill="#334155" xml:space="preserve">NAT 虚拟网卡</text>
+<text x="373" y="441.4" font-size="8.8" fill="#334155" xml:space="preserve">localhostForwarding 端口转发</text>
+<rect x="704" y="390" width="280" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="704" y="390" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="717" y="409" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">互操作通道</text>
+<text x="717" y="426" font-size="8.8" fill="#334155" xml:space="preserve">Linux 里调用 .exe</text>
+<text x="717" y="441.4" font-size="8.8" fill="#334155" xml:space="preserve">Windows 里调用 wsl.exe</text>
+<line x1="166" y1="345" x2="166" y2="390" stroke="#475569" stroke-width="2"/>
+<polygon points="166,390 170.5,381 161.5,381" fill="#475569"/>
+<line x1="500" y1="345" x2="500" y2="390" stroke="#475569" stroke-width="2"/>
+<polygon points="500,390 504.5,381 495.5,381" fill="#475569"/>
+<line x1="834" y1="345" x2="834" y2="390" stroke="#475569" stroke-width="2"/>
+<polygon points="834,390 838.5,381 829.5,381" fill="#475569"/>
+<rect x="36" y="500" width="950" height="128" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="554" font-size="10.2" fill="#334155" xml:space="preserve">WSL2 的 Linux 文件系统在 ext4.vhdx 里，和 Windows 的 NTFS 是两套文件系统。</text>
+<text x="52" y="572" font-size="10.2" fill="#334155" xml:space="preserve">跨文件系统访问（/mnt/c）方便但慢，大量小文件编译应放在 Linux 文件系统内。</text>
+<text x="52" y="590" font-size="10.2" fill="#334155" xml:space="preserve">默认 NAT 网络下，Windows 访问 WSL 服务可用 localhost；局域网访问要端口转发。</text>
+<text x="52" y="608" font-size="10.2" fill="#334155" xml:space="preserve">wsl --shutdown 会关闭整个虚拟机；下次启动重新引导内核。</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">配置：/etc/wsl.conf 管发行版内部；C:\Users\&lt;name&gt;\.wslconfig 管虚拟机资源。</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；WSL1 与 WSL2 的架构不同，本篇默认 WSL2。</text>
+</svg>

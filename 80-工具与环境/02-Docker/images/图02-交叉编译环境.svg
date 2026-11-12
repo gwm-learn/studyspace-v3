@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="740" viewBox="0 0 1020 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1020" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="984" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 交叉编译环境：工具链进镜像，源码走挂载</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">镜像固化编译器、库和脚本；源码与产物通过 bind mount 留在宿主机，容器只负责执行构建。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左侧是宿主目录，中间是容器，右侧是产物；下方是工具链镜像的来源。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">宿主机</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">容器</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">产物</text>
+<line x1="299" y1="142" x2="329" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="337" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">工具链镜像</text>
+<rect x="36" y="195" width="240" height="100" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="195" width="4.5" height="100" fill="#d97706" rx="2"/>
+<text x="49" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">宿主源码目录</text>
+<text x="49" y="231" font-size="9.6" fill="#334155" xml:space="preserve">$PWD → /work</text>
+<text x="49" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">UID/GID 与镜像用户一致</text>
+<rect x="360" y="195" width="300" height="140" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="360" y="195" width="4.5" height="140" fill="#4f46e5" rx="2"/>
+<text x="373" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">编译容器</text>
+<text x="373" y="231" font-size="9.6" fill="#334155" xml:space="preserve">gcc / make / cmake / SDK</text>
+<text x="373" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">WORKDIR /work</text>
+<text x="373" y="261.8" font-size="9.6" fill="#334155" xml:space="preserve">RUN ./build.sh</text>
+<rect x="740" y="195" width="240" height="100" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="740" y="195" width="4.5" height="100" fill="#0f9d58" rx="2"/>
+<text x="753" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">宿主产物目录</text>
+<text x="753" y="231" font-size="9.6" fill="#334155" xml:space="preserve">/work/out → 宿主机</text>
+<text x="753" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">可直接打包/签名</text>
+<rect x="360" y="390" width="300" height="80" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="360" y="390" width="4.5" height="80" fill="#0891b2" rx="2"/>
+<text x="373" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">工具链镜像 compiler:T750</text>
+<text x="373" y="426" font-size="9.6" fill="#334155" xml:space="preserve">Dockerfile 固化依赖与用户</text>
+<line x1="276" y1="245" x2="360" y2="245" stroke="#475569" stroke-width="2"/>
+<polygon points="360,245 351,240.5 351,249.5" fill="#475569"/>
+<text x="294" y="236" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">bind mount</text>
+<line x1="660" y1="245" x2="740" y2="245" stroke="#475569" stroke-width="2"/>
+<polygon points="740,245 731,240.5 731,249.5" fill="#475569"/>
+<text x="692" y="236" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">产物</text>
+<line x1="510" y1="390" x2="510" y2="335" stroke="#475569" stroke-width="2"/>
+<polygon points="510,335 505.5,344 514.5,344" fill="#475569"/>
+<text x="522" y="362.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">docker run</text>
+<rect x="36" y="500" width="944" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="520" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">方式</text>
+<text x="390" y="520" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">隔离性</text>
+<text x="626" y="520" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">可复现</text>
+<text x="862" y="520" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">适用</text>
+<rect x="36" y="530" width="944" height="30" fill="#ffffff"/>
+<line x1="36" y1="530" x2="980" y2="530" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="550" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">宿主直接编译</text>
+<text x="390" y="550" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">无</text>
+<text x="626" y="550" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">依赖本机环境</text>
+<text x="862" y="550" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">快速验证</text>
+<rect x="36" y="560" width="944" height="30" fill="#ffffff"/>
+<line x1="36" y1="560" x2="980" y2="560" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="580" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">容器 bind mount</text>
+<text x="390" y="580" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">好</text>
+<text x="626" y="580" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">镜像固定即可复现</text>
+<text x="862" y="580" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">日常交叉编译</text>
+<rect x="36" y="590" width="944" height="30" fill="#ffffff"/>
+<line x1="36" y1="590" x2="980" y2="590" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="610" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">镜像内 COPY 源码</text>
+<text x="390" y="610" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">好</text>
+<text x="626" y="610" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">最好，但每次改码要重建</text>
+<text x="862" y="610" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">CI 发布构建</text>
+<rect x="36" y="620" width="944" height="30" fill="#ffffff"/>
+<line x1="36" y1="620" x2="980" y2="620" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="640" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">镜像 save/load</text>
+<text x="390" y="640" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">好</text>
+<text x="626" y="640" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">离线分发工具链</text>
+<text x="862" y="640" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">无网/内网环境</text>
+<line x1="36" y1="650" x2="980" y2="650" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">命令：docker build -t compiler:T750 .；docker run --rm -v $PWD:/work -w /work compiler:T750 ./build.sh。</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；实际 SDK 路径、编译脚本和产物目录按项目约定调整。</text>
+</svg>

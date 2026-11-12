@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="660" viewBox="0 0 1240 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · Make 依赖图与 CMake 两阶段</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Make 比较目标与依赖的时间戳；CMake 先配置生成构建文件，再由底层工具构建。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左侧是 Make 的依赖图，右侧是 CMake 的 configure → generate → build 三段。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">目标</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">依赖</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">配置/生成</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① Make：依赖驱动</text>
+<rect x="36" y="190" width="130" height="50" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="50" fill="#0f9d58" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">app</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">可执行</text>
+<rect x="240" y="190" width="130" height="50" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="240" y="190" width="4.5" height="50" fill="#4f46e5" rx="2"/>
+<text x="253" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">main.o</text>
+<text x="253" y="226" font-size="8.8" fill="#334155" xml:space="preserve">目标文件</text>
+<rect x="240" y="270" width="130" height="50" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="240" y="270" width="4.5" height="50" fill="#4f46e5" rx="2"/>
+<text x="253" y="289" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">util.o</text>
+<text x="253" y="306" font-size="8.8" fill="#334155" xml:space="preserve">目标文件</text>
+<rect x="440" y="190" width="130" height="50" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="440" y="190" width="4.5" height="50" fill="#475569" rx="2"/>
+<text x="453" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">main.c</text>
+<text x="453" y="226" font-size="8.8" fill="#334155" xml:space="preserve">源文件</text>
+<rect x="440" y="270" width="130" height="50" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="440" y="270" width="4.5" height="50" fill="#475569" rx="2"/>
+<text x="453" y="289" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">util.c</text>
+<text x="453" y="306" font-size="8.8" fill="#334155" xml:space="preserve">源文件</text>
+<rect x="440" y="350" width="130" height="50" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="440" y="350" width="4.5" height="50" fill="#475569" rx="2"/>
+<text x="453" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">util.h</text>
+<text x="453" y="386" font-size="8.8" fill="#334155" xml:space="preserve">头文件</text>
+<line x1="166" y1="215" x2="236" y2="215" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="236,215 227,210.5 227,219.5" fill="#94a3b8"/>
+<line x1="166" y1="230" x2="236" y2="290" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="236,290 232.1,280.73 226.24,287.56" fill="#94a3b8"/>
+<line x1="370" y1="215" x2="436" y2="215" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="436,215 427,210.5 427,219.5" fill="#94a3b8"/>
+<line x1="370" y1="295" x2="436" y2="295" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="436,295 427,290.5 427,299.5" fill="#94a3b8"/>
+<line x1="370" y1="305" x2="436" y2="370" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="436,370 432.75,360.48 426.43,366.89" fill="#94a3b8"/>
+<text x="36" y="420" font-size="9.8" fill="#334155" xml:space="preserve">目标比依赖旧 → 执行命令；-j 并行无依赖目标</text>
+<text x="640" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② CMake：配置 → 生成 → 构建</text>
+<rect x="640" y="190" width="170" height="80" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="640" y="190" width="4.5" height="80" fill="#d97706" rx="2"/>
+<text x="653" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">configure</text>
+<text x="653" y="226" font-size="9.6" fill="#334155" xml:space="preserve">读 CMakeLists.txt</text>
+<text x="653" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">检测编译器/sysroot</text>
+<line x1="810" y1="230" x2="828" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="828,230 819,225.5 819,234.5" fill="#94a3b8"/>
+<rect x="828" y="190" width="170" height="80" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="828" y="190" width="4.5" height="80" fill="#d97706" rx="2"/>
+<text x="841" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">generate</text>
+<text x="841" y="226" font-size="9.6" fill="#334155" xml:space="preserve">输出 Makefile</text>
+<text x="841" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">或 build.ninja</text>
+<line x1="998" y1="230" x2="1016" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="1016,230 1007,225.5 1007,234.5" fill="#94a3b8"/>
+<rect x="1016" y="190" width="170" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="1016" y="190" width="4.5" height="80" fill="#0f9d58" rx="2"/>
+<text x="1029" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">build</text>
+<text x="1029" y="226" font-size="9.6" fill="#334155" xml:space="preserve">make/ninja 执行</text>
+<text x="1029" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">编译 + 链接</text>
+<text x="640" y="300" font-size="10.2" fill="#334155" xml:space="preserve">target 属性通过 PUBLIC/PRIVATE/INTERFACE 传播</text>
+<rect x="640" y="320" width="460" height="30" fill="#f1f5f9" rx="6"/>
+<text x="648" y="340" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">可见性</text>
+<text x="870" y="340" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">自己用</text>
+<text x="1023.33" y="340" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">使用方继承</text>
+<rect x="640" y="350" width="460" height="30" fill="#ffffff"/>
+<line x1="640" y1="350" x2="1100" y2="350" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="648" y="370" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">PRIVATE</text>
+<text x="870" y="370" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1023.33" y="370" font-size="10" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="middle">✗</text>
+<rect x="640" y="380" width="460" height="30" fill="#ffffff"/>
+<line x1="640" y1="380" x2="1100" y2="380" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="648" y="400" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">PUBLIC</text>
+<text x="870" y="400" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<text x="1023.33" y="400" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<rect x="640" y="410" width="460" height="30" fill="#ffffff"/>
+<line x1="640" y1="410" x2="1100" y2="410" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="648" y="430" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">INTERFACE</text>
+<text x="870" y="430" font-size="10" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="middle">✗</text>
+<text x="1023.33" y="430" font-size="10" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">✓</text>
+<line x1="640" y1="440" x2="1100" y2="440" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="450" width="480" height="110" fill="#fff5f5" rx="10" stroke="#dc2626" stroke-width="1"/>
+<text x="52" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="52" y="504" font-size="10.2" fill="#334155" xml:space="preserve">・Make 必须显式声明头文件依赖（-MMD -MP）</text>
+<text x="52" y="522" font-size="10.2" fill="#334155" xml:space="preserve">・CMake 改了 CMakeLists.txt 需要重新 configure</text>
+<text x="52" y="540" font-size="10.2" fill="#334155" xml:space="preserve">・源码外构建：build/ 可整体删除</text>
+<rect x="640" y="450" width="460" height="128" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="656" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">排查顺序</text>
+<text x="656" y="504" font-size="10.2" fill="#334155" xml:space="preserve">① make -n 看将执行什么</text>
+<text x="656" y="522" font-size="10.2" fill="#334155" xml:space="preserve">② -j1 复现并行问题</text>
+<text x="656" y="540" font-size="10.2" fill="#334155" xml:space="preserve">③ 检查 .d 文件与时间戳</text>
+<text x="656" y="558" font-size="10.2" fill="#334155" xml:space="preserve">④ 最后才删缓存/重新配置</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">示例为 C 工程；CMake 也支持 C++、汇编和多语言目标。</text>
+</svg>

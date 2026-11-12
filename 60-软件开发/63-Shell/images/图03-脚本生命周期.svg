@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 自动化脚本生命周期与 trap 清理</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">正常路径和异常路径最终都走同一个 cleanup；锁和临时目录必须在 trap 中释放。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：实线是正常阶段，虚线是任意阶段的失败/信号跳转；退出码要原样保留。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常阶段</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">异常跳转</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">清理</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 正常路径</text>
+<rect x="36" y="190" width="150" height="78" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="78" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">解析参数</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">getopts/必填校验</text>
+<line x1="186" y1="229" x2="204" y2="229" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="204,229 195,224.5 195,233.5" fill="#94a3b8"/>
+<rect x="204" y="190" width="150" height="78" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="204" y="190" width="4.5" height="78" fill="#4f46e5" rx="2"/>
+<text x="217" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">校验环境</text>
+<text x="217" y="226" font-size="9.6" fill="#334155" xml:space="preserve">命令/权限/路径</text>
+<line x1="354" y1="229" x2="372" y2="229" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="372,229 363,224.5 363,233.5" fill="#94a3b8"/>
+<rect x="372" y="190" width="140" height="78" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="372" y="190" width="4.5" height="78" fill="#d97706" rx="2"/>
+<text x="385" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">获取锁</text>
+<text x="385" y="226" font-size="9.6" fill="#334155" xml:space="preserve">flock -n</text>
+<line x1="512" y1="229" x2="530" y2="229" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="530,229 521,224.5 521,233.5" fill="#94a3b8"/>
+<rect x="530" y="190" width="150" height="78" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="530" y="190" width="4.5" height="78" fill="#0f9d58" rx="2"/>
+<text x="543" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">执行任务</text>
+<text x="543" y="226" font-size="9.6" fill="#334155" xml:space="preserve">幂等/干跑/日志</text>
+<line x1="680" y1="229" x2="698" y2="229" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="698,229 689,224.5 689,233.5" fill="#94a3b8"/>
+<rect x="698" y="190" width="140" height="78" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="698" y="190" width="4.5" height="78" fill="#d97706" rx="2"/>
+<text x="711" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">清理</text>
+<text x="711" y="226" font-size="9.6" fill="#334155" xml:space="preserve">临时目录/锁</text>
+<line x1="838" y1="229" x2="856" y2="229" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="856,229 847,224.5 847,233.5" fill="#94a3b8"/>
+<rect x="856" y="190" width="140" height="78" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="856" y="190" width="4.5" height="78" fill="#475569" rx="2"/>
+<text x="869" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">退出码</text>
+<text x="869" y="226" font-size="9.6" fill="#334155" xml:space="preserve">0 或失败码</text>
+<text x="36" y="310" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 异常路径统一兜底</text>
+<rect x="36" y="324" width="260" height="78" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="36" y="324" width="4.5" height="78" fill="#dc2626" rx="2"/>
+<text x="49" y="343" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">trap &#x27;cleanup&#x27; EXIT INT TERM</text>
+<text x="49" y="360" font-size="9.6" fill="#334155" xml:space="preserve">保存 $? → 清理 → exit $rc</text>
+<text x="49" y="375.4" font-size="9.6" fill="#334155" xml:space="preserve">kill -9 不会触发 trap</text>
+<rect x="360" y="324" width="260" height="78" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="360" y="324" width="4.5" height="78" fill="#dc2626" rx="2"/>
+<text x="373" y="343" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">常见失败点</text>
+<text x="373" y="360" font-size="9.6" fill="#334155" xml:space="preserve">参数缺失、命令不存在</text>
+<text x="373" y="375.4" font-size="9.6" fill="#334155" xml:space="preserve">锁被占用、权限不足</text>
+<rect x="684" y="324" width="260" height="78" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="684" y="324" width="4.5" height="78" fill="#d97706" rx="2"/>
+<text x="697" y="343" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">清理对象</text>
+<text x="697" y="360" font-size="9.6" fill="#334155" xml:space="preserve">mktemp -d 目录</text>
+<text x="697" y="375.4" font-size="9.6" fill="#334155" xml:space="preserve">flock 文件描述符</text>
+<text x="697" y="390.8" font-size="9.6" fill="#334155" xml:space="preserve">后台子进程</text>
+<line x1="166" y1="268" x2="166" y2="320" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3"/>
+<polygon points="166,320 170.5,311 161.5,311" fill="#dc2626"/>
+<line x1="490" y1="268" x2="490" y2="320" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3"/>
+<polygon points="490,320 494.5,311 485.5,311" fill="#dc2626"/>
+<line x1="296" y1="363" x2="356" y2="363" stroke="#94a3b8" stroke-width="1.4"/>
+<polygon points="356,363 347,358.5 347,367.5" fill="#94a3b8"/>
+<line x1="620" y1="363" x2="680" y2="363" stroke="#94a3b8" stroke-width="1.4"/>
+<polygon points="680,363 671,358.5 671,367.5" fill="#94a3b8"/>
+<text x="36" y="440" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">③ 三个案例的共同骨架</text>
+<rect x="36" y="454" width="760" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="474" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">案例</text>
+<text x="321" y="474" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">关键动作</text>
+<text x="511" y="474" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">幂等策略</text>
+<text x="701" y="474" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">风险点</text>
+<rect x="36" y="484" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="484" x2="796" y2="484" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="504" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">批量 SVN 同步</text>
+<text x="321" y="504" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">update/checkout</text>
+<text x="511" y="504" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">已存在则更新</text>
+<text x="701" y="504" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">并发写同一目录</text>
+<rect x="36" y="514" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="514" x2="796" y2="514" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="534" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">权限/格式化</text>
+<text x="321" y="534" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">chmod/clang-format</text>
+<text x="511" y="534" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">先判断再改</text>
+<text x="701" y="534" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">递归 777、误格式化</text>
+<rect x="36" y="544" width="760" height="30" fill="#ffffff"/>
+<line x1="36" y1="544" x2="796" y2="544" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="564" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">XML 处理</text>
+<text x="321" y="564" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">校验后原子替换</text>
+<text x="511" y="564" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">临时文件 + mv</text>
+<text x="701" y="564" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">半截文件、命名空间</text>
+<line x1="36" y1="574" x2="796" y2="574" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="840" y="440" width="210" height="146" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="856" y="470" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">原则</text>
+<text x="856" y="494" font-size="10.2" fill="#334155" xml:space="preserve">失败要响亮</text>
+<text x="856" y="512" font-size="10.2" fill="#334155" xml:space="preserve">删除先预览</text>
+<text x="856" y="530" font-size="10.2" fill="#334155" xml:space="preserve">临时文件用 mktemp</text>
+<text x="856" y="548" font-size="10.2" fill="#334155" xml:space="preserve">日志写 stderr</text>
+<text x="856" y="566" font-size="10.2" fill="#334155" xml:space="preserve">重复执行要安全</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">信号与锁的行为依系统和文件系统而定。</text>
+</svg>

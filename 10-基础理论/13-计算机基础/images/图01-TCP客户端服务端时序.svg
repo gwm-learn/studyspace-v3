@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="960" viewBox="0 0 1140 960" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="960" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">TCP 客户端/服务端：API 与握手</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">listen 后内核开始接收 SYN；握手完成的连接进入 accept 队列。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">accept 返回新 fd，监听 fd 继续接受后续连接。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">客户端</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">服务端</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">数据/关闭</text>
+<line x1="300" y1="210" x2="300" y2="760" stroke="#e2e8f0" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="860" y1="210" x2="860" y2="760" stroke="#e2e8f0" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text x="300" y="195" font-size="12" fill="#0891b2" xml:space="preserve" font-weight="700" text-anchor="middle">客户端</text>
+<text x="860" y="195" font-size="12" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="middle">服务端</text>
+<rect x="190" y="230" width="220" height="60" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="190" y="230" width="4.5" height="60" fill="#0891b2" rx="2"/>
+<text x="203" y="249" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">socket()</text>
+<text x="203" y="266" font-size="8.8" fill="#334155" xml:space="preserve">创建 fd</text>
+<rect x="190" y="310" width="220" height="60" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="190" y="310" width="4.5" height="60" fill="#0891b2" rx="2"/>
+<text x="203" y="329" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">connect()</text>
+<text x="203" y="346" font-size="8.8" fill="#334155" xml:space="preserve">发起三次握手</text>
+<rect x="190" y="550" width="220" height="60" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="190" y="550" width="4.5" height="60" fill="#0f9d58" rx="2"/>
+<text x="203" y="569" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">read() / write()</text>
+<text x="203" y="586" font-size="8.8" fill="#334155" xml:space="preserve">字节流，注意短读/短写</text>
+<rect x="190" y="680" width="220" height="60" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="190" y="680" width="4.5" height="60" fill="#0f9d58" rx="2"/>
+<text x="203" y="699" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">close()</text>
+<text x="203" y="716" font-size="8.8" fill="#334155" xml:space="preserve">主动关闭发 FIN</text>
+<rect x="750" y="230" width="220" height="60" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="750" y="230" width="4.5" height="60" fill="#4f46e5" rx="2"/>
+<text x="763" y="249" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">socket() / bind() / listen()</text>
+<text x="763" y="266" font-size="8.8" fill="#334155" xml:space="preserve">绑定地址，进入 LISTEN</text>
+<rect x="750" y="470" width="220" height="60" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="750" y="470" width="4.5" height="60" fill="#4f46e5" rx="2"/>
+<text x="763" y="489" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">accept()</text>
+<text x="763" y="506" font-size="8.8" fill="#334155" xml:space="preserve">从队列取出新连接 fd</text>
+<rect x="750" y="550" width="220" height="60" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="750" y="550" width="4.5" height="60" fill="#0f9d58" rx="2"/>
+<text x="763" y="569" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">read() / write()</text>
+<text x="763" y="586" font-size="8.8" fill="#334155" xml:space="preserve">处理已建立连接</text>
+<rect x="750" y="680" width="220" height="60" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="750" y="680" width="4.5" height="60" fill="#0f9d58" rx="2"/>
+<text x="763" y="699" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">close()</text>
+<text x="763" y="716" font-size="8.8" fill="#334155" xml:space="preserve">被动关闭回 ACK/FIN</text>
+<line x1="410" y1="340" x2="860" y2="340" stroke="#0891b2" stroke-width="2"/>
+<polygon points="860,340 851,335.5 851,344.5" fill="#0891b2"/>
+<text x="629" y="332" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SYN</text>
+<line x1="860" y1="375" x2="300" y2="375" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="300,375 309,379.5 309,370.5" fill="#4f46e5"/>
+<text x="550" y="367" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SYN + ACK</text>
+<line x1="300" y1="410" x2="860" y2="410" stroke="#0891b2" stroke-width="2"/>
+<polygon points="860,410 851,405.5 851,414.5" fill="#0891b2"/>
+<text x="574" y="402" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">ACK</text>
+<text x="580" y="440" font-size="10.6" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="middle">ESTABLISHED（三次握手完成）</text>
+<line x1="410" y1="585" x2="750" y2="585" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="750,585 741,580.5 741,589.5" fill="#0f9d58"/>
+<text x="570" y="577" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">数据</text>
+<line x1="750" y1="610" x2="410" y2="610" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="410,610 419,614.5 419,605.5" fill="#0f9d58"/>
+<text x="550" y="602" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">数据 / ACK</text>
+<line x1="410" y1="700" x2="750" y2="700" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="750,700 741,695.5 741,704.5" fill="#0f9d58"/>
+<text x="574" y="692" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">FIN</text>
+<line x1="750" y1="725" x2="410" y2="725" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="410,725 419,729.5 419,720.5" fill="#0f9d58"/>
+<text x="574" y="717" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">ACK</text>
+<rect x="60" y="780" width="1040" height="110" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="76" y="810" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="834" font-size="10.2" fill="#334155" xml:space="preserve">先看三次握手：SYN → SYN+ACK → ACK，完成后连接才对 accept 可见。</text>
+<text x="76" y="852" font-size="10.2" fill="#334155" xml:space="preserve">accept 队列满时，新连接可能被丢弃或拒绝；backlog 不是最大连接数。</text>
+<text x="76" y="870" font-size="10.2" fill="#334155" xml:space="preserve">close 只是引用计数减一；多进程/多线程共享 fd 时，最后一个 close 才发 FIN。</text>
+<text x="36" y="924" font-size="12.3" fill="#64748b" xml:space="preserve">图源：POSIX socket API 与 TCP 状态模型；具体队列行为随内核参数变化。</text>
+</svg>

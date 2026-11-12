@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="680" viewBox="0 0 1040 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1040" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1004" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 远程协作：对象单向传输，引用各自移动</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">fetch 把远程对象抓到本地并更新 origin/main；push 把本地对象送到远程并请求移动远程分支。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：本地 main 不会被 fetch 自动改动，它只在 merge/rebase/pull 后前进。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">本地分支</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">远程跟踪分支</text>
+<line x1="270" y1="142" x2="300" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="308" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">远程仓库</text>
+<line x1="376" y1="142" x2="406" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="414" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">对象传输</text>
+<rect x="36" y="195" width="250" height="120" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="195" width="4.5" height="120" fill="#4f46e5" rx="2"/>
+<text x="49" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">本地仓库</text>
+<text x="49" y="231" font-size="9.6" fill="#334155" xml:space="preserve">refs/heads/main</text>
+<text x="49" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">工作区 + 索引</text>
+<text x="49" y="261.8" font-size="9.6" fill="#334155" xml:space="preserve">.git/objects</text>
+<rect x="390" y="195" width="250" height="120" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="390" y="195" width="4.5" height="120" fill="#0891b2" rx="2"/>
+<text x="403" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">远程跟踪引用</text>
+<text x="403" y="231" font-size="9.6" fill="#334155" xml:space="preserve">refs/remotes/origin/main</text>
+<text x="403" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">只读缓存，fetch 更新</text>
+<text x="403" y="261.8" font-size="9.6" fill="#334155" xml:space="preserve">本地不直接提交到这里</text>
+<rect x="744" y="195" width="250" height="120" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="744" y="195" width="4.5" height="120" fill="#0f9d58" rx="2"/>
+<text x="757" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">远程仓库</text>
+<text x="757" y="231" font-size="9.6" fill="#334155" xml:space="preserve">refs/heads/main</text>
+<text x="757" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">bare 仓库或托管平台</text>
+<text x="757" y="261.8" font-size="9.6" fill="#334155" xml:space="preserve">接收对象与引用更新请求</text>
+<line x1="744" y1="235" x2="640" y2="235" stroke="#475569" stroke-width="2.2"/>
+<polygon points="640,235 649,239.5 649,230.5" fill="#475569"/>
+<text x="686" y="226" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">fetch</text>
+<line x1="161" y1="315" x2="161" y2="390" stroke="#475569" stroke-width="2.2"/>
+<line x1="161" y1="390" x2="869" y2="390" stroke="#475569" stroke-width="2.2"/>
+<line x1="869" y1="390" x2="869" y2="315" stroke="#475569" stroke-width="2.2"/>
+<polygon points="869,315 864.5,324 873.5,324" fill="#475569"/>
+<text x="879" y="358.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">push</text>
+<text x="300" y="412" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">push：传输对象 + 请求远程把 main 移到新提交</text>
+<rect x="36" y="470" width="958" height="128" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="500" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="524" font-size="10.2" fill="#334155" xml:space="preserve">fetch 只更新 origin/main 和对象库，不动本地 main；所以 fetch 后常看到“落后 N 个提交”。</text>
+<text x="52" y="542" font-size="10.2" fill="#334155" xml:space="preserve">pull = fetch + 集成（默认 merge，可配置 rebase）；集成这一步才会移动本地 main。</text>
+<text x="52" y="560" font-size="10.2" fill="#334155" xml:space="preserve">push 被拒绝通常不是网络问题，而是远程有你没有的提交；先 fetch 再决定 merge 或 rebase。</text>
+<text x="52" y="578" font-size="10.2" fill="#334155" xml:space="preserve">origin/main 是“最后一次见到的远程状态”，不是实时状态；远程被别人更新后要重新 fetch。</text>
+<text x="36" y="626" font-size="12.3" fill="#64748b" xml:space="preserve">命令：git remote -v、git fetch origin、git push origin main。</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；远程跟踪引用位于 refs/remotes/ 命名空间。</text>
+</svg>

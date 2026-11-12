@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="640" viewBox="0 0 1240 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · U-Boot 的加载与兜底路径</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">主链：BootROM 选介质 → SPL 初始化 DDR → U-Boot 读 env → 加载并校验 → bootm 跳转。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">下方是失败兜底：环境损坏、镜像校验失败、网络加载失败，最终都可落到命令行。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主链</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败兜底</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 主链</text>
+<rect x="36" y="196" width="170" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="196" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="49" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">BootROM</text>
+<text x="49" y="232" font-size="8.8" fill="#334155" xml:space="preserve">拨码/熔丝选介质</text>
+<line x1="206" y1="238" x2="232" y2="238" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="232,238 223,233.5 223,242.5" fill="#94a3b8"/>
+<rect x="232" y="196" width="170" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="232" y="196" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="245" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">SPL</text>
+<text x="245" y="232" font-size="8.8" fill="#334155" xml:space="preserve">DDR、时钟、串口</text>
+<line x1="402" y1="238" x2="428" y2="238" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="428,238 419,233.5 419,242.5" fill="#94a3b8"/>
+<rect x="428" y="196" width="170" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="428" y="196" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="441" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">U-Boot proper</text>
+<text x="441" y="232" font-size="8.8" fill="#334155" xml:space="preserve">命令与环境</text>
+<line x1="598" y1="238" x2="624" y2="238" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="624,238 615,233.5 615,242.5" fill="#94a3b8"/>
+<rect x="624" y="196" width="170" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="624" y="196" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="637" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">env / bootcmd</text>
+<text x="637" y="232" font-size="8.8" fill="#334155" xml:space="preserve">决定加载哪份镜像</text>
+<line x1="794" y1="238" x2="820" y2="238" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="820,238 811,233.5 811,242.5" fill="#94a3b8"/>
+<rect x="820" y="196" width="170" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="820" y="196" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="833" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">加载 + 校验</text>
+<text x="833" y="232" font-size="8.8" fill="#334155" xml:space="preserve">FIT hash / 签名</text>
+<line x1="990" y1="238" x2="1016" y2="238" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="1016,238 1007,233.5 1007,242.5" fill="#94a3b8"/>
+<rect x="1016" y="196" width="170" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="1016" y="196" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="1029" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">bootm</text>
+<text x="1029" y="232" font-size="8.8" fill="#334155" xml:space="preserve">跳转内核</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 失败兜底（任一路径失败都不会“静默变砖”）</text>
+<line x1="600" y1="280" x2="600" y2="322" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="600,322 604.5,313 595.5,313" fill="#dc2626"/>
+<rect x="36" y="344" width="340" height="78" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="36" y="344" width="4.5" height="78" fill="#dc2626" rx="2"/>
+<text x="49" y="363" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">env 损坏</text>
+<text x="49" y="380" font-size="8.8" fill="#334155" xml:space="preserve">回退编译进 U-Boot 的默认 env</text>
+<text x="49" y="395.4" font-size="8.8" fill="#334155" xml:space="preserve">代价：自定义配置丢失</text>
+<rect x="401" y="344" width="340" height="78" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="401" y="344" width="4.5" height="78" fill="#dc2626" rx="2"/>
+<text x="414" y="363" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">镜像校验失败</text>
+<text x="414" y="380" font-size="8.8" fill="#334155" xml:space="preserve">切备份槽 / 备份 FIT 配置</text>
+<text x="414" y="395.4" font-size="8.8" fill="#334155" xml:space="preserve">代价：需要预留备份空间</text>
+<rect x="766" y="344" width="340" height="78" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="766" y="344" width="4.5" height="78" fill="#dc2626" rx="2"/>
+<text x="779" y="363" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">网络加载失败</text>
+<text x="779" y="380" font-size="8.8" fill="#334155" xml:space="preserve">回退本地介质启动</text>
+<text x="779" y="395.4" font-size="8.8" fill="#334155" xml:space="preserve">代价：启动稍慢</text>
+<rect x="36" y="456" width="1100" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="486" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">③ bring-up 最小检查</text>
+<text x="52" y="510" font-size="10.2" fill="#334155" xml:space="preserve">串口在 SPL 阶段是否有输出；printenv 与 saveenv 是否按预期持久化。</text>
+<text x="52" y="528" font-size="10.2" fill="#334155" xml:space="preserve">每个候选介质各启动一次，确认偏移、文件系统类型与镜像大小。</text>
+<text x="52" y="546" font-size="10.2" fill="#334155" xml:space="preserve">断电重启 10 次，确认不是“偶发能起”；全部失败时保留命令行而不是无限重启。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">读图：主链六段是固定顺序；兜底的三条分支分别对应 env、镜像、网络三类失败。</text>
+</svg>

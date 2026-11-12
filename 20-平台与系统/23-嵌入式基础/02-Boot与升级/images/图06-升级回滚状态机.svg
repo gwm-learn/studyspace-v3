@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 06 · 升级、试运行与回滚状态机</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">写备用槽、切换标志、试运行确认；任何失败或超时都回到上一个可用槽。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">红色虚线是回滚路径，它不依赖“新系统还能正常跑”。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常推进</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">等待/重启</text>
+<line x1="254.6" y1="142" x2="284.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="292.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">回滚路径</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 状态推进</text>
+<rect x="36" y="196" width="180" height="78" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="196" width="4.5" height="78" fill="#475569" rx="2"/>
+<text x="49" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">IDLE</text>
+<text x="49" y="232" font-size="8.8" fill="#334155" xml:space="preserve">当前槽正常运行</text>
+<line x1="216" y1="235" x2="260" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="260,235 251,230.5 251,239.5" fill="#94a3b8"/>
+<rect x="260" y="196" width="180" height="78" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="260" y="196" width="4.5" height="78" fill="#4f46e5" rx="2"/>
+<text x="273" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">VERIFY</text>
+<text x="273" y="232" font-size="8.8" fill="#334155" xml:space="preserve">magic/机型/哈希/签名</text>
+<line x1="440" y1="235" x2="484" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="484,235 475,230.5 475,239.5" fill="#94a3b8"/>
+<rect x="484" y="196" width="180" height="78" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="484" y="196" width="4.5" height="78" fill="#4f46e5" rx="2"/>
+<text x="497" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">WRITE</text>
+<text x="497" y="232" font-size="8.8" fill="#334155" xml:space="preserve">写备用槽并回读</text>
+<line x1="664" y1="235" x2="708" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="708,235 699,230.5 699,239.5" fill="#94a3b8"/>
+<rect x="708" y="196" width="180" height="78" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="708" y="196" width="4.5" height="78" fill="#d97706" rx="2"/>
+<text x="721" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">PENDING</text>
+<text x="721" y="232" font-size="8.8" fill="#334155" xml:space="preserve">置标志，等待重启</text>
+<line x1="888" y1="235" x2="932" y2="235" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="932,235 923,230.5 923,239.5" fill="#94a3b8"/>
+<rect x="932" y="196" width="180" height="78" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="932" y="196" width="4.5" height="78" fill="#d97706" rx="2"/>
+<text x="945" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">TRIAL</text>
+<text x="945" y="232" font-size="8.8" fill="#334155" xml:space="preserve">新槽启动，健康检查</text>
+<rect x="708" y="360" width="180" height="78" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="708" y="360" width="4.5" height="78" fill="#dc2626" rx="2"/>
+<text x="721" y="379" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ROLLBACK</text>
+<text x="721" y="396" font-size="8.8" fill="#334155" xml:space="preserve">切回原槽</text>
+<text x="721" y="411.4" font-size="8.8" fill="#334155" xml:space="preserve">bootcount 超阈值</text>
+<rect x="932" y="360" width="180" height="78" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="932" y="360" width="4.5" height="78" fill="#0f9d58" rx="2"/>
+<text x="945" y="379" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">CONFIRMED</text>
+<text x="945" y="396" font-size="8.8" fill="#334155" xml:space="preserve">清除标志</text>
+<text x="945" y="411.4" font-size="8.8" fill="#334155" xml:space="preserve">以新槽为准</text>
+<line x1="1022" y1="274" x2="1022" y2="352" stroke="#0f9d58" stroke-width="2.2"/>
+<polygon points="1022,352 1026.5,343 1017.5,343" fill="#0f9d58"/>
+<text x="1030" y="320" font-size="9.4" fill="#64748b" xml:space="preserve">健康检查通过</text>
+<line x1="932" y1="274" x2="828" y2="352" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="828,352 837.9,350.2 832.5,343" fill="#dc2626"/>
+<text x="700" y="320" font-size="9.4" fill="#64748b" xml:space="preserve">超时/失败</text>
+<line x1="708" y1="399" x2="126" y2="399" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="126" y1="399" x2="126" y2="280" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="126,280 121.5,289 130.5,289" fill="#dc2626"/>
+<text x="300" y="392" font-size="9.4" fill="#64748b" xml:space="preserve">原槽仍可启动，回到 IDLE</text>
+<rect x="36" y="470" width="1092" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="500" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">② 定时器与计数（必须持久化）</text>
+<text x="52" y="524" font-size="10.2" fill="#334155" xml:space="preserve">试运行超时：数十秒到数分钟；太短会误回滚，太长则故障暴露慢。</text>
+<text x="52" y="542" font-size="10.2" fill="#334155" xml:space="preserve">bootcount 阈值：连续失败 2~3 次即回滚；太小会被偶发失败触发。</text>
+<text x="52" y="560" font-size="10.2" fill="#334155" xml:space="preserve">看门狗：启动/运行挂死时复位；喂狗逻辑错误会导致反复重启。</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">读图：只有 CONFIRMED 是终点；PENDING/TRIAL 掉电后必须能继续判断，不能当作没升级。</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="540" viewBox="0 0 800 540" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="800" height="540" fill="#ffffff"/>
+<line x1="36" y1="112" x2="764" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 指针、数组与字符串：地址、步长与间接层</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">数组是连续对象，指针是保存地址的变量；p+1 的步长等于 sizeof(*p)。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看对象本身在哪，再看指针指向哪，最后看指针变量存在哪。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">数组对象</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">指针变量</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">字符串字面量</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① int a[4] 与 int *p = a</text>
+<rect x="36" y="190" width="120" height="52" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="52" fill="#0f9d58" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">p（指针变量）</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">值 = 0x1000</text>
+<line x1="156" y1="216" x2="210" y2="216" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="210,216 201,211.5 201,220.5" fill="#94a3b8"/>
+<rect x="216" y="190" width="86" height="52" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1"/>
+<text x="259" y="211" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">a[0]</text>
+<text x="259" y="229" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">0x1000</text>
+<rect x="306" y="190" width="86" height="52" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1"/>
+<text x="349" y="211" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">a[1]</text>
+<text x="349" y="229" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">0x1004</text>
+<rect x="396" y="190" width="86" height="52" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1"/>
+<text x="439" y="211" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">a[2]</text>
+<text x="439" y="229" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">0x1008</text>
+<rect x="486" y="190" width="86" height="52" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1"/>
+<text x="529" y="211" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">a[3]</text>
+<text x="529" y="229" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">0x100c</text>
+<text x="216" y="262" font-size="10.2" fill="#334155" xml:space="preserve">p+1 前进 sizeof(int)=4 字节，不是 1 字节</text>
+<text x="216" y="282" font-size="10.2" fill="#334155" xml:space="preserve">*(p+i) 等价于 p[i]，&amp;a+1 跳过整个数组</text>
+<text x="36" y="320" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② char *argv[]：指针数组 + 各自指向字符串</text>
+<rect x="36" y="334" width="150" height="78" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="334" width="4.5" height="78" fill="#0f9d58" rx="2"/>
+<text x="49" y="353" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">argv（指针数组）</text>
+<text x="49" y="370" font-size="8.8" fill="#334155" xml:space="preserve">argv[0] →</text>
+<text x="49" y="385.4" font-size="8.8" fill="#334155" xml:space="preserve">argv[1] →</text>
+<text x="49" y="400.8" font-size="8.8" fill="#334155" xml:space="preserve">argv[2] →</text>
+<rect x="220" y="342" width="140" height="40" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="220" y="342" width="4.5" height="40" fill="#d97706" rx="2"/>
+<text x="233" y="361" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">&quot;prog&quot;</text>
+<rect x="220" y="370" width="140" height="40" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="220" y="370" width="4.5" height="40" fill="#d97706" rx="2"/>
+<text x="233" y="389" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">&quot;-v&quot;</text>
+<rect x="220" y="398" width="140" height="40" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="220" y="398" width="4.5" height="40" fill="#d97706" rx="2"/>
+<text x="233" y="417" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">&quot;in.txt&quot;</text>
+<line x1="186" y1="352" x2="216" y2="352" stroke="#94a3b8" stroke-width="1.2"/>
+<polygon points="216,352 207,347.5 207,356.5" fill="#94a3b8"/>
+<line x1="186" y1="380" x2="216" y2="380" stroke="#94a3b8" stroke-width="1.2"/>
+<polygon points="216,380 207,375.5 207,384.5" fill="#94a3b8"/>
+<line x1="186" y1="408" x2="216" y2="408" stroke="#94a3b8" stroke-width="1.2"/>
+<polygon points="216,408 207,403.5 207,412.5" fill="#94a3b8"/>
+<rect x="400" y="334" width="340" height="128" fill="#fff5f5" rx="10" stroke="#dc2626" stroke-width="1"/>
+<text x="416" y="364" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="416" y="388" font-size="10.2" fill="#334155" xml:space="preserve">・数组名在表达式中退化为首元素指针</text>
+<text x="416" y="406" font-size="10.2" fill="#334155" xml:space="preserve">・形参数组等价于指针，长度信息丢失</text>
+<text x="416" y="424" font-size="10.2" fill="#334155" xml:space="preserve">・字符串以 \0 结尾，str* 不检查目标容量</text>
+<text x="416" y="442" font-size="10.2" fill="#334155" xml:space="preserve">・函数指针 = 回调表/状态机表的基础</text>
+<text x="36" y="486" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="504" font-size="12.3" fill="#64748b" xml:space="preserve">地址数值为示意，实际布局由编译器、对齐和平台决定。</text>
+</svg>

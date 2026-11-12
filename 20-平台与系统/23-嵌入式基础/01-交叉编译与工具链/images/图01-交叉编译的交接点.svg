@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 交叉编译的三个交接点</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">编译器跑在 host，产物属于 target；头文件、库、加载器分别在三处交接。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">看箭头：每条箭头指错位置，都要到板上才暴露。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">在 host 上执行</text>
+<line x1="181.6" y1="142" x2="211.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="219.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">目标系统资产</text>
+<line x1="309.6" y1="142" x2="339.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="347.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">在板上运行</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 一次编译：四段主流程</text>
+<rect x="36" y="196" width="158" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="49" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">源码 + 构建脚本</text>
+<text x="49" y="232" font-size="9.6" fill="#334155" xml:space="preserve">C/C++ 源码、Makefile</text>
+<text x="49" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">依赖声明</text>
+<line x1="194" y1="239" x2="248" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="248,239 239,234.5 239,243.5" fill="#94a3b8"/>
+<rect x="248" y="196" width="158" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="248" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="261" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">交叉工具链</text>
+<text x="261" y="232" font-size="9.6" fill="#334155" xml:space="preserve">gcc / binutils</text>
+<text x="261" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">按 target 生成指令</text>
+<line x1="406" y1="239" x2="460" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="460,239 451,234.5 451,243.5" fill="#94a3b8"/>
+<rect x="460" y="196" width="158" height="86" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="460" y="196" width="4.5" height="86" fill="#0891b2" rx="2"/>
+<text x="473" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">目标 ELF</text>
+<text x="473" y="232" font-size="9.6" fill="#334155" xml:space="preserve">架构与 ABI 正确</text>
+<text x="473" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">依赖记录在动态段</text>
+<line x1="618" y1="239" x2="672" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="672,239 663,234.5 663,243.5" fill="#94a3b8"/>
+<rect x="672" y="196" width="158" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="672" y="196" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="685" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">目标板运行</text>
+<text x="685" y="232" font-size="9.6" fill="#334155" xml:space="preserve">ld.so 加载共享库</text>
+<text x="685" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">进入 main</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② sysroot：编译期与链接期的“目标系统根”</text>
+<rect x="36" y="346" width="560" height="132" fill="#ecfeff" rx="9" stroke="#0891b2" stroke-width="1.1"/>
+<text x="52" y="370" font-size="11" fill="#0f172a" xml:space="preserve" font-weight="700">sysroot/</text>
+<text x="52" y="396" font-size="10" fill="#334155" xml:space="preserve">usr/include/：头文件，决定结构体与宏</text>
+<text x="52" y="418" font-size="10" fill="#334155" xml:space="preserve">usr/lib/：libc.so、crt1.o、libgcc</text>
+<text x="52" y="440" font-size="10" fill="#334155" xml:space="preserve">lib/ld-*.so.*：运行期动态加载器</text>
+<line x1="396" y1="346" x2="396" y2="284" stroke="#0891b2" stroke-width="2.2"/>
+<polygon points="396,284 391.5,293 400.5,293" fill="#0891b2"/>
+<text x="404" y="320" font-size="9.6" fill="#64748b" xml:space="preserve">编译取头文件 / 链接取库</text>
+<rect x="636" y="346" width="420" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="652" y="376" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">③ 三个检查点（部署前必须做）</text>
+<text x="652" y="400" font-size="10.2" fill="#334155" xml:space="preserve">file 产物：架构、位宽、字节序</text>
+<text x="652" y="418" font-size="10.2" fill="#334155" xml:space="preserve">readelf -l：PT_INTERP 指向哪个加载器</text>
+<text x="652" y="436" font-size="10.2" fill="#334155" xml:space="preserve">readelf -d：NEEDED 库与 SONAME</text>
+<text x="36" y="506" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">读图：主流程是“源码→工具链→ELF→板子”，sysroot 是横插进编译/链接两段的资产。</text>
+</svg>

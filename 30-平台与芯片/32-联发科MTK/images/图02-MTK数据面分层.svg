@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="740" viewBox="0 0 980 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="980" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="944" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · MTK 数据面：交换、加速与无线各管一段</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">同一台设备上，有线交换、CPU 协议栈、硬件加速、无线驱动是四个不同的责任层。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先确认流量从哪条 lane 进入，再看它是否绕过协议栈；绕过越多，可观测性越差。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">有线 / 交换</text>
+<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">加速路径</text>
+<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">无线路径</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 三条路径：端口 → CPU；首包 → 流表 → 硬件；空口 → 协议栈</text>
+<rect x="36" y="190" width="108" height="90" fill="#ecfeff" rx="9" stroke="#0891b2" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">有线</text>
+<text x="46" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">（交换）</text>
+<text x="46" y="246" font-size="9" fill="#64748b" xml:space="preserve">DSA 端口</text>
+<text x="46" y="259" font-size="9" fill="#64748b" xml:space="preserve">硬件转发</text>
+<rect x="154" y="190" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="154" y="190" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">WAN / LAN 端口</text>
+<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">VLAN 过滤</text>
+<text x="167" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">硬件转发</text>
+<line x1="312" y1="231" x2="322" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,231 313,226.5 313,235.5" fill="#94a3b8"/>
+<rect x="322" y="190" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="322" y="190" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="335" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">MT7530 系列</text>
+<text x="335" y="226" font-size="8.8" fill="#334155" xml:space="preserve">每端口一接口</text>
+<text x="335" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">lan1 .. wan</text>
+<line x1="480" y1="231" x2="490" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,231 481,226.5 481,235.5" fill="#94a3b8"/>
+<rect x="490" y="190" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="490" y="190" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="503" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">CPU GMAC</text>
+<text x="503" y="226" font-size="8.8" fill="#334155" xml:space="preserve">eth0 上行</text>
+<text x="503" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">DMA / NAPI</text>
+<rect x="36" y="302" width="108" height="90" fill="#fff9ee" rx="9" stroke="#d97706" stroke-width="1.2"/>
+<text x="46" y="324" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">加速</text>
+<text x="46" y="340" font-size="9.4" fill="#64748b" xml:space="preserve">（可选）</text>
+<text x="46" y="358" font-size="9" fill="#64748b" xml:space="preserve">首包走慢路径</text>
+<text x="46" y="371" font-size="9" fill="#64748b" xml:space="preserve">后续包短路</text>
+<rect x="154" y="302" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="154" y="302" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="167" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">协议栈慢路径</text>
+<text x="167" y="338" font-size="8.8" fill="#334155" xml:space="preserve">conntrack / NAT</text>
+<text x="167" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">路由与邻居</text>
+<line x1="312" y1="343" x2="322" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,343 313,338.5 313,347.5" fill="#94a3b8"/>
+<rect x="322" y="302" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="322" y="302" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="335" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">flow offload</text>
+<text x="335" y="338" font-size="8.8" fill="#334155" xml:space="preserve">软件流表</text>
+<text x="335" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">后续包短路</text>
+<line x1="480" y1="343" x2="490" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,343 481,338.5 481,347.5" fill="#94a3b8"/>
+<rect x="490" y="302" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="490" y="302" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="503" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">HNAT / PPE</text>
+<text x="503" y="338" font-size="8.8" fill="#334155" xml:space="preserve">硬件改写 / 转发</text>
+<text x="503" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">驱动相关</text>
+<rect x="36" y="414" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="436" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">无线</text>
+<text x="46" y="452" font-size="9.4" fill="#64748b" xml:space="preserve">（mt76）</text>
+<text x="46" y="470" font-size="9" fill="#64748b" xml:space="preserve">空口收发</text>
+<text x="46" y="483" font-size="9" fill="#64748b" xml:space="preserve">802.11 管理</text>
+<rect x="154" y="414" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="154" y="414" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="167" y="433" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">mt76 驱动</text>
+<text x="167" y="450" font-size="8.8" fill="#334155" xml:space="preserve">PCIe / AHB</text>
+<text x="167" y="465.4" font-size="8.8" fill="#334155" xml:space="preserve">收发包与固件</text>
+<line x1="312" y1="455" x2="322" y2="455" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="322,455 313,450.5 313,459.5" fill="#94a3b8"/>
+<rect x="322" y="414" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="322" y="414" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="335" y="433" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">mac80211</text>
+<text x="335" y="450" font-size="8.8" fill="#334155" xml:space="preserve">802.11 数据</text>
+<text x="335" y="465.4" font-size="8.8" fill="#334155" xml:space="preserve">管理帧处理</text>
+<line x1="480" y1="455" x2="490" y2="455" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="490,455 481,450.5 481,459.5" fill="#94a3b8"/>
+<rect x="490" y="414" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="490" y="414" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="503" y="433" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">cfg80211 / hostapd</text>
+<text x="503" y="450" font-size="8.8" fill="#334155" xml:space="preserve">配置下发</text>
+<text x="503" y="465.4" font-size="8.8" fill="#334155" xml:space="preserve">认证与关联</text>
+<rect x="36" y="530" width="900" height="128" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="560" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图与边界</text>
+<text x="52" y="584" font-size="10.2" fill="#334155" xml:space="preserve">① 有线多口不是多张网卡：DSA 把交换芯片的每个端口映射成独立接口，VLAN 用 bridge vlan 配。</text>
+<text x="52" y="602" font-size="10.2" fill="#334155" xml:space="preserve">② 加速是可选层：flow offload 仍依赖软件流表；HNAT/PPE 是否可用、支持哪些封装，取决于 SoC 与驱动。</text>
+<text x="52" y="620" font-size="10.2" fill="#334155" xml:space="preserve">③ 一旦后续包被短路，tcpdump、tc/QoS、部分 ALG 与端口映射可能看不到或失效，必须回归测试。</text>
+<text x="52" y="638" font-size="10.2" fill="#334155" xml:space="preserve">④ 具体用哪颗交换芯片、Wi-Fi 是 PCIe 还是 AHB，随板型变化，不能只看 SoC 型号推断。</text>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">图源：依据 studyspace 以太网 Switch 驱动笔记、studyspace-v2 转发加速与硬件加速矩阵整理。</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">边界：本图是责任分层示意，不代表某一款具体板子的接线与寄存器。</text>
+</svg>

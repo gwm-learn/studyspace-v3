@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 预处理、编译、汇编与链接：错误发生在哪一层</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">宏在预处理阶段被文本替换；每个 .c 独立编译；链接器才解析跨文件符号。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：实线是主路径，虚线是失败分支；先定位阶段，再看具体错误。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败分支</text>
+<line x1="237" y1="142" x2="267" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="275" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">产物</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 四阶段</text>
+<rect x="36" y="190" width="140" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">foo.c</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">源码 + 头文件</text>
+<line x1="176" y1="231" x2="198" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="198,231 189,226.5 189,235.5" fill="#94a3b8"/>
+<rect x="198" y="190" width="160" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="198" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="211" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">预处理 cpp</text>
+<text x="211" y="226" font-size="9.6" fill="#334155" xml:space="preserve">展开宏/包含</text>
+<text x="211" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">条件编译</text>
+<line x1="358" y1="231" x2="380" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="380,231 371,226.5 371,235.5" fill="#94a3b8"/>
+<rect x="380" y="190" width="170" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="380" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="393" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">编译 cc1</text>
+<text x="393" y="226" font-size="9.6" fill="#334155" xml:space="preserve">语法/类型检查</text>
+<text x="393" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">优化/生成汇编</text>
+<line x1="550" y1="231" x2="572" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="572,231 563,226.5 563,235.5" fill="#94a3b8"/>
+<rect x="572" y="190" width="160" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="572" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="585" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">汇编 as</text>
+<text x="585" y="226" font-size="9.6" fill="#334155" xml:space="preserve">机器码</text>
+<text x="585" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">符号表/重定位</text>
+<line x1="732" y1="231" x2="754" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="754,231 745,226.5 745,235.5" fill="#94a3b8"/>
+<rect x="754" y="190" width="150" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="754" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="767" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">链接 ld</text>
+<text x="767" y="226" font-size="9.6" fill="#334155" xml:space="preserve">符号解析</text>
+<text x="767" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">段合并</text>
+<text x="36" y="300" font-size="10.6" fill="#334155" xml:space="preserve" font-weight="700">产物：foo.i → foo.s → foo.o → a.out</text>
+<text x="36" y="340" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 失败分支</text>
+<rect x="36" y="354" width="230" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="36" y="354" width="4.5" height="70" fill="#dc2626" rx="2"/>
+<text x="49" y="373" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">宏展开后语法错</text>
+<text x="49" y="390" font-size="9.6" fill="#334155" xml:space="preserve">gcc -E 看展开结果</text>
+<text x="49" y="405.4" font-size="9.6" fill="#334155" xml:space="preserve">检查括号/分号</text>
+<rect x="300" y="354" width="230" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="300" y="354" width="4.5" height="70" fill="#dc2626" rx="2"/>
+<text x="313" y="373" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">头文件找不到</text>
+<text x="313" y="390" font-size="9.6" fill="#334155" xml:space="preserve">-I / sysroot</text>
+<text x="313" y="405.4" font-size="9.6" fill="#334155" xml:space="preserve">包是否安装</text>
+<rect x="564" y="354" width="230" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="564" y="354" width="4.5" height="70" fill="#dc2626" rx="2"/>
+<text x="577" y="373" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">undefined reference</text>
+<text x="577" y="390" font-size="9.6" fill="#334155" xml:space="preserve">库顺序/是否链接</text>
+<text x="577" y="405.4" font-size="9.6" fill="#334155" xml:space="preserve">符号是否 static</text>
+<rect x="828" y="354" width="230" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="828" y="354" width="4.5" height="70" fill="#dc2626" rx="2"/>
+<text x="841" y="373" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">multiple definition</text>
+<text x="841" y="390" font-size="9.6" fill="#334155" xml:space="preserve">头文件里定义变量</text>
+<text x="841" y="405.4" font-size="9.6" fill="#334155" xml:space="preserve">重复链接目标</text>
+<line x1="196" y1="272" x2="151" y2="350" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3 3"/>
+<polygon points="151,350 159.4,344.45 151.6,339.96" fill="#dc2626"/>
+<line x1="346" y1="272" x2="415" y2="350" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3 3"/>
+<polygon points="415,350 412.41,340.28 405.67,346.24" fill="#dc2626"/>
+<line x1="510" y1="272" x2="679" y2="350" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3 3"/>
+<polygon points="679,350 672.71,342.14 668.94,350.31" fill="#dc2626"/>
+<line x1="660" y1="272" x2="943" y2="350" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3 3"/>
+<polygon points="943,350 935.52,343.27 933.13,351.95" fill="#dc2626"/>
+<rect x="36" y="450" width="500" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">链接期规则</text>
+<text x="52" y="504" font-size="10.2" fill="#334155" xml:space="preserve">・声明可以重复，定义只能有一份</text>
+<text x="52" y="522" font-size="10.2" fill="#334155" xml:space="preserve">・static 把符号限制在本翻译单元</text>
+<text x="52" y="540" font-size="10.2" fill="#334155" xml:space="preserve">・库顺序：使用方在前，被使用方在后</text>
+<rect x="568" y="450" width="490" height="128" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="584" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">排查顺序</text>
+<text x="584" y="504" font-size="10.2" fill="#334155" xml:space="preserve">① 用 -E 确认预处理结果</text>
+<text x="584" y="522" font-size="10.2" fill="#334155" xml:space="preserve">② 用 -c 单独编译，区分编译/链接错</text>
+<text x="584" y="540" font-size="10.2" fill="#334155" xml:space="preserve">③ 用 nm/readelf 看符号是否 U/T</text>
+<text x="584" y="558" font-size="10.2" fill="#334155" xml:space="preserve">④ 最后检查库路径、版本和 ABI</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">工具名以 GCC 为例；Clang 阶段相同，驱动命令不同。</text>
+</svg>

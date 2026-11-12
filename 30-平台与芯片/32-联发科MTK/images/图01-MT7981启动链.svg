@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="500" viewBox="0 0 1160 500" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1160" height="500" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1124" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · MT7981 启动链：从 BootROM 到 rootfs</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">启动是单向阶段推进：每一级只负责把下一级加载到内存，并完成本级的硬件初始化。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看每级的输入/输出来源，再看末端的 rootfs 如何从 FIT 子镜像暴露为块设备。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">芯片固化</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">引导阶段</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">系统镜像</text>
+<line x1="354" y1="142" x2="384" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="392" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">运行期</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 五个阶段：介质选择 → 初始化 → 引导 → 内核 → 根文件系统</text>
+<rect x="36" y="190" width="158" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="82" fill="#dc2626" rx="2"/>
+<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">BootROM</text>
+<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">boot pin 选介质</text>
+<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">固定偏移读 BL2</text>
+<line x1="194" y1="231" x2="204" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="204,231 195,226.5 195,235.5" fill="#94a3b8"/>
+<rect x="204" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="204" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="217" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">BL2 / Preloader</text>
+<text x="217" y="226" font-size="8.8" fill="#334155" xml:space="preserve">DDR 训练、时钟</text>
+<text x="217" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">&lt;64KB，mkimage 包装</text>
+<line x1="362" y1="231" x2="372" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="372,231 363,226.5 363,235.5" fill="#94a3b8"/>
+<rect x="372" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="372" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="385" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">BL31 (ATF)</text>
+<text x="385" y="226" font-size="8.8" fill="#334155" xml:space="preserve">EL3 运行时</text>
+<text x="385" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">电源 / TrustZone</text>
+<line x1="530" y1="231" x2="540" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="540,231 531,226.5 531,235.5" fill="#94a3b8"/>
+<rect x="540" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="540" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="553" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">U-Boot + FIP</text>
+<text x="553" y="226" font-size="8.8" fill="#334155" xml:space="preserve">fiptool 打包</text>
+<text x="553" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">加载 kernel FIT</text>
+<line x1="698" y1="231" x2="708" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="708,231 699,226.5 699,235.5" fill="#94a3b8"/>
+<rect x="708" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="708" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="721" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Kernel FIT</text>
+<text x="721" y="226" font-size="8.8" fill="#334155" xml:space="preserve">kernel + DTB</text>
+<text x="721" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">可含 rootfs 子镜像</text>
+<line x1="866" y1="231" x2="876" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="876,231 867,226.5 867,235.5" fill="#94a3b8"/>
+<rect x="876" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="876" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="889" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">rootfs</text>
+<text x="889" y="226" font-size="8.8" fill="#334155" xml:space="preserve">fitblk → /dev/fit0</text>
+<text x="889" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">squashfs / UBI 卷</text>
+<rect x="36" y="310" width="1070" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图与边界</text>
+<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">① 与 x86 的区别：BootROM 只认原始 Flash 偏移，不认文件系统；分区地址、大小写死在 BL2 / DTS / U-Boot 里。</text>
+<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">② BL2 的 bootdev 与 DDR 类型必须和板子一致，否则连 DDR 都初始化不起来；BL31 与 U-Boot 由 fiptool 合成 FIP。</text>
+<text x="52" y="400" font-size="10.2" fill="#334155" xml:space="preserve">③ 末端 rootfs 可以是 UBI 卷，也可以嵌在 FIT 里；后者由 fitblk 暴露为 /dev/fit0，路径由 DTS chosen 节点指定。</text>
+<text x="36" y="446" font-size="12.3" fill="#64748b" xml:space="preserve">图源：依据 studyspace/1.知识体系/0.学习计划/5.OpenWrt-镜像原理.md 与 studyspace-v2 镜像原理章节整理。</text>
+<text x="36" y="464" font-size="12.3" fill="#64748b" xml:space="preserve">具体分区偏移与镜像名随板型变化，需对照目标 DTS 与 Device 配方。</text>
+</svg>

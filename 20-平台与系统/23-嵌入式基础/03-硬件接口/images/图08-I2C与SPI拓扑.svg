@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 08 · I2C 与 SPI 的拓扑与选型</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">I2C：两线共享 + 地址寻址，从设备并联在总线上；SPI：三线共用 + 每设备一根片选。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">选型不是看速率高低，而是看引脚预算、设备数量、拓扑与是否需要多主。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">I2C 总线</text>
+<line x1="146.4" y1="142" x2="176.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="184.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">SPI 片选</text>
+<line x1="256.8" y1="142" x2="286.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="294.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">从设备</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① I2C：两线共享，靠地址</text>
+<rect x="36" y="196" width="150" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="196" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="49" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">I2C 主控</text>
+<text x="49" y="232" font-size="8.8" fill="#334155" xml:space="preserve">SDA / SCL</text>
+<line x1="186" y1="218" x2="1090" y2="218" stroke="#4f46e5" stroke-width="2.2"/>
+<line x1="186" y1="238" x2="1090" y2="238" stroke="#4f46e5" stroke-width="2.2"/>
+<text x="196" y="212" font-size="9.2" fill="#4f46e5" xml:space="preserve">SDA</text>
+<text x="196" y="256" font-size="9.2" fill="#4f46e5" xml:space="preserve">SCL</text>
+<text x="1080" y="208" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="end">上拉到 VCC</text>
+<line x1="460" y1="238" x2="460" y2="292" stroke="#4f46e5" stroke-width="1.6"/>
+<rect x="380" y="292" width="180" height="64" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="380" y="292" width="4.5" height="64" fill="#0891b2" rx="2"/>
+<text x="393" y="311" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">从设备 0x50</text>
+<text x="393" y="328" font-size="8.8" fill="#334155" xml:space="preserve">传感器 / EEPROM / RTC</text>
+<line x1="710" y1="238" x2="710" y2="292" stroke="#4f46e5" stroke-width="1.6"/>
+<rect x="630" y="292" width="180" height="64" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="630" y="292" width="4.5" height="64" fill="#0891b2" rx="2"/>
+<text x="643" y="311" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">从设备 0x51</text>
+<text x="643" y="328" font-size="8.8" fill="#334155" xml:space="preserve">传感器 / EEPROM / RTC</text>
+<line x1="960" y1="238" x2="960" y2="292" stroke="#4f46e5" stroke-width="1.6"/>
+<rect x="880" y="292" width="180" height="64" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="880" y="292" width="4.5" height="64" fill="#0891b2" rx="2"/>
+<text x="893" y="311" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">从设备 0x52</text>
+<text x="893" y="328" font-size="8.8" fill="#334155" xml:space="preserve">传感器 / EEPROM / RTC</text>
+<text x="36" y="400" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② SPI：三线共用，靠片选</text>
+<rect x="36" y="418" width="150" height="120" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="418" width="4.5" height="120" fill="#4f46e5" rx="2"/>
+<text x="49" y="437" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">SPI 主控</text>
+<text x="49" y="454" font-size="8.8" fill="#334155" xml:space="preserve">SCLK/MOSI/MISO</text>
+<text x="49" y="469.4" font-size="8.8" fill="#334155" xml:space="preserve">按 CS 选择从设备</text>
+<rect x="420" y="424" width="230" height="42" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="420" y="424" width="4.5" height="42" fill="#0891b2" rx="2"/>
+<text x="433" y="443" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">从设备（CS0）</text>
+<line x1="186" y1="452" x2="412" y2="446" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="412,446 402.88,441.74 403.12,450.74" fill="#d97706"/>
+<text x="293" y="443" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">CS0</text>
+<rect x="420" y="474" width="230" height="42" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="420" y="474" width="4.5" height="42" fill="#0891b2" rx="2"/>
+<text x="433" y="493" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">从设备（CS1）</text>
+<line x1="186" y1="502" x2="412" y2="496" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="412,496 402.88,491.74 403.12,500.74" fill="#d97706"/>
+<text x="293" y="493" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">CS1</text>
+<rect x="420" y="524" width="230" height="42" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="420" y="524" width="4.5" height="42" fill="#0891b2" rx="2"/>
+<text x="433" y="543" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">从设备（CS2）</text>
+<line x1="186" y1="552" x2="412" y2="546" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="412,546 402.88,541.74 403.12,550.74" fill="#d97706"/>
+<text x="293" y="543" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">CS2</text>
+<rect x="36" y="578" width="1090" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="608" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">③ 选型判断</text>
+<text x="52" y="632" font-size="10.2" fill="#334155" xml:space="preserve">引脚紧张、设备多、速率要求低 → I2C；高吞吐（Flash/LCD/ADC）→ SPI。</text>
+<text x="52" y="650" font-size="10.2" fill="#334155" xml:space="preserve">I2C 先撞电气上限：总线电容约 400 pF、上拉与线长决定最高速率。</text>
+<text x="52" y="668" font-size="10.2" fill="#334155" xml:space="preserve">SPI 先撞引脚上限：每个从设备一根 CS；模式 CPOL/CPHA 必须与从设备完全一致。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">读图：上半部分所有从设备挂在同一对总线上；下半部分每个从设备有自己的片选。</text>
+</svg>

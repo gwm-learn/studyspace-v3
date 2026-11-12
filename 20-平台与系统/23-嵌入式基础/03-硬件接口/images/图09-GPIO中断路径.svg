@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="660" viewBox="0 0 1260 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1260" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1224" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 09 · 从引脚到驱动的中断路径</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">引脚先经 pinmux 选择功能与电气属性，再由 GPIO 控制器把边沿翻译成中断。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">中断到 GIC 后进入驱动：上半部清源，耗时处理放线程化上下文。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">硬件路径</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中断处理</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 硬件与内核路径</text>
+<rect x="36" y="196" width="170" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="49" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">芯片引脚</text>
+<text x="49" y="232" font-size="8.8" fill="#334155" xml:space="preserve">默认多为复用功能</text>
+<line x1="206" y1="239" x2="230" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="230,239 221,234.5 221,243.5" fill="#94a3b8"/>
+<rect x="230" y="196" width="190" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="230" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="243" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">pinmux / pinctrl</text>
+<text x="243" y="232" font-size="8.8" fill="#334155" xml:space="preserve">功能、上下拉、驱动能力</text>
+<line x1="420" y1="239" x2="444" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="444,239 435,234.5 435,243.5" fill="#94a3b8"/>
+<rect x="444" y="196" width="180" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="444" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="457" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">GPIO 控制器</text>
+<text x="457" y="232" font-size="8.8" fill="#334155" xml:space="preserve">电平/边沿检测</text>
+<line x1="624" y1="239" x2="648" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="648,239 639,234.5 639,243.5" fill="#94a3b8"/>
+<rect x="648" y="196" width="180" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="648" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="661" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">中断控制器</text>
+<text x="661" y="232" font-size="8.8" fill="#334155" xml:space="preserve">使能、屏蔽、pending</text>
+<line x1="828" y1="239" x2="852" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="852,239 843,234.5 843,243.5" fill="#94a3b8"/>
+<rect x="852" y="196" width="150" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="852" y="196" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="865" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">GIC</text>
+<text x="865" y="232" font-size="8.8" fill="#334155" xml:space="preserve">分发到 CPU</text>
+<line x1="1002" y1="239" x2="1026" y2="239" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="1026,239 1017,234.5 1017,243.5" fill="#94a3b8"/>
+<rect x="1026" y="196" width="180" height="86" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1026" y="196" width="4.5" height="86" fill="#0891b2" rx="2"/>
+<text x="1039" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">驱动 ISR</text>
+<text x="1039" y="232" font-size="8.8" fill="#334155" xml:space="preserve">上半部：快速清源</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 中断上下文分工</text>
+<rect x="36" y="350" width="520" height="92" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36" y="350" width="4.5" height="92" fill="#0891b2" rx="2"/>
+<text x="49" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">上半部（硬中断上下文）</text>
+<text x="49" y="386" font-size="8.8" fill="#334155" xml:space="preserve">只做：读状态、清中断标志、唤醒下半部</text>
+<text x="49" y="401.4" font-size="8.8" fill="#334155" xml:space="preserve">不能睡眠，不能调用可能阻塞的 I2C/SPI 接口</text>
+<line x1="556" y1="396" x2="600" y2="396" stroke="#475569" stroke-width="2.2"/>
+<polygon points="600,396 591,391.5 591,400.5" fill="#475569"/>
+<rect x="600" y="350" width="520" height="92" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="600" y="350" width="4.5" height="92" fill="#0f9d58" rx="2"/>
+<text x="613" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">下半部 / 线程化中断</text>
+<text x="613" y="386" font-size="8.8" fill="#334155" xml:space="preserve">做：总线读写、协议解析、上报事件</text>
+<text x="613" y="401.4" font-size="8.8" fill="#334155" xml:space="preserve">可睡眠；注意与进程上下文的并发与锁</text>
+<rect x="36" y="470" width="1084" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="500" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">③ 去抖与触发方式（唯一定时器）</text>
+<text x="52" y="524" font-size="10.2" fill="#334155" xml:space="preserve">机械触点抖动通常持续数毫秒到数十毫秒：硬件 RC 去抖延迟固定，软件去抖可配 5~50 ms。</text>
+<text x="52" y="542" font-size="10.2" fill="#334155" xml:space="preserve">电平触发必须处理时清源，否则中断风暴；边沿触发不会风暴，但窄脉冲可能丢失。</text>
+<text x="52" y="560" font-size="10.2" fill="#334155" xml:space="preserve">去抖时间越长越稳，但按键响应与唤醒延迟越大；按场景取舍，不要一律 50 ms。</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">读图：横向是硬件到驱动的路径；下方两块是同一中断在两个上下文中的分工。</text>
+</svg>

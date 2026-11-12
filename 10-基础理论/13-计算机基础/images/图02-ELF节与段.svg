@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="680" viewBox="0 0 1160 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1160" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1124" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">ELF 的两种视图：section 与 segment</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">section 面向链接器，segment 面向装载器；多个 section 可合并进一个 PT_LOAD。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">.bss 在文件中不占空间，运行时才分配并清零。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">只读/代码</text>
+<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">可读写数据</text>
+<line x1="265.6" y1="142" x2="295.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="303.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">动态链接</text>
+<line x1="371.6" y1="142" x2="401.6" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="409.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">不装载</text>
+<rect x="60" y="210" width="80" height="56" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="60" y="210" width="4.5" height="56" fill="#475569" rx="2"/>
+<text x="73" y="229" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ELF header</text>
+<rect x="140" y="210" width="220" height="56" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="140" y="210" width="4.5" height="56" fill="#0f9d58" rx="2"/>
+<text x="153" y="229" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.text</text>
+<rect x="360" y="210" width="140" height="56" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="360" y="210" width="4.5" height="56" fill="#0f9d58" rx="2"/>
+<text x="373" y="229" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.rodata</text>
+<rect x="500" y="210" width="160" height="56" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="500" y="210" width="4.5" height="56" fill="#d97706" rx="2"/>
+<text x="513" y="229" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.data</text>
+<rect x="660" y="210" width="140" height="56" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="660" y="210" width="4.5" height="56" fill="#d97706" rx="2"/>
+<text x="673" y="229" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.bss</text>
+<rect x="800" y="210" width="120" height="56" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="800" y="210" width="4.5" height="56" fill="#475569" rx="2"/>
+<text x="813" y="229" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.symtab</text>
+<rect x="920" y="210" width="140" height="56" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="920" y="210" width="4.5" height="56" fill="#475569" rx="2"/>
+<text x="933" y="229" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.debug_*</text>
+<text x="60" y="200" font-size="10.4" fill="#64748b" xml:space="preserve">ELF 文件（链接视图，按文件偏移）</text>
+<rect x="60" y="390" width="100" height="56" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="60" y="390" width="4.5" height="56" fill="#475569" rx="2"/>
+<text x="73" y="409" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">保留</text>
+<rect x="160" y="390" width="220" height="56" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="160" y="390" width="4.5" height="56" fill="#0f9d58" rx="2"/>
+<text x="173" y="409" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.text  r-x</text>
+<rect x="380" y="390" width="140" height="56" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="380" y="390" width="4.5" height="56" fill="#0f9d58" rx="2"/>
+<text x="393" y="409" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.rodata  r--</text>
+<rect x="520" y="390" width="160" height="56" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="520" y="390" width="4.5" height="56" fill="#d97706" rx="2"/>
+<text x="533" y="409" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.data  rw-</text>
+<rect x="680" y="390" width="140" height="56" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="680" y="390" width="4.5" height="56" fill="#d97706" rx="2"/>
+<text x="693" y="409" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">.bss  rw-</text>
+<rect x="820" y="390" width="180" height="56" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="820" y="390" width="4.5" height="56" fill="#0891b2" rx="2"/>
+<text x="833" y="409" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">堆 / mmap →</text>
+<text x="60" y="380" font-size="10.4" fill="#64748b" xml:space="preserve">进程地址空间（装载视图，按虚拟地址）</text>
+<line x1="250" y1="266" x2="250" y2="390" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="250,390 254.5,381 245.5,381" fill="#0f9d58"/>
+<text x="256" y="322" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">PT_LOAD</text>
+<line x1="460" y1="266" x2="460" y2="390" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="460,390 464.5,381 455.5,381" fill="#0f9d58"/>
+<line x1="600" y1="266" x2="600" y2="390" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="600,390 604.5,381 595.5,381" fill="#d97706"/>
+<line x1="740" y1="266" x2="740" y2="390" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="740,390 744.5,381 735.5,381" fill="#d97706"/>
+<line x1="880" y1="266" x2="1030" y2="340" stroke="#475569" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="1030,340 1023.92,331.98 1019.94,340.05" fill="#475569"/>
+<text x="963" y="295" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">不映射</text>
+<rect x="60" y="500" width="640" height="110" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="76" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="554" font-size="10.2" fill="#334155" xml:space="preserve">上排是链接视图：按 section 看代码、数据、符号和调试信息。</text>
+<text x="76" y="572" font-size="10.2" fill="#334155" xml:space="preserve">下排是运行视图：装载器只关心 PT_LOAD 的权限和地址。</text>
+<text x="76" y="590" font-size="10.2" fill="#334155" xml:space="preserve">.bss 在文件里是 NOBITS，运行时才清零；.symtab/.debug 不进入内存。</text>
+<rect x="740" y="500" width="380" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="756" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="756" y="554" font-size="10.2" fill="#334155" xml:space="preserve">section 与 segment 不是一一对应。</text>
+<text x="756" y="572" font-size="10.2" fill="#334155" xml:space="preserve">readelf -S 看 section，readelf -l 看 segment。</text>
+<text x="756" y="590" font-size="10.2" fill="#334155" xml:space="preserve">示意图不按真实比例。</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">图源：ELF gABI 与 System V ABI 的通用模型。</text>
+</svg>

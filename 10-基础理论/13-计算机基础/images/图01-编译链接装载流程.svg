@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="860" viewBox="0 0 1100 860" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="860" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">从 .c 到进程：编译、链接、装载</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">每个翻译单元独立编译成 .o；链接器统一解析符号并重定位。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">可执行文件由内核映射，动态链接器再完成库的重定位和初始化。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">编译流水线</text>
+<line x1="153" y1="142" x2="183" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="191" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">链接</text>
+<line x1="237" y1="142" x2="267" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="275" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">装载/运行</text>
+<rect x="60" y="230" width="170" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="60" y="230" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="73" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">hello.c</text>
+<text x="73" y="266" font-size="9.6" fill="#334155" xml:space="preserve">源码 + 头文件</text>
+<line x1="230" y1="271" x2="248" y2="271" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="248,271 239,266.5 239,275.5" fill="#94a3b8"/>
+<rect x="248" y="230" width="170" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="248" y="230" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="261" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">hello.i</text>
+<text x="261" y="266" font-size="9.6" fill="#334155" xml:space="preserve">宏展开/包含</text>
+<line x1="418" y1="271" x2="436" y2="271" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="436,271 427,266.5 427,275.5" fill="#94a3b8"/>
+<rect x="436" y="230" width="170" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="436" y="230" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="449" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">hello.s</text>
+<text x="449" y="266" font-size="9.6" fill="#334155" xml:space="preserve">汇编文本</text>
+<line x1="606" y1="271" x2="624" y2="271" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="624,271 615,266.5 615,275.5" fill="#94a3b8"/>
+<rect x="624" y="230" width="190" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="624" y="230" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="637" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">hello.o</text>
+<text x="637" y="266" font-size="9.6" fill="#334155" xml:space="preserve">机器码 + 符号 + 重定位</text>
+<line x1="814" y1="271" x2="832" y2="271" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="832,271 823,266.5 823,275.5" fill="#94a3b8"/>
+<rect x="832" y="230" width="190" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="832" y="230" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="845" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">libc.a / libc.so</text>
+<text x="845" y="266" font-size="9.6" fill="#334155" xml:space="preserve">静态库 / 共享库</text>
+<rect x="300" y="390" width="230" height="76" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="300" y="390" width="4.5" height="76" fill="#d97706" rx="2"/>
+<text x="313" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">链接器 ld</text>
+<text x="313" y="426" font-size="9.6" fill="#334155" xml:space="preserve">符号解析：强/弱/未定义</text>
+<text x="313" y="441.4" font-size="9.6" fill="#334155" xml:space="preserve">重定位：填入最终地址</text>
+<rect x="650" y="390" width="250" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="650" y="390" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="663" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">可执行 ELF</text>
+<text x="663" y="426" font-size="9.6" fill="#334155" xml:space="preserve">program header + 入口地址</text>
+<text x="663" y="441.4" font-size="9.6" fill="#334155" xml:space="preserve">依赖记录（NEEDED）</text>
+<line x1="430" y1="330" x2="415" y2="390" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="415,390 421.55,382.36 412.82,380.18" fill="#d97706"/>
+<line x1="915" y1="330" x2="760" y2="390" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="760,390 770.02,390.95 766.77,382.55" fill="#d97706"/>
+<text x="817.5" y="372" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">按需抽取</text>
+<line x1="530" y1="428" x2="650" y2="428" stroke="#d97706" stroke-width="2"/>
+<polygon points="650,428 641,423.5 641,432.5" fill="#d97706"/>
+<rect x="60" y="550" width="260" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="60" y="550" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="73" y="569" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">execve + 内核映射</text>
+<text x="73" y="586" font-size="9.6" fill="#334155" xml:space="preserve">检查 ELF/架构/权限</text>
+<text x="73" y="601.4" font-size="9.6" fill="#334155" xml:space="preserve">映射 PT_LOAD，设置栈</text>
+<rect x="360" y="550" width="240" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="360" y="550" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="373" y="569" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ld.so 重定位</text>
+<text x="373" y="586" font-size="9.6" fill="#334155" xml:space="preserve">映射依赖库</text>
+<text x="373" y="601.4" font-size="9.6" fill="#334155" xml:space="preserve">解析符号、改写 GOT</text>
+<rect x="640" y="550" width="200" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="640" y="550" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="653" y="569" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">_start / CRT</text>
+<text x="653" y="586" font-size="9.6" fill="#334155" xml:space="preserve">初始化 libc/TLS/构造</text>
+<text x="653" y="601.4" font-size="9.6" fill="#334155" xml:space="preserve">调用 main</text>
+<rect x="880" y="550" width="170" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="880" y="550" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="893" y="569" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">main</text>
+<text x="893" y="586" font-size="9.6" fill="#334155" xml:space="preserve">用户代码开始执行</text>
+<line x1="775" y1="466" x2="190" y2="550" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="190,550 199.55,553.18 198.27,544.27" fill="#0f9d58"/>
+<line x1="320" y1="588" x2="360" y2="588" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="360,588 351,583.5 351,592.5" fill="#0f9d58"/>
+<line x1="600" y1="588" x2="640" y2="588" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="640,588 631,583.5 631,592.5" fill="#0f9d58"/>
+<line x1="840" y1="588" x2="880" y2="588" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="880,588 871,583.5 871,592.5" fill="#0f9d58"/>
+<rect x="60" y="680" width="990" height="110" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="76" y="710" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="734" font-size="10.2" fill="#334155" xml:space="preserve">上半部分是“文件怎么生成”，下半部分是“文件怎么变成进程”。</text>
+<text x="76" y="752" font-size="10.2" fill="#334155" xml:space="preserve">gcc 只是驱动器；加 -v 可以看到它实际调用的 cc1/as/ld 命令。</text>
+<text x="76" y="770" font-size="10.2" fill="#334155" xml:space="preserve">静态链接把库代码复制进来；动态链接把依赖留给 ld.so 在运行时解析。</text>
+<text x="36" y="824" font-size="12.3" fill="#64748b" xml:space="preserve">图源：通用 GNU 工具链与 ELF 装载模型；具体 CRT 文件和选项随工具链变化。</text>
+</svg>

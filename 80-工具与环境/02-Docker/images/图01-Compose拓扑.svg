@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="700" viewBox="0 0 1140 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · Compose：把多容器拓扑写进 YAML</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Compose 用一个项目描述多个服务、它们共享的网络和卷，并按依赖顺序启动。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左侧是声明文件，中间是项目，右侧是服务；网络让服务名可直接解析，卷负责持久化。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">声明文件</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">Compose 项目</text>
+<line x1="278.8" y1="142" x2="308.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="316.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">服务</text>
+<line x1="362.8" y1="142" x2="392.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="400.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">网络/卷</text>
+<rect x="36" y="195" width="230" height="120" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="195" width="4.5" height="120" fill="#d97706" rx="2"/>
+<text x="49" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">声明文件</text>
+<text x="49" y="231" font-size="9.6" fill="#334155" xml:space="preserve">compose.yaml</text>
+<text x="49" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">.env（变量插值）</text>
+<text x="49" y="261.8" font-size="9.6" fill="#334155" xml:space="preserve">Dockerfile（build 时）</text>
+<rect x="330" y="195" width="260" height="120" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="330" y="195" width="4.5" height="120" fill="#4f46e5" rx="2"/>
+<text x="343" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Compose 项目</text>
+<text x="343" y="231" font-size="9.6" fill="#334155" xml:space="preserve">project name</text>
+<text x="343" y="246.4" font-size="9.6" fill="#334155" xml:space="preserve">services / networks / volumes</text>
+<text x="343" y="261.8" font-size="9.6" fill="#334155" xml:space="preserve">up/down 管理整个项目</text>
+<rect x="680" y="195" width="200" height="76" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="680" y="195" width="4.5" height="76" fill="#0891b2" rx="2"/>
+<text x="693" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">service: web</text>
+<text x="693" y="231" font-size="9.6" fill="#334155" xml:space="preserve">ports: 8080:80</text>
+<rect x="680" y="290" width="200" height="76" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="680" y="290" width="4.5" height="76" fill="#0891b2" rx="2"/>
+<text x="693" y="309" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">service: app</text>
+<text x="693" y="326" font-size="9.6" fill="#334155" xml:space="preserve">depends_on: db</text>
+<rect x="680" y="385" width="200" height="76" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="680" y="385" width="4.5" height="76" fill="#0891b2" rx="2"/>
+<text x="693" y="404" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">service: db</text>
+<text x="693" y="421" font-size="9.6" fill="#334155" xml:space="preserve">volumes: db-data</text>
+<rect x="330" y="360" width="260" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="330" y="360" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="343" y="379" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">default network</text>
+<text x="343" y="396" font-size="9.6" fill="#334155" xml:space="preserve">服务名即 DNS 名</text>
+<rect x="330" y="455" width="260" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="330" y="455" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="343" y="474" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">volume: db-data</text>
+<text x="343" y="491" font-size="9.6" fill="#334155" xml:space="preserve">独立于容器生命周期</text>
+<line x1="266" y1="255" x2="330" y2="255" stroke="#475569" stroke-width="2"/>
+<polygon points="330,255 321,250.5 321,259.5" fill="#475569"/>
+<line x1="590" y1="230" x2="680" y2="230" stroke="#475569" stroke-width="2"/>
+<polygon points="680,230 671,225.5 671,234.5" fill="#475569"/>
+<line x1="590" y1="255" x2="680" y2="320" stroke="#475569" stroke-width="2"/>
+<polygon points="680,320 675.34,311.08 670.07,318.38" fill="#475569"/>
+<line x1="880" y1="328" x2="910" y2="328" stroke="#475569" stroke-width="1.8"/>
+<line x1="910" y1="328" x2="910" y2="423" stroke="#475569" stroke-width="1.8"/>
+<line x1="910" y1="423" x2="880" y2="423" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="880,423 889,427.5 889,418.5" fill="#475569"/>
+<text x="916" y="380" font-size="9.4" fill="#64748b" xml:space="preserve">depends_on</text>
+<line x1="460" y1="315" x2="460" y2="360" stroke="#475569" stroke-width="2"/>
+<polygon points="460,360 464.5,351 455.5,351" fill="#475569"/>
+<text x="470" y="448" font-size="9.4" fill="#64748b" xml:space="preserve">项目顶层声明</text>
+<rect x="680" y="500" width="420" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="696" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="696" y="554" font-size="10.2" fill="#334155" xml:space="preserve">同一个网络内的服务可以用服务名互相访问，不必记容器 IP。</text>
+<text x="696" y="572" font-size="10.2" fill="#334155" xml:space="preserve">depends_on 只保证启动顺序；要等健康检查通过，需配合 condition。</text>
+<text x="696" y="590" font-size="10.2" fill="#334155" xml:space="preserve">volume 声明在顶层，服务里引用；删除容器不会删除命名卷。</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">命令：docker compose up -d、docker compose ps、docker compose logs -f、docker compose down。</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；Compose 规范版本与字段支持随 Docker Compose 版本变化。</text>
+</svg>

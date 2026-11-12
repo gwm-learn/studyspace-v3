@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 构建缓存与多阶段：让变更只影响必要的层</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">构建缓存按指令和输入内容匹配；前面的层失效，后面的层都会重建。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：上方看缓存链在哪一步断开，下方看多阶段构建如何把工具链留在 builder。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">缓存命中</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">缓存失效</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">构建阶段</text>
+<line x1="354" y1="142" x2="384" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="392" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">运行阶段</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 缓存链：越靠前的层越稳定</text>
+<rect x="36" y="195" width="150" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="195" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="49" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">FROM</text>
+<text x="49" y="231" font-size="8.8" fill="#334155" xml:space="preserve">基础镜像</text>
+<text x="49" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">很少变化</text>
+<line x1="186" y1="236" x2="210" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="210,236 201,231.5 201,240.5" fill="#94a3b8"/>
+<rect x="210" y="195" width="150" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="210" y="195" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="223" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">RUN apt</text>
+<text x="223" y="231" font-size="8.8" fill="#334155" xml:space="preserve">系统依赖</text>
+<text x="223" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">较稳定</text>
+<line x1="360" y1="236" x2="384" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="384,236 375,231.5 375,240.5" fill="#94a3b8"/>
+<rect x="384" y="195" width="160" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="384" y="195" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="397" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">COPY deps</text>
+<text x="397" y="231" font-size="8.8" fill="#334155" xml:space="preserve">锁文件</text>
+<text x="397" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">依赖变更才失效</text>
+<line x1="544" y1="236" x2="568" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="568,236 559,231.5 559,240.5" fill="#94a3b8"/>
+<rect x="568" y="195" width="150" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="568" y="195" width="4.5" height="82" fill="#dc2626" rx="2"/>
+<text x="581" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">COPY src</text>
+<text x="581" y="231" font-size="8.8" fill="#334155" xml:space="preserve">源码</text>
+<text x="581" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">频繁变化</text>
+<line x1="718" y1="236" x2="742" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="742,236 733,231.5 733,240.5" fill="#94a3b8"/>
+<rect x="742" y="195" width="150" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="742" y="195" width="4.5" height="82" fill="#dc2626" rx="2"/>
+<text x="755" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">RUN build</text>
+<text x="755" y="231" font-size="8.8" fill="#334155" xml:space="preserve">编译</text>
+<text x="755" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">随源码失效</text>
+<text x="36" y="300" font-size="10.2" fill="#64748b" xml:space="preserve">COPY src 命中新内容 → 该层及其后的 RUN build 缓存失效；前面的依赖层仍可复用。</text>
+<text x="36" y="350" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 多阶段：工具链不进运行镜像</text>
+<rect x="36" y="370" width="300" height="110" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="370" width="4.5" height="110" fill="#4f46e5" rx="2"/>
+<text x="49" y="389" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">builder 阶段</text>
+<text x="49" y="406" font-size="9.6" fill="#334155" xml:space="preserve">FROM ubuntu + gcc/cmake</text>
+<text x="49" y="421.4" font-size="9.6" fill="#334155" xml:space="preserve">COPY 源码 → RUN 编译</text>
+<text x="49" y="436.8" font-size="9.6" fill="#334155" xml:space="preserve">产物在 /out/app</text>
+<rect x="440" y="370" width="220" height="110" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="440" y="370" width="4.5" height="110" fill="#0f9d58" rx="2"/>
+<text x="453" y="389" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">产物 /out/app</text>
+<text x="453" y="406" font-size="9.6" fill="#334155" xml:space="preserve">静态二进制或运行时文件</text>
+<text x="453" y="421.4" font-size="9.6" fill="#334155" xml:space="preserve">只复制必要文件</text>
+<rect x="764" y="370" width="300" height="110" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="764" y="370" width="4.5" height="110" fill="#0891b2" rx="2"/>
+<text x="777" y="389" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">runtime 阶段</text>
+<text x="777" y="406" font-size="9.6" fill="#334155" xml:space="preserve">FROM 更小的基础镜像</text>
+<text x="777" y="421.4" font-size="9.6" fill="#334155" xml:space="preserve">COPY --from=builder /out/app</text>
+<text x="777" y="436.8" font-size="9.6" fill="#334155" xml:space="preserve">镜像体积与攻击面更小</text>
+<line x1="336" y1="425" x2="440" y2="425" stroke="#475569" stroke-width="2.2"/>
+<polygon points="440,425 431,420.5 431,429.5" fill="#475569"/>
+<text x="354" y="416" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">COPY --from</text>
+<line x1="660" y1="425" x2="764" y2="425" stroke="#475569" stroke-width="2.2"/>
+<polygon points="764,425 755,420.5 755,429.5" fill="#475569"/>
+<rect x="36" y="520" width="1028" height="128" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="550" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="574" font-size="10.2" fill="#334155" xml:space="preserve">缓存键包含指令文本和输入内容；只改源码时，依赖安装层仍然命中。</text>
+<text x="52" y="592" font-size="10.2" fill="#334155" xml:space="preserve">把变化频繁的 COPY 放在后面，把稳定的依赖安装放在前面，是缩短构建时间的关键。</text>
+<text x="52" y="610" font-size="10.2" fill="#334155" xml:space="preserve">多阶段构建里，builder 的文件系统不会进入最终镜像，只有显式 COPY 的产物会。</text>
+<text x="52" y="628" font-size="10.2" fill="#334155" xml:space="preserve">BuildKit 支持并行构建、缓存挂载和跨架构构建；传统 builder 的缓存行为略有差异。</text>
+<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">命令：docker build --progress=plain、docker buildx build --platform linux/amd64,linux/arm64。</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；缓存是否命中也受 .dockerignore、构建参数和基础镜像更新影响。</text>
+</svg>

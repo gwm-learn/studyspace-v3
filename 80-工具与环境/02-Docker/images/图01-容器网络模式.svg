@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 容器网络：三种常见接入方式</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">bridge 用 NAT 借宿主机上网，macvlan 让容器直接拿局域网 IP，host 直接共享宿主协议栈。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看容器是否有独立 netns，再看 IP 由谁分配、流量是否经过 NAT。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">容器 netns</text>
+<line x1="159.6" y1="142" x2="189.6" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="197.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">宿主机/网桥</text>
+<line x1="283.2" y1="142" x2="313.2" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="321.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">局域网</text>
+<line x1="378.2" y1="142" x2="408.2" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="416.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">NAT/转发</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① bridge：默认模式，容器在私有网段</text>
+<rect x="36" y="195" width="190" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="195" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="49" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">容器 netns</text>
+<text x="49" y="231" font-size="8.8" fill="#334155" xml:space="preserve">eth0 172.17.0.2</text>
+<text x="49" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">默认路由 → 172.17.0.1</text>
+<rect x="270" y="195" width="150" height="88" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="270" y="195" width="4.5" height="88" fill="#475569" rx="2"/>
+<text x="283" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">veth pair</text>
+<text x="283" y="231" font-size="8.8" fill="#334155" xml:space="preserve">一端在容器</text>
+<text x="283" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">一端在宿主机</text>
+<rect x="464" y="195" width="190" height="88" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="464" y="195" width="4.5" height="88" fill="#475569" rx="2"/>
+<text x="477" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">docker0 网桥</text>
+<text x="477" y="231" font-size="8.8" fill="#334155" xml:space="preserve">172.17.0.1/16</text>
+<text x="477" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">端口发布在这里 DNAT</text>
+<rect x="698" y="195" width="190" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="698" y="195" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="711" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">宿主 eth0</text>
+<text x="711" y="231" font-size="8.8" fill="#334155" xml:space="preserve">192.168.1.10</text>
+<text x="711" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">MASQUERADE 出网</text>
+<rect x="932" y="195" width="150" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="932" y="195" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="945" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">外网</text>
+<text x="945" y="231" font-size="8.8" fill="#334155" xml:space="preserve">看不到容器 IP</text>
+<text x="945" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">只看到宿主 IP</text>
+<line x1="226" y1="239" x2="270" y2="239" stroke="#475569" stroke-width="2"/>
+<polygon points="270,239 261,234.5 261,243.5" fill="#475569"/>
+<line x1="420" y1="239" x2="464" y2="239" stroke="#475569" stroke-width="2"/>
+<polygon points="464,239 455,234.5 455,243.5" fill="#475569"/>
+<line x1="654" y1="239" x2="698" y2="239" stroke="#475569" stroke-width="2"/>
+<polygon points="698,239 689,234.5 689,243.5" fill="#475569"/>
+<text x="668" y="230" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">NAT</text>
+<line x1="888" y1="239" x2="932" y2="239" stroke="#475569" stroke-width="2"/>
+<polygon points="932,239 923,234.5 923,243.5" fill="#475569"/>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② macvlan：容器直接出现在局域网</text>
+<rect x="36" y="350" width="200" height="88" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="350" width="4.5" height="88" fill="#475569" rx="2"/>
+<text x="49" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">宿主 ens38</text>
+<text x="49" y="386" font-size="8.8" fill="#334155" xml:space="preserve">192.168.88.1/24</text>
+<text x="49" y="401.4" font-size="8.8" fill="#334155" xml:space="preserve">作为 macvlan parent</text>
+<rect x="300" y="350" width="240" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="350" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="313" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">容器 macvlan</text>
+<text x="313" y="386" font-size="8.8" fill="#334155" xml:space="preserve">独立 MAC / 192.168.88.52</text>
+<text x="313" y="401.4" font-size="8.8" fill="#334155" xml:space="preserve">与宿主同网段</text>
+<rect x="604" y="350" width="190" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="604" y="350" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="617" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">局域网设备</text>
+<text x="617" y="386" font-size="8.8" fill="#334155" xml:space="preserve">192.168.88.0/24</text>
+<text x="617" y="401.4" font-size="8.8" fill="#334155" xml:space="preserve">可直接访问容器</text>
+<line x1="236" y1="394" x2="300" y2="394" stroke="#475569" stroke-width="2"/>
+<polygon points="300,394 291,389.5 291,398.5" fill="#475569"/>
+<line x1="540" y1="394" x2="604" y2="394" stroke="#475569" stroke-width="2"/>
+<polygon points="604,394 595,389.5 595,398.5" fill="#475569"/>
+<rect x="830" y="350" width="300" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="846" y="380" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">注意</text>
+<text x="846" y="404" font-size="10.2" fill="#334155" xml:space="preserve">parent 网卡需支持混杂模式</text>
+<text x="846" y="422" font-size="10.2" fill="#334155" xml:space="preserve">宿主与容器默认不能直连</text>
+<text x="846" y="440" font-size="10.2" fill="#334155" xml:space="preserve">IP 需在网段内且不冲突</text>
+<text x="36" y="480" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">③ host：共享宿主网络命名空间</text>
+<rect x="36" y="500" width="240" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="500" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="49" y="519" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">容器</text>
+<text x="49" y="536" font-size="8.8" fill="#334155" xml:space="preserve">没有独立 netns</text>
+<text x="49" y="551.4" font-size="8.8" fill="#334155" xml:space="preserve">端口直接占用宿主端口</text>
+<rect x="320" y="500" width="240" height="88" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="320" y="500" width="4.5" height="88" fill="#475569" rx="2"/>
+<text x="333" y="519" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">宿主协议栈</text>
+<text x="333" y="536" font-size="8.8" fill="#334155" xml:space="preserve">eth0 / 路由 / iptables</text>
+<text x="333" y="551.4" font-size="8.8" fill="#334155" xml:space="preserve">容器看到的就是宿主网络</text>
+<rect x="604" y="500" width="190" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="604" y="500" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="617" y="519" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">外网</text>
+<text x="617" y="536" font-size="8.8" fill="#334155" xml:space="preserve">直接使用宿主 IP</text>
+<line x1="276" y1="544" x2="320" y2="544" stroke="#475569" stroke-width="2"/>
+<polygon points="320,544 311,539.5 311,548.5" fill="#475569"/>
+<line x1="560" y1="544" x2="604" y2="544" stroke="#475569" stroke-width="2"/>
+<polygon points="604,544 595,539.5 595,548.5" fill="#475569"/>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">命令：docker network create --driver macvlan --subnet=... --gateway=... -o parent=ens38 net88。</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；不同平台的网桥名、默认网段和 iptables 实现可能不同。</text>
+</svg>

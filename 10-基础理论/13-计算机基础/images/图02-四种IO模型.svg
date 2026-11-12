@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="900" viewBox="0 0 1180 900" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="900" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">四类 IO 模型：等什么、谁来拷贝</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">前三种模型都要自己等数据；多路复用只是把等待集中到一个调用。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">异步 IO 把等待和拷贝都交给内核，完成后通知应用。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">等待数据</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">多路复用等待</text>
+<line x1="270" y1="142" x2="300" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="308" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">拷贝数据</text>
+<line x1="376" y1="142" x2="406" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="414" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">内核异步完成</text>
+<rect x="60" y="230" width="230" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="60" y="230" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="73" y="249" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">阻塞 IO</text>
+<text x="73" y="266" font-size="8.8" fill="#334155" xml:space="preserve">read 一直睡到有数据</text>
+<text x="73" y="281.4" font-size="8.8" fill="#334155" xml:space="preserve">拷贝期间也阻塞</text>
+<rect x="330" y="246" width="372" height="36" fill="#d97706" rx="6"/>
+<text x="516" y="269" font-size="10.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">等待数据</text>
+<rect x="702" y="246" width="124" height="36" fill="#4f46e5" rx="6"/>
+<text x="764" y="269" font-size="10.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">拷贝</text>
+<rect x="60" y="345" width="230" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="60" y="345" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="73" y="364" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">非阻塞 IO</text>
+<text x="73" y="381" font-size="8.8" fill="#334155" xml:space="preserve">轮询 EAGAIN</text>
+<text x="73" y="396.4" font-size="8.8" fill="#334155" xml:space="preserve">拷贝期间仍阻塞</text>
+<rect x="332" y="361" width="54" height="36" fill="#d97706" rx="4"/>
+<rect x="394" y="361" width="54" height="36" fill="#d97706" rx="4"/>
+<rect x="456" y="361" width="54" height="36" fill="#d97706" rx="4"/>
+<rect x="518" y="361" width="54" height="36" fill="#d97706" rx="4"/>
+<rect x="580" y="361" width="54" height="36" fill="#d97706" rx="4"/>
+<rect x="642" y="361" width="54" height="36" fill="#d97706" rx="4"/>
+<text x="516" y="353" font-size="9.6" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="middle">反复 EAGAIN</text>
+<rect x="702" y="361" width="124" height="36" fill="#4f46e5" rx="6"/>
+<text x="764" y="384" font-size="10.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">拷贝</text>
+<rect x="60" y="460" width="230" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="60" y="460" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="73" y="479" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">多路复用</text>
+<text x="73" y="496" font-size="8.8" fill="#334155" xml:space="preserve">select/poll/epoll 统一等</text>
+<text x="73" y="511.4" font-size="8.8" fill="#334155" xml:space="preserve">事件就绪后再 read</text>
+<rect x="330" y="476" width="372" height="36" fill="#0f9d58" rx="6"/>
+<text x="516" y="499" font-size="10.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">统一等待多个 fd</text>
+<rect x="702" y="476" width="124" height="36" fill="#4f46e5" rx="6"/>
+<text x="764" y="499" font-size="10.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">拷贝</text>
+<rect x="60" y="575" width="230" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="60" y="575" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="73" y="594" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">异步 IO</text>
+<text x="73" y="611" font-size="8.8" fill="#334155" xml:space="preserve">内核完成等待与拷贝</text>
+<text x="73" y="626.4" font-size="8.8" fill="#334155" xml:space="preserve">完成后通知应用</text>
+<rect x="330" y="591" width="496" height="36" fill="#0891b2" rx="6"/>
+<text x="578" y="614" font-size="10.2" fill="#ffffff" xml:space="preserve" font-weight="700" text-anchor="middle">内核等待 + 拷贝，应用可做别的事</text>
+<rect x="60" y="720" width="1080" height="110" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="76" y="750" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="774" font-size="10.2" fill="#334155" xml:space="preserve">横轴是时间：前三种模型在“拷贝”阶段仍然阻塞在 read/write 里。</text>
+<text x="76" y="792" font-size="10.2" fill="#334155" xml:space="preserve">多路复用不是“非阻塞 IO”，它只是把等待集中；fd 本身仍可设非阻塞。</text>
+<text x="76" y="810" font-size="10.2" fill="#334155" xml:space="preserve">异步 IO 的“完成”通常通过完成队列/信号/回调通知，编程模型与前三类不同。</text>
+<text x="36" y="864" font-size="12.3" fill="#64748b" xml:space="preserve">图源：Stevens 的 IO 模型分类；io_uring 等具体接口的完成通知方式不同。</text>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="760" viewBox="0 0 1080 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 调试工具选择与定位路径</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先按现象分类，再选工具取证；工具输出是证据，根因仍要回到最小复现。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：顶部是问题类型，中间是对应工具，底部是下一步；虚线表示需要交叉验证。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">崩溃/内存</text>
+<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">卡死</text>
+<line x1="232.6" y1="142" x2="262.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="270.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">性能</text>
+<line x1="316.6" y1="142" x2="346.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="354.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">逻辑</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 现象分类</text>
+<rect x="36" y="190" width="180" height="62" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="62" fill="#dc2626" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">崩溃</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">SIGSEGV/abort</text>
+<rect x="240" y="190" width="180" height="62" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="240" y="190" width="4.5" height="62" fill="#dc2626" rx="2"/>
+<text x="253" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">内存错误</text>
+<text x="253" y="226" font-size="9.6" fill="#334155" xml:space="preserve">越界/泄漏/UAF</text>
+<rect x="444" y="190" width="180" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="444" y="190" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="457" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">卡死</text>
+<text x="457" y="226" font-size="9.6" fill="#334155" xml:space="preserve">无响应/死锁</text>
+<rect x="648" y="190" width="180" height="62" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="648" y="190" width="4.5" height="62" fill="#4f46e5" rx="2"/>
+<text x="661" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">性能</text>
+<text x="661" y="226" font-size="9.6" fill="#334155" xml:space="preserve">CPU/I/O/锁</text>
+<rect x="852" y="190" width="180" height="62" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="852" y="190" width="4.5" height="62" fill="#0f9d58" rx="2"/>
+<text x="865" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">逻辑错误</text>
+<text x="865" y="226" font-size="9.6" fill="#334155" xml:space="preserve">结果不符</text>
+<text x="36" y="286" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 首选工具</text>
+<rect x="36" y="300" width="180" height="62" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="36" y="300" width="4.5" height="62" fill="#dc2626" rx="2"/>
+<text x="49" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">GDB + core</text>
+<text x="49" y="336" font-size="9.6" fill="#334155" xml:space="preserve">bt / info threads</text>
+<line x1="126" y1="252" x2="126" y2="296" stroke="#94a3b8" stroke-width="1.4"/>
+<polygon points="126,296 130.5,287 121.5,287" fill="#94a3b8"/>
+<rect x="240" y="300" width="180" height="62" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="240" y="300" width="4.5" height="62" fill="#dc2626" rx="2"/>
+<text x="253" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ASan / Valgrind</text>
+<text x="253" y="336" font-size="9.6" fill="#334155" xml:space="preserve">越界/泄漏/UAF</text>
+<line x1="330" y1="252" x2="330" y2="296" stroke="#94a3b8" stroke-width="1.4"/>
+<polygon points="330,296 334.5,287 325.5,287" fill="#94a3b8"/>
+<rect x="444" y="300" width="180" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="444" y="300" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="457" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">gdb -p + strace</text>
+<text x="457" y="336" font-size="9.6" fill="#334155" xml:space="preserve">线程栈/系统调用</text>
+<line x1="534" y1="252" x2="534" y2="296" stroke="#94a3b8" stroke-width="1.4"/>
+<polygon points="534,296 538.5,287 529.5,287" fill="#94a3b8"/>
+<rect x="648" y="300" width="180" height="62" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="648" y="300" width="4.5" height="62" fill="#4f46e5" rx="2"/>
+<text x="661" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">perf / ftrace</text>
+<text x="661" y="336" font-size="9.6" fill="#334155" xml:space="preserve">采样/内核跟踪</text>
+<line x1="738" y1="252" x2="738" y2="296" stroke="#94a3b8" stroke-width="1.4"/>
+<polygon points="738,296 742.5,287 733.5,287" fill="#94a3b8"/>
+<rect x="852" y="300" width="180" height="62" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="852" y="300" width="4.5" height="62" fill="#0f9d58" rx="2"/>
+<text x="865" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">断言 + 日志</text>
+<text x="865" y="336" font-size="9.6" fill="#334155" xml:space="preserve">最小复现/二分</text>
+<line x1="942" y1="252" x2="942" y2="296" stroke="#94a3b8" stroke-width="1.4"/>
+<polygon points="942,296 946.5,287 937.5,287" fill="#94a3b8"/>
+<text x="36" y="400" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">③ 下一步与前提</text>
+<rect x="36" y="414" width="1000" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="434" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">问题</text>
+<text x="536" y="434" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">下一步</text>
+<text x="869.33" y="434" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">前提</text>
+<rect x="36" y="444" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="444" x2="1036" y2="444" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="464" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">崩溃</text>
+<text x="536" y="464" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">看 fault address、完整栈、变量</text>
+<text x="869.33" y="464" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">-g 符号 + core</text>
+<rect x="36" y="474" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="474" x2="1036" y2="474" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="494" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">内存</text>
+<text x="536" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">定位第一次非法访问的调用栈</text>
+<text x="869.33" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">重新编译插桩</text>
+<rect x="36" y="504" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="504" x2="1036" y2="504" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="524" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">卡死</text>
+<text x="536" y="524" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">看所有线程栈与 wchan/futex</text>
+<text x="869.33" y="524" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">ptrace 权限</text>
+<rect x="36" y="534" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="534" x2="1036" y2="534" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="554" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">性能</text>
+<text x="536" y="554" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">看热点函数与调用链</text>
+<text x="869.33" y="554" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">符号 + 采样权限</text>
+<rect x="36" y="564" width="1000" height="30" fill="#ffffff"/>
+<line x1="36" y1="564" x2="1036" y2="564" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="584" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">逻辑</text>
+<text x="536" y="584" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">加观测点、二分提交</text>
+<text x="869.33" y="584" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">可复现输入</text>
+<line x1="36" y1="594" x2="1036" y2="594" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="36" y="600" width="1000" height="74" fill="#f8fafc" rx="10" stroke="#475569" stroke-width="1"/>
+<text x="52" y="630" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">共同前提</text>
+<text x="52" y="654" font-size="10.2" fill="#334155" xml:space="preserve">可复现的最小用例 + 带符号的二进制 + 可观测的日志/计数器；没有这三样，工具只能给出零散证据。</text>
+<text x="36" y="706" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">工具可用性依平台、容器权限和编译选项而定。</text>
+</svg>

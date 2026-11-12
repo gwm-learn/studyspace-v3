@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="700" viewBox="0 0 1160 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1160" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1124" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 13 · 热阻链与温控闭环</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上：热量从结温经壳、界面材料、散热器降到环境，热阻串联相加。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">下：传感器 → thermal zone → 策略 → 降频/风扇 → 温度回落，带滞回避免抖动。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">热流路径</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">温控动作</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">保护边界</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 热阻链：Tj = Ta + P × (Rθjc + Rθcs + Rθsa)</text>
+<rect x="36" y="196" width="190" height="84" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="36" y="196" width="4.5" height="84" fill="#dc2626" rx="2"/>
+<text x="49" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Tj 结温</text>
+<text x="49" y="232" font-size="8.8" fill="#334155" xml:space="preserve">器件上限，留 10~20℃</text>
+<rect x="326" y="196" width="190" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="326" y="196" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="339" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Tc 壳温</text>
+<text x="339" y="232" font-size="8.8" fill="#334155" xml:space="preserve">封装表面</text>
+<rect x="616" y="196" width="190" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="616" y="196" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="629" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">散热器</text>
+<text x="629" y="232" font-size="8.8" fill="#334155" xml:space="preserve">面积 / 风速决定 Rθsa</text>
+<rect x="906" y="196" width="190" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="906" y="196" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="919" y="215" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Ta 环境</text>
+<text x="919" y="232" font-size="8.8" fill="#334155" xml:space="preserve">机箱内外温度</text>
+<line x1="226" y1="238" x2="318" y2="238" stroke="#4f46e5" stroke-width="2.4"/>
+<polygon points="318,238 309,233.5 309,242.5" fill="#4f46e5"/>
+<line x1="516" y1="238" x2="608" y2="238" stroke="#4f46e5" stroke-width="2.4"/>
+<polygon points="608,238 599,233.5 599,242.5" fill="#4f46e5"/>
+<line x1="806" y1="238" x2="898" y2="238" stroke="#4f46e5" stroke-width="2.4"/>
+<polygon points="898,238 889,233.5 889,242.5" fill="#4f46e5"/>
+<text x="238" y="228" font-size="9.6" fill="#64748b" xml:space="preserve">Rθjc</text>
+<text x="528" y="228" font-size="9.6" fill="#64748b" xml:space="preserve">Rθcs（TIM）</text>
+<text x="818" y="228" font-size="9.6" fill="#64748b" xml:space="preserve">Rθsa</text>
+<text x="36" y="330" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 温控闭环</text>
+<rect x="36" y="350" width="190" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="350" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="49" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">温度传感器</text>
+<text x="49" y="386" font-size="8.8" fill="#334155" xml:space="preserve">SoC / NTC / 出风口</text>
+<line x1="226" y1="393" x2="254" y2="393" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="254,393 245,388.5 245,397.5" fill="#94a3b8"/>
+<rect x="254" y="350" width="190" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="254" y="350" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="267" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">thermal zone</text>
+<text x="267" y="386" font-size="8.8" fill="#334155" xml:space="preserve">周期采样，比较 trip</text>
+<line x1="444" y1="393" x2="472" y2="393" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="472,393 463,388.5 463,397.5" fill="#94a3b8"/>
+<rect x="472" y="350" width="190" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="472" y="350" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="485" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">策略 / governor</text>
+<text x="485" y="386" font-size="8.8" fill="#334155" xml:space="preserve">step_wise 等</text>
+<line x1="662" y1="393" x2="690" y2="393" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="690,393 681,388.5 681,397.5" fill="#94a3b8"/>
+<rect x="690" y="350" width="210" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="690" y="350" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="703" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">降频 / 限功率 / 风扇</text>
+<text x="703" y="386" font-size="8.8" fill="#334155" xml:space="preserve">降 DVFS、关核、提转速</text>
+<line x1="900" y1="393" x2="928" y2="393" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="928,393 919,388.5 919,397.5" fill="#94a3b8"/>
+<rect x="928" y="350" width="180" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="928" y="350" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="941" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">温度回落</text>
+<text x="941" y="386" font-size="8.8" fill="#334155" xml:space="preserve">带滞回，避免抖动</text>
+<line x1="1006" y1="436" x2="1006" y2="470" stroke="#0f9d58" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="1006" y1="470" x2="131" y2="470" stroke="#0f9d58" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="131" y1="470" x2="131" y2="440" stroke="#0f9d58" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="131,440 126.5,449 135.5,449" fill="#0f9d58"/>
+<rect x="36" y="500" width="1040" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">③ 阈值与取舍</text>
+<text x="52" y="554" font-size="10.2" fill="#334155" xml:space="preserve">passive 按 Tj_max 留 10~20℃ 设置，critical 在器件极限之前；外壳可触及温度取更严者。</text>
+<text x="52" y="572" font-size="10.2" fill="#334155" xml:space="preserve">滞回太小会频繁降频/启停风扇，太大则可能冲过保护点；采样周期与热惯性要匹配。</text>
+<text x="52" y="590" font-size="10.2" fill="#334155" xml:space="preserve">无风扇靠导热垫 + 外壳，可靠性高但能力有限；风扇能力强，代价是噪音、积灰与寿命。</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">读图：上半部分每段热阻都是串联的，瓶颈在最差的一段；下半部分是一个带滞回的负反馈环。</text>
+</svg>

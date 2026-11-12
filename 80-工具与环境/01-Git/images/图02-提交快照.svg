@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="700" viewBox="0 0 1060 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1060" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 提交是整棵树的快照，不是补丁</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">每个 commit 指向一棵完整 tree；相邻提交的差异由两棵树比较得出，对象里不单独保存 diff。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：纵向看每次提交的完整目录，横向比较同一路径在不同提交里的 blob。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">提交对象</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">树对象</text>
+<line x1="237" y1="142" x2="267" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="275" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">内容对象</text>
+<line x1="343" y1="142" x2="373" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="381" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">跨提交复用</text>
+<rect x="36" y="195" width="280" height="60" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="195" width="4.5" height="60" fill="#4f46e5" rx="2"/>
+<text x="49" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">commit C1</text>
+<text x="49" y="231" font-size="8.8" fill="#334155" xml:space="preserve">tree → T1</text>
+<rect x="380" y="195" width="280" height="60" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="380" y="195" width="4.5" height="60" fill="#4f46e5" rx="2"/>
+<text x="393" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">commit C2</text>
+<text x="393" y="231" font-size="8.8" fill="#334155" xml:space="preserve">tree → T2</text>
+<text x="393" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">parent → C1</text>
+<rect x="724" y="195" width="280" height="60" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="724" y="195" width="4.5" height="60" fill="#4f46e5" rx="2"/>
+<text x="737" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">commit C3</text>
+<text x="737" y="231" font-size="8.8" fill="#334155" xml:space="preserve">tree → T3</text>
+<text x="737" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">parent → C2</text>
+<line x1="316" y1="225" x2="380" y2="225" stroke="#475569" stroke-width="2"/>
+<polygon points="380,225 371,220.5 371,229.5" fill="#475569"/>
+<line x1="660" y1="225" x2="724" y2="225" stroke="#475569" stroke-width="2"/>
+<polygon points="724,225 715,220.5 715,229.5" fill="#475569"/>
+<rect x="36" y="310" width="280" height="100" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36" y="310" width="4.5" height="100" fill="#0891b2" rx="2"/>
+<text x="49" y="329" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">tree T1</text>
+<text x="49" y="346" font-size="8.8" fill="#334155" xml:space="preserve">100644 a.txt → A1</text>
+<text x="49" y="361.4" font-size="8.8" fill="#334155" xml:space="preserve">100644 b.txt → B1</text>
+<rect x="380" y="310" width="280" height="100" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="380" y="310" width="4.5" height="100" fill="#0891b2" rx="2"/>
+<text x="393" y="329" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">tree T2</text>
+<text x="393" y="346" font-size="8.8" fill="#334155" xml:space="preserve">100644 a.txt → A2</text>
+<text x="393" y="361.4" font-size="8.8" fill="#334155" xml:space="preserve">100644 b.txt → B1</text>
+<text x="393" y="376.8" font-size="8.8" fill="#334155" xml:space="preserve">100644 c.txt → C1</text>
+<rect x="724" y="310" width="280" height="100" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="724" y="310" width="4.5" height="100" fill="#0891b2" rx="2"/>
+<text x="737" y="329" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">tree T3</text>
+<text x="737" y="346" font-size="8.8" fill="#334155" xml:space="preserve">100644 a.txt → A2</text>
+<text x="737" y="361.4" font-size="8.8" fill="#334155" xml:space="preserve">100644 b.txt → B1</text>
+<text x="737" y="376.8" font-size="8.8" fill="#334155" xml:space="preserve">100644 c.txt → C2</text>
+<line x1="176" y1="255" x2="176" y2="310" stroke="#475569" stroke-width="2"/>
+<polygon points="176,310 180.5,301 171.5,301" fill="#475569"/>
+<line x1="520" y1="255" x2="520" y2="310" stroke="#475569" stroke-width="2"/>
+<polygon points="520,310 524.5,301 515.5,301" fill="#475569"/>
+<line x1="864" y1="255" x2="864" y2="310" stroke="#475569" stroke-width="2"/>
+<polygon points="864,310 868.5,301 859.5,301" fill="#475569"/>
+<rect x="36" y="500" width="970" height="128" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="52" y="554" font-size="10.2" fill="#334155" xml:space="preserve">C1 到 C2：a.txt 内容改了，A1 → A2；b.txt 没变，仍然指向 B1；新增 c.txt。</text>
+<text x="52" y="572" font-size="10.2" fill="#334155" xml:space="preserve">B1 在三个提交里复用，对象库只存一份；这就是内容寻址带来的天然去重。</text>
+<text x="52" y="590" font-size="10.2" fill="#334155" xml:space="preserve">对象里没有“C2 相对 C1 改了什么”；git diff C1 C2 是现场比较两棵树。</text>
+<text x="52" y="608" font-size="10.2" fill="#334155" xml:space="preserve">代价是对象数量随提交增长，git gc 用 packfile + delta 压缩把体积补回来。</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">命令：git ls-tree -r &lt;commit&gt; 查看某次提交的完整目录；git cat-file -p &lt;oid&gt; 查看对象内容。</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；hash 用 A1/B1 等符号表示，实际为 40 位十六进制。</text>
+</svg>

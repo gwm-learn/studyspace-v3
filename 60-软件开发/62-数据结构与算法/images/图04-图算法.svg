@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="680" viewBox="0 0 1240 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 图的存储、遍历与最短路</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">邻接矩阵查边快但占 O(V²)，邻接表省空间；DFS 走深，BFS 走宽。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：左侧两种存储描述同一张图；中间对比遍历顺序；右侧是 Dijkstra 的松弛循环。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">顶点</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">已访问</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">当前/松弛</text>
+<line x1="327.6" y1="142" x2="357.6" y2="142" stroke="#cbd5e1" stroke-width="3"/>
+<text x="365.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">边</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 邻接矩阵</text>
+<text x="82" y="206" font-size="9.4" fill="#64748b" xml:space="preserve" text-anchor="middle">A</text>
+<text x="52" y="236" font-size="9.4" fill="#64748b" xml:space="preserve" text-anchor="middle">A</text>
+<text x="122" y="206" font-size="9.4" fill="#64748b" xml:space="preserve" text-anchor="middle">B</text>
+<text x="52" y="270" font-size="9.4" fill="#64748b" xml:space="preserve" text-anchor="middle">B</text>
+<text x="162" y="206" font-size="9.4" fill="#64748b" xml:space="preserve" text-anchor="middle">C</text>
+<text x="52" y="304" font-size="9.4" fill="#64748b" xml:space="preserve" text-anchor="middle">C</text>
+<text x="202" y="206" font-size="9.4" fill="#64748b" xml:space="preserve" text-anchor="middle">D</text>
+<text x="52" y="338" font-size="9.4" fill="#64748b" xml:space="preserve" text-anchor="middle">D</text>
+<rect x="82" y="220" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="101" y="241" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="122" y="220" width="38" height="32" fill="#f2fcf5" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="141" y="241" font-size="9" fill="#0f172a" xml:space="preserve" text-anchor="middle">1</text>
+<rect x="162" y="220" width="38" height="32" fill="#f2fcf5" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="181" y="241" font-size="9" fill="#0f172a" xml:space="preserve" text-anchor="middle">1</text>
+<rect x="202" y="220" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="221" y="241" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="82" y="254" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="101" y="275" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="122" y="254" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="141" y="275" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="162" y="254" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="181" y="275" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="202" y="254" width="38" height="32" fill="#f2fcf5" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="221" y="275" font-size="9" fill="#0f172a" xml:space="preserve" text-anchor="middle">1</text>
+<rect x="82" y="288" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="101" y="309" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="122" y="288" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="141" y="309" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="162" y="288" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="181" y="309" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="202" y="288" width="38" height="32" fill="#f2fcf5" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="221" y="309" font-size="9" fill="#0f172a" xml:space="preserve" text-anchor="middle">1</text>
+<rect x="82" y="322" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="101" y="343" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="122" y="322" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="141" y="343" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="162" y="322" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="181" y="343" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<rect x="202" y="322" width="38" height="32" fill="#f8fafc" rx="2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="221" y="343" font-size="9" fill="#94a3b8" xml:space="preserve" text-anchor="middle">0</text>
+<text x="36" y="380" font-size="9.6" fill="#334155" xml:space="preserve">有向图：行 = 出边，列 = 入边</text>
+<text x="260" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 邻接表与 BFS/DFS</text>
+<line x1="280" y1="220" x2="340" y2="270" stroke="#cbd5e1" stroke-width="1.4"/>
+<line x1="280" y1="220" x2="300" y2="330" stroke="#cbd5e1" stroke-width="1.4"/>
+<line x1="340" y1="270" x2="370" y2="370" stroke="#cbd5e1" stroke-width="1.4"/>
+<line x1="300" y1="330" x2="370" y2="370" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="264" y="204" width="32" height="32" fill="#eef2ff" rx="16" stroke="#4f46e5" stroke-width="1"/>
+<text x="280" y="225" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">A</text>
+<rect x="324" y="254" width="32" height="32" fill="#eef2ff" rx="16" stroke="#4f46e5" stroke-width="1"/>
+<text x="340" y="275" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">B</text>
+<rect x="284" y="314" width="32" height="32" fill="#eef2ff" rx="16" stroke="#4f46e5" stroke-width="1"/>
+<text x="300" y="335" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">C</text>
+<rect x="354" y="354" width="32" height="32" fill="#eef2ff" rx="16" stroke="#4f46e5" stroke-width="1"/>
+<text x="370" y="375" font-size="9.6" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">D</text>
+<text x="250" y="424" font-size="10" fill="#334155" xml:space="preserve">BFS：A → B → C → D（队列）</text>
+<text x="250" y="444" font-size="10" fill="#334155" xml:space="preserve">DFS：A → B → D → C（栈/递归）</text>
+<text x="560" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">③ Dijkstra：选最小 dist，松弛邻居</text>
+<rect x="640" y="190" width="130" height="78" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="640" y="190" width="4.5" height="78" fill="#4f46e5" rx="2"/>
+<text x="653" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">初始化</text>
+<text x="653" y="226" font-size="9.6" fill="#334155" xml:space="preserve">dist[s]=0</text>
+<text x="653" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">其余 ∞</text>
+<line x1="770" y1="229" x2="784" y2="229" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="784,229 775,224.5 775,233.5" fill="#94a3b8"/>
+<rect x="784" y="190" width="130" height="78" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="784" y="190" width="4.5" height="78" fill="#d97706" rx="2"/>
+<text x="797" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">选最小</text>
+<text x="797" y="226" font-size="9.6" fill="#334155" xml:space="preserve">未确定集合</text>
+<text x="797" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">取 dist 最小</text>
+<line x1="914" y1="229" x2="928" y2="229" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="928,229 919,224.5 919,233.5" fill="#94a3b8"/>
+<rect x="928" y="190" width="130" height="78" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="928" y="190" width="4.5" height="78" fill="#0f9d58" rx="2"/>
+<text x="941" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">松弛</text>
+<text x="941" y="226" font-size="9.6" fill="#334155" xml:space="preserve">dist[v] &gt; d+w</text>
+<text x="941" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">则更新</text>
+<line x1="1058" y1="229" x2="1072" y2="229" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="1072,229 1063,224.5 1063,233.5" fill="#94a3b8"/>
+<rect x="1072" y="190" width="130" height="78" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="1072" y="190" width="4.5" height="78" fill="#475569" rx="2"/>
+<text x="1085" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">标记确定</text>
+<text x="1085" y="226" font-size="9.6" fill="#334155" xml:space="preserve">加入集合</text>
+<text x="1085" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">重复直到空</text>
+<rect x="560" y="320" width="500" height="30" fill="#f1f5f9" rx="6"/>
+<text x="568" y="340" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">算法</text>
+<text x="810" y="340" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">适用</text>
+<text x="976.67" y="340" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">复杂度</text>
+<rect x="560" y="350" width="500" height="30" fill="#ffffff"/>
+<line x1="560" y1="350" x2="1060" y2="350" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="568" y="370" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">BFS</text>
+<text x="810" y="370" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">无权图单源</text>
+<text x="976.67" y="370" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">O(V+E)</text>
+<rect x="560" y="380" width="500" height="30" fill="#ffffff"/>
+<line x1="560" y1="380" x2="1060" y2="380" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="568" y="400" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Dijkstra</text>
+<text x="810" y="400" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">非负权单源</text>
+<text x="976.67" y="400" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">O(E log V)</text>
+<rect x="560" y="410" width="500" height="30" fill="#ffffff"/>
+<line x1="560" y1="410" x2="1060" y2="410" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="568" y="430" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Bellman-Ford</text>
+<text x="810" y="430" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">可含负权</text>
+<text x="976.67" y="430" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">O(VE)</text>
+<rect x="560" y="440" width="500" height="30" fill="#ffffff"/>
+<line x1="560" y1="440" x2="1060" y2="440" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="568" y="460" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Floyd</text>
+<text x="810" y="460" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">任意两点</text>
+<text x="976.67" y="460" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">O(V³)</text>
+<line x1="560" y1="470" x2="1060" y2="470" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="560" y="500" width="500" height="92" fill="#fff5f5" rx="10" stroke="#dc2626" stroke-width="1"/>
+<text x="576" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">边界</text>
+<text x="576" y="554" font-size="10.2" fill="#334155" xml:space="preserve">・Dijkstra 不能处理负权边：负权会破坏“已确定顶点不会更短”的前提</text>
+<text x="576" y="572" font-size="10.2" fill="#334155" xml:space="preserve">・Prim 适合稠密图，Kruskal 适合稀疏图；MST 不是两点最短路</text>
+<text x="36" y="626" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">图示为 4 顶点有向图，边权省略；算法复杂度按邻接表计。</text>
+</svg>

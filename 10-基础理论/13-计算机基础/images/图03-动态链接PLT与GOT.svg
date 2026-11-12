@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1200" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1164" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">动态链接：PLT/GOT 与延迟绑定</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">首次调用先经过解析器，GOT 被改写；之后直接跳到真实函数。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">PIE/共享库默认用 PIC，外部符号地址不能写死。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">首次解析</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">后续调用</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">数据结构</text>
+<rect x="60" y="230" width="200" height="72" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="60" y="230" width="4.5" height="72" fill="#4f46e5" rx="2"/>
+<text x="73" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">call foo@plt</text>
+<text x="73" y="266" font-size="9.6" fill="#334155" xml:space="preserve">编译器生成的外部调用</text>
+<rect x="330" y="230" width="230" height="72" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="330" y="230" width="4.5" height="72" fill="#4f46e5" rx="2"/>
+<text x="343" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PLT stub</text>
+<text x="343" y="266" font-size="9.6" fill="#334155" xml:space="preserve">jmp *GOT[foo]</text>
+<text x="343" y="281.4" font-size="9.6" fill="#334155" xml:space="preserve">首次跳到 resolver</text>
+<rect x="630" y="230" width="220" height="72" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="630" y="230" width="4.5" height="72" fill="#4f46e5" rx="2"/>
+<text x="643" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">GOT[foo]</text>
+<text x="643" y="266" font-size="9.6" fill="#334155" xml:space="preserve">存放 foo 的运行时地址</text>
+<rect x="930" y="230" width="220" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="930" y="230" width="4.5" height="72" fill="#d97706" rx="2"/>
+<text x="943" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ld.so resolver</text>
+<text x="943" y="266" font-size="9.6" fill="#334155" xml:space="preserve">查符号、找库、算地址</text>
+<rect x="930" y="400" width="220" height="72" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="930" y="400" width="4.5" height="72" fill="#0f9d58" rx="2"/>
+<text x="943" y="419" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">真实 foo()</text>
+<text x="943" y="436" font-size="9.6" fill="#334155" xml:space="preserve">libc 或共享库中的实现</text>
+<line x1="260" y1="266" x2="330" y2="266" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="330,266 321,261.5 321,270.5" fill="#4f46e5"/>
+<line x1="560" y1="266" x2="630" y2="266" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="630,266 621,261.5 621,270.5" fill="#4f46e5"/>
+<line x1="850" y1="250" x2="930" y2="250" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="930,250 921,245.5 921,254.5" fill="#d97706"/>
+<text x="882" y="240" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">首次</text>
+<line x1="850" y1="286" x2="930" y2="400" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="930,400 928.51,390.05 921.15,395.22" fill="#0f9d58"/>
+<text x="898" y="353" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">之后</text>
+<line x1="1040" y1="302" x2="1040" y2="400" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="1040,400 1044.5,391 1035.5,391" fill="#d97706"/>
+<rect x="60" y="500" width="1090" height="110" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="76" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="554" font-size="10.2" fill="#334155" xml:space="preserve">首次调用：PLT → GOT（还是 resolver 地址）→ 解析 → 改写 GOT → 跳到 foo。</text>
+<text x="76" y="572" font-size="10.2" fill="#334155" xml:space="preserve">后续调用：PLT → GOT（已是 foo 地址）→ 直接跳，不再进解析器。</text>
+<text x="76" y="590" font-size="10.2" fill="#334155" xml:space="preserve">-Wl,-z,now 或 LD_BIND_NOW=1 可改为立即绑定，减少首次调用抖动。</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">图源：System V ABI 的 PLT/GOT 模型；具体 stub 指令随架构变化。</text>
+</svg>

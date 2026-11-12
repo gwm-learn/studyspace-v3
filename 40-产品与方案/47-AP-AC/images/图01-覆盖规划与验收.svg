@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="540" viewBox="0 0 1060 540" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1060" height="540" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · WLAN 覆盖规划与验收流程</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先按需求和图纸预测布点，再现场勘测修正，最后用真实终端验收。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：任何一步不达标都回到布点/功率/信道调整，而不是直接交付。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">规划</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">勘测/调整</text>
+<line x1="232.6" y1="142" x2="262.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="270.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">验收</text>
+<rect x="36" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">需求</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">面积/终端/业务</text>
+<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">墙体/干扰</text>
+<line x1="216" y1="241" x2="238" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="238,241 229,236.5 229,245.5" fill="#94a3b8"/>
+<rect x="238" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="238" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="251" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">预测仿真</text>
+<text x="251" y="236" font-size="9.6" fill="#334155" xml:space="preserve">AP 点位</text>
+<text x="251" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">功率/信道</text>
+<line x1="418" y1="241" x2="440" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="440,241 431,236.5 431,245.5" fill="#94a3b8"/>
+<rect x="440" y="200" width="180" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="440" y="200" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="453" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">现场勘测</text>
+<text x="453" y="236" font-size="9.6" fill="#334155" xml:space="preserve">RSSI/SNR</text>
+<text x="453" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">干扰/重叠</text>
+<line x1="620" y1="241" x2="642" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="642,241 633,236.5 633,245.5" fill="#94a3b8"/>
+<rect x="642" y="200" width="180" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="642" y="200" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="655" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">调整</text>
+<text x="655" y="236" font-size="9.6" fill="#334155" xml:space="preserve">点位/功率</text>
+<text x="655" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">信道/频宽</text>
+<line x1="822" y1="241" x2="844" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="844,241 835,236.5 835,245.5" fill="#94a3b8"/>
+<rect x="844" y="200" width="180" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="844" y="200" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="857" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">验收</text>
+<text x="857" y="236" font-size="9.6" fill="#334155" xml:space="preserve">覆盖/容量</text>
+<text x="857" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">漫游/认证</text>
+<rect x="36" y="340" width="940" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="370" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="394" font-size="10.2" fill="#334155" xml:space="preserve">① 覆盖和容量分开算：信号够不代表带得动。</text>
+<text x="52" y="412" font-size="10.2" fill="#334155" xml:space="preserve">② 2.4G 保覆盖/IoT，5G/6G 保业务；高密区域用较窄频宽。</text>
+<text x="52" y="430" font-size="10.2" fill="#334155" xml:space="preserve">③ 验收必须用真实终端走一遍漫游和认证。</text>
+<text x="36" y="486" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/47-AP-AC/03-WLAN覆盖与验收.md</text>
+<text x="36" y="504" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

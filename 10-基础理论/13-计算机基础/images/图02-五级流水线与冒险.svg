@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="680" viewBox="0 0 1120 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">五级流水线：重叠执行与冒险</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">理想情况每个周期完成一条指令；冒险会插入气泡或冲刷流水线。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">数据冒险可转发，控制冒险靠分支预测，结构冒险靠增加资源。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常推进</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">停顿（气泡）</text>
+<text x="198" y="210" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">C1</text>
+<text x="302" y="210" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">C2</text>
+<text x="406" y="210" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">C3</text>
+<text x="510" y="210" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">C4</text>
+<text x="614" y="210" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">C5</text>
+<text x="718" y="210" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">C6</text>
+<text x="822" y="210" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">C7</text>
+<text x="926" y="210" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">C8</text>
+<text x="1030" y="210" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">C9</text>
+<text x="60" y="255" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">I1 add</text>
+<rect x="150" y="230" width="96" height="40" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="150" y="230" width="4.5" height="40" fill="#0891b2" rx="2"/>
+<text x="163" y="249" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">IF</text>
+<rect x="254" y="230" width="96" height="40" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="254" y="230" width="4.5" height="40" fill="#4f46e5" rx="2"/>
+<text x="267" y="249" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ID</text>
+<rect x="358" y="230" width="96" height="40" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="358" y="230" width="4.5" height="40" fill="#4f46e5" rx="2"/>
+<text x="371" y="249" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">EX</text>
+<rect x="462" y="230" width="96" height="40" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="462" y="230" width="4.5" height="40" fill="#d97706" rx="2"/>
+<text x="475" y="249" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">MEM</text>
+<rect x="566" y="230" width="96" height="40" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="566" y="230" width="4.5" height="40" fill="#0f9d58" rx="2"/>
+<text x="579" y="249" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">WB</text>
+<text x="60" y="313" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">I2 load</text>
+<rect x="254" y="288" width="96" height="40" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="254" y="288" width="4.5" height="40" fill="#0891b2" rx="2"/>
+<text x="267" y="307" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">IF</text>
+<rect x="358" y="288" width="96" height="40" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="358" y="288" width="4.5" height="40" fill="#4f46e5" rx="2"/>
+<text x="371" y="307" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ID</text>
+<rect x="462" y="288" width="96" height="40" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="462" y="288" width="4.5" height="40" fill="#4f46e5" rx="2"/>
+<text x="475" y="307" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">EX</text>
+<rect x="566" y="288" width="96" height="40" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="566" y="288" width="4.5" height="40" fill="#d97706" rx="2"/>
+<text x="579" y="307" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">MEM</text>
+<rect x="670" y="288" width="96" height="40" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="670" y="288" width="4.5" height="40" fill="#0f9d58" rx="2"/>
+<text x="683" y="307" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">WB</text>
+<text x="60" y="371" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">I3 store</text>
+<rect x="358" y="346" width="96" height="40" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="358" y="346" width="4.5" height="40" fill="#0891b2" rx="2"/>
+<text x="371" y="365" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">IF</text>
+<rect x="462" y="346" width="96" height="40" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="462" y="346" width="4.5" height="40" fill="#4f46e5" rx="2"/>
+<text x="475" y="365" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ID</text>
+<rect x="566" y="346" width="96" height="40" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="566" y="346" width="4.5" height="40" fill="#4f46e5" rx="2"/>
+<text x="579" y="365" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">EX</text>
+<rect x="670" y="346" width="96" height="40" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="670" y="346" width="4.5" height="40" fill="#d97706" rx="2"/>
+<text x="683" y="365" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">MEM</text>
+<rect x="774" y="346" width="96" height="40" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="774" y="346" width="4.5" height="40" fill="#0f9d58" rx="2"/>
+<text x="787" y="365" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">WB</text>
+<text x="60" y="429" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">I4 use</text>
+<rect x="462" y="404" width="96" height="40" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="462" y="404" width="4.5" height="40" fill="#0891b2" rx="2"/>
+<text x="475" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">IF</text>
+<rect x="566" y="404" width="96" height="40" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="566" y="404" width="4.5" height="40" fill="#4f46e5" rx="2"/>
+<text x="579" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ID</text>
+<rect x="670" y="404" width="96" height="40" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="670" y="404" width="4.5" height="40" fill="#d97706" rx="2"/>
+<text x="683" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">STALL</text>
+<rect x="774" y="404" width="96" height="40" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="774" y="404" width="4.5" height="40" fill="#4f46e5" rx="2"/>
+<text x="787" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">EX</text>
+<rect x="878" y="404" width="96" height="40" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="878" y="404" width="4.5" height="40" fill="#d97706" rx="2"/>
+<text x="891" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">MEM</text>
+<rect x="982" y="404" width="96" height="40" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="982" y="404" width="4.5" height="40" fill="#0f9d58" rx="2"/>
+<text x="995" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">WB</text>
+<rect x="667" y="401" width="102" height="46" fill="none" rx="9" stroke="#dc2626" stroke-width="2"/>
+<text x="718" y="459" font-size="10.2" fill="#dc2626" xml:space="preserve" font-weight="700" text-anchor="middle">气泡</text>
+<rect x="60" y="500" width="940" height="110" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="76" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="554" font-size="10.2" fill="#334155" xml:space="preserve">横向是周期，纵向是指令；同一列里重叠的格子就是并行。</text>
+<text x="76" y="572" font-size="10.2" fill="#334155" xml:space="preserve">I4 在第 6 拍停顿：I2 的 load 结果还没写回，转发也来不及。</text>
+<text x="76" y="590" font-size="10.2" fill="#334155" xml:space="preserve">若 I4 是分支且预测失败，后面已取的指令要标记为冲刷。</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">图源：经典五级流水线模型；实际处理器的发射宽度、乱序窗口更复杂。</text>
+</svg>

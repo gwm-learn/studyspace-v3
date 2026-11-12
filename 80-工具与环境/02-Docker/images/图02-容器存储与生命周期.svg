@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="720" viewBox="0 0 920 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="920" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="884" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 容器存储：哪些数据会随容器消失</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">镜像层和容器可写层随容器删除而消失；volume 与 bind mount 的数据独立于容器生命周期。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：上半部分看容器根文件系统的组成，下半部分看三类挂载在删除容器后的结果。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">镜像只读层</text>
+<line x1="153" y1="142" x2="183" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="191" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">容器可写层</text>
+<line x1="270" y1="142" x2="300" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="308" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">volume</text>
+<line x1="371.6" y1="142" x2="401.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="409.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">bind mount</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 容器根文件系统</text>
+<rect x="36" y="195" width="240" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="195" width="4.5" height="80" fill="#4f46e5" rx="2"/>
+<text x="49" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">镜像只读层</text>
+<text x="49" y="231" font-size="8.8" fill="#334155" xml:space="preserve">多个 layer 叠加</text>
+<text x="49" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">容器间共享</text>
+<rect x="330" y="195" width="240" height="80" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="330" y="195" width="4.5" height="80" fill="#d97706" rx="2"/>
+<text x="343" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">容器可写层</text>
+<text x="343" y="231" font-size="8.8" fill="#334155" xml:space="preserve">运行期写入</text>
+<text x="343" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">删除容器即丢失</text>
+<rect x="624" y="195" width="200" height="80" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="624" y="195" width="4.5" height="80" fill="#dc2626" rx="2"/>
+<text x="637" y="214" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">docker rm</text>
+<text x="637" y="231" font-size="8.8" fill="#334155" xml:space="preserve">可写层删除</text>
+<text x="637" y="246.4" font-size="8.8" fill="#334155" xml:space="preserve">镜像层保留</text>
+<line x1="276" y1="235" x2="330" y2="235" stroke="#475569" stroke-width="2"/>
+<polygon points="330,235 321,230.5 321,239.5" fill="#475569"/>
+<line x1="570" y1="235" x2="624" y2="235" stroke="#475569" stroke-width="2"/>
+<polygon points="624,235 615,230.5 615,239.5" fill="#475569"/>
+<text x="36" y="320" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 三类挂载</text>
+<rect x="36" y="340" width="240" height="90" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="340" width="4.5" height="90" fill="#0f9d58" rx="2"/>
+<text x="49" y="359" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">volume</text>
+<text x="49" y="376" font-size="8.8" fill="#334155" xml:space="preserve">Docker 管理，位于 /var/lib/docker/volumes</text>
+<text x="49" y="391.4" font-size="8.8" fill="#334155" xml:space="preserve">删除容器后保留</text>
+<rect x="330" y="340" width="240" height="90" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="330" y="340" width="4.5" height="90" fill="#0891b2" rx="2"/>
+<text x="343" y="359" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">bind mount</text>
+<text x="343" y="376" font-size="8.8" fill="#334155" xml:space="preserve">挂载宿主目录/文件</text>
+<text x="343" y="391.4" font-size="8.8" fill="#334155" xml:space="preserve">删除容器后保留，路径由宿主决定</text>
+<rect x="624" y="340" width="240" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="624" y="340" width="4.5" height="90" fill="#d97706" rx="2"/>
+<text x="637" y="359" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">tmpfs</text>
+<text x="637" y="376" font-size="8.8" fill="#334155" xml:space="preserve">只存在内存</text>
+<text x="637" y="391.4" font-size="8.8" fill="#334155" xml:space="preserve">容器停止即丢失</text>
+<rect x="36" y="490" width="830" height="30" fill="#f1f5f9" rx="6"/>
+<text x="44" y="510" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">存储类型</text>
+<text x="347.25" y="510" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">数据位置</text>
+<text x="554.75" y="510" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">删除容器后</text>
+<text x="762.25" y="510" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">典型用途</text>
+<rect x="36" y="520" width="830" height="30" fill="#ffffff"/>
+<line x1="36" y1="520" x2="866" y2="520" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="540" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">可写层</text>
+<text x="347.25" y="540" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">容器层</text>
+<text x="554.75" y="540" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">丢失</text>
+<text x="762.25" y="540" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">临时文件</text>
+<rect x="36" y="550" width="830" height="30" fill="#ffffff"/>
+<line x1="36" y1="550" x2="866" y2="550" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="570" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">volume</text>
+<text x="347.25" y="570" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">Docker 数据目录</text>
+<text x="554.75" y="570" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">保留</text>
+<text x="762.25" y="570" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">数据库、持久化状态</text>
+<rect x="36" y="580" width="830" height="30" fill="#ffffff"/>
+<line x1="36" y1="580" x2="866" y2="580" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="600" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">bind mount</text>
+<text x="347.25" y="600" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">宿主指定路径</text>
+<text x="554.75" y="600" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">保留</text>
+<text x="762.25" y="600" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">源码、配置、构建产物</text>
+<rect x="36" y="610" width="830" height="30" fill="#ffffff"/>
+<line x1="36" y1="610" x2="866" y2="610" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="44" y="630" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">tmpfs</text>
+<text x="347.25" y="630" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">内存</text>
+<text x="554.75" y="630" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">丢失</text>
+<text x="762.25" y="630" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">敏感临时数据</text>
+<line x1="36" y1="640" x2="866" y2="640" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">命令：docker volume ls、docker volume inspect、docker run -v src:dst:ro。</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库生成脚本；volume 的实际路径随 Docker root 配置变化。</text>
+</svg>

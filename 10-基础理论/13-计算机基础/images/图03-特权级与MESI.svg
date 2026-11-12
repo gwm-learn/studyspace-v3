@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="740" viewBox="0 0 1180 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">特权级与缓存一致性：两个“状态”模型</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">特权级决定谁能执行敏感指令；MESI 决定多核缓存行是否有效。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">两者都不是协议连接状态机，但都直接约束软件能做什么。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">用户态/共享</text>
+<line x1="159.6" y1="142" x2="189.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="197.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">内核态/独占</text>
+<line x1="283.2" y1="142" x2="313.2" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="321.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">已修改</text>
+<line x1="378.2" y1="142" x2="408.2" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="416.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">无效</text>
+<text x="60" y="190" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">x86 特权级（ARM 对应 EL0–EL3）</text>
+<rect x="60" y="220" width="380" height="56" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="60" y="220" width="4.5" height="56" fill="#0f9d58" rx="2"/>
+<text x="73" y="239" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Ring 3</text>
+<text x="73" y="256" font-size="8.8" fill="#334155" xml:space="preserve">用户态：应用代码，不能直接访问硬件</text>
+<rect x="60" y="290" width="380" height="56" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="60" y="290" width="4.5" height="56" fill="#475569" rx="2"/>
+<text x="73" y="309" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Ring 2</text>
+<text x="73" y="326" font-size="8.8" fill="#334155" xml:space="preserve">少见：部分驱动/虚拟化场景</text>
+<rect x="60" y="360" width="380" height="56" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="60" y="360" width="4.5" height="56" fill="#475569" rx="2"/>
+<text x="73" y="379" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Ring 1</text>
+<text x="73" y="396" font-size="8.8" fill="#334155" xml:space="preserve">少见：部分驱动/虚拟化场景</text>
+<rect x="60" y="430" width="380" height="56" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="60" y="430" width="4.5" height="56" fill="#4f46e5" rx="2"/>
+<text x="73" y="449" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Ring 0</text>
+<text x="73" y="466" font-size="8.8" fill="#334155" xml:space="preserve">内核态：页表、中断、设备寄存器</text>
+<text x="60" y="520" font-size="10.2" fill="#64748b" xml:space="preserve">切换只能通过中断/异常/系统调用；用户态不能“直接调用”Ring 0。</text>
+<text x="560" y="190" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">MESI 缓存行状态</text>
+<rect x="520" y="280" width="150" height="66" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="520" y="280" width="4.5" height="66" fill="#475569" rx="2"/>
+<text x="533" y="299" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">I</text>
+<text x="533" y="316" font-size="9.6" fill="#334155" xml:space="preserve">Invalid：无效</text>
+<rect x="740" y="220" width="150" height="66" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="740" y="220" width="4.5" height="66" fill="#0f9d58" rx="2"/>
+<text x="753" y="239" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">E</text>
+<text x="753" y="256" font-size="9.6" fill="#334155" xml:space="preserve">Exclusive：独占且干净</text>
+<rect x="740" y="420" width="150" height="66" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="740" y="420" width="4.5" height="66" fill="#0f9d58" rx="2"/>
+<text x="753" y="439" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">S</text>
+<text x="753" y="456" font-size="9.6" fill="#334155" xml:space="preserve">Shared：多核共享只读</text>
+<rect x="980" y="280" width="150" height="66" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="980" y="280" width="4.5" height="66" fill="#d97706" rx="2"/>
+<text x="993" y="299" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">M</text>
+<text x="993" y="316" font-size="9.6" fill="#334155" xml:space="preserve">Modified：已修改，独占</text>
+<line x1="670" y1="300" x2="740" y2="253" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="740,253 730.02,254.28 735.04,261.75" fill="#0f9d58"/>
+<text x="615" y="268.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">读 miss（独占）</text>
+<line x1="670" y1="326" x2="740" y2="453" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="740,453 739.6,442.95 731.71,447.29" fill="#0f9d58"/>
+<text x="695" y="405.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">读 miss（共享）</text>
+<line x1="890" y1="253" x2="980" y2="300" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="980,300 974.11,291.85 969.94,299.82" fill="#d97706"/>
+<text x="931" y="266.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">写</text>
+<line x1="980" y1="326" x2="890" y2="453" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="890,453 898.88,448.26 891.53,443.06" fill="#d97706"/>
+<text x="905" y="407.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">写回 + 共享</text>
+<line x1="740" y1="453" x2="595" y2="346" stroke="#475569" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="595,346 599.57,354.96 604.91,347.72" fill="#475569"/>
+<text x="647.5" y="411.5" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">失效</text>
+<line x1="980" y1="346" x2="670" y2="346" stroke="#475569" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="670,346 679,350.5 679,341.5" fill="#475569"/>
+<text x="795" y="338" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">驱逐</text>
+<line x1="890" y1="470" x2="1050" y2="470" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="1050" y1="470" x2="1050" y2="346" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="1050,346 1045.5,355 1054.5,355" fill="#d97706"/>
+<text x="1056" y="398" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">写 + 失效其他</text>
+<rect x="60" y="570" width="1080" height="110" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="76" y="600" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="624" font-size="10.2" fill="#334155" xml:space="preserve">左侧：Ring 3 到 Ring 0 的跨越只能由受控入口触发，这是隔离的硬件基础。</text>
+<text x="76" y="642" font-size="10.2" fill="#334155" xml:space="preserve">右侧：MESI 的 M/E/S/I 描述缓存行状态；写入共享行要先让其他核失效。</text>
+<text x="76" y="660" font-size="10.2" fill="#334155" xml:space="preserve">两个核写同一行的不同变量，会互相打 Invalid——这就是伪共享。</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">图源：x86 特权级与 MESI 缓存一致性协议；ARM 异常级别映射见 ARM ARM。</text>
+</svg>

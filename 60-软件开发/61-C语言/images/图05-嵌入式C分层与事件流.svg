@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="780" viewBox="0 0 1100 780" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="780" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · 嵌入式 C 分层与事件流：中断只投递，线程做业务</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">ISR 只清中断、取数据、置事件；service 状态机在别的上下文执行。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看左右两条上下文，再看事件如何跨过边界，最后看 module 落到硬件。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中断上下文</text>
+<line x1="153" y1="142" x2="183" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="191" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">线程/主循环</text>
+<line x1="276.6" y1="142" x2="306.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="314.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">服务/状态机</text>
+<line x1="400.2" y1="142" x2="430.2" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="438.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">硬件</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 上下文边界</text>
+<rect x="36" y="190" width="200" height="250" fill="#fff5f5" rx="9" stroke="#dc2626" stroke-width="1.2"/>
+<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">中断上下文</text>
+<text x="46" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">短、不可阻塞</text>
+<text x="46" y="246" font-size="9" fill="#64748b" xml:space="preserve">清中断标志</text>
+<text x="46" y="259" font-size="9" fill="#64748b" xml:space="preserve">读寄存器/FIFO</text>
+<text x="46" y="272" font-size="9" fill="#64748b" xml:space="preserve">写入环形缓冲</text>
+<text x="46" y="285" font-size="9" fill="#64748b" xml:space="preserve">投递事件</text>
+<text x="46" y="298" font-size="9" fill="#64748b" xml:space="preserve">禁止 malloc/printf</text>
+<rect x="290" y="190" width="210" height="250" fill="#fff9ee" rx="9" stroke="#d97706" stroke-width="1.2"/>
+<text x="300" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">事件队列</text>
+<text x="300" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">单生产者/多消费者</text>
+<text x="300" y="246" font-size="9" fill="#64748b" xml:space="preserve">环形缓冲</text>
+<text x="300" y="259" font-size="9" fill="#64748b" xml:space="preserve">或消息队列</text>
+<text x="300" y="272" font-size="9" fill="#64748b" xml:space="preserve">满：丢弃/背压</text>
+<text x="300" y="285" font-size="9" fill="#64748b" xml:space="preserve">记录溢出计数</text>
+<rect x="554" y="190" width="240" height="250" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="564" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">service 状态机</text>
+<text x="564" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">线程/主循环</text>
+<text x="564" y="246" font-size="9" fill="#64748b" xml:space="preserve">IDLE / CONNECTING</text>
+<text x="564" y="259" font-size="9" fill="#64748b" xml:space="preserve">ONLINE / ERROR</text>
+<text x="564" y="272" font-size="9" fill="#64748b" xml:space="preserve">处理事件</text>
+<text x="564" y="285" font-size="9" fill="#64748b" xml:space="preserve">启动/停止定时器</text>
+<text x="564" y="298" font-size="9" fill="#64748b" xml:space="preserve">重试与退避</text>
+<rect x="848" y="190" width="200" height="250" fill="#f8fafc" rx="9" stroke="#475569" stroke-width="1.2"/>
+<text x="858" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">module 适配层</text>
+<text x="858" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">寄存器/总线</text>
+<text x="858" y="246" font-size="9" fill="#64748b" xml:space="preserve">open/close</text>
+<text x="858" y="259" font-size="9" fill="#64748b" xml:space="preserve">read/write</text>
+<text x="858" y="272" font-size="9" fill="#64748b" xml:space="preserve">ioctl</text>
+<text x="858" y="285" font-size="9" fill="#64748b" xml:space="preserve">不包含业务策略</text>
+<line x1="236" y1="300" x2="286" y2="300" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="286,300 277,295.5 277,304.5" fill="#94a3b8"/>
+<line x1="500" y1="300" x2="550" y2="300" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="550,300 541,295.5 541,304.5" fill="#94a3b8"/>
+<line x1="794" y1="300" x2="844" y2="300" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="844,300 835,295.5 835,304.5" fill="#94a3b8"/>
+<text x="36" y="476" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 一条事件的路径</text>
+<rect x="36" y="490" width="140" height="76" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="36" y="490" width="4.5" height="76" fill="#dc2626" rx="2"/>
+<text x="49" y="509" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">硬件中断</text>
+<text x="49" y="526" font-size="9.6" fill="#334155" xml:space="preserve">网口/串口/GPIO</text>
+<line x1="176" y1="528" x2="196" y2="528" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="196,528 187,523.5 187,532.5" fill="#94a3b8"/>
+<rect x="196" y="490" width="140" height="76" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="196" y="490" width="4.5" height="76" fill="#dc2626" rx="2"/>
+<text x="209" y="509" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ISR 取证</text>
+<text x="209" y="526" font-size="9.6" fill="#334155" xml:space="preserve">读数据、清标志</text>
+<line x1="336" y1="528" x2="356" y2="528" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="356,528 347,523.5 347,532.5" fill="#94a3b8"/>
+<rect x="356" y="490" width="140" height="76" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="356" y="490" width="4.5" height="76" fill="#d97706" rx="2"/>
+<text x="369" y="509" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">投递事件</text>
+<text x="369" y="526" font-size="9.6" fill="#334155" xml:space="preserve">环形缓冲/队列</text>
+<line x1="496" y1="528" x2="516" y2="528" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="516,528 507,523.5 507,532.5" fill="#94a3b8"/>
+<rect x="516" y="490" width="150" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="516" y="490" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="529" y="509" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">service 处理</text>
+<text x="529" y="526" font-size="9.6" fill="#334155" xml:space="preserve">状态迁移/重试</text>
+<line x1="666" y1="528" x2="686" y2="528" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="686,528 677,523.5 677,532.5" fill="#94a3b8"/>
+<rect x="686" y="490" width="150" height="76" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="686" y="490" width="4.5" height="76" fill="#475569" rx="2"/>
+<text x="699" y="509" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">驱动动作</text>
+<text x="699" y="526" font-size="9.6" fill="#334155" xml:space="preserve">写寄存器/发报文</text>
+<rect x="36" y="590" width="1000" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="620" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="644" font-size="10.2" fill="#334155" xml:space="preserve">・跨上下文共享数据必须有同步与所有权约定</text>
+<text x="52" y="662" font-size="10.2" fill="#334155" xml:space="preserve">・volatile 只保证每次访问内存，不保证原子/顺序</text>
+<text x="52" y="680" font-size="10.2" fill="#334155" xml:space="preserve">・每个等待态都要有超时兜底，否则状态会卡死</text>
+<text x="36" y="726" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="36" y="744" font-size="12.3" fill="#64748b" xml:space="preserve">分层名称是工程约定，具体项目可按 module/service/app 调整。</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1280" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1244" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">一次 read 的路径：页缓存决定快慢</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">命中页缓存只做一次拷贝；未命中才触发块 IO，可能阻塞并让出 CPU。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">read 返回小于请求长度是正常契约，调用者要循环处理。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">缓存命中</text>
+<line x1="237" y1="142" x2="267" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="275" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">未命中/阻塞</text>
+<rect x="60" y="230" width="200" height="72" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="60" y="230" width="4.5" height="72" fill="#4f46e5" rx="2"/>
+<text x="73" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">read(fd, buf, n)</text>
+<text x="73" y="266" font-size="9.6" fill="#334155" xml:space="preserve">用户态传入 fd 与缓冲区</text>
+<rect x="300" y="230" width="230" height="72" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="230" width="4.5" height="72" fill="#4f46e5" rx="2"/>
+<text x="313" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">VFS 解析</text>
+<text x="313" y="266" font-size="9.6" fill="#334155" xml:space="preserve">fd → file → inode</text>
+<text x="313" y="281.4" font-size="9.6" fill="#334155" xml:space="preserve">检查读权限与偏移</text>
+<rect x="570" y="230" width="190" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="570" y="230" width="4.5" height="72" fill="#d97706" rx="2"/>
+<text x="583" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">页缓存命中？</text>
+<text x="583" y="266" font-size="9.6" fill="#334155" xml:space="preserve">按文件偏移查 page cache</text>
+<rect x="820" y="150" width="230" height="72" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="820" y="150" width="4.5" height="72" fill="#0f9d58" rx="2"/>
+<text x="833" y="169" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">copy_to_user</text>
+<text x="833" y="186" font-size="9.6" fill="#334155" xml:space="preserve">把页缓存数据拷到用户缓冲区</text>
+<text x="833" y="201.4" font-size="9.6" fill="#334155" xml:space="preserve">不产生磁盘 IO</text>
+<rect x="1090" y="150" width="150" height="72" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="1090" y="150" width="4.5" height="72" fill="#0f9d58" rx="2"/>
+<text x="1103" y="169" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">返回字节数</text>
+<text x="1103" y="186" font-size="9.6" fill="#334155" xml:space="preserve">可能小于 n（短读）</text>
+<rect x="820" y="320" width="230" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="820" y="320" width="4.5" height="90" fill="#d97706" rx="2"/>
+<text x="833" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">未命中：分配页 + 提交块 IO</text>
+<text x="833" y="356" font-size="9.6" fill="#334155" xml:space="preserve">可能触发预读/合并</text>
+<text x="833" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">等待期间进程阻塞、被调度</text>
+<rect x="1090" y="320" width="150" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="1090" y="320" width="4.5" height="90" fill="#d97706" rx="2"/>
+<text x="1103" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">页缓存就绪</text>
+<text x="1103" y="356" font-size="9.6" fill="#334155" xml:space="preserve">块设备完成后唤醒等待者</text>
+<line x1="260" y1="266" x2="300" y2="266" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="300,266 291,261.5 291,270.5" fill="#4f46e5"/>
+<line x1="530" y1="266" x2="570" y2="266" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="570,266 561,261.5 561,270.5" fill="#4f46e5"/>
+<line x1="760" y1="250" x2="820" y2="200" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="820,200 810.21,202.3 815.97,209.22" fill="#0f9d58"/>
+<text x="792" y="213" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">是</text>
+<line x1="1050" y1="186" x2="1090" y2="186" stroke="#0f9d58" stroke-width="2"/>
+<polygon points="1090,186 1081,181.5 1081,190.5" fill="#0f9d58"/>
+<line x1="760" y1="286" x2="820" y2="350" stroke="#d97706" stroke-width="2"/>
+<polygon points="820,350 817.13,340.36 810.56,346.51" fill="#d97706"/>
+<text x="794" y="328" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">否</text>
+<line x1="1050" y1="365" x2="1090" y2="365" stroke="#d97706" stroke-width="2"/>
+<polygon points="1090,365 1081,360.5 1081,369.5" fill="#d97706"/>
+<line x1="1165" y1="320" x2="935" y2="222" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="935,222 941.52,229.67 945.04,221.39" fill="#d97706"/>
+<text x="1030" y="281" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">读入后</text>
+<rect x="60" y="470" width="940" height="110" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="76" y="500" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="524" font-size="10.2" fill="#334155" xml:space="preserve">先看页缓存是否命中：命中只拷贝，未命中才走块设备。</text>
+<text x="76" y="542" font-size="10.2" fill="#334155" xml:space="preserve">块 IO 期间进程通常进入阻塞态，CPU 去跑别的任务。</text>
+<text x="76" y="560" font-size="10.2" fill="#334155" xml:space="preserve">短读不是错误；只有返回 0 才表示 EOF（对普通文件/流）。</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">图源：通用 OS 文件 IO 模型；Linux 的 page cache、预读和 IO 调度见 21-Linux。</text>
+</svg>

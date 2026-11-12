@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="700" viewBox="0 0 1120 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">进程状态机：就绪、运行、阻塞、僵尸</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">只有 Running 在 CPU 上；Blocked 必须先回到 Ready，不能直接运行。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">退出后 PCB 仍在，等父进程 wait 回收。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">创建/调度</text>
+<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">等待/唤醒</text>
+<line x1="261.2" y1="142" x2="291.2" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="299.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">退出/回收</text>
+<rect x="60" y="240" width="200" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="60" y="240" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="73" y="259" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">New</text>
+<text x="73" y="276" font-size="9.6" fill="#334155" xml:space="preserve">刚创建，尚未入队</text>
+<rect x="330" y="240" width="200" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="330" y="240" width="4.5" height="70" fill="#4f46e5" rx="2"/>
+<text x="343" y="259" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Ready</text>
+<text x="343" y="276" font-size="9.6" fill="#334155" xml:space="preserve">可运行，等 CPU</text>
+<rect x="600" y="240" width="200" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="600" y="240" width="4.5" height="70" fill="#0f9d58" rx="2"/>
+<text x="613" y="259" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Running</text>
+<text x="613" y="276" font-size="9.6" fill="#334155" xml:space="preserve">正在 CPU 上执行</text>
+<rect x="870" y="240" width="200" height="70" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="870" y="240" width="4.5" height="70" fill="#475569" rx="2"/>
+<text x="883" y="259" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Zombie</text>
+<text x="883" y="276" font-size="9.6" fill="#334155" xml:space="preserve">已退出，PCB 未回收</text>
+<rect x="600" y="410" width="200" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="600" y="410" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="613" y="429" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Blocked</text>
+<text x="613" y="446" font-size="9.6" fill="#334155" xml:space="preserve">等 IO / 锁 / 事件</text>
+<line x1="260" y1="275" x2="330" y2="275" stroke="#0891b2" stroke-width="2"/>
+<polygon points="330,275 321,270.5 321,279.5" fill="#0891b2"/>
+<text x="291" y="267" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">admit</text>
+<line x1="530" y1="262" x2="600" y2="262" stroke="#4f46e5" stroke-width="2"/>
+<polygon points="600,262 591,257.5 591,266.5" fill="#4f46e5"/>
+<text x="559" y="254" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">调度</text>
+<line x1="600" y1="288" x2="530" y2="288" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="530,288 539,292.5 539,283.5" fill="#4f46e5"/>
+<text x="510" y="322" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">时间片到/抢占</text>
+<line x1="700" y1="310" x2="700" y2="410" stroke="#d97706" stroke-width="2"/>
+<polygon points="700,410 704.5,401 695.5,401" fill="#d97706"/>
+<text x="706" y="360" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">等 IO/锁</text>
+<line x1="650" y1="410" x2="430" y2="310" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="430,310 436.33,317.82 440.06,309.63" fill="#d97706"/>
+<text x="510" y="378" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">事件完成 → Ready</text>
+<line x1="800" y1="275" x2="870" y2="275" stroke="#475569" stroke-width="2"/>
+<polygon points="870,275 861,270.5 861,279.5" fill="#475569"/>
+<text x="829" y="267" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">exit</text>
+<rect x="60" y="530" width="1010" height="110" fill="#f2fcf5" rx="10" stroke="#0f9d58" stroke-width="1"/>
+<text x="76" y="560" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图</text>
+<text x="76" y="584" font-size="10.2" fill="#334155" xml:space="preserve">New → Ready 是入队；Ready → Running 是调度；Running → Ready 是被抢占。</text>
+<text x="76" y="602" font-size="10.2" fill="#334155" xml:space="preserve">Blocked 不会直接变 Running：事件完成后先回 Ready，再等下一次调度。</text>
+<text x="76" y="620" font-size="10.2" fill="#334155" xml:space="preserve">Zombie 只占一个 PCB；父进程 wait 后才真正释放。</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">图源：通用进程状态模型；Linux 还区分 TASK_INTERRUPTIBLE / UNINTERRUPTIBLE 等细分状态。</text>
+</svg>
