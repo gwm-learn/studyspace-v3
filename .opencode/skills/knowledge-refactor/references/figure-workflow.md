@@ -3,9 +3,10 @@
 ## 1. 原则
 
 - 图放在**对应流程/框架章节**，不是文档开头。
+- **先选图型**：按 `.图表模板/figure-style.md` §2.1 判断知识点属于哪类（分层 / 交互 / 依赖 / 分流 / 演化 / 线性步骤 / 多选对比），再选组件。不要默认 `node` + `flow_row`。
 - 一张图只回答一个问题：路径、分层、状态、拓扑、对比。
 - 同一篇有多个独立流程时，各配一张；不要用一张图硬塞。
-- 图是结构示意，不追求截图级细节；文字解释放“读图”。
+- 图是结构示意，不追求截图级细节；文字解释放"读图"。
 
 ## 2. 模板
 
@@ -33,6 +34,15 @@ SvgFigure = mod.SvgFigure
 | `matrix(x,y,w,headers,rows)` | 矩阵/表 |
 | `lane(...)` | 泳道 |
 | `footer(lines)` | 底部来源 |
+| `stack(x,y,w,rows)` | 层叠：分区表、协议栈、镜像层 |
+| `bracket(x,y1,y2,label)` | 分组括号（A 槽 / B 槽） |
+| `sequence(x,y,lanes,messages)` | 时序：谁对谁说什么 |
+| `graph(nodes,edges)` / `edge_boxes(a,b)` | 有向图 / DAG，自动选边 |
+| `chip(x,y,label)` | 小标签块（DAG 节点、状态） |
+| `decision(x,y,w,root,branches)` | 决策分流（报错分类、排障路径） |
+| `timeline(x,y,w,items)` | 时间线（版本、代际） |
+
+图型与组件的对应关系见 `figure-style.md §2.1`；可复制样板在 `.图表模板/examples/`（层叠、时序、有向图、决策、时间线各一张）。
 
 默认语义色：`indigo` 主路径、`green` 成功/就绪、`amber` 注意/延后、`red` 风险、`cyan` 辅助、`slate` 中性。
 

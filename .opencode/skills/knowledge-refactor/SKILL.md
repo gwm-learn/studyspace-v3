@@ -127,6 +127,7 @@ Add a three-column `## 名词解释` before references, and a TOC entry `- [名�
 Follow `references/figure-workflow.md`.
 
 - Use `.图表模板/svg-figure-template.py`; do not hand-write SVG.
+- 先按 `.图表模板/figure-style.md` §2.1 选图型（分层/交互/依赖/分流/演化/线性步骤），再挑组件；样板在 `.图表模板/examples/`。
 - Put figures in the note's `images/`, named `图NN-主题.svg`；**编号接着目录里已有的往下排**，不要从 01 重来。
 - Insert **inside the relevant section**, not at the top:
   ```markdown

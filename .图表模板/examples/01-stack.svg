@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="680" viewBox="0 0 860 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="860" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="824" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">示例 01 · 层叠结构（stack + bracket）</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左侧单列、右侧分组；层数由内容决定，不写死。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">引导区</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">系统镜像</text>
+<line x1="237" y1="142" x2="267" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="275" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">配置层</text>
+<text x="40" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">单槽</text>
+<rect x="40" y="190" width="300" height="38" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="212.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">u-boot</text>
+<text x="330" y="212.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">引导</text>
+<rect x="40" y="234" width="300" height="38" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="256.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">u-boot-env</text>
+<text x="330" y="256.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">环境变量</text>
+<rect x="40" y="278" width="300" height="38" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="300.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">kernel</text>
+<text x="330" y="300.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">内核</text>
+<rect x="40" y="322" width="300" height="38" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="344.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">rootfs</text>
+<text x="330" y="344.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">只读</text>
+<rect x="40" y="366" width="300" height="38" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="52" y="388.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">rootfs_data</text>
+<text x="330" y="388.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">overlay</text>
+<text x="420" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">A/B 槽</text>
+<rect x="420" y="190" width="340" height="38" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="432" y="212.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">u-boot</text>
+<text x="750" y="212.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">引导</text>
+<rect x="420" y="234" width="340" height="38" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="432" y="256.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">u-boot-env</text>
+<text x="750" y="256.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">槽位 · 计数</text>
+<rect x="420" y="278" width="340" height="38" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="432" y="300.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">kernel_A</text>
+<text x="750" y="300.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">内核 A</text>
+<rect x="420" y="322" width="340" height="38" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="432" y="344.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">rootfs_A</text>
+<text x="750" y="344.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">系统 A</text>
+<rect x="420" y="366" width="340" height="38" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="432" y="388.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">kernel_B</text>
+<text x="750" y="388.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">内核 B</text>
+<rect x="420" y="410" width="340" height="38" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="432" y="432.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">rootfs_B</text>
+<text x="750" y="432.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">系统 B</text>
+<rect x="420" y="454" width="340" height="38" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="432" y="476.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">rootfs_data</text>
+<text x="750" y="476.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">共用</text>
+<line x1="776" y1="278" x2="776" y2="360" stroke="#4f46e5" stroke-width="1.6"/>
+<line x1="772" y1="278" x2="780" y2="278" stroke="#4f46e5" stroke-width="1.6"/>
+<line x1="772" y1="360" x2="780" y2="360" stroke="#4f46e5" stroke-width="1.6"/>
+<text x="786" y="322" font-size="10.4" fill="#4f46e5" xml:space="preserve" font-weight="700">A 槽</text>
+<line x1="776" y1="366" x2="776" y2="448" stroke="#4f46e5" stroke-width="1.6"/>
+<line x1="772" y1="366" x2="780" y2="366" stroke="#4f46e5" stroke-width="1.6"/>
+<line x1="772" y1="448" x2="780" y2="448" stroke="#4f46e5" stroke-width="1.6"/>
+<text x="786" y="410" font-size="10.4" fill="#4f46e5" xml:space="preserve" font-weight="700">B 槽</text>
+<rect x="40" y="522" width="740" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="552" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">什么时候用</text>
+<text x="56" y="576" font-size="10.2" fill="#334155" xml:space="preserve">有明确的上下层/分区顺序，且每层要带一句说明时用 stack。</text>
+<text x="56" y="594" font-size="10.2" fill="#334155" xml:space="preserve">分组关系用 bracket，不要靠留白暗示；说明框放在 stack 返回值之后，别写死 y。</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">示例：.图表模板/examples/01-stack.svg</text>
+</svg>

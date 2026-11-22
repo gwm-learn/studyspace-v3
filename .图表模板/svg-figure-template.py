@@ -199,6 +199,7 @@ class SvgFigure:
         for line in lines:
             self.text(x + 10, yy, line, 9.0, "dim")
             yy += 13
+        return (x, y, w, h)
 
     def node(self, x, y, w=220, h=76, title="", lines=(), mono_lines=(),
              color="slate", tint=None, badge=None, small=False):
@@ -218,6 +219,7 @@ class SvgFigure:
         for line in mono_lines:
             self.text(x + 13, yy, line, body_size, "body", mono=True)
             yy += 15.4
+        return (x, y, w, h)
 
     def flow_row(self, x, y, nodes, gap=10, node_h=82):
         """按顺序横向排节点，自动画箭头；节点数量由内容决定。
@@ -334,6 +336,204 @@ class SvgFigure:
     def _text_width(value, size):
         # 粗略估算：中文按 1em，英文/数字按 0.6em。
         return sum(size if ord(ch) > 127 else size * 0.6 for ch in value)
+
+    # ---------- 图型组件：按知识点选型 ----------
+    #
+    # 这些组件解决的是"现有组件画不出来、只能手搓"的几类图：
+    # 时序（sequence）、有向图/DAG（graph）、决策分流（decision）、
+    # 层叠结构（stack）、时间线（timeline）、分组括号（bracket）、小标签（chip）。
+
+    def chip(self, x, y, label, color="slate", w=None, h=28, sub=None):
+        """小标签块：DAG 节点、阶段标记、模式名。返回盒子 (x, y, w, h)。"""
+        need = self._text_width(label, 10.2)
+        if sub:
+            need = max(need, self._text_width(sub, 8.6))
+        width = w or max(34.0, need + 22)
+        self.rect(x, y, width, h, fill=self._tint(color), stroke=color, sw=1.2, rx=6)
+        ty = y + h / 2 + (0 if sub else 3.6)
+        self.text(x + width / 2, ty, label, 10.2, "ink", 700, anchor="middle")
+        if sub:
+            self.text(x + width / 2, y + h / 2 + 12, sub, 8.6, "dim", anchor="middle")
+        return (x, y, width, h)
+
+    def _port(self, box, other, horizontal):
+        """按相对方位选一个出/入点，避开节点标题行。"""
+        x, y, w, h = box
+        ox, oy = other[0] + other[2] / 2, other[1] + other[3] / 2
+        cx, cy = x + w / 2, y + h / 2
+        if horizontal:
+            py = y + (h / 2 if h <= 44 else h - 12)
+            return (x + w, py) if ox > cx else (x, py)
+        px = x + w / 2
+        return (px, y + h) if oy > cy else (px, y)
+
+    def _head(self, p1, p2, color, size=9.0):
+        dx, dy = p2[0] - p1[0], p2[1] - p1[1]
+        length = math.hypot(dx, dy) or 1.0
+        ux, uy = dx / length, dy / length
+        bx, by = p2[0] - size * ux, p2[1] - size * uy
+        half = size * 0.5
+        self.polygon([p2, (bx + half * uy, by - half * ux),
+                      (bx - half * uy, by + half * ux)], color)
+
+    def edge_boxes(self, a, b, color="slate", width=1.8, dashed=False,
+                   mode="auto", label=None):
+        """两个盒子之间画连线：自动选边、可走直角，避免穿过中间节点。
+
+        a/b 为 (x, y, w, h)。mode: auto / straight / elbow。
+        """
+        ax, ay, aw, ah = a
+        bx, by, bw, bh = b
+        horizontal = abs((bx + bw / 2) - (ax + aw / 2)) >= abs((by + bh / 2) - (ay + ah / 2))
+        p1 = self._port(a, b, horizontal)
+        p2 = self._port(b, a, horizontal)
+        if mode == "auto":
+            gap = abs(p2[0] - p1[0]) if horizontal else abs(p2[1] - p1[1])
+            mode = "straight" if gap >= 8 else "elbow"
+        dash = dict(dashed=True) if dashed else {}
+        if mode == "elbow":
+            if horizontal:
+                mx = (p1[0] + p2[0]) / 2
+                pts = [p1, (mx, p1[1]), (mx, p2[1])]
+            else:
+                my = (p1[1] + p2[1]) / 2
+                pts = [p1, (p1[0], my), (p2[0], my)]
+            for i in range(len(pts) - 1):
+                self.line(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1],
+                          color, width, **dash)
+            self._head(pts[-1], p2, color)
+        else:
+            self.line(p1[0], p1[1], p2[0], p2[1], color, width, **dash)
+            self._head(p1, p2, color)
+        if label:
+            mx, my = (p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2
+            self.text(mx, my - 7, label, 9.6, "dim", 600, anchor="middle")
+
+    def graph(self, nodes, edges, node_w=54, node_h=28, color="slate",
+              edge_color="slate", **edge_kw):
+        """有向图 / DAG：节点用 chip 画，边自动选边。
+
+        nodes: [dict(id, x, y, label, color?, w?, h?)]
+        edges: [dict(from, to, color?, dashed?, mode?)]
+        返回 {id: (x, y, w, h)}，便于再补标签或括号。
+        """
+        boxes = {}
+        for n in nodes:
+            w = n.get("w", node_w)
+            h = n.get("h", node_h)
+            self.chip(n["x"], n["y"], n["label"], n.get("color", color), w=w, h=h)
+            boxes[n["id"]] = (n["x"], n["y"], w, h)
+        for e in edges:
+            self.edge_boxes(boxes[e["from"]], boxes[e["to"]],
+                            e.get("color", edge_color),
+                            dashed=e.get("dashed", False),
+                            mode=e.get("mode", "auto"),
+                            label=e.get("label"), **edge_kw)
+        return boxes
+
+    def bracket(self, x, y1, y2, label="", color="slate", width=1.6):
+        """竖向分组括号：把若干行归为一组（如 A 槽 / B 槽）。"""
+        self.line(x, y1, x, y2, color, width)
+        self.line(x - 4, y1, x + 4, y1, color, width)
+        self.line(x - 4, y2, x + 4, y2, color, width)
+        if label:
+            self.text(x + 10, (y1 + y2) / 2 + 3, label, 10.4, color, 700)
+
+    def stack(self, x, y, w, rows, h=38, gap=6):
+        """层叠结构：分区表、协议栈、镜像层。rows: dict(label, tag?, color?)。"""
+        yy = y
+        for r in rows:
+            color = r.get("color", "slate")
+            self.rect(x, yy, w, h, fill=self._tint(color), stroke=color, sw=1.1, rx=6)
+            self.text(x + 12, yy + h / 2 + 3.6, r["label"], 10.4, "ink", 600)
+            if r.get("tag"):
+                self.text(x + w - 10, yy + h / 2 + 3.6, r["tag"], 9.2, "dim", anchor="end")
+            yy += h + gap
+        return yy - gap
+
+    def decision(self, x, y, w, root, branches, root_w=210, gap=18,
+                 top_gap=110, colors=("indigo", "amber", "red", "cyan", "green")):
+        """决策 / 分流图：一个根 + N 个分支 + 每支一句动作。
+
+        root: dict(title, lines?, color?)
+        branches: [dict(title, lines?, color?, action?)]
+        """
+        rx = x + (w - root_w) / 2
+        self.node(rx, y, root_w, 58, title=root["title"],
+                  lines=root.get("lines", []), color=root.get("color", "slate"))
+        n = len(branches)
+        bw = (w - gap * (n - 1)) / n
+        by = y + top_gap
+        bottoms = []
+        for i, b in enumerate(branches):
+            bx = x + i * (bw + gap)
+            color = b.get("color", colors[i % len(colors)])
+            bh = 30 + 15.4 * len(b.get("lines", [])) + 12
+            self.node(bx, by, bw, bh, title=b["title"],
+                      lines=b.get("lines", []), color=color)
+            sx = rx + root_w * (i + 1) / (n + 1)
+            self.arrow(sx, y + 58, bx + bw / 2, by, color, 1.8)
+            if b.get("action"):
+                self.text(bx + 10, by + bh + 20, "→ " + b["action"], 9.4, "dim")
+            bottoms.append(by + bh + (24 if b.get("action") else 0))
+        return max(bottoms)
+
+    def sequence(self, x, y, lanes, messages, lane_gap=230, lane_w=190,
+                 header_h=42, step=38, color="indigo"):
+        """时序图：竖向泳道（生命线）+ 横向消息。
+
+        lanes: [(name, color)] 或 [dict(name, color?)]
+        messages: [dict(frm, to, label, color?, dashed?)]；frm==to 画自环。
+        返回生命线底部 y。
+        """
+        pos = []
+        for i, lane in enumerate(lanes):
+            name, col = (lane if isinstance(lane, tuple)
+                         else (lane["name"], lane.get("color", color)))
+            lx = x + i * lane_gap
+            self.rect(lx, y, lane_w, header_h, fill="header_bg",
+                      stroke=col, sw=1.0, rx=8)
+            self.text(lx + 12, y + 26, name, 11.2, "ink", 700)
+            pos.append((lx + lane_w / 2, col))
+        bottom = y + header_h + len(messages) * step + 8
+        for cx, _ in pos:
+            self.line(cx, y + header_h, cx, bottom, "grid", 1.2, dashed=True)
+        yy = y + header_h + 28
+        for m in messages:
+            i, j = m["frm"], m["to"]
+            col = m.get("color", color)
+            x1, x2 = pos[i][0], pos[j][0]
+            dash = dict(dashed=True) if m.get("dashed") else {}
+            if i == j:
+                self.line(x1, yy, x1 + 34, yy, col, 1.8, **dash)
+                self.line(x1 + 34, yy, x1 + 34, yy + 14, col, 1.8, **dash)
+                self.line(x1 + 34, yy + 14, x1 + 6, yy + 14, col, 1.8, **dash)
+                self._head((x1 + 12, yy + 14), (x1 + 2, yy + 14), col)
+            else:
+                self.arrow(x1, yy, x2, yy, col, 1.8, **dash)
+            if m.get("label"):
+                self.text(min(x1, x2) + 6, yy - 7, m["label"], 9.6, "dim", 600)
+            yy += step
+        return bottom
+
+    def timeline(self, x, y, w, items, color="slate"):
+        """时间线：版本演化、协议阶段。items: dict(label, sub?, color?, above?)。"""
+        self.line(x, y, x + w, y, "grid", 1.8)
+        n = len(items)
+        for i, it in enumerate(items):
+            cx = x + (i + 0.5) * w / n
+            col = it.get("color", color)
+            self.polygon([(cx, y - 5), (cx - 5, y), (cx, y + 5), (cx + 5, y)], col)
+            above = it.get("above", i % 2 == 0)
+            if above:
+                self.text(cx, y - 18, it["label"], 10.2, "ink", 600, anchor="middle")
+                if it.get("sub"):
+                    self.text(cx, y - 32, it["sub"], 9.0, "dim", anchor="middle")
+            else:
+                self.text(cx, y + 24, it["label"], 10.2, "ink", 600, anchor="middle")
+                if it.get("sub"):
+                    self.text(cx, y + 38, it["sub"], 9.0, "dim", anchor="middle")
+        return y
 
 
 def build_example() -> SvgFigure:

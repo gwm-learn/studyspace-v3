@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="760" viewBox="0 0 980 760" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="980" height="760" fill="#ffffff"/>
+<line x1="36" y1="112" x2="944" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">示例 02 · 时序图（sequence）</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">竖向是参与者，横向是消息；虚线是生命线，不要画成实体框。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">控制面</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">空口</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#94a3b8" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">可选/拒绝</text>
+<rect x="40" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="52" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">Controller</text>
+<rect x="270" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="282" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">Agent A（旧）</text>
+<rect x="500" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="512" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">Agent B（新）</text>
+<rect x="730" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#d97706" stroke-width="1"/>
+<text x="742" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">终端 STA</text>
+<line x1="135" y1="232" x2="135" y2="582" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="365" y1="232" x2="365" y2="582" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="595" y1="232" x2="595" y2="582" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="825" y1="232" x2="825" y2="582" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="365" y1="260" x2="135" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="135,260 144,264.5 144,255.5" fill="#4f46e5"/>
+<text x="141" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">① 上报终端与链路</text>
+<line x1="135" y1="298" x2="365" y2="298" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="365,298 356,293.5 356,302.5" fill="#4f46e5"/>
+<text x="141" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">② Steering Request</text>
+<line x1="135" y1="336" x2="595" y2="336" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="595,336 586,331.5 586,340.5" fill="#4f46e5"/>
+<text x="141" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">③ 通知准备</text>
+<line x1="365" y1="374" x2="825" y2="374" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="825,374 816,369.5 816,378.5" fill="#4f46e5"/>
+<text x="371" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">④ 11k 邻居报告</text>
+<line x1="365" y1="412" x2="825" y2="412" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="825,412 816,407.5 816,416.5" fill="#4f46e5"/>
+<text x="371" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑤ 11v BTM Request</text>
+<line x1="825" y1="450" x2="365" y2="450" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="365,450 374,454.5 374,445.5" fill="#94a3b8"/>
+<text x="371" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑥ BTM Response</text>
+<line x1="365" y1="488" x2="135" y2="488" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="135,488 144,492.5 144,483.5" fill="#4f46e5"/>
+<text x="141" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑦ BTM Report</text>
+<line x1="825" y1="526" x2="595" y2="526" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="595,526 604,530.5 604,521.5" fill="#4f46e5"/>
+<text x="601" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑧ 重关联 + FT</text>
+<line x1="595" y1="564" x2="135" y2="564" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="135,564 144,568.5 144,559.5" fill="#4f46e5"/>
+<text x="141" y="557" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑨ 已上线</text>
+<rect x="40" y="606" width="900" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="636" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">什么时候用</text>
+<text x="56" y="660" font-size="10.2" fill="#334155" xml:space="preserve">有先后顺序、且要看清「谁对谁说」时用时序图。</text>
+<text x="56" y="678" font-size="10.2" fill="#334155" xml:space="preserve">只有步骤没有交互对象时，用 flow_row（流程行）更省地方。</text>
+<text x="36" y="724" font-size="12.3" fill="#64748b" xml:space="preserve">示例：.图表模板/examples/02-sequence.svg</text>
+</svg>

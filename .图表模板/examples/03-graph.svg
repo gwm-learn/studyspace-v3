@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="580" viewBox="0 0 1060 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1060" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">示例 03 · 有向图（graph）</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">节点用 chip，边自动选边、可走直角；分支图不要手连斜线。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主分支</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中间分支</text>
+<line x1="237" y1="142" x2="267" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="275" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">被移动的段</text>
+<text x="40" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">变基前</text>
+<rect x="40" y="200" width="54" height="28" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="67" y="217.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">A</text>
+<rect x="120" y="200" width="54" height="28" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="147" y="217.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">B</text>
+<rect x="200" y="200" width="54" height="28" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="227" y="217.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">C</text>
+<rect x="200" y="270" width="54" height="28" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="227" y="287.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">N1</text>
+<rect x="280" y="270" width="54" height="28" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="307" y="287.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">N2</text>
+<rect x="360" y="340" width="54" height="28" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="387" y="357.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">T1</text>
+<rect x="440" y="340" width="54" height="28" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="467" y="357.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">T2</text>
+<line x1="94" y1="214" x2="120" y2="214" stroke="#475569" stroke-width="1.8"/>
+<polygon points="120,214 111,209.5 111,218.5" fill="#475569"/>
+<line x1="174" y1="214" x2="200" y2="214" stroke="#475569" stroke-width="1.8"/>
+<polygon points="200,214 191,209.5 191,218.5" fill="#475569"/>
+<line x1="174" y1="214" x2="200" y2="284" stroke="#475569" stroke-width="1.8"/>
+<polygon points="200,284 201.08,274 192.65,277.13" fill="#475569"/>
+<line x1="254" y1="284" x2="280" y2="284" stroke="#475569" stroke-width="1.8"/>
+<polygon points="280,284 271,279.5 271,288.5" fill="#475569"/>
+<line x1="334" y1="284" x2="360" y2="354" stroke="#475569" stroke-width="1.8"/>
+<polygon points="360,354 361.08,344 352.65,347.13" fill="#475569"/>
+<line x1="414" y1="354" x2="440" y2="354" stroke="#475569" stroke-width="1.8"/>
+<polygon points="440,354 431,349.5 431,358.5" fill="#475569"/>
+<text x="560" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">变基后</text>
+<rect x="560" y="200" width="54" height="28" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="587" y="217.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">A</text>
+<rect x="640" y="200" width="54" height="28" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="667" y="217.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">B</text>
+<rect x="720" y="200" width="54" height="28" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="747" y="217.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">C</text>
+<rect x="880" y="340" width="54" height="28" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="907" y="357.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">T1′</text>
+<rect x="960" y="340" width="54" height="28" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="987" y="357.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">T2′</text>
+<line x1="614" y1="214" x2="640" y2="214" stroke="#475569" stroke-width="1.8"/>
+<polygon points="640,214 631,209.5 631,218.5" fill="#475569"/>
+<line x1="694" y1="214" x2="720" y2="214" stroke="#475569" stroke-width="1.8"/>
+<polygon points="720,214 711,209.5 711,218.5" fill="#475569"/>
+<line x1="774" y1="214" x2="880" y2="354" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="880,354 878.15,344.11 870.98,349.54" fill="#d97706"/>
+<line x1="934" y1="354" x2="960" y2="354" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="960,354 951,349.5 951,358.5" fill="#d97706"/>
+<text x="560" y="300" font-size="9.4" fill="#64748b" xml:space="preserve">next：N1、N2 未变，省略不画</text>
+<rect x="40" y="420" width="960" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">什么时候用</text>
+<text x="56" y="474" font-size="10.2" fill="#334155" xml:space="preserve">有分叉、合并、依赖方向时用 graph；线性步骤用 flow_row。</text>
+<text x="56" y="492" font-size="10.2" fill="#334155" xml:space="preserve">边交给 edge_boxes 自动选边；节点挡路时，删掉无关分支比强行绕线更清楚。</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">示例：.图表模板/examples/03-graph.svg</text>
+</svg>

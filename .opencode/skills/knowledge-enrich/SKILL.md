@@ -107,6 +107,7 @@ Typical triggers:
 
 Follow `../knowledge-refactor/references/figure-workflow.md`。
 
+- **先按 `.图表模板/figure-style.md` §2.1 选图型**：分层→`stack`、交互→`sequence`、依赖/分叉→`graph`、分流→`decision`、演化→`timeline`、线性步骤→`flow_row`、多选对比→`matrix`。不要默认用"节点 + 箭头"硬凑。
 - 先盘点已有图，判断"这张图回答的问题还成不成立"；成立就留，不成立就重画而不是叠加。
 - 新增图放 `images/`，编号接目录最大值（不要从 01 重来），插在**对应章节**并写"读图"。
 - 一篇里有几个独立流程就几张图：总览、时序、边界对照、拓扑，各自分工。

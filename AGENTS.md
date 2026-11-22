@@ -73,7 +73,7 @@
 | 查产品方案 | `40-产品与方案/.readme.md` | 对应产品目录 |
 | 查软件开发 | `60-软件开发/.readme.md` | 对应语言/工具目录 |
 | 查工具环境 | `80-工具与环境/.readme.md` | 对应工具目录 |
-| 生成/修改技术图 | `.图表模板/figure-style.md` | `svg-figure-template.py` + `example.svg` |
+| 生成/修改技术图 | `.图表模板/figure-style.md`（§2.1 选图型） | `svg-figure-template.py` + `.图表模板/examples/` |
 | 整理索引/链接 | 根 `README.md` + 目标 `.readme.md` | 相关目录和文件 |
 | 检查仓库结构 | `README.md` + 顶层 `.readme.md` | 按需抽查 |
 
