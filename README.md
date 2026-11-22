@@ -23,6 +23,7 @@
 ## 仓库工具
 
 - [.图表模板](./.图表模板/.readme.md)：技术图 SVG 模板，非学习笔记本身。
+- [.opencode/skills](./.opencode/skills/knowledge-refactor/SKILL.md)：Agent 技能（新建/加深笔记）与知识库审计脚本，非学习笔记本身。
 
 ## 提交规范
 
