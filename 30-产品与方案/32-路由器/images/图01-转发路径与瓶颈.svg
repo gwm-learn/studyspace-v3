@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="600" viewBox="0 0 1240 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 转发路径与瓶颈：同一台机器，五种代价</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先看流量属于哪一行，再看瓶颈列：LAN↔LAN 不过 CPU，上网流量才轮到内核与加速表。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">最后一列是开 offload 之后的变化——它决定「为什么规则改了不生效」。</text>
+<text x="40" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">同一条「转发」需求，五种完全不同的实现</text>
+<rect x="40" y="190" width="1160" height="30" fill="#f1f5f9" rx="6"/>
+<text x="48" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">流量类型</text>
+<text x="388" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">谁在转发</text>
+<text x="620" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">过不过 CPU</text>
+<text x="852" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">瓶颈在哪</text>
+<text x="1084" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">开 offload 后</text>
+<rect x="40" y="220" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="220" x2="1200" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">LAN → LAN（同芯片）</text>
+<text x="388" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">交换芯片查 FDB</text>
+<text x="620" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">不过</text>
+<text x="852" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">背板与端口速率</text>
+<text x="1084" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">无变化</text>
+<rect x="40" y="250" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="250" x2="1200" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">LAN → WAN 首包</text>
+<text x="388" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">内核 netfilter</text>
+<text x="620" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">全过</text>
+<text x="852" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">单核每包开销</text>
+<text x="1084" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">首包仍走全路径</text>
+<rect x="40" y="280" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="280" x2="1200" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">LAN → WAN 已建连接</text>
+<text x="388" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">加速表 / 转发引擎</text>
+<text x="620" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">硬件 offload 不过</text>
+<text x="852" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">流表容量与并发</text>
+<text x="1084" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">规则、计数、限速失效</text>
+<rect x="40" y="310" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="310" x2="1200" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">Wi-Fi → WAN</text>
+<text x="388" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">软桥 + 路由</text>
+<text x="620" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">过（空口为主）</text>
+<text x="852" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">空口时间与重传</text>
+<text x="1084" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">部分平台可加速</text>
+<rect x="40" y="340" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="340" x2="1200" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="360" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">WAN → LAN 下行</text>
+<text x="388" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">路由 + 入向队列</text>
+<text x="620" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">过</text>
+<text x="852" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">入向缓冲与中断</text>
+<text x="1084" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">同上，统计变粗</text>
+<line x1="40" y1="370" x2="1200" y2="370" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="40" y="400" width="1160" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="430" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图得到的三条判断</text>
+<text x="56" y="454" font-size="10.2" fill="#334155" xml:space="preserve">① LAN↔LAN 慢先查交换芯片、网线与环路，别查 CPU 和 NAT。</text>
+<text x="56" y="472" font-size="10.2" fill="#334155" xml:space="preserve">② 大包达标而多终端卡，是每包开销问题；加带宽与换天线都无效。</text>
+<text x="56" y="490" font-size="10.2" fill="#334155" xml:space="preserve">③ 首包必走完整路径：offload 只对「连接数 × 包数」大的流量有收益。</text>
+<text x="36" y="528" font-size="12.3" fill="#64748b" xml:space="preserve">图源：30-产品与方案/32-路由器/00-路由器产品架构.md</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">参考：Linux flowtable、MTK PPE/HNAT、Qualcomm NSS</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

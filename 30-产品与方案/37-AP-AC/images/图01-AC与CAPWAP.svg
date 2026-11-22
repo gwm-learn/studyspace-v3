@@ -1,46 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="800" viewBox="0 0 880 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="880" height="800" fill="#ffffff"/>
-<line x1="36" y1="112" x2="844" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · AC 与 AP 的 CAPWAP 加入：发现、加入、配置</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">发现是广播/组播找 AC；加入是双向确认；DTLS 之后才允许下发配置。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="880" viewBox="0 0 1120 880" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="880" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · AC 与 AP 的 CAPWAP 加入：发现 → DTLS → Join → 配置</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">发现是广播/组播找 AC；DTLS 先建安全通道，Join 才做准入；配置在两者之后。</text>
 <text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">数据通道是否建立取决于转发模式（集中转发才建）。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">控制通道</text>
-<line x1="142" y1="142" x2="172" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">应答</text>
-<line x1="226" y1="142" x2="256" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">数据通道（可选）</text>
-<rect x="40" y="190" width="250" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
-<text x="52" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">AP</text>
-<rect x="460" y="190" width="250" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
-<text x="472" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">AC</text>
-<line x1="165" y1="232" x2="165" y2="506" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
-<line x1="585" y1="232" x2="585" y2="506" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
-<line x1="165" y1="260" x2="585" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
-<polygon points="585,260 576,255.5 576,264.5" fill="#4f46e5"/>
-<text x="171" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Discovery Request（广播找 AC）</text>
-<line x1="585" y1="298" x2="165" y2="298" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
-<polygon points="165,298 174,302.5 174,293.5" fill="#0f9d58"/>
-<text x="171" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Discovery Response（AC 地址）</text>
-<line x1="165" y1="336" x2="585" y2="336" stroke="#4f46e5" stroke-width="1.8"/>
-<polygon points="585,336 576,331.5 576,340.5" fill="#4f46e5"/>
-<text x="171" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Join Request</text>
-<line x1="585" y1="374" x2="165" y2="374" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
-<polygon points="165,374 174,378.5 174,369.5" fill="#0f9d58"/>
-<text x="171" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Join Response</text>
-<line x1="165" y1="412" x2="585" y2="412" stroke="#4f46e5" stroke-width="1.8"/>
-<polygon points="585,412 576,407.5 576,416.5" fill="#4f46e5"/>
-<text x="171" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">DTLS 握手（证书 / 密钥）</text>
-<line x1="585" y1="450" x2="165" y2="450" stroke="#4f46e5" stroke-width="1.8"/>
-<polygon points="165,450 174,454.5 174,445.5" fill="#4f46e5"/>
-<text x="171" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Configure：下发配置 / 镜像</text>
-<line x1="585" y1="488" x2="165" y2="488" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
-<polygon points="165,488 174,492.5 174,483.5" fill="#d97706"/>
-<text x="171" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">数据通道建立（仅集中转发）</text>
-<rect x="40" y="620" width="800" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="56" y="650" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
-<text x="56" y="674" font-size="10.2" fill="#334155" xml:space="preserve">发现失败先看广播域：AP 与 AC 不在同一 VLAN 时，需要 DHCP option 43 或 DNS 指定 AC。</text>
-<text x="56" y="692" font-size="10.2" fill="#334155" xml:space="preserve">DTLS 失败常见于证书时间不对或版本不匹配；这一步不过，后面不会有任何配置。</text>
-<text x="36" y="746" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
-<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/37-AP-AC/01-AC产品架构与CAPWAP.md</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">控制通道（UDP 5246）</text>
+<line x1="216.8" y1="142" x2="246.8" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="254.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">数据通道（UDP 5247）</text>
+<line x1="397.6" y1="142" x2="427.6" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="435.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">回执/可选</text>
+<rect x="90" y="190" width="300" height="42" fill="#f1f5f9" rx="8" stroke="#0891b2" stroke-width="1"/>
+<text x="102" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">AP（WTP）</text>
+<rect x="710" y="190" width="300" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="722" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">AC</text>
+<line x1="240" y1="232" x2="240" y2="660" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="860" y1="232" x2="860" y2="660" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="240" y1="260" x2="860" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="860,260 851,255.5 851,264.5" fill="#4f46e5"/>
+<text x="246" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Discovery Request（广播/组播找 AC）</text>
+<line x1="860" y1="302" x2="240" y2="302" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="240,302 249,306.5 249,297.5" fill="#475569"/>
+<text x="246" y="295" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Discovery Response（AC 地址、能力）</text>
+<line x1="240" y1="344" x2="860" y2="344" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="860,344 851,339.5 851,348.5" fill="#4f46e5"/>
+<text x="246" y="337" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">DTLS 握手（证书 / 密钥）</text>
+<line x1="240" y1="386" x2="860" y2="386" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="860,386 851,381.5 851,390.5" fill="#4f46e5"/>
+<text x="246" y="379" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Join Request（型号、版本、射频能力）</text>
+<line x1="860" y1="428" x2="240" y2="428" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="240,428 249,432.5 249,423.5" fill="#475569"/>
+<text x="246" y="421" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Join Response（准入结果）</text>
+<line x1="860" y1="470" x2="240" y2="470" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="240,470 249,474.5 249,465.5" fill="#d97706"/>
+<text x="246" y="463" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Image Data（版本不一致时先升级）</text>
+<line x1="860" y1="512" x2="240" y2="512" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="240,512 249,516.5 249,507.5" fill="#4f46e5"/>
+<text x="246" y="505" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Configure：SSID / VLAN / 射频</text>
+<line x1="240" y1="554" x2="860" y2="554" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="860,554 851,549.5 851,558.5" fill="#475569"/>
+<text x="246" y="547" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Config Status（配置确认）</text>
+<line x1="240" y1="596" x2="860" y2="596" stroke="#0891b2" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="860,596 851,591.5 851,600.5" fill="#0891b2"/>
+<text x="246" y="589" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">数据通道建立（UDP 5247，仅集中转发）</text>
+<line x1="240" y1="638" x2="860" y2="638" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="860,638 851,633.5 851,642.5" fill="#475569"/>
+<text x="246" y="631" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Echo 保活（RFC 5415 默认 30 s）</text>
+<rect x="60" y="684" width="1000" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="714" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="76" y="738" font-size="10.2" fill="#334155" xml:space="preserve">发现失败先看广播域：AP 与 AC 不在同一 VLAN 时，需要 DHCP Option 43 或 DNS 指定 AC。</text>
+<text x="76" y="756" font-size="10.2" fill="#334155" xml:space="preserve">DTLS 在 Join 之前（RFC 5415）：证书时间不对或版本不匹配时，Join 根本不会开始。</text>
+<text x="76" y="774" font-size="10.2" fill="#334155" xml:space="preserve">配置下发与镜像升级都在安全通道建立之后；顺序反过来看，会把「证书失败」误判成「Join 被拒」。</text>
+<text x="36" y="826" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="844" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/37-AP-AC/01-AC产品架构与CAPWAP.md</text>
 </svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="560" viewBox="0 0 1240 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 入站流量的匹配顺序：命中就停，未命中才往后走</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">箭头表示「没命中」，继续走下一道关口；先会话、再映射、后兜底、最后拒绝。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">DMZ 抢走端口映射只可能是顺序配反，不是两条规则冲突。</text>
+<text x="40" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">从 WAN 进来的包，依次经过四个关口</text>
+<rect x="40" y="200" width="270" height="104" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="200" width="4.5" height="104" fill="#0f9d58" rx="2"/>
+<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 查 conntrack</text>
+<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">命中：已建会话的回包</text>
+<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">按反向表项还原，不再往后走</text>
+<line x1="310" y1="252" x2="334" y2="252" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="334,252 325,247.5 325,256.5" fill="#94a3b8"/>
+<rect x="334" y="200" width="270" height="104" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="334" y="200" width="4.5" height="104" fill="#4f46e5" rx="2"/>
+<text x="347" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 端口映射 DNAT</text>
+<text x="347" y="236" font-size="9.6" fill="#334155" xml:space="preserve">命中：改到内网 IP:端口</text>
+<text x="347" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">查路由 → FORWARD 放行</text>
+<line x1="604" y1="252" x2="628" y2="252" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="628,252 619,247.5 619,256.5" fill="#94a3b8"/>
+<rect x="628" y="200" width="270" height="104" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="628" y="200" width="4.5" height="104" fill="#d97706" rx="2"/>
+<text x="641" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ DMZ 兜底</text>
+<text x="641" y="236" font-size="9.6" fill="#334155" xml:space="preserve">命中：其余入站全转一台主机</text>
+<text x="641" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">本质是兜底 DNAT，风险最大</text>
+<line x1="898" y1="252" x2="922" y2="252" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="922,252 913,247.5 913,256.5" fill="#94a3b8"/>
+<rect x="922" y="200" width="270" height="104" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="922" y="200" width="4.5" height="104" fill="#dc2626" rx="2"/>
+<text x="935" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 默认拒绝</text>
+<text x="935" y="236" font-size="9.6" fill="#334155" xml:space="preserve">都未命中：丢弃并回 ICMP</text>
+<text x="935" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">IPv6 同理，只是没有 DNAT</text>
+<rect x="40" y="344" width="1140" height="110" fill="#fff5f5" rx="10" stroke="#dc2626" stroke-width="1"/>
+<text x="56" y="374" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">顺序错了会怎样</text>
+<text x="56" y="398" font-size="10.2" fill="#334155" xml:space="preserve">① DMZ 排到端口映射之前：具体映射永远不命中，现象是「只有 DMZ 主机能被访问」。</text>
+<text x="56" y="416" font-size="10.2" fill="#334155" xml:space="preserve">② 去掉 DMZ 但没设默认拒绝：未映射端口直接落到内网，等于开了全端口映射。</text>
+<text x="56" y="434" font-size="10.2" fill="#334155" xml:space="preserve">③ 先查映射再查会话：回包的目的地址已被改过，会再匹配一次映射规则，映射越多越乱。</text>
+<text x="36" y="488" font-size="12.3" fill="#64748b" xml:space="preserve">图源：30-产品与方案/32-路由器/01-路由转发与NAT方案.md</text>
+<text x="36" y="506" font-size="12.3" fill="#64748b" xml:space="preserve">参考：RFC 3022、RFC 4787</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

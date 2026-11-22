@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1200" height="780" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1164" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 三道天花板：供电、空口、上行</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">三条横条是三条上限：PoE 供电预算、空口效率、上行线速。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">整机实测吞吐取三者最小值——先算 PoE，再算上行，最后才谈射频档位。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">供电</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">空口</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">上行</text>
+<text x="36" y="186" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">三条上限叠在一起，取最小的那条</text>
+<rect x="60" y="206" width="1100" height="38" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.1"/>
+<text x="72" y="228.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">PoE 预算：af 12.95 W / at 25.5 W / bt 51–71 W（PD）</text>
+<text x="1150" y="228.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">决定能否满功率</text>
+<rect x="60" y="250" width="1100" height="38" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="72" y="272.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">空口峰值：空口速率 × 效率（0.5–0.6）</text>
+<text x="1150" y="272.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">决定单 AP 上限</text>
+<rect x="60" y="294" width="1100" height="38" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1.1"/>
+<text x="72" y="316.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">上行线速：1G / 2.5G / 10G</text>
+<text x="1150" y="316.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">决定汇聚总出口</text>
+<rect x="60" y="350" width="1100" height="62" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="60" y="350" width="4.5" height="62" fill="#475569" rx="2"/>
+<text x="73" y="369" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">实测吞吐 = min(PoE 能带的功率, 空口效率, 上行线速)</text>
+<text x="73" y="386" font-size="9.6" fill="#334155" xml:space="preserve">任何一项先到顶，其余两项的余量都白留；三项都匹配，才谈得上「跑满规格」。</text>
+<text x="36" y="440" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">核算顺序：答错会怎样</text>
+<rect x="36" y="460" width="250" height="96" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="460" width="4.5" height="96" fill="#d97706" rx="2"/>
+<text x="49" y="479" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① PoE 预算</text>
+<text x="49" y="496" font-size="9.6" fill="#334155" xml:space="preserve">PD 分级与功耗</text>
+<text x="49" y="511.4" font-size="9.6" fill="#334155" xml:space="preserve">af / at / bt 上限</text>
+<text x="38" y="578" font-size="9.4" fill="#64748b" xml:space="preserve">→ 错了：AP 反复重启</text>
+<rect x="326" y="460" width="250" height="96" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="326" y="460" width="4.5" height="96" fill="#0891b2" rx="2"/>
+<text x="339" y="479" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 上行带宽</text>
+<text x="339" y="496" font-size="9.6" fill="#334155" xml:space="preserve">1G / 2.5G / 10G</text>
+<text x="339" y="511.4" font-size="9.6" fill="#334155" xml:space="preserve">多 AP 汇总结算</text>
+<text x="328" y="578" font-size="9.4" fill="#64748b" xml:space="preserve">→ 错了：速率撞墙但空口很闲</text>
+<rect x="616" y="460" width="250" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="616" y="460" width="4.5" height="96" fill="#4f46e5" rx="2"/>
+<text x="629" y="479" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ 射频档位</text>
+<text x="629" y="496" font-size="9.6" fill="#334155" xml:space="preserve">空间流 / 频宽</text>
+<text x="629" y="511.4" font-size="9.6" fill="#334155" xml:space="preserve">2x2、4x4、320 MHz</text>
+<text x="618" y="578" font-size="9.4" fill="#64748b" xml:space="preserve">→ 错了：纸面好看带不动</text>
+<rect x="906" y="460" width="250" height="96" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="906" y="460" width="4.5" height="96" fill="#0f9d58" rx="2"/>
+<text x="919" y="479" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 实测验收</text>
+<text x="919" y="496" font-size="9.6" fill="#334155" xml:space="preserve">真实终端 + 忙时</text>
+<text x="919" y="511.4" font-size="9.6" fill="#334155" xml:space="preserve">看瓶颈撞在哪一条</text>
+<text x="908" y="578" font-size="9.4" fill="#64748b" xml:space="preserve">→ 对了：定位到真瓶颈</text>
+<rect x="36" y="606" width="1128" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="636" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">为什么先算 PoE</text>
+<text x="52" y="660" font-size="10.2" fill="#334155" xml:space="preserve">供电不足是唯一会让 AP「起不来」的约束：上行不够只是慢，供电不够会重启、降功率、射频起不来。</text>
+<text x="52" y="678" font-size="10.2" fill="#334155" xml:space="preserve">所以顺序是 PoE → 上行 → 射频档位；反过来先挑射频档位，最后会被电源和网线否掉。</text>
+<text x="36" y="726" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="744" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/37-AP-AC/00-AP产品架构.md</text>
+</svg>

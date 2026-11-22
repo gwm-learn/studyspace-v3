@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="560" viewBox="0 0 1240 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 业务对象绑定链：五层绑上，业务才通</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上行按 UNI → VLAN → GEM → T-CONT → PON 逐层封装，下行按反序解封装。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">OMCI 配的就是这条链上的 ME：少绑一层，业务就断在那一层。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">OMCI 创建的对象</text>
+<line x1="186" y1="142" x2="216" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="224" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">上行封装方向</text>
+<line x1="314" y1="142" x2="344" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="352" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">下行解封装</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 上行：逐层封装；下行：反序解封装</text>
+<rect x="36" y="196" width="200" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="196" width="4.5" height="96" fill="#4f46e5" rx="2"/>
+<text x="49" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">UNI-G</text>
+<text x="49" y="232" font-size="9.6" fill="#334155" xml:space="preserve">LAN / Wi-Fi / FXS</text>
+<text x="49" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">PVID、允许的 VLAN</text>
+<text x="49" y="262.8" font-size="9.6" fill="#334155" xml:space="preserve">断点：终端拿不到地址</text>
+<rect x="274" y="196" width="200" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="274" y="196" width="4.5" height="96" fill="#4f46e5" rx="2"/>
+<text x="287" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">VLAN 过滤</text>
+<text x="287" y="232" font-size="9.6" fill="#334155" xml:space="preserve">CVLAN ↔ SVLAN</text>
+<text x="287" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">上行打标，下行剥标</text>
+<text x="287" y="262.8" font-size="9.6" fill="#334155" xml:space="preserve">断点：上行通、下行不通</text>
+<rect x="512" y="196" width="200" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="512" y="196" width="4.5" height="96" fill="#4f46e5" rx="2"/>
+<text x="525" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">GEM Port</text>
+<text x="525" y="232" font-size="9.6" fill="#334155" xml:space="preserve">GEM ID</text>
+<text x="525" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">绑定到某个 T-CONT</text>
+<text x="525" y="262.8" font-size="9.6" fill="#334155" xml:space="preserve">断点：配置成功、发不出去</text>
+<rect x="750" y="196" width="200" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="750" y="196" width="4.5" height="96" fill="#4f46e5" rx="2"/>
+<text x="763" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">T-CONT</text>
+<text x="763" y="232" font-size="9.6" fill="#334155" xml:space="preserve">Alloc-ID + DBA</text>
+<text x="763" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">上行带宽与优先级</text>
+<text x="763" y="262.8" font-size="9.6" fill="#334155" xml:space="preserve">断点：高峰拥塞、低峰正常</text>
+<rect x="988" y="196" width="200" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="988" y="196" width="4.5" height="96" fill="#4f46e5" rx="2"/>
+<text x="1001" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PON 口</text>
+<text x="1001" y="232" font-size="9.6" fill="#334155" xml:space="preserve">上行时隙</text>
+<text x="1001" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">OLT 授权后才可发</text>
+<text x="1001" y="262.8" font-size="9.6" fill="#334155" xml:space="preserve">断点：PON 灯不常亮</text>
+<line x1="238" y1="244" x2="272" y2="244" stroke="#475569" stroke-width="2"/>
+<polygon points="272,244 263,239.5 263,248.5" fill="#475569"/>
+<text x="255" y="234" font-size="9.2" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">打标</text>
+<line x1="476" y1="244" x2="510" y2="244" stroke="#475569" stroke-width="2"/>
+<polygon points="510,244 501,239.5 501,248.5" fill="#475569"/>
+<text x="493" y="234" font-size="9.2" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">映射</text>
+<line x1="714" y1="244" x2="748" y2="244" stroke="#475569" stroke-width="2"/>
+<polygon points="748,244 739,239.5 739,248.5" fill="#475569"/>
+<text x="731" y="234" font-size="9.2" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">绑定</text>
+<line x1="952" y1="244" x2="986" y2="244" stroke="#475569" stroke-width="2"/>
+<polygon points="986,244 977,239.5 977,248.5" fill="#475569"/>
+<text x="969" y="234" font-size="9.2" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">调度</text>
+<line x1="1088" y1="326" x2="136" y2="326" stroke="#0891b2" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="136,326 145,330.5 145,321.5" fill="#0891b2"/>
+<text x="612" y="342" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">下行：PON → GEM → 剥 VLAN → UNI，按反序解封装</text>
+<rect x="36" y="360" width="566" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="390" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">拿这条链定位故障</text>
+<text x="52" y="414" font-size="10.2" fill="#334155" xml:space="preserve">① 从最靠左的环节查起：先看 UNI 侧终端是否拿到地址。</text>
+<text x="52" y="432" font-size="10.2" fill="#334155" xml:space="preserve">② 再看 VLAN 是否双向转换，最后才怀疑 GEM / T-CONT。</text>
+<text x="52" y="450" font-size="10.2" fill="#334155" xml:space="preserve">③ 每层都可能「配置成功但没绑上」，OLT 侧 ME 状态比现象可靠。</text>
+<rect x="622" y="360" width="566" height="110" fill="#ecfeff" rx="10" stroke="#0891b2" stroke-width="1"/>
+<text x="638" y="390" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">这条链管不到的部分</text>
+<text x="638" y="414" font-size="10.2" fill="#334155" xml:space="preserve">组播走独立 GEM，复制点可能在 OLT，ONU 只做代理。</text>
+<text x="638" y="432" font-size="10.2" fill="#334155" xml:space="preserve">TR-069 配的 Wi-Fi / 账号不在这条链上。</text>
+<text x="638" y="450" font-size="10.2" fill="#334155" xml:space="preserve">PON 未注册时整条链不存在：先解决光路，再谈绑定。</text>
+<text x="36" y="506" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/36-ONU-ONT/00-ONU-ONT系统架构.md</text>
+</svg>

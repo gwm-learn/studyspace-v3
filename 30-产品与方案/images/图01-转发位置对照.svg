@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="700" viewBox="0 0 1440 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1440" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1404" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 转发位置对照：数据在哪一层停住</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">同一根网线，五种设备停在不同层。看中间那格，就知道这台设备会 / 不会做什么。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">右侧是该形态的边界：它不负责的事，别在这里找配置。</text>
+<rect x="36" y="195" width="176" height="64" fill="#ecfeff" rx="9" stroke="#0891b2" stroke-width="1.2"/>
+<text x="46" y="217" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">交换机</text>
+<text x="46" y="233" font-size="9.4" fill="#64748b" xml:space="preserve">二层转发为主</text>
+<rect x="236" y="195" width="250" height="64" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="236" y="195" width="4.5" height="64" fill="#0891b2" rx="2"/>
+<text x="249" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">入口端口</text>
+<text x="249" y="231" font-size="9.6" fill="#334155" xml:space="preserve">收到以太帧</text>
+<rect x="536" y="195" width="250" height="64" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="536" y="195" width="4.5" height="64" fill="#0891b2" rx="2"/>
+<text x="549" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">查 FDB + VLAN</text>
+<text x="549" y="231" font-size="9.6" fill="#334155" xml:space="preserve">按 MAC 表定出口</text>
+<rect x="836" y="195" width="250" height="64" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="836" y="195" width="4.5" height="64" fill="#0891b2" rx="2"/>
+<text x="849" y="214" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">出口端口</text>
+<text x="849" y="231" font-size="9.6" fill="#334155" xml:space="preserve">同一 VLAN 才转发</text>
+<line x1="486" y1="227" x2="536" y2="227" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="536,227 527,222.5 527,231.5" fill="#94a3b8"/>
+<line x1="786" y1="227" x2="836" y2="227" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="836,227 827,222.5 827,231.5" fill="#94a3b8"/>
+<text x="1120" y="219" font-size="9.4" fill="#64748b" xml:space="preserve">不做 NAT、不拨号</text>
+<text x="1120" y="237" font-size="9.4" fill="#64748b" xml:space="preserve">跨 VLAN 才上三层</text>
+<rect x="36" y="291" width="176" height="64" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="46" y="313" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">路由器</text>
+<text x="46" y="329" font-size="9.4" fill="#64748b" xml:space="preserve">三层 + NAT 出口</text>
+<rect x="236" y="291" width="250" height="64" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="236" y="291" width="4.5" height="64" fill="#4f46e5" rx="2"/>
+<text x="249" y="310" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">WAN 口</text>
+<text x="249" y="327" font-size="9.6" fill="#334155" xml:space="preserve">拨号后拿到地址</text>
+<rect x="536" y="291" width="250" height="64" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="536" y="291" width="4.5" height="64" fill="#4f46e5" rx="2"/>
+<text x="549" y="310" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">查路由 + NAT</text>
+<text x="549" y="327" font-size="9.6" fill="#334155" xml:space="preserve">TTL−1，改源地址</text>
+<rect x="836" y="291" width="250" height="64" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="836" y="291" width="4.5" height="64" fill="#4f46e5" rx="2"/>
+<text x="849" y="310" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LAN / Wi-Fi</text>
+<text x="849" y="327" font-size="9.6" fill="#334155" xml:space="preserve">内网设备共享出口</text>
+<line x1="486" y1="323" x2="536" y2="323" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="536,323 527,318.5 527,327.5" fill="#94a3b8"/>
+<line x1="786" y1="323" x2="836" y2="323" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="836,323 827,318.5 827,327.5" fill="#94a3b8"/>
+<text x="1120" y="315" font-size="9.4" fill="#64748b" xml:space="preserve">状态表在 conntrack</text>
+<text x="1120" y="333" font-size="9.4" fill="#64748b" xml:space="preserve">瓶颈在并发与加速路径</text>
+<rect x="36" y="387" width="176" height="64" fill="#fff9ee" rx="9" stroke="#d97706" stroke-width="1.2"/>
+<text x="46" y="409" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">光猫 · 桥接（SFU）</text>
+<text x="46" y="425" font-size="9.4" fill="#64748b" xml:space="preserve">只做二层桥接</text>
+<rect x="236" y="387" width="250" height="64" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="236" y="387" width="4.5" height="64" fill="#d97706" rx="2"/>
+<text x="249" y="406" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PON 口</text>
+<text x="249" y="423" font-size="9.6" fill="#334155" xml:space="preserve">注册后透传</text>
+<rect x="536" y="387" width="250" height="64" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="536" y="387" width="4.5" height="64" fill="#d97706" rx="2"/>
+<text x="549" y="406" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">二层桥接</text>
+<text x="549" y="423" font-size="9.6" fill="#334155" xml:space="preserve">不查路由、不做 NAT</text>
+<rect x="836" y="387" width="250" height="64" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="836" y="387" width="4.5" height="64" fill="#d97706" rx="2"/>
+<text x="849" y="406" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LAN 口</text>
+<text x="849" y="423" font-size="9.6" fill="#334155" xml:space="preserve">接路由器或 PC</text>
+<line x1="486" y1="419" x2="536" y2="419" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="536,419 527,414.5 527,423.5" fill="#94a3b8"/>
+<line x1="786" y1="419" x2="836" y2="419" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="836,419 827,414.5 827,423.5" fill="#94a3b8"/>
+<text x="1120" y="411" font-size="9.4" fill="#64748b" xml:space="preserve">拨号由后面的设备发起</text>
+<text x="1120" y="429" font-size="9.4" fill="#64748b" xml:space="preserve">故障先看 PON 注册</text>
+<rect x="36" y="483" width="176" height="64" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="46" y="505" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">光猫 · 路由（HGU）</text>
+<text x="46" y="521" font-size="9.4" fill="#64748b" xml:space="preserve">自己拨号</text>
+<rect x="236" y="483" width="250" height="64" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="236" y="483" width="4.5" height="64" fill="#0f9d58" rx="2"/>
+<text x="249" y="502" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PON 口</text>
+<text x="249" y="519" font-size="9.6" fill="#334155" xml:space="preserve">注册后起 WAN</text>
+<rect x="536" y="483" width="250" height="64" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="536" y="483" width="4.5" height="64" fill="#0f9d58" rx="2"/>
+<text x="549" y="502" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">路由 + NAT</text>
+<text x="549" y="519" font-size="9.6" fill="#334155" xml:space="preserve">自己拨号、自己分配</text>
+<rect x="836" y="483" width="250" height="64" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="836" y="483" width="4.5" height="64" fill="#0f9d58" rx="2"/>
+<text x="849" y="502" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LAN + Wi-Fi</text>
+<text x="849" y="519" font-size="9.6" fill="#334155" xml:space="preserve">下挂设备直接上网</text>
+<line x1="486" y1="515" x2="536" y2="515" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="536,515 527,510.5 527,519.5" fill="#94a3b8"/>
+<line x1="786" y1="515" x2="836" y2="515" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="836,515 827,510.5 827,519.5" fill="#94a3b8"/>
+<text x="1120" y="507" font-size="9.4" fill="#64748b" xml:space="preserve">与桥接模式是两套故障域</text>
+<text x="1120" y="525" font-size="9.4" fill="#64748b" xml:space="preserve">同一台设备可切换</text>
+<rect x="36" y="579" width="176" height="64" fill="#ecfeff" rx="9" stroke="#0891b2" stroke-width="1.2"/>
+<text x="46" y="601" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">AP（Fit / Fat）</text>
+<text x="46" y="617" font-size="9.4" fill="#64748b" xml:space="preserve">二层桥接 + 空口</text>
+<rect x="236" y="579" width="250" height="64" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="236" y="579" width="4.5" height="64" fill="#0891b2" rx="2"/>
+<text x="249" y="598" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">上行以太口</text>
+<text x="249" y="615" font-size="9.6" fill="#334155" xml:space="preserve">PoE 供电 + 回程</text>
+<rect x="536" y="579" width="250" height="64" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="536" y="579" width="4.5" height="64" fill="#0891b2" rx="2"/>
+<text x="549" y="598" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">二层桥接</text>
+<text x="549" y="615" font-size="9.6" fill="#334155" xml:space="preserve">不做 NAT / DHCP</text>
+<rect x="836" y="579" width="250" height="64" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="836" y="579" width="4.5" height="64" fill="#0891b2" rx="2"/>
+<text x="849" y="598" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">空口（SSID）</text>
+<text x="849" y="615" font-size="9.6" fill="#334155" xml:space="preserve">终端关联与加密</text>
+<line x1="486" y1="611" x2="536" y2="611" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="536,611 527,606.5 527,615.5" fill="#94a3b8"/>
+<line x1="786" y1="611" x2="836" y2="611" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="836,611 827,606.5 827,615.5" fill="#94a3b8"/>
+<text x="1120" y="603" font-size="9.4" fill="#64748b" xml:space="preserve">地址由上游网关分配</text>
+<text x="1120" y="621" font-size="9.4" fill="#64748b" xml:space="preserve">Fit 依赖 AC，Fat 独立</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">图源：images/图01-转发位置对照.svg。转发层次决定故障域：二层看 FDB/VLAN，三层看路由/NAT。</text>
+</svg>

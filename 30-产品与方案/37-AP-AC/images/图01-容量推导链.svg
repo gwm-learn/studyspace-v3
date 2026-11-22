@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="700" viewBox="0 0 1240 700" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="700" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 容量估算的推导链：从业务输入到 AP 数与上行</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">五步从左到右，每步的输出是下一步的输入；中间 min() 是分水岭——带宽上限与终端数上限取小。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">底部一行写清每一步用错会怎样：用理论峰值代替有效吞吐，结果会高估一倍以上。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">业务输入</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">单 AP 能力</text>
+<line x1="263.4" y1="142" x2="293.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="301.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">分水岭</text>
+<line x1="358.4" y1="142" x2="388.4" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="396.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">网络侧</text>
+<rect x="36" y="186" width="222" height="104" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="186" width="4.5" height="104" fill="#475569" rx="2"/>
+<text x="49" y="205" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 业务输入</text>
+<text x="49" y="222" font-size="9.6" fill="#334155" xml:space="preserve">峰值并发 60 人</text>
+<text x="49" y="237.4" font-size="9.6" fill="#334155" xml:space="preserve">单终端目标 4 Mbps</text>
+<text x="49" y="252.8" font-size="9.6" fill="#334155" xml:space="preserve">小包/大包比例</text>
+<line x1="258" y1="238" x2="272" y2="238" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="272,238 263,233.5 263,242.5" fill="#94a3b8"/>
+<rect x="272" y="186" width="222" height="104" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="272" y="186" width="4.5" height="104" fill="#4f46e5" rx="2"/>
+<text x="285" y="205" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 单 AP 有效吞吐</text>
+<text x="285" y="222" font-size="9.6" fill="#334155" xml:space="preserve">空口速率 × 0.5–0.6</text>
+<text x="285" y="237.4" font-size="9.6" fill="#334155" xml:space="preserve">扣管理帧与重传</text>
+<text x="285" y="252.8" font-size="9.6" fill="#334155" xml:space="preserve">示例 600 Mbps</text>
+<line x1="494" y1="238" x2="508" y2="238" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="508,238 499,233.5 499,242.5" fill="#94a3b8"/>
+<rect x="508" y="186" width="222" height="104" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="508" y="186" width="4.5" height="104" fill="#d97706" rx="2"/>
+<text x="521" y="205" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ min() 分水岭</text>
+<text x="521" y="222" font-size="9.6" fill="#334155" xml:space="preserve">带宽上限：吞吐 ÷ 带宽</text>
+<text x="521" y="237.4" font-size="9.6" fill="#334155" xml:space="preserve">终端数上限：30–50/射频</text>
+<text x="521" y="252.8" font-size="9.6" fill="#334155" xml:space="preserve">取两者中小的</text>
+<line x1="730" y1="238" x2="744" y2="238" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="744,238 735,233.5 735,242.5" fill="#94a3b8"/>
+<rect x="744" y="186" width="222" height="104" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="744" y="186" width="4.5" height="104" fill="#0891b2" rx="2"/>
+<text x="757" y="205" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ AP 数</text>
+<text x="757" y="222" font-size="9.6" fill="#334155" xml:space="preserve">峰值并发 ÷ 单 AP 承载</text>
+<text x="757" y="237.4" font-size="9.6" fill="#334155" xml:space="preserve">再按覆盖需求取大</text>
+<text x="757" y="252.8" font-size="9.6" fill="#334155" xml:space="preserve">留 30%–50% 余量</text>
+<line x1="966" y1="238" x2="980" y2="238" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="980,238 971,233.5 971,242.5" fill="#94a3b8"/>
+<rect x="980" y="186" width="222" height="104" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="980" y="186" width="4.5" height="104" fill="#0891b2" rx="2"/>
+<text x="993" y="205" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">⑤ 上行带宽</text>
+<text x="993" y="222" font-size="9.6" fill="#334155" xml:space="preserve">AP 数 × 单 AP 吞吐</text>
+<text x="993" y="237.4" font-size="9.6" fill="#334155" xml:space="preserve">× 收敛比 0.3–0.5</text>
+<text x="993" y="252.8" font-size="9.6" fill="#334155" xml:space="preserve">对照 1G/2.5G 端口</text>
+<text x="38" y="308" font-size="9.2" fill="#64748b" xml:space="preserve">错了：只按面积估人数</text>
+<text x="274" y="308" font-size="9.2" fill="#64748b" xml:space="preserve">错了：拿标称 1201 Mbps 当有效值</text>
+<text x="510" y="308" font-size="9.2" fill="#64748b" xml:space="preserve">错了：只看带宽、不看终端数</text>
+<text x="746" y="308" font-size="9.2" fill="#64748b" xml:space="preserve">错了：漏掉覆盖对点位数量的要求</text>
+<text x="982" y="308" font-size="9.2" fill="#64748b" xml:space="preserve">错了：按平均带宽算收敛比</text>
+<rect x="36" y="326" width="1140" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="356" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">为什么中间要放一个 min()</text>
+<text x="52" y="380" font-size="10.2" fill="#334155" xml:space="preserve">带宽上限回答「每人能分到多少」，终端数上限回答「空口时间够不够分」；小包业务先撞后者，大包业务先撞前者。</text>
+<text x="52" y="398" font-size="10.2" fill="#334155" xml:space="preserve">只算其中一个，现场就会出现两种相反的症状：带宽够但连不上（终端数到顶），或能连但很慢（带宽到顶）。</text>
+<text x="36" y="456" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">同一套输入，两种业务的瓶颈不同</text>
+<rect x="36" y="476" width="1140" height="44" fill="#fff5f5" rx="6" stroke="#dc2626" stroke-width="1"/>
+<text x="52" y="503" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="700">语音 / 小包</text>
+<text x="240" y="503" font-size="9.8" fill="#334155" xml:space="preserve">终端数先到顶：报文多、每包开销大</text>
+<text x="880" y="503" font-size="9.8" fill="#64748b" xml:space="preserve">→ 加 AP 或降每 AP 终端数</text>
+<rect x="36" y="528" width="1140" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1"/>
+<text x="52" y="555" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="700">视频 / 大包</text>
+<text x="240" y="555" font-size="9.8" fill="#334155" xml:space="preserve">带宽先到顶：空口时间被长包占满</text>
+<text x="880" y="555" font-size="9.8" fill="#64748b" xml:space="preserve">→ 加频宽或加 AP</text>
+<rect x="36" y="580" width="1140" height="44" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1"/>
+<text x="52" y="607" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="700">办公混合</text>
+<text x="240" y="607" font-size="9.8" fill="#334155" xml:space="preserve">两者接近，按忙时实测取大</text>
+<text x="880" y="607" font-size="9.8" fill="#64748b" xml:space="preserve">→ 留 30%–50% 余量</text>
+<text x="36" y="646" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="664" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/37-AP-AC/03-WLAN覆盖与验收.md</text>
+</svg>

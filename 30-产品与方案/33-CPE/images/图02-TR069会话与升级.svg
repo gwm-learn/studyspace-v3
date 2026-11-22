@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="800" viewBox="0 0 900 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="900" height="800" fill="#ffffff"/>
+<line x1="36" y1="112" x2="864" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · TR-069 会话与升级：一个 HTTP 会话里连续下发</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">CPE 先 Inform，ACS 在同一个会话里回任务；升级走 Download + TransferComplete。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">重启后由 Boot 事件确认新版本，而不是靠 ACS 主动查。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">CPE 发起</text>
+<line x1="146.4" y1="142" x2="176.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="184.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">ACS 响应</text>
+<line x1="256.8" y1="142" x2="286.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="294.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">升级相关</text>
+<rect x="40" y="190" width="250" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="52" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">CPE</text>
+<rect x="470" y="190" width="250" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="482" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">ACS</text>
+<line x1="165" y1="232" x2="165" y2="506" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="595" y1="232" x2="595" y2="506" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="165" y1="260" x2="595" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="595,260 586,255.5 586,264.5" fill="#4f46e5"/>
+<text x="171" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Inform（Event=1 BOOT）</text>
+<line x1="595" y1="298" x2="165" y2="298" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="165,298 174,302.5 174,293.5" fill="#0f9d58"/>
+<text x="171" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">空响应或任务</text>
+<line x1="595" y1="336" x2="165" y2="336" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="165,336 174,340.5 174,331.5" fill="#d97706"/>
+<text x="171" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">GetParameterValues / SetParameterValues</text>
+<line x1="165" y1="374" x2="595" y2="374" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="595,374 586,369.5 586,378.5" fill="#0f9d58"/>
+<text x="171" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Response（结果）</text>
+<line x1="595" y1="412" x2="165" y2="412" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="165,412 174,416.5 174,407.5" fill="#d97706"/>
+<text x="171" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Download（固件 URL + 校验）</text>
+<line x1="165" y1="450" x2="595" y2="450" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="595,450 586,445.5 586,454.5" fill="#0f9d58"/>
+<text x="171" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">TransferComplete</text>
+<line x1="165" y1="488" x2="595" y2="488" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="595,488 586,483.5 586,492.5" fill="#d97706"/>
+<text x="171" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">重启后：Inform（Event=1 BOOT）</text>
+<rect x="40" y="620" width="820" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="650" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="674" font-size="10.2" fill="#334155" xml:space="preserve">一次会话可以有多个 RPC：ACS 在响应里继续下发，CPE 逐条执行并回报。</text>
+<text x="56" y="692" font-size="10.2" fill="#334155" xml:space="preserve">升级失败要看 TransferComplete 的 FaultCode；重启后没等到 Boot，多半是版本没切成功。</text>
+<text x="36" y="746" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/33-CPE/02-TR-069与ACS运维.md</text>
+</svg>

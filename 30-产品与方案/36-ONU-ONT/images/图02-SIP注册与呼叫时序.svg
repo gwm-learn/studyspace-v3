@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="800" viewBox="0 0 980 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="980" height="800" fill="#ffffff"/>
+<line x1="36" y1="112" x2="944" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · SIP 注册与一次通话：谁先开口，谁给挑战</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">话机只是摘挂机；SIP 与媒体都由 ONU 内的语音客户端发起。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">注册要先被挑战再带凭证，通话则先 INVITE 后 RTP——两条链的失败现象不同。</text>
+<rect x="36" y="178" width="230" height="44" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="48" y="204" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">话机（FXS 口）</text>
+<rect x="366" y="178" width="230" height="44" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="378" y="204" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">ONU：SIP 客户端 + 编解码</text>
+<rect x="696" y="178" width="230" height="44" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="708" y="204" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">SIP 服务器 / IMS</text>
+<line x1="151" y1="222" x2="151" y2="604" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="481" y1="222" x2="481" y2="604" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="811" y1="222" x2="811" y2="604" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="481" y1="250" x2="811" y2="250" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="811,250 802,245.5 802,254.5" fill="#4f46e5"/>
+<text x="487" y="243" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">REGISTER（首次，不带凭证）</text>
+<line x1="811" y1="284" x2="481" y2="284" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="481,284 490,288.5 490,279.5" fill="#0f9d58"/>
+<text x="487" y="277" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">401 / 407 挑战（带 nonce）</text>
+<line x1="481" y1="318" x2="811" y2="318" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="811,318 802,313.5 802,322.5" fill="#4f46e5"/>
+<text x="487" y="311" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">REGISTER + Authorization</text>
+<line x1="811" y1="352" x2="481" y2="352" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="481,352 490,356.5 490,347.5" fill="#0f9d58"/>
+<text x="487" y="345" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">200 OK（有效期决定多久重注册）</text>
+<line x1="151" y1="386" x2="481" y2="386" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="481,386 472,381.5 472,390.5" fill="#475569"/>
+<text x="157" y="379" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">摘机、拨号</text>
+<line x1="481" y1="420" x2="811" y2="420" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="811,420 802,415.5 802,424.5" fill="#4f46e5"/>
+<text x="487" y="413" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">INVITE + SDP（媒体地址/编码）</text>
+<line x1="811" y1="454" x2="481" y2="454" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="481,454 490,458.5 490,449.5" fill="#0f9d58"/>
+<text x="487" y="447" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">180 Ringing → 200 OK</text>
+<line x1="481" y1="488" x2="151" y2="488" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="151,488 160,492.5 160,483.5" fill="#475569"/>
+<text x="157" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">回铃音 → 接通</text>
+<line x1="481" y1="522" x2="811" y2="522" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="811,522 802,517.5 802,526.5" fill="#d97706"/>
+<text x="487" y="515" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">RTP 双向（编码由 SDP 协商）</text>
+<line x1="151" y1="556" x2="481" y2="556" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="481,556 472,551.5 472,560.5" fill="#475569"/>
+<text x="157" y="549" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">挂机</text>
+<line x1="481" y1="590" x2="811" y2="590" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="811,590 802,585.5 802,594.5" fill="#4f46e5"/>
+<text x="487" y="583" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">BYE → 200 OK</text>
+<rect x="36" y="630" width="420" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="660" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">为什么注册要发两次</text>
+<text x="52" y="684" font-size="10.2" fill="#334155" xml:space="preserve">第一次不带凭证，服务器回 401/407 并给出 nonce。</text>
+<text x="52" y="702" font-size="10.2" fill="#334155" xml:space="preserve">第二次用账号密码算摘要；不回挑战就发凭证的实现会被拒。</text>
+<rect x="476" y="630" width="420" height="92" fill="#ecfeff" rx="10" stroke="#0891b2" stroke-width="1"/>
+<text x="492" y="660" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">注册成功 ≠ 能打电话</text>
+<text x="492" y="684" font-size="10.2" fill="#334155" xml:space="preserve">注册只证明账号可用；呼叫还要 INVITE 通、SDP 协商成功。</text>
+<text x="492" y="702" font-size="10.2" fill="#334155" xml:space="preserve">RTP 单向或不通，常见于 NAT/防火墙与编解码不匹配。</text>
+<text x="36" y="746" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/36-ONU-ONT/02-VoIP与IPTV业务.md</text>
+</svg>

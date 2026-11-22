@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="620" viewBox="0 0 1240 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 双栈对照：同一台路由器，两套完全不同的边界</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左边 IPv4 靠地址转换隐藏内网，右边 IPv6 靠防火墙；第三行是分水岭。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">最后一列是排障入口的差异——拿 v4 的 NAT 思路查 v6 故障，会一直查不到。</text>
+<text x="40" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">逐行对照，不要交叉套用</text>
+<rect x="40" y="190" width="1160" height="30" fill="#f1f5f9" rx="6"/>
+<text x="48" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">维度</text>
+<text x="475" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">IPv4 一侧</text>
+<text x="765" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">IPv6 一侧</text>
+<text x="1055" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">常见误判</text>
+<rect x="40" y="220" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="220" x2="1200" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">内网地址来源</text>
+<text x="475" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">NAT 后的私网地址</text>
+<text x="765" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">前缀 + SLAAC/DHCPv6</text>
+<text x="1055" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">拿私网思维看全球地址</text>
+<rect x="40" y="250" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="250" x2="1200" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">是否转换地址</text>
+<text x="475" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">默认 NAPT</text>
+<text x="765" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">默认不转换（NPTv6 少见）</text>
+<text x="1055" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">以为 v6 也要端口映射</text>
+<rect x="40" y="280" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="280" x2="1200" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">外网访问内网</text>
+<text x="475" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">默认拒绝，靠 DNAT 开放</text>
+<text x="765" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">默认不可达，靠 pinhole 放行</text>
+<text x="1055" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">在 v6 页面找端口映射</text>
+<rect x="40" y="310" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="310" x2="1200" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">隐藏内网规模</text>
+<text x="475" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">靠 NAT 复用地址</text>
+<text x="765" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">靠防火墙策略</text>
+<text x="1055" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">把 NAT66 当安全机制</text>
+<rect x="40" y="340" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="340" x2="1200" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="360" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">地址稳定性</text>
+<text x="475" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">公网变，内网不变</text>
+<text x="765" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">前缀变则终端地址全变</text>
+<text x="1055" y="360" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">照搬 v4 的 DDNS 经验</text>
+<rect x="40" y="370" width="1160" height="30" fill="#ffffff"/>
+<line x1="40" y1="370" x2="1200" y2="370" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="48" y="390" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">排障入口</text>
+<text x="475" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">conntrack + NAT 计数</text>
+<text x="765" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">防火墙计数 + RA/PD 状态</text>
+<text x="1055" y="390" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">v6 故障先查 NAT 表</text>
+<line x1="40" y1="400" x2="1200" y2="400" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="40" y="430" width="1160" height="92" fill="#ecfeff" rx="10" stroke="#0891b2" stroke-width="1"/>
+<text x="56" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">两张图连起来看</text>
+<text x="56" y="484" font-size="10.2" fill="#334155" xml:space="preserve">入站匹配顺序在 v6 上同构：先查会话，再查 pinhole，最后默认拒绝。</text>
+<text x="56" y="502" font-size="10.2" fill="#334155" xml:space="preserve">差别只在第二关口——v4 是 DNAT 改地址，v6 是放行规则不改地址。</text>
+<text x="36" y="548" font-size="12.3" fill="#64748b" xml:space="preserve">图源：30-产品与方案/32-路由器/01-路由转发与NAT方案.md</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">参考：RFC 8200、RFC 8415、RFC 4861/4862</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

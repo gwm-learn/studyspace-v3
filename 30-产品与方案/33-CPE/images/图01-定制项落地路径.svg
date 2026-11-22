@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1046" height="620" viewBox="0 0 1046 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1046" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1010" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 定制项落地路径：越往右，成本与回归范围越大</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">同一条运营商需求有四级落地方式：标准参数、配置模板、插件、代码分支。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">判断顺序从左到右，前一级能解决就不要进下一级；走到第四级必须在版本矩阵里登记。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">配置</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">模板/开关</text>
+<line x1="232.6" y1="142" x2="262.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="270.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">插件</text>
+<line x1="316.6" y1="142" x2="346.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="354.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">代码分支</text>
+<rect x="418" y="190" width="210" height="58" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="418" y="190" width="4.5" height="58" fill="#475569" rx="2"/>
+<text x="431" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">运营商提出一条差异需求</text>
+<text x="431" y="226" font-size="9.6" fill="#334155" xml:space="preserve">先问：标准数据模型能表达吗</text>
+<rect x="36" y="300" width="230" height="57.4" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="300" width="4.5" height="57.4" fill="#0f9d58" rx="2"/>
+<text x="49" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 标准参数</text>
+<text x="49" y="336" font-size="9.6" fill="#334155" xml:space="preserve">TR-098 / TR-181 已有节点</text>
+<line x1="460" y1="248" x2="151" y2="300" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="151,300 160.62,302.94 159.13,294.07" fill="#0f9d58"/>
+<text x="46" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 写配置模板，零代码</text>
+<rect x="284" y="300" width="230" height="57.4" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="284" y="300" width="4.5" height="57.4" fill="#4f46e5" rx="2"/>
+<text x="297" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 配置模板</text>
+<text x="297" y="336" font-size="9.6" fill="#334155" xml:space="preserve">默认值、开关、资源替换</text>
+<line x1="502" y1="248" x2="399" y2="300" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="399,300 409.06,299.96 405.01,291.93" fill="#4f46e5"/>
+<text x="294" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 加特性开关，仍是一套固件</text>
+<rect x="532" y="300" width="230" height="57.4" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="532" y="300" width="4.5" height="57.4" fill="#d97706" rx="2"/>
+<text x="545" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ 插件</text>
+<text x="545" y="336" font-size="9.6" fill="#334155" xml:space="preserve">独立进程，经 UCI/ubus 交互</text>
+<line x1="544" y1="248" x2="647" y2="300" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="647,300 640.99,291.93 636.94,299.96" fill="#d97706"/>
+<text x="542" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 做插件，不改内核</text>
+<rect x="780" y="300" width="230" height="57.4" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="780" y="300" width="4.5" height="57.4" fill="#dc2626" rx="2"/>
+<text x="793" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 代码分支</text>
+<text x="793" y="336" font-size="9.6" fill="#334155" xml:space="preserve">转发、驱动、启动流程</text>
+<line x1="586" y1="248" x2="895" y2="300" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="895,300 886.87,294.07 885.38,302.94" fill="#dc2626"/>
+<text x="790" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 开分支，登记并约定回收</text>
+<rect x="36" y="430" width="974" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="484" font-size="10.2" fill="#334155" xml:space="preserve">越往右，回归范围越大：左边只回归配置，右边要回归整机、甚至重新做认证；这也是判断顺序不能倒过来的原因。</text>
+<text x="52" y="502" font-size="10.2" fill="#334155" xml:space="preserve">①②应覆盖大多数需求。走到③说明标准模型确实不够，但仍能隔离；走到④说明要碰核心行为，必须评估认证与升级成本。</text>
+<text x="52" y="520" font-size="10.2" fill="#334155" xml:space="preserve">第四级不是禁区，但必须有登记：哪条分支、为谁开、基于哪个基线、什么时候回收；没有登记的分支半年后就没人敢删。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/33-CPE/03-运营商定制与入网.md</text>
+</svg>

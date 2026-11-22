@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="580" viewBox="0 0 1000 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1000" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="964" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · WLAN 覆盖规划与验收：预测、实测、再修正</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先按图纸预测布点，再现场勘测修正，最后用真实终端验收。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">任何一步不达标都回到布点/功率/信道，而不是靠加 AP 硬堆。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">流程</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">完成</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">回退</text>
+<rect x="50" y="250" width="104.56" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="102.28" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">需求 / 图纸</text>
+<text x="102.28" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">面积 / 隔断 / 并发</text>
+<rect x="230" y="250" width="87.36" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="273.68" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">预测布点</text>
+<text x="273.68" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">AP 位置 / 功率</text>
+<rect x="400" y="250" width="97.68" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="448.84" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">现场勘测</text>
+<text x="448.84" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">实测 RSSI / 干扰</text>
+<rect x="570" y="250" width="82.2" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="611.1" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">终端验收</text>
+<text x="611.1" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">真实终端跑业务</text>
+<line x1="154.56" y1="272" x2="230" y2="272" stroke="#475569" stroke-width="1.6"/>
+<polygon points="230,272 221,267.5 221,276.5" fill="#475569"/>
+<line x1="317.36" y1="272" x2="400" y2="272" stroke="#4f46e5" stroke-width="1.6"/>
+<polygon points="400,272 391,267.5 391,276.5" fill="#4f46e5"/>
+<line x1="497.68" y1="272" x2="570" y2="272" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="570,272 561,267.5 561,276.5" fill="#0f9d58"/>
+<line x1="611.1" y1="294" x2="611.1" y2="340" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="611.1" y1="340" x2="273.68" y2="340" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="273.68" y1="340" x2="273.68" y2="294" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="273.68,294 269.18,303 278.18,303" fill="#dc2626"/>
+<text x="442.39" y="356" font-size="9.4" fill="#dc2626" xml:space="preserve" font-weight="600" text-anchor="middle">不达标：调布点 / 功率 / 信道后重测</text>
+<rect x="50" y="400" width="900" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="66" y="430" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="66" y="454" font-size="10.2" fill="#334155" xml:space="preserve">预测工具给的是起点，不是结论：隔断材质、金属货架、邻频干扰都要靠实测修正。</text>
+<text x="66" y="472" font-size="10.2" fill="#334155" xml:space="preserve">验收要用「真实终端 + 真实业务」，只看 RSSI 会漏掉漫游与认证问题。</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/37-AP-AC/03-WLAN覆盖与验收.md</text>
+</svg>

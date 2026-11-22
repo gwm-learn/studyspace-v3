@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="640" viewBox="0 0 1480 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1480" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1444" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 故障定位：先分现象，再分段</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">根节点只做一件事：把现象分成四类。每支第一行是判据，箭头后是动作。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">四类里只有「全屋无网」会牵动上游；其余三类都在室内解决。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">共因 / 全屋</text>
+<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">分支 / 单房间</text>
+<line x1="298.6" y1="142" x2="328.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="336.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">空口 / 覆盖</text>
+<line x1="424.4" y1="142" x2="454.4" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="462.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">终端 / 漫游</text>
+<rect x="635" y="190" width="210" height="58" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="635" y="190" width="4.5" height="58" fill="#475569" rx="2"/>
+<text x="648" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">业务异常</text>
+<text x="648" y="226" font-size="9.6" fill="#334155" xml:space="preserve">先分现象，再分段</text>
+<rect x="40" y="300" width="336.5" height="72.8" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="40" y="300" width="4.5" height="72.8" fill="#dc2626" rx="2"/>
+<text x="53" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 全屋无网</text>
+<text x="53" y="336" font-size="9.6" fill="#334155" xml:space="preserve">主网关灯/状态</text>
+<text x="53" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">收光、OLT 授权</text>
+<line x1="677" y1="248" x2="208.25" y2="300" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="208.25,300 217.69,303.48 216.7,294.54" fill="#dc2626"/>
+<text x="50" y="392.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 查主干与 PON，别动从网关</text>
+<rect x="394.5" y="300" width="336.5" height="72.8" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="394.5" y="300" width="4.5" height="72.8" fill="#d97706" rx="2"/>
+<text x="407.5" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 单房间无网</text>
+<text x="407.5" y="336" font-size="9.6" fill="#334155" xml:space="preserve">该支从网关是否在线</text>
+<text x="407.5" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">换纤/换口做对照</text>
+<line x1="719" y1="248" x2="562.75" y2="300" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="562.75,300 572.71,301.43 569.87,292.89" fill="#d97706"/>
+<text x="404.5" y="392.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 查分支光纤、分光器、供电</text>
+<rect x="749" y="300" width="336.5" height="72.8" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="749" y="300" width="4.5" height="72.8" fill="#0891b2" rx="2"/>
+<text x="762" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ Wi-Fi 弱</text>
+<text x="762" y="336" font-size="9.6" fill="#334155" xml:space="preserve">看 RSSI/SNR 与信道</text>
+<text x="762" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">对比同层其他房间</text>
+<line x1="761" y1="248" x2="917.25" y2="300" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="917.25,300 910.13,292.89 907.29,301.43" fill="#0891b2"/>
+<text x="759" y="392.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 调位置/信道，不是换光模块</text>
+<rect x="1103.5" y="300" width="336.5" height="72.8" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="1103.5" y="300" width="4.5" height="72.8" fill="#4f46e5" rx="2"/>
+<text x="1116.5" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 走动卡顿</text>
+<text x="1116.5" y="336" font-size="9.6" fill="#334155" xml:space="preserve">终端是否支持 11k/v/r</text>
+<text x="1116.5" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">AP 间距与功率</text>
+<line x1="803" y1="248" x2="1271.75" y2="300" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="1271.75,300 1263.3,294.54 1262.31,303.48" fill="#4f46e5"/>
+<text x="1113.5" y="392.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 调功率、开辅助漫游</text>
+<rect x="40" y="440" width="1400" height="128" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="470" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="494" font-size="10.2" fill="#334155" xml:space="preserve">先判范围：全屋是共因（主网关/主干/OLT），单房间是分支（纤/分光器/供电）。</text>
+<text x="56" y="512" font-size="10.2" fill="#334155" xml:space="preserve">再判层：光、电、空口三层，别用 Wi-Fi 的现象去解释光层故障。</text>
+<text x="56" y="530" font-size="10.2" fill="#334155" xml:space="preserve">每步用对照实验：换纤、换口、换终端，比读规格书收敛得快。</text>
+<text x="56" y="548" font-size="10.2" fill="#334155" xml:space="preserve">答错的代价：范围判错让上门次数翻倍；层判错会把施工问题当成设备坏。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/35-FTTR/01-FTTR光层与运维.md</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="560" viewBox="0 0 1240 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 分类退化链：越靠前越准，也越贵</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">从左到右五级，命中即停；前两级决定业务体验，后两级只是兜底。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看自己的业务能落在第几级——落不进前两级，就不该承诺「能识别」。</text>
+<text x="40" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">同一个包，按代价从高到低依次尝试</text>
+<rect x="40" y="200" width="212" height="104" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="40" y="200" width="4.5" height="104" fill="#4f46e5" rx="2"/>
+<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 应用识别</text>
+<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">命中：最贴近业务</text>
+<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">代价：逐包看载荷</text>
+<line x1="252" y1="252" x2="270" y2="252" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="270,252 261,247.5 261,256.5" fill="#94a3b8"/>
+<rect x="270" y="200" width="212" height="104" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="270" y="200" width="4.5" height="104" fill="#0891b2" rx="2"/>
+<text x="283" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② DSCP 标记</text>
+<text x="283" y="236" font-size="9.6" fill="#334155" xml:space="preserve">命中：跨设备一致</text>
+<text x="283" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">代价：公网可能被清零</text>
+<line x1="482" y1="252" x2="500" y2="252" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="500,252 491,247.5 491,256.5" fill="#94a3b8"/>
+<rect x="500" y="200" width="212" height="104" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="500" y="200" width="4.5" height="104" fill="#475569" rx="2"/>
+<text x="513" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ 端口/五元组</text>
+<text x="513" y="236" font-size="9.6" fill="#334155" xml:space="preserve">命中：确定、便宜</text>
+<text x="513" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">代价：换端口即失效</text>
+<line x1="712" y1="252" x2="730" y2="252" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="730,252 721,247.5 721,256.5" fill="#94a3b8"/>
+<rect x="730" y="200" width="212" height="104" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="730" y="200" width="4.5" height="104" fill="#d97706" rx="2"/>
+<text x="743" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 终端/SSID</text>
+<text x="743" y="236" font-size="9.6" fill="#334155" xml:space="preserve">命中：适合家长控制</text>
+<text x="743" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">代价：换 MAC 可绕过</text>
+<line x1="942" y1="252" x2="960" y2="252" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="960,252 951,247.5 951,256.5" fill="#94a3b8"/>
+<rect x="960" y="200" width="212" height="104" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="960" y="200" width="4.5" height="104" fill="#dc2626" rx="2"/>
+<text x="973" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">⑤ 默认类</text>
+<text x="973" y="236" font-size="9.6" fill="#334155" xml:space="preserve">兜底：低优先级</text>
+<text x="973" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">代价：分类错了全错</text>
+<rect x="40" y="344" width="1148" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="374" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">三个直接推论</text>
+<text x="56" y="398" font-size="10.2" fill="#334155" xml:space="preserve">① 加密流量占比越高，前两级命中率越低，产品只能靠「终端/SSID」兜底。</text>
+<text x="56" y="416" font-size="10.2" fill="#334155" xml:space="preserve">② 首包还没识别出来时会落到默认类，短连接为主的业务最吃亏。</text>
+<text x="56" y="434" font-size="10.2" fill="#334155" xml:space="preserve">③ 分类不准时调队列参数是白费力气：先确认包进了哪个类。</text>
+<text x="36" y="488" font-size="12.3" fill="#64748b" xml:space="preserve">图源：30-产品与方案/32-路由器/02-QoS与流控方案.md</text>
+<text x="36" y="506" font-size="12.3" fill="#64748b" xml:space="preserve">参考：RFC 2474（DSCP）、RFC 8290（FQ-CoDel）</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+</svg>

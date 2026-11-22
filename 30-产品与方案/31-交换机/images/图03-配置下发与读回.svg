@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="780" viewBox="0 0 1140 780" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="780" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 配置下发与读回：显示 OK 不等于转发正确</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">四条泳道：人 → 配置进程 → SDK → 芯片表项。实线是下发，虚线是读回与回显。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读回只能证明寄存器写进去了；语义错误（漏一个成员口）读回照样是 OK。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">下发</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#94a3b8" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">读回 / 回显</text>
+<rect x="36" y="176" width="220" height="42" fill="#f1f5f9" rx="8" stroke="#d97706" stroke-width="1"/>
+<text x="48" y="202" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">CLI / Web / SNMP</text>
+<rect x="306" y="176" width="220" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="318" y="202" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">配置管理进程</text>
+<rect x="576" y="176" width="220" height="42" fill="#f1f5f9" rx="8" stroke="#0891b2" stroke-width="1"/>
+<text x="588" y="202" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">交换 SDK</text>
+<rect x="846" y="176" width="220" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="858" y="202" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">ASIC 表项</text>
+<line x1="146" y1="218" x2="146" y2="562" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="416" y1="218" x2="416" y2="562" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="686" y1="218" x2="686" y2="562" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="956" y1="218" x2="956" y2="562" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="146" y1="246" x2="416" y2="246" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="416,246 407,241.5 407,250.5" fill="#4f46e5"/>
+<text x="152" y="239" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">① 下发命令（端口加入 VLAN）</text>
+<line x1="416" y1="288" x2="450" y2="288" stroke="#4f46e5" stroke-width="1.8"/>
+<line x1="450" y1="288" x2="450" y2="302" stroke="#4f46e5" stroke-width="1.8"/>
+<line x1="450" y1="302" x2="422" y2="302" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="418,302 427,306.5 427,297.5" fill="#4f46e5"/>
+<text x="422" y="281" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">② 语法 / 语义 / 冲突校验</text>
+<line x1="416" y1="330" x2="686" y2="330" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="686,330 677,325.5 677,334.5" fill="#4f46e5"/>
+<text x="422" y="323" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">③ 调表项 API</text>
+<line x1="686" y1="372" x2="956" y2="372" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="956,372 947,367.5 947,376.5" fill="#4f46e5"/>
+<text x="692" y="365" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">④ 写寄存器 / 表</text>
+<line x1="956" y1="414" x2="686" y2="414" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="686,414 695,418.5 695,409.5" fill="#94a3b8"/>
+<text x="692" y="407" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑤ 读回寄存器值</text>
+<line x1="686" y1="456" x2="416" y2="456" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="416,456 425,460.5 425,451.5" fill="#94a3b8"/>
+<text x="422" y="449" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑥ 返回成功</text>
+<line x1="416" y1="498" x2="450" y2="498" stroke="#d97706" stroke-width="1.8"/>
+<line x1="450" y1="498" x2="450" y2="512" stroke="#d97706" stroke-width="1.8"/>
+<line x1="450" y1="512" x2="422" y2="512" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="418,512 427,516.5 427,507.5" fill="#d97706"/>
+<text x="422" y="491" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑦ 写启动配置（save）</text>
+<line x1="416" y1="540" x2="146" y2="540" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="146,540 155,544.5 155,535.5" fill="#94a3b8"/>
+<text x="152" y="533" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑧ 回显 OK</text>
+<rect x="36" y="582" width="1060" height="110" fill="#fff5f5" rx="10" stroke="#dc2626" stroke-width="1"/>
+<text x="52" y="612" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">三个容易漏的环节</text>
+<text x="52" y="636" font-size="10.2" fill="#334155" xml:space="preserve">② 只校验「配置之间」是否自洽，不校验「芯片是否支持」——超出容量的配置可能在这里被静默截断。</text>
+<text x="52" y="654" font-size="10.2" fill="#334155" xml:space="preserve">⑦ 是唯一让配置活过重启的动作；很多「重启后配置丢了」就是脚本改完没走这一步。</text>
+<text x="52" y="672" font-size="10.2" fill="#334155" xml:space="preserve">⑤ 与 ⑥ 只覆盖「写进去了」；要证明「转发对」，还得看芯片命中计数或实际打流。</text>
+<text x="36" y="726" font-size="12.3" fill="#64748b" xml:space="preserve">读图顺序：自上而下看八步，注意 ⑤⑥⑧ 都是虚线——回显走的是同一条链的反方向，任何一环丢了都不会报错。</text>
+<text x="36" y="744" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本篇 §4.3。</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1046" height="620" viewBox="0 0 1046 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1046" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1010" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 上线失败分流：先判「到没到」，再判「被不被认」</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">同样是「ACS 看不到设备」，四种根因的处置完全不同；顺序错了会把网络问题当认证问题改。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">判据都在 ACS 侧：有没有收到 Inform、HTTP 状态码是多少、会话撑了多久、Fault 码是什么。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">网络与地址</text>
+<line x1="153" y1="142" x2="183" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="191" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">认证与绑定</text>
+<line x1="270" y1="142" x2="300" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="308" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">会话与超时</text>
+<line x1="387" y1="142" x2="417" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="425" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">任务与模型</text>
+<rect x="418" y="190" width="210" height="58" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="418" y="190" width="4.5" height="58" fill="#475569" rx="2"/>
+<text x="431" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ACS 看不到设备 / 任务下发不了</text>
+<text x="431" y="226" font-size="9.6" fill="#334155" xml:space="preserve">先确认 ACS 侧有没有收到 Inform</text>
+<rect x="36" y="300" width="230" height="57.4" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="36" y="300" width="4.5" height="57.4" fill="#dc2626" rx="2"/>
+<text x="49" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">根本没到 ACS</text>
+<text x="49" y="336" font-size="9.6" fill="#334155" xml:space="preserve">DNS / 路由 / 端口 / 防火墙</text>
+<line x1="460" y1="248" x2="151" y2="300" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="151,300 160.62,302.94 159.13,294.07" fill="#dc2626"/>
+<text x="46" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 查 CPE 出网与 ACS 地址</text>
+<rect x="284" y="300" width="230" height="57.4" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="284" y="300" width="4.5" height="57.4" fill="#d97706" rx="2"/>
+<text x="297" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">到了但被拒</text>
+<text x="297" y="336" font-size="9.6" fill="#334155" xml:space="preserve">401 / 403、证书、时钟</text>
+<line x1="502" y1="248" x2="399" y2="300" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="399,300 409.06,299.96 405.01,291.93" fill="#d97706"/>
+<text x="294" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 核对账号、绑定、CA 与时间</text>
+<rect x="532" y="300" width="230" height="57.4" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="532" y="300" width="4.5" height="57.4" fill="#0891b2" rx="2"/>
+<text x="545" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">会话建立后断</text>
+<text x="545" y="336" font-size="9.6" fill="#334155" xml:space="preserve">代理超时、NAT 老化</text>
+<line x1="544" y1="248" x2="647" y2="300" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="647,300 640.99,291.93 636.94,299.96" fill="#0891b2"/>
+<text x="542" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 看会话时长与中间设备</text>
+<rect x="780" y="300" width="230" height="57.4" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="780" y="300" width="4.5" height="57.4" fill="#4f46e5" rx="2"/>
+<text x="793" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">任务执行失败</text>
+<text x="793" y="336" font-size="9.6" fill="#334155" xml:space="preserve">Fault 9004/9007、URL 不可达</text>
+<line x1="586" y1="248" x2="895" y2="300" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="895,300 886.87,294.07 885.38,302.94" fill="#4f46e5"/>
+<text x="790" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 对齐数据模型、查下载源</text>
+<rect x="36" y="430" width="974" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="484" font-size="10.2" fill="#334155" xml:space="preserve">前两支是「连不上」：左边查网络与地址，右边查身份；两支都不涉及参数模型，先别改配置。</text>
+<text x="52" y="502" font-size="10.2" fill="#334155" xml:space="preserve">后两支是「连上了但没干成」：会话断看中间设备与超时，任务失败才轮到参数路径与数据模型版本。</text>
+<text x="52" y="520" font-size="10.2" fill="#334155" xml:space="preserve">顺序的价值在于排除：① 没到 ACS 时，②③④ 全部无从谈起；先证明「到了」，再往下判。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/33-CPE/02-TR-069与ACS运维.md</text>
+</svg>

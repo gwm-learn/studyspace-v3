@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="860" viewBox="0 0 960 860" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="960" height="860" fill="#ffffff"/>
+<line x1="36" y1="112" x2="924" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · Matter 配网：临时通道 → 验身份 → 运营通道</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">靛蓝是配网期（PASE，跑在 BLE 上），青色是设备认证，绿色是运营期（CASE，跑在 Thread/Wi-Fi 上）。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">红色是两个失败出口：认证不过直接拒绝；窗口超时设备自己退出，网关侧只看到「配网中」消失。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">配网通道</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">认证</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">运营通道</text>
+<line x1="332" y1="142" x2="362" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="370" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败（虚线）</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">顺序读：凭证在认证之后才发，顺序反了等于把钥匙交给陌生人</text>
+<rect x="36" y="190" width="220" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="48" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">App / 控制器</text>
+<rect x="336" y="190" width="220" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="348" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">网关 · BLE + Matter</text>
+<rect x="636" y="190" width="220" height="42" fill="#f1f5f9" rx="8" stroke="#0891b2" stroke-width="1"/>
+<text x="648" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">子设备</text>
+<line x1="146" y1="232" x2="146" y2="658" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="446" y1="232" x2="446" y2="658" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="746" y1="232" x2="746" y2="658" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="746" y1="260" x2="780" y2="260" stroke="#d97706" stroke-width="1.8"/>
+<line x1="780" y1="260" x2="780" y2="274" stroke="#d97706" stroke-width="1.8"/>
+<line x1="780" y1="274" x2="752" y2="274" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="748,274 757,278.5 757,269.5" fill="#d97706"/>
+<text x="752" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">进入配网模式（窗口开启）</text>
+<line x1="146" y1="298" x2="446" y2="298" stroke="#475569" stroke-width="1.8"/>
+<polygon points="446,298 437,293.5 437,302.5" fill="#475569"/>
+<text x="152" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">扫码 / BLE 发现</text>
+<line x1="446" y1="336" x2="746" y2="336" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="746,336 737,331.5 737,340.5" fill="#4f46e5"/>
+<text x="452" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">BLE 连接 + PASE 握手</text>
+<line x1="746" y1="374" x2="446" y2="374" stroke="#0891b2" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="446,374 455,378.5 455,369.5" fill="#0891b2"/>
+<text x="452" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">设备认证：DAC 证书链</text>
+<line x1="446" y1="412" x2="746" y2="412" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="746,412 737,407.5 737,416.5" fill="#4f46e5"/>
+<text x="452" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">下发 Wi-Fi / Thread 凭证</text>
+<line x1="746" y1="450" x2="446" y2="450" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="446,450 455,454.5 455,445.5" fill="#0f9d58"/>
+<text x="452" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">入网成功，可被寻址</text>
+<line x1="446" y1="488" x2="746" y2="488" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="746,488 737,483.5 737,492.5" fill="#0f9d58"/>
+<text x="452" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">CASE 建链（运营通道）</text>
+<line x1="746" y1="526" x2="446" y2="526" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="446,526 455,530.5 455,521.5" fill="#0f9d58"/>
+<text x="452" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">上报属性 / 订阅事件</text>
+<line x1="446" y1="564" x2="146" y2="564" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="146,564 155,568.5 155,559.5" fill="#0f9d58"/>
+<text x="152" y="557" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">设备上线，可用于场景</text>
+<line x1="446" y1="602" x2="746" y2="602" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="746,602 737,597.5 737,606.5" fill="#dc2626"/>
+<text x="452" y="595" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">认证失败 → 拒绝加入 Fabric</text>
+<line x1="746" y1="640" x2="780" y2="640" stroke="#dc2626" stroke-width="1.8"/>
+<line x1="780" y1="640" x2="780" y2="654" stroke="#dc2626" stroke-width="1.8"/>
+<line x1="780" y1="654" x2="752" y2="654" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="748,654 757,658.5 757,649.5" fill="#dc2626"/>
+<text x="752" y="633" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">窗口超时 → 退出配网</text>
+<rect x="36" y="684" width="880" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="714" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">三个边界</text>
+<text x="52" y="738" font-size="10.2" fill="#334155" xml:space="preserve">① 顺序不能反：先验证设备身份，再发网络凭证；先发凭证等于让伪造设备直接入网。</text>
+<text x="52" y="756" font-size="10.2" fill="#334155" xml:space="preserve">② BLE 只存在于配网期：配网完成后数据走 Thread/Wi-Fi，别拿 BLE 连接状态判断设备在线。</text>
+<text x="52" y="774" font-size="10.2" fill="#334155" xml:space="preserve">③ 「入网成功」≠「可控」：还要 CASE 建链、上报属性、加入场景，缺一步 App 里就是空设备。</text>
+<text x="36" y="824" font-size="12.3" fill="#64748b" xml:space="preserve">读图：三个泳道对应三个时间窗——发现（BLE 广播）、认证（证书链）、运营（CASE + 属性上报）。</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="500" viewBox="0 0 1440 500" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1440" height="500" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1404" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · 归类顺序：四个问题，顺序不能换</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">每一步只回答一个问题，答错就停在这一步——后面的判断全部失效。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">右下的后果见 §6 表格；这里只放最容易错的那一句。</text>
+<rect x="60" y="200" width="300" height="96" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="60" y="200" width="4.5" height="96" fill="#0f9d58" rx="2"/>
+<text x="73" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 上行是什么</text>
+<text x="73" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PON / xDSL / 以太 / 蜂窝</text>
+<text x="73" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">答错 → 查错协议栈</text>
+<line x1="360" y1="248" x2="384" y2="248" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="384,248 375,243.5 375,252.5" fill="#94a3b8"/>
+<rect x="384" y="200" width="300" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="384" y="200" width="4.5" height="96" fill="#4f46e5" rx="2"/>
+<text x="397" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 在哪一层转发</text>
+<text x="397" y="236" font-size="9.6" fill="#334155" xml:space="preserve">桥接 / 路由 / NAT 出口</text>
+<text x="397" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">答错 → 找错配置点</text>
+<line x1="684" y1="248" x2="708" y2="248" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="708,248 699,243.5 699,252.5" fill="#94a3b8"/>
+<rect x="708" y="200" width="300" height="96" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="708" y="200" width="4.5" height="96" fill="#d97706" rx="2"/>
+<text x="721" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ 谁改配置、谁运维</text>
+<text x="721" y="236" font-size="9.6" fill="#334155" xml:space="preserve">运营商 / 企业 / 用户 / 云</text>
+<text x="721" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">答错 → 改完被覆盖</text>
+<line x1="1008" y1="248" x2="1032" y2="248" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="1032,248 1023,243.5 1023,252.5" fill="#94a3b8"/>
+<rect x="1032" y="200" width="300" height="96" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="1032" y="200" width="4.5" height="96" fill="#0891b2" rx="2"/>
+<text x="1045" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 单机还是方案</text>
+<text x="1045" y="236" font-size="9.6" fill="#334155" xml:space="preserve">主从 / AC+AP / 单台</text>
+<text x="1045" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">答错 → 只换设备不解决</text>
+<rect x="60" y="350" width="1120" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="380" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">为什么顺序不能换</text>
+<text x="76" y="404" font-size="10.2" fill="#334155" xml:space="preserve">先介质定家族，再转发定角色，再管理定归属，最后才看是不是一套方案。</text>
+<text x="76" y="422" font-size="10.2" fill="#334155" xml:space="preserve">反过来做，最容易把 FTTR 从网关判成 ONU——它根本不走 PON 上行，去查注册只会白费。</text>
+<text x="36" y="464" font-size="12.3" fill="#64748b" xml:space="preserve">图源：images/图03-形态判定顺序.svg。判定依据见 §6。</text>
+</svg>

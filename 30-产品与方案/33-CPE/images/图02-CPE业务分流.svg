@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1046" height="780" viewBox="0 0 1046 780" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1046" height="780" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1010" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · CPE 内部业务分流：分水岭是「改不改地址」</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">同样从 CPE 穿过，四类业务的处理方式完全不同：上网改地址、IPTV 不改地址、VoIP 在本机终结、管理走旁路。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">判断某业务该走哪种路径，只看一条——它能不能接受源地址被改写。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">路由 + NAT</text>
+<line x1="159.6" y1="142" x2="189.6" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="197.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层桥接</text>
+<line x1="265.6" y1="142" x2="295.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="303.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">本机终结</text>
+<line x1="371.6" y1="142" x2="401.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="409.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">管理旁路</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">发起方（用户侧 / 本机）</text>
+<text x="300" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">CPE 内部处理</text>
+<text x="690" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">上行出口 / 对端</text>
+<rect x="36" y="200" width="200" height="76" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="76" fill="#4f46e5" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Internet 上网</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">LAN / Wi-Fi 终端</text>
+<rect x="300" y="200" width="330" height="76" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="200" width="4.5" height="76" fill="#4f46e5" rx="2"/>
+<text x="313" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">路由 + NAT</text>
+<text x="313" y="236" font-size="9.6" fill="#334155" xml:space="preserve">查路由表 → 改源地址</text>
+<text x="313" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">按 WAN 选择出口</text>
+<rect x="690" y="200" width="320" height="76" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="690" y="200" width="4.5" height="76" fill="#4f46e5" rx="2"/>
+<text x="703" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">WAN 业务 VLAN</text>
+<text x="703" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PPPoE / DHCP 上网</text>
+<text x="703" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">公网或运营商私网地址</text>
+<line x1="236" y1="262" x2="300" y2="262" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="300,262 291,257.5 291,266.5" fill="#4f46e5"/>
+<line x1="630" y1="262" x2="690" y2="262" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="690,262 681,257.5 681,266.5" fill="#4f46e5"/>
+<rect x="36" y="292" width="200" height="76" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36" y="292" width="4.5" height="76" fill="#0891b2" rx="2"/>
+<text x="49" y="311" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IPTV 机顶盒</text>
+<text x="49" y="328" font-size="9.6" fill="#334155" xml:space="preserve">独立 LAN 口 / SSID</text>
+<rect x="300" y="292" width="330" height="76" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="300" y="292" width="4.5" height="76" fill="#0891b2" rx="2"/>
+<text x="313" y="311" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">二层桥接 + IGMP</text>
+<text x="313" y="328" font-size="9.6" fill="#334155" xml:space="preserve">不改地址，组播原样透传</text>
+<text x="313" y="343.4" font-size="9.6" fill="#334155" xml:space="preserve">snooping 决定复制到哪个口</text>
+<rect x="690" y="292" width="320" height="76" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="690" y="292" width="4.5" height="76" fill="#0891b2" rx="2"/>
+<text x="703" y="311" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IPTV 独立 VLAN</text>
+<text x="703" y="328" font-size="9.6" fill="#334155" xml:space="preserve">组播源在 BRAS/OLT 侧复制</text>
+<line x1="236" y1="354" x2="300" y2="354" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="300,354 291,349.5 291,358.5" fill="#0891b2"/>
+<line x1="630" y1="354" x2="690" y2="354" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="690,354 681,349.5 681,358.5" fill="#0891b2"/>
+<rect x="36" y="384" width="200" height="76" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="384" width="4.5" height="76" fill="#d97706" rx="2"/>
+<text x="49" y="403" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">FXS 话机</text>
+<text x="49" y="420" font-size="9.6" fill="#334155" xml:space="preserve">普通话机 / 传真</text>
+<rect x="300" y="384" width="330" height="76" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="300" y="384" width="4.5" height="76" fill="#d97706" rx="2"/>
+<text x="313" y="403" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">语音网关终结</text>
+<text x="313" y="420" font-size="9.6" fill="#334155" xml:space="preserve">SIP 注册、RTP 编解码</text>
+<text x="313" y="435.4" font-size="9.6" fill="#334155" xml:space="preserve">媒体地址由本机维护</text>
+<rect x="690" y="384" width="320" height="76" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="690" y="384" width="4.5" height="76" fill="#d97706" rx="2"/>
+<text x="703" y="403" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">VoIP VLAN 或 Internet</text>
+<text x="703" y="420" font-size="9.6" fill="#334155" xml:space="preserve">注册到 SBC / 软交换</text>
+<line x1="236" y1="446" x2="300" y2="446" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="300,446 291,441.5 291,450.5" fill="#d97706"/>
+<line x1="630" y1="446" x2="690" y2="446" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="690,446 681,441.5 681,450.5" fill="#d97706"/>
+<rect x="36" y="476" width="200" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="476" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="49" y="495" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">CWMP 客户端</text>
+<text x="49" y="512" font-size="9.6" fill="#334155" xml:space="preserve">设备上电 / 周期主动上报</text>
+<text x="49" y="527.4" font-size="9.6" fill="#334155" xml:space="preserve">本机进程，独立于转发面</text>
+<rect x="300" y="476" width="330" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="300" y="476" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="313" y="495" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">HTTPS 出站（旁路）</text>
+<text x="313" y="512" font-size="9.6" fill="#334155" xml:space="preserve">不进 NAT 转发路径</text>
+<text x="313" y="527.4" font-size="9.6" fill="#334155" xml:space="preserve">共用 WAN 时受业务拥塞影响</text>
+<rect x="690" y="476" width="320" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="690" y="476" width="4.5" height="76" fill="#0f9d58" rx="2"/>
+<text x="703" y="495" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ACS / 云平台</text>
+<text x="703" y="512" font-size="9.6" fill="#334155" xml:space="preserve">下发配置、升级、诊断</text>
+<line x1="236" y1="538" x2="300" y2="538" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="300,538 291,533.5 291,542.5" fill="#0f9d58"/>
+<line x1="630" y1="538" x2="690" y2="538" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="690,538 681,533.5 681,542.5" fill="#0f9d58"/>
+<rect x="36" y="584" width="974" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="614" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="638" font-size="10.2" fill="#334155" xml:space="preserve">分水岭在中间一列：只有 Internet 那一行改源地址；IPTV 改地址组播就散了，VoIP 改地址 SDP 就对不上，管理流量干脆不进转发路径。</text>
+<text x="52" y="656" font-size="10.2" fill="#334155" xml:space="preserve">右边一列的 VLAN 不是画着好看：三类业务共用一根光纤时，靠 VLAN 在上游区分，CPE 配错 VLAN 表现为「别的业务都好，就这一类不通」。</text>
+<text x="52" y="674" font-size="10.2" fill="#334155" xml:space="preserve">底下一行是旁路：它和上面三行共用 WAN，但不共用转发路径，所以业务打满 CPU 时管理会变慢，通常仍能连上。</text>
+<text x="36" y="726" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="744" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/33-CPE/00-CPE系统架构.md</text>
+</svg>

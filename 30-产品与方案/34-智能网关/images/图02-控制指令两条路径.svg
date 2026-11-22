@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="820" viewBox="0 0 960 820" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="960" height="820" fill="#ffffff"/>
+<line x1="36" y1="112" x2="924" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 一次控制指令的两条路径：分水岭是云管是否在线</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">同一条「开灯」指令有两条路：云端路径（靛蓝，实线下行/虚线上报）与本地兜底（绿色）。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">两条路在网关的场景引擎汇合；差别只在前面一段，以及断网时哪些能力消失。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">云端路径</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">本地路径</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#94a3b8" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">上行回报（虚线）</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">顺序读：先看云端路径，再看断网时哪几步被跳过</text>
+<rect x="36" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="48" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">App / 语音</text>
+<rect x="266" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="278" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">云平台</text>
+<rect x="496" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#0891b2" stroke-width="1"/>
+<text x="508" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">网关 · 场景引擎</text>
+<rect x="726" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="738" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">子设备</text>
+<line x1="131" y1="232" x2="131" y2="620" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="361" y1="232" x2="361" y2="620" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="591" y1="232" x2="591" y2="620" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="821" y1="232" x2="821" y2="620" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="131" y1="260" x2="361" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="361,260 352,255.5 352,264.5" fill="#4f46e5"/>
+<text x="137" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">意图：开灯</text>
+<line x1="361" y1="298" x2="591" y2="298" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="591,298 582,293.5 582,302.5" fill="#4f46e5"/>
+<text x="367" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">指令（前提：云管在线）</text>
+<line x1="591" y1="336" x2="821" y2="336" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="821,336 812,331.5 812,340.5" fill="#4f46e5"/>
+<text x="597" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">协议下发</text>
+<line x1="821" y1="374" x2="591" y2="374" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="591,374 600,378.5 600,369.5" fill="#4f46e5"/>
+<text x="597" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">状态回报</text>
+<line x1="591" y1="412" x2="361" y2="412" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="361,412 370,416.5 370,407.5" fill="#4f46e5"/>
+<text x="367" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">更新设备影子</text>
+<line x1="361" y1="450" x2="131" y2="450" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="131,450 140,454.5 140,445.5" fill="#4f46e5"/>
+<text x="137" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">状态显示</text>
+<line x1="131" y1="488" x2="591" y2="488" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="591,488 582,483.5 582,492.5" fill="#0f9d58"/>
+<text x="137" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">局域网直连（断网兜底）</text>
+<line x1="591" y1="526" x2="821" y2="526" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="821,526 812,521.5 812,530.5" fill="#0f9d58"/>
+<text x="597" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">同一套协议下发</text>
+<line x1="821" y1="564" x2="591" y2="564" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="591,564 600,568.5 600,559.5" fill="#0f9d58"/>
+<text x="597" y="557" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">状态回报</text>
+<line x1="591" y1="602" x2="131" y2="602" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="131,602 140,606.5 140,597.5" fill="#0f9d58"/>
+<text x="137" y="595" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">直接回显</text>
+<rect x="36" y="646" width="880" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="676" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">分水岭与失败点</text>
+<text x="52" y="700" font-size="10.2" fill="#334155" xml:space="preserve">① 云管在线：走靛蓝路径，比本地多一次广域网往返，延迟主要花在云侧排队。</text>
+<text x="52" y="718" font-size="10.2" fill="#334155" xml:space="preserve">② 云管离线：第 2 步失败，本地 App 直连网关走绿色路径；跨品牌云联动与远程控制不可用。</text>
+<text x="52" y="736" font-size="10.2" fill="#334155" xml:space="preserve">③ 云管「假在线」（心跳通、订阅丢）：指令发出去没有回报，先查订阅再查网络。</text>
+<text x="36" y="784" font-size="12.3" fill="#64748b" xml:space="preserve">读图：绿色路径不是「降级版云端」，它绕过了云平台，所以只能执行网关本地已编排的场景。</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="960" viewBox="0 0 820 960" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="820" height="960" fill="#ffffff"/>
+<line x1="36" y1="112" x2="784" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · PPPoE 拨号时序：发现、协商、认证、地址四段</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上四步是发现阶段：PADI 广播、PADO 应答、PADR 选定、PADS 分配 Session ID；拿到 ID 才进入会话。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">会话内先 LCP 谈参数与认证方式，再 CHAP 验身份，最后 IPCP/IPv6CP 配地址。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">发现阶段</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">会话协商</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">认证</text>
+<rect x="120" y="190" width="270" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="132" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">CPE（拨号客户端）</text>
+<rect x="500" y="190" width="270" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="512" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">BRAS / 接入设备</text>
+<line x1="255" y1="232" x2="255" y2="734" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="635" y1="232" x2="635" y2="734" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="255" y1="260" x2="635" y2="260" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="635,260 626,255.5 626,264.5" fill="#d97706"/>
+<text x="261" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">PADI 广播：找可用的 BRAS</text>
+<line x1="635" y1="298" x2="255" y2="298" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="255,298 264,302.5 264,293.5" fill="#d97706"/>
+<text x="261" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">PADO：我能提供（可能有多台应答）</text>
+<line x1="255" y1="336" x2="635" y2="336" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="635,336 626,331.5 626,340.5" fill="#d97706"/>
+<text x="261" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">PADR：选定这一台</text>
+<line x1="635" y1="374" x2="255" y2="374" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="255,374 264,378.5 264,369.5" fill="#d97706"/>
+<text x="261" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">PADS：分配 Session ID</text>
+<line x1="255" y1="412" x2="635" y2="412" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="635,412 626,407.5 626,416.5" fill="#4f46e5"/>
+<text x="261" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">LCP ConfReq：MRU / 认证方式 / 魔术字</text>
+<line x1="635" y1="450" x2="255" y2="450" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="255,450 264,454.5 264,445.5" fill="#4f46e5"/>
+<text x="261" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">LCP ConfAck</text>
+<line x1="635" y1="488" x2="255" y2="488" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="255,488 264,492.5 264,483.5" fill="#0f9d58"/>
+<text x="261" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">CHAP Challenge</text>
+<line x1="255" y1="526" x2="635" y2="526" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="635,526 626,521.5 626,530.5" fill="#0f9d58"/>
+<text x="261" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">CHAP Response（只传摘要）</text>
+<line x1="635" y1="564" x2="255" y2="564" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="255,564 264,568.5 264,559.5" fill="#0f9d58"/>
+<text x="261" y="557" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">CHAP Success</text>
+<line x1="255" y1="602" x2="635" y2="602" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="635,602 626,597.5 626,606.5" fill="#4f46e5"/>
+<text x="261" y="595" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">IPCP ConfReq：IPv4 地址 / DNS</text>
+<line x1="635" y1="640" x2="255" y2="640" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="255,640 264,644.5 264,635.5" fill="#4f46e5"/>
+<text x="261" y="633" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">IPCP ConfAck</text>
+<line x1="255" y1="678" x2="635" y2="678" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="635,678 626,673.5 626,682.5" fill="#4f46e5"/>
+<text x="261" y="671" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">IPv6CP：接口 ID（双栈时）</text>
+<line x1="255" y1="716" x2="289" y2="716" stroke="#0f9d58" stroke-width="1.8"/>
+<line x1="289" y1="716" x2="289" y2="730" stroke="#0f9d58" stroke-width="1.8"/>
+<line x1="289" y1="730" x2="261" y2="730" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="257,730 266,734.5 266,725.5" fill="#0f9d58"/>
+<text x="261" y="709" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">建默认路由、NAT 生效</text>
+<rect x="36" y="760" width="748" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="790" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="814" font-size="10.2" fill="#334155" xml:space="preserve">分水岭在 PADS：之前是发现，报文不带 Session ID，谁能答都能答；之后所有报文都带 Session ID，只认这台 BRAS。</text>
+<text x="52" y="832" font-size="10.2" fill="#334155" xml:space="preserve">PADI 发出却收不到 PADO，查二层可达（VLAN、广播隔离、BRAS 池）；收到 PADO 却反复 PADR，查服务名与认证域。</text>
+<text x="52" y="850" font-size="10.2" fill="#334155" xml:space="preserve">LCP 只谈「用什么方式认证」，真正验身份在 CHAP；IPCP 拿地址，业务可用还要看默认路由与 DNS。</text>
+<text x="36" y="906" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="924" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/33-CPE/01-宽带接入与拨号.md</text>
+</svg>

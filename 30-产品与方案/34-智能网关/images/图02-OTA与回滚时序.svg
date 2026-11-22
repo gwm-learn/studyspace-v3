@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="940" viewBox="0 0 1040 940" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1040" height="940" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1004" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · OTA 与回滚：写完不算完，确认才算完</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上半段（靛蓝/灰）是写入与重启，绿色是确认，红色虚线是回滚；判定权在引导层与设备自检，不在云端。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">关键窗口：设置 boot 标志之后、云端确认之前，设备随时可以退回旧槽。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">任务与下载</text>
+<line x1="153" y1="142" x2="183" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="191" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">写槽与重启</text>
+<line x1="270" y1="142" x2="300" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="308" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">确认</text>
+<line x1="354" y1="142" x2="384" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="392" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">回滚（虚线）</text>
+<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">顺序读：先看写入哪一槽，再看谁有权反悔</text>
+<rect x="36" y="190" width="200" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="48" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">云端</text>
+<rect x="286" y="190" width="200" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="298" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">网关 · OTA Agent</text>
+<rect x="536" y="190" width="200" height="42" fill="#f1f5f9" rx="8" stroke="#0891b2" stroke-width="1"/>
+<text x="548" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">Flash · A/B 槽</text>
+<rect x="786" y="190" width="200" height="42" fill="#f1f5f9" rx="8" stroke="#d97706" stroke-width="1"/>
+<text x="798" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">引导层</text>
+<line x1="136" y1="232" x2="136" y2="734" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="386" y1="232" x2="386" y2="734" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="636" y1="232" x2="636" y2="734" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="886" y1="232" x2="886" y2="734" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="136" y1="260" x2="386" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="386,260 377,255.5 377,264.5" fill="#4f46e5"/>
+<text x="142" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">任务：URL + SHA-256 + 灰度批次</text>
+<line x1="386" y1="298" x2="136" y2="298" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="136,298 145,302.5 145,293.5" fill="#4f46e5"/>
+<text x="142" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">拉包（HTTPS，断点续传）</text>
+<line x1="136" y1="336" x2="386" y2="336" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="386,336 377,331.5 377,340.5" fill="#4f46e5"/>
+<text x="142" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">升级包 + 清单签名</text>
+<line x1="386" y1="374" x2="636" y2="374" stroke="#475569" stroke-width="1.8"/>
+<polygon points="636,374 627,369.5 627,378.5" fill="#475569"/>
+<text x="392" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">写入 B 槽（A 槽不动）</text>
+<line x1="386" y1="412" x2="636" y2="412" stroke="#475569" stroke-width="1.8"/>
+<polygon points="636,412 627,407.5 627,416.5" fill="#475569"/>
+<text x="392" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">回读校验：哈希 + 验签</text>
+<line x1="386" y1="450" x2="636" y2="450" stroke="#475569" stroke-width="1.8"/>
+<polygon points="636,450 627,445.5 627,454.5" fill="#475569"/>
+<text x="392" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">置 boot 标志 = B</text>
+<line x1="386" y1="488" x2="420" y2="488" stroke="#d97706" stroke-width="1.8"/>
+<line x1="420" y1="488" x2="420" y2="502" stroke="#d97706" stroke-width="1.8"/>
+<line x1="420" y1="502" x2="392" y2="502" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="388,502 397,506.5 397,497.5" fill="#d97706"/>
+<text x="392" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">重启</text>
+<line x1="886" y1="526" x2="636" y2="526" stroke="#475569" stroke-width="1.8"/>
+<polygon points="636,526 645,530.5 645,521.5" fill="#475569"/>
+<text x="642" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">读标志，选 B 槽启动</text>
+<line x1="636" y1="564" x2="386" y2="564" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="386,564 395,568.5 395,559.5" fill="#0f9d58"/>
+<text x="392" y="557" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">新系统自检通过</text>
+<line x1="386" y1="602" x2="136" y2="602" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="136,602 145,606.5 145,597.5" fill="#0f9d58"/>
+<text x="142" y="595" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">上报版本，等确认</text>
+<line x1="136" y1="640" x2="386" y2="640" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="386,640 377,635.5 377,644.5" fill="#0f9d58"/>
+<text x="142" y="633" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">确认：清回滚标志</text>
+<line x1="886" y1="678" x2="386" y2="678" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="386,678 395,682.5 395,673.5" fill="#dc2626"/>
+<text x="392" y="671" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">自检失败 / 超时未确认 → 回滚 A 槽</text>
+<line x1="386" y1="716" x2="136" y2="716" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="136,716 145,720.5 145,711.5" fill="#dc2626"/>
+<text x="142" y="709" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">上报回滚原因</text>
+<rect x="36" y="760" width="900" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="790" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">两条边界</text>
+<text x="52" y="814" font-size="10.2" fill="#334155" xml:space="preserve">① 「下载哈希对」不等于「写进去对」：必须回读校验，否则坏块会被当成好包写进 boot 标志。</text>
+<text x="52" y="832" font-size="10.2" fill="#334155" xml:space="preserve">② 「新版本起来了」不等于「装好了」：确认之前保持可回滚，确认之后才清标志、释放旧槽。</text>
+<text x="52" y="850" font-size="10.2" fill="#334155" xml:space="preserve">③ 插件 OTA 不重启整机：写新目录 → 原子换指向 → 失败切回旧目录，回滚粒度是单个业务。</text>
+<text x="36" y="904" font-size="12.3" fill="#64748b" xml:space="preserve">读图：整张图的「反悔点」只有一个——boot 标志。谁改它、什么时候清它，决定了变砖概率。</text>
+</svg>
