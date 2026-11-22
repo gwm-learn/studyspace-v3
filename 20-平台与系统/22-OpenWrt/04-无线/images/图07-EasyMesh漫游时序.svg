@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="780" viewBox="0 0 1060 780" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1060" height="780" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 07 · EasyMesh 引导漫游的时序</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">四条泳道：Controller、旧 Agent(A)、新 Agent(B)、终端。时间自上而下。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">蓝线 = 1905.1 控制面（AP 之间）；绿线 = 空口（AP 与终端）。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">1905.1 控制面</text>
+<line x1="177.2" y1="142" x2="207.2" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="215.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">空口 11k/11v/11r</text>
+<rect x="50" y="186" width="200" height="46" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="62" y="214" font-size="11.4" fill="#0f172a" xml:space="preserve" font-weight="700">Controller</text>
+<line x1="150" y1="232" x2="150" y2="700" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="290" y="186" width="200" height="46" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="302" y="214" font-size="11.4" fill="#0f172a" xml:space="preserve" font-weight="700">Agent A（旧）</text>
+<line x1="390" y1="232" x2="390" y2="700" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="530" y="186" width="200" height="46" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="542" y="214" font-size="11.4" fill="#0f172a" xml:space="preserve" font-weight="700">Agent B（新）</text>
+<line x1="630" y1="232" x2="630" y2="700" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="770" y="186" width="200" height="46" fill="#f1f5f9" rx="8" stroke="#d97706" stroke-width="1"/>
+<text x="782" y="214" font-size="11.4" fill="#0f172a" xml:space="preserve" font-weight="700">终端 STA</text>
+<line x1="870" y1="232" x2="870" y2="700" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="380" y1="268" x2="140" y2="268" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="140,268 149,272.5 149,263.5" fill="#4f46e5"/>
+<text x="146" y="261" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">① 上报终端信息 / 链路质量</text>
+<line x1="140" y1="306" x2="380" y2="306" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="380,306 371,301.5 371,310.5" fill="#4f46e5"/>
+<text x="146" y="299" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">② Client Steering Request</text>
+<line x1="140" y1="344" x2="620" y2="344" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="620,344 611,339.5 611,348.5" fill="#4f46e5"/>
+<text x="146" y="337" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">③ 通知目标 Agent 准备</text>
+<line x1="380" y1="382" x2="860" y2="382" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="860,382 851,377.5 851,386.5" fill="#0f9d58"/>
+<text x="386" y="375" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">④ 11k 邻居报告（候选 BSS）</text>
+<line x1="380" y1="420" x2="860" y2="420" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="860,420 851,415.5 851,424.5" fill="#0f9d58"/>
+<text x="386" y="413" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑤ 11v BTM Request</text>
+<line x1="860" y1="458" x2="380" y2="458" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="380,458 389,462.5 389,453.5" fill="#0f9d58"/>
+<text x="386" y="451" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑥ BTM Response</text>
+<line x1="380" y1="496" x2="140" y2="496" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="140,496 149,500.5 149,491.5" fill="#4f46e5"/>
+<text x="146" y="489" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑦ BTM Report（成功/拒绝）</text>
+<line x1="860" y1="534" x2="620" y2="534" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="620,534 629,538.5 629,529.5" fill="#0f9d58"/>
+<text x="626" y="527" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑧ 重关联 + 11r FT</text>
+<line x1="620" y1="572" x2="140" y2="572" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="140,572 149,576.5 149,567.5" fill="#4f46e5"/>
+<text x="146" y="565" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑨ 终端已上线，更新拓扑</text>
+<rect x="36" y="612" width="980" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="642" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="666" font-size="10.2" fill="#334155" xml:space="preserve">Controller 只发「指令」；真正对终端说话的，是 A 和 B 里的 hostapd。</text>
+<text x="52" y="684" font-size="10.2" fill="#334155" xml:space="preserve">⑤ 是唯一一帧「网络侧主动推终端」的消息，终端可以在 ⑥ 里拒绝。</text>
+<text x="36" y="726" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="744" font-size="12.3" fill="#64748b" xml:space="preserve">虚线 = 终端拒绝也合法；实线 = 正常路径</text>
+</svg>

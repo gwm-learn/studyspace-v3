@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="880" viewBox="0 0 1120 880" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="880" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 06 · EasyMesh 在 OpenWrt 上的四层</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">从下往上读：驱动 → hostapd → Wi-Fi HAL → 决策层。只有最上面两层是 EasyMesh 带来的。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">右列说明每一层由谁提供：换实现换的是右列，不改左列的分层。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">EasyMesh 专有</text>
+<line x1="179.4" y1="142" x2="209.4" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="217.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">控制面</text>
+<line x1="274.4" y1="142" x2="304.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="312.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">实现相关</text>
+<line x1="380.4" y1="142" x2="410.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="418.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">OpenWrt 主线提供</text>
+<line x1="539.2" y1="142" x2="569.2" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="577.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">硬件</text>
+<rect x="36" y="190" width="168" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="36" y="190" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="49" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 决策层</text>
+<text x="49" y="226" font-size="9.6" fill="#334155" xml:space="preserve">谁做决定</text>
+<rect x="216" y="190" width="452" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="216" y="190" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="229" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">全局拓扑 · 信道选择 · 负载均衡 · steering 判决</text>
+<text x="229" y="226" font-size="9.6" fill="#334155" xml:space="preserve">输入：各 Agent 上报的终端与链路信息</text>
+<text x="229" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">输出：给某个 AP 的明确动作指令</text>
+<text x="229" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">没有 EasyMesh 时：退化为单个 AP 的本地判断</text>
+<rect x="680" y="190" width="396" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="680" y="190" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="693" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">prplMesh / IOPSYS / 自研栈</text>
+<text x="693" y="226" font-size="9.6" fill="#334155" xml:space="preserve">Controller + Agent 业务逻辑</text>
+<rect x="36" y="290" width="168" height="84" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="36" y="290" width="4.5" height="84" fill="#0891b2" rx="2"/>
+<text x="49" y="309" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ 控制面传输</text>
+<text x="49" y="326" font-size="9.6" fill="#334155" xml:space="preserve">怎么传</text>
+<rect x="216" y="290" width="452" height="84" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="216" y="290" width="4.5" height="84" fill="#0891b2" rx="2"/>
+<text x="229" y="309" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">1905.1 CMDU（以太类型 0x893A）+ Multi-AP TLV</text>
+<text x="229" y="326" font-size="9.6" fill="#334155" xml:space="preserve">发现 · 中继 · 分片 · 请求/响应配对</text>
+<text x="229" y="341.4" font-size="9.6" fill="#334155" xml:space="preserve">跨节点时由中间设备按 1905.1 规则转发</text>
+<text x="229" y="356.8" font-size="9.6" fill="#334155" xml:space="preserve">不是 IP：ping / curl 这一套用不上</text>
+<rect x="680" y="290" width="396" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="680" y="290" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="693" y="309" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ieee1905_transport / ieee1905</text>
+<text x="693" y="326" font-size="9.6" fill="#334155" xml:space="preserve">CMDU 收发、TLV、跨节点中继</text>
+<rect x="36" y="390" width="168" height="84" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="36" y="390" width="4.5" height="84" fill="#d97706" rx="2"/>
+<text x="49" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② Wi-Fi HAL</text>
+<text x="49" y="426" font-size="9.6" fill="#334155" xml:space="preserve">怎么调</text>
+<rect x="216" y="390" width="452" height="84" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="216" y="390" width="4.5" height="84" fill="#d97706" rx="2"/>
+<text x="229" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">把不同驱动的差异抹平成统一 API</text>
+<text x="229" y="426" font-size="9.6" fill="#334155" xml:space="preserve">读终端信息 · 下发 BTM · 切信道 · 配 SSID</text>
+<text x="229" y="441.4" font-size="9.6" fill="#334155" xml:space="preserve">厂商私有能力也在这里补齐</text>
+<text x="229" y="456.8" font-size="9.6" fill="#334155" xml:space="preserve">没有 HAL 时：直接调 ubus / hostapd_cli</text>
+<rect x="680" y="390" width="396" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="680" y="390" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="693" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">warp / 厂商 HAL / ubus</text>
+<text x="693" y="426" font-size="9.6" fill="#334155" xml:space="preserve">统一的 Wi-Fi 操作 API</text>
+<rect x="36" y="490" width="168" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="490" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="49" y="509" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① hostapd</text>
+<text x="49" y="526" font-size="9.6" fill="#334155" xml:space="preserve">怎么执行</text>
+<rect x="216" y="490" width="452" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="216" y="490" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="229" y="509" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">11k / 11v / 11r 的唯一实现地</text>
+<text x="229" y="526" font-size="9.6" fill="#334155" xml:space="preserve">ieee80211k=1 · bss_transition=1 · ieee80211r=1</text>
+<text x="229" y="541.4" font-size="9.6" fill="#334155" xml:space="preserve">BTM 帧由它发；FT 密钥由它铺</text>
+<text x="229" y="556.8" font-size="9.6" fill="#334155" xml:space="preserve">OpenWrt 用 wpad / hostapd 提供</text>
+<rect x="680" y="490" width="396" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="680" y="490" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="693" y="509" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">wpad / hostapd</text>
+<text x="693" y="526" font-size="9.6" fill="#334155" xml:space="preserve">11k/v/r 的开关与实现（主线自带）</text>
+<rect x="36" y="590" width="168" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="590" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="49" y="609" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">⓪ 驱动 / 固件</text>
+<text x="49" y="626" font-size="9.6" fill="#334155" xml:space="preserve">怎么发</text>
+<rect x="216" y="590" width="452" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="216" y="590" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="229" y="609" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">射频、关联、加密卸载</text>
+<text x="229" y="626" font-size="9.6" fill="#334155" xml:space="preserve">mac80211 + 芯片驱动</text>
+<text x="229" y="641.4" font-size="9.6" fill="#334155" xml:space="preserve">station dump 是测量的原始来源</text>
+<text x="229" y="656.8" font-size="9.6" fill="#334155" xml:space="preserve">厂商补丁决定能力上限</text>
+<rect x="680" y="590" width="396" height="84" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="680" y="590" width="4.5" height="84" fill="#475569" rx="2"/>
+<text x="693" y="609" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">mac80211 + 芯片驱动</text>
+<text x="693" y="626" font-size="9.6" fill="#334155" xml:space="preserve">射频控制与测量数据来源</text>
+<line x1="110" y1="274" x2="110" y2="290" stroke="#cbd5e1" stroke-width="1.6"/>
+<polygon points="110,290 114.5,281 105.5,281" fill="#cbd5e1"/>
+<line x1="110" y1="374" x2="110" y2="390" stroke="#cbd5e1" stroke-width="1.6"/>
+<polygon points="110,390 114.5,381 105.5,381" fill="#cbd5e1"/>
+<line x1="110" y1="474" x2="110" y2="490" stroke="#cbd5e1" stroke-width="1.6"/>
+<polygon points="110,490 114.5,481 105.5,481" fill="#cbd5e1"/>
+<line x1="110" y1="574" x2="110" y2="590" stroke="#cbd5e1" stroke-width="1.6"/>
+<polygon points="110,590 114.5,581 105.5,581" fill="#cbd5e1"/>
+<rect x="36" y="700" width="1040" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="730" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="52" y="754" font-size="10.2" fill="#334155" xml:space="preserve">下方两层在任何 OpenWrt 设备上都存在，与 EasyMesh 无关；上方两层才是额外装的。</text>
+<text x="52" y="772" font-size="10.2" fill="#334155" xml:space="preserve">所以「漫游不生效」先查 ①，再查 ③；层序错了会把配置问题当成协议问题。</text>
+<text x="36" y="826" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="844" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：20-平台与系统/22-OpenWrt/04-无线/04-漫游与EasyMesh.md</text>
+</svg>

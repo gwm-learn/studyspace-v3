@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="580" viewBox="0 0 1180 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1180" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 08 · 回程的三种形态</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">三者都能让「子节点下的终端」上网，区别在于谁转发、谁选路、帧怎么装。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">左：有线回程（EasyMesh 首选）；中：EasyMesh 无线回程（4 地址帧）；右：802.11s（另一套 Mesh）。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">有线 / 稳定</text>
+<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">无线回程</text>
+<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">802.11s</text>
+<text x="36" y="182" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 有线回程</text>
+<rect x="36" y="200" width="190" height="66" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="200" width="4.5" height="66" fill="#0f9d58" rx="2"/>
+<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">主网关 / Controller</text>
+<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">1905.1 与业务同口</text>
+<rect x="36" y="296" width="190" height="66" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="36" y="296" width="4.5" height="66" fill="#475569" rx="2"/>
+<text x="49" y="315" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">交换机 / 网桥</text>
+<text x="49" y="332" font-size="9.6" fill="#334155" xml:space="preserve">按 FDB 转发</text>
+<rect x="36" y="392" width="190" height="66" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="36" y="392" width="4.5" height="66" fill="#0f9d58" rx="2"/>
+<text x="49" y="411" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">子 AP（Agent）</text>
+<text x="49" y="428" font-size="9.6" fill="#334155" xml:space="preserve">接入 + 上报</text>
+<rect x="268" y="392" width="150" height="66" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="268" y="392" width="4.5" height="66" fill="#d97706" rx="2"/>
+<text x="281" y="411" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">终端</text>
+<text x="281" y="428" font-size="9.6" fill="#334155" xml:space="preserve">空口接入</text>
+<line x1="131" y1="266" x2="131" y2="296" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="131,296 135.5,287 126.5,287" fill="#0f9d58"/>
+<line x1="131" y1="362" x2="131" y2="392" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="131,392 135.5,383 126.5,383" fill="#0f9d58"/>
+<line x1="226" y1="425" x2="268" y2="425" stroke="#475569" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="268,425 259,420.5 259,429.5" fill="#475569"/>
+<text x="36" y="486" font-size="9.6" fill="#64748b" xml:space="preserve">选路由交换机做；回程不占空口。</text>
+<text x="440" y="182" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② EasyMesh 无线回程</text>
+<rect x="440" y="200" width="190" height="66" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="440" y="200" width="4.5" height="66" fill="#4f46e5" rx="2"/>
+<text x="453" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">主网关 / Controller</text>
+<text x="453" y="236" font-size="9.6" fill="#334155" xml:space="preserve">回程 STA + 4 地址帧</text>
+<rect x="440" y="330" width="190" height="66" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="440" y="330" width="4.5" height="66" fill="#4f46e5" rx="2"/>
+<text x="453" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">子 AP（Agent）</text>
+<text x="453" y="366" font-size="9.6" fill="#334155" xml:space="preserve">Backhaul STA 上行</text>
+<rect x="660" y="330" width="130" height="66" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="660" y="330" width="4.5" height="66" fill="#d97706" rx="2"/>
+<text x="673" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">终端</text>
+<text x="673" y="366" font-size="9.6" fill="#334155" xml:space="preserve">空口接入</text>
+<line x1="535" y1="266" x2="535" y2="330" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="535,330 539.5,321 530.5,321" fill="#4f46e5"/>
+<text x="543" y="292" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">回程</text>
+<line x1="630" y1="363" x2="660" y2="363" stroke="#475569" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="660,363 651,358.5 651,367.5" fill="#475569"/>
+<text x="440" y="420" font-size="9.6" fill="#64748b" xml:space="preserve">回程与接入抢同一空口；桥接靠 4 地址帧。</text>
+<text x="440" y="440" font-size="9.6" fill="#64748b" xml:space="preserve">回程质量 = 这片区域的体验上限。</text>
+<text x="820" y="182" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">③ 802.11s</text>
+<rect x="860" y="200" width="140" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="860" y="200" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="873" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">MP1</text>
+<text x="873" y="236" font-size="9.6" fill="#334155" xml:space="preserve">Mesh 节点</text>
+<rect x="810" y="320" width="130" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="810" y="320" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="823" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">MP2</text>
+<text x="823" y="356" font-size="9.6" fill="#334155" xml:space="preserve">自建路径</text>
+<rect x="1000" y="320" width="130" height="62" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="1000" y="320" width="4.5" height="62" fill="#d97706" rx="2"/>
+<text x="1013" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">MP3</text>
+<text x="1013" y="356" font-size="9.6" fill="#334155" xml:space="preserve">自建路径</text>
+<line x1="905" y1="262" x2="880" y2="320" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="880,320 887.69,313.52 879.43,309.95" fill="#d97706"/>
+<line x1="955" y1="262" x2="1055" y2="320" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="1055,320 1049.47,311.59 1044.96,319.38" fill="#d97706"/>
+<line x1="940" y1="351" x2="1000" y2="351" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="1000,351 991,346.5 991,355.5" fill="#d97706"/>
+<text x="820" y="420" font-size="9.6" fill="#64748b" xml:space="preserve">HWMP 自己选路，不经过 Controller，</text>
+<text x="820" y="440" font-size="9.6" fill="#64748b" xml:space="preserve">与 EasyMesh 回程是两套机制。</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">虚线 = 空口链路；实线 = 有线链路</text>
+</svg>
