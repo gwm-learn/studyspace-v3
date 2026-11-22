@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 三网业务的 VLAN 与转发：三条路各走各的</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Internet 走路由/NAT，VoIP 走 SIP，IPTV 走 IGMP 组播；三者在 VLAN 与 GEM 上就分开了。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">QoS 在出口按业务优先级调度，不是靠一条队列包打天下。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">Internet</text>
+<line x1="150.8" y1="142" x2="180.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="188.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">VoIP</text>
+<line x1="239.2" y1="142" x2="269.2" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="277.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">IPTV</text>
+<rect x="40" y="190" width="420" height="48" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="217.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">Internet：VLAN x → 路由 / NAT</text>
+<text x="450" y="217.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">单播</text>
+<rect x="40" y="246" width="420" height="48" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.1"/>
+<text x="52" y="273.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">VoIP：VLAN y → SIP 代理</text>
+<text x="450" y="273.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">单播 + 低时延</text>
+<rect x="40" y="302" width="420" height="48" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="52" y="329.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">IPTV：VLAN z → IGMP 加入</text>
+<text x="450" y="329.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">组播</text>
+<rect x="520" y="190" width="250" height="152" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="520" y="190" width="4.5" height="152" fill="#475569" rx="2"/>
+<text x="533" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">OLT 侧</text>
+<text x="533" y="226" font-size="9.6" fill="#334155" xml:space="preserve">按 VLAN 映射到 GEM</text>
+<text x="533" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">组播复制在 OLT/ONU</text>
+<text x="533" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">不同业务不同优先级</text>
+<rect x="810" y="190" width="250" height="152" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="810" y="190" width="4.5" height="152" fill="#4f46e5" rx="2"/>
+<text x="823" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">出口调度</text>
+<text x="823" y="226" font-size="9.6" fill="#334155" xml:space="preserve">按业务分类标记</text>
+<text x="823" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">VoIP/IPTV 优先</text>
+<text x="823" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">拥塞时先丢 Internet</text>
+<line x1="466" y1="214" x2="516" y2="214" stroke="#4f46e5" stroke-width="1.6"/>
+<polygon points="516,214 507,209.5 507,218.5" fill="#4f46e5"/>
+<line x1="466" y1="270" x2="516" y2="270" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="516,270 507,265.5 507,274.5" fill="#d97706"/>
+<line x1="466" y1="326" x2="516" y2="326" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="516,326 507,321.5 507,330.5" fill="#0f9d58"/>
+<line x1="774" y1="266" x2="806" y2="266" stroke="#475569" stroke-width="1.8"/>
+<polygon points="806,266 797,261.5 797,270.5" fill="#475569"/>
+<rect x="40" y="390" width="1020" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="420" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="444" font-size="10.2" fill="#334155" xml:space="preserve">三条业务要在三层同时分开：VLAN（二层隔离）、GEM（PON 承载）、队列（出口优先级）。</text>
+<text x="56" y="462" font-size="10.2" fill="#334155" xml:space="preserve">只做一个 VLAN 不分队列，IPTV 高峰会把语音挤掉；反过来只做队列不做 VLAN，隔离又不成立。</text>
+<text x="36" y="506" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/36-ONU-ONT/02-VoIP与IPTV业务.md</text>
+</svg>

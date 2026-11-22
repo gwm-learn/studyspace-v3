@@ -68,6 +68,14 @@ Target（架构） → Subtarget（SoC/介质） → Device（板型）
 | 直接编辑 `.config` | 脚本化、批量 | 易漏依赖，后续 `defconfig` 可能改写 |
 | 保存/复用 `.config` | 复现构建、CI | 必须与源码分支和目标一致 |
 
+**手工编辑 `.config` 为什么经常“不生效”**：Kconfig 求解时会按依赖重新计算，`select` 和 `depends on` 会覆盖你写的值。
+
+| 现象 | 机制 | 怎么确认 |
+| --- | --- | --- |
+| 写了 `=y`，求解后变 `# ... is not set` | `depends on` 不满足 | 看该项依赖，或 `scripts/diffconfig` |
+| 没写的项突然 `=y` | 被别的项 `select` 带上 | 同上，差异里会显示 |
+| 换 target 后旧项还在 | 旧配置残留 | 重新选目标后跑 `defconfig`，再比对 |
+
 ## 4 · 配置流程
 
 ![图 03 · 配置三级：Target / Subtarget / Device](images/图03-config三级.svg)
@@ -85,6 +93,16 @@ Target（架构） → Subtarget（SoC/介质） → Device（板型）
 5. `make defconfig` 补全默认值，保存 `.config`。
 6. 用 `scripts/diffconfig` 对比两份配置，确认差异符合预期。
 
+配置变更的标准动作（可复现的做法）：
+
+```bash
+cp .config .config.old        # 留一份基线
+make defconfig                # 按当前 Kconfig 求解
+scripts/diffconfig .config.old .config   # 只差你预期的项，才算对
+```
+
+要复现别人的构建，必须同时固定三样：**源码 commit、feeds commit、`.config`**。只给 `.config`，换一个分支就可能大面积漂移。
+
 ### 4.2 异常分支
 
 | 现象 | 原因 | 处理方向 |
@@ -93,6 +111,15 @@ Target（架构） → Subtarget（SoC/介质） → Device（板型）
 | 选了包但没进镜像 | 包被依赖排除、`=m` 但无模块支持、被 `CONFIG_PACKAGE_*` 覆盖 | 看最终 `.config` 与 `bin/packages` |
 | 升级后配置大量变化 | 新 Kconfig 选项、默认值调整 | 用 `oldconfig` 逐项确认，不要盲目 `defconfig` |
 | 两台机器产物不同 | 源码分支、feeds、`.config` 不一致 | 固化三者版本，记录 commit |
+
+**“选项开了但没生效”按这个顺序查**：
+
+| 步骤 | 查什么 | 判据 | 答错的后果 |
+| --- | --- | --- | --- |
+| ① 目标层级 | target/subtarget/device 是否匹配 | `.config` 里的 `CONFIG_TARGET_*` 与产物名一致 | 目标选错，后面所有选项都无意义 |
+| ② 包是否可见 | feeds 是否 install、`DEPENDS`/`BROKEN` 是否排除 | `make menuconfig` 里能搜到 | 把“不可见”当成“没选中” |
+| ③ 最终 `.config` | 求解后的值，而不是你写进去的值 | `grep CONFIG_... .config` | 手工写的值和求解结果不一致 |
+| ④ 镜像配方 | `DEVICE_PACKAGES` 是否排除、是否被覆盖 | `target/linux/<t>/image/Makefile` | 包编了但没进镜像 |
 
 ## 5 · 状态机与定时器
 
@@ -105,6 +132,10 @@ Target（架构） → Subtarget（SoC/介质） → Device（板型）
 - **代价**：选项之间存在隐式依赖，手工编辑容易产生“看起来开了、实际被覆盖”的项。
 - **不适用**：只改运行参数（如 LAN IP）不应重新构建，用 UCI 即可。
 - **常见误判**：把 `CONFIG_PACKAGE_x=y` 当成“一定在镜像里”；最终还要看镜像配方是否排除、依赖是否满足。
+
+> **边界**：`=m` 只在包支持“可拆成内核模块/子包”时才有意义；对纯用户态包，`=m` 往往等同 `=y` 或被忽略。看到“选了 m 却照样进 rootfs”，先查包的类型，而不是怀疑配置没生效。
+
+> **推论**：`defconfig` 不是温和的“补默认值”，它会按当前 Kconfig **重新求解**：你没显式设置、而默认值又变了的项，会被改写。所以复现构建要靠“`.config` + 固定源码/feeds commit”，不能靠一段 make 命令。
 
 ## 7 · 与相邻主题的关系
 

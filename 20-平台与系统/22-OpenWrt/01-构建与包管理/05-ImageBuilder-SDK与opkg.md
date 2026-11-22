@@ -78,6 +78,14 @@ opkg/apk：    设备 + 软件源 ────────► 安装/升级/卸�
 3. 指定 `PROFILE`、`PACKAGES`、可选 `FILES`，生成镜像。
 4. 产物直接用 sysupgrade 或工厂工具烧录。
 
+```bash
+make image PROFILE=<profile> \
+  PACKAGES="luci-app-x -dnsmasq dnsmasq-full" \
+  FILES=files/
+```
+
+`PACKAGES` 里不带前缀是“加”，`-` 前缀是“删”。用 `-dnsmasq +dnsmasq-full` 这种写法换实现，比直接加更稳，因为两者冲突。
+
 ### 4.2 SDK 路径
 
 1. 下载与固件同版本的 SDK，解压后先构建基础环境。
@@ -85,12 +93,35 @@ opkg/apk：    设备 + 软件源 ────────► 安装/升级/卸�
 3. `make package/<name>/compile V=s` 生成单包。
 4. 把包放入自有软件源，或直接安装到设备验证。
 
+```bash
+./scripts/feeds update -a && ./scripts/feeds install -a
+make package/<name>/compile V=s
+```
+
+SDK 的价值是“工具链已经就绪”：不用再编一遍 gcc/glibc，单包迭代从小时级降到分钟级。
+
 ### 4.3 opkg 路径
 
 1. 确认设备的架构、内核版本与已安装包版本。
 2. 配置软件源（官方源或自有源），更新索引。
 3. 安装/升级包，观察依赖解析结果。
 4. 需要回退时，保留旧包文件，避免只依赖在线源。
+
+```bash
+opkg print-architecture          # 设备架构
+opkg update                      # 刷新源索引
+opkg install <pkg>               # 安装
+opkg list-installed | grep <pkg> # 确认版本
+```
+
+**三条路径怎么选**：
+
+| 需求 | 选哪条 | 原因 |
+| --- | --- | --- |
+| 只换包集合、预装业务 | ImageBuilder | 不编译，分钟级出镜像 |
+| 改包代码、驱动补丁 | SDK | 有目标工具链，只编单包 |
+| 现场补丁、快速验证 | opkg/apk | 立即生效，但不可复现 |
+| 改内核/启动链/分区 | 全量构建 | 前三条都覆盖不到 |
 
 ### 4.4 异常分支
 
@@ -115,6 +146,10 @@ opkg/apk：    设备 + 软件源 ────────► 安装/升级/卸�
 - **代价**：三条路径的版本矩阵容易失控；必须记录固件版本、包版本与源码 commit。
 - **不适用**：修改内核或启动链时，ImageBuilder/opkg 都不够，必须回到全量构建。
 - **常见误判**：用 `--force-depends` 绕过依赖；短期能装，长期会出现符号缺失或启动失败。
+
+> **推论**：三条路径的版本矩阵是“固件批次 × 包批次 × 工具链批次”。混用任一批次，失败往往不在安装时，而在运行时的符号解析或 kmod ABI——所以发布记录里必须写清三者的 commit，而不只是版本号。
+
+> **边界**：`opkg install` 成功不等于“重启后仍在”。装进 overlay 的包受可用空间限制；空间不足时可能“本次生效、重启丢一半”，大包应走预装镜像。
 
 ## 7 · 与相邻主题的关系
 

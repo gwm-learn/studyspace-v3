@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="720" viewBox="0 0 1080 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · 软交换：信令、控制、媒体三层</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左边 PSTN 经 SG 把 ISUP 送进 MGC，右边是 SIP 侧。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">MGC 与 MGW 之间是 H.248（虚线），媒体在 MGW 两侧（实线）。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">信令</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">控制（H.248）</text>
+<line x1="259" y1="142" x2="289" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="297" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">媒体</text>
+<rect x="40" y="380" width="180" height="90" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="380" width="4.5" height="90" fill="#475569" rx="2"/>
+<text x="53" y="399" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PSTN</text>
+<text x="53" y="416" font-size="9.6" fill="#334155" xml:space="preserve">E1/T1 中继</text>
+<text x="53" y="431.4" font-size="9.6" fill="#334155" xml:space="preserve">ISUP 信令</text>
+<rect x="40" y="200" width="180" height="90" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="40" y="200" width="4.5" height="90" fill="#4f46e5" rx="2"/>
+<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">SG</text>
+<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">信令网关</text>
+<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">SS7 ↔ SIGTRAN</text>
+<rect x="400" y="190" width="250" height="110" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="400" y="190" width="4.5" height="110" fill="#4f46e5" rx="2"/>
+<text x="413" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">MGC / 软交换</text>
+<text x="413" y="226" font-size="9.6" fill="#334155" xml:space="preserve">呼叫控制、路由、鉴权</text>
+<text x="413" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">决定“谁和谁通”</text>
+<rect x="800" y="200" width="200" height="90" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="800" y="200" width="4.5" height="90" fill="#4f46e5" rx="2"/>
+<text x="813" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">SIP 侧</text>
+<text x="813" y="236" font-size="9.6" fill="#334155" xml:space="preserve">IMS / SIP 中继</text>
+<rect x="400" y="380" width="250" height="100" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="400" y="380" width="4.5" height="100" fill="#d97706" rx="2"/>
+<text x="413" y="399" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">MGW</text>
+<text x="413" y="416" font-size="9.6" fill="#334155" xml:space="preserve">时隙 / RTP 终结</text>
+<text x="413" y="431.4" font-size="9.6" fill="#334155" xml:space="preserve">编解码、EC、放音、会议</text>
+<line x1="130" y1="290" x2="130" y2="380" stroke="#475569" stroke-width="1.8"/>
+<polygon points="130,380 134.5,371 125.5,371" fill="#475569"/>
+<text x="138" y="329" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SS7</text>
+<line x1="220" y1="245" x2="400" y2="245" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="400,245 391,240.5 391,249.5" fill="#4f46e5"/>
+<text x="318" y="239" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SIGTRAN</text>
+<line x1="650" y1="235" x2="800" y2="235" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="800,235 791,230.5 791,239.5" fill="#4f46e5"/>
+<text x="733" y="229" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SIP</text>
+<line x1="525" y1="300" x2="525" y2="380" stroke="#d97706" stroke-width="2" stroke-dasharray="3 3"/>
+<polygon points="525,380 529.5,371 520.5,371" fill="#d97706"/>
+<text x="533" y="334" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">H.248</text>
+<line x1="220" y1="425" x2="400" y2="425" stroke="#475569" stroke-width="1.8"/>
+<polygon points="400,425 391,420.5 391,429.5" fill="#475569"/>
+<text x="318" y="419" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">TDM</text>
+<line x1="650" y1="430" x2="850" y2="292" stroke="#475569" stroke-width="1.8"/>
+<polygon points="850,292 840.04,293.41 845.15,300.82" fill="#475569"/>
+<text x="758" y="355" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">RTP</text>
+<rect x="40" y="560" width="1000" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="590" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="614" font-size="10.2" fill="#334155" xml:space="preserve">· 控制线不传声音，媒体线不传呼叫逻辑：H.248 只分配/连接媒体资源，不建会话。</text>
+<text x="56" y="632" font-size="10.2" fill="#334155" xml:space="preserve">· RTP 端口应由 MGW 分配后告诉 MGC，MGC 自己编端口是软交换对接最常见的错。</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">图源：ITU-T H.248.1、IETF RFC 3525/3435 的公开结构；课程材料《语音网关》。</text>
+</svg>

@@ -69,6 +69,15 @@ layer: 22-OpenWrt/03-网络数据面
 | 原子更新 | 较弱 | 规则集原子替换 |
 | 典型版本 | 旧分支 | 22.03 及以后常见（待验证） |
 
+排障必须看“编译后的规则”，不能只看 UCI：
+
+```text
+fw4 print                    # fw4：打印将要加载的 nftables 规则
+nft list table inet fw4      # 内核里实际生效的表
+```
+
+> **推论**：UCI 写对不等于规则对。zone 没匹配到接口、地址族漏了 IPv6、include 语法错，都会让“配置看起来没问题、实际没生成规则”。先 `fw4 print` 看展开结果，再谈为什么不通。
+
 ## 4 · 生成与加载流程
 
 ![图 02 · fw4：UCI 配置编译成 nftables 规则](images/图02-fw4.svg)
@@ -85,6 +94,25 @@ layer: 22-OpenWrt/03-网络数据面
 4. 规则生效；NAT 依赖 conntrack，首包建立映射。
 5. 配置变更后 `reload`，重建规则集。
 
+一个 `redirect` 会展开成三件事，缺一不可：
+
+```text
+config redirect
+	option name 'web'
+	option src 'wan'
+	option src_dport '8080'
+	option dest 'lan'
+	option dest_ip '192.168.1.10'
+	option dest_port '80'
+	option proto 'tcp'
+```
+
+| 展开结果 | 作用 | 缺失时的现象 |
+| --- | --- | --- |
+| PREROUTING 的 DNAT | 把 wan:8080 改写成 192.168.1.10:80 | 映射完全不生效 |
+| FORWARD 放行 | 允许 wan→lan 的这条流 | DNAT 命中但包被丢 |
+| SNAT/MASQUERADE（hairpin 时） | 内网访问自己公网地址 | 内网访问公网 IP 不通 |
+
 ### 4.2 异常分支
 
 | 现象 | 原因 | 处理方向 |
@@ -94,6 +122,15 @@ layer: 22-OpenWrt/03-网络数据面
 | 端口映射不通 | DNAT 后回程未 SNAT、防火墙未放行 | 查 redirect 与 forward |
 | 规则计数不增长 | offload 命中 | 关闭 offload 复测 |
 | IPv6 行为不同 | 只配了 IPv4 规则 | 检查地址族与 `masq6` |
+
+**“放行了还不通”按四步查**：
+
+| 步骤 | 查什么 | 判据 | 答错的后果 |
+| --- | --- | --- | --- |
+| ① zone 匹配 | 接口是否真的在这个 zone | `fw4 print` 里 zone 的接口集合 | zone 不含该口，规则不生效 |
+| ② forwarding | 两个 zone 间是否放行 | 有没有对应 forwarding | 单看 rule，永远找不到缺的那条 |
+| ③ NAT | 出向是否 SNAT、回程是否通 | `conntrack -L` 看转换后的元组 | 把 NAT 缺失当成防火墙丢包 |
+| ④ 路由 | 回程路由是否存在 | `ip route get <src>` | 包出去了回不来 |
 
 ## 5 · 状态机与定时器
 
@@ -106,6 +143,10 @@ layer: 22-OpenWrt/03-网络数据面
 - **代价**：UCI 到 nft 的展开不直观，排障要同时看配置和最终规则集。
 - **不适用**：需要复杂状态机/应用层识别的防火墙，应使用专门方案。
 - **常见误判**：只看 `rule` 不看 `forwarding` 和 zone 默认策略；三者共同决定是否放行。
+
+> **推论**：防火墙的判断是“zone 默认策略 + forwarding + rule”三层叠加，不是单条规则的集合。排障顺序也应如此：先确认接口属于哪个 zone，再看 zone 间有没有 forwarding，最后才看 rule——反过来查，容易在 rule 里找一个根本不存在的“拒绝”。
+
+> **边界**：offload 命中后，nftables 的计数器不再增长。看到“规则在、计数不动”，先关 offload 复测，别急着改规则。
 
 ## 7 · 与相邻主题的关系
 

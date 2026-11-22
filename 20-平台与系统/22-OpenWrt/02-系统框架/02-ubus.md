@@ -75,6 +75,27 @@ provider ──register──► ubusd ◄──call── client
 
 对象名不是配置节名：`network.interface.wan` 对应逻辑接口 `wan`，但 `wan` 的配置可能在任意 section 中。
 
+命令行看到的样子（输出随分支/对象变化）：
+
+```text
+# ubus list 'network.interface.*'
+network.interface
+network.interface.lan
+network.interface.wan
+
+# ubus call network.interface.wan status
+{
+        "up": true,
+        "pending": false,
+        "available": true,
+        "proto": "dhcp",
+        "device": "wan",
+        "data": { ... }
+}
+```
+
+`up=true` 只说明“netifd 认为接口就绪”，不代表路由、DNS、防火墙都通——这是 ubus 状态最常见的误读。
+
 ## 4 · 调用与订阅流程
 
 ![图 03 · ubus：对象、方法与事件](images/图03-ubus.svg)
@@ -89,6 +110,19 @@ provider ──register──► ubusd ◄──call── client
 2. client 用对象名 + 方法名发起调用，参数按 signature 编码。
 3. `ubusd` 查找对象并转发；provider 执行后返回结果。
 4. client 收到响应；对象不存在或 ACL 拒绝时返回错误。
+
+一次 `ifup wan` 在 ubus 上留下的痕迹（理解“谁调用谁”）：
+
+```text
+ifup wan
+  → ubus call network.interface.wan up
+    → netifd 执行 proto 脚本
+      → proto 上报地址
+        → netifd 发布 interface.up 事件
+          → hotplug / mwan3 / 脚本收到事件
+```
+
+所以“接口起来了但脚本没反应”，先确认脚本订阅的是 `interface.up` 还是别的对象名，而不是先怀疑 netifd。
 
 ### 4.2 正常路径（事件）
 
@@ -110,6 +144,14 @@ provider ──register──► ubusd ◄──call── client
 
 ubus 本身没有业务状态机，只有对象生命周期：**未注册 → 已注册 → 注销**。没有内置定时器；超时由调用方或底层传输控制。事件不排队、不重放。
 
+三条语义边界，决定了“什么时候不能用事件”：
+
+| 语义 | 后果 | 应对 |
+| --- | --- | --- |
+| 事件不排队、不重放 | 订阅晚于事件就永远收不到 | 启动时先订阅，关键状态改用查询 |
+| 广播无确认 | 发布者不知道谁收到、有没有处理 | 需要确认的流程用同步调用 |
+| 调用是同步的 | provider 阻塞会拖住 client | 客户端设超时；provider 不在回调里做重活 |
+
 ## 6 · 设计取舍与边界
 
 - **为什么用总线而不是直接 socket/RPC**：对象发现、权限控制和事件分发统一，服务之间不硬编码地址。
@@ -117,6 +159,10 @@ ubus 本身没有业务状态机，只有对象生命周期：**未注册 → �
 - **代价**：调用链跨进程，排障要同时看 client、ubusd、provider 三处。
 - **不适用**：高频大数据传输不适合走 ubus；用专门协议或共享内存。
 - **常见误判**：把事件当消息队列；订阅者离线期间的事件不会补发。
+
+> **推论**：ubus 事件只适合“通知”，不适合“状态传递”。需要可靠决策的地方，一律**收到事件后再查一次对象状态**——事件可能丢、可能晚，查询拿到的是当前事实。
+
+> **边界**：`ubus call` 没有内建超时，provider 卡住时客户端会一直等。调用方要么自己加超时，要么接受“总线调用可能永久挂起”这个事实。
 
 ## 7 · 与相邻主题的关系
 

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="720" viewBox="0 0 1160 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1160" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1124" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 语音媒体链：发送、网络、接收三段</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上排发送、中间网络、下排接收。抖动缓冲在解码之前，是唯一允许主动加时延的地方。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">编码决定上限，网络决定实际听到多少。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">采集/编码</text>
+<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">网络损伤</text>
+<line x1="254.6" y1="142" x2="284.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="292.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">恢复/播放</text>
+<text x="40" y="186" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">发送侧</text>
+<rect x="40" y="200" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="40" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">采样</text>
+<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">8 / 16 / 48 kHz</text>
+<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">决定带宽上限</text>
+<line x1="198" y1="241" x2="220" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="220,241 211,236.5 211,245.5" fill="#94a3b8"/>
+<rect x="220" y="200" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="220" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="233" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">量化 / PCM</text>
+<text x="233" y="236" font-size="9.6" fill="#334155" xml:space="preserve">G.711：8 bit 对数</text>
+<text x="233" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">64 kbps</text>
+<line x1="378" y1="241" x2="400" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="400,241 391,236.5 391,245.5" fill="#94a3b8"/>
+<rect x="400" y="200" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="400" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="413" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">编码</text>
+<text x="413" y="236" font-size="9.6" fill="#334155" xml:space="preserve">AMR-WB / EVS / Opus</text>
+<text x="413" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">12~24 kbps</text>
+<line x1="558" y1="241" x2="580" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="580,241 571,236.5 571,245.5" fill="#94a3b8"/>
+<rect x="580" y="200" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="580" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="593" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">打包</text>
+<text x="593" y="236" font-size="9.6" fill="#334155" xml:space="preserve">RTP + UDP + IP</text>
+<text x="593" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">20 ms 一包</text>
+<rect x="40" y="320" width="1080" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="40" y="320" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="53" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IP 网络：时延 / 抖动 / 丢包（语音只等 20~60 ms，不等重传）</text>
+<text x="1111" y="339" font-size="10.2" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="end">损伤</text>
+<text x="53" y="356" font-size="9.6" fill="#334155" xml:space="preserve">排队、拥塞、无线丢包都在这一段发生；QoS 与缓冲只能缓解，不能消除。</text>
+<text x="40" y="430" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">接收侧</text>
+<rect x="40" y="444" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="444" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="53" y="463" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">抖动缓冲</text>
+<text x="53" y="480" font-size="9.6" fill="#334155" xml:space="preserve">重排 + 等一等</text>
+<text x="53" y="495.4" font-size="9.6" fill="#334155" xml:space="preserve">深度自适应</text>
+<line x1="198" y1="485" x2="208" y2="485" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="208,485 199,480.5 199,489.5" fill="#94a3b8"/>
+<rect x="208" y="444" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="208" y="444" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="221" y="463" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">解码</text>
+<text x="221" y="480" font-size="9.6" fill="#334155" xml:space="preserve">按 PT 解出 PCM</text>
+<text x="221" y="495.4" font-size="9.6" fill="#334155" xml:space="preserve">转码会再加时延</text>
+<line x1="366" y1="485" x2="376" y2="485" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="376,485 367,480.5 367,489.5" fill="#94a3b8"/>
+<rect x="376" y="444" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="376" y="444" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="389" y="463" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PLC / FEC</text>
+<text x="389" y="480" font-size="9.6" fill="#334155" xml:space="preserve">补丢包</text>
+<text x="389" y="495.4" font-size="9.6" fill="#334155" xml:space="preserve">连续丢包就失效</text>
+<line x1="534" y1="485" x2="544" y2="485" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="544,485 535,480.5 535,489.5" fill="#94a3b8"/>
+<rect x="544" y="444" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="544" y="444" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="557" y="463" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">回声消除</text>
+<text x="557" y="480" font-size="9.6" fill="#334155" xml:space="preserve">AEC</text>
+<text x="557" y="495.4" font-size="9.6" fill="#334155" xml:space="preserve">依赖低时延</text>
+<line x1="659" y1="282" x2="659" y2="320" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="659,320 663.5,311 654.5,311" fill="#d97706"/>
+<line x1="140" y1="390" x2="140" y2="444" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="140,444 144.5,435 135.5,435" fill="#d97706"/>
+<rect x="40" y="560" width="1080" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="590" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="614" font-size="10.2" fill="#334155" xml:space="preserve">· 发和收两端都可能引入损伤：发送端打包不均匀也是“抖动”，不一定是网络。</text>
+<text x="56" y="632" font-size="10.2" fill="#334155" xml:space="preserve">· 缓冲越深越稳、但时延越大；只增不减的缓冲会让通话“越打越延迟”。</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">图源：ITU-T G.711/G.107、3GPP 26.071/26.171、IETF RFC 3550/6716；课程材料《VoLTE 笔记》。</text>
+</svg>

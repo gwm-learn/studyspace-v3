@@ -65,6 +65,24 @@ layer: 22-OpenWrt/03-网络数据面
 | 通用 | `metric` | 路由优先级 | 多 WAN 选路关键 |
 | 通用 | `defaultroute` | 是否安装默认路由 | 不是所有 proto 都支持 |
 
+四个最小配置（同一份 `network` 里换 proto 即可）：
+
+```text
+config interface 'wan'
+	option device 'wan'
+	option proto 'pppoe'
+	option username 'user@isp'
+	option password 'pass'
+	option ipv6 'auto'
+	option peerdns '1'
+
+# DHCP：option proto 'dhcp'
+# 静态：option proto 'static' + ipaddr/netmask/gateway
+# 5G：  option proto 'qmi'（或 mbim）+ device/apn
+```
+
+> **边界**：`peerdns '1'` 会让运营商下发的 DNS 覆盖本地配置；想用自己的 DNS，就设 `peerdns '0'` 并显式写 `list dns`。
+
 ## 4 · 接入与收敛流程
 
 ![图 05 · WAN 接入：四种 proto 共用一套接口状态机](images/图05-WAN接入.svg)
@@ -80,6 +98,15 @@ layer: 22-OpenWrt/03-网络数据面
 3. IPCP/IPv6CP 协商地址与 DNS。
 4. netifd 写入地址、默认路由，接口进入 UP。
 5. 保活失败时按 keepalive 策略重拨。
+
+**MTU 为什么是 1492**：PPPoE 在以太网上多出 8 字节封装（6 字节 PPPoE + 2 字节 PPP 协议），1500 − 8 = 1492。配成 1500 会出现“能 ping、不能开网页”——小包没事，大包被丢又收不到 ICMP 分片消息。
+
+对应动作有两个，缺一个就会踩坑：
+
+| 动作 | 作用 | 边界 |
+| --- | --- | --- |
+| 接口 MTU/MRU 设 1492 | 本机发出的包不超链路 | 只影响本机，管不了对端 |
+| 开 MSS clamping（防火墙 `mtu_fix`） | 把经过的 TCP SYN 的 MSS 改小 | 对 UDP/ICMP 无效，PMTUD 仍可能失败 |
 
 ### 4.2 DHCP/静态/5G 路径
 
@@ -98,6 +125,17 @@ layer: 22-OpenWrt/03-网络数据面
 | 5G 不拨号 | APN/PIN/驱动/注册失败 | 查模组状态与信号 |
 | 双 WAN 不切换 | metric/规则/mwan3 配置 | 查路由表与健康检查 |
 
+**“拨上了但上不了网”分段测**，每段回答一个问题：
+
+| 步骤 | 测什么 | 通了说明 | 不通指向 |
+| --- | --- | --- | --- |
+| ① 对端网关 | ping PPP 对端地址 | 会话与二层正常 | PPP 协商/线路 |
+| ② 公网地址 | ping 8.8.8.8 | 默认路由与 SNAT 通 | 路由/防火墙/NAT |
+| ③ DNS | nslookup 一个域名 | DNS 解析正常 | peerdns/上游 DNS |
+| ④ 大包 | 访问网页或大文件 | 全链路正常 | 只有大包失败 → MTU/MSS |
+
+> **推论**：`ping 8.8.8.8` 通、网页打不开，问题在 DNS 或 MTU，不在“网络断”。这个组合出现时不要重拨，先做第③④步。
+
 ## 5 · 状态机与定时器
 
 PPPoE 有明确状态机：发现 → 会话 → 认证 → 网络层协商 → 运行 → 终止；DHCP 有租约状态（INIT/REQUESTING/BOUND/RENEWING/REBINDING）；5G 有模组注册与 PDP 激活状态。定时器包括 PPP 保活、DHCP 续约、5G 重连与健康检查。
@@ -109,6 +147,10 @@ PPPoE 有明确状态机：发现 → 会话 → 认证 → 网络层协商 → 
 - **代价**：接入问题常跨物理层、认证、路由三层，定位需要分段。
 - **不适用**：需要链路层桥接/透传的场景，不应让 OpenWrt 做三层终结。
 - **常见误判**：把“拨号成功”当成“网络可用”；DNS、NAT、防火墙任一环都可能断。
+
+> **推论**：四种 proto 的差异都收敛在“地址 + 默认路由 + DNS + ifup 事件”四件事上。所以排障不必按 proto 各写一套：先看这四件事齐不齐，再回头看具体 proto。唯一例外是 PPPoE 的 MTU——它是链路层约束，不会体现在地址上。
+
+> **边界**：MTU 1492 是 IPv4+PPPoE 的常见值；IPv6、PPPoA、以及运营商特殊封装可能不同，以会话协商结果为准。
 
 ## 7 · 与相邻主题的关系
 

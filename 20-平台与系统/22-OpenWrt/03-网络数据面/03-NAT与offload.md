@@ -71,6 +71,15 @@ layer: 22-OpenWrt/03-网络数据面
 
 判断口诀：**出向共享上网看 SNAT/MASQUERADE，入向发布服务看 DNAT，回环访问看 reflection。**
 
+conntrack 表项是 NAT 排障的主证据（字段随内核版本略有差异）：
+
+```text
+tcp 6 431999 ESTABLISHED src=192.168.1.10 dst=203.0.113.5 sport=51234 dport=443 \
+    src=203.0.113.5 dst=198.51.100.7 sport=443 dport=51234 [ASSURED]
+```
+
+前一组是“原始方向”，后一组是“回程改写后的方向”。**只看第一组会以为没做 NAT，看第二组才知道源地址被换成了公网地址。**
+
 ## 4 · 首包与快路径流程
 
 ![图 04 · NAT 与 offload：首包走栈，后续包走快路径](images/图04-NAT-offload.svg)
@@ -87,6 +96,14 @@ layer: 22-OpenWrt/03-网络数据面
 4. POSTROUTING 命中 SNAT/MASQUERADE，改源地址。
 5. 后续包查 conntrack 直接翻译；若启用 offload，则进入 flowtable 快路径。
 
+怎么判断“是不是走了快路径”：
+
+| 证据 | 含义 | 边界 |
+| --- | --- | --- |
+| `conntrack -L` 里出现 `[OFFLOAD]` 标记 | 该连接已被卸载 | 标记名随内核版本变化 |
+| nftables/iptables 计数只涨 1 | 首包之后不再过规则 | 正常现象，不是规则失效 |
+| `tc -s qdisc` 统计远低于实际流量 | 队列被绕过 | QoS 与 offload 冲突的直接证据 |
+
 ### 4.2 异常分支
 
 | 现象 | 原因 | 处理方向 |
@@ -96,6 +113,15 @@ layer: 22-OpenWrt/03-网络数据面
 | 多 WAN 源地址错 | MASQUERADE 跟随了错误出接口 | 查路由与 zone 绑定 |
 | 限速/统计失效 | offload 命中 | 关闭 offload 或改用硬件队列 |
 | 新连接偶发失败 | conntrack 表满 | 扩表或降低超时 |
+
+**“NAT 不生效”先分清是首包还是后续包**：
+
+| 现象 | 说明 | 判据 |
+| --- | --- | --- |
+| 计数器只涨 1 | 后续包走 conntrack，正常 | `conntrack -L` 有对应连接 |
+| 首包就没命中 | 规则/zone/接口不匹配 | `nft list` 看规则位置与 zone |
+| 首包命中、回程不通 | 回程被防火墙或路由挡 | 看回程方向与 `reflection` |
+| 连接在、流量断 | 连接老化或快路径问题 | 看超时与 `[OFFLOAD]` |
 
 ## 5 · 状态机与定时器
 
@@ -108,6 +134,10 @@ layer: 22-OpenWrt/03-网络数据面
 - **代价**：offload 绕过部分 netfilter 钩子，导致计数、mangle、QoS 行为与预期不一致。
 - **不适用**：需要逐包策略、深度检测或精确计费的场景，不宜启用硬件 offload。
 - **常见误判**：看到 NAT 规则计数器只涨 1 就以为规则失效；首包之后由 conntrack 处理是正常现象。
+
+> **推论**：offload 与“逐包处理”的能力是互斥的。需要 mangle 改标记、需要 tc 限速、需要精确计费或 DPI 时，offload 必须关；反过来，追求千兆转发时就得接受“计数不准、QoS 打折”。这不是配置错误，是架构取舍。
+
+> **边界**：`[OFFLOAD]` 标记只说明软件 flowtable 命中；硬件 offload 可能连 conntrack 表项都不再更新，此时只能用接口计数或交换机统计判断流量。
 
 ## 7 · 与相邻主题的关系
 

@@ -10,7 +10,7 @@ layer: 22-OpenWrt/01-构建与包管理
 
 一句话结论：镜像不是编译的“副产品”，而是**由 Device/Profile 配方显式拼装**出来的：内核、rootfs、DTB/引导件三条输入，按启动介质选择 FIT、UBI 或裸镜像格式，再写入分区布局和升级元数据。
 
-> 本篇定位：讲镜像配方的结构、常见产物与失败边界。具体 SoC 的 BL2/FIP、分区偏移和 DTS 细节放到 [30-平台与芯片](../../../30-平台与芯片/.readme.md)；升级流程见 [05-升级与恢复](../05-升级与恢复/.readme.md)。
+> 本篇定位：讲镜像配方的结构、常见产物与失败边界。具体 SoC 的 BL2/FIP、分区偏移和 DTS 细节放到 [40-平台与芯片](../../../40-平台与芯片/.readme.md)；升级流程见 [05-升级与恢复](../05-升级与恢复/.readme.md)。
 
 ## 目录
 
@@ -63,6 +63,22 @@ Kernel + RootFS + DTB/引导件
 | `compat_version` | 设备兼容性版本 | 分区布局变更时必须递增 |
 | `IMAGE_SIZE` | 镜像大小限制 | 超限在拼装阶段报错，不是编译错误 |
 
+配方在 `target/linux/<target>/image/Makefile` 里长这样（结构示意，字段随分支变化）：
+
+```makefile
+define Device/example_board
+  DEVICE_VENDOR := Example
+  DEVICE_MODEL := Board v1
+  DEVICE_DTS := example-board
+  KERNEL_IN_UBI := 1
+  IMAGES := sysupgrade.bin factory.bin
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += example_board
+```
+
+三行决定三件事：`DEVICE_DTS` 决定用哪份设备树，`IMAGES` 决定产出哪几种镜像，`append-metadata` 决定能不能被 sysupgrade 校验。
+
 ## 4 · 生成流程
 
 ![图 05 · 镜像生成：内核、rootfs 与设备定义汇合](images/图05-镜像生成.svg)
@@ -79,6 +95,15 @@ Kernel + RootFS + DTB/引导件
 4. 写入元数据（设备名、版本、兼容性），生成 `sysupgrade` 与 `factory` 两类产物。
 5. 产物落在 `bin/targets/<target>/<subtarget>/`，同时生成校验文件。
 
+四种产物用途不同，别混：
+
+| 产物 | 用在哪 | 判据 |
+| --- | --- | --- |
+| `sysupgrade.*` | 设备上保留配置升级 | 带 fwtool 元数据、分区名与板型匹配 |
+| `factory.*` | 首次烧录、救援 | 含完整分区/引导件，不依赖设备上的旧系统 |
+| `initramfs.*` | 内存运行、调试 | 不写 flash，重启即复原 |
+| `*.itb` | FIT 容器（内核+DTB+rootfs） | 引导程序必须支持 FIT |
+
 ### 4.2 异常分支
 
 | 现象 | 原因 | 处理方向 |
@@ -88,6 +113,15 @@ Kernel + RootFS + DTB/引导件
 | sysupgrade 拒绝 | 设备名/兼容性/镜像类型不匹配 | 检查元数据与 `compat_version` |
 | 工厂镜像能烧、升级镜像不能 | 两种镜像的分区假设不同 | 对照 Device 配方中的 IMAGE 定义 |
 | 改分区后旧配置丢失 | overlay 位置变化 | 升级前确认配置备份与迁移策略 |
+
+“烧进去不启动”按串口日志的顺序查，别先改配方：
+
+| 步骤 | 看什么 | 判据 | 答错的后果 |
+| --- | --- | --- | --- |
+| ① 有没有输出 | U-Boot/内核串口日志 | 完全无输出：引导件或分区错 | 直接改 rootfs，白改 |
+| ② 引导到哪一步 | U-Boot 能否加载内核 | 停在 loading：偏移/格式不对 | 把“加载失败”当“内核 panic” |
+| ③ 内核是否 panic | 找不到 rootfs / 驱动报错 | 挂载失败：分区名或 rootfs 格式 | 去调应用配置，方向错 |
+| ④ 用户态是否起来 | init/procd 日志 | 起来了但网络不通：配置问题 | 继续查镜像，浪费时间 |
 
 ## 5 · 状态机与定时器
 
@@ -101,6 +135,10 @@ Kernel + RootFS + DTB/引导件
 - **不适用**：只改 rootfs 内文件时，不必重做镜像；用 overlay 或 opkg 更快。
 - **常见误判**：把“镜像能烧进去”当成“适配完成”；启动、网络、升级三条链路都要验证。
 
+> **推论**：`compat_version` 是“分区布局的版本号”，不是固件版本号。改了分区、换了 rootfs 格式却不递增它，sysupgrade 会认为新镜像与旧布局兼容，把镜像写进错误的分区——这类问题在升级后才暴露，比烧录失败更危险。
+
+> **边界**：`factory` 镜像“能烧”不代表“能升级”。两者的分区假设常不同，验证升级必须用 `sysupgrade` 镜像跑一遍完整流程。
+
 ## 7 · 与相邻主题的关系
 
 | 相邻对象 | 关系 |
@@ -109,7 +147,7 @@ Kernel + RootFS + DTB/引导件
 | [02-config 配置原理](./02-config配置原理.md) | Device 选择如何进入 `.config` |
 | [05-ImageBuilder、SDK 与 opkg](./05-ImageBuilder-SDK与opkg.md) | 用预编译包重新拼镜像 |
 | [05-升级与恢复/01-sysupgrade](../05-升级与恢复/01-sysupgrade.md) | 镜像如何被写入设备 |
-| [30-平台与芯片](../../../30-平台与芯片/.readme.md) | BL2/FIP、DTS、分区偏移的厂商差异 |
+| [40-平台与芯片](../../../40-平台与芯片/.readme.md) | BL2/FIP、DTS、分区偏移的厂商差异 |
 
 一句话边界：本篇讲“镜像怎么拼”，不讲“某块板的分区偏移是多少”。
 

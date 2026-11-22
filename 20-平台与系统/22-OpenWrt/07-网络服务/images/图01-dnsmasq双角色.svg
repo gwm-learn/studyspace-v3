@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="680" viewBox="0 0 1060 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1060" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · dnsmasq 的双角色：DHCP 发地址，DNS 转发并缓存</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左边 LAN 终端，中间 dnsmasq（DHCP 67/68、DNS 53），右边上游 DNS。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">上游 DNS 由 netifd 写入 resolv.conf.auto；租约与缓存都在 /tmp，重启即失。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">DHCP</text>
+<line x1="124.4" y1="142" x2="154.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="162.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">DNS</text>
+<line x1="206.2" y1="142" x2="236.2" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="244.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">本地状态</text>
+<rect x="40" y="220" width="220" height="96" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="220" width="4.5" height="96" fill="#475569" rx="2"/>
+<text x="53" y="239" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LAN 终端</text>
+<text x="53" y="256" font-size="9.6" fill="#334155" xml:space="preserve">DHCP 客户端</text>
+<text x="53" y="271.4" font-size="9.6" fill="#334155" xml:space="preserve">DNS 客户端</text>
+<rect x="360" y="210" width="300" height="116" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="360" y="210" width="4.5" height="116" fill="#4f46e5" rx="2"/>
+<text x="373" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">dnsmasq</text>
+<text x="373" y="246" font-size="9.6" fill="#334155" xml:space="preserve">DHCP 67/68：发地址</text>
+<text x="373" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">DNS 53：转发 + 缓存</text>
+<text x="373" y="276.8" font-size="9.6" fill="#334155" xml:space="preserve">/etc/config/dhcp</text>
+<rect x="770" y="220" width="240" height="96" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="770" y="220" width="4.5" height="96" fill="#0f9d58" rx="2"/>
+<text x="783" y="239" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">上游 DNS</text>
+<text x="783" y="256" font-size="9.6" fill="#334155" xml:space="preserve">来自 WAN/手动 server</text>
+<rect x="360" y="390" width="300" height="90" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="360" y="390" width="4.5" height="90" fill="#0f9d58" rx="2"/>
+<text x="373" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">netifd</text>
+<text x="373" y="426" font-size="9.6" fill="#334155" xml:space="preserve">接口/地址/路由</text>
+<text x="373" y="441.4" font-size="9.6" fill="#334155" xml:space="preserve">写 resolv.conf.auto</text>
+<rect x="40" y="390" width="240" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="40" y="390" width="4.5" height="90" fill="#d97706" rx="2"/>
+<text x="53" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">本地状态</text>
+<text x="53" y="426" font-size="9.6" fill="#334155" xml:space="preserve">/tmp/dhcp.leases</text>
+<text x="53" y="441.4" font-size="9.6" fill="#334155" xml:space="preserve">DNS 缓存、/etc/hosts</text>
+<line x1="260" y1="268" x2="360" y2="268" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="360,268 351,263.5 351,272.5" fill="#4f46e5"/>
+<text x="318" y="262" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">DHCP</text>
+<line x1="360" y1="300" x2="260" y2="300" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="260,300 269,304.5 269,295.5" fill="#0f9d58"/>
+<text x="318" y="294" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">DNS</text>
+<line x1="660" y1="258" x2="770" y2="258" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="770,258 761,253.5 761,262.5" fill="#0f9d58"/>
+<text x="723" y="252" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">转发</text>
+<line x1="510" y1="390" x2="510" y2="326" stroke="#0f9d58" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="510,326 505.5,335 514.5,335" fill="#0f9d58"/>
+<text x="518" y="352" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">上游列表</text>
+<line x1="400" y1="326" x2="200" y2="390" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="200,390 209.94,391.54 207.2,382.97" fill="#d97706"/>
+<text x="308" y="352" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">读写</text>
+<rect x="40" y="520" width="970" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="550" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="574" font-size="10.2" fill="#334155" xml:space="preserve">· DHCP 和 DNS 是同一进程的两个角色：一个坏了不代表另一个坏。</text>
+<text x="56" y="592" font-size="10.2" fill="#334155" xml:space="preserve">· IPv6 的 RA/DHCPv6 默认由 odhcpd 承担，不在这张图里。</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">图源：OpenWrt 官方 dnsmasq/odhcpd 文档；RFC 2131 / RFC 1035。</text>
+</svg>

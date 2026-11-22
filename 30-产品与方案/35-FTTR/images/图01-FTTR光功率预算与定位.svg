@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="660" viewBox="0 0 1080 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · FTTR 光功率预算与故障定位：从左到右逐段扣</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">预算是一条减法链：发端功率 → 主干损耗 → 分光器损耗 → 分支损耗 → 收端余量。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">定位按「主干—分支—从网关—终端」四段收敛，不要一上来换设备。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">预算链</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">余量</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">超限</text>
+<rect x="40" y="190" width="520" height="46" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="216.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">OLT 发端功率</text>
+<text x="550" y="216.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">起点</text>
+<rect x="40" y="244" width="520" height="46" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="270.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">主干光纤 + 活动连接器</text>
+<text x="550" y="270.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">扣损耗</text>
+<rect x="40" y="298" width="520" height="46" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.1"/>
+<text x="52" y="324.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">分光器（1:N）</text>
+<text x="550" y="324.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">扣损耗</text>
+<rect x="40" y="352" width="520" height="46" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="378.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">分支光纤到从网关</text>
+<text x="550" y="378.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">扣损耗</text>
+<rect x="40" y="406" width="520" height="46" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="52" y="432.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">收端余量（高于灵敏度）</text>
+<text x="550" y="432.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">判定</text>
+<text x="620" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">故障定位四段</text>
+<rect x="620" y="196" width="380" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="632" y="221.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">① 主干：查 OLT 口与总光功率</text>
+<text x="990" y="221.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">先看</text>
+<rect x="620" y="246" width="380" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="632" y="271.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">② 分支：查分光器端口</text>
+<text x="990" y="271.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">再看</text>
+<rect x="620" y="296" width="380" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="632" y="321.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">③ 从网关：查收光与注册</text>
+<text x="990" y="321.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">再看</text>
+<rect x="620" y="346" width="380" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="632" y="371.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">④ 终端：查 Wi-Fi / 网线</text>
+<text x="990" y="371.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">最后</text>
+<rect x="40" y="478" width="1000" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="508" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="532" font-size="10.2" fill="#334155" xml:space="preserve">分光比、光纤长度、熔接点、连接器脏污都会吃余量；任何一项异常，最后都表现为「收光偏低」。</text>
+<text x="56" y="550" font-size="10.2" fill="#334155" xml:space="preserve">先量收光再换设备：收光正常但注册失败，才轮到认证/版本问题。</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/35-FTTR/01-FTTR光层与运维.md</text>
+</svg>

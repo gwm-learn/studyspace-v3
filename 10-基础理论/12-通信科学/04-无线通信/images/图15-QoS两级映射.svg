@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="620" viewBox="0 0 1260 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1260" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1224" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 15 · 4G 承载与 5G 两级映射：参数在哪一层落地</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">4G：一条 EPS 承载端到端一套参数，空口一条 DRB 基本一一对应。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">5G：多条 QoS 流由 SDAP 复用到较少的 DRB，gNB 有映射自由度。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">业务流</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">核心网标记</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">接入网映射</text>
+<line x1="365" y1="142" x2="395" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="403" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">执行点</text>
+<text x="40" y="180" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">4G：一条承载一套参数（QCI / ARP / GBR）</text>
+<rect x="40" y="194" width="158" height="92" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="194" width="4.5" height="92" fill="#475569" rx="2"/>
+<text x="53" y="213" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IP 业务流</text>
+<text x="53" y="230" font-size="9.6" fill="#334155" xml:space="preserve">语音 / 视频 / 网页</text>
+<line x1="198" y1="240" x2="222" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="222,240 213,235.5 213,244.5" fill="#94a3b8"/>
+<rect x="222" y="194" width="158" height="92" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="222" y="194" width="4.5" height="92" fill="#0f9d58" rx="2"/>
+<text x="235" y="213" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">EPS 承载</text>
+<text x="235" y="230" font-size="9.6" fill="#334155" xml:space="preserve">默认承载 或 专用承载</text>
+<text x="235" y="245.4" font-size="9.6" fill="#334155" xml:space="preserve">QCI + ARP + GBR/AMBR</text>
+<line x1="380" y1="240" x2="404" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="404,240 395,235.5 395,244.5" fill="#94a3b8"/>
+<rect x="404" y="194" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="404" y="194" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="417" y="213" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">E-RAB</text>
+<text x="417" y="230" font-size="9.6" fill="#334155" xml:space="preserve">空口 + S1 那一段</text>
+<text x="417" y="245.4" font-size="9.6" fill="#334155" xml:space="preserve">逐段映射</text>
+<line x1="562" y1="240" x2="586" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="586,240 577,235.5 577,244.5" fill="#94a3b8"/>
+<rect x="586" y="194" width="158" height="92" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="586" y="194" width="4.5" height="92" fill="#d97706" rx="2"/>
+<text x="599" y="213" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DRB</text>
+<text x="599" y="230" font-size="9.6" fill="#334155" xml:space="preserve">QCI 1 语音 / 5 信令 / 9 上网</text>
+<text x="40" y="322" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">5G：核心网管流、接入网管映射（QFI / 5QI）</text>
+<rect x="40" y="336" width="158" height="92" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="336" width="4.5" height="92" fill="#475569" rx="2"/>
+<text x="53" y="355" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IP 业务流</text>
+<text x="53" y="372" font-size="9.6" fill="#334155" xml:space="preserve">多条业务并存</text>
+<line x1="198" y1="382" x2="216" y2="382" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="216,382 207,377.5 207,386.5" fill="#94a3b8"/>
+<rect x="216" y="336" width="158" height="92" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="216" y="336" width="4.5" height="92" fill="#0f9d58" rx="2"/>
+<text x="229" y="355" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">QoS 流 ×N</text>
+<text x="229" y="372" font-size="9.6" fill="#334155" xml:space="preserve">每条流一个 QFI</text>
+<text x="229" y="387.4" font-size="9.6" fill="#334155" xml:space="preserve">5QI + ARP + GBR</text>
+<line x1="374" y1="382" x2="392" y2="382" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="392,382 383,377.5 383,386.5" fill="#94a3b8"/>
+<rect x="392" y="336" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="392" y="336" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="405" y="355" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">SDAP 映射</text>
+<text x="405" y="372" font-size="9.6" fill="#334155" xml:space="preserve">流 → DRB</text>
+<text x="405" y="387.4" font-size="9.6" fill="#334155" xml:space="preserve">gNB 决定</text>
+<line x1="550" y1="382" x2="568" y2="382" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="568,382 559,377.5 559,386.5" fill="#94a3b8"/>
+<rect x="568" y="336" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="568" y="336" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="581" y="355" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DRB ×M（M&lt;N）</text>
+<text x="581" y="372" font-size="9.6" fill="#334155" xml:space="preserve">QoS 相近的流合流</text>
+<line x1="726" y1="382" x2="744" y2="382" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="744,382 735,377.5 735,386.5" fill="#94a3b8"/>
+<rect x="744" y="336" width="158" height="92" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="744" y="336" width="4.5" height="92" fill="#d97706" rx="2"/>
+<text x="757" y="355" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">gNB 调度器</text>
+<text x="757" y="372" font-size="9.6" fill="#334155" xml:space="preserve">优先级 / GBR / 时延预算</text>
+<rect x="40" y="462" width="1180" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="492" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="516" font-size="10.2" fill="#334155" xml:space="preserve">· 4G 的粒度是“承载”，5G 的粒度是“流”：核心网不再规定 DRB，只给每条流打 QFI。</text>
+<text x="56" y="534" font-size="10.2" fill="#334155" xml:space="preserve">· AMBR 是总闸、GBR 是保底；两者冲突时网络要么拒绝建立，要么降级。</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 23.401 / 23.501 / 23.503；课程材料《5G 基础信令培训》QoS 两级映射。</text>
+</svg>

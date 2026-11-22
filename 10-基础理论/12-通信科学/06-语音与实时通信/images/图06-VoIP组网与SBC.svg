@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="560" viewBox="0 0 1260 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1260" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1224" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 06 · VoIP 组网：SBC 在边界上终结信令与媒体</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上面是 SIP 信令，下面是 RTP 媒体。SBC 两侧是两条独立对话。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">NAT/防火墙只需为 SBC 放行，不必为每台话机放行。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">SIP 信令</text>
+<line x1="146.4" y1="142" x2="176.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="184.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">RTP 媒体</text>
+<line x1="256.8" y1="142" x2="286.8" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="294.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">PSTN 侧</text>
+<rect x="40" y="200" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="40" y="200" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IP 话机 / 软终端</text>
+<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">注册、拨号</text>
+<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">打 DSCP EF</text>
+<line x1="198" y1="246" x2="222" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="222,246 213,241.5 213,250.5" fill="#94a3b8"/>
+<rect x="222" y="200" width="158" height="92" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="222" y="200" width="4.5" height="92" fill="#d97706" rx="2"/>
+<text x="235" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">企业网 / NAT</text>
+<text x="235" y="236" font-size="9.6" fill="#334155" xml:space="preserve">只放 5060 会单通</text>
+<text x="235" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">媒体端口是关键</text>
+<line x1="380" y1="246" x2="404" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="404,246 395,241.5 395,250.5" fill="#94a3b8"/>
+<rect x="404" y="200" width="158" height="92" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="404" y="200" width="4.5" height="92" fill="#0f9d58" rx="2"/>
+<text x="417" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">SBC</text>
+<text x="417" y="236" font-size="9.6" fill="#334155" xml:space="preserve">拓扑隐藏、NAT 穿越</text>
+<text x="417" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">转码、安全、号码改写</text>
+<line x1="562" y1="246" x2="586" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="586,246 577,241.5 577,250.5" fill="#94a3b8"/>
+<rect x="586" y="200" width="158" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="586" y="200" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="599" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">运营商 SIP 中继</text>
+<text x="599" y="236" font-size="9.6" fill="#334155" xml:space="preserve">编码/号码/安全策略</text>
+<text x="599" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">按合同对接</text>
+<line x1="744" y1="246" x2="768" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="768,246 759,241.5 759,250.5" fill="#94a3b8"/>
+<rect x="768" y="200" width="158" height="92" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="768" y="200" width="4.5" height="92" fill="#475569" rx="2"/>
+<text x="781" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PSTN</text>
+<text x="781" y="236" font-size="9.6" fill="#334155" xml:space="preserve">经网关出网</text>
+<text x="781" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">E.164 号码</text>
+<line x1="119" y1="292" x2="483" y2="330" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="483,330 474.52,324.59 473.58,333.54" fill="#d97706"/>
+<text x="309" y="305" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">RTP（企业侧）</text>
+<line x1="483" y1="330" x2="847" y2="292" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="847,292 837.58,288.46 838.52,297.41" fill="#d97706"/>
+<text x="673" y="305" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">RTP（运营商侧）</text>
+<rect x="40" y="400" width="1180" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="430" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="454" font-size="10.2" fill="#334155" xml:space="preserve">· “能振铃、无声音”先查媒体端口与 SDP 地址，不要先怀疑编码。</text>
+<text x="56" y="472" font-size="10.2" fill="#334155" xml:space="preserve">· 媒体锚定让问题收敛在 SBC，但会增加带宽与单点风险；直通与否按业务分级。</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">图源：IETF RFC 3261/3550、ITU-T T.38；课程材料《VoIP 与 IPTV 业务》《语音网关》。</text>
+</svg>

@@ -74,6 +74,41 @@ feeds.conf ──update──► feeds/<name>/ ──install──► package/fe
 | `define Build/Compile` | 覆盖默认编译 | 清空后未实现，产物为空 |
 | `define Package/<name>/install` | 安装到 rootfs 暂存区 | 路径写错，镜像里找不到 |
 
+一个最小可编译的骨架（字段按实际包替换）：
+
+```makefile
+include $(TOPDIR)/rules.mk
+
+PKG_NAME:=hello
+PKG_VERSION:=1.0
+PKG_RELEASE:=1
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://example.com/src
+PKG_HASH:=0123456789abcdef...
+
+include $(INCLUDE_DIR)/package.mk
+
+define Package/hello
+  SECTION:=utils
+  CATEGORY:=Utilities
+  TITLE:=Hello demo
+  DEPENDS:=+libc
+endef
+
+define Build/Compile
+	$(MAKE) -C $(PKG_BUILD_DIR)
+endef
+
+define Package/hello/install
+	$(INSTALL_DIR) $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/hello $(1)/usr/bin/
+endef
+
+$(eval $(call BuildPackage,hello))
+```
+
+四段缺一不可：`rules.mk`（顶层变量）、`package.mk`（生命周期）、`Package/`（元数据与依赖）、`BuildPackage`（注册到构建系统）。**`$(1)` 是 install 阶段的暂存根目录**，路径必须写成 `$(1)/usr/bin` 这种绝对形式。
+
 ## 4 · 数据流与流程
 
 ![图 04 · feeds：先建索引，再装成符号链接](images/图04-feeds数据流.svg)
@@ -90,6 +125,16 @@ feeds.conf ──update──► feeds/<name>/ ──install──► package/fe
 4. `make menuconfig`：包出现在对应分类下，选中后写入 `.config`。
 5. 全量编译或 `make package/<name>/compile` 单包编译。
 
+feeds 的常用动作与判据：
+
+| 动作 | 命令 | 判据 |
+| --- | --- | --- |
+| 列出已装 feed | `./scripts/feeds list -n` | 名字与 `feeds.conf` 一致 |
+| 只更新一个 feed | `./scripts/feeds update <name>` | 该 feed 目录 commit 变化 |
+| 只装一个包 | `./scripts/feeds install <pkg>` | `package/feeds/<feed>/<pkg>` 链接出现 |
+| 搜包 | `./scripts/feeds search <kw>` | 结果来自 `.index`，索引旧则搜不到 |
+| 重装全部 | `update -a && install -a` | 检查是否引入不兼容的新包 |
+
 ### 4.2 异常分支
 
 | 现象 | 原因 | 处理方向 |
@@ -99,6 +144,14 @@ feeds.conf ──update──► feeds/<name>/ ──install──► package/fe
 | 编译时下载失败 | `PKG_SOURCE_URL` 失效、代理/证书 | 换镜像或本地放置源码包 |
 | 依赖缺失 | `DEPENDS` 未声明或 feed 未安装 | 补依赖并确认对应 feed 已 install |
 | 升级 feed 后大面积失败 | 主仓库与 feed 分支不匹配 | 固定匹配分支，记录 commit |
+
+“包能搜到但编不过”按三处查：
+
+| 步骤 | 查什么 | 判据 | 答错的后果 |
+| --- | --- | --- | --- |
+| ① 分支匹配 | 主仓库与 feed 是否同一 release | 两边 `git branch`/`git log` | 分支错位会缺 API、结构体变更 |
+| ② 补丁可用 | 上游升级后补丁是否还能打 | `make package/<pkg>/prepare` | 补丁冲突在 prepare 就报，不必等全量 |
+| ③ 源码校验 | `PKG_HASH` 是否随版本更新 | 日志里的 hash mismatch | 不改 hash 会反复下载失败 |
 
 ## 5 · 状态机与定时器
 
@@ -111,6 +164,10 @@ feeds.conf ──update──► feeds/<name>/ ──install──► package/fe
 - **代价**：多一层路径与索引，排查时要同时看 `feeds/`、`package/feeds/` 和 `.config`。
 - **不适用**：单个私有包、强耦合产品代码，直接放 `package/` 更简单，减少 feed 同步成本。
 - **常见误判**：把 `feeds install` 当成“安装到设备”；它只影响构建树，不碰设备 rootfs。
+
+> **推论**：私有包只有一两个时，放 `package/` 比建 feed 便宜——省掉 update/install 两级同步和 `.index` 过期问题。只有当包要独立发版、被多个产品复用时，feed 的代价才值得。
+
+> **边界**：feed 的 `install` 是“按索引建链接”，不会帮你解决依赖顺序；`DEPENDS` 写错时，菜单里可能能选，编译时才暴露。看到“依赖装了还报缺”，先查是不是两个 feed 提供了同名包。
 
 ## 7 · 与相邻主题的关系
 

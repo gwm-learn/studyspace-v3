@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="740" viewBox="0 0 1260 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1260" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1224" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 24 · 5G-A 与 6G：版本节奏和标准节点不是同一条线</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上排是 3GPP Release 的冻结/计划时间，下排是 ITU 与 WRC 的节点。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看哪些已经冻结（R15–R19），再看哪些还是计划（R20/R21）；两条线不能互相外推。</text>
+<text x="60" y="172" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">3GPP Release：R18–R20 是 5G-A，R21 才是 6G 规范</text>
+<line x1="60" y1="268" x2="1220" y2="268" stroke="#cbd5e1" stroke-width="1.8"/>
+<polygon points="142.86,263 137.86,268 142.86,273 147.86,268" fill="#475569"/>
+<text x="142.86" y="250" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">R15</text>
+<text x="142.86" y="236" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2019-06</text>
+<polygon points="308.57,263 303.57,268 308.57,273 313.57,268" fill="#475569"/>
+<text x="308.57" y="292" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">R16</text>
+<text x="308.57" y="306" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2020-07</text>
+<polygon points="474.29,263 469.29,268 474.29,273 479.29,268" fill="#475569"/>
+<text x="474.29" y="250" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">R17</text>
+<text x="474.29" y="236" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2022-06</text>
+<polygon points="640,263 635,268 640,273 645,268" fill="#4f46e5"/>
+<text x="640" y="292" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">R18</text>
+<text x="640" y="306" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2024-06 · 5G-A 首版</text>
+<polygon points="805.71,263 800.71,268 805.71,273 810.71,268" fill="#4f46e5"/>
+<text x="805.71" y="250" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">R19</text>
+<text x="805.71" y="236" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2025-12 · 5G-A 第二版</text>
+<polygon points="971.43,263 966.43,268 971.43,273 976.43,268" fill="#d97706"/>
+<text x="971.43" y="292" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">R20</text>
+<text x="971.43" y="306" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2027 · 5G-A 收尾 + 6G 研究</text>
+<polygon points="1137.14,263 1132.14,268 1137.14,273 1142.14,268" fill="#dc2626"/>
+<text x="1137.14" y="250" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">R21</text>
+<text x="1137.14" y="236" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2029-03 · ASN.1/OpenAPI 冻结</text>
+<text x="60" y="372" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">ITU / WRC：定框架、定频谱、再评估</text>
+<line x1="60" y1="468" x2="1220" y2="468" stroke="#cbd5e1" stroke-width="1.8"/>
+<polygon points="176,463 171,468 176,473 181,468" fill="#0f9d58"/>
+<text x="176" y="450" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">M.2160</text>
+<text x="176" y="436" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2023-11 · IMT-2030 框架</text>
+<polygon points="408,463 403,468 408,473 413,468" fill="#d97706"/>
+<text x="408" y="492" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">TPR 草案</text>
+<text x="408" y="506" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2026 · 待正式批准</text>
+<polygon points="640,463 635,468 640,473 645,468" fill="#d97706"/>
+<text x="640" y="450" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">WRC-27</text>
+<text x="640" y="436" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2027 · 候选频段决定</text>
+<polygon points="872,463 867,468 872,473 877,468" fill="#4f46e5"/>
+<text x="872" y="492" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">技术提案</text>
+<text x="872" y="506" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2029 初 · 3GPP 提交</text>
+<polygon points="1104,463 1099,468 1104,473 1109,468" fill="#dc2626"/>
+<text x="1104" y="450" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">IMT-2030 规范</text>
+<text x="1104" y="436" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">2030 中 · 完整系统定义</text>
+<rect x="60" y="540" width="1160" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="570" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">两条线的关系</text>
+<text x="76" y="594" font-size="10.2" fill="#334155" xml:space="preserve">3GPP 的 Release 日期是「协议冻结」，不是「商用开通」；ITU 的规范日期是「全球框架」，也不是「运营商建网」。</text>
+<text x="76" y="612" font-size="10.2" fill="#334155" xml:space="preserve">R20 同时承载 5G-A 收尾和 6G 研究，所以看到「R20 支持 6G」要先区分是研究项还是规范项。</text>
+<text x="76" y="630" font-size="10.2" fill="#334155" xml:space="preserve">WRC-27 之前，任何「6G 用某频段」的说法都只是提案；WRC 之后还要看各国牌照。</text>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP Releases 页面（R18–R21，访问 2026-11-22）、ITU-R M.2160、ITU WRC-27 议程。</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">注：2027 年之后的日期为 3GPP/ITU 公布的计划，可能调整。</text>
+</svg>

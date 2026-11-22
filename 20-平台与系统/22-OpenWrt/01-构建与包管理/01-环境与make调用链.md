@@ -62,6 +62,25 @@ make ──► 顶层 Makefile ──► toplevel.mk ──► 元数据扫描 �
 | `-jN` | 并行编译 | 全量构建 | 并行过高会放大未声明依赖的问题 |
 | `TOPDIR` | 源码根目录 | 全局 | 在包规则里不要假设当前目录 |
 
+两段式入口的判断逻辑很简单：
+
+| 进入方式 | `OPENWRT_BUILD` | 载入什么 | 结果 |
+| --- | --- | --- | --- |
+| 第一次 | 未设置 | 配置入口（Kconfig + 配置目标） | 生成/修改 `.config` |
+| 第二次 | `=1` | `rules.mk` + target/package 规则 | 真正编译 |
+
+所以 `make menuconfig` 和 `make -j8` 走的是两条入口；配置阶段报错和编译阶段报错，排查方向完全不同。
+
+**主机环境自检**（不满足时的报错往往很靠前）：
+
+| 项 | 要求 | 不满足的表现 |
+| --- | --- | --- |
+| 文件系统 | 大小写敏感 | 路径大小写冲突，编译随机失败、清理不干净 |
+| 主机 | Linux；macOS/Windows 用容器或 WSL2 | 原生不敏感文件系统上问题难复现 |
+| 依赖 | build-essential、gawk、git、rsync、python3、libncurses、zlib、libssl | `Build dependency: Please install ...` |
+| 磁盘 | 预留 20~30 GB | 编译到一半 `No space left on device` |
+| 用户 | 非 root | 产物属主混乱，后续清理困难 |
+
 ## 4 · 调用流程
 
 ![图 02 · make 调用链：从顶层到单个包](images/图02-make调用链.svg)
@@ -77,6 +96,18 @@ make ──► 顶层 Makefile ──► toplevel.mk ──► 元数据扫描 �
 3. **元数据扫描**：`prepare-tmpinfo` 调用 `scan.mk` 扫描 `target/linux` 与 `package/`，生成包与目标的临时索引。
 4. **再次进入**：`OPENWRT_BUILD=1` 后载入 `rules.mk`，按依赖构建工具链、内核、包。
 5. **单包重编**：`make package/<name>/compile V=s` 只走该包的规则，但仍依赖已就绪的 `staging_dir`。
+
+单包调试常用的几个目标（同一套前缀，替换 `<pkg>`）：
+
+| 目标 | 作用 | 判断什么 |
+| --- | --- | --- |
+| `make -n package/<pkg>/compile` | 只打印将执行的命令 | 确认变量展开是否正确，不浪费一次编译 |
+| `make package/<pkg>/prepare` | 解压源码、应用补丁 | 补丁冲突在这一步就暴露 |
+| `make package/<pkg>/compile V=s` | 编译（不安装） | 语法/链接错误 |
+| `make package/<pkg>/install` | 装进 staging 与包目录 | 文件清单、依赖打包 |
+| `make package/<pkg>/clean` | 删该包 `build_dir` | 改 Makefile/补丁后必须做 |
+
+> **推论**：`DEPENDS` 只决定“菜单里能不能选、装包时依赖谁”，不自动安排编译顺序。所以“单包编译找不到头文件”多半不是缺依赖声明，而是依赖还没装进 `staging_dir`；先编依赖，再编本包。
 
 ### 4.2 异常分支
 
@@ -94,11 +125,23 @@ make ──► 顶层 Makefile ──► toplevel.mk ──► 元数据扫描 �
 
 ## 6 · 设计取舍与边界
 
+**清理要分层做**，一上来 `dirclean` 会把可复用的工具链也删掉，下一次全量编译更慢：
+
+| 层级 | 典型命令 | 删掉什么 | 适用 |
+| --- | --- | --- | --- |
+| 单包 | `make package/<pkg>/clean` | 该包的 `build_dir` | 改包源码/补丁 |
+| 内核 | `make target/linux/clean` | 内核编译目录 | 改 DTS/内核补丁 |
+| 元数据 | `rm -rf tmp` | scan 生成的索引 | 菜单不更新、包找不到 |
+| 全量构建 | `make dirclean` | `build_dir`、`staging_dir`、`bin` | 工具链损坏、换 target |
+| 回到初始 | `make distclean` | 连 `.config`、下载缓存 | 复现“全新克隆”的构建 |
+
 - **为什么两段式**：配置目标需要在不加载完整编译规则的情况下运行，否则首次构建会陷入“要编译先配置、要配置先编译”的循环。
 - **为什么大量使用 include**：把通用规则集中，target 和 package 只描述差异；代价是调用链不直观，必须靠 `V=s` 和 `make -n` 观察。
 - **为什么包内再递归 make**：每个包可以有完全不同的构建系统（autotools、cmake、内核模块），统一入口只能放在包 Makefile。
 - **不适用**：只想改一个已安装的脚本或配置时，不必走整条构建链，直接在设备上改 overlay 更快，但不可复现。
 - **常见误判**：把“配置没生效”当成 make 缓存；实际上多数是 feeds 未安装或 target 选错。
+
+> **推论**：`-j` 放大的是“未声明依赖”，不是“并行能力”。随机失败先降到 `-j1`，能稳定复现就说明依赖图不完整——这时补依赖比换机器有用。
 
 ## 7 · 与相邻主题的关系
 
@@ -108,7 +151,7 @@ make ──► 顶层 Makefile ──► toplevel.mk ──► 元数据扫描 �
 | [02-config 配置原理](./02-config配置原理.md) | 解释 `.config` 如何被三级规则消费 |
 | [03-feeds 与包 Makefile](./03-feeds与包Makefile.md) | 解释包规则从哪里来 |
 | [04-镜像生成与 Device/Profile](./04-镜像生成与Device-Profile.md) | 编译完成后的拼装阶段 |
-| [60-软件开发/构建与调试](../../../60-软件开发/.readme.md) | 通用 Make/CMake 知识 |
+| [50-软件开发/构建与调试](../../../50-软件开发/.readme.md) | 通用 Make/CMake 知识 |
 
 一句话边界：本篇讲“make 怎么走”，不讲“某个包怎么编”。
 

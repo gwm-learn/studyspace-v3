@@ -61,6 +61,23 @@ layer: 22-OpenWrt/03-网络数据面
 | tagged/untagged | 出端口是否带标签 | 接终端通常 untagged，接交换机通常 tagged |
 | `bridge vlan` | 查看/配置端口 VLAN | 与 UCI 配置可能不同步 |
 
+DSA + VLAN 的现代写法（`bridge-vlan` 段）：
+
+```text
+config bridge-vlan
+	option device 'br-lan'
+	option vlan '10'
+	list ports 'lan1:u*'
+	list ports 'lan2:t'
+
+config interface 'vlan10'
+	option device 'br-lan.10'
+	option proto 'static'
+	option ipaddr '192.168.10.1'
+```
+
+端口后缀是语义：`u` 出向不带标签，`t` 带标签，`*` 表示该端口以此 VLAN 为 PVID（入向未打标签的帧归到它）。**`u*` 少了 `*`，入向帧就没有归属 VLAN，表现为“口亮但不通”。**
+
 ## 4 · 配置与转发流程
 
 ![图 03 · DSA 与 swconfig：交换机端口如何进入 Linux](images/图03-DSA.svg)
@@ -77,6 +94,15 @@ layer: 22-OpenWrt/03-网络数据面
 4. 桥查 FDB 转发；未知单播/广播泛洪到同 VLAN 成员。
 5. 上联流量经 CPU 口进入三层。
 
+验证按“端口 → 桥成员 → VLAN → FDB”逐层看：
+
+```text
+ip link show lan1            # 端口存在且 UP
+bridge link show br-lan      # 哪些口是桥成员、状态如何
+bridge vlan show             # 每个口的 VLAN 与 PVID/tagged
+bridge fdb show br-lan       # MAC 学到了没有
+```
+
 ### 4.2 异常分支
 
 | 现象 | 原因 | 处理方向 |
@@ -86,6 +112,15 @@ layer: 22-OpenWrt/03-网络数据面
 | tagged/untagged 错 | 对端期望与本地不一致 | 对照交换机侧配置 |
 | 桥有成员但不转发 | STP 阻塞、成员未 up | 查桥状态与端口状态 |
 | 换板后端口错位 | DTS 端口编号变化 | 以设备树/面板标签重新映射 |
+
+**“VLAN 不通 / 串通”四步查**：
+
+| 步骤 | 查什么 | 判据 | 答错的后果 |
+| --- | --- | --- | --- |
+| ① 端口在不在 | DSA 是否注册了该口 | `ip link` 有、dmesg 无报错 | 名字写错，配置全落空 |
+| ② 是不是桥成员 | 端口有没有加入目标桥 | `bridge link show` | 没入桥，VLAN 配了也不通 |
+| ③ PVID/tagged | 入向帧归哪个 VLAN、出向带不带标签 | `bridge vlan show` 的 `u*`/`t` | 少 `*` 或少了 `t`，对端收不到 |
+| ④ 对端期望 | 交换机侧是 access 还是 trunk | 对照对端配置 | 两边都“对”，但语义相反 |
 
 ## 5 · 状态机与定时器
 
@@ -98,6 +133,10 @@ layer: 22-OpenWrt/03-网络数据面
 - **代价**：DSA 下端口多、命名依赖 DTS，配置错误更隐蔽；swconfig 则工具与内核耦合。
 - **不适用**：纯软件桥（无交换机）不需要 DSA，直接用 `ip link`/bridge 即可。
 - **常见误判**：把 `lan1` 当成面板 LAN1；把 VLAN ID 当成端口号。
+
+> **推论**：DSA 把“交换机配置”变成了“Linux 网络配置”，所以排障工具也变了：不再有 `swconfig` 那种全局视图，而是 `ip link` + `bridge vlan` 两个标准工具各看一半。看不到全貌，往往是只用了其中一个。
+
+> **边界**：`lan1` 与面板丝印的对应关系写在 DTS 里，不在配置里。换板/换 DTS 后端口可能整体错位——这类问题看起来像“VLAN 配错”，实际是命名映射变了。
 
 ## 7 · 与相邻主题的关系
 

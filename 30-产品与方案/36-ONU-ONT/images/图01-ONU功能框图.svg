@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="560" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · ONU/ONT 功能框图：PON 侧、桥接、用户侧、管理</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左边是 PON 侧（光模块 + PON MAC），右边是用户侧（LAN/Wi-Fi/语音）；中间是桥接或路由。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">两条管理通道各管一半：OMCI 管 PON 业务，TR-069 管设备与业务参数。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">PON 侧</text>
+<line x1="135.4" y1="142" x2="165.4" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="173.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">转发</text>
+<line x1="219.4" y1="142" x2="249.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="257.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">用户侧</text>
+<line x1="314.4" y1="142" x2="344.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="352.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">管理</text>
+<rect x="40" y="210" width="240" height="120" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="40" y="210" width="4.5" height="120" fill="#0891b2" rx="2"/>
+<text x="53" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PON 侧</text>
+<text x="53" y="246" font-size="9.6" fill="#334155" xml:space="preserve">光模块（BOSA）</text>
+<text x="53" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">PON MAC / 成帧</text>
+<text x="53" y="276.8" font-size="9.6" fill="#334155" xml:space="preserve">GEM / T-CONT</text>
+<rect x="320" y="210" width="240" height="120" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="320" y="210" width="4.5" height="120" fill="#4f46e5" rx="2"/>
+<text x="333" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">桥接 / 路由</text>
+<text x="333" y="246" font-size="9.6" fill="#334155" xml:space="preserve">VLAN 转换</text>
+<text x="333" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">PPPoE / NAT（路由型）</text>
+<text x="333" y="276.8" font-size="9.6" fill="#334155" xml:space="preserve">组播复制</text>
+<rect x="600" y="210" width="240" height="120" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="600" y="210" width="4.5" height="120" fill="#0f9d58" rx="2"/>
+<text x="613" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">用户侧</text>
+<text x="613" y="246" font-size="9.6" fill="#334155" xml:space="preserve">LAN 交换</text>
+<text x="613" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">Wi-Fi</text>
+<text x="613" y="276.8" font-size="9.6" fill="#334155" xml:space="preserve">VoIP（FXS）</text>
+<rect x="880" y="210" width="200" height="120" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="880" y="210" width="4.5" height="120" fill="#d97706" rx="2"/>
+<text x="893" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">管理</text>
+<text x="893" y="246" font-size="9.6" fill="#334155" xml:space="preserve">OMCI（PON 业务）</text>
+<text x="893" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">TR-069（设备）</text>
+<line x1="280" y1="318" x2="320" y2="318" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="320,318 311,313.5 311,322.5" fill="#0891b2"/>
+<line x1="560" y1="318" x2="600" y2="318" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="600,318 591,313.5 591,322.5" fill="#0f9d58"/>
+<line x1="840" y1="318" x2="880" y2="318" stroke="#d97706" stroke-width="1.4" stroke-dasharray="3 3"/>
+<polygon points="880,318 871,313.5 871,322.5" fill="#d97706"/>
+<rect x="40" y="380" width="1040" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="410" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="434" font-size="10.2" fill="#334155" xml:space="preserve">桥接型不做 PPPoE/NAT，拨号交给下游路由器；路由型自己承担，故障面也更大。</text>
+<text x="56" y="452" font-size="10.2" fill="#334155" xml:space="preserve">「光路正常但上不了网」先分清是 OMCI 业务没配下来，还是 TR-069 参数没下发。</text>
+<text x="36" y="506" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="524" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/36-ONU-ONT/00-ONU-ONT系统架构.md</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="580" viewBox="0 0 1000 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1000" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="964" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · ONU 运行状态：五段就绪，注册≠业务可用</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">启动 → PON 注册 → OMCC → 业务配置 → 运营；前一段不过，后一段不成立。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">注册成功只说明光路和认证通了，业务不通要往 OMCI 配置查。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">就绪链</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">运营</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败/回退</text>
+<rect x="50" y="250" width="71.88" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="85.94" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">启动</text>
+<text x="85.94" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">自检 / 加载</text>
+<rect x="200" y="250" width="83.92" height="44" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1.2"/>
+<text x="241.96" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">PON 注册</text>
+<text x="241.96" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">同步/测距/授权</text>
+<rect x="370" y="250" width="73.6" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="406.8" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">OMCC</text>
+<text x="406.8" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">管理通道建立</text>
+<rect x="530" y="250" width="99.4" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="579.7" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">业务配置</text>
+<text x="579.7" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">ME / VLAN / GEM</text>
+<rect x="710" y="250" width="87.36" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="753.68" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">运营</text>
+<text x="753.68" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">上网/语音/IPTV</text>
+<line x1="121.88" y1="272" x2="200" y2="272" stroke="#475569" stroke-width="1.6"/>
+<polygon points="200,272 191,267.5 191,276.5" fill="#475569"/>
+<line x1="283.92" y1="272" x2="370" y2="272" stroke="#0891b2" stroke-width="1.6"/>
+<polygon points="370,272 361,267.5 361,276.5" fill="#0891b2"/>
+<line x1="443.6" y1="272" x2="530" y2="272" stroke="#4f46e5" stroke-width="1.6"/>
+<polygon points="530,272 521,267.5 521,276.5" fill="#4f46e5"/>
+<line x1="629.4" y1="272" x2="710" y2="272" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="710,272 701,267.5 701,276.5" fill="#0f9d58"/>
+<line x1="753.68" y1="294" x2="753.68" y2="340" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="753.68" y1="340" x2="85.94" y2="340" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="85.94" y1="340" x2="85.94" y2="294" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="85.94,294 81.44,303 90.44,303" fill="#dc2626"/>
+<text x="419.81" y="356" font-size="9.4" fill="#dc2626" xml:space="preserve" font-weight="600" text-anchor="middle">掉电 / 光路中断 / 被 OLT 注销 → 重启流程</text>
+<rect x="50" y="400" width="900" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="66" y="430" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="66" y="454" font-size="10.2" fill="#334155" xml:space="preserve">卡在 PON 注册：查光功率、SN/密码、OLT 侧模板。</text>
+<text x="66" y="472" font-size="10.2" fill="#334155" xml:space="preserve">卡在 OMCC 或业务配置：查 OMCI 通道与 ME 是否下发成功；这一步 TR-069 帮不上忙。</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/36-ONU-ONT/00-ONU-ONT系统架构.md</text>
+</svg>

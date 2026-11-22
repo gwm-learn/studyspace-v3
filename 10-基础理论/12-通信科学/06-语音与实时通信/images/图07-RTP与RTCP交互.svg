@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 07 · RTP 与 RTCP：丢包、NACK 与重传的时间窗</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左侧发送、右侧接收。seq=102 丢了，接收端先用 RR 报告，再发 NACK 请求重传。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">重传能不能救回来，取决于它到得是否早于播放点；来不及就用 PLC 补一帧。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">媒体（RTP）</text>
+<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">报告/反馈</text>
+<line x1="274.4" y1="142" x2="304.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="312.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">重传/补救</text>
+<rect x="170" y="190" width="220" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="182" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">发送端</text>
+<rect x="590" y="190" width="220" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="602" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">接收端</text>
+<line x1="280" y1="232" x2="280" y2="544" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="700" y1="232" x2="700" y2="544" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="280" y1="260" x2="700" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="700,260 691,255.5 691,264.5" fill="#4f46e5"/>
+<text x="286" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">RTP seq=100 / ts=1600</text>
+<line x1="280" y1="298" x2="700" y2="298" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="700,298 691,293.5 691,302.5" fill="#0f9d58"/>
+<text x="286" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">RTCP SR（NTP + RTP 时间戳）</text>
+<line x1="280" y1="336" x2="700" y2="336" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="700,336 691,331.5 691,340.5" fill="#4f46e5"/>
+<text x="286" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">RTP seq=101 / ts=1760</text>
+<line x1="280" y1="374" x2="700" y2="374" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="700,374 691,369.5 691,378.5" fill="#dc2626"/>
+<text x="286" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">RTP seq=103（102 丢失）</text>
+<line x1="700" y1="412" x2="280" y2="412" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="280,412 289,416.5 289,407.5" fill="#0f9d58"/>
+<text x="286" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">RTCP RR（丢包 1、抖动 J）</text>
+<line x1="700" y1="450" x2="280" y2="450" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="280,450 289,454.5 289,445.5" fill="#d97706"/>
+<text x="286" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">NACK：请求 seq=102</text>
+<line x1="280" y1="488" x2="700" y2="488" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="700,488 691,483.5 691,492.5" fill="#d97706"/>
+<text x="286" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">重传 seq=102（未过播放点才有效）</text>
+<line x1="700" y1="526" x2="734" y2="526" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<line x1="734" y1="526" x2="734" y2="540" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<line x1="734" y1="540" x2="706" y2="540" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="702,540 711,544.5 711,535.5" fill="#dc2626"/>
+<text x="706" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">来不及：PLC 补一帧</text>
+<rect x="170" y="570" width="900" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="186" y="600" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="186" y="624" font-size="10.2" fill="#334155" xml:space="preserve">· RR 是“事后统计”，NACK 是“点名要”，两者互补；缓冲浅时 NACK 只会白费带宽。</text>
+<text x="186" y="642" font-size="10.2" fill="#334155" xml:space="preserve">· 重传救不回来的包由 PLC 填，连续丢多个就会听到“嗡嗡”声。</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">图源：IETF RFC 3550 / 4585 / 3711；课程材料《VoLTE 笔记》。</text>
+</svg>

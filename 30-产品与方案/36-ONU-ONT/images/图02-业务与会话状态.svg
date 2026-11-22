@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="580" viewBox="0 0 980 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="980" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="944" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 业务与会话状态：VoIP 与 IPTV 各有一套</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">VoIP 看 SIP 注册与通话，IPTV 看 IGMP 成员关系与播放；两者互不影响。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">同一台 ONU 上，语音断了不代表电视断，排障要分开看。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">VoIP</text>
+<line x1="124.4" y1="142" x2="154.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="162.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">IPTV</text>
+<text x="40" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① VoIP：SIP 注册链</text>
+<rect x="40" y="196" width="52.6" height="40" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="66.3" y="219.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">未注册</text>
+<rect x="180" y="196" width="52.6" height="40" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="206.3" y="219.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">注册中</text>
+<rect x="320" y="196" width="52.6" height="40" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="346.3" y="219.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">已注册</text>
+<rect x="460" y="196" width="52.6" height="40" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="486.3" y="219.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">通话中</text>
+<line x1="92.6" y1="216" x2="180" y2="216" stroke="#475569" stroke-width="1.6"/>
+<polygon points="180,216 171,211.5 171,220.5" fill="#475569"/>
+<text x="136.3" y="209" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">REGISTER</text>
+<line x1="232.6" y1="216" x2="320" y2="216" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="320,216 311,211.5 311,220.5" fill="#0f9d58"/>
+<text x="276.3" y="209" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">200 OK</text>
+<line x1="372.6" y1="216" x2="460" y2="216" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="460,216 451,211.5 451,220.5" fill="#0f9d58"/>
+<text x="416.3" y="209" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">INVITE</text>
+<text x="40" y="300" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② IPTV：组播成员链</text>
+<rect x="40" y="320" width="52.6" height="40" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="66.3" y="343.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">未加入</text>
+<rect x="180" y="320" width="62.8" height="40" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="211.4" y="343.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">已加入组</text>
+<rect x="340" y="320" width="52.6" height="40" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="366.3" y="343.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">播放中</text>
+<line x1="92.6" y1="340" x2="180" y2="340" stroke="#475569" stroke-width="1.6"/>
+<polygon points="180,340 171,335.5 171,344.5" fill="#475569"/>
+<text x="136.3" y="333" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">IGMP Report</text>
+<line x1="242.8" y1="340" x2="340" y2="340" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="340,340 331,335.5 331,344.5" fill="#0f9d58"/>
+<text x="291.4" y="333" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">收流</text>
+<rect x="40" y="410" width="900" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="440" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="464" font-size="10.2" fill="#334155" xml:space="preserve">SIP 注册失败先看账号/服务器可达；IGMP 加入失败先看组播 VLAN 与 OLT 的组播配置。</text>
+<text x="56" y="482" font-size="10.2" fill="#334155" xml:space="preserve">两者都依赖上网通道，但「能上网」不等于 SIP/IGMP 通——它们各自还有一层业务配置。</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/36-ONU-ONT/02-VoIP与IPTV业务.md</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · IMS 与 VoLTE：信令、签约、策略、承载四条链</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上排是 SIP 信令链，中排是 HSS/PCRF 的签约与策略，下排是承载。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">语音能不能保证，取决于 Rx 有没有成功申请到 QCI 1 的 GBR 承载。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">SIP 信令</text>
+<line x1="146.4" y1="142" x2="176.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="184.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">Diameter 查询</text>
+<line x1="289.8" y1="142" x2="319.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="327.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">策略/承载</text>
+<rect x="40" y="190" width="150" height="80" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="190" width="4.5" height="80" fill="#475569" rx="2"/>
+<text x="53" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">UE</text>
+<text x="53" y="226" font-size="9.6" fill="#334155" xml:space="preserve">内置 IMS 协议栈</text>
+<rect x="250" y="190" width="170" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="250" y="190" width="4.5" height="80" fill="#4f46e5" rx="2"/>
+<text x="263" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">P-CSCF</text>
+<text x="263" y="226" font-size="9.6" fill="#334155" xml:space="preserve">第一跳</text>
+<text x="263" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">发起 Rx</text>
+<rect x="480" y="190" width="170" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="480" y="190" width="4.5" height="80" fill="#4f46e5" rx="2"/>
+<text x="493" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">I-CSCF</text>
+<text x="493" y="226" font-size="9.6" fill="#334155" xml:space="preserve">归属网入口</text>
+<text x="493" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">选 S-CSCF</text>
+<rect x="700" y="190" width="170" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="700" y="190" width="4.5" height="80" fill="#4f46e5" rx="2"/>
+<text x="713" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">S-CSCF</text>
+<text x="713" y="226" font-size="9.6" fill="#334155" xml:space="preserve">注册/会话路由</text>
+<text x="713" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">触发 AS</text>
+<rect x="930" y="190" width="150" height="80" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="930" y="190" width="4.5" height="80" fill="#0891b2" rx="2"/>
+<text x="943" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">AS</text>
+<text x="943" y="226" font-size="9.6" fill="#334155" xml:space="preserve">补充业务</text>
+<text x="943" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">前转/彩铃</text>
+<rect x="250" y="330" width="170" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="250" y="330" width="4.5" height="80" fill="#0f9d58" rx="2"/>
+<text x="263" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PCRF</text>
+<text x="263" y="366" font-size="9.6" fill="#334155" xml:space="preserve">策略决策</text>
+<rect x="480" y="330" width="190" height="80" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="480" y="330" width="4.5" height="80" fill="#d97706" rx="2"/>
+<text x="493" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">P-GW / UPF</text>
+<text x="493" y="366" font-size="9.6" fill="#334155" xml:space="preserve">承载执行</text>
+<text x="493" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">QCI 1/5</text>
+<rect x="700" y="330" width="170" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="700" y="330" width="4.5" height="80" fill="#0f9d58" rx="2"/>
+<text x="713" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">HSS</text>
+<text x="713" y="366" font-size="9.6" fill="#334155" xml:space="preserve">签约/鉴权</text>
+<text x="713" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">注册状态</text>
+<rect x="40" y="470" width="1040" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="40" y="470" width="4.5" height="70" fill="#d97706" rx="2"/>
+<text x="53" y="489" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">承载：QCI 5 信令（非 GBR） + QCI 1 语音（GBR）</text>
+<text x="1071" y="489" font-size="10.2" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="end">QoS</text>
+<text x="53" y="506" font-size="9.6" fill="#334155" xml:space="preserve">Rx 申请 → PCRF 决策 → Gx 下发 → 建专用承载；语音质量主要靠这一层。</text>
+<line x1="190" y1="230" x2="250" y2="230" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="250,230 241,225.5 241,234.5" fill="#4f46e5"/>
+<line x1="420" y1="230" x2="480" y2="230" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="480,230 471,225.5 471,234.5" fill="#4f46e5"/>
+<text x="458" y="224" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Mw</text>
+<line x1="650" y1="230" x2="700" y2="230" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="700,230 691,225.5 691,234.5" fill="#4f46e5"/>
+<text x="683" y="224" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Mw</text>
+<line x1="870" y1="230" x2="930" y2="230" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="930,230 921,225.5 921,234.5" fill="#4f46e5"/>
+<text x="908" y="224" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">ISC</text>
+<line x1="335" y1="270" x2="335" y2="330" stroke="#0f9d58" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="335,330 339.5,321 330.5,321" fill="#0f9d58"/>
+<text x="343" y="294" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Rx</text>
+<line x1="565" y1="270" x2="700" y2="330" stroke="#0f9d58" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="700,330 693.6,322.23 689.95,330.46" fill="#0f9d58"/>
+<text x="640.5" y="294" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Cx</text>
+<line x1="785" y1="270" x2="785" y2="330" stroke="#0f9d58" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="785,330 789.5,321 780.5,321" fill="#0f9d58"/>
+<text x="793" y="294" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Cx</text>
+<line x1="420" y1="370" x2="480" y2="370" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="480,370 471,365.5 471,374.5" fill="#d97706"/>
+<text x="458" y="364" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Gx</text>
+<line x1="575" y1="410" x2="575" y2="470" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="575,470 579.5,461 570.5,461" fill="#d97706"/>
+<line x1="115" y1="270" x2="115" y2="470" stroke="#d97706" stroke-width="1.4" stroke-dasharray="3 3"/>
+<polygon points="115,470 119.5,461 110.5,461" fill="#d97706"/>
+<rect x="40" y="570" width="1040" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="600" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="624" font-size="10.2" fill="#334155" xml:space="preserve">· SIP 通只代表“谈成了”；语音要走，还要看下方专用承载有没有建起来。</text>
+<text x="56" y="642" font-size="10.2" fill="#334155" xml:space="preserve">· “能振铃、接通无声”常见根因就是 QCI 1 承载没建好，而不是 RTP 编码问题。</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 23.228 / 24.229 / 23.203 / 23.216；课程材料《VoLTE 笔记》。</text>
+</svg>

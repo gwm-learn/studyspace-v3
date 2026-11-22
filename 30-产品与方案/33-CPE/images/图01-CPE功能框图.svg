@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="660" viewBox="0 0 1080 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · CPE 功能框图：接入、转发、业务、管理四层</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">自下而上是数据路径，右侧是独立的管理通道——它不承载业务流量。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">管理在线不等于业务可用：管理通道通了，WAN 仍可能没拨上。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">接入</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">转发</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">业务</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">管理</text>
+<rect x="40" y="190" width="620" height="54" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="52" y="220.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">业务层：VoIP / IPTV / Wi-Fi 接入</text>
+<text x="650" y="220.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">对终端</text>
+<rect x="40" y="254" width="620" height="54" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="284.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">转发层：路由 / NAT / 防火墙 / QoS</text>
+<text x="650" y="284.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">内核</text>
+<rect x="40" y="318" width="620" height="54" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="348.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">系统层：Linux + netifd + 驱动</text>
+<text x="650" y="348.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">系统</text>
+<rect x="40" y="382" width="620" height="54" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="412.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">接入层：PON / DSL / 以太 / 5G</text>
+<text x="650" y="412.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">对上游</text>
+<rect x="720" y="190" width="320" height="246" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="720" y="190" width="4.5" height="246" fill="#d97706" rx="2"/>
+<text x="733" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">管理通道（独立）</text>
+<text x="733" y="226" font-size="9.6" fill="#334155" xml:space="preserve">TR-069 / TR-369 远程管理</text>
+<text x="733" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">OMCI（FTTR 场景）</text>
+<text x="733" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">本地 Web / CLI</text>
+<text x="733" y="272.2" font-size="9.6" fill="#334155" xml:space="preserve">与业务数据走不同路径</text>
+<text x="733" y="287.6" font-size="9.6" fill="#334155" xml:space="preserve">可单独限速、单独放行</text>
+<rect x="40" y="480" width="1000" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="510" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="534" font-size="10.2" fill="#334155" xml:space="preserve">接入层决定「能不能上网」，转发层决定「谁能上网」，业务层决定「用什么业务」。</text>
+<text x="56" y="552" font-size="10.2" fill="#334155" xml:space="preserve">排障时先分层定位：接入（链路/认证）、转发（路由/NAT/防火墙）、业务（代理/端口）、管理（ACS 连接）。</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/33-CPE/00-CPE系统架构.md</text>
+</svg>

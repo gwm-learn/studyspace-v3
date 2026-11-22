@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="640" viewBox="0 0 1140 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 19 · 一次上行发送：SR → grant → BSR → TB → HARQ</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上行调度的死结：没资源就没法说“我有数据”，不说就不给资源。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">SR 用 1 bit 破局，BSR 再补“有多少”，最后才是数据与 HARQ。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">信令/数据</text>
+<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败/重传</text>
+<rect x="160" y="190" width="250" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="172" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">UE</text>
+<rect x="630" y="190" width="250" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="642" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">gNB</text>
+<line x1="285" y1="232" x2="285" y2="468" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="755" y1="232" x2="755" y2="468" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="285" y1="260" x2="755" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="755,260 746,255.5 746,264.5" fill="#4f46e5"/>
+<text x="291" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">SR（PUCCH，1 bit：有数据）</text>
+<line x1="755" y1="298" x2="285" y2="298" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="285,298 294,302.5 294,293.5" fill="#4f46e5"/>
+<text x="291" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">上行 grant（DCI：PRB / MCS / 层数）</text>
+<line x1="285" y1="336" x2="755" y2="336" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="755,336 746,331.5 746,340.5" fill="#4f46e5"/>
+<text x="291" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">BSR（MAC CE，LCG 与字节数）+ 数据</text>
+<line x1="755" y1="374" x2="285" y2="374" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="285,374 294,378.5 294,369.5" fill="#0f9d58"/>
+<text x="291" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">HARQ ACK / NACK</text>
+<line x1="285" y1="412" x2="755" y2="412" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="755,412 746,407.5 746,416.5" fill="#dc2626"/>
+<text x="291" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">NACK：重传并软合并</text>
+<line x1="285" y1="450" x2="319" y2="450" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<line x1="319" y1="450" x2="319" y2="464" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<line x1="319" y1="464" x2="291" y2="464" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="287,464 296,468.5 296,459.5" fill="#475569"/>
+<text x="291" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">等下一个 grant / 继续排队</text>
+<rect x="160" y="494" width="940" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="176" y="524" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="176" y="548" font-size="10.2" fill="#334155" xml:space="preserve">· 三段等待相加才是上行时延：SR 周期 + 调度处理 + HARQ RTT，任何一段配长都会“偶发慢”。</text>
+<text x="176" y="566" font-size="10.2" fill="#334155" xml:space="preserve">· SR 资源没配时终端只能走随机接入，时延从毫秒级掉到几十毫秒——先查 SR 配置，再怀疑覆盖。</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 36.321 / 38.321 的调度与 BSR/SR 过程；课程材料《5G 基础信令培训》。</text>
+</svg>

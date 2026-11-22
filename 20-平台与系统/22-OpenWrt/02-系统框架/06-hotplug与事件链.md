@@ -73,6 +73,25 @@ netifd ifup/ifdown ──► iface 事件 ──► /etc/hotplug.d/iface/*
 | `PRODUCT` | USB 设备标识 | 用于匹配厂商/产品 |
 | `SEQNUM` | 事件序号 | 可用于判断顺序，但不保证跨源 |
 
+两个最小脚本，分别消费内核事件与 iface 事件：
+
+```sh
+#!/bin/sh
+# /etc/hotplug.d/usb/10-myusb
+[ "$ACTION" = add ] || exit 0
+logger -t myusb "usb add: $DEVPATH product=$PRODUCT"
+```
+
+```sh
+#!/bin/sh
+# /etc/hotplug.d/iface/20-mywan
+[ "$ACTION" = ifup ] || exit 0
+[ "$INTERFACE" = wan ] || exit 0
+logger -t mywan "wan is up, device=$DEVICE"
+```
+
+两段都以“先过滤、再动作”开头：hotplug 脚本会被**所有**同类事件调用，不过滤就等于每次插拔任何 USB 都跑一遍。
+
 ## 4 · 事件分发流程
 
 ![图 07 · hotplug：内核事件如何到达脚本](images/图07-hotplug.svg)
@@ -89,6 +108,15 @@ netifd ifup/ifdown ──► iface 事件 ──► /etc/hotplug.d/iface/*
 4. 脚本读取环境变量，执行动作（挂载、启停服务、点灯等）。
 5. netifd 在接口状态变化时额外产生 iface 事件，走 `hotplug.d/iface/`。
 
+调试时先确认“事件到没到”，再谈脚本逻辑：
+
+```text
+logread -f -e hotplug            # 看 procd 分发的记录（若有日志）
+hotplug-call iface               # 手动跑一遍 iface 脚本（需环境变量）
+```
+
+> **边界**：`hotplug-call` 只是“按目录执行脚本”，不会伪造完整事件环境；手动测试要自己 `export ACTION/INTERFACE`，否则脚本第一行过滤就退出了。
+
 ### 4.2 异常分支
 
 | 现象 | 原因 | 处理方向 |
@@ -98,6 +126,15 @@ netifd ifup/ifdown ──► iface 事件 ──► /etc/hotplug.d/iface/*
 | 变量为空 | 事件类型不提供该变量 | 按 subsystem 分支处理 |
 | 阻塞后续事件 | 脚本里做长任务/等待网络 | 后台化或交给服务 |
 | 重复执行 | 设备多次 add、脚本未幂等 | 用锁或状态检查 |
+
+**“脚本没跑”四步查**：
+
+| 步骤 | 查什么 | 判据 | 答错的后果 |
+| --- | --- | --- | --- |
+| ① 事件有没有到 | 内核是否产生该 uevent | `logread`、sysfs 变化 | 事件没到，改脚本无用 |
+| ② 规则是否匹配 | `hotplug.json` 是否转发该 subsystem | 规则里的 subsystem 名 | 名字写错会静默丢事件 |
+| ③ 脚本是否可执行 | 权限、解释器 | `ls -l`、`sh -n` | 权限错只有一行报错 |
+| ④ 变量是否为空 | 该事件类型有没有这个变量 | 脚本里打印 `env` | 按错误变量分支，逻辑全错 |
 
 ## 5 · 状态机与定时器
 
@@ -110,6 +147,10 @@ hotplug 本身没有状态机，是**一次性事件回调**。定时器通常�
 - **代价**：脚本之间没有显式依赖，顺序靠文件名；复杂流程容易变成隐式耦合。
 - **不适用**：需要严格顺序、事务性或高可靠的事件处理，应放到常驻服务里。
 - **常见误判**：把 `net` 事件当成“可以上网了”；它只表示设备/链路变化，地址和路由可能还没就绪。
+
+> **推论**：需要“网络可用”时，订阅 `iface` 的 `ifup` 且确认 `INTERFACE`，不要订阅 `net` 的 add。`net` 事件来得早，此时地址、路由、DNS 都还没配好，脚本会拿到一个“有链路、没三层”的半成品。
+
+> **边界**：hotplug 脚本没有超时保护。脚本里 `sleep`/等网络/等挂载，会拖住同一事件的后续脚本；耗时任务应 `&` 后台化或交给 procd 托管服务。
 
 ## 7 · 与相邻主题的关系
 

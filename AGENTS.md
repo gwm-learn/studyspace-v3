@@ -69,10 +69,10 @@
 | 查通信/PON/无线 | `10-基础理论/12-通信科学/.readme.md` | 光通信/无线通信目录 |
 | 查 Linux/OpenWrt | `20-平台与系统/.readme.md` | 对应子系统目录 |
 | 查 OpenWrt 覆盖情况 | `20-平台与系统/22-OpenWrt/00-学习地图.md` | 对应子目录 `.readme.md` |
-| 查平台差异 | `30-平台与芯片/.readme.md` | 对应平台目录 |
-| 查产品方案 | `40-产品与方案/.readme.md` | 对应产品目录 |
-| 查软件开发 | `60-软件开发/.readme.md` | 对应语言/工具目录 |
-| 查工具环境 | `80-工具与环境/.readme.md` | 对应工具目录 |
+| 查产品方案 | `30-产品与方案/.readme.md` | 对应产品目录 |
+| 查平台差异 | `40-平台与芯片/.readme.md` | 对应平台目录 |
+| 查软件开发 | `50-软件开发/.readme.md` | 对应语言/工具目录 |
+| 查工具环境 | `60-工具与环境/.readme.md` | 对应工具目录 |
 | 生成/修改技术图 | `.图表模板/figure-style.md`（§2.1 选图型） | `svg-figure-template.py` + `.图表模板/examples/` |
 | 整理索引/链接 | 根 `README.md` + 目标 `.readme.md` | 相关目录和文件 |
 | 检查仓库结构 | `README.md` + 顶层 `.readme.md` | 按需抽查 |
@@ -84,10 +84,10 @@
 | `00-关于我/` | 技术背景、技术方向、学习路线 | [.readme](./00-关于我/.readme.md) |
 | `10-基础理论/` | 网络、通信、计算机基础 | [.readme](./10-基础理论/.readme.md) |
 | `20-平台与系统/` | Linux、OpenWrt、嵌入式系统 | [.readme](./20-平台与系统/.readme.md) |
-| `30-平台与芯片/` | 海思、MTK、QCA、展锐等平台 | [.readme](./30-平台与芯片/.readme.md) |
-| `40-产品与方案/` | CPE、智能网关、FTTR、ONU/ONT | [.readme](./40-产品与方案/.readme.md) |
-| `60-软件开发/` | C、数据结构、Shell、构建调试 | [.readme](./60-软件开发/.readme.md) |
-| `80-工具与环境/` | Git、Docker、WSL、VSCode、SVN | [.readme](./80-工具与环境/.readme.md) |
+| `30-产品与方案/` | CPE、智能网关、FTTR、ONU/ONT | [.readme](./30-产品与方案/.readme.md) |
+| `40-平台与芯片/` | 海思、MTK、QCA、展锐等平台 | [.readme](./40-平台与芯片/.readme.md) |
+| `50-软件开发/` | C、数据结构、Shell、构建调试 | [.readme](./50-软件开发/.readme.md) |
+| `60-工具与环境/` | Git、Docker、WSL、VSCode、SVN | [.readme](./60-工具与环境/.readme.md) |
 | `.图表模板/` | 技术图模板（非学习内容） | [.readme](./.图表模板/.readme.md) |
 | `.opencode/` | Agent 技能与知识库审计脚本（非学习内容） | [knowledge-refactor](./.opencode/skills/knowledge-refactor/SKILL.md) |
 

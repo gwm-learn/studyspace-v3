@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1420" height="660" viewBox="0 0 1420 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1420" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1384" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 20 · 空闲态驻留：选网、驻留、重选与位置更新的循环</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">驻留是主状态；重选只换小区，不改变驻留状态；位置更新才和核心网交互。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">虚线是“只满足部分条件”的旁支：受限服务只能打紧急电话。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">状态迁移</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">旁支/受限</text>
+<line x1="254.6" y1="142" x2="284.6" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="292.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">与核心网交互</text>
+<rect x="40" y="200" width="260" height="90" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="200" width="4.5" height="90" fill="#475569" rx="2"/>
+<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">无服务 / PLMN 搜索</text>
+<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">按 PLMN 列表选网</text>
+<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">周期重试扫频</text>
+<rect x="380" y="200" width="280" height="90" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="380" y="200" width="4.5" height="90" fill="#4f46e5" rx="2"/>
+<text x="393" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">小区搜索 + S 准则</text>
+<text x="393" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PSS/SSS → SIB1</text>
+<text x="393" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">Srxlev/Squal &gt; 0？</text>
+<rect x="760" y="200" width="280" height="90" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="760" y="200" width="4.5" height="90" fill="#0f9d58" rx="2"/>
+<text x="773" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">驻留 · 正常服务</text>
+<text x="773" y="236" font-size="9.6" fill="#334155" xml:space="preserve">可发起全部业务</text>
+<rect x="1120" y="200" width="260" height="90" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="1120" y="200" width="4.5" height="90" fill="#475569" rx="2"/>
+<text x="1133" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">位置更新</text>
+<text x="1133" y="236" font-size="9.6" fill="#334155" xml:space="preserve">TAU / RNAU</text>
+<text x="1133" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">跨 TA 或周期到期</text>
+<rect x="380" y="350" width="280" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="380" y="350" width="4.5" height="90" fill="#d97706" rx="2"/>
+<text x="393" y="369" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">受限服务</text>
+<text x="393" y="386" font-size="9.6" fill="#334155" xml:space="preserve">只能紧急呼叫</text>
+<text x="393" y="401.4" font-size="9.6" fill="#334155" xml:space="preserve">继续找合适小区</text>
+<rect x="760" y="350" width="280" height="90" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="760" y="350" width="4.5" height="90" fill="#4f46e5" rx="2"/>
+<text x="773" y="369" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">重选评估</text>
+<text x="773" y="386" font-size="9.6" fill="#334155" xml:space="preserve">优先级 + 门限 + 排名</text>
+<text x="773" y="401.4" font-size="9.6" fill="#334155" xml:space="preserve">Treselection 到时</text>
+<line x1="300" y1="278" x2="380" y2="278" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="380,278 371,273.5 371,282.5" fill="#4f46e5"/>
+<text x="340" y="271" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">选频点 / 选网</text>
+<line x1="660" y1="278" x2="760" y2="278" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="760,278 751,273.5 751,282.5" fill="#4f46e5"/>
+<text x="710" y="271" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">S &gt; 0 且允许</text>
+<line x1="520" y1="290" x2="520" y2="350" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="520,350 524.5,341 515.5,341" fill="#d97706"/>
+<text x="520" y="313" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">部分条件满足</text>
+<line x1="850" y1="294" x2="850" y2="350" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="850,350 854.5,341 845.5,341" fill="#4f46e5"/>
+<line x1="950" y1="350" x2="950" y2="294" stroke="#475569" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="950,294 945.5,303 954.5,303" fill="#475569"/>
+<text x="790" y="330" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">质量/优先级变化</text>
+<text x="960" y="330" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">选中更优小区</text>
+<line x1="1040" y1="278" x2="1120" y2="278" stroke="#475569" stroke-width="1.8"/>
+<polygon points="1120,278 1111,273.5 1111,282.5" fill="#475569"/>
+<text x="1080" y="271" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">跨 TA / RNA</text>
+<rect x="40" y="500" width="1300" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="554" font-size="10.2" fill="#334155" xml:space="preserve">· 重选与切换不是一回事：重选是空闲态终端自己按广播参数决定，切换是连接态网络基于测量决定。</text>
+<text x="56" y="572" font-size="10.2" fill="#334155" xml:space="preserve">· 受限服务不是“有信号就能用”：只能紧急呼叫，且终端会继续找合适小区。</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 23.122 / 36.304 / 38.304；课程材料《4-LTE-PLMN选择》《5-LTE-小区搜索与选择》。</text>
+</svg>

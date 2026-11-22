@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="520" viewBox="0 0 1220 520" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1220" height="520" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1184" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 28 · 标准推进的六道门：冻结不等于商用</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">从左到右是 Study → Stage 1/2/3 → ASN.1/OpenAPI → 商用，越往后越难回改。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">虚线是 CR 的回改路径：后一阶段发现问题，可以改前一阶段的规范，但不能凭空加新功能。</text>
+<text x="60" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">阶段门：每一道门都有明确的产出与冻结条件</text>
+<rect x="60" y="200" width="176" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="60" y="200" width="4.5" height="82" fill="#475569" rx="2"/>
+<text x="73" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Study</text>
+<text x="73" y="236" font-size="9.6" fill="#334155" xml:space="preserve">TR · 研究项</text>
+<text x="73" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">回答“要不要做”</text>
+<line x1="236" y1="241" x2="246" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="246,241 237,236.5 237,245.5" fill="#94a3b8"/>
+<rect x="246" y="200" width="176" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="246" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="259" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Stage 1</text>
+<text x="259" y="236" font-size="9.6" fill="#334155" xml:space="preserve">TS 22 · 业务需求</text>
+<text x="259" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">回答“做什么”</text>
+<line x1="422" y1="241" x2="432" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="432,241 423,236.5 423,245.5" fill="#94a3b8"/>
+<rect x="432" y="200" width="176" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="432" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="445" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Stage 2</text>
+<text x="445" y="236" font-size="9.6" fill="#334155" xml:space="preserve">TS 23 · 架构流程</text>
+<text x="445" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">回答“怎么组织”</text>
+<line x1="608" y1="241" x2="618" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="618,241 609,236.5 609,245.5" fill="#94a3b8"/>
+<rect x="618" y="200" width="176" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="618" y="200" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="631" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Stage 3</text>
+<text x="631" y="236" font-size="9.6" fill="#334155" xml:space="preserve">TS 38/24 · 协议</text>
+<text x="631" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">回答“怎么实现”</text>
+<line x1="794" y1="241" x2="804" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="804,241 795,236.5 795,245.5" fill="#94a3b8"/>
+<rect x="804" y="200" width="176" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="804" y="200" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="817" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ASN.1/OpenAPI</text>
+<text x="817" y="236" font-size="9.6" fill="#334155" xml:space="preserve">编码与接口</text>
+<text x="817" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">回答“怎么互通”</text>
+<line x1="980" y1="241" x2="990" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="990,241 981,236.5 981,245.5" fill="#94a3b8"/>
+<rect x="990" y="200" width="176" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="990" y="200" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="1003" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">商用</text>
+<text x="1003" y="236" font-size="9.6" fill="#334155" xml:space="preserve">网络 + 终端 + 牌照</text>
+<text x="1003" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">运营商决定</text>
+<line x1="706" y1="312" x2="520" y2="312" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="520,312 529,316.5 529,307.5" fill="#94a3b8"/>
+<text x="603" y="304" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">CR 可回改</text>
+<rect x="60" y="348" width="1106" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="378" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">三种“冻结”不是同一天</text>
+<text x="76" y="402" font-size="10.2" fill="#334155" xml:space="preserve">功能冻结：不再加新功能，但仍可发 CR 修 bug、对齐阶段。</text>
+<text x="76" y="420" font-size="10.2" fill="#334155" xml:space="preserve">协议稳定：Stage 3 完成，设备可以按它实现；仍可能有修正类 CR。</text>
+<text x="76" y="438" font-size="10.2" fill="#334155" xml:space="preserve">ASN.1/OpenAPI 冻结：编码与接口定义稳定，联调不再因字段变化返工。</text>
+<text x="36" y="484" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本篇按 3GPP 阶段划分整理；具体冻结日期见 3GPP Releases 页面。</text>
+</svg>

@@ -78,6 +78,41 @@ layer: 22-OpenWrt/04-无线
 | `ieee80211k` / `ieee80211v` | 邻居报告/过渡管理 | 终端不一定支持 |
 | `macfilter` | MAC 过滤 | 可被伪造，不是强安全 |
 
+UCI 与生成文件是“一份配置、两种形态”：
+
+```text
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option path 'pci0000:00/0000:00:00.0'
+	option band '5g'
+	option channel '36'
+	option htmode 'HE80'
+	option country 'CN'
+
+config wifi-iface 'default_radio0'
+	option device 'radio0'
+	option mode 'ap'
+	option network 'lan'
+	option ssid 'OpenWrt'
+	option encryption 'sae-mixed'
+	option key 'password'
+```
+
+展开后的 `/var/run/hostapd-phy0.conf` 大致是：
+
+```text
+interface=wlan0
+ssid=OpenWrt
+hw_mode=a
+channel=36
+ieee80211ax=1
+wpa=2
+wpa_key_mgmt=SAE WPA-PSK
+ieee80211w=1
+```
+
+一个 UCI 字段可能展开成多行 hostapd 参数（`encryption 'sae-mixed'` → `wpa_key_mgmt` + `ieee80211w`），所以“UCI 看着对、hostapd 起不来”要看生成文件。
+
 ## 4 · 生成与启动流程
 
 ![图 03 · wireless：UCI 配置到 hostapd 进程](images/图03-wireless配置.svg)
@@ -94,6 +129,15 @@ layer: 22-OpenWrt/04-无线
 4. 启动/重载 hostapd，通过 nl80211 创建 BSS。
 5. iface 绑定 `network`，由 netifd 接入桥/路由。
 
+常用动作与观测点：
+
+```text
+wifi reload              # 重新生成配置并重载 hostapd（不动驱动）
+wifi up radio0           # 只启某个 radio
+logread -e hostapd       # hostapd 的报错集中在这里
+cat /var/run/hostapd-phy0.conf   # 实际下发的配置
+```
+
 ### 4.2 异常分支
 
 | 现象 | 原因 | 处理方向 |
@@ -103,6 +147,14 @@ layer: 22-OpenWrt/04-无线
 | 能连不能上网 | `network` 未绑定、桥/DHCP 错 | 查 iface 与桥成员 |
 | 多 SSID 冲突 | 同 radio 信道/带宽冲突 | 同 radio 共享射频参数 |
 | reload 后配置回退 | 改了生成文件 | 改 UCI，不要改 `/var/run` |
+
+**“终端连不上”按三段查**：
+
+| 段 | 查什么 | 判据 | 答错的后果 |
+| --- | --- | --- | --- |
+| ① AP 侧起没起 | BSS 是否建立 | 生成文件存在、hostapd 无报错 | AP 没起，改终端设置无用 |
+| ② 认证阶段 | 关联/认证/四次握手在哪步断 | hostapd 日志的 `AP-STA-*` 事件 | 把密钥错当成信号差 |
+| ③ 加密兼容 | 终端是否支持 SAE/PMF | 临时切 `psk2` 验证 | 混用 WPA3 模式，老终端直接失败 |
 
 ## 5 · 状态机与定时器
 
@@ -115,6 +167,10 @@ hostapd 管理 BSS 与 STA 状态：未关联 → 认证 → 关联 → 四次�
 - **代价**：配置项映射不总是一对一，排障需要看生成文件。
 - **不适用**：需要厂商私有特性的场景，可能要直接写 hostapd 配置或驱动命令。
 - **常见误判**：把 `hidden` 当安全；把 `macfilter` 当访问控制的核心手段。
+
+> **推论**：`sae-mixed` 是兼容性折中，不是“更安全的 WPA2”。它同时开 SAE 与 PSK，并启用管理帧保护（PMF）；老终端可能因此连不上。先用 `psk2` 验证链路，再切混合模式，是最省事的排查顺序。
+
+> **边界**：生成文件 `/var/run/hostapd-*.conf` 是运行时产物，`wifi reload` 会重写。任何“手工改生成文件生效了”的做法都不可持续，重启或 reload 后一定回退。
 
 ## 7 · 与相邻主题的关系
 

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="900" viewBox="0 0 1160 900" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1160" height="900" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1124" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 16 · IMS 注册与呼叫：SIP 信令走过谁</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上半段是注册（REGISTER → 401 挑战 → 带 RES 再注册 → 200 OK）。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">下半段是呼叫（INVITE → 180 → 200 → ACK → RTP）。HSS 只在两处出现。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注册</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">呼叫/媒体</text>
+<line x1="232.6" y1="142" x2="262.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="270.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">临时响应/挑战</text>
+<rect x="36" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="48" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">UE</text>
+<rect x="246" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="258" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">P-CSCF</text>
+<rect x="456" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="468" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">I-CSCF</text>
+<rect x="666" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="678" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">S-CSCF</text>
+<rect x="876" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="888" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">HSS</text>
+<line x1="126" y1="232" x2="126" y2="696" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="336" y1="232" x2="336" y2="696" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="546" y1="232" x2="546" y2="696" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="756" y1="232" x2="756" y2="696" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="966" y1="232" x2="966" y2="696" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="126" y1="260" x2="336" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="336,260 327,255.5 327,264.5" fill="#4f46e5"/>
+<text x="132" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">REGISTER</text>
+<line x1="336" y1="298" x2="546" y2="298" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="546,298 537,293.5 537,302.5" fill="#4f46e5"/>
+<text x="342" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">REGISTER（按归属域名）</text>
+<line x1="546" y1="336" x2="966" y2="336" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="966,336 957,331.5 957,340.5" fill="#0f9d58"/>
+<text x="552" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Cx 查询：选哪个 S-CSCF</text>
+<line x1="546" y1="374" x2="756" y2="374" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="756,374 747,369.5 747,378.5" fill="#4f46e5"/>
+<text x="552" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">REGISTER</text>
+<line x1="756" y1="412" x2="126" y2="412" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="126,412 135,416.5 135,407.5" fill="#d97706"/>
+<text x="132" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">401 Unauthorized（RAND / AUTN）</text>
+<line x1="126" y1="450" x2="756" y2="450" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="756,450 747,445.5 747,454.5" fill="#4f46e5"/>
+<text x="132" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">REGISTER + Authorization（RES）</text>
+<line x1="756" y1="488" x2="966" y2="488" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="966,488 957,483.5 957,492.5" fill="#0f9d58"/>
+<text x="762" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">登记注册状态（SAR/SAA）</text>
+<line x1="756" y1="526" x2="126" y2="526" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="126,526 135,530.5 135,521.5" fill="#0f9d58"/>
+<text x="132" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">200 OK（注册成功）</text>
+<line x1="126" y1="564" x2="756" y2="564" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="756,564 747,559.5 747,568.5" fill="#0f9d58"/>
+<text x="132" y="557" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">INVITE（SDP 候选编码）</text>
+<line x1="756" y1="602" x2="126" y2="602" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="126,602 135,606.5 135,597.5" fill="#d97706"/>
+<text x="132" y="595" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">180 Ringing / 200 OK</text>
+<line x1="126" y1="640" x2="756" y2="640" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="756,640 747,635.5 747,644.5" fill="#0f9d58"/>
+<text x="132" y="633" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">ACK</text>
+<line x1="126" y1="678" x2="160" y2="678" stroke="#0f9d58" stroke-width="1.8"/>
+<line x1="160" y1="678" x2="160" y2="692" stroke="#0f9d58" stroke-width="1.8"/>
+<line x1="160" y1="692" x2="132" y2="692" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="128,692 137,696.5 137,687.5" fill="#0f9d58"/>
+<text x="132" y="671" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">RTP 双向媒体（QCI 1）</text>
+<rect x="36" y="722" width="1080" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="752" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="52" y="776" font-size="10.2" fill="#334155" xml:space="preserve">· 为可读性省略了逐跳转发：实际 SIP 消息都经 P-CSCF（漫游时还有 I-CSCF）中转，HSS 随 Cx 查询出现。</text>
+<text x="52" y="794" font-size="10.2" fill="#334155" xml:space="preserve">· 注册鉴权复用 USIM 的 Ki：401 挑战 → 终端算 RES → 再注册，终端不发密码。</text>
+<text x="52" y="812" font-size="10.2" fill="#334155" xml:space="preserve">· 语音媒体走 QCI 1 的 GBR 承载，SIP 走 QCI 5；两者由 Rx 接口向 PCRF 申请资源。</text>
+<text x="36" y="864" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 23.228 / 24.229；课程材料《VoLTE 笔记》《SDX55 平台 VoLTE 简介》。</text>
+</svg>

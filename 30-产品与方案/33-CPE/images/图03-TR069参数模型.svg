@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="580" viewBox="0 0 1140 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · TR-069 参数模型：一棵树，标准 + 私有</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">根对象下是 DeviceInfo、ManagementServer 与业务子树；ACS 按路径读写。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">TR-098 的根是 InternetGatewayDevice.，TR-181 的根是 Device.，两者不要混用。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">标准对象</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">厂商扩展</text>
+<rect x="440" y="180" width="280" height="46" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="580" y="203" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">根对象</text>
+<text x="580" y="215" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">Device. 或 InternetGatewayDevice.</text>
+<rect x="60" y="300" width="113.16" height="46" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="116.58" y="323" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">DeviceInfo</text>
+<text x="116.58" y="335" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">型号 / 版本 / 序列号</text>
+<rect x="300" y="300" width="119.92" height="46" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="359.96" y="323" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">ManagementServer</text>
+<text x="359.96" y="335" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">ACS 地址 / 周期</text>
+<rect x="620" y="300" width="187.12" height="46" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="713.56" y="323" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">业务子树</text>
+<text x="713.56" y="335" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">WANDevice / LANDevice / Services</text>
+<rect x="920" y="300" width="83.2" height="46" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="961.6" y="323" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">X_VENDOR_*</text>
+<text x="961.6" y="335" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">厂商私有参数</text>
+<line x1="440" y1="214" x2="173.16" y2="334" stroke="#475569" stroke-width="1.4"/>
+<polygon points="173.16,334 183.21,334.41 179.52,326.2" fill="#475569"/>
+<line x1="440" y1="214" x2="419.92" y2="334" stroke="#475569" stroke-width="1.4"/>
+<polygon points="419.92,334 425.84,325.87 416.97,324.38" fill="#475569"/>
+<line x1="720" y1="214" x2="620" y2="334" stroke="#475569" stroke-width="1.4"/>
+<polygon points="620,334 629.22,329.97 622.3,324.21" fill="#475569"/>
+<line x1="720" y1="214" x2="920" y2="334" stroke="#475569" stroke-width="1.4"/>
+<polygon points="920,334 914.6,325.51 909.97,333.23" fill="#475569"/>
+<rect x="60" y="400" width="1040" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="430" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="76" y="454" font-size="10.2" fill="#334155" xml:space="preserve">表项用 .{i}. 表示实例（如 WANConnectionDevice.1），可用 AddObject / DeleteObject 动态增删。</text>
+<text x="76" y="472" font-size="10.2" fill="#334155" xml:space="preserve">ACS 侧数据模型版本必须与 CPE 一致：TR-098 的路径拿到 TR-181 设备上会直接报「参数不存在」。</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/33-CPE/02-TR-069与ACS运维.md</text>
+</svg>

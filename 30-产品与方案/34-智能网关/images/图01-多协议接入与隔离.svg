@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="600" viewBox="0 0 1160 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1160" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1124" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 多协议接入与网络隔离：南向适配，北向消费</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左边是南向：Zigbee / BLE / Z-Wave / Thread 各自接入，由中间件抽象成统一模型。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">右边是北向：场景与云管只面对模型；IoT 设备放独立 VLAN，规则受控出入。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">南向</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">模型</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">北向</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">隔离</text>
+<rect x="40" y="200" width="58.72" height="36" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1.2"/>
+<text x="69.36" y="221.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Zigbee</text>
+<rect x="40" y="250" width="40.36" height="36" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1.2"/>
+<text x="60.18" y="271.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">BLE</text>
+<rect x="40" y="300" width="58.72" height="36" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1.2"/>
+<text x="69.36" y="321.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Z-Wave</text>
+<rect x="40" y="350" width="58.72" height="36" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1.2"/>
+<text x="69.36" y="371.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Thread</text>
+<rect x="220" y="200" width="300" height="186" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="220" y="200" width="4.5" height="186" fill="#4f46e5" rx="2"/>
+<text x="233" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">中间件：统一设备模型</text>
+<text x="233" y="236" font-size="9.6" fill="#334155" xml:space="preserve">属性 / 事件 / 动作</text>
+<text x="233" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">协议差异在这里被抹平</text>
+<text x="233" y="266.8" font-size="9.6" fill="#334155" xml:space="preserve">北向只看模型，不看协议</text>
+<rect x="580" y="200" width="260" height="186" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="580" y="200" width="4.5" height="186" fill="#0f9d58" rx="2"/>
+<text x="593" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">北向消费者</text>
+<text x="593" y="236" font-size="9.6" fill="#334155" xml:space="preserve">场景 / 自动化</text>
+<text x="593" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">云管 / App</text>
+<text x="593" y="266.8" font-size="9.6" fill="#334155" xml:space="preserve">本地 Web</text>
+<rect x="880" y="200" width="240" height="186" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="880" y="200" width="4.5" height="186" fill="#d97706" rx="2"/>
+<text x="893" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">IoT VLAN 隔离</text>
+<text x="893" y="236" font-size="9.6" fill="#334155" xml:space="preserve">独立网段 / 独立 SSID</text>
+<text x="893" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">只放行必要出站</text>
+<text x="893" y="266.8" font-size="9.6" fill="#334155" xml:space="preserve">默认不能访问主网</text>
+<line x1="98.72" y1="218" x2="220" y2="374" stroke="#0891b2" stroke-width="1.4"/>
+<polygon points="220,374 218.03,364.13 210.92,369.66" fill="#0891b2"/>
+<line x1="80.36" y1="268" x2="220" y2="374" stroke="#0891b2" stroke-width="1.4"/>
+<polygon points="220,374 215.55,364.97 210.11,372.14" fill="#0891b2"/>
+<line x1="98.72" y1="318" x2="220" y2="374" stroke="#0891b2" stroke-width="1.4"/>
+<polygon points="220,374 213.72,366.14 209.94,374.31" fill="#0891b2"/>
+<line x1="98.72" y1="368" x2="220" y2="374" stroke="#0891b2" stroke-width="1.4"/>
+<polygon points="220,374 211.23,369.06 210.79,378.05" fill="#0891b2"/>
+<line x1="520" y1="374" x2="580" y2="374" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="580,374 571,369.5 571,378.5" fill="#0f9d58"/>
+<line x1="840" y1="374" x2="880" y2="374" stroke="#d97706" stroke-width="1.4" stroke-dasharray="3 3"/>
+<polygon points="880,374 871,369.5 871,378.5" fill="#d97706"/>
+<rect x="40" y="430" width="1080" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="484" font-size="10.2" fill="#334155" xml:space="preserve">隔离不是「连不上」：IoT 设备通常需要访问云端，所以放行的是「出站 + 特定端口」，不是全通。</text>
+<text x="56" y="502" font-size="10.2" fill="#334155" xml:space="preserve">协议越多，越要靠模型收敛；否则每接一种设备就要改北向业务。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：30-产品与方案/34-智能网关/02-智能家居与安全.md</text>
+</svg>

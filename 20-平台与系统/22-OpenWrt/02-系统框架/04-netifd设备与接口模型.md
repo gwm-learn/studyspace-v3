@@ -73,6 +73,24 @@ layer: 22-OpenWrt/02-系统框架
 | `defaultroute` | 是否安装默认路由 | 不是所有 proto 都支持 |
 | `auto` | 是否随 netifd 自动启动 | 关闭后需手动 up |
 
+一个最小但完整的 `network` 片段（新式写法：device 与 interface 分开）：
+
+```text
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	list ports 'lan1'
+	list ports 'lan2'
+
+config interface 'lan'
+	option device 'br-lan'
+	option proto 'static'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+```
+
+device 段管“链路怎么组成”，interface 段管“三层怎么配”。把 `ipaddr` 写进 device 段不会生效——它根本不是那一层的字段。
+
 ### 3.3 proto handler
 
 | 对象 | 作用 | 边界与误判 |
@@ -98,6 +116,14 @@ layer: 22-OpenWrt/02-系统框架
 4. 调用 proto 脚本；脚本通过 helper 上报地址与状态。
 5. netifd 把结果写入内核，并通过 ubus 暴露 `network.interface.*`。
 
+验证也按这两层看，别一上来抓包：
+
+```text
+ip -d link show br-lan                     # device 层：桥/成员是否存在
+ubus call network.interface.lan status     # interface 层：up/pending/地址
+ifstatus lan                               # 更易读的接口状态（若有该工具）
+```
+
 ### 4.2 异常分支
 
 | 现象 | 原因 | 处理方向 |
@@ -107,6 +133,15 @@ layer: 22-OpenWrt/02-系统框架
 | 桥不通 | 成员口错误、VLAN 未透传 | 对照 bridge/VLAN 配置与交换机 |
 | 多 WAN 选路错 | metric/rule 冲突 | 查策略路由与 mwan3 配置 |
 | 改了配置不生效 | 未 reload network | `reload_config` 或重启 network |
+
+**接口起不来，按“设备 → 接口 → 协议 → 路由”四层查**：
+
+| 层 | 查什么 | 判据 | 答错的后果 |
+| --- | --- | --- | --- |
+| ① device | 链路对象在不在 | `ip link` 能看到、`ip -d link` 类型正确 | 设备不存在，proto 再对也没用 |
+| ② interface | netifd 是否接管 | `ubus call ... status` 的 `pending/up` | 把“等待设备”当成“协议失败” |
+| ③ proto | 脚本执行结果 | `logread -e netifd`、脚本 stderr | 看不到真正的失败原因 |
+| ④ 路由/DNS | 默认路由、resolv.conf | `ip route`、`cat /tmp/resolv.conf.d/resolv.conf.auto` | 有 IP 无网，误判为链路故障 |
 
 ## 5 · 状态机与定时器
 
@@ -119,6 +154,10 @@ netifd 有两套状态：device 的创建/存在状态，interface 的运行状�
 - **代价**：配置错误可能跨 device/interface/proto 三层，日志分散。
 - **不适用**：极端性能场景可能绕过 netifd，直接由数据面程序管理接口。
 - **常见误判**：把 `ifname` 当成“接口名”；它常指底层设备名，interface 自己有逻辑名。
+
+> **推论**：device 与 interface 分离的代价是“名字有两套”。`lan` 是逻辑接口名，`br-lan` 是设备名，`lan1` 是交换机端口名——排障时对不上号，往往不是配置错，而是把三层名字混用了。
+
+> **边界**：切到 DSA 后，端口名由驱动生成（如 `lan1`/`wan`），旧配置里的 `eth0.1`、`eth1` 可能根本不存在。从旧固件迁移配置时，这比“配置语法错”更常见。
 
 ## 7 · 与相邻主题的关系
 

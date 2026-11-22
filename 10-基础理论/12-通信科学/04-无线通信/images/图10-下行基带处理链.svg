@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="640" viewBox="0 0 1220 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1220" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1184" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 10 · 下行共享信道基带处理链：从传输块到 OFDM 符号</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上一排加冗余与随机化，下一排做调制、MIMO 与资源映射。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">码块分割只在传输块超过门限时发生，分割后每个码块单独编码。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">加冗余</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">随机化/调制</text>
+<line x1="254.6" y1="142" x2="284.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="292.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">MIMO 与映射</text>
+<line x1="382.6" y1="142" x2="412.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="420.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">空口</text>
+<text x="40" y="186" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 检错、分段与编码</text>
+<rect x="40" y="200" width="158" height="88" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="200" width="4.5" height="88" fill="#475569" rx="2"/>
+<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">传输块 TB</text>
+<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">MAC 交下来</text>
+<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">一个 TTI 一个</text>
+<line x1="198" y1="244" x2="212" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="212,244 203,239.5 203,248.5" fill="#94a3b8"/>
+<rect x="212" y="200" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="212" y="200" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="225" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">CRC 附着</text>
+<text x="225" y="236" font-size="9.6" fill="#334155" xml:space="preserve">数据 24 bit</text>
+<text x="225" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">BCH/DCI 16 bit</text>
+<line x1="370" y1="244" x2="384" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="384,244 375,239.5 375,248.5" fill="#94a3b8"/>
+<rect x="384" y="200" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="384" y="200" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="397" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">码块分割</text>
+<text x="397" y="236" font-size="9.6" fill="#334155" xml:space="preserve">门限 6144 bit</text>
+<text x="397" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">每块再加 CRC</text>
+<line x1="542" y1="244" x2="556" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="556,244 547,239.5 547,248.5" fill="#94a3b8"/>
+<rect x="556" y="200" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="556" y="200" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="569" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">信道编码</text>
+<text x="569" y="236" font-size="9.6" fill="#334155" xml:space="preserve">LTE：Turbo</text>
+<text x="569" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">NR：LDPC/Polar</text>
+<line x1="714" y1="244" x2="728" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="728,244 719,239.5 719,248.5" fill="#94a3b8"/>
+<rect x="728" y="200" width="158" height="88" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="728" y="200" width="4.5" height="88" fill="#4f46e5" rx="2"/>
+<text x="741" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">速率匹配</text>
+<text x="741" y="236" font-size="9.6" fill="#334155" xml:space="preserve">按资源打孔/重复</text>
+<text x="741" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">决定实际码率</text>
+<text x="40" y="350" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 随机化、调制、MIMO 与资源映射</text>
+<rect x="40" y="364" width="158" height="88" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="40" y="364" width="4.5" height="88" fill="#0891b2" rx="2"/>
+<text x="53" y="383" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">加扰</text>
+<text x="53" y="400" font-size="9.6" fill="#334155" xml:space="preserve">小区/RNTI 序列</text>
+<text x="53" y="415.4" font-size="9.6" fill="#334155" xml:space="preserve">随机化干扰</text>
+<line x1="198" y1="408" x2="210" y2="408" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="210,408 201,403.5 201,412.5" fill="#94a3b8"/>
+<rect x="210" y="364" width="158" height="88" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="210" y="364" width="4.5" height="88" fill="#0891b2" rx="2"/>
+<text x="223" y="383" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">调制</text>
+<text x="223" y="400" font-size="9.6" fill="#334155" xml:space="preserve">QPSK/16/64-QAM</text>
+<text x="223" y="415.4" font-size="9.6" fill="#334155" xml:space="preserve">NR 可 256-QAM</text>
+<line x1="368" y1="408" x2="380" y2="408" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="380,408 371,403.5 371,412.5" fill="#94a3b8"/>
+<rect x="380" y="364" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="380" y="364" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="393" y="383" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">层映射</text>
+<text x="393" y="400" font-size="9.6" fill="#334155" xml:space="preserve">码字 → 层</text>
+<text x="393" y="415.4" font-size="9.6" fill="#334155" xml:space="preserve">层数 ≤ 端口数</text>
+<line x1="538" y1="408" x2="550" y2="408" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="550,408 541,403.5 541,412.5" fill="#94a3b8"/>
+<rect x="550" y="364" width="158" height="88" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="550" y="364" width="4.5" height="88" fill="#d97706" rx="2"/>
+<text x="563" y="383" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">预编码</text>
+<text x="563" y="400" font-size="9.6" fill="#334155" xml:space="preserve">层 → 天线端口</text>
+<text x="563" y="415.4" font-size="9.6" fill="#334155" xml:space="preserve">码本/波束</text>
+<line x1="708" y1="408" x2="720" y2="408" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="720,408 711,403.5 711,412.5" fill="#94a3b8"/>
+<rect x="720" y="364" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="720" y="364" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="733" y="383" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">资源映射</text>
+<text x="733" y="400" font-size="9.6" fill="#334155" xml:space="preserve">避开 RS/同步/控制</text>
+<text x="733" y="415.4" font-size="9.6" fill="#334155" xml:space="preserve">映射到 RE</text>
+<line x1="878" y1="408" x2="890" y2="408" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="890,408 881,403.5 881,412.5" fill="#94a3b8"/>
+<rect x="890" y="364" width="158" height="88" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="890" y="364" width="4.5" height="88" fill="#0f9d58" rx="2"/>
+<text x="903" y="383" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">OFDM</text>
+<text x="903" y="400" font-size="9.6" fill="#334155" xml:space="preserve">IFFT + CP</text>
+<text x="903" y="415.4" font-size="9.6" fill="#334155" xml:space="preserve">上天线</text>
+<rect x="40" y="486" width="1140" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="516" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="540" font-size="10.2" fill="#334155" xml:space="preserve">· 编码与速率匹配决定“可靠性”，加扰与调制决定“频谱效率”，预编码决定“空间复用还是分集”。</text>
+<text x="56" y="558" font-size="10.2" fill="#334155" xml:space="preserve">· 参考信号、同步信号和控制区要先扣掉，剩下的 RE 才是共享信道可用的资源。</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 36.212 / 38.212 的链路结构；数字（6144 bit、CRC 长度）以对应版本为准。</text>
+</svg>

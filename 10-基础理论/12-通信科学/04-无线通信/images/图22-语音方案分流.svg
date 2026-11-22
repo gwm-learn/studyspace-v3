@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="620" viewBox="0 0 1340 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1340" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1304" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 22 · 语音走哪条路：VoNR / EPS Fallback / VoLTE / CSFB</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">按“核心网 → 覆盖 → IMS 签约 → 终端能力”四个条件依次判断。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">越往右退一档，音质与接续速度越差；只有 CSFB 不走 IMS。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">首选</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">回落</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">兜底</text>
+<rect x="515" y="200" width="300" height="58" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="515" y="200" width="4.5" height="58" fill="#475569" rx="2"/>
+<text x="528" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">发起 / 接收语音</text>
+<text x="528" y="236" font-size="9.6" fill="#334155" xml:space="preserve">看驻留制式与 IMS 状态</text>
+<rect x="40" y="320" width="299" height="72.8" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="320" width="4.5" height="72.8" fill="#0f9d58" rx="2"/>
+<text x="53" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">VoNR</text>
+<text x="53" y="356" font-size="9.6" fill="#334155" xml:space="preserve">5GC + NR 覆盖</text>
+<text x="53" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">IMS 已注册、终端支持</text>
+<line x1="575" y1="258" x2="189.5" y2="320" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="189.5,320 199.1,323.01 197.67,314.13" fill="#0f9d58"/>
+<text x="50" y="412.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ NR 上建 5QI 1/5</text>
+<rect x="357" y="320" width="299" height="72.8" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="357" y="320" width="4.5" height="72.8" fill="#d97706" rx="2"/>
+<text x="370" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">EPS Fallback → VoLTE</text>
+<text x="370" y="356" font-size="9.6" fill="#334155" xml:space="preserve">驻留 5G 但无 VoNR</text>
+<text x="370" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">回落到 LTE 建 VoLTE</text>
+<line x1="635" y1="258" x2="506.5" y2="320" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="506.5,320 516.56,320.14 512.65,312.04" fill="#d97706"/>
+<text x="367" y="412.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 建立阶段回落</text>
+<rect x="674" y="320" width="299" height="72.8" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="674" y="320" width="4.5" height="72.8" fill="#4f46e5" rx="2"/>
+<text x="687" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">VoLTE</text>
+<text x="687" y="356" font-size="9.6" fill="#334155" xml:space="preserve">LTE + IMS</text>
+<text x="687" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">QCI 1/5 专用承载</text>
+<line x1="695" y1="258" x2="823.5" y2="320" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="823.5,320 817.35,312.04 813.44,320.14" fill="#4f46e5"/>
+<text x="684" y="412.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ LTE 上直接打通</text>
+<rect x="991" y="320" width="299" height="72.8" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="991" y="320" width="4.5" height="72.8" fill="#dc2626" rx="2"/>
+<text x="1004" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">CSFB</text>
+<text x="1004" y="356" font-size="9.6" fill="#334155" xml:space="preserve">无 IMS/VoLTE 签约</text>
+<text x="1004" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">回落 2G/3G 电路域</text>
+<line x1="755" y1="258" x2="1140.5" y2="320" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="1140.5,320 1132.33,314.13 1130.9,323.01" fill="#dc2626"/>
+<text x="1001" y="412.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 跨系统重选，数据中断</text>
+<rect x="40" y="470" width="1250" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="500" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="524" font-size="10.2" fill="#334155" xml:space="preserve">· 前三条都走 IMS，差别在“哪张网上建承载”；CSFB 根本不走 IMS，音质掉到窄带。</text>
+<text x="56" y="542" font-size="10.2" fill="#334155" xml:space="preserve">· EPS Fallback 只解决“建立时没有 VoNR”，通话中跨系统不断要靠 SRVCC。</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 23.228 / 23.216 / 23.502；课程材料《VoLTE 笔记》《SDX55 平台 VoLTE 简介》。</text>
+</svg>

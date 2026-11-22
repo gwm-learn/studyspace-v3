@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="800" viewBox="0 0 1260 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1260" height="800" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1224" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 14 · 选网与小区选择：从 PLMN 列表到驻留</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先按 PLMN 列表决定“找哪家网”，再按 S 准则决定“这个小区能不能用”。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">失败不是死循环：每一层都有退路（换频点、换 PLMN、进受限服务）。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">可驻留</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">受限</text>
+<line x1="310" y1="142" x2="340" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="348" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">回退</text>
+<rect x="40" y="196" width="158" height="96" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="196" width="4.5" height="96" fill="#475569" rx="2"/>
+<text x="53" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">读 USIM / NV</text>
+<text x="53" y="232" font-size="9.6" fill="#334155" xml:space="preserve">IMSI 推出归属 PLMN</text>
+<text x="53" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">FPLMN、频段、RAT 顺序</text>
+<line x1="198" y1="244" x2="242" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="242,244 233,239.5 233,248.5" fill="#94a3b8"/>
+<rect x="242" y="196" width="158" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="242" y="196" width="4.5" height="96" fill="#4f46e5" rx="2"/>
+<text x="255" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PLMN 选择</text>
+<text x="255" y="232" font-size="9.6" fill="#334155" xml:space="preserve">自动：R/EH → U → O → 其他</text>
+<text x="255" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">手动：直接锁定</text>
+<line x1="400" y1="244" x2="444" y2="244" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="444,244 435,239.5 435,248.5" fill="#94a3b8"/>
+<rect x="444" y="196" width="158" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="444" y="196" width="4.5" height="96" fill="#4f46e5" rx="2"/>
+<text x="457" y="215" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">扫频 + 小区搜索</text>
+<text x="457" y="232" font-size="9.6" fill="#334155" xml:space="preserve">PSS/SSS → PCI</text>
+<text x="457" y="247.4" font-size="9.6" fill="#334155" xml:space="preserve">MIB → SIB1 读 PLMN</text>
+<line x1="928" y1="292" x2="928" y2="350" stroke="#4f46e5" stroke-width="1.8"/>
+<line x1="928" y1="350" x2="630" y2="350" stroke="#4f46e5" stroke-width="1.8"/>
+<line x1="630" y1="350" x2="630" y2="396" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="630,396 634.5,387 625.5,387" fill="#4f46e5"/>
+<rect x="460" y="396" width="340" height="58" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="460" y="396" width="4.5" height="58" fill="#d97706" rx="2"/>
+<text x="473" y="415" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">S 准则：Srxlev &gt; 0 且 Squal &gt; 0？</text>
+<text x="473" y="432" font-size="9.6" fill="#334155" xml:space="preserve">且 PLMN 合法、小区未禁止、TA 不在禁止列表</text>
+<rect x="40" y="516" width="381.33" height="72.8" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="516" width="4.5" height="72.8" fill="#0f9d58" rx="2"/>
+<text x="53" y="535" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">正常驻留</text>
+<text x="53" y="552" font-size="9.6" fill="#334155" xml:space="preserve">进入随机接入/RRC/注册</text>
+<text x="53" y="567.4" font-size="9.6" fill="#334155" xml:space="preserve">可发起全部业务</text>
+<line x1="545" y1="454" x2="230.67" y2="516" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="230.67,516 240.37,518.67 238.63,509.84" fill="#0f9d58"/>
+<text x="50" y="608.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 接入网与核心网流程</text>
+<rect x="439.33" y="516" width="381.33" height="72.8" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="439.33" y="516" width="4.5" height="72.8" fill="#d97706" rx="2"/>
+<text x="452.33" y="535" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">受限服务</text>
+<text x="452.33" y="552" font-size="9.6" fill="#334155" xml:space="preserve">只能紧急呼叫</text>
+<text x="452.33" y="567.4" font-size="9.6" fill="#334155" xml:space="preserve">继续找合适小区</text>
+<line x1="630" y1="454" x2="630" y2="516" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="630,516 634.5,507 625.5,507" fill="#d97706"/>
+<text x="449.33" y="608.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 部分条件不满足</text>
+<rect x="838.67" y="516" width="381.33" height="72.8" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="838.67" y="516" width="4.5" height="72.8" fill="#dc2626" rx="2"/>
+<text x="851.67" y="535" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">换候选</text>
+<text x="851.67" y="552" font-size="9.6" fill="#334155" xml:space="preserve">换频点 / 换 PLMN</text>
+<text x="851.67" y="567.4" font-size="9.6" fill="#334155" xml:space="preserve">重新扫频或选网</text>
+<line x1="715" y1="454" x2="1029.33" y2="516" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="1029.33,516 1021.37,509.84 1019.63,518.67" fill="#dc2626"/>
+<text x="848.67" y="608.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ S ≤ 0 或 PLMN 不匹配</text>
+<rect x="40" y="640" width="1180" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="670" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="694" font-size="10.2" fill="#334155" xml:space="preserve">· S 准则是硬门槛：S ≤ 0 不能正常驻留；S &gt; 0 之后才在候选之间比优先级和质量。</text>
+<text x="56" y="712" font-size="10.2" fill="#334155" xml:space="preserve">· 重选的优先级、门限、Treselection 都由网络在 SIB 里广播，终端不能自己决定“5G 优先”。</text>
+<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 23.122 / 36.304 / 38.304；课程材料《4-LTE-PLMN选择》《5-LTE-小区搜索与选择》。</text>
+</svg>

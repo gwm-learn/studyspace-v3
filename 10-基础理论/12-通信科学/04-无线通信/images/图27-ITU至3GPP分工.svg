@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1200" height="500" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1164" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 27 · 从 ITU 能力到 3GPP 规范：谁定什么</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">五个阶段串行：ITU 定场景与门槛，3GPP 做研究与规范，ITU 再做评估。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">箭头表示输入关系，不是批准关系；节点第一行是负责方或阶段，下面是产出与时间。</text>
+<text x="60" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">ITU 定“要达到什么”，3GPP 定“怎么实现”，WRC 定“用哪段频谱”</text>
+<rect x="60" y="200" width="208" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="60" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="73" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ITU 场景与能力</text>
+<text x="73" y="236" font-size="9.6" fill="#334155" xml:space="preserve">M.2160 · 2023-11</text>
+<text x="73" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">六大场景 / 15 项能力</text>
+<line x1="268" y1="241" x2="282" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="282,241 273,236.5 273,245.5" fill="#94a3b8"/>
+<rect x="282" y="200" width="208" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="282" y="200" width="4.5" height="82" fill="#0891b2" rx="2"/>
+<text x="295" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ITU TPR</text>
+<text x="295" y="236" font-size="9.6" fill="#334155" xml:space="preserve">评估门槛 · 2026</text>
+<text x="295" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">20 项要求</text>
+<line x1="490" y1="241" x2="504" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="504,241 495,236.5 495,245.5" fill="#94a3b8"/>
+<rect x="504" y="200" width="208" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="504" y="200" width="4.5" height="82" fill="#d97706" rx="2"/>
+<text x="517" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">3GPP 研究</text>
+<text x="517" y="236" font-size="9.6" fill="#334155" xml:space="preserve">R20 · TR 22.870 / 38.914</text>
+<text x="517" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">场景、需求、可行性</text>
+<line x1="712" y1="241" x2="726" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="726,241 717,236.5 717,245.5" fill="#94a3b8"/>
+<rect x="726" y="200" width="208" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="726" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
+<text x="739" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">3GPP 规范</text>
+<text x="739" y="236" font-size="9.6" fill="#334155" xml:space="preserve">R21 · 2027–2029</text>
+<text x="739" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">Stage-1/2/3 → ASN.1</text>
+<line x1="934" y1="241" x2="948" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="948,241 939,236.5 939,245.5" fill="#94a3b8"/>
+<rect x="948" y="200" width="208" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="948" y="200" width="4.5" height="82" fill="#0f9d58" rx="2"/>
+<text x="961" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ITU 评估与规范</text>
+<text x="961" y="236" font-size="9.6" fill="#334155" xml:space="preserve">2029 提案 / 2030 规范</text>
+<text x="961" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">IMT-2030</text>
+<rect x="60" y="330" width="1096" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="360" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">三层边界</text>
+<text x="76" y="384" font-size="10.2" fill="#334155" xml:space="preserve">ITU 不定具体协议：它定“要达到什么”，3GPP 定“怎么实现”。</text>
+<text x="76" y="402" font-size="10.2" fill="#334155" xml:space="preserve">3GPP 不定频谱：频段由 WRC 与各国监管决定，3GPP 只定义 n 号与射频要求。</text>
+<text x="76" y="420" font-size="10.2" fill="#334155" xml:space="preserve">WRC 不定实现：WRC 只划频率，设备与网络能不能做出来是产业问题。</text>
+<text x="36" y="464" font-size="12.3" fill="#64748b" xml:space="preserve">图源：ITU-R M.2160、ITU IMT-2030 门户、3GPP Releases 页面（访问 2026-11-22）。</text>
+</svg>

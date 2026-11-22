@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="660" viewBox="0 0 1280 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1280" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1244" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 09 · 蜂窝代际演进：每代解决的问题不同</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上方时间轴标代际与代表技术，下方矩阵对比接入网、多址、核心网与主打能力。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">先看接入网层数怎么减少，再看核心网怎么从电路域走向服务化。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">代际里程碑</text>
+<line x1="80" y1="236" x2="1160" y2="236" stroke="#cbd5e1" stroke-width="1.8"/>
+<polygon points="215,231 210,236 215,241 220,236" fill="#4f46e5"/>
+<text x="215" y="218" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">2G</text>
+<text x="215" y="204" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">GSM / GPRS</text>
+<polygon points="485,231 480,236 485,241 490,236" fill="#4f46e5"/>
+<text x="485" y="260" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">3G</text>
+<text x="485" y="274" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">UMTS / TD-SCDMA</text>
+<polygon points="755,231 750,236 755,241 760,236" fill="#4f46e5"/>
+<text x="755" y="218" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">4G</text>
+<text x="755" y="204" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">LTE / LTE-A</text>
+<polygon points="1025,231 1020,236 1025,241 1030,236" fill="#4f46e5"/>
+<text x="1025" y="260" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">5G</text>
+<text x="1025" y="274" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">NR / 5G-Advanced</text>
+<rect x="80" y="300" width="1160" height="30" fill="#f1f5f9" rx="6"/>
+<text x="88" y="320" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">代际</text>
+<text x="428" y="320" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">接入网</text>
+<text x="660" y="320" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">多址</text>
+<text x="892" y="320" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">核心网</text>
+<text x="1124" y="320" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">主打能力</text>
+<rect x="80" y="330" width="1160" height="34" fill="#ffffff"/>
+<line x1="80" y1="330" x2="1240" y2="330" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="88" y="350" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">2G</text>
+<text x="428" y="350" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">BTS + BSC</text>
+<text x="660" y="350" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">TDMA</text>
+<text x="892" y="350" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">MSC + SGSN/GGSN</text>
+<text x="1124" y="350" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">语音 + 低速分组</text>
+<rect x="80" y="364" width="1160" height="34" fill="#ffffff"/>
+<line x1="80" y1="364" x2="1240" y2="364" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="88" y="384" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">3G</text>
+<text x="428" y="384" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">NodeB + RNC</text>
+<text x="660" y="384" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">CDMA</text>
+<text x="892" y="384" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">CS 域 + PS 域</text>
+<text x="1124" y="384" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">移动数据</text>
+<rect x="80" y="398" width="1160" height="34" fill="#ffffff"/>
+<line x1="80" y1="398" x2="1240" y2="398" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="88" y="418" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">4G</text>
+<text x="428" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">仅 eNB（E-UTRAN）</text>
+<text x="660" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">OFDMA / SC-FDMA</text>
+<text x="892" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">EPC 全 IP</text>
+<text x="1124" y="418" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">移动宽带</text>
+<rect x="80" y="432" width="1160" height="34" fill="#ffffff"/>
+<line x1="80" y1="432" x2="1240" y2="432" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="88" y="452" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">5G</text>
+<text x="428" y="452" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">gNB + ng-eNB（NG-RAN）</text>
+<text x="660" y="452" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">CP-OFDM / DFT-s-OFDM</text>
+<text x="892" y="452" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">5GC 服务化</text>
+<text x="1124" y="452" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">eMBB / mMTC / URLLC</text>
+<line x1="80" y1="466" x2="1240" y2="466" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="80" y="496" width="1160" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="96" y="526" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="96" y="550" font-size="10.2" fill="#334155" xml:space="preserve">· 每次代际演进都减少接入网层数（BSC/RNC 被去掉），并把交换统一到 IP。</text>
+<text x="96" y="568" font-size="10.2" fill="#334155" xml:space="preserve">· LTE-A、5G-Advanced 是同代内的版本增强，不是新的一代；版本冻结时间以 3GPP 发布为准。</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 36.300 / 38.300 的架构描述与课程材料整理；代际时间点为公开资料，具体版本以 3GPP 发布为准。</text>
+</svg>

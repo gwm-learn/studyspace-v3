@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="580" viewBox="0 0 1260 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1260" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1224" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 25 · 一条蜂窝宣传说法的核对路径</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先判这句话属于「代际 / 版本 / 频段 / 指标」哪一类，再去对应的权威来源查。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">四个分支是四种常见混淆，不是四选一：一句话可能同时踩中两个。</text>
+<rect x="500" y="190" width="280" height="58" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="500" y="190" width="4.5" height="58" fill="#475569" rx="2"/>
+<text x="513" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">这句话在说什么？</text>
+<text x="513" y="226" font-size="9.6" fill="#334155" xml:space="preserve">5G-A、6G、毫米波常被写在同一句里</text>
+<rect x="60" y="300" width="276.5" height="57.4" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="60" y="300" width="4.5" height="57.4" fill="#4f46e5" rx="2"/>
+<text x="73" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">代际</text>
+<text x="73" y="336" font-size="9.6" fill="#334155" xml:space="preserve">ITU 框架：IMT-2020 / IMT-2030</text>
+<line x1="556" y1="248" x2="198.25" y2="300" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="198.25,300 207.8,303.16 206.51,294.25" fill="#4f46e5"/>
+<text x="70" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 查 M.2160 与 TPR</text>
+<rect x="354.5" y="300" width="276.5" height="57.4" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="354.5" y="300" width="4.5" height="57.4" fill="#0891b2" rx="2"/>
+<text x="367.5" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">版本</text>
+<text x="367.5" y="336" font-size="9.6" fill="#334155" xml:space="preserve">3GPP 哪个 Release、冻结没有</text>
+<line x1="612" y1="248" x2="492.75" y2="300" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="492.75,300 502.8,300.53 499.2,292.28" fill="#0891b2"/>
+<text x="364.5" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 查 3GPP Releases 表</text>
+<rect x="649" y="300" width="276.5" height="57.4" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="649" y="300" width="4.5" height="57.4" fill="#d97706" rx="2"/>
+<text x="662" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">频段</text>
+<text x="662" y="336" font-size="9.6" fill="#334155" xml:space="preserve">WRC 标识 + NR n 号</text>
+<line x1="668" y1="248" x2="787.25" y2="300" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="787.25,300 780.8,292.28 777.2,300.53" fill="#d97706"/>
+<text x="659" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 查 TS 38.101-2</text>
+<rect x="943.5" y="300" width="276.5" height="57.4" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="943.5" y="300" width="4.5" height="57.4" fill="#dc2626" rx="2"/>
+<text x="956.5" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">指标</text>
+<text x="956.5" y="336" font-size="9.6" fill="#334155" xml:space="preserve">峰值 / 研究目标 / 现网体验</text>
+<line x1="724" y1="248" x2="1081.75" y2="300" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="1081.75,300 1073.49,294.25 1072.2,303.16" fill="#dc2626"/>
+<text x="953.5" y="377.4" font-size="9.4" fill="#64748b" xml:space="preserve">→ 先问前提再比较</text>
+<rect x="60" y="415.4" width="1160" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="445.4" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">三步落地</text>
+<text x="76" y="469.4" font-size="10.2" fill="#334155" xml:space="preserve">① 定维度：代际看 ITU，版本看 Release，频段看 WRC 与 n 号；维度定错，后面全错。</text>
+<text x="76" y="487.4" font-size="10.2" fill="#334155" xml:space="preserve">② 查状态：TR 是研究、TS 是规范、冻结是协议稳定；三者不能互相替代。</text>
+<text x="76" y="505.4" font-size="10.2" fill="#334155" xml:space="preserve">③ 查前提：峰值速率、研究目标、现网体验是三把不同的尺子，混用会得出相反结论。</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本篇整理；依据 3GPP Releases、ITU-R M.2160、TS 38.101-2。</text>
+</svg>

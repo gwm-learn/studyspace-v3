@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1100" viewBox="0 0 1280 1100" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1280" height="1100" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1244" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 分层排障：从现象到层的决策树</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">每个菱形只问一个“一句话判据”；失败分支指向“下一层”，不是“下一条命令”。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">先判层，再取证，最后二分。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径（是）</text>
+<line x1="164" y1="142" x2="194" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="202" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败分支</text>
+<line x1="270" y1="142" x2="300" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="308" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">应用/性能</text>
+<rect x="300" y="190" width="300" height="58" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="190" width="4.5" height="58" fill="#4f46e5" rx="2"/>
+<text x="313" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">设备有响应？</text>
+<rect x="760" y="194" width="300" height="58" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="760" y="194" width="4.5" height="58" fill="#dc2626" rx="2"/>
+<text x="773" y="213" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">供电 / 串口 / bootloader</text>
+<line x1="600" y1="219" x2="760" y2="219" stroke="#dc2626" stroke-width="1.6"/>
+<polygon points="760,219 751,214.5 751,223.5" fill="#dc2626"/>
+<text x="688" y="213" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">否</text>
+<line x1="450" y1="248" x2="450" y2="300" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="450,300 454.5,291 445.5,291" fill="#4f46e5"/>
+<text x="458" y="268" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">是</text>
+<rect x="300" y="300" width="300" height="58" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="300" width="4.5" height="58" fill="#4f46e5" rx="2"/>
+<text x="313" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">能登录？</text>
+<rect x="760" y="304" width="300" height="58" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="760" y="304" width="4.5" height="58" fill="#dc2626" rx="2"/>
+<text x="773" y="323" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网络 / 认证 / 服务</text>
+<line x1="600" y1="329" x2="760" y2="329" stroke="#dc2626" stroke-width="1.6"/>
+<polygon points="760,329 751,324.5 751,333.5" fill="#dc2626"/>
+<text x="688" y="323" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">否</text>
+<line x1="450" y1="358" x2="450" y2="410" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="450,410 454.5,401 445.5,401" fill="#4f46e5"/>
+<text x="458" y="378" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">是</text>
+<rect x="300" y="410" width="300" height="58" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="410" width="4.5" height="58" fill="#4f46e5" rx="2"/>
+<text x="313" y="429" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">接口 UP？</text>
+<rect x="760" y="414" width="300" height="58" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="760" y="414" width="4.5" height="58" fill="#dc2626" rx="2"/>
+<text x="773" y="433" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">驱动 / 配置</text>
+<line x1="600" y1="439" x2="760" y2="439" stroke="#dc2626" stroke-width="1.6"/>
+<polygon points="760,439 751,434.5 751,443.5" fill="#dc2626"/>
+<text x="688" y="433" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">否</text>
+<line x1="450" y1="468" x2="450" y2="520" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="450,520 454.5,511 445.5,511" fill="#4f46e5"/>
+<text x="458" y="488" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">是</text>
+<rect x="300" y="520" width="300" height="58" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="520" width="4.5" height="58" fill="#4f46e5" rx="2"/>
+<text x="313" y="539" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">有地址？</text>
+<rect x="760" y="524" width="300" height="58" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="760" y="524" width="4.5" height="58" fill="#dc2626" rx="2"/>
+<text x="773" y="543" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DHCP / 静态配置</text>
+<line x1="600" y1="549" x2="760" y2="549" stroke="#dc2626" stroke-width="1.6"/>
+<polygon points="760,549 751,544.5 751,553.5" fill="#dc2626"/>
+<text x="688" y="543" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">否</text>
+<line x1="450" y1="578" x2="450" y2="630" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="450,630 454.5,621 445.5,621" fill="#4f46e5"/>
+<text x="458" y="598" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">是</text>
+<rect x="300" y="630" width="300" height="58" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="630" width="4.5" height="58" fill="#4f46e5" rx="2"/>
+<text x="313" y="649" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">能出网？</text>
+<rect x="760" y="634" width="300" height="58" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="760" y="634" width="4.5" height="58" fill="#dc2626" rx="2"/>
+<text x="773" y="653" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">路由 / NAT / 防火墙</text>
+<line x1="600" y1="659" x2="760" y2="659" stroke="#dc2626" stroke-width="1.6"/>
+<polygon points="760,659 751,654.5 751,663.5" fill="#dc2626"/>
+<text x="688" y="653" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">否</text>
+<line x1="450" y1="688" x2="450" y2="740" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="450,740 454.5,731 445.5,731" fill="#4f46e5"/>
+<text x="458" y="708" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">是</text>
+<rect x="300" y="740" width="300" height="58" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="300" y="740" width="4.5" height="58" fill="#4f46e5" rx="2"/>
+<text x="313" y="759" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">能解析？</text>
+<rect x="760" y="744" width="300" height="58" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="760" y="744" width="4.5" height="58" fill="#dc2626" rx="2"/>
+<text x="773" y="763" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DNS</text>
+<line x1="600" y1="769" x2="760" y2="769" stroke="#dc2626" stroke-width="1.6"/>
+<polygon points="760,769 751,764.5 751,773.5" fill="#dc2626"/>
+<text x="688" y="763" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">否</text>
+<rect x="300" y="850" width="300" height="58" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="300" y="850" width="4.5" height="58" fill="#d97706" rx="2"/>
+<text x="313" y="869" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">应用 / 性能问题</text>
+<line x1="450" y1="798" x2="450" y2="850" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="450,850 454.5,841 445.5,841" fill="#d97706"/>
+<text x="458" y="818" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">是</text>
+<rect x="40" y="940" width="1200" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="970" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="994" font-size="10.2" fill="#334155" xml:space="preserve">· 判据是“一句话能回答”的：能不能登录、有没有地址、能不能解析。答不上来说明还缺证据。</text>
+<text x="56" y="1012" font-size="10.2" fill="#334155" xml:space="preserve">· 同一现象可能跨越两层（如 DNS 失败既有服务层也有上游网络），先取最靠近现象的那层证据。</text>
+<text x="36" y="1064" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库各篇“异常分支/判据”的汇总；OpenWrt 官方调试文档。</text>
+</svg>

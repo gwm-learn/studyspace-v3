@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="800" viewBox="0 0 1140 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="800" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 21 · PDU 会话建立：QoS 规则怎么下到终端和基站</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">SMF 一面向 UPF 下发 N4 规则，一面把 QoS 规则装进 NAS 给 UE，还要给 gNB 会话上下文。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">三份描述必须一致，否则会出现“终端想发、UPF 不认”。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">请求/响应</text>
+<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">N4 规则下发</text>
+<line x1="274.4" y1="142" x2="304.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="312.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">数据</text>
+<rect x="36" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="48" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">UE</text>
+<rect x="246" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="258" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">gNB</text>
+<rect x="456" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="468" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">AMF</text>
+<rect x="666" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="678" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">SMF</text>
+<rect x="876" y="190" width="180" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="888" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">UPF</text>
+<line x1="126" y1="232" x2="126" y2="620" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="336" y1="232" x2="336" y2="620" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="546" y1="232" x2="546" y2="620" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="756" y1="232" x2="756" y2="620" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="966" y1="232" x2="966" y2="620" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="126" y1="260" x2="546" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="546,260 537,255.5 537,264.5" fill="#4f46e5"/>
+<text x="132" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">PDU Session Establishment Request（DNN/S-NSSAI）</text>
+<line x1="546" y1="298" x2="756" y2="298" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="756,298 747,293.5 747,302.5" fill="#4f46e5"/>
+<text x="552" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">SM Context Create（选 SMF）</text>
+<line x1="756" y1="336" x2="966" y2="336" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="966,336 957,331.5 957,340.5" fill="#0f9d58"/>
+<text x="762" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">N4：建立 PDR/FAR/QER</text>
+<line x1="966" y1="374" x2="756" y2="374" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="756,374 765,378.5 765,369.5" fill="#0f9d58"/>
+<text x="762" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">N4 响应（隧道信息）</text>
+<line x1="756" y1="412" x2="546" y2="412" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="546,412 555,416.5 555,407.5" fill="#4f46e5"/>
+<text x="552" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">SM Context（QoS 规则 + N2 信息）</text>
+<line x1="546" y1="450" x2="336" y2="450" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="336,450 345,454.5 345,445.5" fill="#4f46e5"/>
+<text x="342" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">N2：PDU Session Resource Setup</text>
+<line x1="336" y1="488" x2="126" y2="488" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="126,488 135,492.5 135,483.5" fill="#4f46e5"/>
+<text x="132" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">RRC Reconfiguration（建 DRB）</text>
+<line x1="336" y1="526" x2="546" y2="526" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="546,526 537,521.5 537,530.5" fill="#4f46e5"/>
+<text x="342" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">N2 响应</text>
+<line x1="546" y1="564" x2="126" y2="564" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="126,564 135,568.5 135,559.5" fill="#4f46e5"/>
+<text x="132" y="557" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">PDU Session Establishment Accept（QoS 规则）</text>
+<line x1="126" y1="602" x2="966" y2="602" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="966,602 957,597.5 957,606.5" fill="#d97706"/>
+<text x="132" y="595" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">数据（SDAP 打 QFI）</text>
+<rect x="36" y="646" width="1050" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="676" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="52" y="700" font-size="10.2" fill="#334155" xml:space="preserve">· 会话建立是“三份描述对齐”：UPF 的 N4 规则、UE 的 QoS 规则、gNB 的会话上下文。</text>
+<text x="52" y="718" font-size="10.2" fill="#334155" xml:space="preserve">· 只建会话不等于有 QoS 保障：还要看 gNB 是否把它映射成合适的 DRB，以及空口有没有资源。</text>
+<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP 23.502 / 23.501 / 24.501 的会话建立与 QoS 规则；课程材料《5G 基础信令培训》。</text>
+</svg>

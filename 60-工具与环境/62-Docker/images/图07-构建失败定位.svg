@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 07 · 构建失败的定位路径</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先判断失败发生在哪个阶段，再决定改上下文、改指令，还是改运行环境。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">三段的排查手段完全不同；直接 --no-cache 只是把问题推迟到下一次。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">上下文阶段</text>
+<line x1="153" y1="142" x2="183" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="191" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">指令执行阶段</text>
+<line x1="281" y1="142" x2="311" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="319" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">产物运行阶段</text>
+<rect x="430" y="190" width="240" height="62" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="430" y="190" width="4.5" height="62" fill="#475569" rx="2"/>
+<text x="443" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">构建失败</text>
+<text x="443" y="226" font-size="9.6" fill="#334155" xml:space="preserve">看报错停在哪一行</text>
+<rect x="40" y="300" width="300" height="132" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="40" y="300" width="4.5" height="132" fill="#d97706" rx="2"/>
+<text x="53" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 上下文阶段</text>
+<text x="53" y="336" font-size="9.6" fill="#334155" xml:space="preserve">现象：卡在 Sending build context</text>
+<text x="53" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">　或一开始就极慢</text>
+<text x="53" y="366.8" font-size="9.6" fill="#334155" xml:space="preserve">原因：上下文含 .git/产物/日志</text>
+<text x="53" y="382.2" font-size="9.6" fill="#334155" xml:space="preserve">　或构建目录选大了</text>
+<line x1="550" y1="252" x2="190" y2="300" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="190,300 199.52,303.27 198.33,294.35" fill="#d97706"/>
+<text x="52" y="452" font-size="9.6" fill="#64748b" xml:space="preserve">动作：写 .dockerignore、换更小的上下文目录</text>
+<rect x="400" y="300" width="300" height="132" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="400" y="300" width="4.5" height="132" fill="#dc2626" rx="2"/>
+<text x="413" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 指令执行阶段</text>
+<text x="413" y="336" font-size="9.6" fill="#334155" xml:space="preserve">现象：RUN 里超时 / exec format</text>
+<text x="413" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">　/ Killed / 缓存不失效</text>
+<text x="413" y="366.8" font-size="9.6" fill="#334155" xml:space="preserve">原因：代理、平台、内存、</text>
+<text x="413" y="382.2" font-size="9.6" fill="#334155" xml:space="preserve">　COPY 位置不对</text>
+<line x1="550" y1="252" x2="550" y2="300" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="550,300 554.5,291 545.5,291" fill="#dc2626"/>
+<text x="412" y="452" font-size="9.6" fill="#64748b" xml:space="preserve">动作：代理参数、binfmt、限并行、调指令顺序</text>
+<rect x="760" y="300" width="300" height="132" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="760" y="300" width="4.5" height="132" fill="#4f46e5" rx="2"/>
+<text x="773" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ 产物运行阶段</text>
+<text x="773" y="336" font-size="9.6" fill="#334155" xml:space="preserve">现象：容器起来就退出 / 找不到库</text>
+<text x="773" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">　/ 缺证书或时区</text>
+<text x="773" y="366.8" font-size="9.6" fill="#334155" xml:space="preserve">原因：COPY --from 漏文件、</text>
+<text x="773" y="382.2" font-size="9.6" fill="#334155" xml:space="preserve">　入口写错</text>
+<line x1="550" y1="252" x2="910" y2="300" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="910,300 901.67,294.35 900.48,303.27" fill="#4f46e5"/>
+<text x="772" y="452" font-size="9.6" fill="#64748b" xml:space="preserve">动作：补 COPY、验证 ENTRYPOINT</text>
+<rect x="40" y="486" width="1020" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="516" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="540" font-size="10.2" fill="#334155" xml:space="preserve">三段的分界点是：上下文发完了没有、指令执行成功了没有、产物能不能跑起来。</text>
+<text x="56" y="558" font-size="10.2" fill="#334155" xml:space="preserve">同一句报错可能来自不同段——例如「找不到文件」既可能是 COPY 漏了，也可能是运行时路径不对。</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：60-工具与环境/62-Docker/01-镜像分层与构建.md</text>
+</svg>

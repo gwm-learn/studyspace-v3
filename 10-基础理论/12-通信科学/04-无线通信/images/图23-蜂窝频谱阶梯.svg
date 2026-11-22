@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="720" viewBox="0 0 1260 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1260" height="720" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1224" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 23 · 蜂窝频谱阶梯：越往上带宽越大、覆盖越短</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">每一行是一段频率范围，右侧标签写「状态 · 典型带宽或用途」。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">先看 3GPP 已定义的 FR1/FR2，再看 WRC-27 与 Sub-THz 还只是议题或研究。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">已规范 · 主力</text>
+<line x1="177.2" y1="142" x2="207.2" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="215.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">已规范 · 扩展</text>
+<line x1="318.4" y1="142" x2="348.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="356.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">候选 · 未定</text>
+<line x1="448.6" y1="142" x2="478.6" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="486.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">研究 · 未定</text>
+<rect x="60" y="196" width="900" height="44" fill="#fff5f5" rx="6" stroke="#dc2626" stroke-width="1.1"/>
+<text x="72" y="221.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">Sub-THz  100 – 300 GHz</text>
+<text x="950" y="221.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">6G 研究 · 极短距</text>
+<rect x="60" y="248" width="900" height="44" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1.1"/>
+<text x="72" y="273.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">FR2-2  52.6 – 71 GHz</text>
+<text x="950" y="273.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">毫米波扩展 · 单载波 ≤ 2000 MHz</text>
+<rect x="60" y="300" width="900" height="44" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1.1"/>
+<text x="72" y="325.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">FR2-1  24.25 – 52.6 GHz</text>
+<text x="950" y="325.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">毫米波 · 单载波 ≤ 400 MHz</text>
+<rect x="60" y="352" width="900" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.1"/>
+<text x="72" y="377.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">6G 候选频段  4.4 – 15.35 GHz（多处）</text>
+<text x="950" y="377.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">WRC-27 议题 · 尚未定论</text>
+<rect x="60" y="404" width="900" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="72" y="429.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">FR1  410 MHz – 7125 MHz</text>
+<text x="950" y="429.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">5G 主力 · 单载波 ≤ 100 MHz</text>
+<rect x="60" y="456" width="900" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="72" y="481.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">低频（&lt; 1 GHz）</text>
+<text x="950" y="481.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">覆盖最好 · 带宽最窄</text>
+<rect x="60" y="530" width="1160" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="560" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">这是「能力交换」，不是「代际升级」</text>
+<text x="76" y="584" font-size="10.2" fill="#334155" xml:space="preserve">越往上：单载波带宽变大，但路径损耗、穿透损耗、站址密度和终端功耗同时变差。</text>
+<text x="76" y="602" font-size="10.2" fill="#334155" xml:space="preserve">FR2 在 5G 就已商用，不是 6G 专属；6G 候选频段（4.4–15.35 GHz 多处）的目的，是把带宽和覆盖折中回来。</text>
+<text x="76" y="620" font-size="10.2" fill="#334155" xml:space="preserve">表里的「≤ 带宽」是规范允许的单载波上限，不代表运营商一定开满；实际看牌照与设备能力。</text>
+<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">图源：3GPP TS 38.101-2（FR1/FR2 与信道带宽）、ITU WRC-19/WRC-27 公开资料。</text>
+<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">注：低频与 Sub-THz 行为示意，不对应单一 NR 频段号。</text>
+</svg>

@@ -67,6 +67,33 @@ layer: 22-OpenWrt/02-系统框架
 | `procd_set_param watchdog` | 看门狗 | 服务必须主动喂狗，否则会被重启 |
 | `procd_close_instance` | 结束实例描述 | 忘记关闭会导致配置不完整 |
 
+一个可直接套用的最小脚本：
+
+```sh
+#!/bin/sh /etc/rc.common
+
+USE_PROCD=1
+START=95
+STOP=10
+
+start_service() {
+	procd_open_instance
+	procd_set_param command /usr/sbin/mydaemon -f
+	procd_set_param respawn 3600 5 5
+	procd_set_param file /etc/config/mydaemon
+	procd_set_param netdev wan
+	procd_set_param stdout 1
+	procd_set_param stderr 1
+	procd_close_instance
+}
+
+service_triggers() {
+	procd_add_reload_trigger "mydaemon"
+}
+```
+
+三处最容易错：`START` 要排在依赖之后（网络类服务要大于 `network` 的序号）；`command` 必须是前台运行（不要自己 daemonize，否则 procd 认为进程已退出）；`file`/`netdev` 声明了依赖，procd 才会在变化时重启或延后启动。
+
 ## 4 · 启动与服务流程
 
 ![图 02 · procd：init、服务与看门狗](images/图02-procd.svg)
@@ -93,6 +120,15 @@ layer: 22-OpenWrt/02-系统框架
 | reload 不生效 | 没有实现 `reload_service` 或触发器未声明 | 补触发器或改用 restart |
 | 看门狗误杀 | 服务未喂狗、喂狗周期大于超时 | 检查服务实现与 watchdog 参数 |
 
+**“服务没起来”按顺序查**：
+
+| 步骤 | 查什么 | 判据 | 答错的后果 |
+| --- | --- | --- | --- |
+| ① 开机链接 | 有没有 enable | `/etc/rc.d/S*<svc>` 存在 | 脚本没问题，只是不会开机跑 |
+| ② 脚本本身 | 语法与 `USE_PROCD` | `sh -n /etc/init.d/<svc>` | 语法错在日志里只有一行 |
+| ③ procd 视角 | 有没有被托管 | `logread -e procd` 看实例启动/退出 | 只看应用日志，看不到“启动即退” |
+| ④ 命令本身 | 前台跑一遍 | 手动执行 `command` 看 stderr | 缺库/缺参数在后台日志里不明显 |
+
 ## 5 · 状态机与定时器
 
 服务实例有四个状态：**未启动 → 启动中 → 运行 → 退出**；退出后按 respawn 策略进入“等待重启”或“放弃”。定时器包括：
@@ -101,6 +137,16 @@ layer: 22-OpenWrt/02-系统框架
 - 看门狗超时；
 - `START`/`STOP` 只决定顺序，不是定时器。
 
+`respawn` 的三个参数经常被当成一个“重启开关”，其实各管一件事：
+
+| 参数 | 含义 | 调小的后果 | 调大的后果 |
+| --- | --- | --- | --- |
+| threshold | 跑满多少秒才算“稳定”，计数清零 | 频繁崩溃也算稳定，无限重启 | 计数长期不清零，容易到上限放弃 |
+| timeout | 退出后等几秒再拉起 | 立刻重启，可能死循环刷日志 | 故障恢复慢 |
+| retry | threshold 窗口内最多重启几次 | 偶发崩溃就直接放弃 | 真故障时一直重启，掩盖根因 |
+
+> **推论**：`respawn` 是“兜底”，不是“修复”。进程因缺库/配置错而退出时，调阈值只会改变重启节奏，不会让它跑起来；先把第④步（前台执行）做一遍。
+
 ## 6 · 设计取舍与边界
 
 - **为什么用 procd 而不是 systemd**：嵌入式资源有限，procd 更小，且与 ubus、hotplug、netifd 深度集成。
@@ -108,6 +154,10 @@ layer: 22-OpenWrt/02-系统框架
 - **代价**：procd 的参数有默认值和隐式行为，不熟悉时会出现“脚本看起来对、服务就是不起”。
 - **不适用**：一次性任务、短命令不需要 procd 托管，放 hotplug 或 cron 更合适。
 - **常见误判**：把 `enable` 当成“立即启动”；它只影响下次开机。
+
+> **推论**：`enable` 管“下次开机跑不跑”，`start` 管“现在跑不跑”，`reload` 管“配置重读不重建进程”。三者混用是“改了没反应”的主要来源——改了配置只 `enable`，等于什么都没做。
+
+> **边界**：`command` 自己 daemonize（fork 到后台）时，procd 看到的是父进程退出，会按 respawn 反复拉起，表现为“进程存在但越拉越多”。受托管进程必须前台运行。
 
 ## 7 · 与相邻主题的关系
 

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="520" viewBox="0 0 1240 520" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1240" height="520" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1204" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 版本验证门：从构建到放量的五道门</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">每道门都有“不通过”条件；任何一道失败退回上一环，而不是带问题放量。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">长稳与压测是放量前的硬门槛，不是发布后的补救。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">必过门</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">验证门</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">放量</text>
+<rect x="40" y="210" width="158" height="100" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="40" y="210" width="4.5" height="100" fill="#4f46e5" rx="2"/>
+<text x="53" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 构建</text>
+<text x="53" y="246" font-size="9.6" fill="#334155" xml:space="preserve">可复现</text>
+<text x="53" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">包版本固定</text>
+<line x1="198" y1="260" x2="222" y2="260" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="222,260 213,255.5 213,264.5" fill="#94a3b8"/>
+<rect x="222" y="210" width="158" height="100" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="222" y="210" width="4.5" height="100" fill="#0f9d58" rx="2"/>
+<text x="235" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 基本功能</text>
+<text x="235" y="246" font-size="9.6" fill="#334155" xml:space="preserve">启动/WAN/LAN</text>
+<text x="235" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">WiFi/DNS</text>
+<line x1="380" y1="260" x2="404" y2="260" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="404,260 395,255.5 395,264.5" fill="#94a3b8"/>
+<rect x="404" y="210" width="158" height="100" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="404" y="210" width="4.5" height="100" fill="#0f9d58" rx="2"/>
+<text x="417" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ 长稳压测</text>
+<text x="417" y="246" font-size="9.6" fill="#334155" xml:space="preserve">72h、重拨、无线</text>
+<text x="417" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">满载、断电</text>
+<line x1="562" y1="260" x2="586" y2="260" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="586,260 577,255.5 577,264.5" fill="#94a3b8"/>
+<rect x="586" y="210" width="158" height="100" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="586" y="210" width="4.5" height="100" fill="#0f9d58" rx="2"/>
+<text x="599" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 升级/回滚</text>
+<text x="599" y="246" font-size="9.6" fill="#334155" xml:space="preserve">正常/坏包/断电</text>
+<text x="599" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">三种场景</text>
+<line x1="744" y1="260" x2="768" y2="260" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="768,260 759,255.5 759,264.5" fill="#94a3b8"/>
+<rect x="768" y="210" width="158" height="100" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="768" y="210" width="4.5" height="100" fill="#d97706" rx="2"/>
+<text x="781" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">⑤ 小批放量</text>
+<text x="781" y="246" font-size="9.6" fill="#334155" xml:space="preserve">失败率、日志</text>
+<text x="781" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">可随时回滚</text>
+<rect x="40" y="350" width="1160" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="380" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点（边界）</text>
+<text x="56" y="404" font-size="10.2" fill="#334155" xml:space="preserve">· 门 ② 不过就不该进 ③：功能不通时跑长稳只是浪费时间。</text>
+<text x="56" y="422" font-size="10.2" fill="#334155" xml:space="preserve">· 门 ④ 的判据是“升级后业务可用”，不是“写入返回 0”。</text>
+<text x="56" y="440" font-size="10.2" fill="#334155" xml:space="preserve">· 门 ⑤ 的前提是“能回滚”；没有回滚能力时不要全量放量。</text>
+<text x="36" y="484" font-size="12.3" fill="#64748b" xml:space="preserve">图源：本仓库 05-升级与恢复、06-定制与裁剪 的既有结论；产品化实践。</text>
+</svg>

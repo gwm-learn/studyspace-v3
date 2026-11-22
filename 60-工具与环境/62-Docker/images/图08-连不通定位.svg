@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="680" viewBox="0 0 1100 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 08 · 容器连不通的定位路径</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">先分清是「出不去」「进不来」还是「名字不通」，三者的证据点和修法完全不同。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">每一步都先在容器内取证据，再回宿主看规则，最后才怀疑上游。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">出不去（NAT/路由）</text>
+<line x1="201.4" y1="142" x2="231.4" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="239.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">进不来（端口/防火墙）</text>
+<line x1="380" y1="142" x2="410" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="418" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">名字不通（DNS）</text>
+<rect x="430" y="190" width="240" height="62" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="430" y="190" width="4.5" height="62" fill="#475569" rx="2"/>
+<text x="443" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">连不通</text>
+<text x="443" y="226" font-size="9.6" fill="#334155" xml:space="preserve">先问：哪个方向不通</text>
+<rect x="40" y="300" width="300" height="146" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="40" y="300" width="4.5" height="146" fill="#4f46e5" rx="2"/>
+<text x="53" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 出不去：容器 → 外网</text>
+<text x="53" y="336" font-size="9.6" fill="#334155" xml:space="preserve">① ip addr / ip route：有无 IP 与默认路由</text>
+<text x="53" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">② ping 网关：不通 = veth/网桥问题</text>
+<text x="53" y="366.8" font-size="9.6" fill="#334155" xml:space="preserve">③ ping 8.8.8.8：通但不通域名 = DNS</text>
+<text x="53" y="382.2" font-size="9.6" fill="#334155" xml:space="preserve">④ 只有大包失败 = MTU 不匹配</text>
+<line x1="550" y1="252" x2="190" y2="300" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="190,300 199.52,303.27 198.33,294.35" fill="#4f46e5"/>
+<text x="52" y="466" font-size="9.6" fill="#64748b" xml:space="preserve">动作：查网络/接口、NAT 规则、DNS 配置、MTU</text>
+<rect x="400" y="300" width="300" height="146" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="400" y="300" width="4.5" height="146" fill="#d97706" rx="2"/>
+<text x="413" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 进不来：外部 → 容器</text>
+<text x="413" y="336" font-size="9.6" fill="#334155" xml:space="preserve">① 宿主 ss -lntp：端口有没有监听</text>
+<text x="413" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">② iptables -t nat -L DOCKER：有无 DNAT</text>
+<text x="413" y="366.8" font-size="9.6" fill="#334155" xml:space="preserve">③ 是否只绑了 127.0.0.1</text>
+<text x="413" y="382.2" font-size="9.6" fill="#334155" xml:space="preserve">④ DOCKER-USER / 云安全组是否拦了</text>
+<line x1="550" y1="252" x2="550" y2="300" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="550,300 554.5,291 545.5,291" fill="#d97706"/>
+<text x="412" y="466" font-size="9.6" fill="#64748b" xml:space="preserve">动作：补 -p、改绑定地址、加放行规则</text>
+<rect x="760" y="300" width="300" height="146" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="760" y="300" width="4.5" height="146" fill="#0891b2" rx="2"/>
+<text x="773" y="319" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ 名字不通：解析失败</text>
+<text x="773" y="336" font-size="9.6" fill="#334155" xml:space="preserve">① 容器内 /etc/resolv.conf 是否 127.0.0.11</text>
+<text x="773" y="351.4" font-size="9.6" fill="#334155" xml:space="preserve">② 是否在自定义网络（默认 bridge 无 DNS）</text>
+<text x="773" y="366.8" font-size="9.6" fill="#334155" xml:space="preserve">③ 用的名字是容器名还是网络别名</text>
+<text x="773" y="382.2" font-size="9.6" fill="#334155" xml:space="preserve">④ 宿主上 dig 127.0.0.11 必然失败（正常）</text>
+<line x1="550" y1="252" x2="910" y2="300" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="910,300 901.67,294.35 900.48,303.27" fill="#0891b2"/>
+<text x="772" y="466" font-size="9.6" fill="#64748b" xml:space="preserve">动作：建自定义网络、统一服务名/别名</text>
+<rect x="40" y="500" width="1020" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="554" font-size="10.2" fill="#334155" xml:space="preserve">「容器 ping 网关不通」和「容器 ping 外网不通」是两类问题：前者链路没通，后者多半是 NAT/路由/上游。</text>
+<text x="56" y="572" font-size="10.2" fill="#334155" xml:space="preserve">顺序颠倒最常见：还没确认容器内有路由，就开始翻宿主 iptables。</text>
+<text x="36" y="626" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：60-工具与环境/62-Docker/02-容器网络与存储.md</text>
+</svg>
