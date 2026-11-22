@@ -1,81 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="600" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · ARP 同网段与跨网段：问的是下一跳</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">同网段广播问目的主机；跨网段广播问网关。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">请求是广播，应答是单播；缓存会老化，也会被伪造。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#475569" stroke-width="3"/>
-<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
-<line x1="256.8" y1="142" x2="286.8" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="294.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
-<line x1="404.6" y1="142" x2="434.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="442.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<rect x="36" y="190" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
-<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">同网段</text>
-<text x="46" y="228" font-size="9" fill="#64748b" xml:space="preserve">目的 IP 在本网段</text>
-<text x="46" y="241" font-size="9" fill="#64748b" xml:space="preserve">直接问目的 MAC</text>
-<rect x="154" y="190" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="154" y="190" width="4.5" height="82" fill="#475569" rx="2"/>
-<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">查缓存</text>
-<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">命中直接封装</text>
-<text x="167" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">未命中先缓存</text>
-<line x1="312" y1="231" x2="324" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="324,231 315,226.5 315,235.5" fill="#94a3b8"/>
-<rect x="324" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="324" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="337" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">广播请求</text>
-<text x="337" y="226" font-size="8.8" fill="#334155" xml:space="preserve">谁是 192.168.1.20</text>
-<text x="337" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">目的 MAC 全 F</text>
-<line x1="482" y1="231" x2="494" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="494,231 485,226.5 485,235.5" fill="#94a3b8"/>
-<rect x="494" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="494" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="507" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">单播应答</text>
-<text x="507" y="226" font-size="8.8" fill="#334155" xml:space="preserve">我是，MAC 是 BB</text>
-<text x="507" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">写入缓存</text>
-<line x1="652" y1="231" x2="664" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="664,231 655,226.5 655,235.5" fill="#94a3b8"/>
-<rect x="664" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="664" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="677" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">封装发送</text>
-<text x="677" y="226" font-size="8.8" fill="#334155" xml:space="preserve">目的 MAC=BB</text>
-<text x="677" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">帧发出去</text>
-<rect x="36" y="302" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
-<text x="46" y="324" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">跨网段</text>
-<text x="46" y="340" font-size="9" fill="#64748b" xml:space="preserve">目的 IP 不在本网段</text>
-<text x="46" y="353" font-size="9" fill="#64748b" xml:space="preserve">下一跳是网关</text>
-<rect x="154" y="302" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="154" y="302" width="4.5" height="82" fill="#475569" rx="2"/>
-<text x="167" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">查路由</text>
-<text x="167" y="338" font-size="8.8" fill="#334155" xml:space="preserve">下一跳 = 网关</text>
-<text x="167" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">ARP 问网关</text>
-<line x1="312" y1="343" x2="324" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="324,343 315,338.5 315,347.5" fill="#94a3b8"/>
-<rect x="324" y="302" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="324" y="302" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="337" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">广播问网关</text>
-<text x="337" y="338" font-size="8.8" fill="#334155" xml:space="preserve">目标 IP = 网关</text>
-<text x="337" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">不是目的主机</text>
-<line x1="482" y1="343" x2="494" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="494,343 485,338.5 485,347.5" fill="#94a3b8"/>
-<rect x="494" y="302" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="494" y="302" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="507" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">网关应答</text>
-<text x="507" y="338" font-size="8.8" fill="#334155" xml:space="preserve">回自己的 MAC</text>
-<text x="507" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">写入缓存</text>
-<line x1="652" y1="343" x2="664" y2="343" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="664,343 655,338.5 655,347.5" fill="#94a3b8"/>
-<rect x="664" y="302" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="664" y="302" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="677" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">交给网关</text>
-<text x="677" y="338" font-size="8.8" fill="#334155" xml:space="preserve">IP 目的不变</text>
-<text x="677" y="353.4" font-size="8.8" fill="#334155" xml:space="preserve">MAC 逐跳改变</text>
-<rect x="36" y="420" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="474" font-size="10.2" fill="#334155" xml:space="preserve">跨网段时 IP 头目的地址始终是最终主机。</text>
-<text x="52" y="492" font-size="10.2" fill="#334155" xml:space="preserve">免费 ARP 用于宣告、冲突检测和主备切换。</text>
-<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="820" viewBox="0 0 880 820" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="880" height="820" fill="#ffffff"/>
+<line x1="36" y1="112" x2="844" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · ARP 同网段与跨网段：问的都是下一跳</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">同网段问目的主机，跨网段问网关；请求永远是广播，应答是单播。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">跨网段时 IP 目的地址不变，只把目的 MAC 换成网关。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">广播</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">单播应答</text>
+<text x="40" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 同网段：问 192.168.1.20 的 MAC</text>
+<rect x="40" y="196" width="260" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="52" y="222" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">主机 A</text>
+<rect x="420" y="196" width="260" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="432" y="222" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">主机 B</text>
+<line x1="170" y1="238" x2="170" y2="360" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="550" y1="238" x2="550" y2="360" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="170" y1="266" x2="550" y2="266" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="550,266 541,261.5 541,270.5" fill="#d97706"/>
+<text x="176" y="259" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">ARP Request（广播）：谁是 192.168.1.20？</text>
+<line x1="550" y1="304" x2="170" y2="304" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="170,304 179,308.5 179,299.5" fill="#0f9d58"/>
+<text x="176" y="297" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">ARP Reply（单播）：我是，MAC=BB</text>
+<line x1="170" y1="342" x2="204" y2="342" stroke="#475569" stroke-width="1.8"/>
+<line x1="204" y1="342" x2="204" y2="356" stroke="#475569" stroke-width="1.8"/>
+<line x1="204" y1="356" x2="176" y2="356" stroke="#475569" stroke-width="1.8"/>
+<polygon points="172,356 181,360.5 181,351.5" fill="#475569"/>
+<text x="176" y="335" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">封装发送：目的 MAC=BB</text>
+<text x="40" y="420" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 跨网段：问网关 192.168.1.1 的 MAC</text>
+<rect x="40" y="440" width="260" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="52" y="466" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">主机 A</text>
+<rect x="420" y="440" width="260" height="42" fill="#f1f5f9" rx="8" stroke="#d97706" stroke-width="1"/>
+<text x="432" y="466" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">网关</text>
+<line x1="170" y1="482" x2="170" y2="604" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="550" y1="482" x2="550" y2="604" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="170" y1="510" x2="550" y2="510" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="550,510 541,505.5 541,514.5" fill="#d97706"/>
+<text x="176" y="503" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">ARP Request（广播）：谁是 192.168.1.1？</text>
+<line x1="550" y1="548" x2="170" y2="548" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="170,548 179,552.5 179,543.5" fill="#0f9d58"/>
+<text x="176" y="541" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">ARP Reply（单播）：我是网关，MAC=GW</text>
+<line x1="170" y1="586" x2="204" y2="586" stroke="#475569" stroke-width="1.8"/>
+<line x1="204" y1="586" x2="204" y2="600" stroke="#475569" stroke-width="1.8"/>
+<line x1="204" y1="600" x2="176" y2="600" stroke="#475569" stroke-width="1.8"/>
+<polygon points="172,600 181,604.5 181,595.5" fill="#475569"/>
+<text x="176" y="579" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">封装发送：目的 MAC=GW，目的 IP 仍是远端</text>
+<rect x="40" y="640" width="800" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="670" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="694" font-size="10.2" fill="#334155" xml:space="preserve">自环那一步不是报文，是主机拿到 MAC 后的本地封装动作。</text>
+<text x="56" y="712" font-size="10.2" fill="#334155" xml:space="preserve">免费 ARP（Gratuitous ARP）用于宣告、冲突检测和主备切换，是主动发起的广播。</text>
+<text x="36" y="766" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="784" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/02-链路层/05-ARP.md</text>
 </svg>

@@ -1,78 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="940" height="720" viewBox="0 0 940 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="940" height="720" fill="#ffffff"/>
-<line x1="36" y1="112" x2="904" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 定制分层与入网流程</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">定制按平台→产品→运营商→区域分层，越往下变更越频繁；入网越往后修改成本越高。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看左侧分层，再看右侧阶段门。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 定制分层与入网流程：改动越靠上越便宜</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左边是四层定制：上层改配置，下层改镜像与 SDK；越往下影响面越大。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">右边是入网阶段：越往后发现问题，返工成本越高。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">平台/产品</text>
-<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">入网阶段</text>
-<text x="36" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 定制分层</text>
-<rect x="36" y="190" width="780" height="30" fill="#f1f5f9" rx="6"/>
-<text x="44" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">层</text>
-<text x="328.5" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">内容</text>
-<text x="523.5" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">维护者</text>
-<text x="718.5" y="210" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">变更频率</text>
-<rect x="36" y="220" width="780" height="30" fill="#ffffff"/>
-<line x1="36" y1="220" x2="816" y2="220" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="240" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">平台基线</text>
-<text x="328.5" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">内核/驱动/SDK</text>
-<text x="523.5" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">平台团队</text>
-<text x="718.5" y="240" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">低</text>
-<rect x="36" y="250" width="780" height="30" fill="#ffffff"/>
-<line x1="36" y1="250" x2="816" y2="250" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="270" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">产品型号</text>
-<text x="328.5" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">硬件/端口/Wi-Fi</text>
-<text x="523.5" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">产品团队</text>
-<text x="718.5" y="270" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">中</text>
-<rect x="36" y="280" width="780" height="30" fill="#ffffff"/>
-<line x1="36" y1="280" x2="816" y2="280" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="300" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">运营商定制</text>
-<text x="328.5" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">默认配置/ACS/UI</text>
-<text x="523.5" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">项目团队</text>
-<text x="718.5" y="300" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">高</text>
-<rect x="36" y="310" width="780" height="30" fill="#ffffff"/>
-<line x1="36" y1="310" x2="816" y2="310" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="330" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">区域/项目</text>
-<text x="328.5" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">频段/语言/锁网</text>
-<text x="523.5" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">项目团队</text>
-<text x="718.5" y="330" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">高</text>
-<line x1="36" y1="340" x2="816" y2="340" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="36" y="390" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 入网阶段</text>
-<rect x="36" y="404" width="150" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="36" y="404" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="49" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">需求冻结</text>
-<text x="49" y="440" font-size="8.8" fill="#334155" xml:space="preserve">规范/参数</text>
-<line x1="186" y1="445" x2="204" y2="445" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="204,445 195,440.5 195,449.5" fill="#94a3b8"/>
-<rect x="204" y="404" width="150" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="204" y="404" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="217" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">样机验证</text>
-<text x="217" y="440" font-size="8.8" fill="#334155" xml:space="preserve">功能项</text>
-<line x1="354" y1="445" x2="372" y2="445" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="372,445 363,440.5 363,449.5" fill="#94a3b8"/>
-<rect x="372" y="404" width="150" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="372" y="404" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="385" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">集采测试</text>
-<text x="385" y="440" font-size="8.8" fill="#334155" xml:space="preserve">性能/互通</text>
-<line x1="522" y1="445" x2="540" y2="445" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="540,445 531,440.5 531,449.5" fill="#94a3b8"/>
-<rect x="540" y="404" width="150" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="540" y="404" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="553" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">现网试点</text>
-<text x="553" y="440" font-size="8.8" fill="#334155" xml:space="preserve">真实局址</text>
-<line x1="690" y1="445" x2="708" y2="445" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="708,445 699,440.5 699,449.5" fill="#94a3b8"/>
-<rect x="708" y="404" width="150" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="708" y="404" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="721" y="423" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">量产抽检</text>
-<text x="721" y="440" font-size="8.8" fill="#334155" xml:space="preserve">一致性</text>
-<rect x="36" y="520" width="860" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="550" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
-<text x="52" y="574" font-size="10.2" fill="#334155" xml:space="preserve">① 能用配置解决的差异，不要拉代码分支，否则版本矩阵会失控。</text>
-<text x="52" y="592" font-size="10.2" fill="#334155" xml:space="preserve">② 入网测试越往后，修改成本越高；需求冻结前要把运营商差异收敛。</text>
-<text x="52" y="610" font-size="10.2" fill="#334155" xml:space="preserve">③ 定制交付物必须包含默认配置、参数路径和升级/回滚说明。</text>
-<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/43-CPE/03-运营商定制与入网.md</text>
-<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">定制层</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">入网阶段</text>
+<text x="40" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 定制分四层</text>
+<rect x="40" y="196" width="520" height="52" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="225.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">运营商配置层：预置参数 / 皮肤 / SSID 策略</text>
+<text x="550" y="225.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">改配置</text>
+<rect x="40" y="256" width="520" height="52" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="285.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">业务层：插件、脚本、页面</text>
+<text x="550" y="285.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">改代码</text>
+<rect x="40" y="316" width="520" height="52" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="345.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">系统层：镜像、内核、默认值</text>
+<text x="550" y="345.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">改镜像</text>
+<rect x="40" y="376" width="520" height="52" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="405.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">芯片 / SDK 层：驱动、BSP</text>
+<text x="550" y="405.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">改 SDK</text>
+<text x="640" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 入网阶段</text>
+<rect x="640" y="196" width="420" height="40" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="652" y="219.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">需求冻结</text>
+<text x="1050" y="219.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">可改</text>
+<rect x="640" y="242" width="420" height="40" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="652" y="265.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">样机验证</text>
+<text x="1050" y="265.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">可改</text>
+<rect x="640" y="288" width="420" height="40" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.1"/>
+<text x="652" y="311.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">集采测试</text>
+<text x="1050" y="311.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">慎改</text>
+<rect x="640" y="334" width="420" height="40" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.1"/>
+<text x="652" y="357.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">试点</text>
+<text x="1050" y="357.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">尽量不改</text>
+<rect x="640" y="380" width="420" height="40" fill="#fff5f5" rx="6" stroke="#dc2626" stroke-width="1.1"/>
+<text x="652" y="403.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">量产</text>
+<text x="1050" y="403.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">冻结</text>
+<rect x="40" y="454" width="1020" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="484" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="508" font-size="10.2" fill="#334155" xml:space="preserve">越靠上的定制层越适合做差异（配置、页面），越靠下越应该保持主线一致——否则每次升级都要重新合补丁。</text>
+<text x="56" y="526" font-size="10.2" fill="#334155" xml:space="preserve">入网阶段门的意义在于「早发现」：样机阶段发现参数错，改一行配置；量产后发现，就是批量升级。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：40-产品与方案/43-CPE/03-运营商定制与入网.md</text>
 </svg>

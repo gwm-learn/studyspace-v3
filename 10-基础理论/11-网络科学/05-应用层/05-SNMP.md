@@ -93,7 +93,7 @@ PDU 通用字段：
 
 ![图 01 · SNMP管理与Trap](images/图01-SNMP管理与Trap.svg)
 
-**读图**：NMS 轮询 Agent 的 MIB（Get/Set）；Agent 也可主动发 Trap/Inform，Inform 需要确认。
+**读图**：这里只分角色与通道——NMS 管、Agent 代、MIB 存；161 问变量、162 报警。谁先发、怎么应答，见本目录图 02。
 
 > 图源：`images/图01-SNMP管理与Trap.svg`
 
@@ -146,7 +146,7 @@ v1/v2c 只用团体名（community），相当于明文密码；生产环境应�
 
 ![图 02 · SNMP轮询与告警](images/图02-SNMP轮询与告警.svg)
 
-**读图**：NMS 周期 Get 采集 MIB；Agent 主动发 Trap/Inform，Inform 需要确认并可重传。
+**读图**：上下两段互不依赖——轮询是 NMS 按周期拉，告警是 Agent 主动推；Trap 无确认可能丢，Inform 有 Response 且可重传。
 
 > 图源：`images/图02-SNMP轮询与告警.svg`
 

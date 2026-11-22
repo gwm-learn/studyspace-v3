@@ -1,61 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="620" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 09 · 驱动分层与设备驱动分离：横向总线，纵向核心层</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">横向：device 与 driver 由 bus 匹配；纵向：核心层统一接口，驱动适配硬件。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">VFS 把设备文件映射到字符/块驱动；网络设备走 socket，没有 /dev。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 就绪</text>
-<line x1="161.8" y1="142" x2="191.8" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="199.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 延后</text>
-<line x1="287.6" y1="142" x2="317.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="325.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="382.6" y1="142" x2="412.6" y2="142" stroke="#0891b2" stroke-width="3"/>
-<text x="420.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">辅助</text>
-<line x1="466.6" y1="142" x2="496.6" y2="142" stroke="#475569" stroke-width="3"/>
-<text x="504.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
-<rect x="30" y="120" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="30" y="120" width="4.5" height="70" fill="#0f9d58" rx="2"/>
-<text x="43" y="139" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">device</text>
-<text x="43" y="156" font-size="9.6" fill="#334155" xml:space="preserve">DT/ACPI</text>
-<text x="43" y="171.4" font-size="9.6" fill="#334155" xml:space="preserve">硬件实例</text>
-<rect x="240" y="120" width="170" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="240" y="120" width="4.5" height="70" fill="#d97706" rx="2"/>
-<text x="253" y="139" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">bus</text>
-<text x="253" y="156" font-size="9.6" fill="#334155" xml:space="preserve">match</text>
-<text x="253" y="171.4" font-size="9.6" fill="#334155" xml:space="preserve">probe</text>
-<rect x="450" y="120" width="170" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="450" y="120" width="4.5" height="70" fill="#4f46e5" rx="2"/>
-<text x="463" y="139" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">driver</text>
-<text x="463" y="156" font-size="9.6" fill="#334155" xml:space="preserve">硬件操作</text>
-<text x="463" y="171.4" font-size="9.6" fill="#334155" xml:space="preserve">probe/remove</text>
-<rect x="30" y="330" width="170" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="30" y="330" width="4.5" height="70" fill="#0f9d58" rx="2"/>
-<text x="43" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">应用</text>
-<text x="43" y="366" font-size="9.6" fill="#334155" xml:space="preserve">open/read</text>
-<text x="43" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">socket</text>
-<rect x="240" y="330" width="170" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="240" y="330" width="4.5" height="70" fill="#0891b2" rx="2"/>
-<text x="253" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">核心层</text>
-<text x="253" y="366" font-size="9.6" fill="#334155" xml:space="preserve">VFS/input/net</text>
-<text x="253" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">统一接口</text>
-<rect x="450" y="330" width="170" height="70" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="450" y="330" width="4.5" height="70" fill="#475569" rx="2"/>
-<text x="463" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">硬件</text>
-<text x="463" y="366" font-size="9.6" fill="#334155" xml:space="preserve">寄存器/总线</text>
-<text x="463" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">外设</text>
-<line x1="200" y1="178" x2="240" y2="178" stroke="#0f9d58" stroke-width="2"/>
-<polygon points="240,178 231,173.5 231,182.5" fill="#0f9d58"/>
-<line x1="450" y1="178" x2="410" y2="178" stroke="#4f46e5" stroke-width="2"/>
-<polygon points="410,178 419,182.5 419,173.5" fill="#4f46e5"/>
-<line x1="200" y1="388" x2="240" y2="388" stroke="#0f9d58" stroke-width="2"/>
-<polygon points="240,388 231,383.5 231,392.5" fill="#0f9d58"/>
-<line x1="410" y1="388" x2="450" y2="388" stroke="#0891b2" stroke-width="2"/>
-<polygon points="450,388 441,383.5 441,392.5" fill="#0891b2"/>
-<rect x="36" y="450" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="504" font-size="10.2" fill="#334155" xml:space="preserve">分离让一个驱动匹配多个设备。</text>
-<text x="52" y="522" font-size="10.2" fill="#334155" xml:space="preserve">分层让核心层复用、驱动只写差异。</text>
-<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头与文字标签。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="620" viewBox="0 0 1120 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 09 · 驱动分层与「设备/驱动分离」：匹配靠总线</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左边是分层：应用 → 子系统 → 核心 → 具体驱动 → 总线 → 硬件。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">右边是关键机制：设备与驱动各自注册，由总线按 id/compatible 匹配。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">分层</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">匹配</text>
+<rect x="40" y="190" width="460" height="46" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="216.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">应用：系统调用 / 设备节点</text>
+<text x="490" y="216.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">用户态</text>
+<rect x="40" y="244" width="460" height="46" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="270.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">子系统：VFS / net / input / LED</text>
+<text x="490" y="270.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">框架</text>
+<rect x="40" y="298" width="460" height="46" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="324.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">核心：注册、匹配、电源管理</text>
+<text x="490" y="324.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">总线核心</text>
+<rect x="40" y="352" width="460" height="46" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="378.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">具体驱动：probe / remove</text>
+<text x="490" y="378.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">驱动</text>
+<rect x="40" y="406" width="460" height="46" fill="#ecfeff" rx="6" stroke="#0891b2" stroke-width="1.1"/>
+<text x="52" y="432.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">总线：platform / I2C / SPI / USB</text>
+<text x="490" y="432.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">硬件抽象</text>
+<rect x="560" y="210" width="220" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="560" y="210" width="4.5" height="80" fill="#0f9d58" rx="2"/>
+<text x="573" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">设备（device）</text>
+<text x="573" y="246" font-size="9.6" fill="#334155" xml:space="preserve">来自设备树 / 枚举</text>
+<text x="573" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">compatible / id</text>
+<rect x="820" y="210" width="220" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="820" y="210" width="4.5" height="80" fill="#0f9d58" rx="2"/>
+<text x="833" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">驱动（driver）</text>
+<text x="833" y="246" font-size="9.6" fill="#334155" xml:space="preserve">of_match_table</text>
+<text x="833" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">id_table</text>
+<rect x="690" y="340" width="220" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="690" y="340" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="703" y="359" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">总线匹配</text>
+<text x="703" y="376" font-size="9.6" fill="#334155" xml:space="preserve">匹配成功 → probe()</text>
+<line x1="780" y1="278" x2="690" y2="398" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="690,398 699,393.5 691.8,388.1" fill="#0f9d58"/>
+<line x1="820" y1="278" x2="910" y2="398" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="910,398 908.2,388.1 901,393.5" fill="#0f9d58"/>
+<rect x="40" y="450" width="1040" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="504" font-size="10.2" fill="#334155" xml:space="preserve">分离的好处：同一驱动可服务多个同类设备；新增设备只改设备树，不改驱动。</text>
+<text x="56" y="522" font-size="10.2" fill="#334155" xml:space="preserve">probe 没被调用，先查 compatible/id 是否匹配，而不是先怀疑驱动代码。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：20-平台与系统/21-Linux/02-驱动与设备树/08-驱动分层与设备驱动分离.md</text>
 </svg>

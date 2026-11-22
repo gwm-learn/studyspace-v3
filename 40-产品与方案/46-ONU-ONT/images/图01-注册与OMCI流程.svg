@@ -1,85 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="640" viewBox="0 0 1020 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1020" height="640" fill="#ffffff"/>
-<line x1="36" y1="112" x2="984" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · ONU 注册与 OMCI 配置流程</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">注册是 PON 物理层过程；OMCI 是注册成功后的业务配置过程，两者失败现象不同。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看上半段注册五步，再看下半段 OMCI 配置四步。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="740" viewBox="0 0 800 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="800" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="764" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · ONU 注册与 OMCI 配置：先点灯，再发配置</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上半段是 PON 物理层注册（同步 → 发现 → 测距 → 授权），下半段是 OMCI 业务配置。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">注册成功不等于业务可用：OMCC 建立后还要下发 ME，业务才真正通。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0891b2" stroke-width="3"/>
 <text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">PON 注册</text>
-<line x1="146.4" y1="142" x2="176.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<line x1="146.4" y1="142" x2="176.4" y2="142" stroke="#4f46e5" stroke-width="3"/>
 <text x="184.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">OMCI</text>
-<line x1="234.8" y1="142" x2="264.8" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="272.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败分支</text>
-<rect x="36" y="190" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
-<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">PON 注册</text>
-<text x="46" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">OLT 主导</text>
-<text x="46" y="246" font-size="9" fill="#64748b" xml:space="preserve">同步→发现→测距→授权</text>
-<rect x="154" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="154" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">下行同步</text>
-<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">PSync/超帧</text>
-<line x1="312" y1="231" x2="322" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,231 313,226.5 313,235.5" fill="#94a3b8"/>
-<rect x="322" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="322" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="335" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">发现</text>
-<text x="335" y="226" font-size="8.8" fill="#334155" xml:space="preserve">上报 SN</text>
-<line x1="480" y1="231" x2="490" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,231 481,226.5 481,235.5" fill="#94a3b8"/>
-<rect x="490" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="490" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="503" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">测距</text>
-<text x="503" y="226" font-size="8.8" fill="#334155" xml:space="preserve">计算 EqD</text>
-<line x1="648" y1="231" x2="658" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,231 649,226.5 649,235.5" fill="#94a3b8"/>
-<rect x="658" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="658" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="671" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">授权</text>
-<text x="671" y="226" font-size="8.8" fill="#334155" xml:space="preserve">ONU-ID/密码</text>
-<line x1="816" y1="231" x2="826" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="826,231 817,226.5 817,235.5" fill="#94a3b8"/>
-<rect x="826" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="826" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="839" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">运营</text>
-<text x="839" y="226" font-size="8.8" fill="#334155" xml:space="preserve">可通信</text>
-<rect x="36" y="300" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
-<text x="46" y="322" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">OMCI</text>
-<text x="46" y="338" font-size="9.4" fill="#64748b" xml:space="preserve">OMCC</text>
-<text x="46" y="356" font-size="9" fill="#64748b" xml:space="preserve">MIB→业务 ME</text>
-<rect x="154" y="300" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="154" y="300" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="167" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">建 OMCC</text>
-<text x="167" y="336" font-size="8.8" fill="#334155" xml:space="preserve">管理通道</text>
-<line x1="312" y1="341" x2="322" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,341 313,336.5 313,345.5" fill="#94a3b8"/>
-<rect x="322" y="300" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="322" y="300" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="335" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">MIB 上传</text>
-<text x="335" y="336" font-size="8.8" fill="#334155" xml:space="preserve">ONU 能力</text>
-<line x1="480" y1="341" x2="490" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,341 481,336.5 481,345.5" fill="#94a3b8"/>
-<rect x="490" y="300" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="490" y="300" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="503" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">创建 ME</text>
-<text x="503" y="336" font-size="8.8" fill="#334155" xml:space="preserve">T-CONT/GEM</text>
-<line x1="648" y1="341" x2="658" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,341 649,336.5 649,345.5" fill="#94a3b8"/>
-<rect x="658" y="300" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="658" y="300" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="671" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">映射 VLAN</text>
-<text x="671" y="336" font-size="8.8" fill="#334155" xml:space="preserve">UNI/业务</text>
-<line x1="816" y1="341" x2="826" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="826,341 817,336.5 817,345.5" fill="#94a3b8"/>
-<rect x="826" y="300" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="826" y="300" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="839" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">业务 UP</text>
-<text x="839" y="336" font-size="8.8" fill="#334155" xml:space="preserve">流量可通</text>
-<rect x="36" y="430" width="900" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">失败现象对照</text>
-<text x="52" y="484" font-size="10.2" fill="#334155" xml:space="preserve">① 不同步/不发现：查光功率、PON 类型、SN/白名单。</text>
-<text x="52" y="502" font-size="10.2" fill="#334155" xml:space="preserve">② 测距/授权失败：查距离、上行干扰、Registration ID。</text>
-<text x="52" y="520" font-size="10.2" fill="#334155" xml:space="preserve">③ 注册成功但业务不通：查 OMCC、T-CONT/GEM 绑定、VLAN 映射。</text>
-<text x="36" y="568" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/46-ONU-ONT/01-PON注册与OMCI.md</text>
-<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">参考：ITU-T G.984.3 / G.988</text>
-<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<line x1="234.8" y1="142" x2="264.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="272.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">完成</text>
+<text x="40" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① PON 物理层注册</text>
+<rect x="40" y="196" width="240" height="42" fill="#f1f5f9" rx="8" stroke="#0891b2" stroke-width="1"/>
+<text x="52" y="222" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">ONU</text>
+<rect x="420" y="196" width="240" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="432" y="222" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">OLT</text>
+<line x1="160" y1="238" x2="160" y2="398" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="540" y1="238" x2="540" y2="398" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="540" y1="266" x2="160" y2="266" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="160,266 169,270.5 169,261.5" fill="#0891b2"/>
+<text x="166" y="259" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">下行帧同步（ONU 锁定）</text>
+<line x1="160" y1="304" x2="540" y2="304" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="540,304 531,299.5 531,308.5" fill="#0891b2"/>
+<text x="166" y="297" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">发现：上报 SN / 密码</text>
+<line x1="540" y1="342" x2="160" y2="342" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="160,342 169,346.5 169,337.5" fill="#0891b2"/>
+<text x="166" y="335" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">测距（Ranging）</text>
+<line x1="540" y1="380" x2="160" y2="380" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="160,380 169,384.5 169,375.5" fill="#0891b2"/>
+<text x="166" y="373" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">授权：分配 ONU-ID / Alloc-ID</text>
+<text x="40" y="430" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② OMCI 业务配置</text>
+<rect x="40" y="450" width="240" height="42" fill="#f1f5f9" rx="8" stroke="#0891b2" stroke-width="1"/>
+<text x="52" y="476" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">ONU</text>
+<rect x="420" y="450" width="240" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="432" y="476" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">OLT</text>
+<line x1="160" y1="492" x2="160" y2="652" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="540" y1="492" x2="540" y2="652" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="160" y1="520" x2="540" y2="520" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="540,520 531,515.5 531,524.5" fill="#4f46e5"/>
+<text x="166" y="513" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">建立 OMCC（管理通道）</text>
+<line x1="540" y1="558" x2="160" y2="558" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="160,558 169,562.5 169,553.5" fill="#4f46e5"/>
+<text x="166" y="551" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">MIB 上传 / 下载</text>
+<line x1="540" y1="596" x2="160" y2="596" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="160,596 169,600.5 169,591.5" fill="#4f46e5"/>
+<text x="166" y="589" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">创建业务 ME：T-CONT / GEM / UNI</text>
+<line x1="160" y1="634" x2="540" y2="634" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="540,634 531,629.5 531,638.5" fill="#0f9d58"/>
+<text x="166" y="627" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">配置完成（业务可用）</text>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：40-产品与方案/46-ONU-ONT/01-PON注册与OMCI.md</text>
 </svg>

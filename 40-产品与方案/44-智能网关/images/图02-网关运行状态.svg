@@ -1,48 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1000" height="640" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1000" height="620" fill="#ffffff"/>
 <line x1="36" y1="112" x2="964" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 网关运行状态</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">底座先就绪，云管和插件随后上线；任一层失败都会降级。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先保底座，再恢复增值业务。</text>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · 网关运行状态：逐层就绪，失败即降级</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">启动是按层来的：底座 → 中间件 → 云管 → 插件；前一层不就绪，后一层起不来。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">任一层失败进入「降级」而不是整机不可用——但业务范围会收窄。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常状态</text>
-<line x1="142" y1="142" x2="172" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">完成/可用</text>
-<line x1="254.6" y1="142" x2="284.6" y2="142" stroke="#dc2626" stroke-width="3"/>
-<text x="292.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败/回退</text>
-<rect x="36" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="36" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Boot</text>
-<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">内核/驱动</text>
-<line x1="216" y1="241" x2="234" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="234,241 225,236.5 225,245.5" fill="#94a3b8"/>
-<rect x="234" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="234" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="247" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">底座就绪</text>
-<text x="247" y="236" font-size="9.6" fill="#334155" xml:space="preserve">网络/Wi-Fi</text>
-<line x1="414" y1="241" x2="432" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="432,241 423,236.5 423,245.5" fill="#94a3b8"/>
-<rect x="432" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="432" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="445" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">云管在线</text>
-<text x="445" y="236" font-size="9.6" fill="#334155" xml:space="preserve">注册/影子</text>
-<line x1="612" y1="241" x2="630" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="630,241 621,236.5 621,245.5" fill="#94a3b8"/>
-<rect x="630" y="200" width="180" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="630" y="200" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="643" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">业务就绪</text>
-<text x="643" y="236" font-size="9.6" fill="#334155" xml:space="preserve">插件/场景</text>
-<line x1="423" y1="282" x2="423" y2="350" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
-<polygon points="423,350 427.5,341 418.5,341" fill="#dc2626"/>
-<rect x="313" y="350" width="220" height="64" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="313" y="350" width="4.5" height="64" fill="#dc2626" rx="2"/>
-<text x="326" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">失败/超时</text>
-<text x="326" y="386" font-size="8.8" fill="#334155" xml:space="preserve">底座/插件失败 → 降级/重启</text>
-<rect x="36" y="450" width="920" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">定时器与边界</text>
-<text x="52" y="504" font-size="10.2" fill="#334155" xml:space="preserve">启动超时由看门狗兜底。</text>
-<text x="52" y="522" font-size="10.2" fill="#334155" xml:space="preserve">云管心跳与退避重连。</text>
-<text x="52" y="540" font-size="10.2" fill="#334155" xml:space="preserve">插件重启有次数限制和退避。</text>
-<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/44-智能网关/00-智能网关架构.md</text>
-<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">就绪链</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">完成</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">降级</text>
+<rect x="60" y="250" width="104.56" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="112.28" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">底座就绪</text>
+<text x="112.28" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">网络 / 存储 / 进程</text>
+<rect x="230" y="250" width="73" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="266.5" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">中间件就绪</text>
+<text x="266.5" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">模型 / 总线</text>
+<rect x="410" y="250" width="71.88" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="445.94" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">云管在线</text>
+<text x="445.94" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">注册 / 心跳</text>
+<rect x="580" y="250" width="62.8" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="611.4" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">插件运行</text>
+<text x="611.4" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">业务可用</text>
+<line x1="164.56" y1="272" x2="230" y2="272" stroke="#475569" stroke-width="1.8"/>
+<polygon points="230,272 221,267.5 221,276.5" fill="#475569"/>
+<line x1="303" y1="272" x2="410" y2="272" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="410,272 401,267.5 401,276.5" fill="#4f46e5"/>
+<line x1="481.88" y1="272" x2="580" y2="272" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="580,272 571,267.5 571,276.5" fill="#0f9d58"/>
+<rect x="400" y="360" width="121.76" height="44" fill="#fff5f5" rx="6" stroke="#dc2626" stroke-width="1.2"/>
+<text x="460.88" y="382" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">降级运行</text>
+<text x="460.88" y="394" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">本地可用，远程/插件受限</text>
+<line x1="266.5" y1="294" x2="440" y2="360" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="440,360 433.19,352.59 429.99,361.01" fill="#dc2626"/>
+<line x1="445.94" y1="294" x2="481.76" y2="360" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="481.76,360 481.42,349.94 473.51,354.24" fill="#dc2626"/>
+<rect x="60" y="440" width="900" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="470" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="76" y="494" font-size="10.2" fill="#334155" xml:space="preserve">底座没起来，后面全都不成立；中间件或云管失败，通常还能本地转发，只是远程控制和场景失效。</text>
+<text x="76" y="512" font-size="10.2" fill="#334155" xml:space="preserve">排障时先问「现在处于哪一层就绪」，再看该层依赖，比一上来翻全部日志有效。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：40-产品与方案/44-智能网关/00-智能网关架构.md</text>
 </svg>

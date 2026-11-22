@@ -135,7 +135,7 @@ MSTP 还有 IST（内部生成树）和 CST（公共生成树）的概念，用�
 
 ![图 02 · STP端口状态](images/图02-STP端口状态.svg)
 
-**读图**：STP 要经过 Listening/Learning 各 15 秒；RSTP 合并为 Discarding/Learning/Forwarding 三种。
+**读图**：主链是 Disabled→Blocking→Listening→Learning→Forwarding；上方红线是角色/拓扑变化后退回 Blocking，下方是 Blocking 因端口 down 退回 Disabled。RSTP 只有三种状态，Discarding 合并了前三态。
 
 > 图源：`images/图02-STP端口状态.svg`
 

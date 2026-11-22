@@ -1,54 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="640" viewBox="0 0 1060 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1060" height="640" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · CAPWAP 加入与运行状态</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">AP 在发现、加入、DTLS、配置、运行之间迁移。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：任一阶段失败会重试，超过阈值回到发现或离线。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="580" viewBox="0 0 1000 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1000" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="964" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · CAPWAP 加入与运行状态：失败重试有上限</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">发现 → 加入 → 配置 → 运行；任一阶段失败会重试，超过阈值回发现或离线。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">运行中与 AC 失联也会回到发现——这就是「AP 突然掉线又自己回来」的原因。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常状态</text>
-<line x1="142" y1="142" x2="172" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">完成/可用</text>
-<line x1="254.6" y1="142" x2="284.6" y2="142" stroke="#dc2626" stroke-width="3"/>
-<text x="292.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败/回退</text>
-<rect x="36" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="36" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">发现</text>
-<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">广播/DNS/43</text>
-<line x1="216" y1="241" x2="234" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="234,241 225,236.5 225,245.5" fill="#94a3b8"/>
-<rect x="234" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="234" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="247" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Join</text>
-<text x="247" y="236" font-size="9.6" fill="#334155" xml:space="preserve">认证 AP</text>
-<line x1="414" y1="241" x2="432" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="432,241 423,236.5 423,245.5" fill="#94a3b8"/>
-<rect x="432" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="432" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="445" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DTLS</text>
-<text x="445" y="236" font-size="9.6" fill="#334155" xml:space="preserve">证书/密钥</text>
-<line x1="612" y1="241" x2="630" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="630,241 621,236.5 621,245.5" fill="#94a3b8"/>
-<rect x="630" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="630" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="643" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">配置</text>
-<text x="643" y="236" font-size="9.6" fill="#334155" xml:space="preserve">SSID/VLAN</text>
-<line x1="810" y1="241" x2="828" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="828,241 819,236.5 819,245.5" fill="#94a3b8"/>
-<rect x="828" y="200" width="180" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="828" y="200" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="841" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">运行</text>
-<text x="841" y="236" font-size="9.6" fill="#334155" xml:space="preserve">Echo 保活</text>
-<line x1="522" y1="282" x2="522" y2="350" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
-<polygon points="522,350 526.5,341 517.5,341" fill="#dc2626"/>
-<rect x="412" y="350" width="220" height="64" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="412" y="350" width="4.5" height="64" fill="#dc2626" rx="2"/>
-<text x="425" y="369" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">失败/超时</text>
-<text x="425" y="386" font-size="8.8" fill="#334155" xml:space="preserve">发现/认证/配置失败 → 重试或离线</text>
-<rect x="36" y="450" width="920" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">定时器与边界</text>
-<text x="52" y="504" font-size="10.2" fill="#334155" xml:space="preserve">Discovery 重试间隔/次数可配。</text>
-<text x="52" y="522" font-size="10.2" fill="#334155" xml:space="preserve">Join 与配置下发各有超时，防止悬挂。</text>
-<text x="52" y="540" font-size="10.2" fill="#334155" xml:space="preserve">镜像下载超时需按包大小/链路放宽。</text>
-<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/47-AP-AC/01-AC产品架构与CAPWAP.md</text>
-<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主链</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">运行</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败</text>
+<rect x="50" y="250" width="46.08" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="73.04" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">发现</text>
+<text x="73.04" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">找 AC</text>
+<rect x="190" y="250" width="42.64" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="211.32" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">加入</text>
+<text x="211.32" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">Join</text>
+<rect x="330" y="250" width="56.4" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="358.2" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">配置</text>
+<text x="358.2" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">下发参数</text>
+<rect x="470" y="250" width="65" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="502.5" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">运行</text>
+<text x="502.5" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">SSID 可用</text>
+<line x1="96.08" y1="272" x2="190" y2="272" stroke="#475569" stroke-width="1.6"/>
+<polygon points="190,272 181,267.5 181,276.5" fill="#475569"/>
+<line x1="232.64" y1="272" x2="330" y2="272" stroke="#4f46e5" stroke-width="1.6"/>
+<polygon points="330,272 321,267.5 321,276.5" fill="#4f46e5"/>
+<line x1="386.4" y1="272" x2="470" y2="272" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="470,272 461,267.5 461,276.5" fill="#0f9d58"/>
+<line x1="502.5" y1="294" x2="502.5" y2="340" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="502.5" y1="340" x2="73.04" y2="340" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="73.04" y1="340" x2="73.04" y2="294" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="73.04,294 68.54,303 77.54,303" fill="#dc2626"/>
+<text x="287.77" y="356" font-size="9.4" fill="#dc2626" xml:space="preserve" font-weight="600" text-anchor="middle">重试超限 / 与 AC 失联 → 重新发现</text>
+<rect x="700" y="250" width="89.08" height="44" fill="#fff5f5" rx="6" stroke="#dc2626" stroke-width="1.2"/>
+<text x="744.54" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">离线</text>
+<text x="744.54" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">长时间找不到 AC</text>
+<line x1="96.08" y1="272" x2="700" y2="272" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3"/>
+<polygon points="700,272 691,267.5 691,276.5" fill="#dc2626"/>
+<text x="398.04" y="265" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">超时</text>
+<rect x="50" y="400" width="900" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="66" y="430" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="66" y="454" font-size="10.2" fill="#334155" xml:space="preserve">「加入」和「配置」之间失败，多半是版本或证书问题；「运行」掉回发现，多半是心跳超时。</text>
+<text x="66" y="472" font-size="10.2" fill="#334155" xml:space="preserve">重试上限的意义是防止无限刷日志：到上限应留下明确原因，而不是静默离线。</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：40-产品与方案/47-AP-AC/01-AC产品架构与CAPWAP.md</text>
 </svg>

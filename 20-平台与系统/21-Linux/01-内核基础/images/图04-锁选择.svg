@@ -1,65 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="680" viewBox="0 0 1180 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="680" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 锁选择：先看上下文，再看临界区</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">中断/软中断共享数据用自旋锁；进程上下文可睡眠用 mutex。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读多写少可考虑 RCU/seqlock；只是计数用原子操作。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
-<line x1="120" y1="142" x2="150" y2="142" stroke="#dc2626" stroke-width="3"/>
-<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">风险 / 阻塞</text>
-<line x1="245.8" y1="142" x2="275.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="283.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 就绪</text>
-<line x1="371.6" y1="142" x2="401.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="409.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="466.6" y1="142" x2="496.6" y2="142" stroke="#0891b2" stroke-width="3"/>
-<text x="504.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">辅助</text>
-<line x1="550.6" y1="142" x2="580.6" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="588.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 延后</text>
-<rect x="40" y="270" width="190" height="76" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="40" y="270" width="4.5" height="76" fill="#475569" rx="2"/>
-<text x="53" y="289" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">共享数据？</text>
-<text x="53" y="306" font-size="9.6" fill="#334155" xml:space="preserve">并发源有哪些</text>
-<text x="53" y="321.4" font-size="9.6" fill="#334155" xml:space="preserve">临界区多长</text>
-<rect x="300" y="190" width="180" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="300" y="190" width="4.5" height="70" fill="#dc2626" rx="2"/>
-<text x="313" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">中断/软中断</text>
-<text x="313" y="226" font-size="9.6" fill="#334155" xml:space="preserve">不能睡眠</text>
-<text x="313" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">spin_lock_irqsave</text>
-<rect x="300" y="390" width="180" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="300" y="390" width="4.5" height="70" fill="#0f9d58" rx="2"/>
-<text x="313" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">进程上下文</text>
-<text x="313" y="426" font-size="9.6" fill="#334155" xml:space="preserve">可以睡眠</text>
-<text x="313" y="441.4" font-size="9.6" fill="#334155" xml:space="preserve">mutex/semaphore</text>
-<rect x="560" y="190" width="170" height="70" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="560" y="190" width="4.5" height="70" fill="#4f46e5" rx="2"/>
-<text x="573" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">原子操作</text>
-<text x="573" y="226" font-size="9.6" fill="#334155" xml:space="preserve">计数/标志</text>
-<text x="573" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">单指令</text>
-<rect x="560" y="390" width="170" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="560" y="390" width="4.5" height="70" fill="#0891b2" rx="2"/>
-<text x="573" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">RCU/seqlock</text>
-<text x="573" y="426" font-size="9.6" fill="#334155" xml:space="preserve">读多写少</text>
-<text x="573" y="441.4" font-size="9.6" fill="#334155" xml:space="preserve">读侧无锁</text>
-<rect x="780" y="390" width="170" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="780" y="390" width="4.5" height="70" fill="#d97706" rx="2"/>
-<text x="793" y="409" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">completion</text>
-<text x="793" y="426" font-size="9.6" fill="#334155" xml:space="preserve">等待完成</text>
-<text x="793" y="441.4" font-size="9.6" fill="#334155" xml:space="preserve">睡眠等待</text>
-<line x1="230" y1="334" x2="300" y2="248" stroke="#dc2626" stroke-width="2"/>
-<polygon points="300,248 290.83,252.14 297.81,257.82" fill="#dc2626"/>
-<line x1="230" y1="334" x2="300" y2="448" stroke="#0f9d58" stroke-width="2"/>
-<polygon points="300,448 299.13,437.98 291.46,442.69" fill="#0f9d58"/>
-<line x1="480" y1="248" x2="560" y2="248" stroke="#4f46e5" stroke-width="2" stroke-dasharray="3 3"/>
-<polygon points="560,248 551,243.5 551,252.5" fill="#4f46e5"/>
-<line x1="480" y1="448" x2="560" y2="448" stroke="#0891b2" stroke-width="2" stroke-dasharray="3 3"/>
-<polygon points="560,448 551,443.5 551,452.5" fill="#0891b2"/>
-<line x1="480" y1="448" x2="780" y2="448" stroke="#d97706" stroke-width="2" stroke-dasharray="3 3"/>
-<polygon points="780,448 771,443.5 771,452.5" fill="#d97706"/>
-<rect x="36" y="510" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="540" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="564" font-size="10.2" fill="#334155" xml:space="preserve">锁内不调用可能睡眠的函数。</text>
-<text x="52" y="582" font-size="10.2" fill="#334155" xml:space="preserve">多把锁要固定顺序，否则会死锁。</text>
-<text x="36" y="626" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头与文字标签。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="840" viewBox="0 0 1120 840" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="840" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · 锁选择：先问能不能睡，再问读写比例</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">决策顺序固定：临界区能否睡眠 → 是否在中断上下文 → 读多还是写多。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">顺序乱了就会选出「能编译但会睡在原子上下文」的锁。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">可睡眠</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">原子上下文</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">读多写少</text>
+<rect x="380" y="180" width="320" height="60" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="380" y="180" width="4.5" height="60" fill="#475569" rx="2"/>
+<text x="393" y="199" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">临界区里会睡眠吗？</text>
+<text x="393" y="216" font-size="9.6" fill="#334155" xml:space="preserve">等 I/O、等内存、调用可能睡眠的函数</text>
+<rect x="60" y="320" width="260" height="90" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="60" y="320" width="4.5" height="90" fill="#0f9d58" rx="2"/>
+<text x="73" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">会睡眠 → mutex</text>
+<text x="73" y="356" font-size="9.6" fill="#334155" xml:space="preserve">进程上下文可用</text>
+<text x="73" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">可被抢占，不能用于中断</text>
+<rect x="400" y="320" width="300" height="60" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="400" y="320" width="4.5" height="60" fill="#d97706" rx="2"/>
+<text x="413" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">不会睡眠：在中断/软中断里？</text>
+<rect x="400" y="450" width="220" height="80" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="400" y="450" width="4.5" height="80" fill="#d97706" rx="2"/>
+<text x="413" y="469" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">是 → spinlock</text>
+<text x="413" y="486" font-size="9.6" fill="#334155" xml:space="preserve">短临界区</text>
+<text x="413" y="501.4" font-size="9.6" fill="#334155" xml:space="preserve">关中断版本按需选</text>
+<rect x="740" y="450" width="280" height="60" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="740" y="450" width="4.5" height="60" fill="#0891b2" rx="2"/>
+<text x="753" y="469" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">否：读多写少？</text>
+<rect x="680" y="560" width="170" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="680" y="560" width="4.5" height="70" fill="#0891b2" rx="2"/>
+<text x="693" y="579" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">是 → RCU / rwlock</text>
+<text x="693" y="596" font-size="9.6" fill="#334155" xml:space="preserve">读侧几乎无锁</text>
+<rect x="880" y="560" width="170" height="70" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="880" y="560" width="4.5" height="70" fill="#475569" rx="2"/>
+<text x="893" y="579" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">否 → mutex</text>
+<text x="893" y="596" font-size="9.6" fill="#334155" xml:space="preserve">普通互斥即可</text>
+<line x1="470" y1="240" x2="200" y2="320" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="200,320 209.91,321.76 207.35,313.13" fill="#0f9d58"/>
+<line x1="560" y1="240" x2="550" y2="320" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="550,320 555.58,311.63 546.65,310.51" fill="#d97706"/>
+<line x1="500" y1="380" x2="500" y2="450" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="500,450 504.5,441 495.5,441" fill="#d97706"/>
+<text x="508" y="409" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">是</text>
+<line x1="720" y1="380" x2="800" y2="450" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="800,450 796.19,440.69 790.26,447.46" fill="#0891b2"/>
+<text x="768" y="409" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">否</text>
+<line x1="830" y1="510" x2="760" y2="560" stroke="#0891b2" stroke-width="1.8"/>
+<polygon points="760,560 769.94,558.43 764.71,551.11" fill="#0891b2"/>
+<text x="803" y="529" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">是</text>
+<line x1="900" y1="510" x2="950" y2="560" stroke="#475569" stroke-width="1.8"/>
+<polygon points="950,560 946.82,550.45 940.45,556.82" fill="#475569"/>
+<text x="933" y="529" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">否</text>
+<rect x="40" y="660" width="1040" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="690" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="714" font-size="10.2" fill="#334155" xml:space="preserve">最常犯的错：在中断里用 mutex（会睡眠）——编译能过，运行时才炸。</text>
+<text x="56" y="732" font-size="10.2" fill="#334155" xml:space="preserve">RCU 适合「读极多、写极少且能容忍延迟」；需要强一致的写路径还是 mutex。</text>
+<text x="36" y="786" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="804" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：20-平台与系统/21-Linux/01-内核基础/03-同步与锁.md</text>
 </svg>

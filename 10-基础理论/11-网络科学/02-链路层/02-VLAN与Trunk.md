@@ -149,7 +149,7 @@ VLAN 隔离了二层，跨 VLAN 必须经过三层：
 
 ![图 02 · VLAN三张表](images/图02-VLAN三张表.svg)
 
-**读图**：VLAN 表是静态配置，FDB 动态学习且按 VLAN 隔离，端口表决定 PVID 与 tagged/untagged。
+**读图**：三张表并列——VLAN 表与端口表是静态配置，FDB 是数据面学的；下面那条链才是一次转发的查表顺序。
 
 > 图源：`images/图02-VLAN三张表.svg`
 

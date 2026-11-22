@@ -1,43 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="720" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · DHCPv4 中继：用 giaddr 找到客户端子网</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">客户端广播 DISCOVER，中继把它单播给服务器，并填 giaddr。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">服务器按 giaddr 选地址池，应答经中继回传给客户端。</text>
-<rect x="36" y="180" width="190" height="46" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="36" y="180" width="4.5" height="46" fill="#0f9d58" rx="2"/>
-<text x="49" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">客户端</text>
-<line x1="131" y1="226" x2="131" y2="544" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
-<rect x="316" y="180" width="190" height="46" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="316" y="180" width="4.5" height="46" fill="#4f46e5" rx="2"/>
-<text x="329" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">中继</text>
-<line x1="411" y1="226" x2="411" y2="544" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
-<rect x="596" y="180" width="190" height="46" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="596" y="180" width="4.5" height="46" fill="#d97706" rx="2"/>
-<text x="609" y="199" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">服务器</text>
-<line x1="691" y1="226" x2="691" y2="544" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
-<line x1="131" y1="270" x2="411" y2="270" stroke="#475569" stroke-width="2"/>
-<polygon points="411,270 402,265.5 402,274.5" fill="#475569"/>
-<text x="277" y="262" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">DISCOVER（广播）</text>
-<line x1="411" y1="314" x2="691" y2="314" stroke="#475569" stroke-width="2"/>
-<polygon points="691,314 682,309.5 682,318.5" fill="#475569"/>
-<text x="557" y="306" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">单播 + giaddr</text>
-<line x1="691" y1="358" x2="411" y2="358" stroke="#475569" stroke-width="2"/>
-<polygon points="411,358 420,362.5 420,353.5" fill="#475569"/>
-<text x="557" y="350" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">OFFER（按 giaddr 选池）</text>
-<line x1="411" y1="402" x2="131" y2="402" stroke="#475569" stroke-width="2"/>
-<polygon points="131,402 140,406.5 140,397.5" fill="#475569"/>
-<text x="277" y="394" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">OFFER（广播/单播）</text>
-<line x1="131" y1="446" x2="411" y2="446" stroke="#475569" stroke-width="2"/>
-<polygon points="411,446 402,441.5 402,450.5" fill="#475569"/>
-<text x="277" y="438" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">REQUEST</text>
-<line x1="411" y1="490" x2="691" y2="490" stroke="#475569" stroke-width="2"/>
-<polygon points="691,490 682,485.5 682,494.5" fill="#475569"/>
-<text x="557" y="482" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">REQUEST + giaddr</text>
-<rect x="36" y="544" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="574" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="598" font-size="10.2" fill="#334155" xml:space="preserve">没有 giaddr，服务器不知道客户端属于哪个子网。</text>
-<text x="52" y="616" font-size="10.2" fill="#334155" xml:space="preserve">option 82 可携带端口/用户信息做差异化分配。</text>
-<text x="36" y="666" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="684" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="780" viewBox="0 0 840 780" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="840" height="780" fill="#ffffff"/>
+<line x1="36" y1="112" x2="804" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · DHCPv4 中继：广播变单播，靠 giaddr 选池</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">四步都要走完：DISCOVER → OFFER → REQUEST → ACK，缺一步就没有地址。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">中继只做转发与填 giaddr，不参与地址分配。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">客户端 ↔ 中继</text>
+<line x1="177.2" y1="142" x2="207.2" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="215.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中继 ↔ 服务器</text>
+<rect x="40" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="52" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">客户端</text>
+<rect x="270" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="282" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">中继</text>
+<rect x="500" y="190" width="190" height="42" fill="#f1f5f9" rx="8" stroke="#d97706" stroke-width="1"/>
+<text x="512" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">服务器</text>
+<line x1="135" y1="232" x2="135" y2="544" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="365" y1="232" x2="365" y2="544" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="595" y1="232" x2="595" y2="544" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="135" y1="260" x2="365" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="365,260 356,255.5 356,264.5" fill="#4f46e5"/>
+<text x="141" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">DISCOVER（广播）</text>
+<line x1="365" y1="298" x2="595" y2="298" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="595,298 586,293.5 586,302.5" fill="#d97706"/>
+<text x="371" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">DISCOVER（单播 + giaddr）</text>
+<line x1="595" y1="336" x2="365" y2="336" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="365,336 374,340.5 374,331.5" fill="#d97706"/>
+<text x="371" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">OFFER（按 giaddr 选池）</text>
+<line x1="365" y1="374" x2="135" y2="374" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="135,374 144,378.5 144,369.5" fill="#4f46e5"/>
+<text x="141" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">OFFER（广播/单播）</text>
+<line x1="135" y1="412" x2="365" y2="412" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="365,412 356,407.5 356,416.5" fill="#4f46e5"/>
+<text x="141" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">REQUEST（广播）</text>
+<line x1="365" y1="450" x2="595" y2="450" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="595,450 586,445.5 586,454.5" fill="#d97706"/>
+<text x="371" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">REQUEST + giaddr</text>
+<line x1="595" y1="488" x2="365" y2="488" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="365,488 374,492.5 374,483.5" fill="#d97706"/>
+<text x="371" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">ACK</text>
+<line x1="365" y1="526" x2="135" y2="526" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="135,526 144,530.5 144,521.5" fill="#4f46e5"/>
+<text x="141" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">ACK（广播/单播）</text>
+<rect x="40" y="610" width="760" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="640" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="664" font-size="10.2" fill="#334155" xml:space="preserve">没有 giaddr，服务器不知道客户端属于哪个子网，只能拿自己接口的池去猜。</text>
+<text x="56" y="682" font-size="10.2" fill="#334155" xml:space="preserve">option 82 可带端口/用户信息，用于差异化分配。</text>
+<text x="36" y="726" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="744" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/05-应用层/01-DHCPv4.md</text>
 </svg>

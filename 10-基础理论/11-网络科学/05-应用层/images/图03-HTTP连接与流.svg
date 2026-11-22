@@ -1,47 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="480" viewBox="0 0 1180 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="480" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · HTTP 连接与流：1.1 串行、2 多路复用、3 独立流</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">1.1 一条连接串行处理请求；2 在 TCP 上分帧多路复用；3 每条流独立重传。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">连接状态与流状态分开看：连接断，所有流都断。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="640" viewBox="0 0 1140 640" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="640" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · HTTP 连接与流：三种模型并排看</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">三者是替代关系，不是版本演进的三步；差别在「阻塞粒度」。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">连接状态与流状态是两层：连接断了，下面所有流一起断。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
-<line x1="183.8" y1="142" x2="213.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="221.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="278.8" y1="142" x2="308.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="316.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<line x1="415.6" y1="142" x2="445.6" y2="142" stroke="#475569" stroke-width="3"/>
-<text x="453.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
-<rect x="36" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="36" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">HTTP/1.1</text>
-<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">keep-alive</text>
-<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">串行</text>
-<line x1="194" y1="231" x2="206" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="206,231 197,226.5 197,235.5" fill="#94a3b8"/>
-<rect x="206" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="206" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">HTTP/2</text>
-<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">TCP 多路复用</text>
-<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">流 ID</text>
-<line x1="364" y1="231" x2="376" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="376,231 367,226.5 367,235.5" fill="#94a3b8"/>
-<rect x="376" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="376" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">HTTP/3</text>
-<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">QUIC 流</text>
-<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">独立恢复</text>
-<line x1="534" y1="231" x2="546" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="546,231 537,226.5 537,235.5" fill="#94a3b8"/>
-<rect x="546" y="190" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="546" y="190" width="4.5" height="82" fill="#475569" rx="2"/>
-<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">状态</text>
-<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">idle/open</text>
-<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">half-closed/closed</text>
-<rect x="36" y="310" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">HTTP/2 的 TCP 丢包会阻塞所有流。</text>
-<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">HTTP/3 流丢包只影响单流。</text>
-<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">串行</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">多路复用</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">独立流</text>
+<rect x="40" y="190" width="330" height="118" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="40" y="190" width="4.5" height="118" fill="#d97706" rx="2"/>
+<text x="53" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">HTTP/1.1</text>
+<text x="53" y="226" font-size="9.6" fill="#334155" xml:space="preserve">一条连接同一时刻只跑一个请求</text>
+<text x="53" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">keep-alive 省掉重连，但仍串行</text>
+<text x="53" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">阻塞粒度：整个连接</text>
+<rect x="400" y="190" width="330" height="118" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="400" y="190" width="4.5" height="118" fill="#4f46e5" rx="2"/>
+<text x="413" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">HTTP/2</text>
+<text x="413" y="226" font-size="9.6" fill="#334155" xml:space="preserve">一条 TCP 上多路复用，流 ID 区分</text>
+<text x="413" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">帧交错发送，请求级不再排队</text>
+<text x="413" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">阻塞粒度：TCP 丢包阻塞所有流</text>
+<rect x="760" y="190" width="330" height="118" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="760" y="190" width="4.5" height="118" fill="#0f9d58" rx="2"/>
+<text x="773" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">HTTP/3</text>
+<text x="773" y="226" font-size="9.6" fill="#334155" xml:space="preserve">跑在 QUIC 上，每条流独立</text>
+<text x="773" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">一个包丢了只重传该流</text>
+<text x="773" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">阻塞粒度：单条流</text>
+<text x="40" y="380" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">连接状态（三种模型共用这一层）</text>
+<rect x="40" y="400" width="46.48" height="36" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="63.24" y="421.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">idle</text>
+<rect x="140" y="400" width="46.48" height="36" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="163.24" y="421.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">open</text>
+<rect x="240" y="400" width="89.32" height="36" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="284.66" y="421.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">half-closed</text>
+<rect x="400" y="400" width="58.72" height="36" fill="#fff5f5" rx="6" stroke="#dc2626" stroke-width="1.2"/>
+<text x="429.36" y="421.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">closed</text>
+<line x1="86.48" y1="418" x2="140" y2="418" stroke="#475569" stroke-width="1.6"/>
+<polygon points="140,418 131,413.5 131,422.5" fill="#475569"/>
+<line x1="186.48" y1="418" x2="240" y2="418" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="240,418 231,413.5 231,422.5" fill="#0f9d58"/>
+<line x1="329.32" y1="418" x2="400" y2="418" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="400,418 391,413.5 391,422.5" fill="#d97706"/>
+<rect x="40" y="470" width="1050" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="500" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="524" font-size="10.2" fill="#334155" xml:space="preserve">HTTP/2 的「多路复用」只解决了请求级排队；TCP 层丢一个包，所有流一起等——这是 HTTP/3 换 QUIC 的直接原因。</text>
+<text x="56" y="542" font-size="10.2" fill="#334155" xml:space="preserve">流被取消或连接被关，两者是不同层级的事件；排障时先分清是「某条流失败」还是「整条连接失败」。</text>
+<text x="36" y="586" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="604" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/05-应用层/04-HTTP.md</text>
 </svg>

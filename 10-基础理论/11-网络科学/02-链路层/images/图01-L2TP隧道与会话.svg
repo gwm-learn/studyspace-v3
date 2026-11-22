@@ -1,48 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="520" viewBox="0 0 1180 520" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="520" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="620" viewBox="0 0 1320 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1320" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1284" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
 <text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · L2TP 隧道与会话：一条隧道，多条 PPP</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">LAC 把 PPP 帧封进 L2TP，经 UDP 送到 LNS；LNS 终结 PPP。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">隧道是外层，会话是内层；一个隧道可承载多个 PPP 会话。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<line x1="172.8" y1="142" x2="202.8" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="210.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<rect x="30" y="220" width="170" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="30" y="220" width="4.5" height="76" fill="#0f9d58" rx="2"/>
-<text x="43" y="239" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PPP 终端</text>
-<text x="43" y="256" font-size="9.6" fill="#334155" xml:space="preserve">拨号 / 分支</text>
-<text x="43" y="271.4" font-size="9.6" fill="#334155" xml:space="preserve">不知道隧道</text>
-<rect x="250" y="210" width="190" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="250" y="210" width="4.5" height="96" fill="#4f46e5" rx="2"/>
-<text x="263" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LAC / NAS</text>
-<text x="263" y="246" font-size="9.6" fill="#334155" xml:space="preserve">PPP 接入</text>
-<text x="263" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">封装 L2TP</text>
-<text x="263" y="276.8" font-size="9.6" fill="#334155" xml:space="preserve">隧道发起</text>
-<rect x="620" y="210" width="190" height="96" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="620" y="210" width="4.5" height="96" fill="#4f46e5" rx="2"/>
-<text x="633" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LNS</text>
-<text x="633" y="246" font-size="9.6" fill="#334155" xml:space="preserve">终结隧道</text>
-<text x="633" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">终结 PPP</text>
-<text x="633" y="276.8" font-size="9.6" fill="#334155" xml:space="preserve">分配地址</text>
-<rect x="860" y="220" width="150" height="76" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="860" y="220" width="4.5" height="76" fill="#0f9d58" rx="2"/>
-<text x="873" y="239" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">企业内网</text>
-<text x="873" y="256" font-size="9.6" fill="#334155" xml:space="preserve">路由域</text>
-<text x="873" y="271.4" font-size="9.6" fill="#334155" xml:space="preserve">业务资源</text>
-<line x1="200" y1="258" x2="250" y2="258" stroke="#475569" stroke-width="2"/>
-<polygon points="250,258 241,253.5 241,262.5" fill="#475569"/>
-<text x="231" y="251" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">PPP</text>
-<line x1="440" y1="258" x2="620" y2="258" stroke="#4f46e5" stroke-width="2"/>
-<polygon points="620,258 611,253.5 611,262.5" fill="#4f46e5"/>
-<text x="536" y="251" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">L2TP / UDP 1701</text>
-<line x1="810" y1="258" x2="860" y2="258" stroke="#0f9d58" stroke-width="2"/>
-<polygon points="860,258 851,253.5 851,262.5" fill="#0f9d58"/>
-<text x="841" y="251" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">IP</text>
-<rect x="36" y="356" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="386" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="410" font-size="10.2" fill="#334155" xml:space="preserve">控制消息可靠（序号/重传），数据消息不可靠。</text>
-<text x="52" y="428" font-size="10.2" fill="#334155" xml:space="preserve">封装开销约 38–42 字节，注意 MTU/MSS。</text>
-<text x="36" y="466" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="484" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">角色链是 LAC → LNS；真正决定「谁是谁」的是封装里的隧道 ID 与会话 ID。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">隧道是外层（一个 LAC-LNS 对），会话是内层（每条 PPP 一个）。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">角色路径</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">封装层次</text>
+<rect x="40" y="230" width="170" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="230" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="53" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">PPP 终端</text>
+<text x="53" y="266" font-size="9.6" fill="#334155" xml:space="preserve">拨号 / 分支</text>
+<text x="53" y="281.4" font-size="9.6" fill="#334155" xml:space="preserve">不知道隧道</text>
+<rect x="250" y="230" width="170" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="250" y="230" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="263" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LAC / NAS</text>
+<text x="263" y="266" font-size="9.6" fill="#334155" xml:space="preserve">PPP 接入</text>
+<text x="263" y="281.4" font-size="9.6" fill="#334155" xml:space="preserve">封装 L2TP</text>
+<rect x="460" y="230" width="170" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="460" y="230" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="473" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LNS</text>
+<text x="473" y="266" font-size="9.6" fill="#334155" xml:space="preserve">终结隧道</text>
+<text x="473" y="281.4" font-size="9.6" fill="#334155" xml:space="preserve">分配地址</text>
+<rect x="670" y="230" width="170" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="670" y="230" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="683" y="249" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">企业内网</text>
+<text x="683" y="266" font-size="9.6" fill="#334155" xml:space="preserve">路由域</text>
+<text x="683" y="281.4" font-size="9.6" fill="#334155" xml:space="preserve">业务资源</text>
+<line x1="210" y1="302" x2="250" y2="302" stroke="#475569" stroke-width="1.8"/>
+<polygon points="250,302 241,297.5 241,306.5" fill="#475569"/>
+<text x="230" y="295" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">PPP</text>
+<line x1="420" y1="302" x2="460" y2="302" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="460,302 451,297.5 451,306.5" fill="#4f46e5"/>
+<text x="440" y="295" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">UDP 1701</text>
+<line x1="630" y1="302" x2="670" y2="302" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="670,302 661,297.5 661,306.5" fill="#0f9d58"/>
+<text x="650" y="295" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">IP</text>
+<text x="900" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">封装：外层隧道，内层会话</text>
+<rect x="900" y="196" width="340" height="40" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="912" y="219.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">IP 头</text>
+<text x="1230" y="219.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">外层</text>
+<rect x="900" y="242" width="340" height="40" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="912" y="265.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">UDP 1701</text>
+<text x="1230" y="265.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">L2TP 端口</text>
+<rect x="900" y="288" width="340" height="40" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="912" y="311.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">L2TP 头：Tunnel ID</text>
+<text x="1230" y="311.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">一条隧道</text>
+<rect x="900" y="334" width="340" height="40" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.1"/>
+<text x="912" y="357.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">L2TP 头：Session ID</text>
+<text x="1230" y="357.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">每条 PPP</text>
+<rect x="900" y="380" width="340" height="40" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="912" y="403.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">PPP 帧</text>
+<text x="1230" y="403.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">内层载荷</text>
+<rect x="40" y="446" width="1240" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="476" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="500" font-size="10.2" fill="#334155" xml:space="preserve">一个 Tunnel ID 下可以有多条 Session ID：隧道断了，所有会话一起断；单条会话断开不影响其他。</text>
+<text x="56" y="518" font-size="10.2" fill="#334155" xml:space="preserve">控制消息可靠（序号 + 重传），数据消息不可靠；封装开销约 38–42 字节，要注意 MTU/MSS。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/02-链路层/07-L2TP.md</text>
 </svg>

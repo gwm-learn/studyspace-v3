@@ -1,75 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="600" viewBox="0 0 1360 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1360" height="600" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1324" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · STP/RSTP 端口状态：从阻塞到转发</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">STP 要经过 Listening、Learning 各 15 秒；RSTP 合并为三种状态。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">只有根端口和指定端口最终进入 Forwarding。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="680" viewBox="0 0 980 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="980" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="944" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · STP/RSTP 端口状态：怎么进入转发，怎么退回去</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">STP 是一条主链加两条回退边；RSTP 把它压成三种状态，不是另一条支线。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">定时器只在 STP 中强依赖：Max Age 20s、Forward Delay 15s。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<rect x="36" y="190" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
-<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">STP</text>
-<text x="46" y="228" font-size="9" fill="#64748b" xml:space="preserve">802.1D</text>
-<text x="46" y="241" font-size="9" fill="#64748b" xml:space="preserve">5 种状态</text>
-<rect x="154" y="190" width="140" height="72" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="154" y="190" width="4.5" height="72" fill="#475569" rx="2"/>
-<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Disabled</text>
-<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">关闭</text>
-<line x1="294" y1="226" x2="346" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="346,226 337,221.5 337,230.5" fill="#475569"/>
-<text x="320" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">启用</text>
-<rect x="346" y="190" width="140" height="72" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="346" y="190" width="4.5" height="72" fill="#dc2626" rx="2"/>
-<text x="359" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Blocking</text>
-<text x="359" y="226" font-size="8.8" fill="#334155" xml:space="preserve">只收 BPDU</text>
-<line x1="486" y1="226" x2="538" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="538,226 529,221.5 529,230.5" fill="#475569"/>
-<text x="512" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">选举</text>
-<rect x="538" y="190" width="140" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="538" y="190" width="4.5" height="72" fill="#d97706" rx="2"/>
-<text x="551" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Listening</text>
-<text x="551" y="226" font-size="8.8" fill="#334155" xml:space="preserve">参与选举</text>
-<line x1="678" y1="226" x2="730" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="730,226 721,221.5 721,230.5" fill="#475569"/>
-<text x="704" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">15s</text>
-<rect x="730" y="190" width="140" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="730" y="190" width="4.5" height="72" fill="#d97706" rx="2"/>
-<text x="743" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Learning</text>
-<text x="743" y="226" font-size="8.8" fill="#334155" xml:space="preserve">学 MAC</text>
-<line x1="870" y1="226" x2="922" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="922,226 913,221.5 913,230.5" fill="#475569"/>
-<text x="896" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">15s</text>
-<rect x="922" y="190" width="140" height="72" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="922" y="190" width="4.5" height="72" fill="#0f9d58" rx="2"/>
-<text x="935" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Forwarding</text>
-<text x="935" y="226" font-size="8.8" fill="#334155" xml:space="preserve">转发</text>
-<rect x="36" y="302" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
-<text x="46" y="324" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">RSTP</text>
-<text x="46" y="340" font-size="9" fill="#64748b" xml:space="preserve">802.1w</text>
-<text x="46" y="353" font-size="9" fill="#64748b" xml:space="preserve">3 种状态</text>
-<rect x="154" y="302" width="140" height="72" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="154" y="302" width="4.5" height="72" fill="#dc2626" rx="2"/>
-<text x="167" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Discarding</text>
-<text x="167" y="338" font-size="8.8" fill="#334155" xml:space="preserve">不转发</text>
-<line x1="294" y1="338" x2="346" y2="338" stroke="#475569" stroke-width="2"/>
-<polygon points="346,338 337,333.5 337,342.5" fill="#475569"/>
-<text x="320" y="324" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">角色确定</text>
-<rect x="346" y="302" width="140" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="346" y="302" width="4.5" height="72" fill="#d97706" rx="2"/>
-<text x="359" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Learning</text>
-<text x="359" y="338" font-size="8.8" fill="#334155" xml:space="preserve">学 MAC</text>
-<line x1="486" y1="338" x2="538" y2="338" stroke="#475569" stroke-width="2"/>
-<polygon points="538,338 529,333.5 529,342.5" fill="#475569"/>
-<text x="512" y="324" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">学习</text>
-<rect x="538" y="302" width="140" height="72" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="538" y="302" width="4.5" height="72" fill="#0f9d58" rx="2"/>
-<text x="551" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Forwarding</text>
-<text x="551" y="338" font-size="8.8" fill="#334155" xml:space="preserve">转发</text>
-<rect x="36" y="420" width="1280" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="474" font-size="10.2" fill="#334155" xml:space="preserve">STP 收敛约 30–50 秒，RSTP 亚秒级。</text>
-<text x="52" y="492" font-size="10.2" fill="#334155" xml:space="preserve">边缘端口可直接进入 Forwarding。</text>
-<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主链</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">可转发</text>
+<line x1="215" y1="142" x2="245" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">回退（端口/角色变化）</text>
+<text x="60" y="182" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① STP（802.1D）：5 种状态</text>
+<rect x="60" y="250" width="70.96" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="95.48" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Disabled</text>
+<text x="95.48" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">端口关闭</text>
+<rect x="210" y="250" width="70.96" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="245.48" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Blocking</text>
+<text x="245.48" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">只收 BPDU</text>
+<rect x="370" y="250" width="102.84" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="421.42" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Listening</text>
+<text x="421.42" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">参与选举，不学 MAC</text>
+<rect x="540" y="250" width="85.64" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="582.82" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Learning</text>
+<text x="582.82" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">学 MAC，不转发</text>
+<rect x="700" y="250" width="83.2" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="741.6" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Forwarding</text>
+<text x="741.6" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">转发数据</text>
+<line x1="130.96" y1="272" x2="210" y2="272" stroke="#475569" stroke-width="1.8"/>
+<polygon points="210,272 201,267.5 201,276.5" fill="#475569"/>
+<text x="170.48" y="265" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">端口启用</text>
+<line x1="280.96" y1="272" x2="370" y2="272" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="370,272 361,267.5 361,276.5" fill="#d97706"/>
+<text x="325.48" y="265" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">Max Age 20s</text>
+<line x1="472.84" y1="272" x2="540" y2="272" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="540,272 531,267.5 531,276.5" fill="#d97706"/>
+<text x="506.42" y="265" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">15s</text>
+<line x1="625.64" y1="272" x2="700" y2="272" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="700,272 691,267.5 691,276.5" fill="#0f9d58"/>
+<text x="662.82" y="265" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">15s</text>
+<line x1="741.6" y1="250" x2="741.6" y2="196" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="741.6" y1="196" x2="245.48" y2="196" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="245.48" y1="196" x2="245.48" y2="250" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="245.48,250 249.98,241 240.98,241" fill="#dc2626"/>
+<text x="493.54" y="188" font-size="9.6" fill="#dc2626" xml:space="preserve" font-weight="600" text-anchor="middle">角色变化 / 拓扑变化</text>
+<line x1="245.48" y1="294" x2="245.48" y2="330" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="245.48" y1="330" x2="95.48" y2="330" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="95.48" y1="330" x2="95.48" y2="294" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="95.48,294 90.98,303 99.98,303" fill="#dc2626"/>
+<text x="170.48" y="346" font-size="9.6" fill="#dc2626" xml:space="preserve" font-weight="600" text-anchor="middle">端口 down</text>
+<text x="60" y="400" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② RSTP（802.1w）：3 种状态</text>
+<rect x="60" y="420" width="83.2" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="101.6" y="442" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Discarding</text>
+<text x="101.6" y="454" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">合并前三态</text>
+<rect x="330" y="420" width="85.64" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="372.82" y="442" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Learning</text>
+<text x="372.82" y="454" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">学 MAC，不转发</text>
+<rect x="520" y="420" width="83.2" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="561.6" y="442" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Forwarding</text>
+<text x="561.6" y="454" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">转发数据</text>
+<line x1="143.2" y1="442" x2="330" y2="442" stroke="#475569" stroke-width="1.8"/>
+<polygon points="330,442 321,437.5 321,446.5" fill="#475569"/>
+<text x="236.6" y="435" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">端口启用</text>
+<line x1="415.64" y1="442" x2="520" y2="442" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="520,442 511,437.5 511,446.5" fill="#0f9d58"/>
+<text x="467.82" y="435" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">学习完成</text>
+<rect x="60" y="500" width="880" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="76" y="554" font-size="10.2" fill="#334155" xml:space="preserve">两套状态不是「新旧两条支线」：RSTP 把 Disabled/Blocking/Listening 合并成 Discarding，所以只有三种。</text>
+<text x="76" y="572" font-size="10.2" fill="#334155" xml:space="preserve">RSTP 靠握手快速收敛，定时器只用于超时判定；边缘端口（接终端）可直接进 Forwarding。</text>
+<text x="36" y="626" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/02-链路层/03-STP-RSTP-MSTP.md</text>
 </svg>

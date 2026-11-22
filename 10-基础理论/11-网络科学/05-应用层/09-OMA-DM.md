@@ -129,7 +129,7 @@ Bootstrap 可以通过工厂预置、短信/WAP Push、二维码、DHCP 选项�
 
 ![图 01 · OMA-DM会话与DM树](images/图01-OMA-DM会话与DM树.svg)
 
-**读图**：SyncML 会话在 DM Tree 上 Get/Replace/Exec；Bootstrap 先下发服务器地址、认证与初始配置。
+**读图**：左边是会话（Package 可多包往返），右边是它操作的 DM 树；会话断了下次接着做，树里的状态才是最终结果。
 
 > 图源：`images/图01-OMA-DM会话与DM树.svg`
 
@@ -180,7 +180,7 @@ Bootstrap 可以通过工厂预置、短信/WAP Push、二维码、DHCP 选项�
 
 ![图 03 · OMA-DM会话状态](images/图03-OMA-DM会话状态.svg)
 
-**读图**：Alert 触发后双方交替发 Package 1/2/3/4；失败按策略重试或终止。
+**读图**：Alert 触发后双方交替发 Package 1/2/3/4，每个 Package 都是一次 HTTP 往返；失败按策略重试或终止会话。
 
 > 图源：`images/图03-OMA-DM会话状态.svg`
 

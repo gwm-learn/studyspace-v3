@@ -161,7 +161,7 @@ DHCP 靠 magic cookie + options 与 BOOTP 区分。客户端用 **xid + chaddr**
 
 ![图 03 · DHCPv4中继](images/图03-DHCPv4中继.svg)
 
-**读图**：中继把广播转成单播并填 giaddr，服务器据此选择客户端所在子网的地址池。
+**读图**：四步都要走完——中继把 DISCOVER/REQUEST 转成单播并填 giaddr，服务器据此选池，最后 ACK 还要经中继回给客户端。
 
 > 图源：`images/图03-DHCPv4中继.svg`
 
@@ -196,7 +196,7 @@ DHCP 靠 magic cookie + options 与 BOOTP 区分。客户端用 **xid + chaddr**
 
 ![图 02 · DHCPv4租约状态](images/图02-DHCPv4租约状态.svg)
 
-**读图**：从 INIT 到 BOUND 是 DORA；T1 向原服务器续租，T2 向任意服务器重绑定，失败回到 INIT。
+**读图**：从 INIT 到 BOUND 是 DORA；T1 向原服务器单播续租、T2 向任意服务器广播重绑定，**续租成功都回到 BOUND**，只有到期或被 NAK 才回 INIT。
 
 > 图源：`images/图02-DHCPv4租约状态.svg`
 

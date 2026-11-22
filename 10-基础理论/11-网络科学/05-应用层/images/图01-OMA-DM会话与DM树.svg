@@ -1,54 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="660" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · OMA DM：在管理树上做 SyncML 会话</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">服务器和客户端交换 SyncML 包，对 DM Tree 节点做 Get/Replace/Exec。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">Bootstrap 先下发服务器地址、认证和初始配置。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="600" viewBox="0 0 1080 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="600" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · OMA-DM：SyncML 会话，操作的是 DM 树</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">左边是会话：Server 下发 Package，Client 执行并回 Status，可以多包往返。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">右边是它操作的树：根下一层是 DevInfo / FUMO / Vendor 这类管理对象。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
-<line x1="415.6" y1="142" x2="445.6" y2="142" stroke="#0891b2" stroke-width="3"/>
-<text x="453.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层 / 补充</text>
-<rect x="40" y="210" width="200" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="40" y="210" width="4.5" height="80" fill="#4f46e5" rx="2"/>
-<text x="53" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DM Server</text>
-<text x="53" y="246" font-size="9.6" fill="#334155" xml:space="preserve">发起会话</text>
-<text x="53" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">下发命令</text>
-<rect x="310" y="210" width="200" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="310" y="210" width="4.5" height="80" fill="#0f9d58" rx="2"/>
-<text x="323" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DM Client</text>
-<text x="323" y="246" font-size="9.6" fill="#334155" xml:space="preserve">执行命令</text>
-<text x="323" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">上报结果</text>
-<rect x="600" y="180" width="230" height="100" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="600" y="180" width="4.5" height="100" fill="#d97706" rx="2"/>
-<text x="613" y="199" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DM Tree</text>
-<text x="613" y="216" font-size="9.6" fill="#334155" xml:space="preserve">./DevInfo</text>
-<text x="613" y="231.4" font-size="9.6" fill="#334155" xml:space="preserve">./FUMO</text>
-<text x="613" y="246.8" font-size="9.6" fill="#334155" xml:space="preserve">./Vendor/...</text>
-<rect x="310" y="370" width="230" height="70" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="310" y="370" width="4.5" height="70" fill="#0891b2" rx="2"/>
-<text x="323" y="389" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">SyncML 包</text>
-<text x="323" y="406" font-size="9.6" fill="#334155" xml:space="preserve">Alert/Get/Replace</text>
-<text x="323" y="421.4" font-size="9.6" fill="#334155" xml:space="preserve">Exec/Sequence</text>
-<line x1="240" y1="250" x2="310" y2="250" stroke="#4f46e5" stroke-width="2"/>
-<polygon points="310,250 301,245.5 301,254.5" fill="#4f46e5"/>
-<text x="281" y="243" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">SyncML</text>
-<line x1="510" y1="243.44" x2="600" y2="237.54" stroke="#d97706" stroke-width="2"/>
-<polygon points="600,237.54 590.72,233.64 591.31,242.62" fill="#d97706"/>
-<text x="561" y="233.49" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">读写</text>
-<line x1="413.87" y1="290" x2="421.61" y2="370" stroke="#0891b2" stroke-width="2" stroke-dasharray="3 3"/>
-<polygon points="421.61,370 425.23,360.61 416.27,361.48" fill="#0891b2"/>
-<text x="423.74" y="323" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">多包会话</text>
-<line x1="360.65" y1="370" x2="213.55" y2="290" stroke="#0f9d58" stroke-width="2" stroke-dasharray="3 3"/>
-<polygon points="213.55,290 219.3,298.25 223.6,290.35" fill="#0f9d58"/>
-<text x="293.1" y="323" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">结果 / Status</text>
-<rect x="36" y="490" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="520" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="544" font-size="10.2" fill="#334155" xml:space="preserve">服务器主动依赖 Push/长连接，NAT 后可能不通。</text>
-<text x="52" y="562" font-size="10.2" fill="#334155" xml:space="preserve">固件升级（FUMO）要签名与回滚保护。</text>
-<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">会话</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">数据模型</text>
+<text x="40" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① SyncML 会话</text>
+<rect x="40" y="196" width="240" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="52" y="222" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">DM Server</text>
+<rect x="370" y="196" width="240" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="382" y="222" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">DM Client</text>
+<line x1="160" y1="238" x2="160" y2="398" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="490" y1="238" x2="490" y2="398" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="160" y1="266" x2="490" y2="266" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="490,266 481,261.5 481,270.5" fill="#4f46e5"/>
+<text x="166" y="259" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Package 1（Alert / Get / Replace / Exec）</text>
+<line x1="490" y1="304" x2="160" y2="304" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="160,304 169,308.5 169,299.5" fill="#0f9d58"/>
+<text x="166" y="297" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Status + Results</text>
+<line x1="160" y1="342" x2="490" y2="342" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="490,342 481,337.5 481,346.5" fill="#4f46e5"/>
+<text x="166" y="335" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Package 2（继续，可多包）</text>
+<line x1="490" y1="380" x2="160" y2="380" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="160,380 169,384.5 169,375.5" fill="#0f9d58"/>
+<text x="166" y="373" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Status（最终结果）</text>
+<text x="720" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② DM 树（被操作的对象）</text>
+<rect x="860" y="200" width="70" height="34" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="895" y="220.6" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">/</text>
+<rect x="720" y="280" width="83.92" height="40" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="761.96" y="300" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">DevInfo</text>
+<text x="761.96" y="312" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">厂商/型号/版本</text>
+<rect x="850" y="280" width="56.4" height="40" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="878.2" y="300" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">FUMO</text>
+<text x="878.2" y="312" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">固件升级</text>
+<rect x="980" y="280" width="58.72" height="40" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="1009.36" y="300" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Vendor</text>
+<text x="1009.36" y="312" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">厂商扩展</text>
+<line x1="860" y1="217" x2="803.92" y2="300" stroke="#475569" stroke-width="1.4"/>
+<polygon points="803.92,300 812.69,295.06 805.23,290.02" fill="#475569"/>
+<line x1="895" y1="234" x2="878.2" y2="280" stroke="#475569" stroke-width="1.4"/>
+<polygon points="878.2,280 885.51,273.09 877.06,270" fill="#475569"/>
+<line x1="930" y1="217" x2="980" y2="300" stroke="#475569" stroke-width="1.4"/>
+<polygon points="980,300 979.21,289.97 971.5,294.61" fill="#475569"/>
+<text x="720" y="350" font-size="9.4" fill="#64748b" xml:space="preserve">节点路径如 ./DevInfo/DevId；Exec 用于触发动作</text>
+<rect x="40" y="430" width="960" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="460" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="484" font-size="10.2" fill="#334155" xml:space="preserve">会话与树是两层：会话断了下一次接着做，树里的状态才是最终结果。</text>
+<text x="56" y="502" font-size="10.2" fill="#334155" xml:space="preserve">FUMO 升级要签名与回滚；Server 主动发起依赖 Push/长连接，NAT 后常常连不上。</text>
+<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/05-应用层/09-OMA-DM.md</text>
 </svg>

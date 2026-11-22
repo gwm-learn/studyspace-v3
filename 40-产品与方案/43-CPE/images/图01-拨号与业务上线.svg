@@ -1,92 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="800" viewBox="0 0 1060 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1060" height="800" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · CPE 拨号与业务上线流程</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">链路 → 认证 → 地址 → 路由/NAT → 业务；失败时按阶段向上排查。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：每一步都有明确的失败现象，先定位阶段，再看具体配置。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常路径</text>
-<line x1="142" y1="142" x2="172" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">关键动作</text>
-<rect x="36" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="36" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="49" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">① 链路建立</text>
-<text x="49" y="236" font-size="9.6" fill="#334155" xml:space="preserve">DSL 训练/PON 注册</text>
-<text x="49" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">蜂窝注册/以太 Link</text>
-<line x1="216" y1="241" x2="234" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="234,241 225,236.5 225,245.5" fill="#94a3b8"/>
-<rect x="234" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="234" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="247" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">② 认证/拨号</text>
-<text x="247" y="236" font-size="9.6" fill="#334155" xml:space="preserve">PPPoE/802.1X/SIM</text>
-<line x1="414" y1="241" x2="432" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="432,241 423,236.5 423,245.5" fill="#94a3b8"/>
-<rect x="432" y="200" width="180" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="432" y="200" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="445" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">③ 地址配置</text>
-<text x="445" y="236" font-size="9.6" fill="#334155" xml:space="preserve">IPCP/DHCP/RA/PD</text>
-<line x1="612" y1="241" x2="630" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="630,241 621,236.5 621,245.5" fill="#94a3b8"/>
-<rect x="630" y="200" width="180" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="630" y="200" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="643" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">④ 路由与 NAT</text>
-<text x="643" y="236" font-size="9.6" fill="#334155" xml:space="preserve">默认路由/DNS</text>
-<text x="643" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">NAT/防火墙</text>
-<line x1="810" y1="241" x2="828" y2="241" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="828,241 819,236.5 819,245.5" fill="#94a3b8"/>
-<rect x="828" y="200" width="180" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="828" y="200" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="841" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">⑤ 业务可用</text>
-<text x="841" y="236" font-size="9.6" fill="#334155" xml:space="preserve">上网/VoIP/IPTV</text>
-<text x="36" y="340" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">常见失败与所处阶段</text>
-<rect x="36" y="354" width="860" height="30" fill="#f1f5f9" rx="6"/>
-<text x="44" y="374" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="start">现象</text>
-<text x="358.5" y="374" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">阶段</text>
-<text x="573.5" y="374" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">优先排查</text>
-<text x="788.5" y="374" font-size="10" fill="#64748b" xml:space="preserve" font-weight="700" text-anchor="middle">边界</text>
-<rect x="36" y="384" width="860" height="30" fill="#ffffff"/>
-<line x1="36" y1="384" x2="896" y2="384" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="404" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">WAN 灯不亮</text>
-<text x="358.5" y="404" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">① 链路</text>
-<text x="573.5" y="404" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">网线/光功率/DSL/SIM</text>
-<text x="788.5" y="404" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">硬件或线路</text>
-<rect x="36" y="414" width="860" height="30" fill="#ffffff"/>
-<line x1="36" y1="414" x2="896" y2="414" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="434" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">一直发 PADI</text>
-<text x="358.5" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">② 认证</text>
-<text x="573.5" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">VLAN/BRAS 可达</text>
-<text x="788.5" y="434" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">二层广播域</text>
-<rect x="36" y="444" width="860" height="30" fill="#ffffff"/>
-<line x1="36" y1="444" x2="896" y2="444" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="464" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">认证被拒</text>
-<text x="358.5" y="464" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">② 认证</text>
-<text x="573.5" y="464" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">账号/绑定/欠费</text>
-<text x="788.5" y="464" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">运营商侧</text>
-<rect x="36" y="474" width="860" height="30" fill="#ffffff"/>
-<line x1="36" y1="474" x2="896" y2="474" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="494" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">有地址不能上网</text>
-<text x="358.5" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">④ 路由</text>
-<text x="573.5" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">默认路由/NAT/DNS</text>
-<text x="788.5" y="494" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">配置或策略</text>
-<rect x="36" y="504" width="860" height="30" fill="#ffffff"/>
-<line x1="36" y1="504" x2="896" y2="504" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="524" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">小包通大包不通</text>
-<text x="358.5" y="524" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">④ 路由</text>
-<text x="573.5" y="524" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">MTU/MSS</text>
-<text x="788.5" y="524" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">PPPoE/隧道开销</text>
-<rect x="36" y="534" width="860" height="30" fill="#ffffff"/>
-<line x1="36" y1="534" x2="896" y2="534" stroke="#e2e8f0" stroke-width="0.8"/>
-<text x="44" y="554" font-size="10" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="start">IPv6 不通</text>
-<text x="358.5" y="554" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">③ 地址</text>
-<text x="573.5" y="554" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">RA/PD/DNS/防火墙</text>
-<text x="788.5" y="554" font-size="10" fill="#334155" xml:space="preserve" text-anchor="middle">双栈配置</text>
-<line x1="36" y1="564" x2="896" y2="564" stroke="#e2e8f0" stroke-width="0.8"/>
-<rect x="36" y="590" width="860" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="620" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
-<text x="52" y="644" font-size="10.2" fill="#334155" xml:space="preserve">① 不要把“拨号失败”当成一个笼统问题：链路、认证、地址是三套独立机制。</text>
-<text x="52" y="662" font-size="10.2" fill="#334155" xml:space="preserve">② PPPoE 的 MTU 通常是 1492，未做 MSS 钳制会表现为“网页能开、下载失败”。</text>
-<text x="52" y="680" font-size="10.2" fill="#334155" xml:space="preserve">③ IPv6 不做 NAT，防火墙默认拒绝入站，放行规则要单独验证。</text>
-<text x="36" y="728" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/43-CPE/01-宽带接入与拨号.md</text>
-<text x="36" y="746" font-size="12.3" fill="#64748b" xml:space="preserve">参考：RFC 2516 / RFC 8415</text>
-<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="540" viewBox="0 0 1020 540" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1020" height="540" fill="#ffffff"/>
+<line x1="36" y1="112" x2="984" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 拨号与业务上线：五个阶段，协议各不相同</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">链路、认证、地址、转发、业务：每一步用的协议不同，卡在同一步说明问题在同一层。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">定位时先看阶段，再查该阶段的协议与配置，不要一上来就翻全部日志。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">链路</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">认证/地址</text>
+<line x1="232.6" y1="142" x2="262.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="270.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">可用</text>
+<line x1="70" y1="270" x2="970" y2="270" stroke="#cbd5e1" stroke-width="1.8"/>
+<polygon points="160,265 155,270 160,275 165,270" fill="#475569"/>
+<text x="160" y="252" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">链路</text>
+<text x="160" y="238" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">物理同步 / PPPoE 发现</text>
+<polygon points="340,265 335,270 340,275 345,270" fill="#4f46e5"/>
+<text x="340" y="294" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">认证</text>
+<text x="340" y="308" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">PAP / CHAP</text>
+<polygon points="520,265 515,270 520,275 525,270" fill="#4f46e5"/>
+<text x="520" y="252" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">地址</text>
+<text x="520" y="238" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">IPCP / DHCP</text>
+<polygon points="700,265 695,270 700,275 705,270" fill="#d97706"/>
+<text x="700" y="294" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">转发</text>
+<text x="700" y="308" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">路由 / NAT</text>
+<polygon points="880,265 875,270 880,275 885,270" fill="#0f9d58"/>
+<text x="880" y="252" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="600" text-anchor="middle">业务可用</text>
+<text x="880" y="238" font-size="9" fill="#64748b" xml:space="preserve" text-anchor="middle">DNS / 端口 / 代理</text>
+<rect x="70" y="360" width="900" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="86" y="390" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="86" y="414" font-size="10.2" fill="#334155" xml:space="preserve">「拨号成功」只代表到了地址阶段，业务可用还要看 DNS、端口映射、代理链路。</text>
+<text x="86" y="432" font-size="10.2" fill="#334155" xml:space="preserve">PPPoE 的 MTU 1492 会影响后续业务：拨号本身成功，但大包在业务阶段才出问题。</text>
+<text x="36" y="486" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="504" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：40-产品与方案/43-CPE/01-宽带接入与拨号.md</text>
 </svg>

@@ -148,7 +148,7 @@ msg-type(1) + transaction-id(3) + options(变长)
 
 ![图 03 · DHCPv6-PD委派](images/图03-DHCPv6-PD委派.svg)
 
-**读图**：上游委派 /56，网关切出多个 /64，用 RA 下发给各 LAN；不需要 NAT。
+**读图**：Solicit→Advertise→Request→Reply 拿到 /56，然后**网关自己**切 /64（图里的自环，不是协议报文），再用 RA 下发给各 LAN；不需要 NAT。
 
 > 图源：`images/图03-DHCPv6-PD委派.svg`
 
@@ -167,7 +167,7 @@ PD 让下游路由器不需要 NAT，也能给每个 LAN 分配全局可路由�
 
 ![图 02 · DHCPv6中继](images/图02-DHCPv6中继.svg)
 
-**读图**：RELAY-FORW 带上收到报文的链路信息，服务器按链路选池，RELAY-REPL 原路返回。
+**读图**：四步各走两趟——中继把客户端报文封装进 RELAY-FORW，服务器用 RELAY-REPL 带回；链路信息在 RELAY-FORW 里，服务器据此选池。
 
 > 图源：`images/图02-DHCPv6中继.svg`
 
@@ -196,7 +196,7 @@ PD 让下游路由器不需要 NAT，也能给每个 LAN 分配全局可路由�
 
 ![图 02 · DHCPv6状态机](images/图02-DHCPv6状态机.svg)
 
-**读图**：SOLICIT/ADVERTISE/REQUEST/REPLY 后进入 BOUND；T1 续租、T2 重绑定，失败回 INIT。
+**读图**：SOLICIT/ADVERTISE/REQUEST/REPLY 后进入 BOUND；T1 续租、T2 重绑定，成功都回 BOUND，到期或 NAK 才回 INIT 重新 SOLICIT。
 
 > 图源：`images/图02-DHCPv6状态机.svg`
 

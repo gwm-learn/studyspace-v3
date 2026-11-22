@@ -1,51 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="620" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="620" viewBox="0 0 1120 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1120" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1084" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
 <text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · L2TP 控制通道与数据通道：可靠与不可靠分开</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">控制通道用 Ns/Nr、重传、ZLB ACK 保证隧道/会话消息可靠。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">数据通道只封装 PPP 帧，不重传、不排序、不做流控。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="131" y1="142" x2="161" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
-<line x1="278.8" y1="142" x2="308.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="316.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<rect x="60" y="210" width="190" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="60" y="210" width="4.5" height="80" fill="#4f46e5" rx="2"/>
-<text x="73" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LAC</text>
-<text x="73" y="246" font-size="9.6" fill="#334155" xml:space="preserve">控制/数据</text>
-<text x="73" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">Tunnel ID</text>
-<rect x="620" y="210" width="190" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="620" y="210" width="4.5" height="80" fill="#4f46e5" rx="2"/>
-<text x="633" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LNS</text>
-<text x="633" y="246" font-size="9.6" fill="#334155" xml:space="preserve">控制/数据</text>
-<text x="633" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">Session ID</text>
-<rect x="300" y="150" width="240" height="70" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="300" y="150" width="4.5" height="70" fill="#d97706" rx="2"/>
-<text x="313" y="169" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">控制通道</text>
-<text x="313" y="186" font-size="9.6" fill="#334155" xml:space="preserve">SCCRQ/ICRQ</text>
-<text x="313" y="201.4" font-size="9.6" fill="#334155" xml:space="preserve">HELLO / ZLB ACK</text>
-<rect x="300" y="330" width="240" height="70" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="300" y="330" width="4.5" height="70" fill="#0f9d58" rx="2"/>
-<text x="313" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">数据通道</text>
-<text x="313" y="366" font-size="9.6" fill="#334155" xml:space="preserve">PPP 帧</text>
-<text x="313" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">不重传</text>
-<line x1="250" y1="226.7" x2="300" y2="214.43" stroke="#d97706" stroke-width="2"/>
-<polygon points="300,214.43 290.19,212.21 292.33,220.95" fill="#d97706"/>
-<text x="281" y="213.57" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">控制消息</text>
-<line x1="540" y1="211.44" x2="620" y2="229.07" stroke="#d97706" stroke-width="2"/>
-<polygon points="620,229.07 612.18,222.74 610.24,231.53" fill="#d97706"/>
-<text x="586" y="213.25" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">可靠传输</text>
-<line x1="247.17" y1="290" x2="339.35" y2="330" stroke="#0f9d58" stroke-width="2"/>
-<polygon points="339.35,330 332.88,322.29 329.3,330.55" fill="#0f9d58"/>
-<text x="299.26" y="303" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">数据消息</text>
-<line x1="509.78" y1="330" x2="620" y2="287.03" stroke="#0f9d58" stroke-width="2"/>
-<polygon points="620,287.03 609.98,286.11 613.25,294.5" fill="#0f9d58"/>
-<text x="570.89" y="301.52" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">尽力转发</text>
-<rect x="36" y="450" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="504" font-size="10.2" fill="#334155" xml:space="preserve">控制消息丢失会重传，数据消息丢失由上层恢复。</text>
-<text x="52" y="522" font-size="10.2" fill="#334155" xml:space="preserve">UDP 1701 只用于建立，之后双方用选定端口。</text>
-<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">同一对 LAC/LNS 之间有两条逻辑通道，互不影响。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">控制通道要可靠（序号 + 重传），数据通道不重传、不排序。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">控制（可靠）</text>
+<line x1="164" y1="142" x2="194" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="202" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">数据（不可靠）</text>
+<rect x="40" y="190" width="180" height="230" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="40" y="190" width="4.5" height="230" fill="#4f46e5" rx="2"/>
+<text x="53" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LAC</text>
+<text x="53" y="226" font-size="9.6" fill="#334155" xml:space="preserve">同一对设备</text>
+<text x="53" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">Tunnel ID</text>
+<rect x="900" y="190" width="180" height="230" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="900" y="190" width="4.5" height="230" fill="#4f46e5" rx="2"/>
+<text x="913" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LNS</text>
+<text x="913" y="226" font-size="9.6" fill="#334155" xml:space="preserve">终结隧道</text>
+<text x="913" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">Session ID</text>
+<rect x="280" y="210" width="540" height="84" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="280" y="210" width="4.5" height="84" fill="#d97706" rx="2"/>
+<text x="293" y="229" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">控制通道（可靠）</text>
+<text x="293" y="246" font-size="9.6" fill="#334155" xml:space="preserve">SCCRQ / ICRQ / HELLO / ZLB ACK</text>
+<text x="293" y="261.4" font-size="9.6" fill="#334155" xml:space="preserve">Ns/Nr 序号 + 超时重传</text>
+<rect x="280" y="320" width="540" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="280" y="320" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="293" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">数据通道（不可靠）</text>
+<text x="293" y="356" font-size="9.6" fill="#334155" xml:space="preserve">只封装 PPP 帧</text>
+<text x="293" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">不重传、不排序、不做流控</text>
+<line x1="220" y1="252" x2="280" y2="252" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="280,252 271,247.5 271,256.5" fill="#d97706"/>
+<line x1="820" y1="252" x2="900" y2="252" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="900,252 891,247.5 891,256.5" fill="#d97706"/>
+<line x1="220" y1="362" x2="280" y2="362" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="280,362 271,357.5 271,366.5" fill="#0f9d58"/>
+<line x1="820" y1="362" x2="900" y2="362" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="900,362 891,357.5 891,366.5" fill="#0f9d58"/>
+<rect x="40" y="450" width="1040" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="504" font-size="10.2" fill="#334155" xml:space="preserve">控制消息丢了会重传，数据消息丢了交给上层（PPP 之上的 TCP 等）恢复。</text>
+<text x="56" y="522" font-size="10.2" fill="#334155" xml:space="preserve">UDP 1701 只用于建立；隧道建立后双方可以协商改用其他端口，抓包时别只盯 1701。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/02-链路层/07-L2TP.md</text>
 </svg>

@@ -1,56 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="480" viewBox="0 0 1180 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="480" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · SNMP 轮询与告警：Get 保状态，Trap 保实时</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">NMS 按周期 Get/GetNext/GetBulk 采集 MIB；超时则重试。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">Agent 主动发 Trap/Inform；Inform 需要确认并可重传。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
-<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="215" y1="142" x2="245" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
-<line x1="362.8" y1="142" x2="392.8" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="400.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<line x1="499.6" y1="142" x2="529.6" y2="142" stroke="#dc2626" stroke-width="3"/>
-<text x="537.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">丢弃 / 风险</text>
-<rect x="36" y="190" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="36" y="190" width="4.5" height="82" fill="#475569" rx="2"/>
-<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">轮询周期</text>
-<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">NMS 定时</text>
-<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">1–5 分钟</text>
-<line x1="194" y1="231" x2="206" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="206,231 197,226.5 197,235.5" fill="#94a3b8"/>
-<rect x="206" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="206" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Get</text>
-<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">GetNext/GetBulk</text>
-<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">读 MIB</text>
-<line x1="364" y1="231" x2="376" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="376,231 367,226.5 367,235.5" fill="#94a3b8"/>
-<rect x="376" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="376" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Trap</text>
-<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">设备主动</text>
-<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">可能丢</text>
-<line x1="534" y1="231" x2="546" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="546,231 537,226.5 537,235.5" fill="#94a3b8"/>
-<rect x="546" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="546" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Inform</text>
-<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">需要确认</text>
-<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">可重传</text>
-<line x1="704" y1="231" x2="716" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="716,231 707,226.5 707,235.5" fill="#94a3b8"/>
-<rect x="716" y="190" width="158" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="716" y="190" width="4.5" height="82" fill="#dc2626" rx="2"/>
-<text x="729" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">超时重试</text>
-<text x="729" y="226" font-size="8.8" fill="#334155" xml:space="preserve">UDP 丢包</text>
-<text x="729" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">NMS 重发</text>
-<rect x="36" y="310" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">v1/v2c 团体名明文，生产环境用 v3 或 ACL。</text>
-<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">大规模轮询会同时压设备和网络。</text>
-<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="840" viewBox="0 0 980 840" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="980" height="840" fill="#ffffff"/>
+<line x1="36" y1="112" x2="944" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · SNMP 轮询与告警：两套独立机制</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">轮询是 NMS 主动按周期拉；告警是 Agent 主动推。二者没有先后关系。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">Trap 无确认、可能丢；Inform 需要 Response，可重传。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">请求</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">应答 / 确认</text>
+<line x1="245.8" y1="142" x2="275.8" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="283.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主动上报</text>
+<text x="40" y="176" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">① 轮询：NMS 拉，周期 1–5 分钟</text>
+<rect x="40" y="196" width="230" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="52" y="222" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">NMS</text>
+<rect x="340" y="196" width="230" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="352" y="222" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">Agent</text>
+<line x1="155" y1="238" x2="155" y2="360" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="455" y1="238" x2="455" y2="360" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="155" y1="266" x2="455" y2="266" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="455,266 446,261.5 446,270.5" fill="#4f46e5"/>
+<text x="161" y="259" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">GetRequest / GetNext / GetBulk</text>
+<line x1="455" y1="304" x2="155" y2="304" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="155,304 164,308.5 164,299.5" fill="#0f9d58"/>
+<text x="161" y="297" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Response（MIB 值）</text>
+<line x1="155" y1="342" x2="455" y2="342" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="455,342 446,337.5 446,346.5" fill="#4f46e5"/>
+<text x="161" y="335" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">下一次按周期继续</text>
+<text x="40" y="420" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">② 告警：Agent 推，Trap 与 Inform 二选一</text>
+<rect x="40" y="440" width="230" height="42" fill="#f1f5f9" rx="8" stroke="#d97706" stroke-width="1"/>
+<text x="52" y="466" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">Agent</text>
+<rect x="340" y="440" width="230" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="352" y="466" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">NMS</text>
+<line x1="155" y1="482" x2="155" y2="642" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="455" y1="482" x2="455" y2="642" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="155" y1="510" x2="455" y2="510" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="455,510 446,505.5 446,514.5" fill="#d97706"/>
+<text x="161" y="503" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Trap（无确认，可能丢）</text>
+<line x1="155" y1="548" x2="455" y2="548" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="455,548 446,543.5 446,552.5" fill="#d97706"/>
+<text x="161" y="541" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Inform（需确认）</text>
+<line x1="455" y1="586" x2="155" y2="586" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="155,586 164,590.5 164,581.5" fill="#0f9d58"/>
+<text x="161" y="579" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">Response</text>
+<line x1="155" y1="624" x2="455" y2="624" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="455,624 446,619.5 446,628.5" fill="#d97706"/>
+<text x="161" y="617" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">超时未确认则重传</text>
+<rect x="40" y="664" width="900" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="694" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="718" font-size="10.2" fill="#334155" xml:space="preserve">轮询能保证最终一致，但周期内的突变靠告警补；只做轮询会漏掉瞬时故障，只做 Trap 会丢关键事件。</text>
+<text x="56" y="736" font-size="10.2" fill="#334155" xml:space="preserve">v1/v2c 团体名明文，生产环境用 v3 或 ACL；大规模轮询会同时压设备和网络。</text>
+<text x="36" y="786" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="804" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/05-应用层/05-SNMP.md</text>
 </svg>

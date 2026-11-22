@@ -1,117 +1,108 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="600" viewBox="0 0 1500 600" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1500" height="600" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1464" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · TCP 状态机：两条主线，不画所有分支</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">客户端主线：SYN-SENT → ESTABLISHED → FIN-WAIT → TIME-WAIT。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">服务端主线：LISTEN → SYN-RCVD → ESTABLISHED → CLOSE-WAIT → LAST-ACK。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="680" viewBox="0 0 1140 680" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1140" height="680" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1104" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · TCP 状态机：两条主线，外加一条同时关闭的分支</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">客户端与服务端各走一条主线，都从 CLOSED 回到 CLOSED。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">CLOSING 只在双方同时发 FIN 时出现；它不常用，但缺了会说不清 2MSL 之前发生了什么。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<rect x="36" y="190" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
-<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">客户端</text>
-<text x="46" y="228" font-size="9" fill="#64748b" xml:space="preserve">主动打开</text>
-<text x="46" y="241" font-size="9" fill="#64748b" xml:space="preserve">主动关闭</text>
-<rect x="154" y="190" width="140" height="72" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="154" y="190" width="4.5" height="72" fill="#475569" rx="2"/>
-<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">CLOSED</text>
-<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">初始</text>
-<line x1="294" y1="226" x2="346" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="346,226 337,221.5 337,230.5" fill="#475569"/>
-<text x="320" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">主动SYN</text>
-<rect x="346" y="190" width="140" height="72" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="346" y="190" width="4.5" height="72" fill="#4f46e5" rx="2"/>
-<text x="359" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">SYN-SENT</text>
-<text x="359" y="226" font-size="8.8" fill="#334155" xml:space="preserve">已发 SYN</text>
-<line x1="486" y1="226" x2="538" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="538,226 529,221.5 529,230.5" fill="#475569"/>
-<text x="512" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">SYN+ACK</text>
-<rect x="538" y="190" width="140" height="72" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="538" y="190" width="4.5" height="72" fill="#0f9d58" rx="2"/>
-<text x="551" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ESTABLISHED</text>
-<text x="551" y="226" font-size="8.8" fill="#334155" xml:space="preserve">可传数据</text>
-<line x1="678" y1="226" x2="730" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="730,226 721,221.5 721,230.5" fill="#475569"/>
-<text x="704" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">主动FIN</text>
-<rect x="730" y="190" width="140" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="730" y="190" width="4.5" height="72" fill="#d97706" rx="2"/>
-<text x="743" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">FIN-WAIT-1</text>
-<text x="743" y="226" font-size="8.8" fill="#334155" xml:space="preserve">已发 FIN</text>
-<line x1="870" y1="226" x2="922" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="922,226 913,221.5 913,230.5" fill="#475569"/>
-<text x="896" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">ACK</text>
-<rect x="922" y="190" width="140" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="922" y="190" width="4.5" height="72" fill="#d97706" rx="2"/>
-<text x="935" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">FIN-WAIT-2</text>
-<text x="935" y="226" font-size="8.8" fill="#334155" xml:space="preserve">等对方 FIN</text>
-<line x1="1062" y1="226" x2="1114" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="1114,226 1105,221.5 1105,230.5" fill="#475569"/>
-<text x="1088" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">收到FIN</text>
-<rect x="1114" y="190" width="140" height="72" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="1114" y="190" width="4.5" height="72" fill="#dc2626" rx="2"/>
-<text x="1127" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">TIME-WAIT</text>
-<text x="1127" y="226" font-size="8.8" fill="#334155" xml:space="preserve">等 2MSL</text>
-<line x1="1254" y1="226" x2="1306" y2="226" stroke="#475569" stroke-width="2"/>
-<polygon points="1306,226 1297,221.5 1297,230.5" fill="#475569"/>
-<text x="1280" y="212" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">2MSL</text>
-<rect x="1306" y="190" width="140" height="72" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="1306" y="190" width="4.5" height="72" fill="#475569" rx="2"/>
-<text x="1319" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">CLOSED</text>
-<text x="1319" y="226" font-size="8.8" fill="#334155" xml:space="preserve">结束</text>
-<rect x="36" y="302" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
-<text x="46" y="324" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">服务端</text>
-<text x="46" y="340" font-size="9" fill="#64748b" xml:space="preserve">被动打开</text>
-<text x="46" y="353" font-size="9" fill="#64748b" xml:space="preserve">被动关闭</text>
-<rect x="154" y="302" width="140" height="72" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="154" y="302" width="4.5" height="72" fill="#475569" rx="2"/>
-<text x="167" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">CLOSED</text>
-<text x="167" y="338" font-size="8.8" fill="#334155" xml:space="preserve">初始</text>
-<line x1="294" y1="338" x2="346" y2="338" stroke="#475569" stroke-width="2"/>
-<polygon points="346,338 337,333.5 337,342.5" fill="#475569"/>
-<text x="320" y="324" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">listen</text>
-<rect x="346" y="302" width="140" height="72" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="346" y="302" width="4.5" height="72" fill="#0f9d58" rx="2"/>
-<text x="359" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">LISTEN</text>
-<text x="359" y="338" font-size="8.8" fill="#334155" xml:space="preserve">等待连接</text>
-<line x1="486" y1="338" x2="538" y2="338" stroke="#475569" stroke-width="2"/>
-<polygon points="538,338 529,333.5 529,342.5" fill="#475569"/>
-<text x="512" y="324" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">SYN</text>
-<rect x="538" y="302" width="140" height="72" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="538" y="302" width="4.5" height="72" fill="#4f46e5" rx="2"/>
-<text x="551" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">SYN-RCVD</text>
-<text x="551" y="338" font-size="8.8" fill="#334155" xml:space="preserve">收到 SYN</text>
-<line x1="678" y1="338" x2="730" y2="338" stroke="#475569" stroke-width="2"/>
-<polygon points="730,338 721,333.5 721,342.5" fill="#475569"/>
-<text x="704" y="324" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">ACK</text>
-<rect x="730" y="302" width="140" height="72" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="730" y="302" width="4.5" height="72" fill="#0f9d58" rx="2"/>
-<text x="743" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ESTABLISHED</text>
-<text x="743" y="338" font-size="8.8" fill="#334155" xml:space="preserve">可传数据</text>
-<line x1="870" y1="338" x2="922" y2="338" stroke="#475569" stroke-width="2"/>
-<polygon points="922,338 913,333.5 913,342.5" fill="#475569"/>
-<text x="896" y="324" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">收到FIN</text>
-<rect x="922" y="302" width="140" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="922" y="302" width="4.5" height="72" fill="#d97706" rx="2"/>
-<text x="935" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">CLOSE-WAIT</text>
-<text x="935" y="338" font-size="8.8" fill="#334155" xml:space="preserve">等应用关闭</text>
-<line x1="1062" y1="338" x2="1114" y2="338" stroke="#475569" stroke-width="2"/>
-<polygon points="1114,338 1105,333.5 1105,342.5" fill="#475569"/>
-<text x="1088" y="324" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">应用关闭</text>
-<rect x="1114" y="302" width="140" height="72" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="1114" y="302" width="4.5" height="72" fill="#d97706" rx="2"/>
-<text x="1127" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">LAST-ACK</text>
-<text x="1127" y="338" font-size="8.8" fill="#334155" xml:space="preserve">等最后 ACK</text>
-<line x1="1254" y1="338" x2="1306" y2="338" stroke="#475569" stroke-width="2"/>
-<polygon points="1306,338 1297,333.5 1297,342.5" fill="#475569"/>
-<text x="1280" y="324" font-size="8.8" fill="#64748b" xml:space="preserve" text-anchor="middle">ACK</text>
-<rect x="1306" y="302" width="140" height="72" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="1306" y="302" width="4.5" height="72" fill="#475569" rx="2"/>
-<text x="1319" y="321" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">CLOSED</text>
-<text x="1319" y="338" font-size="8.8" fill="#334155" xml:space="preserve">结束</text>
-<rect x="36" y="420" width="1280" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="450" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="474" font-size="10.2" fill="#334155" xml:space="preserve">同时关闭会出现 CLOSING，少见但合法。</text>
-<text x="52" y="492" font-size="10.2" fill="#334155" xml:space="preserve">收到 RST 可从多数状态直接回 CLOSED。</text>
-<text x="36" y="546" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="564" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主链</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">等待关闭</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">2MSL 计时</text>
+<text x="60" y="182" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">客户端（主动打开 / 主动关闭）</text>
+<rect x="60" y="210" width="58.72" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="89.36" y="232" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">CLOSED</text>
+<text x="89.36" y="244" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">初始</text>
+<rect x="190" y="210" width="70.96" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="225.48" y="232" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">SYN-SENT</text>
+<text x="225.48" y="244" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">已发 SYN</text>
+<rect x="330" y="210" width="89.32" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="374.66" y="232" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">ESTABLISHED</text>
+<text x="374.66" y="244" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">可传数据</text>
+<rect x="500" y="210" width="83.2" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="541.6" y="232" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">FIN-WAIT-1</text>
+<text x="541.6" y="244" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">已发 FIN</text>
+<rect x="660" y="210" width="83.2" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="701.6" y="232" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">FIN-WAIT-2</text>
+<text x="701.6" y="244" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">等对方 FIN</text>
+<rect x="820" y="210" width="77.08" height="44" fill="#fff5f5" rx="6" stroke="#dc2626" stroke-width="1.2"/>
+<text x="858.54" y="232" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">TIME-WAIT</text>
+<text x="858.54" y="244" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">等 2MSL</text>
+<rect x="960" y="210" width="58.72" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="989.36" y="232" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">CLOSED</text>
+<text x="989.36" y="244" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">结束</text>
+<line x1="118.72" y1="232" x2="190" y2="232" stroke="#4f46e5" stroke-width="1.6"/>
+<polygon points="190,232 181,227.5 181,236.5" fill="#4f46e5"/>
+<text x="154.36" y="225" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">主动 SYN</text>
+<line x1="260.96" y1="232" x2="330" y2="232" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="330,232 321,227.5 321,236.5" fill="#0f9d58"/>
+<text x="295.48" y="225" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">SYN+ACK</text>
+<line x1="419.32" y1="232" x2="500" y2="232" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="500,232 491,227.5 491,236.5" fill="#d97706"/>
+<text x="459.66" y="225" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">主动 FIN</text>
+<line x1="583.2" y1="232" x2="660" y2="232" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="660,232 651,227.5 651,236.5" fill="#d97706"/>
+<text x="621.6" y="225" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">ACK</text>
+<line x1="743.2" y1="232" x2="820" y2="232" stroke="#dc2626" stroke-width="1.6"/>
+<polygon points="820,232 811,227.5 811,236.5" fill="#dc2626"/>
+<text x="781.6" y="225" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">收到 FIN</text>
+<line x1="897.08" y1="232" x2="960" y2="232" stroke="#475569" stroke-width="1.6"/>
+<polygon points="960,232 951,227.5 951,236.5" fill="#475569"/>
+<text x="928.54" y="225" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">2MSL</text>
+<rect x="640" y="310" width="85.64" height="44" fill="#fff5f5" rx="6" stroke="#dc2626" stroke-width="1.2"/>
+<text x="682.82" y="332" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">CLOSING</text>
+<text x="682.82" y="344" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">双方同时发 FIN</text>
+<line x1="583.2" y1="232" x2="640" y2="332" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="640,332 639.47,321.95 631.64,326.4" fill="#dc2626"/>
+<text x="611.6" y="275" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">同时关闭</text>
+<line x1="725.64" y1="332" x2="820" y2="232" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="820,232 810.55,235.46 817.1,241.63" fill="#dc2626"/>
+<text x="772.82" y="275" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">收到 ACK</text>
+<text x="60" y="402" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">服务端（被动打开 / 被动关闭）</text>
+<rect x="60" y="430" width="58.72" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="89.36" y="452" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">CLOSED</text>
+<text x="89.36" y="464" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">初始</text>
+<rect x="190" y="430" width="58.72" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="219.36" y="452" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">LISTEN</text>
+<text x="219.36" y="464" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">等待连接</text>
+<rect x="330" y="430" width="70.96" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="365.48" y="452" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">SYN-RCVD</text>
+<text x="365.48" y="464" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">收到 SYN</text>
+<rect x="500" y="430" width="89.32" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="544.66" y="452" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">ESTABLISHED</text>
+<text x="544.66" y="464" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">可传数据</text>
+<rect x="660" y="430" width="83.2" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="701.6" y="452" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">CLOSE-WAIT</text>
+<text x="701.6" y="464" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">等应用关闭</text>
+<rect x="820" y="430" width="70.96" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="855.48" y="452" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">LAST-ACK</text>
+<text x="855.48" y="464" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">等最后 ACK</text>
+<rect x="960" y="430" width="58.72" height="44" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.2"/>
+<text x="989.36" y="452" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">CLOSED</text>
+<text x="989.36" y="464" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">结束</text>
+<line x1="118.72" y1="452" x2="190" y2="452" stroke="#4f46e5" stroke-width="1.6"/>
+<polygon points="190,452 181,447.5 181,456.5" fill="#4f46e5"/>
+<text x="154.36" y="445" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">listen</text>
+<line x1="248.72" y1="452" x2="330" y2="452" stroke="#4f46e5" stroke-width="1.6"/>
+<polygon points="330,452 321,447.5 321,456.5" fill="#4f46e5"/>
+<text x="289.36" y="445" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">SYN</text>
+<line x1="400.96" y1="452" x2="500" y2="452" stroke="#0f9d58" stroke-width="1.6"/>
+<polygon points="500,452 491,447.5 491,456.5" fill="#0f9d58"/>
+<text x="450.48" y="445" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">ACK</text>
+<line x1="589.32" y1="452" x2="660" y2="452" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="660,452 651,447.5 651,456.5" fill="#d97706"/>
+<text x="624.66" y="445" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">收到 FIN</text>
+<line x1="743.2" y1="452" x2="820" y2="452" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="820,452 811,447.5 811,456.5" fill="#d97706"/>
+<text x="781.6" y="445" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">应用关闭</text>
+<line x1="890.96" y1="452" x2="960" y2="452" stroke="#475569" stroke-width="1.6"/>
+<polygon points="960,452 951,447.5 951,456.5" fill="#475569"/>
+<text x="925.48" y="445" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">ACK</text>
+<rect x="60" y="500" width="1040" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="530" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="76" y="554" font-size="10.2" fill="#334155" xml:space="preserve">两条主线都从 CLOSED 回到 CLOSED；TIME-WAIT 等 2MSL，保证最后 ACK 可达并让旧报文消亡。</text>
+<text x="76" y="572" font-size="10.2" fill="#334155" xml:space="preserve">收到 RST 时可以从多数状态直接回 CLOSED，不必走完这条链。</text>
+<text x="36" y="626" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="644" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/04-传输层/01-TCP.md</text>
 </svg>

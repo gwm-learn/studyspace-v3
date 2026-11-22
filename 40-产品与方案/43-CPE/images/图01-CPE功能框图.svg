@@ -1,126 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="840" viewBox="0 0 860 840" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="860" height="840" fill="#ffffff"/>
-<line x1="36" y1="112" x2="824" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · CPE 功能框图</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">上行接一种或多种接入网，下行分业务提供上网/语音/视频，管理通道独立。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看接入模块，再看转发与用户侧接口，最后看管理通道。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="660" viewBox="0 0 1080 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="660" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · CPE 功能框图：接入、转发、业务、管理四层</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">自下而上是数据路径，右侧是独立的管理通道——它不承载业务流量。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">管理在线不等于业务可用：管理通道通了，WAN 仍可能没拨上。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
 <text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">接入</text>
-<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
 <text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">转发</text>
-<line x1="204" y1="142" x2="234" y2="142" stroke="#0891b2" stroke-width="3"/>
-<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">用户侧</text>
-<line x1="299" y1="142" x2="329" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="337" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">管理</text>
-<rect x="36" y="190" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
-<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">接入侧</text>
-<text x="46" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">上行</text>
-<text x="46" y="246" font-size="9" fill="#64748b" xml:space="preserve">xDSL/PON/蜂窝</text>
-<rect x="154" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="154" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">xDSL PHY</text>
-<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">训练/同步</text>
-<line x1="312" y1="231" x2="322" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,231 313,226.5 313,235.5" fill="#94a3b8"/>
-<rect x="322" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="322" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="335" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">PON MAC</text>
-<text x="335" y="226" font-size="8.8" fill="#334155" xml:space="preserve">注册/测距</text>
-<line x1="480" y1="231" x2="490" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,231 481,226.5 481,235.5" fill="#94a3b8"/>
-<rect x="490" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="490" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="503" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">蜂窝 Modem</text>
-<text x="503" y="226" font-size="8.8" fill="#334155" xml:space="preserve">SIM/数据连接</text>
-<line x1="648" y1="231" x2="658" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,231 649,226.5 649,235.5" fill="#94a3b8"/>
-<rect x="658" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="658" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="671" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">以太 PHY</text>
-<text x="671" y="226" font-size="8.8" fill="#334155" xml:space="preserve">Link/自协商</text>
-<rect x="36" y="300" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
-<text x="46" y="322" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">转发</text>
-<text x="46" y="338" font-size="9.4" fill="#64748b" xml:space="preserve">内核</text>
-<text x="46" y="356" font-size="9" fill="#64748b" xml:space="preserve">路由/NAT/防火墙</text>
-<rect x="154" y="300" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="154" y="300" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="167" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">WAN 接口</text>
-<text x="167" y="336" font-size="8.8" fill="#334155" xml:space="preserve">地址/网关/DNS</text>
-<line x1="312" y1="341" x2="322" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,341 313,336.5 313,345.5" fill="#94a3b8"/>
-<rect x="322" y="300" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="322" y="300" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="335" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">路由/NAT</text>
-<text x="335" y="336" font-size="8.8" fill="#334155" xml:space="preserve">conntrack/映射</text>
-<line x1="480" y1="341" x2="490" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,341 481,336.5 481,345.5" fill="#94a3b8"/>
-<rect x="490" y="300" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="490" y="300" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="503" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">防火墙/QoS</text>
-<text x="503" y="336" font-size="8.8" fill="#334155" xml:space="preserve">zone/队列</text>
-<line x1="648" y1="341" x2="658" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,341 649,336.5 649,345.5" fill="#94a3b8"/>
-<rect x="658" y="300" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="658" y="300" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="671" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">转发加速</text>
-<text x="671" y="336" font-size="8.8" fill="#334155" xml:space="preserve">offload/硬件</text>
-<rect x="36" y="410" width="108" height="90" fill="#ecfeff" rx="9" stroke="#0891b2" stroke-width="1.2"/>
-<text x="46" y="432" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">用户侧</text>
-<text x="46" y="448" font-size="9.4" fill="#64748b" xml:space="preserve">下行</text>
-<text x="46" y="466" font-size="9" fill="#64748b" xml:space="preserve">上网/语音/视频</text>
-<rect x="154" y="410" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="154" y="410" width="4.5" height="82" fill="#0891b2" rx="2"/>
-<text x="167" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">LAN 交换</text>
-<text x="167" y="446" font-size="8.8" fill="#334155" xml:space="preserve">多口/VLAN</text>
-<line x1="312" y1="451" x2="322" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,451 313,446.5 313,455.5" fill="#94a3b8"/>
-<rect x="322" y="410" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="322" y="410" width="4.5" height="82" fill="#0891b2" rx="2"/>
-<text x="335" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Wi-Fi</text>
-<text x="335" y="446" font-size="8.8" fill="#334155" xml:space="preserve">SSID/漫游</text>
-<line x1="480" y1="451" x2="490" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,451 481,446.5 481,455.5" fill="#94a3b8"/>
-<rect x="490" y="410" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="490" y="410" width="4.5" height="82" fill="#0891b2" rx="2"/>
-<text x="503" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">VoIP (FXS)</text>
-<text x="503" y="446" font-size="8.8" fill="#334155" xml:space="preserve">SIP/编解码</text>
-<line x1="648" y1="451" x2="658" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,451 649,446.5 649,455.5" fill="#94a3b8"/>
-<rect x="658" y="410" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="658" y="410" width="4.5" height="82" fill="#0891b2" rx="2"/>
-<text x="671" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">IPTV</text>
-<text x="671" y="446" font-size="8.8" fill="#334155" xml:space="preserve">组播/VLAN</text>
-<rect x="36" y="520" width="108" height="90" fill="#fff9ee" rx="9" stroke="#d97706" stroke-width="1.2"/>
-<text x="46" y="542" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">管理</text>
-<text x="46" y="558" font-size="9.4" fill="#64748b" xml:space="preserve">远程/本地</text>
-<text x="46" y="576" font-size="9" fill="#64748b" xml:space="preserve">TR-069/云管</text>
-<rect x="154" y="520" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="154" y="520" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="167" y="539" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Web/App</text>
-<text x="167" y="556" font-size="8.8" fill="#334155" xml:space="preserve">本地配置</text>
-<line x1="312" y1="561" x2="322" y2="561" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,561 313,556.5 313,565.5" fill="#94a3b8"/>
-<rect x="322" y="520" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="322" y="520" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="335" y="539" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">TR-069</text>
-<text x="335" y="556" font-size="8.8" fill="#334155" xml:space="preserve">Inform/参数</text>
-<line x1="480" y1="561" x2="490" y2="561" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,561 481,556.5 481,565.5" fill="#94a3b8"/>
-<rect x="490" y="520" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="490" y="520" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="503" y="539" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">ACS/云管</text>
-<text x="503" y="556" font-size="8.8" fill="#334155" xml:space="preserve">开通/升级</text>
-<line x1="648" y1="561" x2="658" y2="561" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,561 649,556.5 649,565.5" fill="#94a3b8"/>
-<rect x="658" y="520" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="658" y="520" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="671" y="539" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">日志/诊断</text>
-<text x="671" y="556" font-size="8.8" fill="#334155" xml:space="preserve">告警/远程</text>
-<rect x="36" y="650" width="780" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="680" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
-<text x="52" y="704" font-size="10.2" fill="#334155" xml:space="preserve">① 接入模块是形态差异的核心：xDSL/PON/蜂窝的驱动和认证完全不同。</text>
-<text x="52" y="722" font-size="10.2" fill="#334155" xml:space="preserve">② 管理通道走 WAN 还是独立 VLAN，决定了 ACS 能否稳定连上设备。</text>
-<text x="52" y="740" font-size="10.2" fill="#334155" xml:space="preserve">③ 用户侧业务可能分 VLAN，不能默认所有 LAN 口都在同一个二层域。</text>
-<text x="36" y="786" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/43-CPE/00-CPE系统架构.md</text>
-<text x="36" y="804" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">业务</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">管理</text>
+<rect x="40" y="190" width="620" height="54" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="52" y="220.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">业务层：VoIP / IPTV / Wi-Fi 接入</text>
+<text x="650" y="220.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">对终端</text>
+<rect x="40" y="254" width="620" height="54" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="284.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">转发层：路由 / NAT / 防火墙 / QoS</text>
+<text x="650" y="284.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">内核</text>
+<rect x="40" y="318" width="620" height="54" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="348.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">系统层：Linux + netifd + 驱动</text>
+<text x="650" y="348.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">系统</text>
+<rect x="40" y="382" width="620" height="54" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="412.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">接入层：PON / DSL / 以太 / 5G</text>
+<text x="650" y="412.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">对上游</text>
+<rect x="720" y="190" width="320" height="246" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="720" y="190" width="4.5" height="246" fill="#d97706" rx="2"/>
+<text x="733" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">管理通道（独立）</text>
+<text x="733" y="226" font-size="9.6" fill="#334155" xml:space="preserve">TR-069 / TR-369 远程管理</text>
+<text x="733" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">OMCI（FTTR 场景）</text>
+<text x="733" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">本地 Web / CLI</text>
+<text x="733" y="272.2" font-size="9.6" fill="#334155" xml:space="preserve">与业务数据走不同路径</text>
+<text x="733" y="287.6" font-size="9.6" fill="#334155" xml:space="preserve">可单独限速、单独放行</text>
+<rect x="40" y="480" width="1000" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="510" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="534" font-size="10.2" fill="#334155" xml:space="preserve">接入层决定「能不能上网」，转发层决定「谁能上网」，业务层决定「用什么业务」。</text>
+<text x="56" y="552" font-size="10.2" fill="#334155" xml:space="preserve">排障时先分层定位：接入（链路/认证）、转发（路由/NAT/防火墙）、业务（代理/端口）、管理（ACS 连接）。</text>
+<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：40-产品与方案/43-CPE/00-CPE系统架构.md</text>
 </svg>

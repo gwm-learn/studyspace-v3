@@ -117,7 +117,7 @@ M-SEARCH 的关键字段：`ST`（搜索目标，如 `urn:schemas-upnp-org:devic
 
 ![图 01 · UPnP发现与控制](images/图01-UPnP发现与控制.svg)
 
-**读图**：SSDP 发现→HTTP 描述→SOAP 控制→GENA 订阅；IGD 的 AddPortMapping 最终落到 NAT 映射表。
+**读图**：四个阶段都是控制点发起、设备响应——所以用泳道看方向；IGD 的 AddPortMapping 最终落到 NAT 映射表。
 
 > 图源：`images/图01-UPnP发现与控制.svg`
 
@@ -164,7 +164,7 @@ M-SEARCH 的关键字段：`ST`（搜索目标，如 `urn:schemas-upnp-org:devic
 
 ![图 02 · UPnP订阅与租约](images/图02-UPnP订阅与租约.svg)
 
-**读图**：SUBSCRIBE 订阅事件，NOTIFY 回调；端口映射带 LeaseDuration，到期自动删除。
+**读图**：左右两套机制互不相干——GENA 订阅靠 TIMEOUT 过期（只影响收事件），端口映射靠 LeaseDuration 过期（直接影响外部访问）。
 
 > 图源：`images/图02-UPnP订阅与租约.svg`
 

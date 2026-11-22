@@ -1,56 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="480" viewBox="0 0 1180 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="480" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · ICMP 速率限制与 NDP 定时器</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">ICMP 差错要限速，避免放大和 CPU 过载。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">NDP 维护邻居可达/陈旧/探测状态，RA 周期通告。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1040" height="540" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1004" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · ICMP 速率限制与 NDP / RA 定时：三个独立机制</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">三者互不依赖：差错限速管「发不发」、NDP 管「邻居还活着吗」、RA 管「网关还作不作数」。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">画成一条链会让人以为有先后关系——它们只是常出现在同一台设备上。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
-<line x1="183.8" y1="142" x2="213.8" y2="142" stroke="#dc2626" stroke-width="3"/>
-<text x="221.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">丢弃 / 风险</text>
-<line x1="309.6" y1="142" x2="339.6" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="347.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="404.6" y1="142" x2="434.6" y2="142" stroke="#0891b2" stroke-width="3"/>
-<text x="442.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">二层 / 补充</text>
-<line x1="530.4" y1="142" x2="560.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="568.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<rect x="36" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="36" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">产生差错</text>
-<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">不可达/超时</text>
-<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">包太大</text>
-<line x1="194" y1="231" x2="206" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="206,231 197,226.5 197,235.5" fill="#94a3b8"/>
-<rect x="206" y="190" width="158" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="206" y="190" width="4.5" height="82" fill="#dc2626" rx="2"/>
-<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">速率限制</text>
-<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">单位时间上限</text>
-<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">防放大</text>
-<line x1="364" y1="231" x2="376" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="376,231 367,226.5 367,235.5" fill="#94a3b8"/>
-<rect x="376" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="376" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">发送 ICMP</text>
-<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">带原包前 8B</text>
-<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">源端定位</text>
-<line x1="534" y1="231" x2="546" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="546,231 537,226.5 537,235.5" fill="#94a3b8"/>
-<rect x="546" y="190" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="546" y="190" width="4.5" height="82" fill="#0891b2" rx="2"/>
-<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">NDP 定时</text>
-<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">Reachable</text>
-<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">Retrans</text>
-<line x1="704" y1="231" x2="716" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="716,231 707,226.5 707,235.5" fill="#94a3b8"/>
-<rect x="716" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="716" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="729" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">RA 周期</text>
-<text x="729" y="226" font-size="8.8" fill="#334155" xml:space="preserve">路由器通告</text>
-<text x="729" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">主机 RS</text>
-<rect x="36" y="310" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">禁 ICMP 会破坏 PMTUD 与 IPv6 NDP。</text>
-<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">按类型过滤，不要一刀切全禁。</text>
-<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">差错与限速</text>
+<line x1="153" y1="142" x2="183" y2="142" stroke="#0891b2" stroke-width="3"/>
+<text x="191" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">邻居探测</text>
+<line x1="259" y1="142" x2="289" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="297" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">路由通告</text>
+<rect x="40" y="190" width="300" height="132" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="40" y="190" width="4.5" height="132" fill="#d97706" rx="2"/>
+<text x="53" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ICMP 差错：产生 → 限速 → 发送</text>
+<text x="53" y="226" font-size="9.6" fill="#334155" xml:space="preserve">触发：不可达 / 超时 / 包太大</text>
+<text x="53" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">限速：单位时间上限，防放大</text>
+<text x="53" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">发送：带原始 IP 头前 8 字节</text>
+<rect x="370" y="190" width="300" height="132" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
+<rect x="370" y="190" width="4.5" height="132" fill="#0891b2" rx="2"/>
+<text x="383" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">NDP 邻居状态</text>
+<text x="383" y="226" font-size="9.6" fill="#334155" xml:space="preserve">Reachable：近期确认可达</text>
+<text x="383" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">Stale / Delay：待确认</text>
+<text x="383" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">Probe：按 Retrans 重传探测</text>
+<rect x="700" y="190" width="300" height="132" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="700" y="190" width="4.5" height="132" fill="#0f9d58" rx="2"/>
+<text x="713" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">RA 周期</text>
+<text x="713" y="226" font-size="9.6" fill="#334155" xml:space="preserve">Router Lifetime：还能当多久网关</text>
+<text x="713" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">Max / Min Interval：通告间隔</text>
+<text x="713" y="256.8" font-size="9.6" fill="#334155" xml:space="preserve">Min Delay：连续通告的最小间隔</text>
+<rect x="40" y="360" width="960" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="390" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="414" font-size="10.2" fill="#334155" xml:space="preserve">禁 ICMP 会同时破坏 PMTUD 和 IPv6 NDP——按类型限速，不要一刀切全禁。</text>
+<text x="56" y="432" font-size="10.2" fill="#334155" xml:space="preserve">三类参数各自独立：改 NDP 的 Retrans 不影响 RA 的间隔，反之亦然。</text>
+<text x="36" y="486" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="504" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/03-网络层/06-ICMP与ICMPv6.md</text>
 </svg>

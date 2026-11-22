@@ -1,56 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="480" viewBox="0 0 1180 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="480" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · TR-369 会话与 QoS：连 Broker、订阅、发布</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Agent/Controller 先连 Broker 并订阅主题；消息用 to_id/from_id 寻址。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">QoS 0/1/2 决定消息最多一次/至少一次/恰好一次。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中性</text>
-<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="215" y1="142" x2="245" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<line x1="351.8" y1="142" x2="381.8" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="389.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
-<line x1="499.6" y1="142" x2="529.6" y2="142" stroke="#dc2626" stroke-width="3"/>
-<text x="537.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">丢弃 / 风险</text>
-<rect x="36" y="190" width="158" height="82" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
-<rect x="36" y="190" width="4.5" height="82" fill="#475569" rx="2"/>
-<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">连接 Broker</text>
-<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">TLS + 证书</text>
-<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">keepalive</text>
-<line x1="194" y1="231" x2="206" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="206,231 197,226.5 197,235.5" fill="#94a3b8"/>
-<rect x="206" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="206" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">订阅</text>
-<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">事件/响应</text>
-<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">topic</text>
-<line x1="364" y1="231" x2="376" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="376,231 367,226.5 367,235.5" fill="#94a3b8"/>
-<rect x="376" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="376" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">发布</text>
-<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">Get/Set/Notify</text>
-<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">USP Record</text>
-<line x1="534" y1="231" x2="546" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="546,231 537,226.5 537,235.5" fill="#94a3b8"/>
-<rect x="546" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="546" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">QoS</text>
-<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">0/1/2</text>
-<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">重传策略</text>
-<line x1="704" y1="231" x2="716" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="716,231 707,226.5 707,235.5" fill="#94a3b8"/>
-<rect x="716" y="190" width="158" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="716" y="190" width="4.5" height="82" fill="#dc2626" rx="2"/>
-<text x="729" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">断线重连</text>
-<text x="729" y="226" font-size="8.8" fill="#334155" xml:space="preserve">退避</text>
-<text x="729" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">会话保持</text>
-<rect x="36" y="310" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">Broker 是信任中心，主题权限要隔离。</text>
-<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">异步消息适合弱网/大规模设备。</text>
-<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="740" viewBox="0 0 960 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="960" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="924" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 02 · TR-369 会话与 QoS：连上、订阅、再收发</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">QoS 0/1/2 是消息投递语义，不是流程中的一步；断线重连是失败路径。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">Agent 与 Controller 都是客户端，都连 Broker——角色关系见本目录图 01。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">会话</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">应答</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失败路径</text>
+<rect x="40" y="190" width="260" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="52" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">Agent / Controller</text>
+<rect x="460" y="190" width="260" height="42" fill="#f1f5f9" rx="8" stroke="#d97706" stroke-width="1"/>
+<text x="472" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">MTP Broker</text>
+<line x1="170" y1="232" x2="170" y2="506" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="590" y1="232" x2="590" y2="506" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="170" y1="260" x2="590" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="590,260 581,255.5 581,264.5" fill="#4f46e5"/>
+<text x="176" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">CONNECT（TLS + 证书）</text>
+<line x1="590" y1="298" x2="170" y2="298" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="170,298 179,302.5 179,293.5" fill="#0f9d58"/>
+<text x="176" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">CONNACK</text>
+<line x1="170" y1="336" x2="590" y2="336" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="590,336 581,331.5 581,340.5" fill="#4f46e5"/>
+<text x="176" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">SUBSCRIBE（topic）</text>
+<line x1="590" y1="374" x2="170" y2="374" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="170,374 179,378.5 179,369.5" fill="#0f9d58"/>
+<text x="176" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">SUBACK</text>
+<line x1="170" y1="412" x2="590" y2="412" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="590,412 581,407.5 581,416.5" fill="#4f46e5"/>
+<text x="176" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">PUBLISH（Get / Set / Notify）</text>
+<line x1="590" y1="450" x2="170" y2="450" stroke="#0f9d58" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="170,450 179,454.5 179,445.5" fill="#0f9d58"/>
+<text x="176" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">PUBACK（QoS&gt;0 才有）</text>
+<line x1="170" y1="488" x2="590" y2="488" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="590,488 581,483.5 581,492.5" fill="#dc2626"/>
+<text x="176" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">断线 → 退避重连</text>
+<rect x="40" y="560" width="880" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="590" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="614" font-size="10.2" fill="#334155" xml:space="preserve">QoS 0：最多一次，可能丢；QoS 1：至少一次，可能重复；QoS 2：恰好一次，开销最大。选哪个看消息能不能重复执行。</text>
+<text x="56" y="632" font-size="10.2" fill="#334155" xml:space="preserve">订阅要限定 topic 权限：Broker 是信任中心，主题串错会让第三方看到不该看的数据。</text>
+<text x="36" y="686" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/05-应用层/08-TR-369.md</text>
 </svg>

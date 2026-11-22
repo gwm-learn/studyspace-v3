@@ -150,7 +150,7 @@ Track 让 VRRP 感知接口/路由/链路状态：
 
 ![图 02 · VRRP状态机](images/图02-VRRP状态机.svg)
 
-**读图**：Initialize 参与选举，Backup 监听，Master 转发；超时或故障触发切换。
+**读图**：Initialize → Backup → Master 是主链。两条回退边方向相反：Backup 靠 Master_Down 超时或抢占升为 Master；Master 只有收到更高优先级通告才让位。
 
 > 图源：`images/图02-VRRP状态机.svg`
 

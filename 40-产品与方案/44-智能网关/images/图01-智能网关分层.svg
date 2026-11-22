@@ -1,126 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="840" viewBox="0 0 860 840" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="860" height="840" fill="#ffffff"/>
-<line x1="36" y1="112" x2="824" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 智能网关分层架构</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">底座保证网络可用，中间件统一设备模型，插件与云管在之上运行。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：从下往上看依赖关系，任何一层故障都会向上表现为业务不可用。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">底座</text>
-<line x1="120" y1="142" x2="150" y2="142" stroke="#0891b2" stroke-width="3"/>
-<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">中间件</text>
-<line x1="215" y1="142" x2="245" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="253" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">插件/业务</text>
-<line x1="327.6" y1="142" x2="357.6" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="365.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">云管</text>
-<rect x="36" y="190" width="108" height="90" fill="#fff9ee" rx="9" stroke="#d97706" stroke-width="1.2"/>
-<text x="46" y="212" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">云侧</text>
-<text x="46" y="228" font-size="9.4" fill="#64748b" xml:space="preserve">远程</text>
-<text x="46" y="246" font-size="9" fill="#64748b" xml:space="preserve">管理/OTA/场景</text>
-<rect x="154" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="154" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="167" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">设备管理</text>
-<text x="167" y="226" font-size="8.8" fill="#334155" xml:space="preserve">注册/影子</text>
-<line x1="312" y1="231" x2="322" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,231 313,226.5 313,235.5" fill="#94a3b8"/>
-<rect x="322" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="322" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="335" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">OTA</text>
-<text x="335" y="226" font-size="8.8" fill="#334155" xml:space="preserve">固件/插件</text>
-<line x1="480" y1="231" x2="490" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,231 481,226.5 481,235.5" fill="#94a3b8"/>
-<rect x="490" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="490" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="503" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">场景编排</text>
-<text x="503" y="226" font-size="8.8" fill="#334155" xml:space="preserve">跨设备</text>
-<line x1="648" y1="231" x2="658" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,231 649,226.5 649,235.5" fill="#94a3b8"/>
-<rect x="658" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="658" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="671" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">遥测/诊断</text>
-<text x="671" y="226" font-size="8.8" fill="#334155" xml:space="preserve">日志/指标</text>
-<rect x="36" y="300" width="108" height="90" fill="#eef2ff" rx="9" stroke="#4f46e5" stroke-width="1.2"/>
-<text x="46" y="322" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">业务层</text>
-<text x="46" y="338" font-size="9.4" fill="#64748b" xml:space="preserve">插件</text>
-<text x="46" y="356" font-size="9" fill="#64748b" xml:space="preserve">场景/协议</text>
-<rect x="154" y="300" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="154" y="300" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="167" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">插件运行时</text>
-<text x="167" y="336" font-size="8.8" fill="#334155" xml:space="preserve">进程/容器</text>
-<line x1="312" y1="341" x2="322" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,341 313,336.5 313,345.5" fill="#94a3b8"/>
-<rect x="322" y="300" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="322" y="300" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="335" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">场景引擎</text>
-<text x="335" y="336" font-size="8.8" fill="#334155" xml:space="preserve">本地/云端</text>
-<line x1="480" y1="341" x2="490" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,341 481,336.5 481,345.5" fill="#94a3b8"/>
-<rect x="490" y="300" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="490" y="300" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="503" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">协议插件</text>
-<text x="503" y="336" font-size="8.8" fill="#334155" xml:space="preserve">Wi-Fi/BLE/Thread</text>
-<line x1="648" y1="341" x2="658" y2="341" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,341 649,336.5 649,345.5" fill="#94a3b8"/>
-<rect x="658" y="300" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="658" y="300" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="671" y="319" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">本地管理</text>
-<text x="671" y="336" font-size="8.8" fill="#334155" xml:space="preserve">Web/App/语音</text>
-<rect x="36" y="410" width="108" height="90" fill="#ecfeff" rx="9" stroke="#0891b2" stroke-width="1.2"/>
-<text x="46" y="432" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">中间件</text>
-<text x="46" y="448" font-size="9.4" fill="#64748b" xml:space="preserve">抽象</text>
-<text x="46" y="466" font-size="9" fill="#64748b" xml:space="preserve">消息/设备模型</text>
-<rect x="154" y="410" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="154" y="410" width="4.5" height="82" fill="#0891b2" rx="2"/>
-<text x="167" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">消息总线</text>
-<text x="167" y="446" font-size="8.8" fill="#334155" xml:space="preserve">pub/sub</text>
-<line x1="312" y1="451" x2="322" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,451 313,446.5 313,455.5" fill="#94a3b8"/>
-<rect x="322" y="410" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="322" y="410" width="4.5" height="82" fill="#0891b2" rx="2"/>
-<text x="335" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">设备模型</text>
-<text x="335" y="446" font-size="8.8" fill="#334155" xml:space="preserve">属性/服务</text>
-<line x1="480" y1="451" x2="490" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,451 481,446.5 481,455.5" fill="#94a3b8"/>
-<rect x="490" y="410" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="490" y="410" width="4.5" height="82" fill="#0891b2" rx="2"/>
-<text x="503" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">协议抽象</text>
-<text x="503" y="446" font-size="8.8" fill="#334155" xml:space="preserve">统一接口</text>
-<line x1="648" y1="451" x2="658" y2="451" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,451 649,446.5 649,455.5" fill="#94a3b8"/>
-<rect x="658" y="410" width="158" height="82" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="658" y="410" width="4.5" height="82" fill="#0891b2" rx="2"/>
-<text x="671" y="429" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">权限/配额</text>
-<text x="671" y="446" font-size="8.8" fill="#334155" xml:space="preserve">沙箱</text>
-<rect x="36" y="520" width="108" height="90" fill="#f2fcf5" rx="9" stroke="#0f9d58" stroke-width="1.2"/>
-<text x="46" y="542" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">底座</text>
-<text x="46" y="558" font-size="9.4" fill="#64748b" xml:space="preserve">网络</text>
-<text x="46" y="576" font-size="9" fill="#64748b" xml:space="preserve">路由/Wi-Fi</text>
-<rect x="154" y="520" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="154" y="520" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="167" y="539" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">WAN/LAN</text>
-<text x="167" y="556" font-size="8.8" fill="#334155" xml:space="preserve">netifd/交换</text>
-<line x1="312" y1="561" x2="322" y2="561" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="322,561 313,556.5 313,565.5" fill="#94a3b8"/>
-<rect x="322" y="520" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="322" y="520" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="335" y="539" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Wi-Fi</text>
-<text x="335" y="556" font-size="8.8" fill="#334155" xml:space="preserve">SSID/漫游</text>
-<line x1="480" y1="561" x2="490" y2="561" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="490,561 481,556.5 481,565.5" fill="#94a3b8"/>
-<rect x="490" y="520" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="490" y="520" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="503" y="539" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">NAT/防火墙</text>
-<text x="503" y="556" font-size="8.8" fill="#334155" xml:space="preserve">conntrack/zone</text>
-<line x1="648" y1="561" x2="658" y2="561" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="658,561 649,556.5 649,565.5" fill="#94a3b8"/>
-<rect x="658" y="520" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="658" y="520" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="671" y="539" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">内核/驱动</text>
-<text x="671" y="556" font-size="8.8" fill="#334155" xml:space="preserve">SoC/射频</text>
-<rect x="36" y="650" width="780" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="680" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
-<text x="52" y="704" font-size="10.2" fill="#334155" xml:space="preserve">① 插件不能抢底座资源：CPU/内存/射频都要有配额。</text>
-<text x="52" y="722" font-size="10.2" fill="#334155" xml:space="preserve">② 中间件把多协议抽象成统一设备模型，上层不感知底层协议。</text>
-<text x="52" y="740" font-size="10.2" fill="#334155" xml:space="preserve">③ 云管离线时，本地场景仍要可执行。</text>
-<text x="36" y="786" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/44-智能网关/00-智能网关架构.md</text>
-<text x="36" y="804" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · 智能网关分层架构：底座、中间件、插件、云管</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">下面两层保证「能用」，上面两层决定「能做什么」；任一层故障都向上表现为业务不可用。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">中间件的价值是把南向设备抽象成统一模型，插件不必为每种协议写一遍。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">平台</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">抽象</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">业务</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">运维</text>
+<rect x="40" y="190" width="700" height="56" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.1"/>
+<text x="52" y="221.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">云管 / OTA：远程下发、版本与观测</text>
+<text x="730" y="221.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">运维面</text>
+<rect x="40" y="256" width="700" height="56" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.1"/>
+<text x="52" y="287.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">插件 / 场景：业务逻辑与自动化</text>
+<text x="730" y="287.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">业务</text>
+<rect x="40" y="322" width="700" height="56" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.1"/>
+<text x="52" y="353.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">中间件：设备模型、协议适配、消息总线</text>
+<text x="730" y="353.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">统一抽象</text>
+<rect x="40" y="388" width="700" height="56" fill="#f8fafc" rx="6" stroke="#475569" stroke-width="1.1"/>
+<text x="52" y="419.6" font-size="10.4" fill="#0f172a" xml:space="preserve" font-weight="600">系统底座：网络、存储、进程管理</text>
+<text x="730" y="419.6" font-size="9.2" fill="#64748b" xml:space="preserve" text-anchor="end">平台</text>
+<rect x="780" y="190" width="280" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="796" y="220" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">分层排障</text>
+<text x="796" y="244" font-size="10.2" fill="#334155" xml:space="preserve">业务不通先看底座（网络/进程）</text>
+<text x="796" y="262" font-size="10.2" fill="#334155" xml:space="preserve">设备不可控看中间件（协议/模型）</text>
+<text x="796" y="280" font-size="10.2" fill="#334155" xml:space="preserve">远程操作失败看云管（连接/权限）</text>
+<rect x="40" y="450" width="1020" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="504" font-size="10.2" fill="#334155" xml:space="preserve">层次越靠下越稳定：底座很少变，插件和云管迭代快。</text>
+<text x="56" y="522" font-size="10.2" fill="#334155" xml:space="preserve">跨层问题常见于「中间件模型对不上」——设备在线，但模型没有对应属性，业务就调不到。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：40-产品与方案/44-智能网关/00-智能网关架构.md</text>
 </svg>

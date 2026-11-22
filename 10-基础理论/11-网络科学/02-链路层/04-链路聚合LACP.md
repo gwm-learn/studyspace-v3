@@ -126,7 +126,7 @@ State 里的关键位：
 
 ![图 02 · LACP状态机](images/图02-LACP状态机.svg)
 
-**读图**：端口从 Init 到 Negotiating，参数一致才 Synchronized；故障或超时退回协商。
+**读图**：四个状态只在主链上出现一次；顶部红色虚线是回退边——超时、故障或参数不一致时从 Synchronized 退回 Negotiating，**不是第五个状态，也不是「再次协商」的新节点**。
 
 > 图源：`images/图02-LACP状态机.svg`
 

@@ -1,47 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="480" viewBox="0 0 1180 480" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="480" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · WireGuard 密钥生命周期：握手、使用、重协商</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">首次握手生成会话密钥；之后按时间/消息数触发 rekey。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">旧密钥有拒绝时限，过期包直接丢弃。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1100" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1064" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 03 · WireGuard 密钥生命周期：重协商是循环，旧密钥有宽限</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">Rekey 不结束会话，而是换一把新密钥，回到「使用」。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">旧密钥不会立刻作废：超过 reject-after 硬上限才真正失效。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
-<line x1="415.6" y1="142" x2="445.6" y2="142" stroke="#dc2626" stroke-width="3"/>
-<text x="453.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">丢弃 / 风险</text>
-<rect x="36" y="190" width="158" height="82" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="36" y="190" width="4.5" height="82" fill="#4f46e5" rx="2"/>
-<text x="49" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">握手</text>
-<text x="49" y="226" font-size="8.8" fill="#334155" xml:space="preserve">Noise_IK</text>
-<text x="49" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">1-RTT</text>
-<line x1="194" y1="231" x2="206" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="206,231 197,226.5 197,235.5" fill="#94a3b8"/>
-<rect x="206" y="190" width="158" height="82" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="206" y="190" width="4.5" height="82" fill="#0f9d58" rx="2"/>
-<text x="219" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">使用</text>
-<text x="219" y="226" font-size="8.8" fill="#334155" xml:space="preserve">加密 IP 包</text>
-<text x="219" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">计数器防重放</text>
-<line x1="364" y1="231" x2="376" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="376,231 367,226.5 367,235.5" fill="#94a3b8"/>
-<rect x="376" y="190" width="158" height="82" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="376" y="190" width="4.5" height="82" fill="#d97706" rx="2"/>
-<text x="389" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">Rekey</text>
-<text x="389" y="226" font-size="8.8" fill="#334155" xml:space="preserve">约 2 分钟</text>
-<text x="389" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">或消息数上限</text>
-<line x1="534" y1="231" x2="546" y2="231" stroke="#94a3b8" stroke-width="1.5"/>
-<polygon points="546,231 537,226.5 537,235.5" fill="#94a3b8"/>
-<rect x="546" y="190" width="158" height="82" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="546" y="190" width="4.5" height="82" fill="#dc2626" rx="2"/>
-<text x="559" y="209" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">旧密钥失效</text>
-<text x="559" y="226" font-size="8.8" fill="#334155" xml:space="preserve">拒绝时限</text>
-<text x="559" y="241.4" font-size="8.8" fill="#334155" xml:space="preserve">过期丢弃</text>
-<rect x="36" y="310" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="340" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="364" font-size="10.2" fill="#334155" xml:space="preserve">PersistentKeepalive 维持 NAT 映射，常用 25s。</text>
-<text x="52" y="382" font-size="10.2" fill="#334155" xml:space="preserve">没有动态协商，算法套件固定。</text>
-<text x="36" y="426" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="444" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主链</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">新旧并存</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">失效</text>
+<rect x="60" y="250" width="108" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="114" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">握手</text>
+<text x="114" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">Noise_IK · 1-RTT</text>
+<rect x="240" y="250" width="120.04" height="44" fill="#f2fcf5" rx="6" stroke="#0f9d58" stroke-width="1.2"/>
+<text x="300.02" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">使用</text>
+<text x="300.02" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">加密 IP 包，计数防重放</text>
+<rect x="470" y="250" width="121.76" height="44" fill="#eef2ff" rx="6" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="530.88" y="272" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">Rekey</text>
+<text x="530.88" y="284" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">约 2 分钟 / 消息数上限</text>
+<rect x="470" y="360" width="93.4" height="44" fill="#fff9ee" rx="6" stroke="#d97706" stroke-width="1.2"/>
+<text x="516.7" y="382" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">旧密钥（宽限）</text>
+<text x="516.7" y="394" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">仍可解密旧包</text>
+<rect x="720" y="360" width="128.64" height="44" fill="#fff5f5" rx="6" stroke="#dc2626" stroke-width="1.2"/>
+<text x="784.32" y="382" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700" text-anchor="middle">失效</text>
+<text x="784.32" y="394" font-size="8.6" fill="#64748b" xml:space="preserve" text-anchor="middle">超 reject-after 硬上限</text>
+<line x1="168" y1="272" x2="240" y2="272" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="240,272 231,267.5 231,276.5" fill="#4f46e5"/>
+<text x="204" y="265" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">会话密钥就绪</text>
+<line x1="360.04" y1="272" x2="470" y2="272" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="470,272 461,267.5 461,276.5" fill="#d97706"/>
+<text x="415.02" y="265" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">到时间 / 到消息数</text>
+<line x1="563.4" y1="382" x2="720" y2="382" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="720,382 711,377.5 711,386.5" fill="#dc2626"/>
+<text x="641.7" y="375" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">超硬上限</text>
+<line x1="360.04" y1="272" x2="470" y2="382" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="470,382 466.82,372.45 460.45,378.82" fill="#d97706"/>
+<text x="415.02" y="320" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">被新密钥替换</text>
+<line x1="530.88" y1="250" x2="530.88" y2="196" stroke="#4f46e5" stroke-width="1.8"/>
+<line x1="530.88" y1="196" x2="300.02" y2="196" stroke="#4f46e5" stroke-width="1.8"/>
+<line x1="300.02" y1="196" x2="300.02" y2="250" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="300.02,250 304.52,241 295.52,241" fill="#4f46e5"/>
+<text x="415.45" y="188" font-size="9.6" fill="#4f46e5" xml:space="preserve" font-weight="600" text-anchor="middle">新密钥生效，重新计时</text>
+<rect x="60" y="450" width="1000" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="76" y="480" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="76" y="504" font-size="10.2" fill="#334155" xml:space="preserve">重协商是循环：发起方到 2 分钟左右主动换密钥，对端在宽限期内仍能用旧密钥解密，避免在途包被丢弃。</text>
+<text x="76" y="522" font-size="10.2" fill="#334155" xml:space="preserve">真正「拒绝」只发生在超过 reject-after（时间或消息数）之后；PersistentKeepalive 只维持 NAT 映射，不参与密钥生命周期。</text>
+<text x="36" y="566" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/03-网络层/09-WireGuard.md</text>
 </svg>

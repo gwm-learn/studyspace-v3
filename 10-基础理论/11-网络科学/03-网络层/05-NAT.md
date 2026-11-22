@@ -92,7 +92,7 @@ DNAT 后如果内网主机回包源地址是内网地址，直接发会绕过 NA
 
 ![图 01 · SNAT与DNAT转换](images/图01-SNAT与DNAT转换.svg)
 
-**读图**：上行 SNAT 改源，下行 DNAT 改目的；只有新连接首包走规则，后续包由 conntrack 直接翻译。
+**读图**：两条路径方向相反——SNAT 改源出网、DNAT 改目的入网；共同点是都要记 conntrack，否则回包不知道还原成谁。
 
 > 图源：`images/图01-SNAT与DNAT转换.svg`
 
@@ -146,7 +146,8 @@ DNAT 只改目的，回程必须靠 conntrack 或额外 SNAT 才能正确还原�
 
 ![图 02 · conntrack状态](images/图02-conntrack状态.svg)
 
-**读图**：NEW 建表项，ESTABLISHED 双向通；RELATED 是关联新连接，INVALID 直接丢弃。
+**读图**：NEW 建表项，ESTABLISHED 双向通；RELATED 由已建立连接派生（FTP 数据、ICMP 错误）。
+INVALID 的上一跳是「报文」——查表失败、畸形或状态不符，不是 ESTABLISHED 超时变来的。
 
 > 图源：`images/图02-conntrack状态.svg`
 

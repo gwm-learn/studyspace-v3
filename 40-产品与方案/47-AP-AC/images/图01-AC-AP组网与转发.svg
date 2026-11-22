@@ -1,76 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="800" viewBox="0 0 1060 800" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1060" height="800" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1024" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · AC-AP 组网与转发路径</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">AP 通过管理 VLAN 找到 AC；业务按 SSID 选择集中或本地转发；访客/IoT 走独立 VLAN。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">读法：先看 AP 到 AC 的管理链，再看业务到网关的转发链。</text>
-<line x1="36" y1="142" x2="66" y2="142" stroke="#0891b2" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">AP</text>
-<line x1="111.2" y1="142" x2="141.2" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="149.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">管理</text>
-<line x1="195.2" y1="142" x2="225.2" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="233.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">业务</text>
-<line x1="279.2" y1="142" x2="309.2" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="317.2" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">访客/IoT</text>
-<rect x="36" y="160" width="180" height="90" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="36" y="160" width="4.5" height="90" fill="#0891b2" rx="2"/>
-<text x="49" y="179" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">AP 1</text>
-<text x="49" y="196" font-size="9.6" fill="#334155" xml:space="preserve">吸顶/面板</text>
-<rect x="260" y="160" width="180" height="90" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="260" y="160" width="4.5" height="90" fill="#0891b2" rx="2"/>
-<text x="273" y="179" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">AP 2</text>
-<text x="273" y="196" font-size="9.6" fill="#334155" xml:space="preserve">房间覆盖</text>
-<rect x="484" y="160" width="180" height="90" fill="#ecfeff" rx="8" stroke="#0891b2" stroke-width="1.1"/>
-<rect x="484" y="160" width="4.5" height="90" fill="#0891b2" rx="2"/>
-<text x="497" y="179" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">AP 3</text>
-<text x="497" y="196" font-size="9.6" fill="#334155" xml:space="preserve">大厅/会议室</text>
-<rect x="150" y="330" width="280" height="100" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="150" y="330" width="4.5" height="100" fill="#4f46e5" rx="2"/>
-<text x="163" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">接入交换机</text>
-<text x="163" y="366" font-size="9.6" fill="#334155" xml:space="preserve">管理 VLAN + 业务 VLAN</text>
-<text x="163" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">PoE 供电</text>
-<line x1="126" y1="250" x2="290" y2="330" stroke="#94a3b8" stroke-width="1.4"/>
-<polygon points="290,330 283.88,322.01 279.94,330.1" fill="#94a3b8"/>
-<line x1="350" y1="250" x2="350" y2="330" stroke="#94a3b8" stroke-width="1.4"/>
-<polygon points="350,330 354.5,321 345.5,321" fill="#94a3b8"/>
-<line x1="574" y1="250" x2="410" y2="330" stroke="#94a3b8" stroke-width="1.4"/>
-<polygon points="410,330 420.06,330.1 416.12,322.01" fill="#94a3b8"/>
-<rect x="560" y="330" width="210" height="100" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="560" y="330" width="4.5" height="100" fill="#4f46e5" rx="2"/>
-<text x="573" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">AC</text>
-<text x="573" y="366" font-size="9.6" fill="#334155" xml:space="preserve">AP 管理</text>
-<text x="573" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">漫游/射频</text>
-<rect x="830" y="330" width="190" height="100" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="830" y="330" width="4.5" height="100" fill="#0f9d58" rx="2"/>
-<text x="843" y="349" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网关/核心</text>
-<text x="843" y="366" font-size="9.6" fill="#334155" xml:space="preserve">路由/NAT</text>
-<text x="843" y="381.4" font-size="9.6" fill="#334155" xml:space="preserve">出口</text>
-<line x1="430" y1="380" x2="560" y2="380" stroke="#4f46e5" stroke-width="2"/>
-<polygon points="560,380 551,375.5 551,384.5" fill="#4f46e5"/>
-<text x="485" y="368" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">管理</text>
-<line x1="770" y1="355" x2="830" y2="355" stroke="#4f46e5" stroke-width="1.8" stroke-dasharray="3 3"/>
-<polygon points="830,355 821,350.5 821,359.5" fill="#4f46e5"/>
-<text x="780" y="343" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">集中转发</text>
-<line x1="770" y1="405" x2="830" y2="405" stroke="#0f9d58" stroke-width="2"/>
-<polygon points="830,405 821,400.5 821,409.5" fill="#0f9d58"/>
-<text x="790" y="393" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">业务</text>
-<rect x="36" y="490" width="330" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="36" y="490" width="4.5" height="90" fill="#d97706" rx="2"/>
-<text x="49" y="509" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">访客/IoT VLAN</text>
-<text x="49" y="526" font-size="9.6" fill="#334155" xml:space="preserve">独立 SSID</text>
-<text x="49" y="541.4" font-size="9.6" fill="#334155" xml:space="preserve">限制访问内网</text>
-<line x1="366" y1="535" x2="430" y2="535" stroke="#d97706" stroke-width="1.6"/>
-<polygon points="430,535 421,530.5 421,539.5" fill="#d97706"/>
-<rect x="430" y="490" width="280" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="430" y="490" width="4.5" height="90" fill="#d97706" rx="2"/>
-<text x="443" y="509" font-size="10.2" fill="#0f172a" xml:space="preserve" font-weight="700">受控放行</text>
-<text x="443" y="526" font-size="8.8" fill="#334155" xml:space="preserve">只放行互联网</text>
-<text x="443" y="541.4" font-size="8.8" fill="#334155" xml:space="preserve">禁止访问内网</text>
-<rect x="36" y="610" width="984" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="640" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
-<text x="52" y="664" font-size="10.2" fill="#334155" xml:space="preserve">① 管理 VLAN 只承载 AP 管理/CAPWAP，业务 VLAN 承载终端流量，二者不要混。</text>
-<text x="52" y="682" font-size="10.2" fill="#334155" xml:space="preserve">② 集中转发时业务流量绕到 AC；本地转发时 AC 只下发策略，数据从 AP 本地出。</text>
-<text x="52" y="700" font-size="10.2" fill="#334155" xml:space="preserve">③ 访客/IoT 必须独立 VLAN，跨网访问只开必要端口。</text>
-<text x="36" y="746" font-size="12.3" fill="#64748b" xml:space="preserve">图源：40-产品与方案/47-AP-AC/02-AC-AP组网与漫游.md</text>
-<text x="36" y="764" font-size="12.3" fill="#64748b" xml:space="preserve">模板：.图表模板/svg-figure-template.py</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="580" viewBox="0 0 960 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="960" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="924" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · AC-AP 组网与转发：管理一条路，数据两条路</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">AP 通过管理 VLAN 找到 AC；业务流量按 SSID 选集中转发（隧道到 AC）或本地转发（直接出上行）。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">访客 / IoT 走独立 VLAN，即使到了 AC 也不进内网。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">管理</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">集中转发</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">本地转发</text>
+<rect x="380" y="190" width="280" height="84" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="380" y="190" width="4.5" height="84" fill="#d97706" rx="2"/>
+<text x="393" y="209" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">AC（管理 VLAN）</text>
+<text x="393" y="226" font-size="9.6" fill="#334155" xml:space="preserve">CAPWAP 控制</text>
+<text x="393" y="241.4" font-size="9.6" fill="#334155" xml:space="preserve">策略 / 漫游 / 认证</text>
+<rect x="380" y="320" width="280" height="70" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="380" y="320" width="4.5" height="70" fill="#475569" rx="2"/>
+<text x="393" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">交换机（Trunk）</text>
+<text x="393" y="356" font-size="9.6" fill="#334155" xml:space="preserve">管理 VLAN + 业务 VLAN</text>
+<rect x="120" y="450" width="220" height="84" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="120" y="450" width="4.5" height="84" fill="#4f46e5" rx="2"/>
+<text x="133" y="469" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">AP 1</text>
+<text x="133" y="486" font-size="9.6" fill="#334155" xml:space="preserve">集中转发 SSID</text>
+<text x="133" y="501.4" font-size="9.6" fill="#334155" xml:space="preserve">本地转发 SSID</text>
+<rect x="700" y="450" width="220" height="84" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="700" y="450" width="4.5" height="84" fill="#0f9d58" rx="2"/>
+<text x="713" y="469" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">AP 2</text>
+<text x="713" y="486" font-size="9.6" fill="#334155" xml:space="preserve">同 SSID</text>
+<text x="713" y="501.4" font-size="9.6" fill="#334155" xml:space="preserve">漫游目标</text>
+<line x1="520" y1="274" x2="520" y2="320" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="520,320 524.5,311 515.5,311" fill="#d97706"/>
+<text x="530" y="304" font-size="9.4" fill="#64748b" xml:space="preserve" font-weight="600">管理</text>
+<line x1="480" y1="390" x2="260" y2="450" stroke="#475569" stroke-width="1.6"/>
+<polygon points="260,450 269.87,451.97 267.5,443.29" fill="#475569"/>
+<line x1="560" y1="390" x2="780" y2="450" stroke="#475569" stroke-width="1.6"/>
+<polygon points="780,450 772.5,443.29 770.13,451.97" fill="#475569"/>
+<line x1="160" y1="450" x2="160" y2="232" stroke="#4f46e5" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="160" y1="232" x2="380" y2="232" stroke="#4f46e5" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="380,232 371,227.5 371,236.5" fill="#4f46e5"/>
+<text x="172" y="430" font-size="9.4" fill="#4f46e5" xml:space="preserve" font-weight="600">隧道（集中转发）</text>
 </svg>

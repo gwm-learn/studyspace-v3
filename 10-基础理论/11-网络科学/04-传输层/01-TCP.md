@@ -207,7 +207,7 @@ SYN 报文还会协商 MSS、窗口缩放、SACK、时间戳等选项。选项�
 
 ![图 02 · TCP状态机](images/图02-TCP状态机.svg)
 
-**读图**：两条主线都从 CLOSED 回到 CLOSED；TIME-WAIT 等 2MSL，保证最后 ACK 可达并让旧报文消亡。
+**读图**：两条主线都从 CLOSED 回到 CLOSED；双方同时发 FIN 时走下方的 CLOSING 分支，再进 TIME-WAIT。TIME-WAIT 等 2MSL，保证最后 ACK 可达并让旧报文消亡。
 
 > 图源：`images/图02-TCP状态机.svg`
 

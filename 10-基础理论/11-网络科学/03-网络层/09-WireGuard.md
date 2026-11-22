@@ -57,7 +57,7 @@ peer = 公钥 + AllowedIPs（哪些源 IP 从这个 peer 来 / 哪些目的 IP �
 
 ![图 02 · WireGuard报文类型](images/图02-WireGuard报文类型.svg)
 
-**读图**：握手 Initiation/Response 建会话密钥，Transport Data 传加密 IP；Cookie Reply 是防 DoS 的兜底。
+**读图**：①→②→③ 是正常路径（建密钥再传数据）；Cookie Reply 不是第四步，而是响应方负载过高时替代 ② 的分支。
 
 > 图源：`images/图02-WireGuard报文类型.svg`
 
@@ -193,7 +193,7 @@ config wireguard_wg0
 
 ![图 03 · WireGuard密钥生命周期](images/图03-WireGuard密钥生命周期.svg)
 
-**读图**：握手生成会话密钥，使用中按时间/消息数 rekey；旧密钥过期后直接拒绝。
+**读图**：Rekey 是循环——换新密钥后回到「使用」，不是结束会话；旧密钥进入宽限期，超过 reject-after 硬上限才真正失效。
 
 > 图源：`images/图03-WireGuard密钥生命周期.svg`
 

@@ -1,53 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
-<rect width="1180" height="660" fill="#ffffff"/>
-<line x1="36" y1="112" x2="1144" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
-<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · SNMP：轮询读变量，Trap 报事件</text>
-<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">NMS 通过 Get/GetNext/GetBulk 读取 Agent 的 MIB；Set 写变量。</text>
-<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">Agent 主动发 Trap/Inform，Inform 需要确认。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="580" viewBox="0 0 1080 580" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1080" height="580" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1044" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 01 · SNMP 的三个角色与两条通道</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">NMS 管、Agent 代、MIB 存；一条通道问变量（161），一条通道报警（162）。</text>
+<text x="36" y="92" font-size="12.3" fill="#64748b" xml:space="preserve">具体报文顺序见本目录图 02，这里只看「谁拥有什么」。</text>
 <line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
-<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">主路径</text>
-<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
-<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">成功 / 到本机</text>
-<line x1="267.8" y1="142" x2="297.8" y2="142" stroke="#d97706" stroke-width="3"/>
-<text x="305.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">注意 / 本机发出</text>
-<line x1="415.6" y1="142" x2="445.6" y2="142" stroke="#dc2626" stroke-width="3"/>
-<text x="453.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">丢弃 / 风险</text>
-<rect x="40" y="200" width="200" height="80" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
-<rect x="40" y="200" width="4.5" height="80" fill="#4f46e5" rx="2"/>
-<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">NMS</text>
-<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">轮询 / 告警</text>
-<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">Get / Set</text>
-<rect x="330" y="200" width="200" height="80" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
-<rect x="330" y="200" width="4.5" height="80" fill="#0f9d58" rx="2"/>
-<text x="343" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Agent</text>
-<text x="343" y="236" font-size="9.6" fill="#334155" xml:space="preserve">响应请求</text>
-<text x="343" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">发 Trap</text>
-<rect x="620" y="180" width="220" height="90" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
-<rect x="620" y="180" width="4.5" height="90" fill="#d97706" rx="2"/>
-<text x="633" y="199" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">MIB</text>
-<text x="633" y="216" font-size="9.6" fill="#334155" xml:space="preserve">OID → 值</text>
-<text x="633" y="231.4" font-size="9.6" fill="#334155" xml:space="preserve">SMI 定义类型</text>
-<rect x="330" y="360" width="220" height="70" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
-<rect x="330" y="360" width="4.5" height="70" fill="#dc2626" rx="2"/>
-<text x="343" y="379" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Trap / Inform</text>
-<text x="343" y="396" font-size="9.6" fill="#334155" xml:space="preserve">UDP 162</text>
-<text x="343" y="411.4" font-size="9.6" fill="#334155" xml:space="preserve">Inform 需确认</text>
-<line x1="240" y1="240" x2="330" y2="240" stroke="#4f46e5" stroke-width="2"/>
-<polygon points="330,240 321,235.5 321,244.5" fill="#4f46e5"/>
-<text x="291" y="233" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">Get / Set（161）</text>
-<line x1="530" y1="235" x2="620" y2="230.5" stroke="#d97706" stroke-width="2"/>
-<polygon points="620,230.5 610.79,226.46 611.24,235.44" fill="#d97706"/>
-<text x="581" y="225.75" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">读写</text>
-<line x1="432.58" y1="280" x2="437.74" y2="360" stroke="#dc2626" stroke-width="2"/>
-<polygon points="437.74,360 441.65,350.73 432.67,351.31" fill="#dc2626"/>
-<text x="441.16" y="313" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">事件</text>
-<line x1="372.26" y1="360" x2="217.42" y2="280" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
-<polygon points="217.42,280 223.35,288.13 227.48,280.13" fill="#dc2626"/>
-<text x="300.84" y="313" font-size="10.2" fill="#64748b" xml:space="preserve" font-weight="600">告警</text>
-<rect x="36" y="480" width="1100" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
-<text x="52" y="510" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图提示</text>
-<text x="52" y="534" font-size="10.2" fill="#334155" xml:space="preserve">v1/v2c 团体名明文，生产环境用 v3 或 ACL。</text>
-<text x="52" y="552" font-size="10.2" fill="#334155" xml:space="preserve">轮询保状态，Trap 保实时，两者互补。</text>
-<text x="36" y="606" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py</text>
-<text x="36" y="624" font-size="12.3" fill="#64748b" xml:space="preserve">颜色只做辅助，先看箭头方向与文字标签。</text>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">请求/响应</text>
+<line x1="148.6" y1="142" x2="178.6" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="186.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">告警</text>
+<line x1="232.6" y1="142" x2="262.6" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="270.6" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">数据模型</text>
+<rect x="40" y="250" width="260" height="92" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="40" y="250" width="4.5" height="92" fill="#4f46e5" rx="2"/>
+<text x="53" y="269" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">NMS（管理者）</text>
+<text x="53" y="286" font-size="9.6" fill="#334155" xml:space="preserve">轮询 Get/GetNext/GetBulk</text>
+<text x="53" y="301.4" font-size="9.6" fill="#334155" xml:space="preserve">写 Set，收 Trap/Inform</text>
+<rect x="400" y="250" width="260" height="92" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="400" y="250" width="4.5" height="92" fill="#0f9d58" rx="2"/>
+<text x="413" y="269" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">Agent（代理）</text>
+<text x="413" y="286" font-size="9.6" fill="#334155" xml:space="preserve">响应请求，读本机 MIB</text>
+<text x="413" y="301.4" font-size="9.6" fill="#334155" xml:space="preserve">主动上报 Trap/Inform</text>
+<rect x="760" y="250" width="260" height="92" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="760" y="250" width="4.5" height="92" fill="#d97706" rx="2"/>
+<text x="773" y="269" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">MIB（OID 树）</text>
+<text x="773" y="286" font-size="9.6" fill="#334155" xml:space="preserve">对象类型由 SMI 定义</text>
+<text x="773" y="301.4" font-size="9.6" fill="#334155" xml:space="preserve">OID → 值，随设备实现</text>
+<line x1="300" y1="330" x2="400" y2="330" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="400,330 391,325.5 391,334.5" fill="#4f46e5"/>
+<text x="350" y="323" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">UDP 161 请求 / 响应</text>
+<line x1="530" y1="342" x2="530" y2="380" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="530" y1="380" x2="170" y2="380" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="170" y1="380" x2="170" y2="342" stroke="#d97706" stroke-width="1.6" stroke-dasharray="3 3"/>
+<polygon points="170,342 165.5,351 174.5,351" fill="#d97706"/>
+<text x="350" y="372" font-size="9.4" fill="#d97706" xml:space="preserve" font-weight="600" text-anchor="middle">UDP 162 告警（Trap / Inform）</text>
+<line x1="660" y1="330" x2="760" y2="330" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="760,330 751,325.5 751,334.5" fill="#0f9d58"/>
+<text x="710" y="323" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600" text-anchor="middle">读 / 写</text>
+<rect x="40" y="400" width="1000" height="92" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="430" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="454" font-size="10.2" fill="#334155" xml:space="preserve">MIB 不是数据库进程，是「OID 树 + 取值规则」；Agent 负责把它映射到本机实现。</text>
+<text x="56" y="472" font-size="10.2" fill="#334155" xml:space="preserve">v1/v2c 的团体名是明文共享密钥，v3 才有用户与认证；生产环境至少配 ACL。</text>
+<text x="36" y="526" font-size="12.3" fill="#64748b" xml:space="preserve">图源：.图表模板/svg-figure-template.py 生成</text>
+<text x="36" y="544" font-size="12.3" fill="#64748b" xml:space="preserve">本篇：10-基础理论/11-网络科学/05-应用层/05-SNMP.md</text>
 </svg>
