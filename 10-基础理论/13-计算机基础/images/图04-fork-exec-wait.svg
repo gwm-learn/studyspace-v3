@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1200" height="740" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1164" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 04 · fork / exec / wait：一个进程的一生</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">fork 复制结构、共享物理页；exec 换掉地址空间；exit 之后还要等父进程回收。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">父进程</text>
+<line x1="131" y1="142" x2="161" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="169" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">子进程</text>
+<line x1="226" y1="142" x2="256" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="264" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">内核</text>
+<rect x="40" y="190" width="300" height="42" fill="#f1f5f9" rx="8" stroke="#4f46e5" stroke-width="1"/>
+<text x="52" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">父进程</text>
+<rect x="400" y="190" width="300" height="42" fill="#f1f5f9" rx="8" stroke="#0f9d58" stroke-width="1"/>
+<text x="412" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">子进程</text>
+<rect x="760" y="190" width="300" height="42" fill="#f1f5f9" rx="8" stroke="#475569" stroke-width="1"/>
+<text x="772" y="216" font-size="11.2" fill="#0f172a" xml:space="preserve" font-weight="700">内核</text>
+<line x1="190" y1="232" x2="190" y2="544" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="550" y1="232" x2="550" y2="544" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="910" y1="232" x2="910" y2="544" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="190" y1="260" x2="910" y2="260" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="910,260 901,255.5 901,264.5" fill="#4f46e5"/>
+<text x="196" y="253" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">① fork()：复制 PCB / fd 表 / 页表</text>
+<line x1="910" y1="298" x2="190" y2="298" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="190,298 199,302.5 199,293.5" fill="#94a3b8"/>
+<text x="196" y="291" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">② 返回子进程 pid</text>
+<line x1="910" y1="336" x2="550" y2="336" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="550,336 559,340.5 559,331.5" fill="#94a3b8"/>
+<text x="556" y="329" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">③ 返回 0</text>
+<line x1="550" y1="374" x2="910" y2="374" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="910,374 901,369.5 901,378.5" fill="#4f46e5"/>
+<text x="556" y="367" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">④ execve(path, argv, envp)</text>
+<line x1="910" y1="412" x2="550" y2="412" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="550,412 559,416.5 559,407.5" fill="#94a3b8"/>
+<text x="556" y="405" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑤ 替换地址空间，跳到 _start</text>
+<line x1="550" y1="450" x2="910" y2="450" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="910,450 901,445.5 901,454.5" fill="#4f46e5"/>
+<text x="556" y="443" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑥ exit(status)</text>
+<line x1="910" y1="488" x2="190" y2="488" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+<polygon points="190,488 199,492.5 199,483.5" fill="#94a3b8"/>
+<text x="196" y="481" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑦ SIGCHLD：子进程已退出</text>
+<line x1="190" y1="526" x2="910" y2="526" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="910,526 901,521.5 901,530.5" fill="#4f46e5"/>
+<text x="196" y="519" font-size="9.6" fill="#64748b" xml:space="preserve" font-weight="600">⑧ waitpid()：回收僵尸 PCB</text>
+<rect x="40" y="560" width="1120" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="590" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="614" font-size="10.2" fill="#334155" xml:space="preserve">fork 之后父子共享只读物理页，写时复制；exec 之后子进程的地址空间被整体替换。</text>
+<text x="56" y="632" font-size="10.2" fill="#334155" xml:space="preserve">execve 失败时原进程继续执行，所以 shell 能打印“找不到文件”而不是直接消失。</text>
+<text x="56" y="650" font-size="10.2" fill="#334155" xml:space="preserve">子进程先退出、父进程还没 wait 的窗口里，PCB 仍在，这就是僵尸。</text>
+<text x="36" y="704" font-size="12.3" fill="#64748b" xml:space="preserve">图源：10-基础理论/13-计算机基础/images/图04-fork-exec-wait.svg</text>
+</svg>

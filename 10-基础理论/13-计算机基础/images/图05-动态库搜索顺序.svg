@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1200" height="520" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1164" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · ld.so 找共享库的顺序</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">按优先级从左到右查找；RPATH 与 RUNPATH 的先后关系取决于链接时生成了哪一个。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">旧式路径</text>
+<line x1="142" y1="142" x2="172" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="180" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">环境变量</text>
+<line x1="248" y1="142" x2="278" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="286" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">ELF 内路径</text>
+<line x1="369.4" y1="142" x2="399.4" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="407.4" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">系统默认</text>
+<text x="40" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">找不到时，ld.so 依次问这些地方</text>
+<rect x="40" y="200" width="200" height="86" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="200" width="4.5" height="86" fill="#475569" rx="2"/>
+<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DT_RPATH</text>
+<text x="231" y="219" font-size="10.2" fill="#475569" xml:space="preserve" font-weight="700" text-anchor="end">①</text>
+<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">仅当无 RUNPATH</text>
+<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">先于环境变量</text>
+<line x1="240" y1="243" x2="255" y2="243" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="255,243 246,238.5 246,247.5" fill="#94a3b8"/>
+<rect x="255" y="200" width="200" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="255" y="200" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="268" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">LD_LIBRARY_PATH</text>
+<text x="446" y="219" font-size="10.2" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="end">②</text>
+<text x="268" y="236" font-size="9.6" fill="#334155" xml:space="preserve">环境变量</text>
+<text x="268" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">影响所有子进程</text>
+<line x1="455" y1="243" x2="470" y2="243" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="470,243 461,238.5 461,247.5" fill="#94a3b8"/>
+<rect x="470" y="200" width="200" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="470" y="200" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="483" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">DT_RUNPATH</text>
+<text x="661" y="219" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">③</text>
+<text x="483" y="236" font-size="9.6" fill="#334155" xml:space="preserve">只对直接依赖</text>
+<text x="483" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">不向依赖传递</text>
+<line x1="670" y1="243" x2="685" y2="243" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="685,243 676,238.5 676,247.5" fill="#94a3b8"/>
+<rect x="685" y="200" width="200" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="685" y="200" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="698" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">ld.so.cache</text>
+<text x="876" y="219" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">④</text>
+<text x="698" y="236" font-size="9.6" fill="#334155" xml:space="preserve">ldconfig 维护</text>
+<text x="698" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">新库要刷新</text>
+<line x1="885" y1="243" x2="900" y2="243" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="900,243 891,238.5 891,247.5" fill="#94a3b8"/>
+<rect x="900" y="200" width="200" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="900" y="200" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="913" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">/lib /usr/lib</text>
+<text x="1091" y="219" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">⑤</text>
+<text x="913" y="236" font-size="9.6" fill="#334155" xml:space="preserve">系统默认目录</text>
+<text x="913" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">精简镜像可能没有</text>
+<rect x="40" y="350" width="1120" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="380" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="404" font-size="10.2" fill="#334155" xml:space="preserve">有 DT_RUNPATH 时：LD_LIBRARY_PATH → DT_RUNPATH → cache → 默认；此时 RPATH 被忽略。</text>
+<text x="56" y="422" font-size="10.2" fill="#334155" xml:space="preserve">没有 DT_RUNPATH 时：DT_RPATH → LD_LIBRARY_PATH → cache → 默认。</text>
+<text x="56" y="440" font-size="10.2" fill="#334155" xml:space="preserve">$ORIGIN 表示可执行文件所在目录；setuid 程序会忽略 LD_LIBRARY_PATH 和 LD_PRELOAD。</text>
+<text x="36" y="484" font-size="12.3" fill="#64748b" xml:space="preserve">图源：10-基础理论/13-计算机基础/images/图05-动态库搜索顺序.svg</text>
+</svg>

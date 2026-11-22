@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1200" height="520" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1164" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · 一次 write 之后，数据到底在哪</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">send/write 返回只代表「复制进本端内核缓冲」，离对端应用还有好几站。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#475569" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">本端</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">内核</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">网络</text>
+<line x1="288" y1="142" x2="318" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="326" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">对端</text>
+<text x="40" y="178" font-size="12" fill="#0f172a" xml:space="preserve" font-weight="700">从应用到应用，中间隔着四段缓冲</text>
+<rect x="40" y="200" width="200" height="86" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="40" y="200" width="4.5" height="86" fill="#475569" rx="2"/>
+<text x="53" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">应用缓冲区</text>
+<text x="231" y="219" font-size="10.2" fill="#475569" xml:space="preserve" font-weight="700" text-anchor="end">①</text>
+<text x="53" y="236" font-size="9.6" fill="#334155" xml:space="preserve">write 返回后</text>
+<text x="53" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">可复用/可修改</text>
+<line x1="240" y1="243" x2="255" y2="243" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="255,243 246,238.5 246,247.5" fill="#94a3b8"/>
+<rect x="255" y="200" width="200" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="255" y="200" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="268" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">内核发送缓冲</text>
+<text x="446" y="219" font-size="10.2" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="end">②</text>
+<text x="268" y="236" font-size="9.6" fill="#334155" xml:space="preserve">send 成功只到这里</text>
+<text x="268" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">可能排队等待发送</text>
+<line x1="455" y1="243" x2="470" y2="243" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="470,243 461,238.5 461,247.5" fill="#94a3b8"/>
+<rect x="470" y="200" width="200" height="86" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="470" y="200" width="4.5" height="86" fill="#4f46e5" rx="2"/>
+<text x="483" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">网络</text>
+<text x="661" y="219" font-size="10.2" fill="#4f46e5" xml:space="preserve" font-weight="700" text-anchor="end">③</text>
+<text x="483" y="236" font-size="9.6" fill="#334155" xml:space="preserve">受拥塞/丢包影响</text>
+<text x="483" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">重传对应用透明</text>
+<line x1="670" y1="243" x2="685" y2="243" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="685,243 676,238.5 676,247.5" fill="#94a3b8"/>
+<rect x="685" y="200" width="200" height="86" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="685" y="200" width="4.5" height="86" fill="#d97706" rx="2"/>
+<text x="698" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">对端接收缓冲</text>
+<text x="876" y="219" font-size="10.2" fill="#d97706" xml:space="preserve" font-weight="700" text-anchor="end">④</text>
+<text x="698" y="236" font-size="9.6" fill="#334155" xml:space="preserve">由对端 read 取走</text>
+<text x="698" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">窗口满会反压</text>
+<line x1="885" y1="243" x2="900" y2="243" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="900,243 891,238.5 891,247.5" fill="#94a3b8"/>
+<rect x="900" y="200" width="200" height="86" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="900" y="200" width="4.5" height="86" fill="#0f9d58" rx="2"/>
+<text x="913" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">对端应用</text>
+<text x="1091" y="219" font-size="10.2" fill="#0f9d58" xml:space="preserve" font-weight="700" text-anchor="end">⑤</text>
+<text x="913" y="236" font-size="9.6" fill="#334155" xml:space="preserve">拿到的是字节流</text>
+<text x="913" y="251.4" font-size="9.6" fill="#334155" xml:space="preserve">不是完整消息</text>
+<rect x="40" y="350" width="1120" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="380" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="404" font-size="10.2" fill="#334155" xml:space="preserve">write 返回成功，只说明内核接收了这些字节；对端可能还没收到。</text>
+<text x="56" y="422" font-size="10.2" fill="#334155" xml:space="preserve">内核发送缓冲满时，阻塞 socket 会睡，非阻塞返回 EAGAIN；短写要自己循环。</text>
+<text x="56" y="440" font-size="10.2" fill="#334155" xml:space="preserve">对端不 read 会让接收窗口变小，最终反压到发送端——这是 TCP 的流控，不是“网络慢”。</text>
+<text x="36" y="484" font-size="12.3" fill="#64748b" xml:space="preserve">图源：10-基础理论/13-计算机基础/images/图05-write到read的路径.svg</text>
+</svg>

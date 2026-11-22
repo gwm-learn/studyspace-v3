@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" font-family="'Noto Sans CJK SC','Source Han Sans SC','WenQuanYi Micro Hei',sans-serif">
+<rect width="1200" height="620" fill="#ffffff"/>
+<line x1="36" y1="112" x2="1164" y2="112" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="42" font-size="23" fill="#0f172a" xml:space="preserve" font-weight="700">图 05 · 缺页的四种去向：命中、读入、COW、SIGSEGV</text>
+<text x="36" y="70" font-size="12.3" fill="#64748b" xml:space="preserve">缺页不是错误，而是「页还没准备好」的统一入口；先判地址是否合法，再决定怎么补。</text>
+<line x1="36" y1="142" x2="66" y2="142" stroke="#0f9d58" stroke-width="3"/>
+<text x="74" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">正常</text>
+<line x1="120" y1="142" x2="150" y2="142" stroke="#d97706" stroke-width="3"/>
+<text x="158" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">缺页</text>
+<line x1="204" y1="142" x2="234" y2="142" stroke="#4f46e5" stroke-width="3"/>
+<text x="242" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">COW</text>
+<line x1="285.8" y1="142" x2="315.8" y2="142" stroke="#dc2626" stroke-width="3"/>
+<text x="323.8" y="146" font-size="11" fill="#334155" xml:space="preserve" font-weight="600">非法</text>
+<rect x="495" y="200" width="210" height="58" fill="#f8fafc" rx="8" stroke="#475569" stroke-width="1.1"/>
+<rect x="495" y="200" width="4.5" height="58" fill="#475569" rx="2"/>
+<text x="508" y="219" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">CPU 访问一个虚拟页</text>
+<rect x="40" y="320" width="266.5" height="72.8" fill="#f2fcf5" rx="8" stroke="#0f9d58" stroke-width="1.1"/>
+<rect x="40" y="320" width="4.5" height="72.8" fill="#0f9d58" rx="2"/>
+<text x="53" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">已映射且权限允许</text>
+<text x="53" y="356" font-size="9.6" fill="#334155" xml:space="preserve">PTE 有效</text>
+<text x="53" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">页在内存</text>
+<line x1="537" y1="258" x2="173.25" y2="320" stroke="#0f9d58" stroke-width="1.8"/>
+<polygon points="173.25,320 182.88,322.92 181.37,314.05" fill="#0f9d58"/>
+<text x="50" y="412.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 直接访问，无 fault</text>
+<rect x="324.5" y="320" width="266.5" height="72.8" fill="#fff9ee" rx="8" stroke="#d97706" stroke-width="1.1"/>
+<rect x="324.5" y="320" width="4.5" height="72.8" fill="#d97706" rx="2"/>
+<text x="337.5" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">页未驻留</text>
+<text x="337.5" y="356" font-size="9.6" fill="#334155" xml:space="preserve">minor：页在缓存</text>
+<text x="337.5" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">major：需要读盘</text>
+<line x1="579" y1="258" x2="457.75" y2="320" stroke="#d97706" stroke-width="1.8"/>
+<polygon points="457.75,320 467.81,319.91 463.71,311.9" fill="#d97706"/>
+<text x="334.5" y="412.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 建立映射后重试指令</text>
+<rect x="609" y="320" width="266.5" height="72.8" fill="#eef2ff" rx="8" stroke="#4f46e5" stroke-width="1.1"/>
+<rect x="609" y="320" width="4.5" height="72.8" fill="#4f46e5" rx="2"/>
+<text x="622" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">COW 共享只读页</text>
+<text x="622" y="356" font-size="9.6" fill="#334155" xml:space="preserve">fork 后父子共享</text>
+<text x="622" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">写入触发复制</text>
+<line x1="621" y1="258" x2="742.25" y2="320" stroke="#4f46e5" stroke-width="1.8"/>
+<polygon points="742.25,320 736.29,311.9 732.19,319.91" fill="#4f46e5"/>
+<text x="619" y="412.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 复制新页，改 PTE 可写</text>
+<rect x="893.5" y="320" width="266.5" height="72.8" fill="#fff5f5" rx="8" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="893.5" y="320" width="4.5" height="72.8" fill="#dc2626" rx="2"/>
+<text x="906.5" y="339" font-size="11.8" fill="#0f172a" xml:space="preserve" font-weight="700">地址非法 / 权限不符</text>
+<text x="906.5" y="356" font-size="9.6" fill="#334155" xml:space="preserve">不在 VMA 内</text>
+<text x="906.5" y="371.4" font-size="9.6" fill="#334155" xml:space="preserve">或写只读 / 执行 NX</text>
+<line x1="663" y1="258" x2="1026.75" y2="320" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="1026.75,320 1018.63,314.05 1017.12,322.92" fill="#dc2626"/>
+<text x="903.5" y="412.8" font-size="9.4" fill="#64748b" xml:space="preserve">→ 投递 SIGSEGV / SIGBUS</text>
+<rect x="40" y="440" width="1120" height="110" fill="#fff9ee" rx="10" stroke="#d97706" stroke-width="1"/>
+<text x="56" y="470" font-size="10.6" fill="#0f172a" xml:space="preserve" font-weight="700">读图要点</text>
+<text x="56" y="494" font-size="10.2" fill="#334155" xml:space="preserve">minor fault 不读盘，只是补映射；major fault 才需要 IO。</text>
+<text x="56" y="512" font-size="10.2" fill="#334155" xml:space="preserve">COW fault 发生在「写」而不是「fork」：fork 只是把页标成只读并增加引用。</text>
+<text x="56" y="530" font-size="10.2" fill="#334155" xml:space="preserve">不在 VMA 内的地址没有修复路径，内核只能投递信号。</text>
+<text x="36" y="584" font-size="12.3" fill="#64748b" xml:space="preserve">图源：10-基础理论/13-计算机基础/images/图05-缺页与COW.svg</text>
+</svg>
